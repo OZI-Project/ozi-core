@@ -1,0 +1,13 @@
+GitPython>=3
+TAP-Producer~=0.1.1
+dnspython
+idna>=2
+meson[ninja]>=1.1.0
+ozi-spec~=0.5
+ozi-templates~=2.5.1
+packaging~=24.0
+pyparsing~=3.1
+requests
+spdx-license-list
+trove-classifiers~=2024.7
+types-requests
