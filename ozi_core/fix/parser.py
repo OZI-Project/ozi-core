@@ -65,9 +65,7 @@ parser.add_argument(
     action=BooleanOptionalAction,
     help=SUPPRESS,
 )
-parser.add_argument('target', default='.', type=str, nargs='?', help=argparse.SUPPRESS)
 subparser = parser.add_subparsers(help='', metavar='', dest='fix')
-
 helpers = parser.add_mutually_exclusive_group()
 helpers.add_argument('-h', '--help', action='help', help='show this help message and exit')
 missing_parser = subparser.add_parser(
@@ -222,3 +220,4 @@ test_parser.add_argument(
     default='.',
     help='target OZI project directory',
 )
+parser.add_argument('target', default='.', type=str, nargs='?', help=argparse.SUPPRESS)
