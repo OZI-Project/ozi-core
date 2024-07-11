@@ -142,13 +142,6 @@ required.add_argument(
     help='Classifier: License (Single Use)',
     action=CloseMatch,
 )
-ozi_required.add_argument(
-    'target',
-    type=str,
-    nargs='?',
-    default='.',
-    help='directory path for new project',
-)
 defaults.add_argument(
     '--audience',
     '--intended-audience',
@@ -299,9 +292,10 @@ ozi_defaults.add_argument(
     metavar='ALLOW_FILE_PATTERNS',
     default=METADATA.spec.python.src.allow_files,
 )
-tools = parser.add_mutually_exclusive_group()  # pragma: no cover
-tools.add_argument(  # pragma: no cover
-    '-new',
-    action='store_true',
-    help=argparse.SUPPRESS,
+ozi_required.add_argument(
+    'target',
+    type=str,
+    nargs='?',
+    default='.',
+    help='directory path for new project',
 )
