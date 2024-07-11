@@ -18,6 +18,8 @@ from warnings import warn
 
 import requests
 from ozi_spec import METADATA  # pyright: ignore
+from ozi_spec import OZI  # pyright: ignore
+from ozi_spec import Metadata  # pyright: ignore
 from packaging.version import Version
 from packaging.version import parse
 from pyparsing import ParseException
@@ -187,9 +189,9 @@ def check_version(version: str) -> NoReturn:  # pragma: defer to PyPI
             )
 
 
-def info() -> NoReturn:  # pragma: no cover
+def info(version: str) -> NoReturn:  # pragma: no cover
     """Print all metadata as JSON and exit."""
-    sys.exit(print(json.dumps(METADATA.asdict(), indent=2)))
+    sys.exit(print(json.dumps(Metadata(OZI(version)).asdict(), indent=2)))
 
 
 def list_available(key: str) -> NoReturn:  # pragma: no cover
