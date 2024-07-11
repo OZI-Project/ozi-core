@@ -37,7 +37,6 @@ Use of, or reading, this application or any of resources contained within
 does not create an attorney-client relationship.
 """,
 )
-parser.add_argument('target', default='.', type=str, nargs='?', help=argparse.SUPPRESS)
 parser.add_argument(
     '--add',
     metavar='FILENAME',
@@ -66,6 +65,7 @@ parser.add_argument(
     action=BooleanOptionalAction,
     help=SUPPRESS,
 )
+parser.add_argument('target', default='.', type=str, nargs='?', help=argparse.SUPPRESS)
 subparser = parser.add_subparsers(help='', metavar='', dest='fix')
 
 helpers = parser.add_mutually_exclusive_group()
@@ -156,13 +156,6 @@ source_parser.add_argument(
     default='',
     help='copyright header string',
 )
-source_parser.add_argument(
-    'target',
-    type=str,
-    nargs='?',
-    default='.',
-    help='target OZI project directory',
-)
 source_output = source_parser.add_argument_group('output')
 source_output.add_argument(
     '--strict',
@@ -175,6 +168,13 @@ source_output.add_argument(
     default=False,
     action=BooleanOptionalAction,
     help='pretty mode outputs indented json, default: no',
+)
+source_parser.add_argument(
+    'target',
+    type=str,
+    nargs='?',
+    default='.',
+    help='target OZI project directory',
 )
 test_parser.add_argument(
     '-a',
@@ -202,13 +202,6 @@ test_parser.add_argument(
     default='',
     help='copyright header string',
 )
-test_parser.add_argument(
-    'target',
-    type=str,
-    nargs='?',
-    default='.',
-    help='target OZI project directory',
-)
 test_output = test_parser.add_argument_group('output')
 test_output.add_argument(
     '--strict',
@@ -222,9 +215,10 @@ test_output.add_argument(
     action=BooleanOptionalAction,
     help='pretty mode outputs indented json, default: no',
 )
-tools = parser.add_mutually_exclusive_group()  # pragma: no cover
-tools.add_argument(  # pragma: no cover
-    '-fix',
-    action='store_true',
-    help=argparse.SUPPRESS,
+test_parser.add_argument(
+    'target',
+    type=str,
+    nargs='?',
+    default='.',
+    help='target OZI project directory',
 )
