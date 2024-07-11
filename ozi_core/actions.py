@@ -152,12 +152,6 @@ class CloseMatch(Action):
         self._set_matches(key, values, namespace)
 
 
-def print_version() -> NoReturn:  # pragma: no cover
-    """Print out the current version and exit."""
-    print(METADATA.ozi.version)
-    sys.exit(0)
-
-
 def check_for_update(
     current_version: Version,
     releases: Collection[Version],
@@ -176,13 +170,13 @@ def check_for_update(
             TAP.ok('OZI package is up to date', str(current_version))
 
 
-def check_version() -> NoReturn:  # pragma: defer to PyPI
+def check_version(version: str) -> NoReturn:  # pragma: defer to PyPI
     """Check for a newer version of OZI and exit."""
     response = requests.get('https://pypi.org/pypi/OZI/json', timeout=30)
     match response.status_code:
         case 200:
             check_for_update(
-                current_version=parse(METADATA.ozi.version),
+                current_version=parse(version),
                 releases=set(map(parse, response.json()['releases'].keys())),
             )
             TAP.end()
