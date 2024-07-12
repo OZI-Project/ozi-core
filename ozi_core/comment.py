@@ -71,8 +71,8 @@ def calculate_score(lines: int, t1: int, t2: int, t3: int) -> float:  # pragma: 
     """
     b = 5.0
     x = log(lines + 1, b) - log10(
-        lines
-        + 1
+        (lines
+        + 1)
         ** (
             log10(CommentQuality.TIER3 + t3 + 1)
             - log10(CommentQuality.TIER3)
@@ -154,7 +154,7 @@ def diagnostic(  # pragma: no cover
     """
     count: Counter[str] = Counter()
     for line_no, line in enumerate(lines, start=start):
-        count.update(Counter(lines=line_no))
+        count.update(Counter(lines=1))
         for key in diagnose(line, rel_path, line_no):
             count.update({key: 1})  # pragma: no cover
     return count
