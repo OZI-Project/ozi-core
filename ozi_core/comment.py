@@ -154,7 +154,7 @@ def diagnostic(  # pragma: no cover
     """
     count: Counter[str] = Counter()
     for line_no, line in enumerate(lines, start=start):
-        count.update(Counter(lines=1))
+        count.update(Counter(lines=line_no))
         for key in diagnose(line, rel_path, line_no):
             count.update({key: 1})  # pragma: no cover
     return count
