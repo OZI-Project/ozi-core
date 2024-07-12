@@ -3,7 +3,6 @@
 # See LICENSE.txt for license information.
 # SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 """``ozi-fix`` console application."""
-import argparse
 import sys
 from argparse import SUPPRESS
 from argparse import ArgumentParser
