@@ -220,4 +220,3 @@ test_parser.add_argument(
     default='.',
     help='target OZI project directory',
 )
-parser.add_argument('target', default='.', type=str, nargs='?', help=argparse.SUPPRESS)
