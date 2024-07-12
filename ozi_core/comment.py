@@ -71,8 +71,7 @@ def calculate_score(lines: int, t1: int, t2: int, t3: int) -> float:  # pragma: 
     """
     b = 5.0
     x = log(lines + 1, b) - log10(
-        (lines
-        + 1)
+        (lines + 1)
         ** (
             log10(CommentQuality.TIER3 + t3 + 1)
             - log10(CommentQuality.TIER3)
