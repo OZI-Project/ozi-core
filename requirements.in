@@ -4,7 +4,7 @@ dnspython
 idna>=2
 meson[ninja]>=1.1.0
 ozi-spec~=0.5.3
-ozi-templates~=2.5.4
+ozi-templates~=2.5.5
 packaging~=24.0
 prompt-toolkit
 pyparsing~=3.1
