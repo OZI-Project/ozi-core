@@ -3,7 +3,7 @@ TAP-Producer~=0.1.4
 dnspython
 idna>=2
 meson[ninja]>=1.1.0
-ozi-spec~=0.5.3
+ozi-spec~=0.5.4
 ozi-templates~=2.5.5
 packaging~=24.1
 prompt-toolkit
