@@ -92,7 +92,7 @@ def map_to_template(  # noqa: C901
         case ['test', f]:
             x = f'tests/{f}.j2'
         case ['templates', f]:
-            x = f'templates/{f}.j2'
+            x = f'templates/{f}'
         case ['subprojects', f]:
             x = f'subprojects/{f}.j2'
         case ['child', f]:
