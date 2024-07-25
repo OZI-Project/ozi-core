@@ -1,4 +1,12 @@
 # ozi-core CHANGELOG
+## 0.1.12 (2024-07-25)
+
+
+### 🐛 Fixed Bugs
+
+* (requirements.in): ozi-spec~=0.5.7 — Eden Ross Duff, MSc &lt;rjdbcm@outlook.com&gt;
+([`2aa4a87`](https://github.com/OZI-Project/ozi-core/commit/2aa4a87cedecb07bf0e68f0f19b9131269ddf2e7))
+
 ## 0.1.11 (2024-07-25)
 
 
