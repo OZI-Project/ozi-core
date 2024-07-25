@@ -1,4 +1,44 @@
 # ozi-core CHANGELOG
+## 0.1.11 (2024-07-25)
+
+
+### Build
+
+
+* (deps): bump OZI-Project/publish from 0.1.8 to 0.1.9
+
+Bumps [OZI-Project/publish](https://github.com/ozi-project/publish) from 0.1.8 to 0.1.9.
+- [Release notes](https://github.com/ozi-project/publish/releases)
+- [Commits](https://github.com/ozi-project/publish/compare/0.1.8...0.1.9)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/publish
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] &lt;support@github.com&gt;
+([`452ad21`](https://github.com/OZI-Project/ozi-core/commit/452ad214b47668d8dd6112a2e51d1029b32624a6))
+
+* (deps): bump OZI-Project/draft from 0.3.6 to 0.3.7
+
+Bumps [OZI-Project/draft](https://github.com/ozi-project/draft) from 0.3.6 to 0.3.7.
+- [Release notes](https://github.com/ozi-project/draft/releases)
+- [Commits](https://github.com/ozi-project/draft/compare/0.3.6...0.3.7)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/draft
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] &lt;support@github.com&gt;
+([`905c8dd`](https://github.com/OZI-Project/ozi-core/commit/905c8ddb2294e12d17db0ff8c8763c15746e6f5f))
+
+
+### 🐛 Fixed Bugs
+
+* move remaining core functionality to package — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`0bb22a3`](https://github.com/OZI-Project/ozi-core/commit/0bb22a3efa9022386155a8cf3626e89429552a3a))
+
 ## 0.1.10 (2024-07-22)
 
 
