@@ -1,4 +1,4 @@
-GitPython~=3
+GitPython~=3.1
 TAP-Producer~=0.1.4
 dnspython
 idna>=2
