@@ -1,4 +1,12 @@
 # ozi-core CHANGELOG
+## 0.1.13 (2024-07-28)
+
+
+### 🐛 Fixed Bugs
+
+* gitpython~=3.1 — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`fd822c6`](https://github.com/OZI-Project/ozi-core/commit/fd822c640c0b469e71d46ea7f279a8b5cb42ae88))
+
 ## 0.1.12 (2024-07-25)
 
 
@@ -41,12 +49,6 @@ updated-dependencies:
 ... — dependabot[bot] &lt;support@github.com&gt;
 ([`905c8dd`](https://github.com/OZI-Project/ozi-core/commit/905c8ddb2294e12d17db0ff8c8763c15746e6f5f))
 
-
-### 🐛 Fixed Bugs
-
-* move remaining core functionality to package — rjdbcm &lt;rjdbcm@outlook.com&gt;
-([`0bb22a3`](https://github.com/OZI-Project/ozi-core/commit/0bb22a3efa9022386155a8cf3626e89429552a3a))
-
 ## 0.1.10 (2024-07-22)
 
 
@@ -67,35 +69,9 @@ updated-dependencies:
 ... — dependabot[bot] &lt;support@github.com&gt;
 ([`31f6262`](https://github.com/OZI-Project/ozi-core/commit/31f626294d42088b072aa00704c14af2a4d06d39))
 
-
-### 🐛 Fixed Bugs
-
-* ozi-core~=0.5.6 — rjdbcm &lt;rjdbcm@outlook.com&gt;
-([`485227f`](https://github.com/OZI-Project/ozi-core/commit/485227fc49d271ff8d946fc3cff33c4555c40f8e))
-
-* correct changelog title — rjdbcm &lt;rjdbcm@outlook.com&gt;
-([`a01e5ce`](https://github.com/OZI-Project/ozi-core/commit/a01e5ceb1f51e084ceb4bc49bd15f08de8dd450c))
-
-* correct ``templates/templates/*`` names to include ``.j2`` extension — rjdbcm &lt;rjdbcm@outlook.com&gt;
-([`ba9a68d`](https://github.com/OZI-Project/ozi-core/commit/ba9a68d5bfaba9513af8480fcc604527211de017))
-
 ## 0.1.9 (2024-07-19)
 
-
-### 🐛 Fixed Bugs
-
-* ozi-spec~=0.5.5
-
-Implements sigstore-v3 workflows. — Eden Ross Duff, MSc &lt;rjdbcm@outlook.com&gt;
-([`a2b2eac`](https://github.com/OZI-Project/ozi-core/commit/a2b2eacb4113d711077724c8b9ceced4071ac6f6))
-
 ## 0.1.8 (2024-07-19)
-
-
-### 🐛 Fixed Bugs
-
-* ozi-spec~=0.5.4 — Eden Ross Duff, MSc &lt;rjdbcm@outlook.com&gt;
-([`dc31546`](https://github.com/OZI-Project/ozi-core/commit/dc31546e5e1714f823535edceb8ee70ba6cbb60e))
 
 ## 0.1.7 (2024-07-19)
 
@@ -203,6 +179,32 @@ updated-dependencies:
 
 * (deps): ozi-templates~=2.5.5 — Eden Ross Duff, MSc &lt;rjdbcm@outlook.com&gt;
 ([`d867913`](https://github.com/OZI-Project/ozi-core/commit/d8679132219753a12f47e57411a221d4a95d310b))
+
+
+### 🐛 Fixed Bugs
+
+* use ``ozi.version`` as key for wrapfile release revision selection — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`708552c`](https://github.com/OZI-Project/ozi-core/commit/708552cf3928b49393f8443c11659e8db71ba093))
+
+* move remaining core functionality to package — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`0bb22a3`](https://github.com/OZI-Project/ozi-core/commit/0bb22a3efa9022386155a8cf3626e89429552a3a))
+
+* ozi-core~=0.5.6 — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`485227f`](https://github.com/OZI-Project/ozi-core/commit/485227fc49d271ff8d946fc3cff33c4555c40f8e))
+
+* correct changelog title — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`a01e5ce`](https://github.com/OZI-Project/ozi-core/commit/a01e5ceb1f51e084ceb4bc49bd15f08de8dd450c))
+
+* correct ``templates/templates/*`` names to include ``.j2`` extension — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`ba9a68d`](https://github.com/OZI-Project/ozi-core/commit/ba9a68d5bfaba9513af8480fcc604527211de017))
+
+* ozi-spec~=0.5.5
+
+Implements sigstore-v3 workflows. — Eden Ross Duff, MSc &lt;rjdbcm@outlook.com&gt;
+([`a2b2eac`](https://github.com/OZI-Project/ozi-core/commit/a2b2eacb4113d711077724c8b9ceced4071ac6f6))
+
+* ozi-spec~=0.5.4 — Eden Ross Duff, MSc &lt;rjdbcm@outlook.com&gt;
+([`dc31546`](https://github.com/OZI-Project/ozi-core/commit/dc31546e5e1714f823535edceb8ee70ba6cbb60e))
 
 
 ### Performance
