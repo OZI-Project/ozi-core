@@ -22,6 +22,7 @@ from ozi_core.fix.rewrite_command import Rewriter  # pyright: ignore
 
 def main() -> NoReturn:  # pragma: no cover
     """Main ozi.fix entrypoint."""
+    TAP.version(14)
     project = parser.parse_args()
     project.missing = project.fix == 'missing' or project.fix == 'm'
     project.target = Path(os.path.relpath(os.path.join('/', project.target), '/')).absolute()

@@ -1,9 +1,9 @@
 GitPython~=3.1
-TAP-Producer~=0.1.4
+TAP-Producer~=0.2
 dnspython
 idna>=2
 meson[ninja]>=1.1.0
-ozi-spec~=0.5.6
+ozi-spec~=0.5.7
 ozi-templates~=2.5.6
 packaging~=24.1
 prompt-toolkit
