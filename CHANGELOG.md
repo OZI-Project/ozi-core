@@ -1,4 +1,19 @@
 # ozi-core CHANGELOG
+## 0.1.14 (2024-07-29)
+
+
+### Performance
+
+
+* perf: TAP-Producer~=0.2 — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`806e4e6`](https://github.com/OZI-Project/ozi-core/commit/806e4e690f036834aa5f2d79c9b2eb6c027f0462))
+
+* perf: ozi-spec~=0.5.7 — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`25905f1`](https://github.com/OZI-Project/ozi-core/commit/25905f119deb214f69ece76753f56386f6715e77))
+
+* perf: use TAP version 14 in ``ozi-new`` and ``ozi-fix`` — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`4e65ef5`](https://github.com/OZI-Project/ozi-core/commit/4e65ef546af4472125add85e2a4f987a38813526))
+
 ## 0.1.13 (2024-07-28)
 
 
