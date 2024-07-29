@@ -57,9 +57,11 @@ def main(args: list[str] | None = None) -> None:  # pragma: no cover
             ozi_new = parser.parse_args(args=args)
             main(args)
         case ozi_new if ozi_new.new in ['p', 'project']:
+            TAP.version(14)
             project(ozi_new)
             TAP.end()
         case ozi_new if ozi_new.new in ['w', 'wrap']:
+            TAP.version(14)
             wrap(ozi_new)
             TAP.end()
         case _:
