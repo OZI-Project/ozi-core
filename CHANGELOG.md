@@ -1,4 +1,33 @@
 # ozi-core CHANGELOG
+## 0.1.15 (2024-07-30)
+
+
+### Build
+
+
+* (deps): update ozi-spec requirement from ~=0.5.7 to ~=0.5.8
+
+Updates the requirements on [ozi-spec](https://github.com/OZI-Project/ozi-spec) to permit the latest version.
+- [Release notes](https://github.com/OZI-Project/ozi-spec/releases)
+- [Changelog](https://github.com/OZI-Project/ozi-spec/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/OZI-Project/ozi-spec/compare/0.5.7...0.5.8)
+
+
+updated-dependencies:
+- dependency-name: ozi-spec
+  dependency-type: direct:production
+... — dependabot[bot] &lt;support@github.com&gt;
+([`87a9703`](https://github.com/OZI-Project/ozi-core/commit/87a970368906f23468e0dce658f3b95d9fe4856d))
+
+
+### Performance
+
+
+* perf: Merge pull request #50 from OZI-Project/main
+
+Release
+([`7286ba3`](https://github.com/OZI-Project/ozi-core/commit/7286ba3a407aee2821624f78a8e45793c7147f58))
+
 ## 0.1.14 (2024-07-29)
 
 
