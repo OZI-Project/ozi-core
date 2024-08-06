@@ -1,5 +1,5 @@
 GitPython~=3.1
-TAP-Producer~=0.2
+TAP-Producer~=1.0
 dnspython
 idna>=2
 meson[ninja]>=1.1.0
