@@ -83,7 +83,7 @@ Download-URL: https://github.com/rjdbcm/ozi-core/archive/refs/tags/@SCM_VERSION@
 Requires-Python: >=3.10, <3.13
 Keywords: OZI,mesonbuild
 Classifier: License :: OSI Approved :: Apache Software License
-Classifier: Development Status :: 1 - Planning
+Classifier: Development Status :: 4 - Beta
 Classifier: Programming Language :: Python :: 3 :: Only
 Classifier: Programming Language :: Python :: 3.10
 Classifier: Programming Language :: Python :: 3.11
@@ -277,7 +277,7 @@ strict = true
 
 [tool.semantic_release]
 commit_parser                  = "angular"
-major_on_zero                  = false
+major_on_zero                  = true
 tag_format                     = "{version}"
 
 [tool.semantic_release.branches."0.x"]
@@ -285,7 +285,13 @@ match = "\\A0\\.\\d+\\Z"
 prerelease_token = "alpha"
 prerelease = false
 
+[tool.semantic_release.branches."1.x"]
+match = "\\A1\\.\\d+\\Z"
+prerelease_token = "rc"
+prerelease = false
+
 [tool.semantic_release.commit_parser_options]
+patch_tags = ["fix", "perf", "build"]
 
 [tool.semantic_release.changelog]
 changelog_file = "CHANGELOG.md"
