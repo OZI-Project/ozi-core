@@ -1,10 +1,10 @@
 GitPython~=3.1
-TAP-Producer~=0.2
+TAP-Producer~=1.0
 dnspython
 idna>=2
 meson[ninja]>=1.1.0
-ozi-spec~=0.5.8
-ozi-templates~=2.5.6
+ozi-spec~=0.5.9
+ozi-templates~=2.5.8
 packaging~=24.1
 prompt-toolkit
 pyparsing~=3.1
