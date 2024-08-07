@@ -1,4 +1,19 @@
 # ozi-core CHANGELOG
+## 0.1.17 (2024-08-07)
+
+
+### Build
+
+
+* (deps): update ozi-templates requirement from ~=2.5.8 to ~=2.6.1
+
+
+updated-dependencies:
+- dependency-name: ozi-templates
+  dependency-type: direct:production
+... — dependabot[bot] &lt;support@github.com&gt;
+([`87a7da5`](https://github.com/OZI-Project/ozi-core/commit/87a7da50ea70f596e277469538dfb73113a1f4ef))
+
 ## 0.1.16 (2024-08-07)
 
 
