@@ -139,7 +139,9 @@ relative_files = true
 omit = [
      '*/vendor/*',
      'ozi_core/new/parser.py',
-     'ozi_core/new/interactive.py',
+     'ozi_core/new/interactive/__init__.py',
+     'ozi_core/new/interactive/validator.py',
+     'ozi_core/new/interactive/dialog.py',
      'ozi_core/fix/parser.py',
 ]
 
@@ -180,7 +182,7 @@ module = ["ozi_core.vendor.*"]
 ignore_errors = true
 
 [[tool.mypy.overrides]]
-module = ["ozi_core.new.interactive"]
+module = ["ozi_core.new.interactive.*"]
 ignore_errors = true
 
 [[tool.mypy.overrides]]
