@@ -14,11 +14,11 @@ from hypothesis import given
 from hypothesis import settings
 from hypothesis import strategies as st
 from ozi_spec import METADATA  # pyright: ignore
-from ozi_templates import load_environment  # pyright: ignore
 
 import ozi_core.actions  # pyright: ignore
 import ozi_core.new.validate  # pyright: ignore
 import ozi_core.render  # pyright: ignore
+from ozi_core.new import project as new_project  # pyright: ignore
 
 
 @settings(
@@ -128,15 +128,7 @@ def test_fuzz_new_project_good_namespace(  # noqa: DC102, RUF100
     )
     project['license_expression'] = license_expression.draw(st.just(project['license_id']))
     namespace = argparse.Namespace(**project)
-    preprocessed = ozi_core.new.validate.preprocess_arguments(namespace)
-    postprocessed = ozi_core.new.validate.postprocess_arguments(preprocessed)
-    ozi_core.render.RenderedContent(
-        load_environment(vars(postprocessed), METADATA.asdict()),
-        postprocessed.target,
-        postprocessed.name,
-        postprocessed.ci_provider,
-        postprocessed.long_description_content_type,
-    ).render()
+    new_project(namespace)
 
 
 @pytest.mark.parametrize(

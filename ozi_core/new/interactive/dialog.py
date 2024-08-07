@@ -1,24 +1,13 @@
-"""
-``ozi-new`` interactive prompts
-"""
-
 from __future__ import annotations
 
-import curses
-import os
-import re
-import sys
-from functools import lru_cache
 from typing import TYPE_CHECKING
 from typing import Any
 from typing import Sequence
 from typing import TypeVar
 
-import requests
 from ozi_spec import METADATA  # pyright: ignore
 from prompt_toolkit import Application  # pyright: ignore
 from prompt_toolkit.application.current import get_app  # pyright: ignore
-from prompt_toolkit.document import Document  # pyright: ignore
 from prompt_toolkit.filters import Condition  # pyright: ignore
 from prompt_toolkit.key_binding import KeyBindings  # pyright: ignore
 from prompt_toolkit.key_binding import merge_key_bindings  # pyright: ignore
@@ -40,20 +29,23 @@ from prompt_toolkit.shortcuts import yes_no_dialog  # pyright: ignore
 from prompt_toolkit.styles import BaseStyle  # pyright: ignore
 from prompt_toolkit.styles import Style  # pyright: ignore
 from prompt_toolkit.validation import DynamicValidator  # pyright: ignore
-from prompt_toolkit.validation import ThreadedValidator  # pyright: ignore
-from prompt_toolkit.validation import ValidationError  # pyright: ignore
 from prompt_toolkit.validation import Validator  # pyright: ignore
 from prompt_toolkit.widgets import Button  # pyright: ignore
 from prompt_toolkit.widgets import Dialog  # pyright: ignore
 from prompt_toolkit.widgets import Label  # pyright: ignore
 from prompt_toolkit.widgets import RadioList  # pyright: ignore
-from tap_producer import TAP
 
+from ozi_core.new.interactive._style import _style
+from ozi_core.new.interactive._style import _style_dict
+from ozi_core.new.interactive.validator import LengthValidator
+from ozi_core.new.interactive.validator import NotReservedValidator
+from ozi_core.new.interactive.validator import PackageValidator
+from ozi_core.new.interactive.validator import ProjectNameValidator
+from ozi_core.new.interactive.validator import validate_message
 from ozi_core.trove import Prefix
 from ozi_core.trove import from_prefix
 
 if TYPE_CHECKING:
-    from argparse import Namespace
 
     from prompt_toolkit.key_binding.key_processor import KeyPressEvent  # pyright: ignore
 
@@ -571,317 +563,6 @@ class Project:  # pragma: no cover
 _P = Project()
 
 
-@lru_cache
-def pypi_package_exists(package: str) -> bool:  # pragma: no cover
-    return (
-        requests.get(
-            f'https://pypi.org/simple/{package}',
-            timeout=15,
-        ).status_code
-        == 200
-    )
-
-
-class ProjectNameValidator(Validator):
-    def validate(
-        self,  # noqa: ANN101,RUF100
-        document: Document,
-    ) -> None:  # pragma: no cover
-        if len(document.text) == 0:
-            raise ValidationError(0, 'cannot be empty')
-        if not re.match(
-            '^([A-Z0-9]|[A-Z0-9][A-Z0-9._-]*[A-Z0-9])$',
-            document.text,
-            flags=re.IGNORECASE,
-        ):
-            raise ValidationError(len(document.text), 'invalid project name')
-
-
-class NotReservedValidator(ThreadedValidator):
-    def validate(
-        self,  # noqa: ANN101,RUF100
-        document: Document,
-    ) -> None:  # pragma: no cover
-        self.validator.validate(document)
-        if pypi_package_exists(document.text):
-            raise ValidationError(len(document.text), 'project with that name exists')
-
-
-class LengthValidator(Validator):
-    def validate(
-        self,  # noqa: ANN101,RUF100
-        document: Document,
-    ) -> None:  # pragma: no cover
-        if len(document.text) == 0:
-            raise ValidationError(0, 'must not be empty')
-        if len(document.text) > 512:
-            raise ValidationError(512, 'input is too long')
-
-
-class PackageValidator(Validator):
-    def validate(
-        self,  # noqa: ANN101,RUF100
-        document: Document,
-    ) -> None:  # pragma: no cover
-        if len(document.text) == 0:
-            raise ValidationError(0, 'cannot be empty')
-        if pypi_package_exists(document.text):
-            pass
-        else:
-            raise ValidationError(len(document.text), 'package not found')
-
-
-_style_dict = {
-    'dialog': 'bg:#030711 fg:#030711',
-    'dialog.body checkbox-list': '#e1e7ef',
-    'dialog.body checkbox': '#e1e7ef',
-    'dialog.body checkbox-selected': 'bg:#192334',
-    'dialog.body checkbox-checked': '#e1e7ef',
-    'dialog.body radio-list': '#e1e7ef',
-    'dialog.body radio': '#e1e7ef',
-    'dialog.body radio-selected': 'bg:#192334',
-    'dialog.body radio-checked': '#e1e7ef',
-    'button': '#e1e7ef',
-    'dialog label': '#e1e7ef',
-    'frame.border': '#192334',
-    'dialog.body': 'bg:#030711',
-    'dialog shadow': 'bg:#192334',
-}
-
-_style = Style.from_dict(_style_dict)
-
-_T = TypeVar('_T')
-
-
-class Admonition(RadioList[_T]):
-    """Simple scrolling text dialog."""
-
-    open_character = ''
-    close_character = ''
-    container_style = 'class:admonition-list'
-    default_style = 'class:admonition'
-    selected_style = 'class:admonition-selected'
-    checked_style = 'class:admonition-checked'
-    multiple_selection = False
-
-    def __init__(  # noqa: C901
-        self,  # noqa: ANN101,RUF100
-        values: Sequence[tuple[_T, Any]],
-        default: _T | None = None,
-    ) -> None:  # pragma: no cover
-        super().__init__(values, default)
-        # Key bindings.
-        kb = KeyBindings()
-
-        @kb.add('pageup')
-        def _pageup(event: KeyPressEvent) -> None:
-            w = event.app.layout.current_window
-            if w.render_info:
-                self._selected_index = max(
-                    0,
-                    self._selected_index - len(w.render_info.displayed_lines),
-                )
-
-        @kb.add('pagedown')
-        def _pagedown(event: KeyPressEvent) -> None:
-            w = event.app.layout.current_window
-            if w.render_info:
-                self._selected_index = min(
-                    len(self.values) - 1,
-                    self._selected_index + len(w.render_info.displayed_lines),
-                )
-
-        @kb.add('up')
-        def _up(event: KeyPressEvent) -> None:
-            _pageup(event)
-
-        @kb.add('down')
-        def _down(event: KeyPressEvent) -> None:
-            _pagedown(event)
-
-        @kb.add('enter')
-        @kb.add(' ')
-        def _click(event: KeyPressEvent) -> None:
-            self._handle_enter()
-
-        self.control = FormattedTextControl(
-            self._get_text_fragments,
-            key_bindings=kb,
-            focusable=True,
-        )
-
-        self.window = Window(
-            content=self.control,
-            style=self.container_style,
-            right_margins=[
-                ConditionalMargin(
-                    margin=ScrollbarMargin(display_arrows=True),
-                    filter=Condition(lambda: self.show_scrollbar),
-                ),
-            ],
-            dont_extend_height=True,
-            wrap_lines=True,
-            always_hide_cursor=True,
-        )
-
-    def _handle_enter(self) -> None:  # noqa: ANN101,RUF100
-        pass  # pragma: no cover
-
-
-def admonition_dialog(
-    title: str = '',
-    text: str = '',
-    heading_label: str = '',
-    ok_text: str = '✔ Ok',
-    cancel_text: str = '✘ Exit',
-    style: BaseStyle | None = None,
-) -> Application[list[Any]]:  # pragma: no cover
-    """Admonition dialog shortcut.
-    The focus can be moved between the list and the Ok/Cancel button with tab.
-    """
-
-    def _return_none() -> None:
-        """Button handler that returns None."""
-        get_app().exit()
-
-    if style is None:
-        style_dict = _style_dict
-        style_dict.update(
-            {
-                'dialog.body admonition-list': '#e1e7ef',
-                'dialog.body admonition': '#e1e7ef',
-                'dialog.body admonition-selected': '#030711',
-                'dialog.body admonition-checked': '#030711',
-            },
-        )
-        style = Style.from_dict(style_dict)
-
-    def ok_handler() -> None:
-        get_app().exit(result=True)
-
-    lines = text.splitlines()
-
-    cb_list = Admonition(values=list(zip(lines, lines)), default=None)
-    longest_line = len(max(lines, key=len))
-    dialog = Dialog(
-        title=title,
-        body=HSplit(
-            [Label(text=heading_label, dont_extend_height=True), cb_list],
-            padding=1,
-        ),
-        buttons=[
-            Button(text=ok_text, handler=ok_handler),
-            Button(text=cancel_text, handler=_return_none),
-        ],
-        with_background=True,
-        width=min(max(longest_line + 8, 40), 80),
-    )
-    bindings = KeyBindings()
-    bindings.add('tab')(focus_next)
-    bindings.add('s-tab')(focus_previous)
-
-    return Application(
-        layout=Layout(dialog),
-        key_bindings=merge_key_bindings([load_key_bindings(), bindings]),
-        mouse_support=True,
-        style=style,
-        full_screen=True,
-    )
-
-
-def validate_message(
-    text: str,
-    validator: Validator,
-) -> tuple[bool, str]:  # pragma: no cover
-    """Validate a string.
-
-    :param text: string to validate
-    :type text: str
-    :param validator: validator instance
-    :type validator: Validator
-    :return: validation, error message
-    :rtype: tuple[bool, str]
-    """
-    try:
-        validator.validate(Document(text))
-    except ValidationError as e:
-        return False, e.message
-    return True, ''
-
-
-def classifier_checkboxlist(key: str) -> list[str] | None:  # pragma: no cover
-    result = checkboxlist_dialog(
-        values=sorted(
-            (
-                zip(
-                    from_prefix(getattr(Prefix(), key)),
-                    from_prefix(getattr(Prefix(), key)),
-                )
-            ),
-        ),
-        title='ozi-new interactive prompt',
-        text=f'Please select {key} classifier or classifiers:',
-        style=_style,
-        ok_text='✔ Ok',
-        cancel_text='← Back',
-    ).run()
-    return result
-
-
-def header_input(
-    label: str,
-    output: dict[str, list[str]],
-    prefix: dict[str, str],
-    *args: str,
-    validator: Validator | None = None,
-    split_on: str | None = None,
-) -> tuple[
-    bool | None | list[str],
-    dict[str, list[str]],
-    dict[str, str],
-]:  # pragma: no cover
-    _default = output.setdefault(f'--{label.lower()}', [])
-    header = input_dialog(
-        title='ozi-new interactive prompt',
-        text='\n'.join(args),
-        validator=validator,
-        default=_default[0] if len(_default) > 0 else '',
-        style=_style,
-        cancel_text='☰  Menu',
-        ok_text='✔ Ok',
-    ).run()
-    if header is None:
-        output.update(
-            {
-                f'--{label.lower()}': _default if len(_default) > 0 else [],
-            },
-        )
-        result, output, prefix = menu_loop(output, prefix)
-        return result, output, prefix
-    else:
-        if validator is not None:
-            valid, errmsg = validate_message(header, validator)
-            if valid:
-                prefix.update({label: f'{label}: {header}'})
-                if split_on:
-                    output.update(
-                        {f'--{label.lower()}': header.rstrip(split_on).split(split_on)},
-                    )
-                else:
-                    output.update({f'--{label.lower()}': [header]})
-                return True, output, prefix
-            message_dialog(
-                title='ozi-new interactive prompt',
-                text=f'Invalid input "{header}"\n{errmsg}\nPress ENTER to continue.',
-                style=_style,
-                ok_text='✔ Ok',
-            ).run()
-        output.update(
-            {f'--{label.lower()}': _default if len(_default) > 0 else []},
-        )
-    return None, output, prefix
-
-
 def menu_loop(
     output: dict[str, list[str]],
     prefix: dict[str, str],
@@ -1143,115 +824,213 @@ def menu_loop(
     return None, output, prefix
 
 
-def interactive_prompt(project: Namespace) -> list[str]:  # noqa: C901  # pragma: no cover
-    curses.setupterm()
-    e3 = curses.tigetstr('E3') or b''
-    clear_screen_seq = curses.tigetstr('clear') or b''
-    os.write(sys.stdout.fileno(), e3 + clear_screen_seq)
-
-    if (
-        admonition_dialog(
-            title='ozi-new interactive prompt',
-            heading_label='Disclaimer',
-            text="""
-The information provided on this prompt does not, and is not intended
-to, constitute legal advice. All information, content, and materials
-available on this prompt are for general informational purposes only.
-Information on this prompt may not constitute the most up-to-date
-legal or other information.
-
-THE LICENSE TEMPLATES, LICENSE IDENTIFIERS, LICENSE CLASSIFIERS,
-AND LICENSE EXPRESSION PARSING SERVICES, AND ALL OTHER CONTENTS ARE
-PROVIDED "AS IS", NO REPRESENTATIONS ARE MADE THAT THE CONTENT IS
-ERROR-FREE AND/OR APPLICABLE FOR ANY PURPOSE, INCLUDING MERCHANTABILITY.
-
-Readers of this prompt should contact their attorney to obtain advice
-with respect to any particular legal matter. The OZI Project is not a
-law firm and does not provide legal advice. No reader or user of this
-prompt should act or abstain from acting on the basis of information
-on this prompt without first seeking legal advice from counsel in the
-relevant jurisdiction. Legal counsel can ensure that the information
-provided in this prompt is applicable to your particular situation.
-Use of, or reading, this prompt or any of the resources contained
-within does not create an attorney-client relationship.
-""",
-        ).run()
-        is None
-    ):
-        return []
-
-    prefix: dict[str, str] = {}
-    output: dict[str, list[str]] = {}
-    project_name = '""'
-
-    result, output, prefix = _P.name(output, prefix, project.check_package_exists)
-    if isinstance(result, list):
-        return result
-    if isinstance(result, str):
-        project_name = result
-
-    result, output, prefix = _P.summary(project_name, output, prefix)
-    if isinstance(result, list):
-        return result
-
-    result, output, prefix = _P.keywords(project_name, output, prefix)
-    if isinstance(result, list):
-        return result
-
-    result, output, prefix = _P.home_page(project_name, output, prefix)
-    if isinstance(result, list):
-        return result
-
-    result, output, prefix = _P.author(project_name, output, prefix)
-    if isinstance(result, list):
-        return result
-
-    result, output, prefix = _P.author_email(project_name, output, prefix)
-    if isinstance(result, list):
-        return result
-
-    result, output, prefix = _P.license_(project_name, output, prefix)
-    if isinstance(result, list):
-        return result
-    _license = result if result else ''
-
-    result, output, prefix = _P.license_expression(project_name, _license, output, prefix)
-    if isinstance(result, list):
-        return result
-
-    if yes_no_dialog(
+def classifier_checkboxlist(key: str) -> list[str] | None:  # pragma: no cover
+    result = checkboxlist_dialog(
+        values=sorted(
+            (
+                zip(
+                    from_prefix(getattr(Prefix(), key)),
+                    from_prefix(getattr(Prefix(), key)),
+                )
+            ),
+        ),
         title='ozi-new interactive prompt',
-        text=f'Are there any maintainers of {project_name}?\n(other than the author or authors)',
+        text=f'Please select {key} classifier or classifiers:',
         style=_style,
-    ).run():
-        result, output, prefix = _P.maintainer(project_name, output, prefix)
-        if isinstance(result, list):
-            return result
-
-        result, output, prefix = _P.maintainer_email(project_name, output, prefix)
-        if isinstance(result, list):
-            return result
-
-    result, output, prefix = _P.requires_dist(project_name, output, prefix)
-    if isinstance(result, list):
-        return result
-
-    while not admonition_dialog(
-        title='ozi-new interactive prompt',
-        heading_label='Confirm project creation?\nPKG-INFO Metadata:',
-        text='\n'.join(prefix.values()),
         ok_text='✔ Ok',
+        cancel_text='← Back',
+    ).run()
+    return result
+
+
+def header_input(
+    label: str,
+    output: dict[str, list[str]],
+    prefix: dict[str, str],
+    *args: str,
+    validator: Validator | None = None,
+    split_on: str | None = None,
+) -> tuple[
+    bool | None | list[str],
+    dict[str, list[str]],
+    dict[str, str],
+]:  # pragma: no cover
+    _default = output.setdefault(f'--{label.lower()}', [])
+    header = input_dialog(
+        title='ozi-new interactive prompt',
+        text='\n'.join(args),
+        validator=validator,
+        default=_default[0] if len(_default) > 0 else '',
+        style=_style,
         cancel_text='☰  Menu',
-    ).run():
+        ok_text='✔ Ok',
+    ).run()
+    if header is None:
+        output.update(
+            {
+                f'--{label.lower()}': _default if len(_default) > 0 else [],
+            },
+        )
         result, output, prefix = menu_loop(output, prefix)
-        if isinstance(result, list):
-            return result
+        return result, output, prefix
+    else:
+        if validator is not None:
+            valid, errmsg = validate_message(header, validator)
+            if valid:
+                prefix.update({label: f'{label}: {header}'})
+                if split_on:
+                    output.update(
+                        {f'--{label.lower()}': header.rstrip(split_on).split(split_on)},
+                    )
+                else:
+                    output.update({f'--{label.lower()}': [header]})
+                return True, output, prefix
+            message_dialog(
+                title='ozi-new interactive prompt',
+                text=f'Invalid input "{header}"\n{errmsg}\nPress ENTER to continue.',
+                style=_style,
+                ok_text='✔ Ok',
+            ).run()
+        output.update(
+            {f'--{label.lower()}': _default if len(_default) > 0 else []},
+        )
+    return None, output, prefix
 
-    ret_args = ['project']
 
-    for k, v in output.items():
-        for i in v:
-            if len(i) > 0:
-                ret_args += [k, i]
-    TAP.diagnostic('ozi-new project args', ' '.join(ret_args))
-    return ret_args
+_T = TypeVar('_T')
+
+
+class Admonition(RadioList[_T]):
+    """Simple scrolling text dialog."""
+
+    open_character = ''
+    close_character = ''
+    container_style = 'class:admonition-list'
+    default_style = 'class:admonition'
+    selected_style = 'class:admonition-selected'
+    checked_style = 'class:admonition-checked'
+    multiple_selection = False
+
+    def __init__(  # noqa: C901
+        self,  # noqa: ANN101,RUF100
+        values: Sequence[tuple[_T, Any]],
+        default: _T | None = None,
+    ) -> None:  # pragma: no cover
+        super().__init__(values, default)
+        # Key bindings.
+        kb = KeyBindings()
+
+        @kb.add('pageup')
+        def _pageup(event: KeyPressEvent) -> None:
+            w = event.app.layout.current_window
+            if w.render_info:
+                self._selected_index = max(
+                    0,
+                    self._selected_index - len(w.render_info.displayed_lines),
+                )
+
+        @kb.add('pagedown')
+        def _pagedown(event: KeyPressEvent) -> None:
+            w = event.app.layout.current_window
+            if w.render_info:
+                self._selected_index = min(
+                    len(self.values) - 1,
+                    self._selected_index + len(w.render_info.displayed_lines),
+                )
+
+        @kb.add('up')
+        def _up(event: KeyPressEvent) -> None:
+            _pageup(event)
+
+        @kb.add('down')
+        def _down(event: KeyPressEvent) -> None:
+            _pagedown(event)
+
+        @kb.add('enter')
+        @kb.add(' ')
+        def _click(event: KeyPressEvent) -> None:
+            self._handle_enter()
+
+        self.control = FormattedTextControl(
+            self._get_text_fragments,
+            key_bindings=kb,
+            focusable=True,
+        )
+
+        self.window = Window(
+            content=self.control,
+            style=self.container_style,
+            right_margins=[
+                ConditionalMargin(
+                    margin=ScrollbarMargin(display_arrows=True),
+                    filter=Condition(lambda: self.show_scrollbar),
+                ),
+            ],
+            dont_extend_height=True,
+            wrap_lines=True,
+            always_hide_cursor=True,
+        )
+
+    def _handle_enter(self) -> None:  # noqa: ANN101,RUF100
+        pass  # pragma: no cover
+
+
+def admonition_dialog(
+    title: str = '',
+    text: str = '',
+    heading_label: str = '',
+    ok_text: str = '✔ Ok',
+    cancel_text: str = '✘ Exit',
+    style: BaseStyle | None = None,
+) -> Application[list[Any]]:  # pragma: no cover
+    """Admonition dialog shortcut.
+    The focus can be moved between the list and the Ok/Cancel button with tab.
+    """
+
+    def _return_none() -> None:
+        """Button handler that returns None."""
+        get_app().exit()
+
+    if style is None:
+        style_dict = _style_dict
+        style_dict.update(
+            {
+                'dialog.body admonition-list': '#e1e7ef',
+                'dialog.body admonition': '#e1e7ef',
+                'dialog.body admonition-selected': '#030711',
+                'dialog.body admonition-checked': '#030711',
+            },
+        )
+        style = Style.from_dict(style_dict)
+
+    def ok_handler() -> None:
+        get_app().exit(result=True)
+
+    lines = text.splitlines()
+
+    cb_list = Admonition(values=list(zip(lines, lines)), default=None)
+    longest_line = len(max(lines, key=len))
+    dialog = Dialog(
+        title=title,
+        body=HSplit(
+            [Label(text=heading_label, dont_extend_height=True), cb_list],
+            padding=1,
+        ),
+        buttons=[
+            Button(text=ok_text, handler=ok_handler),
+            Button(text=cancel_text, handler=_return_none),
+        ],
+        with_background=True,
+        width=min(max(longest_line + 8, 40), 80),
+    )
+    bindings = KeyBindings()
+    bindings.add('tab')(focus_next)
+    bindings.add('s-tab')(focus_previous)
+
+    return Application(
+        layout=Layout(dialog),
+        key_bindings=merge_key_bindings([load_key_bindings(), bindings]),
+        mouse_support=True,
+        style=style,
+        full_screen=True,
+    )
