@@ -19,7 +19,7 @@ from ozi_core.new.validate import postprocess_arguments  # pyright: ignore
 from ozi_core.new.validate import preprocess_arguments  # pyright: ignore
 from ozi_core.render import RenderedContent  # pyright: ignore
 
-if TYPE_CHECKING:
+if TYPE_CHECKING:  # pragma: no cover
     from argparse import Namespace
     from typing import Callable
     from typing import TypeAlias
