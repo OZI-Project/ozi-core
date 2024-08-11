@@ -1,4 +1,33 @@
 # ozi-core CHANGELOG
+## 0.1.18 (2024-08-11)
+
+
+### Build
+
+
+* update ozi.yml allowed endpoints — Eden Ross Duff, MSc &lt;rjdbcm@outlook.com&gt;
+([`3ee473d`](https://github.com/OZI-Project/ozi-core/commit/3ee473d61f7fc6c8246af013b5b7693d5b736587))
+
+* (deps): bump OZI-Project/release from 0.7.4 to 0.8.5
+
+Bumps [OZI-Project/release](https://github.com/ozi-project/release) from 0.7.4 to 0.8.5.
+- [Release notes](https://github.com/ozi-project/release/releases)
+- [Commits](https://github.com/ozi-project/release/compare/0.7.4...0.8.5)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/release
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] &lt;support@github.com&gt;
+([`d78bc4a`](https://github.com/OZI-Project/ozi-core/commit/d78bc4ab30aebaad18cca25531c7f1fe300100c4))
+
+
+### 🐛 Fixed Bugs
+
+* (ozi-new): set TAP.version before parsing args — Eden Ross Duff, MSc &lt;rjdbcm@outlook.com&gt;
+([`4ce1d1c`](https://github.com/OZI-Project/ozi-core/commit/4ce1d1c055ac3b5c4ac852382325ae73453ac834))
+
 ## 0.1.17 (2024-08-07)
 
 
