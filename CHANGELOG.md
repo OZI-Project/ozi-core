@@ -1,4 +1,157 @@
 # ozi-core CHANGELOG
+## 0.1.18 (2024-08-11)
+
+
+### Build
+
+
+* update ozi.yml allowed endpoints — Eden Ross Duff, MSc &lt;rjdbcm@outlook.com&gt;
+([`3ee473d`](https://github.com/OZI-Project/ozi-core/commit/3ee473d61f7fc6c8246af013b5b7693d5b736587))
+
+* (deps): bump OZI-Project/release from 0.7.4 to 0.8.5
+
+Bumps [OZI-Project/release](https://github.com/ozi-project/release) from 0.7.4 to 0.8.5.
+- [Release notes](https://github.com/ozi-project/release/releases)
+- [Commits](https://github.com/ozi-project/release/compare/0.7.4...0.8.5)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/release
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] &lt;support@github.com&gt;
+([`d78bc4a`](https://github.com/OZI-Project/ozi-core/commit/d78bc4ab30aebaad18cca25531c7f1fe300100c4))
+
+
+### 🐛 Fixed Bugs
+
+* (ozi-new): set TAP.version before parsing args — Eden Ross Duff, MSc &lt;rjdbcm@outlook.com&gt;
+([`4ce1d1c`](https://github.com/OZI-Project/ozi-core/commit/4ce1d1c055ac3b5c4ac852382325ae73453ac834))
+
+## 0.1.17 (2024-08-07)
+
+
+### Build
+
+
+* (deps): update ozi-templates requirement from ~=2.5.8 to ~=2.6.1
+
+
+updated-dependencies:
+- dependency-name: ozi-templates
+  dependency-type: direct:production
+... — dependabot[bot] &lt;support@github.com&gt;
+([`87a7da5`](https://github.com/OZI-Project/ozi-core/commit/87a7da50ea70f596e277469538dfb73113a1f4ef))
+
+## 0.1.16 (2024-08-07)
+
+
+### Build
+
+
+* (deps): update tap-producer requirement from ~=0.2 to ~=1.0
+
+Updates the requirements on [tap-producer](https://github.com/OZI-Project/TAP-Producer) to permit the latest version.
+- [Release notes](https://github.com/OZI-Project/TAP-Producer/releases)
+- [Changelog](https://github.com/OZI-Project/TAP-Producer/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/OZI-Project/TAP-Producer/compare/0.2.0...1.0.0)
+
+
+updated-dependencies:
+- dependency-name: tap-producer
+  dependency-type: direct:production
+... — dependabot[bot] &lt;support@github.com&gt;
+([`f122071`](https://github.com/OZI-Project/ozi-core/commit/f1220712a2763fde9d562fee76cd4eebdd7dcd87))
+
+* (deps): update ozi-spec requirement from ~=0.5.8 to ~=0.5.9
+
+Updates the requirements on [ozi-spec](https://github.com/OZI-Project/ozi-spec) to permit the latest version.
+- [Release notes](https://github.com/OZI-Project/ozi-spec/releases)
+- [Changelog](https://github.com/OZI-Project/ozi-spec/blob/0.5.9/CHANGELOG.md)
+- [Commits](https://github.com/OZI-Project/ozi-spec/compare/0.5.8...0.5.9)
+
+
+updated-dependencies:
+- dependency-name: ozi-spec
+  dependency-type: direct:production
+... — dependabot[bot] &lt;support@github.com&gt;
+([`caae3de`](https://github.com/OZI-Project/ozi-core/commit/caae3de352cd02488393e5a88aeee45a1c824137))
+
+* (deps): bump OZI-Project/checkpoint from 0.5.0 to 0.5.1
+
+Bumps [OZI-Project/checkpoint](https://github.com/ozi-project/checkpoint) from 0.5.0 to 0.5.1.
+- [Release notes](https://github.com/ozi-project/checkpoint/releases)
+- [Commits](https://github.com/ozi-project/checkpoint/compare/0.5.0...0.5.1)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/checkpoint
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] &lt;support@github.com&gt;
+([`2b5c025`](https://github.com/OZI-Project/ozi-core/commit/2b5c02551ff2e40ad6fd48cb998819c0513b66dd))
+
+* (deps): bump OZI-Project/release from 0.7.3 to 0.7.4
+
+Bumps [OZI-Project/release](https://github.com/ozi-project/release) from 0.7.3 to 0.7.4.
+- [Release notes](https://github.com/ozi-project/release/releases)
+- [Commits](https://github.com/ozi-project/release/compare/0.7.3...0.7.4)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/release
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] &lt;support@github.com&gt;
+([`9a2de2f`](https://github.com/OZI-Project/ozi-core/commit/9a2de2f6274362809ac0c63f2c472f44eeec867d))
+
+* (deps): bump step-security/harden-runner from 2.9.0 to 2.9.1
+
+Bumps [step-security/harden-runner](https://github.com/step-security/harden-runner) from 2.9.0 to 2.9.1.
+- [Release notes](https://github.com/step-security/harden-runner/releases)
+- [Commits](https://github.com/step-security/harden-runner/compare/0d381219ddf674d61a7572ddd19d7941e271515c...5c7944e73c4c2a096b17a9cb74d65b6c2bbafbde)
+
+
+updated-dependencies:
+- dependency-name: step-security/harden-runner
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] &lt;support@github.com&gt;
+([`3365971`](https://github.com/OZI-Project/ozi-core/commit/3365971d93c97a895be9478e958729bed73378dc))
+
+* (deps): bump OZI-Project/draft from 0.3.7 to 0.3.8
+
+Bumps [OZI-Project/draft](https://github.com/ozi-project/draft) from 0.3.7 to 0.3.8.
+- [Release notes](https://github.com/ozi-project/draft/releases)
+- [Commits](https://github.com/ozi-project/draft/compare/0.3.7...0.3.8)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/draft
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] &lt;support@github.com&gt;
+([`04aa4b1`](https://github.com/OZI-Project/ozi-core/commit/04aa4b15977ebc84bd6a98bbee98e42dd1f4594a))
+
+* Update pyproject.toml:tool.semantic_release.commit_parser_options.patch_tags add  — Eden Ross Duff, MSc &lt;rjdbcm@outlook.com&gt;
+([`553efa8`](https://github.com/OZI-Project/ozi-core/commit/553efa89fb9426e101a65d6a32d9fc39a48d15d8))
+
+* (deps): update ozi-templates requirement from ~=2.5.6 to ~=2.5.8
+
+
+updated-dependencies:
+- dependency-name: ozi-templates
+  dependency-type: direct:production
+... — dependabot[bot] &lt;support@github.com&gt;
+([`d937739`](https://github.com/OZI-Project/ozi-core/commit/d9377391f26d9a2234b16d6fc9895c2fdb29cccc))
+
+
+### Performance
+
+
+* perf: refactor interactive submodule — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`1d13d8e`](https://github.com/OZI-Project/ozi-core/commit/1d13d8e594ce2121f811462bed5bc4d05e7757ad))
+
 ## 0.1.15 (2024-07-30)
 
 
