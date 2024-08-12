@@ -1,4 +1,33 @@
 # ozi-core CHANGELOG
+## 0.1.20 (2024-08-12)
+
+
+### Build
+
+
+* (deps): bump OZI-Project/release from 0.8.5 to 0.8.7
+
+Bumps [OZI-Project/release](https://github.com/ozi-project/release) from 0.8.5 to 0.8.7.
+- [Release notes](https://github.com/ozi-project/release/releases)
+- [Commits](https://github.com/ozi-project/release/compare/0.8.5...0.8.7)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/release
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] &lt;support@github.com&gt;
+([`8575198`](https://github.com/OZI-Project/ozi-core/commit/85751987f1493d01d43106563162a575bedb473d))
+
+* (deps): update ozi-templates requirement from ~=2.6.1 to ~=2.6.4
+
+
+updated-dependencies:
+- dependency-name: ozi-templates
+  dependency-type: direct:production
+... — dependabot[bot] &lt;support@github.com&gt;
+([`d3d5cb0`](https://github.com/OZI-Project/ozi-core/commit/d3d5cb05694abf0d50833b89781558579a92cc4d))
+
 ## 0.1.19 (2024-08-12)
 
 
