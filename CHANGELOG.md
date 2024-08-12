@@ -1,4 +1,13 @@
 # ozi-core CHANGELOG
+## 0.1.21 (2024-08-12)
+
+
+### Performance
+
+
+* perf: TAP-Producer~=1.0.4 — Eden Ross Duff, MSc &lt;rjdbcm@outlook.com&gt;
+([`9ab7475`](https://github.com/OZI-Project/ozi-core/commit/9ab7475350b47e96de48efa7ccb40dd5a6fd3721))
+
 ## 0.1.20 (2024-08-12)
 
 
