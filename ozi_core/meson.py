@@ -70,8 +70,8 @@ def project_metadata(ast: CodeBlockNode) -> tuple[str, str]:
     if isinstance(license_, ArrayNode):  # pragma: no cover
         license_ = license_.args.arguments[0]
         TAP.diagnostic(
-            'Found an array of licenses in meson.build, OZI will only use the first: ',
-            license_.value,  # pyright: ignore
+            'Found an array of licenses in meson.build, OZI will only use the first.',
+            licenses=license_.value,  # pyright: ignore
         )
 
     license_ = license_.value  # pyright: ignore

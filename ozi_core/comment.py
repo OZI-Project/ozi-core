@@ -128,9 +128,10 @@ def diagnose(line: str, rel_path: Path, line_no: int) -> Generator[str, None, No
     """
     for key, found in pattern_search(line):  # pragma: defer to TAP-Consumer
         TAP.diagnostic(
-            key,
-            f'{rel_path!s}:{line_no}',
-            found,
+            'comment diagnostic',
+            type=key,
+            location=f'{rel_path!s}:{line_no}',
+            found=found,
         )
         yield key
 
@@ -190,15 +191,14 @@ def comment_diagnostic(target: Path, rel_path: Path, file: str) -> None:  # prag
             count = diagnostic(g.readlines(), rel_path / file)
             if count.total() > 0:
                 TAP.diagnostic(
-                    'comment_diagnostic',
-                    str(rel_path / file),
-                    *(f'{k}: {v}' for k, v in count.items()),
+                    'comment diagnostic',
+                    path=str(rel_path / file),
+                    **{k:str(v) for k,v in count.items()},
                 )
             else:  # pragma: no cover
                 pass
             TAP.diagnostic(
-                'comment_diagnostic',
-                str(rel_path / file),
-                'quality score',
-                f'{score(count)}/5.0',
+                'comment diagnostic',
+                path=str(rel_path / file),
+                score=f'{score(count)}/5.0',
             )
