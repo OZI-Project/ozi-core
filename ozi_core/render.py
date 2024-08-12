@@ -47,7 +47,7 @@ def find_user_template(target: str, file: str, fix: str) -> str | None:
         with open(fp, encoding='UTF-8') as template:
             user_template = template.read()
     else:
-        TAP.diagnostic('User tempate not found', str(fp))
+        TAP.diagnostic('User tempate not found', template=str(fp))
         user_template = None
     return user_template
 
