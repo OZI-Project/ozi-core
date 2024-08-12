@@ -31,6 +31,9 @@ updated-dependencies:
 
 ### 🐛 Fixed Bugs
 
+* OZI-Project/release@0.8.9 — Eden Ross Duff, MSc &lt;rjdbcm@outlook.com&gt;
+([`24a04fc`](https://github.com/OZI-Project/ozi-core/commit/24a04fc6443fc65cae87513faf49907ae42ea276))
+
 * update release workflow — Eden Ross Duff, MSc &lt;rjdbcm@outlook.com&gt;
 ([`2be9889`](https://github.com/OZI-Project/ozi-core/commit/2be98899a9c31cd141fbe2b4d18782c0ce8f0caa))
 
