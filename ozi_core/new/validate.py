@@ -149,7 +149,7 @@ def valid_license(_license: str, license_expression: str) -> str:
         TAP.diagnostic(
             'ambiguous license, set --license-expression to one based on the following:',
             licenses=tuple(possible_spdx),
-            reference='https://github.com/pypa/trove-classifiers/issues/17'
+            reference='https://github.com/pypa/trove-classifiers/issues/17',
         )
         TAP.not_ok('License', 'ambiguous per PEP 639', _license)
     else:

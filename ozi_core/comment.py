@@ -193,7 +193,7 @@ def comment_diagnostic(target: Path, rel_path: Path, file: str) -> None:  # prag
                 TAP.diagnostic(
                     'comment diagnostic',
                     path=str(rel_path / file),
-                    **{k:str(v) for k,v in count.items()},
+                    **{k: str(v) for k, v in count.items()},
                 )
             else:  # pragma: no cover
                 pass
