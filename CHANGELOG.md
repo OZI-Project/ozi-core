@@ -28,6 +28,12 @@ updated-dependencies:
 ... — dependabot[bot] &lt;support@github.com&gt;
 ([`d3d5cb0`](https://github.com/OZI-Project/ozi-core/commit/d3d5cb05694abf0d50833b89781558579a92cc4d))
 
+
+### 🐛 Fixed Bugs
+
+* update release workflow — Eden Ross Duff, MSc &lt;rjdbcm@outlook.com&gt;
+([`2be9889`](https://github.com/OZI-Project/ozi-core/commit/2be98899a9c31cd141fbe2b4d18782c0ce8f0caa))
+
 ## 0.1.19 (2024-08-12)
 
 
