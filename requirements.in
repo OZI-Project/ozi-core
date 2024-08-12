@@ -1,5 +1,5 @@
 GitPython~=3.1
-TAP-Producer~=1.0
+TAP-Producer~=1.0.4
 dnspython
 idna>=2
 meson[ninja]>=1.1.0
@@ -9,6 +9,6 @@ packaging~=24.1
 prompt-toolkit
 pyparsing~=3.1
 requests
-spdx-license-list
+spdx-license-list~=3.24
 trove-classifiers~=2024.7
 types-requests
