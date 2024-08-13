@@ -1,4 +1,73 @@
 # ozi-core CHANGELOG
+## 0.1.21 (2024-08-12)
+
+
+### Performance
+
+
+* perf: TAP-Producer~=1.0.4 — Eden Ross Duff, MSc &lt;rjdbcm@outlook.com&gt;
+([`9ab7475`](https://github.com/OZI-Project/ozi-core/commit/9ab7475350b47e96de48efa7ccb40dd5a6fd3721))
+
+## 0.1.20 (2024-08-12)
+
+
+### Build
+
+
+* (deps): bump OZI-Project/release from 0.8.5 to 0.8.7
+
+Bumps [OZI-Project/release](https://github.com/ozi-project/release) from 0.8.5 to 0.8.7.
+- [Release notes](https://github.com/ozi-project/release/releases)
+- [Commits](https://github.com/ozi-project/release/compare/0.8.5...0.8.7)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/release
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] &lt;support@github.com&gt;
+([`8575198`](https://github.com/OZI-Project/ozi-core/commit/85751987f1493d01d43106563162a575bedb473d))
+
+* (deps): update ozi-templates requirement from ~=2.6.1 to ~=2.6.4
+
+
+updated-dependencies:
+- dependency-name: ozi-templates
+  dependency-type: direct:production
+... — dependabot[bot] &lt;support@github.com&gt;
+([`d3d5cb0`](https://github.com/OZI-Project/ozi-core/commit/d3d5cb05694abf0d50833b89781558579a92cc4d))
+
+
+### 🐛 Fixed Bugs
+
+* OZI-Project/release@0.8.9 — Eden Ross Duff, MSc &lt;rjdbcm@outlook.com&gt;
+([`24a04fc`](https://github.com/OZI-Project/ozi-core/commit/24a04fc6443fc65cae87513faf49907ae42ea276))
+
+* update release workflow — Eden Ross Duff, MSc &lt;rjdbcm@outlook.com&gt;
+([`2be9889`](https://github.com/OZI-Project/ozi-core/commit/2be98899a9c31cd141fbe2b4d18782c0ce8f0caa))
+
+## 0.1.19 (2024-08-12)
+
+
+### 🐛 Fixed Bugs
+
+* patch trigger — Eden Ross Duff, MSc &lt;rjdbcm@outlook.com&gt;
+([`f175b58`](https://github.com/OZI-Project/ozi-core/commit/f175b58256581e6c8dd3f061eb4fecb7162833db))
+
+
+### Performance
+
+
+* perf: run lint
+([`7bf2d0a`](https://github.com/OZI-Project/ozi-core/commit/7bf2d0abac0288f193c6dff1877d7caab02172df))
+
+
+### Unknown
+
+
+* :children_crossing: clean up diagnostic outputs — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`e2ae6bd`](https://github.com/OZI-Project/ozi-core/commit/e2ae6bdbadf9fa38c61bcd101dbf0e7f7240bfa3))
+
 ## 0.1.18 (2024-08-11)
 
 
