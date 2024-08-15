@@ -57,6 +57,7 @@ class Project:  # pragma: no cover
         ci_provider: str | None = None,
         copyright_head: str | None = None,
         enable_cython: bool = False,
+        github_harden_runner: bool = False,
         strict: bool = True,
         verify_email: bool = False,
     ) -> None:
@@ -64,6 +65,7 @@ class Project:  # pragma: no cover
         self.ci_provider = ci_provider
         self.copyright_head = copyright_head
         self.enable_cython = enable_cython
+        self.github_harden_runner = github_harden_runner
         self.strict = strict
         self.verify_email = verify_email
 
@@ -713,6 +715,7 @@ def menu_loop(
                         text='Options menu, select an option:',
                         values=[
                             ('enable_cython', f'Enable Cython: {_P.enable_cython}'),
+                            ('github_harden_runner', f'Hardened GitHub CI/CD: {_P.github_harden_runner}'),
                             ('strict', f'Strict Mode: {_P.strict}'),
                             ('verify_email', f'Verify Email: {_P.verify_email}'),
                             ('allow_file', 'Allow File Patterns ...'),
@@ -723,7 +726,7 @@ def menu_loop(
                         cancel_text='← Back',
                         ok_text='✔ Ok',
                     ).run():
-                        case x if x and x in ('enable_cython', 'verify_email'):
+                        case x if x and x in ('enable_cython', 'github_harden_runner', 'verify_email'):
                             for i in (
                                 f'--{x.replace("_", "-")}',
                                 f'--no-{x.replace("_", "-")}',

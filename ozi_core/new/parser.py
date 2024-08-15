@@ -278,6 +278,12 @@ ozi_defaults.add_argument(
     help='build extension module with Cython, default: no',
 )
 ozi_defaults.add_argument(
+    '--github-harden-runner',
+    default=False,
+    action=argparse.BooleanOptionalAction,
+    help='add a harden runner to all non-reusable workflow jobs, default: no'
+)
+ozi_defaults.add_argument(
     '--strict',
     default=False,
     action=argparse.BooleanOptionalAction,
