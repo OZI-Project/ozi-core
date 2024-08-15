@@ -715,7 +715,10 @@ def menu_loop(
                         text='Options menu, select an option:',
                         values=[
                             ('enable_cython', f'Enable Cython: {_P.enable_cython}'),
-                            ('github_harden_runner', f'Hardened GitHub CI/CD: {_P.github_harden_runner}'),
+                            (
+                                'github_harden_runner',
+                                f'Hardened GitHub CI/CD: {_P.github_harden_runner}',
+                            ),
                             ('strict', f'Strict Mode: {_P.strict}'),
                             ('verify_email', f'Verify Email: {_P.verify_email}'),
                             ('allow_file', 'Allow File Patterns ...'),
@@ -726,7 +729,11 @@ def menu_loop(
                         cancel_text='← Back',
                         ok_text='✔ Ok',
                     ).run():
-                        case x if x and x in ('enable_cython', 'github_harden_runner', 'verify_email'):
+                        case x if x and x in (
+                            'enable_cython',
+                            'github_harden_runner',
+                            'verify_email',
+                        ):
                             for i in (
                                 f'--{x.replace("_", "-")}',
                                 f'--no-{x.replace("_", "-")}',
