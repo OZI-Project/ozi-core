@@ -57,6 +57,7 @@ class Project:  # pragma: no cover
         ci_provider: str | None = None,
         copyright_head: str | None = None,
         enable_cython: bool = False,
+        enable_uv: bool = False,
         github_harden_runner: bool = False,
         strict: bool = True,
         verify_email: bool = False,
@@ -65,6 +66,7 @@ class Project:  # pragma: no cover
         self.ci_provider = ci_provider
         self.copyright_head = copyright_head
         self.enable_cython = enable_cython
+        self.enable_uv = enable_uv
         self.github_harden_runner = github_harden_runner
         self.strict = strict
         self.verify_email = verify_email
@@ -715,6 +717,7 @@ def menu_loop(
                         text='Options menu, select an option:',
                         values=[
                             ('enable_cython', f'Enable Cython: {_P.enable_cython}'),
+                            ('enable_uv', f'Enable uv: {_P.enable_uv}'),
                             (
                                 'github_harden_runner',
                                 f'Hardened GitHub CI/CD: {_P.github_harden_runner}',
