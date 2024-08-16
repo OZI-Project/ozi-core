@@ -1,4 +1,33 @@
 # ozi-core CHANGELOG
+## 0.2.1 (2024-08-16)
+
+
+### Build
+
+
+* (deps): update ozi-spec requirement from ~=0.5.10 to ~=0.6.1
+
+Updates the requirements on [ozi-spec](https://github.com/OZI-Project/ozi-spec) to permit the latest version.
+- [Release notes](https://github.com/OZI-Project/ozi-spec/releases)
+- [Changelog](https://github.com/OZI-Project/ozi-spec/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/OZI-Project/ozi-spec/compare/0.5.10...0.6.1)
+
+
+updated-dependencies:
+- dependency-name: ozi-spec
+  dependency-type: direct:production
+... — dependabot[bot] &lt;support@github.com&gt;
+([`7e69af3`](https://github.com/OZI-Project/ozi-core/commit/7e69af3d275247695b1d2bb0ab6984c002ea6fdc))
+
+* (deps): update ozi-templates requirement from ~=2.7.1 to ~=2.8.0
+
+
+updated-dependencies:
+- dependency-name: ozi-templates
+  dependency-type: direct:production
+... — dependabot[bot] &lt;support@github.com&gt;
+([`137af6b`](https://github.com/OZI-Project/ozi-core/commit/137af6b59d728f5f462b82073f75e05b887ae015))
+
 ## 0.2.0 (2024-08-15)
 
 
