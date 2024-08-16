@@ -1,4 +1,23 @@
 # ozi-core CHANGELOG
+## 0.2.0 (2024-08-15)
+
+
+### Feature
+
+
+* feat: OZI-Templates 2.7
+
+GitHub workflows are no longer hardened by default.
+Wheels are now built with release 0.8 which can build extension wheels! — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`607b555`](https://github.com/OZI-Project/ozi-core/commit/607b555d1c638551853ef7b6372bdff919769f4d))
+
+
+### Unknown
+
+
+* :rotating_light: run black — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`bfe1b1b`](https://github.com/OZI-Project/ozi-core/commit/bfe1b1bf43c6dedf9b87ca74fe53b804e7f6ab34))
+
 ## 0.1.21 (2024-08-12)
 
 
