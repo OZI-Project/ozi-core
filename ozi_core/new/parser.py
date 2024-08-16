@@ -278,6 +278,12 @@ ozi_defaults.add_argument(
     help='build extension module with Cython, default: no',
 )
 ozi_defaults.add_argument(
+    '--enable-uv',
+    default=False,
+    action=argparse.BooleanOptionalAction,
+    help='compile and install python requirements with uv, default: no',
+)
+ozi_defaults.add_argument(
     '--github-harden-runner',
     default=False,
     action=argparse.BooleanOptionalAction,
