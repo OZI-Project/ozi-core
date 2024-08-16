@@ -1,4 +1,13 @@
 # ozi-core CHANGELOG
+## 0.2.2 (2024-08-16)
+
+
+### Performance
+
+
+* perf: add ``--enable-uv`` argument expected in OZI spec 0.6 — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`a2fdd6b`](https://github.com/OZI-Project/ozi-core/commit/a2fdd6bbc4c6225ca90ee1851d4e5c1180ae7272))
+
 ## 0.2.1 (2024-08-16)
 
 
