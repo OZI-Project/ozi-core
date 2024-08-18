@@ -11,7 +11,6 @@ from pathlib import Path
 from typing import TYPE_CHECKING
 from typing import NoReturn
 
-from jinja2 import Environment
 from ozi_spec import METADATA  # pyright: ignore
 from ozi_templates import load_environment  # type: ignore
 from ozi_templates.filter import underscorify  # type: ignore
@@ -23,6 +22,8 @@ from ozi_core.fix.rewrite_command import Rewriter  # pyright: ignore
 
 if TYPE_CHECKING:  # pragma: no cover
     from argparse import Namespace
+
+    from jinja2 import Environment
 
 
 def _setup(project: Namespace) -> tuple[Namespace, Environment]:  # pragma: no cover
