@@ -1,4 +1,22 @@
 # ozi-core CHANGELOG
+## 0.2.4 (2024-08-18)
+
+
+### 🐛 Fixed Bugs
+
+* hide TAP version output during rewriter — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`8c654e4`](https://github.com/OZI-Project/ozi-core/commit/8c654e4f94691028961dfbdc33c52bc28c55fd03))
+
+* (ozi-new interactive): enable uv working — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`8bd82b5`](https://github.com/OZI-Project/ozi-core/commit/8bd82b53ffa5bbf5ccffad8594c78d530e93cae2))
+
+
+### Performance
+
+
+* perf: move jinja2 import to typechecking block — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`72fef5d`](https://github.com/OZI-Project/ozi-core/commit/72fef5d5f882b41eb0a3a0909cff2edf4dec30d0))
+
 ## 0.2.3 (2024-08-18)
 
 
