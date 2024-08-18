@@ -10,6 +10,7 @@ requires = [
     'pip-tools>=7',
     'pipx~=1.5',
     'setuptools_scm[toml]~=8.0',
+    'uv',
 ]
 build-backend = "ozi_build.buildapi"
 
@@ -337,6 +338,7 @@ deps =
    pip-tools>=7
    pipx~=1.5
    setuptools_scm[toml]~=8.0
+   uv
    -r requirements.in
 commands =
    meson compile -C {env_tmp_dir}
