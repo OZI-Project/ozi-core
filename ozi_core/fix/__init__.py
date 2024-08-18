@@ -8,8 +8,10 @@ from __future__ import annotations
 import json
 import os
 from pathlib import Path
+from typing import TYPE_CHECKING
 from typing import NoReturn
 
+from jinja2 import Environment
 from ozi_spec import METADATA  # pyright: ignore
 from ozi_templates import load_environment  # type: ignore
 from ozi_templates.filter import underscorify  # type: ignore
@@ -19,12 +21,12 @@ from ozi_core.fix.missing import report  # pyright: ignore
 from ozi_core.fix.parser import parser  # pyright: ignore
 from ozi_core.fix.rewrite_command import Rewriter  # pyright: ignore
 
+if TYPE_CHECKING:  # pragma: no cover
+    from argparse import Namespace
 
-def main() -> NoReturn:  # pragma: no cover
-    """Main ozi.fix entrypoint."""
+
+def _setup(project: Namespace) -> tuple[Namespace, Environment]:  # pragma: no cover
     TAP.version(14)
-    project = parser.parse_args()
-    project.missing = project.fix == 'missing' or project.fix == 'm'
     project.target = Path(os.path.relpath(os.path.join('/', project.target), '/')).absolute()
     if not project.target.exists():
         TAP.bail_out(f'target: {project.target} does not exist.')
@@ -35,13 +37,21 @@ def main() -> NoReturn:  # pragma: no cover
     project.remove.remove('ozi.phony')
     project.remove = list(set(project.remove))
     env = load_environment(vars(project), METADATA.asdict())
+    return project, env
 
+
+def main() -> NoReturn:  # pragma: no cover
+    """Main ozi.fix entrypoint."""
+    project = parser.parse_args()
+    project.missing = project.fix == 'missing' or project.fix == 'm'
     match [project.missing, project.strict]:
         case [True, False]:
+            project, _ = _setup(project)
             name, *_ = report(project.target)
             TAP.end()
         case [False, _]:
             with TAP.suppress():
+                project, env = _setup(project)
                 name, *_ = report(project.target)
                 project.name = underscorify(name)
                 project.license_file = 'LICENSE.txt'
@@ -60,6 +70,7 @@ def main() -> NoReturn:  # pragma: no cover
                 parser.print_help()
         case [True, True]:
             with TAP.strict():
+                project, _ = _setup(project)
                 name, *_ = report(project.target)
             TAP.end()
         case [_, _]:
