@@ -734,6 +734,7 @@ def menu_loop(
                     ).run():
                         case x if x and x in (
                             'enable_cython',
+                            'enable_uv',
                             'github_harden_runner',
                             'verify_email',
                         ):
