@@ -1,4 +1,20 @@
 # ozi-core CHANGELOG
+## 0.2.3 (2024-08-18)
+
+
+### Build
+
+
+* (pyproject.toml): add uv dep — Eden Ross Duff, MSc &lt;rjdbcm@outlook.com&gt;
+([`6bf4566`](https://github.com/OZI-Project/ozi-core/commit/6bf4566fc6595b1061ed6d03638f347e5f3016d2))
+
+
+### Unknown
+
+
+* :pushpin: ozi-templates~=2.8.2 — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`bf7c319`](https://github.com/OZI-Project/ozi-core/commit/bf7c31958817b1ef8761d480e53c6e4e65eb0ce0))
+
 ## 0.2.2 (2024-08-16)
 
 
