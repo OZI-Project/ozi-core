@@ -102,6 +102,9 @@ fallback_version = "@VCS_TAG@"
 parentdir_prefix_version = "ozi-core-"
 tag_regex = "^(?P<prefix>v)?(?P<version>[^\\+]+)(?P<suffix>.*)?$"
 
+[tool.cibuildwheel]
+build-frontend = "build[uv]"
+
 [tool.bandit]
 exclude_dirs = [
     "venv",

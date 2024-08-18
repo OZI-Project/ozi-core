@@ -23,7 +23,7 @@ pymod = import('python')
 python_dependencies = get_option('python-dependencies')
 python = pymod.find_installation()
 project_name = meson.project_name()
-pip_compile = find_program('pip-compile', required: true)
+pip_compile = find_program(get_option('compile-requirements-command')[0], required: true)
 root_files = [
     'README',
     'CHANGELOG.md',
@@ -40,7 +40,7 @@ custom_target(
     build_always_stale: true,
     build_by_default: true,
     command: [
-        'pip-compile',
+        get_option('compile-requirements-command'),
         '--allow-unsafe',
         '--strip-extras',
         '-q',
