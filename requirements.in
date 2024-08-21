@@ -9,6 +9,6 @@ packaging~=24.1
 prompt-toolkit
 pyparsing~=3.1
 requests
-spdx-license-list~=3.24
+spdx-license-list~=3.25
 trove-classifiers~=2024.7
 types-requests
