@@ -1,4 +1,109 @@
 # ozi-core CHANGELOG
+## 0.3.0 (2024-08-23)
+
+
+### Build
+
+
+* (pyproject.toml): asyncio_default_fixture_loop_scope = &#34;function&#34; — Eden Ross Duff, MSc &lt;rjdbcm@outlook.com&gt;
+([`6ff7990`](https://github.com/OZI-Project/ozi-core/commit/6ff7990bff16e7c3c73556951eae1c8c8e68cd42))
+
+* (deps): bump OZI-Project/checkpoint from 0.5.1 to 0.5.2
+
+Bumps [OZI-Project/checkpoint](https://github.com/ozi-project/checkpoint) from 0.5.1 to 0.5.2.
+- [Release notes](https://github.com/ozi-project/checkpoint/releases)
+- [Commits](https://github.com/ozi-project/checkpoint/compare/0.5.1...0.5.2)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/checkpoint
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] &lt;support@github.com&gt;
+([`6a591dc`](https://github.com/OZI-Project/ozi-core/commit/6a591dc4dae5a62558034bf5e802fbe1fd8a8b52))
+
+* (deps): bump OZI-Project/draft from 0.3.8 to 0.3.9
+
+Bumps [OZI-Project/draft](https://github.com/ozi-project/draft) from 0.3.8 to 0.3.9.
+- [Release notes](https://github.com/ozi-project/draft/releases)
+- [Commits](https://github.com/ozi-project/draft/compare/0.3.8...0.3.9)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/draft
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] &lt;support@github.com&gt;
+([`05a64a2`](https://github.com/OZI-Project/ozi-core/commit/05a64a27b40dd4f23eade8a44a38d0281cde344a))
+
+* (deps): bump OZI-Project/release from 0.8.9 to 0.8.10
+
+Bumps [OZI-Project/release](https://github.com/ozi-project/release) from 0.8.9 to 0.8.10.
+- [Release notes](https://github.com/ozi-project/release/releases)
+- [Commits](https://github.com/ozi-project/release/compare/f4172eb60419c98b5cf18c89d78cde8b553f5d15...7edb07c74e124270a29b2cd5d32ce7c9fdfc0b22)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/release
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] &lt;support@github.com&gt;
+([`f075e90`](https://github.com/OZI-Project/ozi-core/commit/f075e90baa283e316caa33942888577d60fe188f))
+
+* (deps): bump OZI-Project/publish from 0.1.9 to 0.1.10
+
+Bumps [OZI-Project/publish](https://github.com/ozi-project/publish) from 0.1.9 to 0.1.10.
+- [Release notes](https://github.com/ozi-project/publish/releases)
+- [Commits](https://github.com/ozi-project/publish/compare/0.1.9...0.1.10)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/publish
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] &lt;support@github.com&gt;
+([`18068af`](https://github.com/OZI-Project/ozi-core/commit/18068af36cd2b5a396e1b30ca8084edc750497a3))
+
+* (deps): update ozi-spec requirement from ~=0.6.1 to ~=0.8.0
+
+Updates the requirements on [ozi-spec](https://github.com/OZI-Project/ozi-spec) to permit the latest version.
+- [Release notes](https://github.com/OZI-Project/ozi-spec/releases)
+- [Changelog](https://github.com/OZI-Project/ozi-spec/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/OZI-Project/ozi-spec/compare/0.6.1...0.8.0)
+
+
+updated-dependencies:
+- dependency-name: ozi-spec
+  dependency-type: direct:production
+... — dependabot[bot] &lt;support@github.com&gt;
+([`4e0495b`](https://github.com/OZI-Project/ozi-core/commit/4e0495b87a1572f570ee7cdb93a7fe0fe358cf18))
+
+* (deps): update spdx-license-list requirement from ~=3.24 to ~=3.25
+
+Updates the requirements on [spdx-license-list](https://github.com/JJMC89/spdx-license-list) to permit the latest version.
+- [Release notes](https://github.com/JJMC89/spdx-license-list/releases)
+- [Commits](https://github.com/JJMC89/spdx-license-list/compare/v3.24.0...v3.25.0)
+
+
+updated-dependencies:
+- dependency-name: spdx-license-list
+  dependency-type: direct:production
+... — dependabot[bot] &lt;support@github.com&gt;
+([`073a707`](https://github.com/OZI-Project/ozi-core/commit/073a707fd7a89f8150f004d724cf3b2e27170d3f))
+
+
+### Feature
+
+
+* feat(deps): ozi-templates~=2.9.0 — Eden Ross Duff, MSc &lt;rjdbcm@outlook.com&gt;
+([`54d06b7`](https://github.com/OZI-Project/ozi-core/commit/54d06b79482a85a25ba6e1cf9ff7ff5872c07edf))
+
+* feat(deps): ozi-templates~=2.9.0 — Eden Ross Duff, MSc &lt;rjdbcm@outlook.com&gt;
+([`db49f4e`](https://github.com/OZI-Project/ozi-core/commit/db49f4e3b1bb3ebf8b260d70cbe0cac121dd37f0))
+
+* feat(deps): ozi-templates~=2.9.0 — Eden Ross Duff, MSc &lt;rjdbcm@outlook.com&gt;
+([`e4150c1`](https://github.com/OZI-Project/ozi-core/commit/e4150c18273f41a599f06a8aad0a692f26271fe5))
+
 ## 0.2.4 (2024-08-18)
 
 
