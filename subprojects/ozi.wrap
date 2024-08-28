@@ -1,7 +1,7 @@
 [wrap-git]
 url = https://github.com/OZI-Project/ozi.git
-revision = release/1.18
+revision = release/1.19
 depth = 1
 
 [provide]
-dependency_names = ozi-0.6
+dependency_names = ozi-0.9
