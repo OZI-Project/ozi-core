@@ -14,8 +14,6 @@
 from importlib.metadata import PackageNotFoundError
 from importlib.metadata import version
 
-from setuptools_scm import get_version  # type: ignore
-
 
 def current_version() -> str:
     """Returns the currently installed version of OZI.
@@ -28,7 +26,7 @@ def current_version() -> str:
     try:
         version_ = version('OZI')
     except PackageNotFoundError:  # pragma: no cover
-        version_ = str(get_version(root='..', relative_to=__file__))
+        version_ = '1.20'
     return version_
 
 

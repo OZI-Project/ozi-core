@@ -50,7 +50,6 @@ license="Apache-2.0 WITH LLVM-exception"
 meson-python-option-name="python3"
 summary="The OZI Project packaging core library."
 
-
 [project.optional-dependencies] # also meson test suite names
 # OZI Packaging Dependencies
 # continuous integration
@@ -339,25 +338,29 @@ allowlist_externals =
    meson
 package = wheel
 deps =
-   OZI.build[core,uv]~=1.4
+     uv
+commands_pre =
+     python -m uv pip install OZI.build[core,uv]~=1.4
+     pipx install --python=python meson
 commands =
-   meson compile -C {env_tmp_dir}
-   rm -rf {env_tmp_dir}/.gitignore
+     meson setup {env_tmp_dir} -Dozi:dist=disabled -Dozi:tox-env-dir={env_dir}
+     meson compile -C {env_tmp_dir}
+     rm -rf {env_tmp_dir}/.gitignore
+commands_post =
+     {env_python} -m invoke --search-root={env_tmp_dir}/subprojects/ozi/ozi checkpoint --suite={env_name} {posargs}
+
 [testenv:dist]
-commands_pre =
-   pipx install --python=python meson
-   meson setup {env_tmp_dir} -Dozi:dist=enabled -Dozi:tox-env-dir={env_dir} --reconfigure
-commands_post = meson test --no-rebuild --maxfail=1 -C {env_tmp_dir} --setup=dist
+description = OZI distribution checkpoint
+
 [testenv:lint]
-commands_pre =
-   pipx install --python=python meson
-   meson setup {env_tmp_dir} -Dozi:lint=enabled -Dozi:tox-env-dir={env_dir} --reconfigure
-commands_post = meson test --no-rebuild --maxfail=1 -C {env_tmp_dir} --setup=lint
+description = OZI format/lint checkpoint
+
 [testenv:test]
-commands_pre =
-   pipx install --python=python meson
-   meson setup {env_tmp_dir} -Dozi:test=enabled -Dozi:tox-env-dir={env_dir} --reconfigure
-commands_post = meson test --no-rebuild --maxfail=1 -C {env_tmp_dir} --setup=test
+description = OZI unit tests checkpoint
+commands =
+     meson setup {env_tmp_dir} -Dozi:ozi-blastpipe=disabled -Dozi:dist=disabled -Dozi:tox-env-dir={env_dir}
+     meson compile -C {env_tmp_dir}
+     rm -rf {env_tmp_dir}/.gitignore
 
 [testenv:fix]
 description = quickly fix minor source issues 
