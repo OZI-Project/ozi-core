@@ -339,12 +339,7 @@ allowlist_externals =
    meson
 package = wheel
 deps =
-   OZI.build>=0.0.27
-   pip-tools>=7
-   pipx~=1.5
-   setuptools_scm[toml]~=8.0
-   uv
-   -r requirements.in
+   OZI.build[core,uv]~=1.4
 commands =
    meson compile -C {env_tmp_dir}
    rm -rf {env_tmp_dir}/.gitignore
