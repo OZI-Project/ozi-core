@@ -31,10 +31,11 @@ summary="The OZI Project packaging core library."
 home-page="https://www.oziproject.dev"
 author="Eden Ross Duff MSc"
 author-email="help@oziproject.dev"
+description-file="README.rst"
 license="Apache-2.0 WITH LLVM-exception"
 download-url="https://github.com/rjdbcm/ozi-core/archive/refs/tags/{version}.tar.gz"
-requires-python=">=3.10, <3.13"
 keywords="OZI,mesonbuild"
+meson-python-option-name="python_version"
 classifiers=[
     "License :: OSI Approved :: Apache Software License",
     "Development Status :: 4 - Beta",
