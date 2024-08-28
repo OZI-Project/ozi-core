@@ -23,59 +23,15 @@ pymod = import('python')
 python_dependencies = get_option('python-dependencies')
 python = pymod.find_installation()
 project_name = meson.project_name()
-pip_compile = find_program(get_option('compile-requirements-command')[0], required: true)
 root_files = [
     'README',
     'CHANGELOG.md',
     'LICENSE.txt',
-    'requirements.in',
-    'requirements.in',
     'pyproject.toml',
     '.gitignore',
 ]
-custom_target(
-    'requirements-ozi-core',
-    input: root_files[3],
-    output: 'requirements.txt',
-    build_always_stale: true,
-    build_by_default: true,
-    command: [
-        get_option('compile-requirements-command'),
-        '--allow-unsafe',
-        '--strip-extras',
-        '-q',
-        '--generate-hashes',
-        '-o',
-        '@OUTPUT@',
-        '@INPUT@'
-    ]
-)
 pyproject_config = configuration_data()
-pyproject_config.set(
-    'PYTHON_VERSION_DIST',
-    'py'+''.join(python.language_version().split('.'))
-)
-pyproject_config.set('SCM_VERSION', meson.project_version())
 pyproject_config.set('VCS_TAG', '@VCS_TAG@')
-pyproject_config.set('PROJECT_NAME', project_name)
-pyproject_config.set('README_TEXT', fs.read('README'))
-pyproject_config.set('REQUIREMENTS_IN', 
-    run_command(
-        python, ['-c', '''import os;import pathlib
-requirements = (
-    r.partition('\u0023')[0]
-    for r in filter(
-        lambda r: not (r.startswith('\u0023') or r == '\n'),
-        pathlib.Path('./requirements.in').read_text('utf-8').splitlines(),
-    )
-)
-for req in requirements:
-    if len(req) > 0:
-        print(f'Requires-Dist: {req}')
-'''], check: true
-    ).stdout().strip()
-)
-pyproject_config.set('LICENSE', meson.project_license()[0])
 configure_file(
     input: 'pyproject.toml',
     output: 'pyproject.toml',
