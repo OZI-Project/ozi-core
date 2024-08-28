@@ -1,7 +1,7 @@
 # Part of ozi-core.
 # See LICENSE.txt in the project root for details.
 [project]
-dynamic = ["dependencies", "version"]
+dynamic = ["version"]
 license = {file = "LICENSE.txt"}
 dependencies = [
     'GitPython~=3.1',
@@ -9,7 +9,7 @@ dependencies = [
     'dnspython',
     'idna>=2',
     'meson[ninja]>=1.1.0',
-    'ozi-spec~=0.9.0',
+    'ozi-spec~=0.9.1',
     'ozi-templates~=2.10.0',
     'packaging~=24.1',
     'prompt-toolkit',
@@ -22,20 +22,13 @@ dependencies = [
 
 [build-system]
 requires = [
-    'OZI.build[core,uv]~=1.3',
+    'OZI.build[core,uv]~=1.4',
 ]
 build-backend = "ozi_build.buildapi"
 
 [tool.ozi-build.metadata]
-summary="The OZI Project packaging core library."
-home-page="https://www.oziproject.dev"
-author="Eden Ross Duff MSc"
 author-email="help@oziproject.dev"
-description-file="README.rst"
-license="Apache-2.0 WITH LLVM-exception"
-download-url="https://github.com/rjdbcm/ozi-core/archive/refs/tags/{version}.tar.gz"
-keywords="OZI,mesonbuild"
-meson-python-option-name="python_version"
+author="Eden Ross Duff MSc"
 classifiers=[
     "License :: OSI Approved :: Apache Software License",
     "Development Status :: 4 - Beta",
@@ -49,6 +42,14 @@ classifiers=[
     "Typing :: Typed",
     "Environment :: Other Environment",
 ]
+description-file="README.rst"
+download-url="https://github.com/rjdbcm/ozi-core/archive/refs/tags/{version}.tar.gz"
+home-page="https://www.oziproject.dev"
+keywords="OZI,mesonbuild"
+license="Apache-2.0 WITH LLVM-exception"
+meson-python-option-name="python3"
+summary="The OZI Project packaging core library."
+
 
 [project.optional-dependencies] # also meson test suite names
 # OZI Packaging Dependencies
