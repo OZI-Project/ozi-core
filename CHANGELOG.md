@@ -1,4 +1,15 @@
 # ozi-core CHANGELOG
+## 1.0.0 (2024-08-29)
+
+
+### Breaking
+
+
+* fix: correct release
+
+BREAKING CHANGE: 1.0
+([`eb199c1`](https://github.com/OZI-Project/ozi-core/commit/eb199c1e98e6d38363b51e4b8a86b866eb6e2a42))
+
 ## 0.4.0 (2024-08-29)
 
 
