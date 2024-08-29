@@ -29,10 +29,10 @@ def inspect_files(
     rel_path: Path,
     found_files: list[str],
     extra_files: list[str],
-) -> list[str]:
+) -> list[str]:  # pragma: no cover
     build_files = [str(rel_path / 'meson.build'), str(rel_path / 'meson.options')]
     _found_files = []
-    for file in extra_files:  # pragma: no cover
+    for file in extra_files:
         found_literal = query_build_value(
             str(target / rel_path),
             file,
@@ -54,7 +54,7 @@ def process(
     target: Path,
     rel_path: Path,
     found_files: list[str] | None = None,
-) -> list[str]:
+) -> list[str]:  # pragma: no cover
     """Process an OZI project build definition's files."""
     try:
         extra_files = [
@@ -63,7 +63,7 @@ def process(
             if os.path.isfile(target / rel_path / file)
             and not os.path.islink(target / rel_path / file)
         ]
-    except FileNotFoundError:  # pragma: no cover
+    except FileNotFoundError:
         TAP.not_ok('Missing required project directory.')
         extra_files = []
     found_files = found_files if found_files else []
@@ -81,10 +81,10 @@ def validate(
     rel_path: Path,
     subdirs: list[str],
     children: set[str] | None,
-) -> Generator[Path, None, None]:
+) -> Generator[Path, None, None]:  # pragma: no cover
     """Validate an OZI standard build definition's directories."""
     for directory in subdirs:
-        match directory, children:  # pragma: no cover
+        match directory, children:
             case [directory, _] if directory not in IGNORE_MISSING:
                 TAP.ok(
                     str(rel_path / 'meson.build'),
@@ -99,7 +99,7 @@ def validate(
                     str(directory),
                     skip=True,
                 )
-            case _:  # pragma: no cover
+            case _:
                 TAP.diagnostic('build_definition.validate', 'invalid arguments')
 
 
@@ -108,7 +108,7 @@ def walk(
     rel_path: Path,
     found_files: list[str] | None = None,
     project_name: str | None = None,
-) -> None:
+) -> None:  # pragma: no cover
     """Walk an OZI standard build definition directory."""
     found_files = process(target, rel_path, found_files)
     children = list(

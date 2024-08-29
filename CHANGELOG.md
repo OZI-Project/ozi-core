@@ -1,4 +1,88 @@
 # ozi-core CHANGELOG
+## 0.4.0 (2024-08-29)
+
+
+### Build
+
+
+* (deps): ozi-templates~=2.10.1 — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`8d3db61`](https://github.com/OZI-Project/ozi-core/commit/8d3db61216deab6dd623a03ebeda754744474af2))
+
+* (deps): update ozi-spec requirement from ~=0.8.1 to ~=0.9.1
+
+Updates the requirements on [ozi-spec](https://github.com/OZI-Project/ozi-spec) to permit the latest version.
+- [Release notes](https://github.com/OZI-Project/ozi-spec/releases)
+- [Changelog](https://github.com/OZI-Project/ozi-spec/blob/0.9.1/CHANGELOG.md)
+- [Commits](https://github.com/OZI-Project/ozi-spec/compare/0.8.1...0.9.1)
+
+
+updated-dependencies:
+- dependency-name: ozi-spec
+  dependency-type: direct:production
+... — dependabot[bot] &lt;support@github.com&gt;
+([`d570726`](https://github.com/OZI-Project/ozi-core/commit/d57072676e1f2ec2e995c3421183084208c9bffa))
+
+* (deps): update ozi-templates requirement from ~=2.9.3 to ~=2.10.0
+
+
+updated-dependencies:
+- dependency-name: ozi-templates
+  dependency-type: direct:production
+... — dependabot[bot] &lt;support@github.com&gt;
+([`a9548da`](https://github.com/OZI-Project/ozi-core/commit/a9548da914b3cef22eb5d1bea35aacead1ed61ea))
+
+
+### Feature
+
+
+* feat: OZI.build 1.3 ozi-templates 2.10 ozi-spec 0.9 — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`df99c91`](https://github.com/OZI-Project/ozi-core/commit/df99c9126bbf522e47a15cf4d6d96090390ab861))
+
+
+### 🐛 Fixed Bugs
+
+* Update pyproject.toml tox requirements install — Eden Ross Duff, MSc &lt;rjdbcm@outlook.com&gt;
+([`c79cac8`](https://github.com/OZI-Project/ozi-core/commit/c79cac8aedd88ad0a97c9cc179743b93503de8de))
+
+* remove requirements — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`7835209`](https://github.com/OZI-Project/ozi-core/commit/7835209bcf5c09c7171a2b5a531fcedf3fbb4f00))
+
+* remove requires-python key — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`63aed2c`](https://github.com/OZI-Project/ozi-core/commit/63aed2c8808e936865cf24e8a3b063975041db88))
+
+* update wrapfile — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`8470c88`](https://github.com/OZI-Project/ozi-core/commit/8470c885dd7a6aafa4e377c88f187b1b346fa8de))
+
+
+### Performance
+
+
+* perf: add ``# pragma: no cover`` to previously masked untested code — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`024c204`](https://github.com/OZI-Project/ozi-core/commit/024c2041f0c176088b76662b255cd782d99d1f80))
+
+* perf: use main revision of OZI pre-1.20 — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`6d81567`](https://github.com/OZI-Project/ozi-core/commit/6d81567553c83234e27e658e8b4b97955273e1a8))
+
+* perf: add install_dependencies postconf script — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`1c594c4`](https://github.com/OZI-Project/ozi-core/commit/1c594c450a732b3492aeff6762a05b135ffb4356))
+
+
+### Unknown
+
+
+* Update meson.build
+
+BREAKING: 1.0 removes requirements.in — Eden Ross Duff, MSc &lt;rjdbcm@outlook.com&gt;
+([`b06b8f2`](https://github.com/OZI-Project/ozi-core/commit/b06b8f2a1885b949bc9c11530c43679658c13eff))
+
+* Update README
+
+BREAKING: 1.0 — Eden Ross Duff, MSc &lt;rjdbcm@outlook.com&gt;
+([`41ddc46`](https://github.com/OZI-Project/ozi-core/commit/41ddc467c5d5cf20c2e96cc314094055b1ba38d7))
+
+* :bug: remove requires-python key — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`ef37bfa`](https://github.com/OZI-Project/ozi-core/commit/ef37bfa72bbc9747850f548bb307944a1ad6e66e))
+
 ## 0.3.1 (2024-08-23)
 
 
