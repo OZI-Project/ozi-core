@@ -32,6 +32,10 @@ root_files = [
 ]
 pyproject_config = configuration_data()
 pyproject_config.set('VCS_TAG', '@VCS_TAG@')
+pyproject_config.set(
+    'PYTHON_VERSION_DIST',
+    'py'+''.join(python.language_version().split('.'))
+)
 configure_file(
     input: 'pyproject.toml',
     output: 'pyproject.toml',

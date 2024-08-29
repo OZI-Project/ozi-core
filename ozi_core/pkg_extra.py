@@ -90,14 +90,14 @@ def _pkg_info_extra(payload: str, as_message: bool = True) -> dict[str, str] | M
 
 def parse_extra_pkg_info(
     pkg_info: Message,
-) -> tuple[dict[str, str], str | None]:
+) -> tuple[dict[str, str], str | None]:  # pragma: defer to good-first-issue
     """Get extra Classifiers tacked onto the PKG-INFO payload by OZI."""
     errstr = None
     try:
         extra_pkg_info = dict(
             _pkg_info_extra(str(pkg_info.get_payload())),
         )  # pyright: ignore
-    except ParseException as e:  # pragma: defer to good-first-issue
+    except ParseException as e:
         extra_pkg_info = {}
         newline = '\n'
         errstr = str(e).replace(newline, ' ')

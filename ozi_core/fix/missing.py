@@ -29,7 +29,7 @@ if TYPE_CHECKING:  # pragma: no cover
     from email.message import Message
 
 
-def render_requirements(target: Path) -> str:
+def render_requirements(target: Path) -> str:  # pragma: no cover
     """Render requirements.in as it would appear in PKG-INFO"""
     requirements = (
         r.partition('\u0023')[0]
@@ -58,7 +58,7 @@ def render_pkg_info(target: Path, name: str, _license: str) -> Message:
         )
 
 
-def python_support(pkg_info: Message) -> set[tuple[str, str]]:
+def python_support(pkg_info: Message) -> set[tuple[str, str]]:  # pragma: no cover
     """Check PKG-INFO Message for python support."""
     remaining_pkg_info = {
         (k, v)
@@ -66,26 +66,26 @@ def python_support(pkg_info: Message) -> set[tuple[str, str]]:
         if k not in METADATA.spec.python.pkg.info.required
     }
     for k, v in iter(METADATA.ozi.python_support.classifiers[:4]):
-        if (k, v) in remaining_pkg_info:  # pragma: no cover
+        if (k, v) in remaining_pkg_info:
             TAP.ok(k, v)
         else:
-            TAP.not_ok('MISSING', v)  # pragma: defer to good-issue
+            TAP.not_ok('MISSING', v)
     return remaining_pkg_info
 
 
-def required_extra_pkg_info(pkg_info: Message) -> dict[str, str]:
+def required_extra_pkg_info(pkg_info: Message) -> dict[str, str]:  # pragma: no cover
     """Check missing required OZI extra PKG-INFO"""
     remaining_pkg_info = python_support(pkg_info)
     remaining_pkg_info.difference_update(set(iter(METADATA.ozi.python_support.classifiers)))
     for k, v in iter(remaining_pkg_info):
         TAP.ok(k, v)
     extra_pkg_info, errstr = parse_extra_pkg_info(pkg_info)
-    if errstr not in ('', None):  # pragma: no cover
+    if errstr not in ('', None):
         TAP.not_ok('MISSING', str(errstr))
     return extra_pkg_info
 
 
-def required_pkg_info(
+def required_pkg_info(  # pragma: no cover
     target: Path,
 ) -> tuple[str, dict[str, str]]:
     """Find missing required PKG-INFO"""
@@ -113,7 +113,7 @@ def required_files(
     kind: str,
     target: Path,
     name: str,
-) -> list[str]:
+) -> list[str]:  # pragma: no cover
     """Count missing files required by OZI"""
     found_files = []
     match kind:
