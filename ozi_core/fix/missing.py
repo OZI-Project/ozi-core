@@ -80,12 +80,13 @@ def render_pkg_info(target: Path, name: str, _license: str) -> Message:  # noqa:
                 .replace('@SCM_VERSION@', '{version}'),
             )
         else:
-            msg = PKG_INFO
-            msg.replace('@LICENSE@', _license)
-            msg.replace('@REQUIREMENTS_IN@', render_requirements(target))
-            msg.replace('@SCM_VERSION@', '{version}')
-            msg.replace('@PROJECT_NAME@', name)
-            msg.replace('@METADATA_VERSION@', METADATA.spec.python.support.metadata_version)
+            msg = (
+                PKG_INFO.replace('@LICENSE@', _license)
+                .replace('@REQUIREMENTS_IN@', render_requirements(target))
+                .replace('@SCM_VERSION@', '{version}')
+                .replace('@PROJECT_NAME@', name)
+                .replace('@METADATA_VERSION@', METADATA.spec.python.support.metadata_version)
+            )
             for key in ('home-page', 'summary', 'author', 'author-email', 'keywords'):
                 val = ozi_build.get(key, None)
                 if val is not None:  # pragma: no cover
