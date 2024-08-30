@@ -34,6 +34,8 @@ Version: @SCM_VERSION@
 License: @LICENSE@
 @CLASSIFIERS@
 @REQUIREMENTS_IN@
+
+@README_TEXT@
 """
 
 readme_ext_to_content_type = {
@@ -103,7 +105,7 @@ def render_pkg_info(target: Path, name: str, _license: str) -> Message:  # noqa:
                     msg += (
                         f'Description-Content-Type: {readme_ext_to_content_type.get(ext)}\n'
                     )
-            msg += '\n' + target.joinpath('README').read_text()
+            msg = msg.replace('@README_TEXT@', target.joinpath('README').read_text())
             return message_from_string(msg)
 
 
