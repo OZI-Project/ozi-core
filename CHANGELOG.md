@@ -1,4 +1,13 @@
 # ozi-core CHANGELOG
+## 1.0.7 (2024-08-30)
+
+
+### Performance
+
+
+* perf: cleaned up comment diagnostic output yaml — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`09bfc32`](https://github.com/OZI-Project/ozi-core/commit/09bfc32d032a6b2ab1f9db1670e91fc22fad6479))
+
 ## 1.0.6 (2024-08-30)
 
 ## 1.0.5 (2024-08-30)
