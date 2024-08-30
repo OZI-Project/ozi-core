@@ -86,17 +86,17 @@ def render_pkg_info(target: Path, name: str, _license: str) -> Message:  # noqa:
                 .replace('@SCM_VERSION@', '{version}')
                 .replace('@PROJECT_NAME@', name)
                 .replace('@METADATA_VERSION@', METADATA.spec.python.support.metadata_version)
+                .replace(
+                    '@CLASSIFIERS@',
+                    ''.join(
+                        [f'Classifier: {req}\n' for req in ozi_build.get('classifiers', [])]
+                    ),
+                )
             )
             for key in ('home-page', 'summary', 'author', 'author-email', 'keywords'):
                 val = ozi_build.get(key, None)
                 if val is not None:  # pragma: no cover
                     msg += f'{key.capitalize()}: {val}\n'
-            msg.replace(
-                '@CLASSIFIERS@',
-                ''.join(
-                    [f'Classifier: {req}\n' for req in ozi_build.get('classifiers', [])]
-                ),
-            )
             for ext in ('.rst', '.txt', '.md'):
                 readme = target.joinpath(f'README{ext}')
                 if readme.exists() and readme.is_symlink():
