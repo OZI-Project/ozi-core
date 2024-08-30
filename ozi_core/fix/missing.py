@@ -33,7 +33,6 @@ Name: @PROJECT_NAME@
 Version: @SCM_VERSION@
 License: @LICENSE@
 @REQUIRED@
-@CLASSIFIERS@
 @REQUIREMENTS_IN@
 
 @README_TEXT@
@@ -94,19 +93,16 @@ def render_pkg_info(target: Path, name: str, _license: str) -> Message:  # noqa:
                     required += (
                         f'Description-Content-Type: {readme_ext_to_content_type.get(ext)}\n'
                     )
+            required += ''.join(
+                [f'Classifier: {req}\n' for req in ozi_build.get('classifiers', [])]
+            )
             msg = (
                 PKG_INFO.replace('@LICENSE@', _license)
-                .replace('@REQUIREMENTS_IN@', render_requirements(target))
+                .replace('@REQUIREMENTS_IN@', render_requirements(target).strip())
                 .replace('@SCM_VERSION@', '{version}')
                 .replace('@PROJECT_NAME@', name)
                 .replace('@METADATA_VERSION@', METADATA.spec.python.support.metadata_version)
-                .replace(
-                    '@CLASSIFIERS@',
-                    ''.join(
-                        [f'Classifier: {req}\n' for req in ozi_build.get('classifiers', [])]
-                    ),
-                )
-                .replace('@REQUIRED@', required)
+                .replace('@REQUIRED@', required.strip('\n'))
                 .replace('@README_TEXT@', target.joinpath('README').read_text())
             )
             return message_from_string(msg)
