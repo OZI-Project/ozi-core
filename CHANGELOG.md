@@ -1,5 +1,13 @@
 # ozi-core CHANGELOG
+## 1.0.5 (2024-08-30)
+
 ## 1.0.4 (2024-08-30)
+
+
+### 🐛 Fixed Bugs
+
+* (ozi- missing): README content type detection, core metadata — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`fa8716d`](https://github.com/OZI-Project/ozi-core/commit/fa8716d83972bcc1d6e003d12612f9acd51780e6))
 
 ## 1.0.3 (2024-08-30)
 
