@@ -60,7 +60,7 @@ def render_requirements(target: Path) -> str:
     return ''.join([f'Requires-Dist: {req}\n' for req in requirements])
 
 
-def render_pkg_info(target: Path, name: str, _license: str) -> Message:
+def render_pkg_info(target: Path, name: str, _license: str) -> Message:  # noqa: C901
     """Render PKG-INFO as it would be produced during packaging."""
     with target.joinpath('pyproject.toml').open('rb') as f:
         pyproject = toml.load(f)
@@ -97,8 +97,8 @@ def render_pkg_info(target: Path, name: str, _license: str) -> Message:
                 ),
             )
             for ext in ('.rst', '.txt', '.md'):
-                f = target.joinpath(f'README{ext}')
-                if f.exists() and f.is_symlink():
+                readme = target.joinpath(f'README{ext}')
+                if readme.exists() and readme.is_symlink():
                     msg += (
                         f'Description-Content-Type: {readme_ext_to_content_type.get(ext)}\n'
                     )
