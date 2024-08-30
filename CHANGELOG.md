@@ -1,5 +1,13 @@
 # ozi-core CHANGELOG
+## 1.0.4 (2024-08-30)
+
 ## 1.0.3 (2024-08-30)
+
+
+### 🐛 Fixed Bugs
+
+* README text renders — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`60ca2f0`](https://github.com/OZI-Project/ozi-core/commit/60ca2f067ec1db949f288bda10f45531ef77f3f8))
 
 ## 1.0.2 (2024-08-30)
 
