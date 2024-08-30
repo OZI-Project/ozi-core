@@ -1,9 +1,21 @@
 # ozi-core CHANGELOG
+## 1.0.8 (2024-08-30)
+
 ## 1.0.7 (2024-08-30)
+
+
+### Build
+
+
+* (deps): ozi-spec~=0.9.2 — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`94645e9`](https://github.com/OZI-Project/ozi-core/commit/94645e9b591be8315311ba89454137be1e407352))
 
 
 ### Performance
 
+
+* perf: remove type key from comment diagnostic output — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`cb08068`](https://github.com/OZI-Project/ozi-core/commit/cb08068972823ec5e16163b8ae9619fb15aceabf))
 
 * perf: cleaned up comment diagnostic output yaml — rjdbcm &lt;rjdbcm@outlook.com&gt;
 ([`09bfc32`](https://github.com/OZI-Project/ozi-core/commit/09bfc32d032a6b2ab1f9db1670e91fc22fad6479))
