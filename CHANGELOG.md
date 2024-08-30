@@ -1,8 +1,13 @@
 # ozi-core CHANGELOG
+## 1.0.2 (2024-08-30)
+
 ## 1.0.1 (2024-08-30)
 
 
 ### 🐛 Fixed Bugs
+
+* render METADATA for ``ozi- missing`` — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`932a611`](https://github.com/OZI-Project/ozi-core/commit/932a6117416c3837b49560f9e97209f80980a473))
 
 * missing parses OZI 1.20 style dependencies — rjdbcm &lt;rjdbcm@outlook.com&gt;
 ([`55a3941`](https://github.com/OZI-Project/ozi-core/commit/55a3941cfc26cb39358e133ed5f836a989ea3ab8))
