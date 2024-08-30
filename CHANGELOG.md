@@ -1,4 +1,19 @@
 # ozi-core CHANGELOG
+## 1.0.1 (2024-08-30)
+
+
+### 🐛 Fixed Bugs
+
+* missing parses OZI 1.20 style dependencies — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`55a3941`](https://github.com/OZI-Project/ozi-core/commit/55a3941cfc26cb39358e133ed5f836a989ea3ab8))
+
+
+### Performance
+
+
+* perf: fix shadowed variable — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`be545e5`](https://github.com/OZI-Project/ozi-core/commit/be545e5fd09b7855e5d711696470552413abc7aa))
+
 ## 1.0.0 (2024-08-29)
 
 
