@@ -1,5 +1,13 @@
 # ozi-core CHANGELOG
+## 1.0.3 (2024-08-30)
+
 ## 1.0.2 (2024-08-30)
+
+
+### 🐛 Fixed Bugs
+
+* (ozi- missing): classifiers now render properly — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`c004a10`](https://github.com/OZI-Project/ozi-core/commit/c004a1014e8544fc2c8e5e50d427613afb324401))
 
 ## 1.0.1 (2024-08-30)
 
