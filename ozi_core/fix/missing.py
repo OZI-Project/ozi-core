@@ -32,6 +32,7 @@ PKG_INFO = """Metadata-Version: @METADATA_VERSION@
 Name: @PROJECT_NAME@
 Version: @SCM_VERSION@
 License: @LICENSE@
+@REQUIRED@
 @CLASSIFIERS@
 @REQUIREMENTS_IN@
 
@@ -82,6 +83,17 @@ def render_pkg_info(target: Path, name: str, _license: str) -> Message:  # noqa:
                 .replace('@SCM_VERSION@', '{version}'),
             )
         else:
+            required = ''
+            for key in ('home-page', 'summary', 'author', 'author-email', 'keywords'):
+                val = ozi_build.get(key, None)
+                if val is not None:  # pragma: no cover
+                    required += f'{key.capitalize()}: {val}\n'
+            for ext in ('.rst', '.txt', '.md'):
+                readme = target.joinpath(f'README{ext}')
+                if readme.exists() and readme.is_symlink():
+                    required += (
+                        f'Description-Content-Type: {readme_ext_to_content_type.get(ext)}\n'
+                    )
             msg = (
                 PKG_INFO.replace('@LICENSE@', _license)
                 .replace('@REQUIREMENTS_IN@', render_requirements(target))
@@ -94,18 +106,9 @@ def render_pkg_info(target: Path, name: str, _license: str) -> Message:  # noqa:
                         [f'Classifier: {req}\n' for req in ozi_build.get('classifiers', [])]
                     ),
                 )
+                .replace('@REQUIRED@', required)
+                .replace('@README_TEXT@', target.joinpath('README').read_text())
             )
-            for key in ('home-page', 'summary', 'author', 'author-email', 'keywords'):
-                val = ozi_build.get(key, None)
-                if val is not None:  # pragma: no cover
-                    msg += f'{key.capitalize()}: {val}\n'
-            for ext in ('.rst', '.txt', '.md'):
-                readme = target.joinpath(f'README{ext}')
-                if readme.exists() and readme.is_symlink():
-                    msg += (
-                        f'Description-Content-Type: {readme_ext_to_content_type.get(ext)}\n'
-                    )
-            msg = msg.replace('@README_TEXT@', target.joinpath('README').read_text())
             return message_from_string(msg)
 
 
@@ -149,13 +152,13 @@ def required_pkg_info(
     for i in METADATA.spec.python.pkg.info.required:
         v = pkg_info.get(i, None)
         if v is not None:
-            TAP.ok(i, v)  # pragma: no cover
-        else:
+            TAP.ok(i, v)
+        else:  # pragma: no cover
             TAP.not_ok('MISSING', i)
-    extra_pkg_info = required_extra_pkg_info(pkg_info)  # pragma: no cover
+    extra_pkg_info = required_extra_pkg_info(pkg_info)
     name = re.sub(r'[-_.]+', '-', pkg_info.get('Name', '')).lower()  # pragma: no cover
     for k, v in extra_pkg_info.items():  # pragma: no cover
-        TAP.ok(k, v)
+        TAP.ok(k, v)  # pragma: no cover
     return name, extra_pkg_info  # pragma: no cover
 
 
