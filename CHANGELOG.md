@@ -1,5 +1,13 @@
 # ozi-core CHANGELOG
+## 1.0.6 (2024-08-30)
+
 ## 1.0.5 (2024-08-30)
+
+
+### 🐛 Fixed Bugs
+
+* (ozi- missing): rendering — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`32e95a1`](https://github.com/OZI-Project/ozi-core/commit/32e95a1b3556c88304301011251fb4cbe43997fa))
 
 ## 1.0.4 (2024-08-30)
 
