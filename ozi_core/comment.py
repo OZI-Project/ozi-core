@@ -153,7 +153,7 @@ def diagnostic(  # pragma: no cover
     for line_no, line in enumerate(lines, start=start):
         count.update(Counter(lines=1))
         for key, found in diagnose(line, rel_path, line_no):
-            diag |= {'type': key, f'{rel_path!s}:{line_no}': found}
+            diag |= {f'{rel_path!s}:{line_no}': found}
             count.update({key: 1})  # pragma: no cover
     return count, diag
 
