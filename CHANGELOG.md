@@ -1,4 +1,77 @@
 # ozi-core CHANGELOG
+## 1.0.8 (2024-08-30)
+
+## 1.0.7 (2024-08-30)
+
+
+### Build
+
+
+* (deps): ozi-spec~=0.9.2 — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`94645e9`](https://github.com/OZI-Project/ozi-core/commit/94645e9b591be8315311ba89454137be1e407352))
+
+
+### Performance
+
+
+* perf: remove type key from comment diagnostic output — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`cb08068`](https://github.com/OZI-Project/ozi-core/commit/cb08068972823ec5e16163b8ae9619fb15aceabf))
+
+* perf: cleaned up comment diagnostic output yaml — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`09bfc32`](https://github.com/OZI-Project/ozi-core/commit/09bfc32d032a6b2ab1f9db1670e91fc22fad6479))
+
+## 1.0.6 (2024-08-30)
+
+## 1.0.5 (2024-08-30)
+
+
+### 🐛 Fixed Bugs
+
+* (ozi- missing): rendering — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`32e95a1`](https://github.com/OZI-Project/ozi-core/commit/32e95a1b3556c88304301011251fb4cbe43997fa))
+
+## 1.0.4 (2024-08-30)
+
+
+### 🐛 Fixed Bugs
+
+* (ozi- missing): README content type detection, core metadata — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`fa8716d`](https://github.com/OZI-Project/ozi-core/commit/fa8716d83972bcc1d6e003d12612f9acd51780e6))
+
+## 1.0.3 (2024-08-30)
+
+
+### 🐛 Fixed Bugs
+
+* README text renders — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`60ca2f0`](https://github.com/OZI-Project/ozi-core/commit/60ca2f067ec1db949f288bda10f45531ef77f3f8))
+
+## 1.0.2 (2024-08-30)
+
+
+### 🐛 Fixed Bugs
+
+* (ozi- missing): classifiers now render properly — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`c004a10`](https://github.com/OZI-Project/ozi-core/commit/c004a1014e8544fc2c8e5e50d427613afb324401))
+
+## 1.0.1 (2024-08-30)
+
+
+### 🐛 Fixed Bugs
+
+* render METADATA for ``ozi- missing`` — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`932a611`](https://github.com/OZI-Project/ozi-core/commit/932a6117416c3837b49560f9e97209f80980a473))
+
+* missing parses OZI 1.20 style dependencies — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`55a3941`](https://github.com/OZI-Project/ozi-core/commit/55a3941cfc26cb39358e133ed5f836a989ea3ab8))
+
+
+### Performance
+
+
+* perf: fix shadowed variable — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`be545e5`](https://github.com/OZI-Project/ozi-core/commit/be545e5fd09b7855e5d711696470552413abc7aa))
+
 ## 1.0.0 (2024-08-29)
 
 

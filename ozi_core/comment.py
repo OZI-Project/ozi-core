@@ -116,7 +116,9 @@ def pattern_search(
             yield key, found[0].strip()
 
 
-def diagnose(line: str, rel_path: Path, line_no: int) -> Generator[str, None, None]:
+def diagnose(
+    line: str, rel_path: Path, line_no: int
+) -> Generator[tuple[str, str], None, None]:
     """Diagnose OZI comment pattern for a single line.
 
     :param line: line text verbatim
@@ -127,20 +129,14 @@ def diagnose(line: str, rel_path: Path, line_no: int) -> Generator[str, None, No
     :type line_no: int
     """
     for key, found in pattern_search(line):  # pragma: defer to TAP-Consumer
-        TAP.diagnostic(
-            'comment diagnostic',
-            type=key,
-            location=f'{rel_path!s}:{line_no}',
-            found=found,
-        )
-        yield key
+        yield key, found
 
 
 def diagnostic(  # pragma: no cover
     lines: Sequence[str],
     rel_path: Path,
     start: int = 1,
-) -> Counter[str]:
+) -> tuple[Counter[str], dict[str, str]]:
     """Diagnose OZI comment pattern for a sequence of lines (usually a single file).
 
     :param lines: lines to check
@@ -149,15 +145,17 @@ def diagnostic(  # pragma: no cover
     :type rel_path: Path
     :param start: starting line number for asynchronous chunking, defaults to 1
     :type start: int, optional
-    :rtype: Counter[str]
-    :return: count of lines and comment pattern matches
+    :rtype: tuple[Counter[str], dict[str, str]]
+    :return: count of lines and comment pattern matches as a dict
     """
     count: Counter[str] = Counter()
+    diag: dict[str, str] = {}
     for line_no, line in enumerate(lines, start=start):
         count.update(Counter(lines=1))
-        for key in diagnose(line, rel_path, line_no):
+        for key, found in diagnose(line, rel_path, line_no):
+            diag |= {f'{rel_path!s}:{line_no}': found}
             count.update({key: 1})  # pragma: no cover
-    return count
+    return count, diag
 
 
 def score_file(count: Counter[str]) -> float:  # pragma: no cover
@@ -188,17 +186,13 @@ def comment_diagnostic(target: Path, rel_path: Path, file: str) -> None:  # prag
     """Run a scored comment diagnostic on a python file."""
     if str(file).endswith('.py'):
         with open(target.joinpath(rel_path) / file, 'r', encoding='UTF-8') as g:
-            count = diagnostic(g.readlines(), rel_path / file)
+            count, diag = diagnostic(g.readlines(), rel_path / file)
             if count.total() > 0:
                 TAP.diagnostic(
                     'comment diagnostic',
-                    path=str(rel_path / file),
-                    **{k: str(v) for k, v in count.items()},
+                    **{k: str(v) for k, v in count.items()}
+                    | diag
+                    | {'score': f'{score(count)}/5.0'},
                 )
             else:  # pragma: no cover
                 pass
-            TAP.diagnostic(
-                'comment diagnostic',
-                path=str(rel_path / file),
-                score=f'{score(count)}/5.0',
-            )

@@ -28,34 +28,84 @@ elif sys.version_info < (3, 11):  # pragma: no cover
 if TYPE_CHECKING:  # pragma: no cover
     from email.message import Message
 
+PKG_INFO = """Metadata-Version: @METADATA_VERSION@
+Name: @PROJECT_NAME@
+Version: @SCM_VERSION@
+License: @LICENSE@
+@REQUIRED@
+@REQUIREMENTS_IN@
 
-def render_requirements(target: Path) -> str:  # pragma: no cover
+@README_TEXT@
+"""
+
+readme_ext_to_content_type = {
+    '.rst': 'text/x-rst',
+    '.md': 'text/markdown',
+    '.txt': 'text/plain',
+    '': 'text/plain',
+}
+
+
+def render_requirements(target: Path) -> str:
     """Render requirements.in as it would appear in PKG-INFO"""
-    requirements = (
-        r.partition('\u0023')[0]
-        for r in filter(
-            lambda r: not (r.startswith('\u0023') or r == '\n'),
-            target.joinpath('requirements.in').read_text('utf-8').splitlines(),
+    try:
+        requirements = (  # pragma: no cover
+            r.partition('\u0023')[0]
+            for r in filter(
+                lambda r: not (r.startswith('\u0023') or r == '\n'),
+                target.joinpath('requirements.in').read_text('utf-8').splitlines(),
+            )
         )
-    )
+    except FileNotFoundError:
+        with target.joinpath('pyproject.toml').open('rb') as f:
+            requirements = toml.load(f).get('project', {}).get('dependencies', [])
     return ''.join([f'Requires-Dist: {req}\n' for req in requirements])
 
 
-def render_pkg_info(target: Path, name: str, _license: str) -> Message:
+def render_pkg_info(target: Path, name: str, _license: str) -> Message:  # noqa: C901
     """Render PKG-INFO as it would be produced during packaging."""
     with target.joinpath('pyproject.toml').open('rb') as f:
-        setuptools_scm = toml.load(f).get('tool', {}).get('setuptools_scm', {})
-        return message_from_string(
-            setuptools_scm.get('version_file_template', '@README_TEXT@')
-            .replace(
-                '@README_TEXT@',
-                target.joinpath('README').read_text(),
+        pyproject = toml.load(f)
+        setuptools_scm = pyproject.get('tool', {}).get('setuptools_scm', {})
+        ozi_build = pyproject.get('tool', {}).get('ozi-build', {}).get('metadata', {})
+        if setuptools_scm.get('version_file_template'):  # pragma: no cover
+            TAP.ok('setuptools_scm', 'PKG-INFO', 'template')
+            return message_from_string(
+                setuptools_scm.get('version_file_template', '@README_TEXT@')
+                .replace(
+                    '@README_TEXT@',
+                    target.joinpath('README').read_text(),
+                )
+                .replace('@PROJECT_NAME@', name)
+                .replace('@LICENSE@', _license)
+                .replace('@REQUIREMENTS_IN@\n', render_requirements(target))
+                .replace('@SCM_VERSION@', '{version}'),
             )
-            .replace('@PROJECT_NAME@', name)
-            .replace('@LICENSE@', _license)
-            .replace('@REQUIREMENTS_IN@\n', render_requirements(target))
-            .replace('@SCM_VERSION@', '{version}'),
-        )
+        else:
+            required = ''
+            for key in ('home-page', 'summary', 'author', 'author-email', 'keywords'):
+                val = ozi_build.get(key, None)
+                if val is not None:  # pragma: no cover
+                    required += f'{key.capitalize()}: {val}\n'
+            for ext in ('.rst', '.txt', '.md'):
+                readme = target.joinpath(f'README{ext}')
+                if readme.exists() and readme.is_symlink():
+                    required += (
+                        f'Description-Content-Type: {readme_ext_to_content_type.get(ext)}\n'
+                    )
+            required += ''.join(
+                [f'Classifier: {req}\n' for req in ozi_build.get('classifiers', [])]
+            )
+            msg = (
+                PKG_INFO.replace('@LICENSE@', _license)
+                .replace('@REQUIREMENTS_IN@', render_requirements(target).strip())
+                .replace('@SCM_VERSION@', '{version}')
+                .replace('@PROJECT_NAME@', name)
+                .replace('@METADATA_VERSION@', METADATA.spec.python.support.metadata_version)
+                .replace('@REQUIRED@', required.strip('\n'))
+                .replace('@README_TEXT@', target.joinpath('README').read_text())
+            )
+            return message_from_string(msg)
 
 
 def python_support(pkg_info: Message) -> set[tuple[str, str]]:  # pragma: no cover
@@ -85,7 +135,7 @@ def required_extra_pkg_info(pkg_info: Message) -> dict[str, str]:  # pragma: no 
     return extra_pkg_info
 
 
-def required_pkg_info(  # pragma: no cover
+def required_pkg_info(
     target: Path,
 ) -> tuple[str, dict[str, str]]:
     """Find missing required PKG-INFO"""
@@ -95,7 +145,6 @@ def required_pkg_info(  # pragma: no cover
     if ast:
         name, license_ = project_metadata(ast)
     pkg_info = render_pkg_info(target, name, license_)
-    TAP.ok('setuptools_scm', 'PKG-INFO', 'template')
     for i in METADATA.spec.python.pkg.info.required:
         v = pkg_info.get(i, None)
         if v is not None:
@@ -103,10 +152,10 @@ def required_pkg_info(  # pragma: no cover
         else:  # pragma: no cover
             TAP.not_ok('MISSING', i)
     extra_pkg_info = required_extra_pkg_info(pkg_info)
-    name = re.sub(r'[-_.]+', '-', pkg_info.get('Name', '')).lower()
+    name = re.sub(r'[-_.]+', '-', pkg_info.get('Name', '')).lower()  # pragma: no cover
     for k, v in extra_pkg_info.items():  # pragma: no cover
-        TAP.ok(k, v)
-    return name, extra_pkg_info
+        TAP.ok(k, v)  # pragma: no cover
+    return name, extra_pkg_info  # pragma: no cover
 
 
 def required_files(
