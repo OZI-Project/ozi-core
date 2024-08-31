@@ -1,4 +1,12 @@
 # ozi-core CHANGELOG
+## 1.0.9 (2024-08-31)
+
+
+### 🐛 Fixed Bugs
+
+* (ozi- missing): no longer check if a readme file is a symlink to detect content type — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`7a2f052`](https://github.com/OZI-Project/ozi-core/commit/7a2f0523f2d1cb25279897db7ca46b132513faa2))
+
 ## 1.0.8 (2024-08-30)
 
 ## 1.0.7 (2024-08-30)
