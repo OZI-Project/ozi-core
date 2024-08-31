@@ -89,7 +89,7 @@ def render_pkg_info(target: Path, name: str, _license: str) -> Message:  # noqa:
                     required += f'{key.capitalize()}: {val}\n'
             for ext in ('.rst', '.txt', '.md'):
                 readme = target.joinpath(f'README{ext}')
-                if readme.exists() and readme.is_symlink():
+                if readme.exists():
                     required += (
                         f'Description-Content-Type: {readme_ext_to_content_type.get(ext)}\n'
                     )
