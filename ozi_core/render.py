@@ -209,10 +209,11 @@ class RenderedContent:
         self.ci_user = render_ci_files_set_user(self.env, self.target, self.ci_provider)
         render_project_files(self.env, self.target, self.name)
         if self.ci_provider == 'github':
+            abspath = Path(self.target).resolve()
             Path(
-                self.target,
+                abspath,
                 f'README.{self.readme_type}',
-            ).symlink_to(Path(self.target, 'README'))
+            ).symlink_to(Path(abspath, 'README'))
         else:  # pragma: no cover
             pass
 
