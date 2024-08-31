@@ -1,4 +1,12 @@
 # ozi-core CHANGELOG
+## 1.0.10 (2024-08-31)
+
+
+### 🐛 Fixed Bugs
+
+* create README symlink with absolute path — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`6ca9215`](https://github.com/OZI-Project/ozi-core/commit/6ca92159c3214ae094d8daf335d47d745f6f22cb))
+
 ## 1.0.9 (2024-08-31)
 
 
