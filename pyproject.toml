@@ -9,7 +9,7 @@ dependencies = [
     'dnspython',
     'idna>=2',
     'meson[ninja]>=1.1.0',
-    'ozi-spec~=0.9.2',
+    'ozi-spec~=0.9.3',
     'ozi-templates~=2.10.1',
     'packaging~=24.1',
     'prompt-toolkit',
@@ -22,7 +22,7 @@ dependencies = [
 
 [build-system]
 requires = [
-    'OZI.build[core,uv]~=1.4',
+    'OZI.build[core,uv]~=1.5',
 ]
 build-backend = "ozi_build.buildapi"
 
@@ -339,7 +339,7 @@ allowlist_externals =
    meson
 package = wheel
 deps =
-   OZI.build[core,uv]~=1.4
+   OZI.build[core,uv]~=1.5
 commands =
    meson compile -C {env_tmp_dir}
    rm -rf {env_tmp_dir}/.gitignore

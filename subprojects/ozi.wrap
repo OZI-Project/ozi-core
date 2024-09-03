@@ -1,6 +1,6 @@
 [wrap-git]
 url = https://github.com/OZI-Project/ozi.git
-revision = main
+revision = release/1.20
 depth = 1
 
 [provide]
