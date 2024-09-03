@@ -1,4 +1,12 @@
 # ozi-core CHANGELOG
+## 1.0.11 (2024-09-03)
+
+
+### 🐛 Fixed Bugs
+
+* ozi-spec 0.9.3 — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`e081118`](https://github.com/OZI-Project/ozi-core/commit/e081118d62d363d864bc31a31dd9189081a1c29d))
+
 ## 1.0.10 (2024-08-31)
 
 
