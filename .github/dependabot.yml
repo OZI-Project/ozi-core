@@ -11,6 +11,7 @@ updates:
       interval: daily
 
   - package-ecosystem: pip
-    directory: /
+    directories:
+      - "*"
     schedule:
       interval: daily
