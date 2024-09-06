@@ -61,7 +61,6 @@ ci   = [
 # tox -e fix
 fix  = ["black>=24.3", "ruff>=0.1.6", "autoflake", "isort"]
 # Default meson test setup
-dev  = ["[dist,lint,test,]"]
 dist = [
     "python-semantic-release",
     "sigstore",
