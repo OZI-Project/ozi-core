@@ -5,6 +5,37 @@
 ### Build
 
 
+* (deps): bump OZI-Project/release from 0.8.10 to 0.8.11
+
+Bumps [OZI-Project/release](https://github.com/ozi-project/release) from 0.8.10 to 0.8.11.
+- [Release notes](https://github.com/ozi-project/release/releases)
+- [Commits](https://github.com/ozi-project/release/compare/7edb07c74e124270a29b2cd5d32ce7c9fdfc0b22...4277e29de16b07dac4a89c8f7970c2da65554d17)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/release
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] &lt;support@github.com&gt;
+([`2398784`](https://github.com/OZI-Project/ozi-core/commit/2398784d9e0a3c09e69f536b48aa8d7f22489246))
+
+* (deps): bump OZI-Project/draft from 0.3.10 to 0.3.11
+
+Bumps [OZI-Project/draft](https://github.com/ozi-project/draft) from 0.3.10 to 0.3.11.
+- [Release notes](https://github.com/ozi-project/draft/releases)
+- [Commits](https://github.com/ozi-project/draft/compare/0.3.10...0.3.11)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/draft
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] &lt;support@github.com&gt;
+([`3dc7318`](https://github.com/OZI-Project/ozi-core/commit/3dc73182cd7161c6f99e419e12f91abd95eba467))
+
+* (pyproject.toml): remove dev dependency group — Eden Ross Duff, MSc &lt;rjdbcm@outlook.com&gt;
+([`e8e26e8`](https://github.com/OZI-Project/ozi-core/commit/e8e26e84d97f63e59fe3c26a0370bff6b98d2fda))
+
 * (deps): bump OZI-Project/draft from 0.3.9 to 0.3.10
 
 Bumps [OZI-Project/draft](https://github.com/ozi-project/draft) from 0.3.9 to 0.3.10.
@@ -38,6 +69,13 @@ updated-dependencies:
 
 * ozi-spec 0.9.4 — Eden Ross Duff, MSc &lt;rjdbcm@outlook.com&gt;
 ([`e575dc3`](https://github.com/OZI-Project/ozi-core/commit/e575dc3992e9a54dc37f539516bd0bcb0242a862))
+
+
+### Unknown
+
+
+* Update dependabot.yml — Eden Ross Duff, MSc &lt;rjdbcm@outlook.com&gt;
+([`2316fae`](https://github.com/OZI-Project/ozi-core/commit/2316fae4ac8a26a878328f323eee91d21fb83cfb))
 
 ## 1.0.11 (2024-09-03)
 
