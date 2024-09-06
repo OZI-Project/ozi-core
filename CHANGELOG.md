@@ -1,4 +1,44 @@
 # ozi-core CHANGELOG
+## 1.0.12 (2024-09-06)
+
+
+### Build
+
+
+* (deps): bump OZI-Project/draft from 0.3.9 to 0.3.10
+
+Bumps [OZI-Project/draft](https://github.com/ozi-project/draft) from 0.3.9 to 0.3.10.
+- [Release notes](https://github.com/ozi-project/draft/releases)
+- [Commits](https://github.com/ozi-project/draft/compare/0.3.9...0.3.10)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/draft
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] &lt;support@github.com&gt;
+([`d2e9b24`](https://github.com/OZI-Project/ozi-core/commit/d2e9b24da8402e4d7c260e7779c26d35885a661b))
+
+* (deps): bump OZI-Project/publish from 0.1.10 to 0.1.11
+
+Bumps [OZI-Project/publish](https://github.com/ozi-project/publish) from 0.1.10 to 0.1.11.
+- [Release notes](https://github.com/ozi-project/publish/releases)
+- [Commits](https://github.com/ozi-project/publish/compare/0.1.10...0.1.11)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/publish
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] &lt;support@github.com&gt;
+([`5722ecc`](https://github.com/OZI-Project/ozi-core/commit/5722ecc8a5f4257d4c56d83a91e3d22c2cfb6086))
+
+
+### 🐛 Fixed Bugs
+
+* ozi-spec 0.9.4 — Eden Ross Duff, MSc &lt;rjdbcm@outlook.com&gt;
+([`e575dc3`](https://github.com/OZI-Project/ozi-core/commit/e575dc3992e9a54dc37f539516bd0bcb0242a862))
+
 ## 1.0.11 (2024-09-03)
 
 
