@@ -1,4 +1,94 @@
 # ozi-core CHANGELOG
+## 1.1.0 (2024-09-10)
+
+
+### Build
+
+
+* (deps): bump OZI-Project/checkpoint from 0.5.2 to 1.0.0
+
+Bumps [OZI-Project/checkpoint](https://github.com/ozi-project/checkpoint) from 0.5.2 to 1.0.0.
+- [Release notes](https://github.com/ozi-project/checkpoint/releases)
+- [Commits](https://github.com/ozi-project/checkpoint/compare/0.5.2...1.0.0)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/checkpoint
+  dependency-type: direct:production
+  update-type: version-update:semver-major
+... — dependabot[bot] &lt;support@github.com&gt;
+([`0dfd86e`](https://github.com/OZI-Project/ozi-core/commit/0dfd86ebddb2e456b5d5d380dd4882620971fdaa))
+
+* (deps): bump OZI-Project/publish from 0.1.11 to 1.0.0
+
+Bumps [OZI-Project/publish](https://github.com/ozi-project/publish) from 0.1.11 to 1.0.0.
+- [Release notes](https://github.com/ozi-project/publish/releases)
+- [Commits](https://github.com/ozi-project/publish/compare/0.1.11...1.0.0)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/publish
+  dependency-type: direct:production
+  update-type: version-update:semver-major
+... — dependabot[bot] &lt;support@github.com&gt;
+([`b9becab`](https://github.com/OZI-Project/ozi-core/commit/b9becabfc8678be97a4850208b8b800e47e2f116))
+
+* (deps): bump OZI-Project/draft from 0.3.11 to 1.0.0
+
+Bumps [OZI-Project/draft](https://github.com/ozi-project/draft) from 0.3.11 to 1.0.0.
+- [Release notes](https://github.com/ozi-project/draft/releases)
+- [Commits](https://github.com/ozi-project/draft/compare/0.3.11...1.0.0)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/draft
+  dependency-type: direct:production
+  update-type: version-update:semver-major
+... — dependabot[bot] &lt;support@github.com&gt;
+([`5c3d430`](https://github.com/OZI-Project/ozi-core/commit/5c3d430ba533a15b5a1aaffe55c495ff7af92be0))
+
+* (deps): bump OZI-Project/release from 0.8.11 to 1.0.0
+
+Bumps [OZI-Project/release](https://github.com/ozi-project/release) from 0.8.11 to 1.0.0.
+- [Release notes](https://github.com/ozi-project/release/releases)
+- [Commits](https://github.com/ozi-project/release/compare/4277e29de16b07dac4a89c8f7970c2da65554d17...98248899bb8b235e3198105f080093ea5b9751d8)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/release
+  dependency-type: direct:production
+  update-type: version-update:semver-major
+... — dependabot[bot] &lt;support@github.com&gt;
+([`25a7b48`](https://github.com/OZI-Project/ozi-core/commit/25a7b4826c39be079483c158a1ded00cb4583fa3))
+
+* (deps): update ozi-templates requirement from ~=2.10.1 to ~=2.11.1
+
+Updates the requirements on [ozi-templates](https://github.com/OZI-Project/ozi-templates) to permit the latest version.
+- [Release notes](https://github.com/OZI-Project/ozi-templates/releases)
+- [Changelog](https://github.com/OZI-Project/ozi-templates/blob/2.11.1/CHANGELOG.md)
+- [Commits](https://github.com/OZI-Project/ozi-templates/compare/2.10.1...2.11.1)
+
+
+updated-dependencies:
+- dependency-name: ozi-templates
+  dependency-type: direct:production
+... — dependabot[bot] &lt;support@github.com&gt;
+([`8d7c41e`](https://github.com/OZI-Project/ozi-core/commit/8d7c41e05f1c082ee46d6475cb629a5c6e323a7d))
+
+
+### Feature
+
+
+* feat: CPython 3.13 support — Eden Ross Duff, MSc &lt;rjdbcm@outlook.com&gt;
+([`e472a59`](https://github.com/OZI-Project/ozi-core/commit/e472a59ce19cede7f47f9cd4204c4346970395cb))
+
+
+### Unknown
+
+
+* Update pyproject.toml — Eden Ross Duff, MSc &lt;rjdbcm@outlook.com&gt;
+([`e6fb90d`](https://github.com/OZI-Project/ozi-core/commit/e6fb90dbd92ffc0e023afa83640049636d311796))
+
 ## 1.0.12 (2024-09-06)
 
 
