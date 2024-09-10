@@ -5,11 +5,11 @@ dynamic = ["version"]
 license = {file = "LICENSE.txt"}
 dependencies = [
     'GitPython~=3.1',
-    'TAP-Producer~=1.0.4',
+    'TAP-Producer~=1.0.5',
     'dnspython',
     'idna>=2',
     'meson[ninja]>=1.1.0',
-    'ozi-spec~=0.9.4',
+    'ozi-spec~=0.9.5',
     'ozi-templates~=2.10.1',
     'packaging~=24.1',
     'prompt-toolkit',
@@ -48,8 +48,8 @@ home-page="https://www.oziproject.dev"
 keywords="OZI,mesonbuild"
 license="Apache-2.0 WITH LLVM-exception"
 meson-python-option-name="python3"
+requires-python=">=3.10, <3.14"
 summary="The OZI Project packaging core library."
-
 
 [project.optional-dependencies] # also meson test suite names
 # OZI Packaging Dependencies
@@ -64,6 +64,8 @@ fix  = ["black>=24.3", "ruff>=0.1.6", "autoflake", "isort"]
 dist = [
     "python-semantic-release",
     "sigstore",
+    "cibuildwheel",
+    "twine",
 ]
 lint = [
     "bandit[toml]",
@@ -254,6 +256,7 @@ ignore = [
     "RUF009",
     "RUF012",
     "RUF015",
+    "RUF200",
     "SIM",
     "T201",
     "TCH002",
@@ -338,39 +341,52 @@ allowlist_externals =
    meson
 package = wheel
 deps =
-   OZI.build[core,uv]~=1.5
+     uv
+commands_pre =
+     python -m uv pip install OZI.build[core,uv]~=1.5
+     pipx install --python=python meson
 commands =
-   meson compile -C {env_tmp_dir}
-   rm -rf {env_tmp_dir}/.gitignore
+     meson setup {env_tmp_dir} -Dozi:dist=disabled -Dozi:tox-env-dir={env_dir}
+     meson compile -C {env_tmp_dir}
+     rm -rf {env_tmp_dir}/.gitignore
+commands_post =
+     {env_python} -m invoke --search-root={env_tmp_dir}/subprojects/ozi/ozi checkpoint --suite={env_name} {posargs}
+
 [testenv:dist]
-commands_pre =
-   pipx install --python=python meson
-   meson setup {env_tmp_dir} -Dozi:dist=enabled -Dozi:tox-env-dir={env_dir} --reconfigure
-commands_post = meson test --no-rebuild --maxfail=1 -C {env_tmp_dir} --setup=dist
+description = OZI distribution checkpoint
+
 [testenv:lint]
-commands_pre =
-   pipx install --python=python meson
-   meson setup {env_tmp_dir} -Dozi:lint=enabled -Dozi:tox-env-dir={env_dir} --reconfigure
-commands_post = meson test --no-rebuild --maxfail=1 -C {env_tmp_dir} --setup=lint
+description = OZI format/lint checkpoint
+
 [testenv:test]
-commands_pre =
-   pipx install --python=python meson
-   meson setup {env_tmp_dir} -Dozi:test=enabled -Dozi:tox-env-dir={env_dir} --reconfigure
-commands_post = meson test --no-rebuild --maxfail=1 -C {env_tmp_dir} --setup=test
+description = OZI unit tests checkpoint
+commands =
+     meson setup {env_tmp_dir} -Dozi:ozi-blastpipe=disabled -Dozi:dist=disabled -Dozi:tox-env-dir={env_dir}
+     meson compile -C {env_tmp_dir}
+     rm -rf {env_tmp_dir}/.gitignore
 
 [testenv:fix]
 description = quickly fix minor source issues 
 deps = pipx
 skip_install = true
+commands_pre =
 commands =
-     pipx run --python {env_python} -q black -S .
-     pipx run --python {env_python} -q isort .
-     pipx run --python {env_python} -q autoflake -i -r .
-     pipx run --python {env_python} -q ruff check ozi_core --fix
+     pipx run --python {env_python} black -S .
+     pipx run --python {env_python} isort .
+     pipx run --python {env_python} autoflake -i -r .
+     pipx run --python {env_python} ruff check . --fix
+commands_post =
 
 [testenv:scm]
 description = OZI supply chain management (setuptools_scm)
 deps = setuptools_scm[toml]>=8
 commands =
      {env_python} -m setuptools_scm {posargs}
+
+[testenv:invoke]
+description = OZI invoke task entrypoint, for more info use "tox -e invoke -- --list"
+no_package = true
+commands_post =
+     {env_python} -m invoke --search-root={env_tmp_dir}/subprojects/ozi/ozi {posargs}
+
 """
