@@ -1,7 +1,6 @@
 # Part of ozi-core.
 # See LICENSE.txt in the project root for details.
 [project]
-dynamic = ["version"]
 license = {file = "LICENSE.txt"}
 dependencies = [
     'GitPython~=3.1',
@@ -36,6 +35,7 @@ classifiers=[
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
     "Programming Language :: Python :: Implementation :: CPython",
     "Intended Audience :: Other Audience",
     "Natural Language :: English",
@@ -43,7 +43,7 @@ classifiers=[
     "Environment :: Other Environment",
 ]
 description-file="README.rst"
-download-url="https://github.com/rjdbcm/ozi-core/archive/refs/tags/{version}.tar.gz"
+download-url="https://github.com/OZI-Project/ozi-core/archive/refs/tags/{version}.tar.gz"
 home-page="https://www.oziproject.dev"
 keywords="OZI,mesonbuild"
 license="Apache-2.0 WITH LLVM-exception"
