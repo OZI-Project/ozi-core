@@ -1,4 +1,12 @@
 # ozi-core CHANGELOG
+## 1.1.1 (2024-09-11)
+
+
+### 🐛 Fixed Bugs
+
+* package metadata download-url correction — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`08a20ee`](https://github.com/OZI-Project/ozi-core/commit/08a20eedf26623035e15f900742a156aa1d32b18))
+
 ## 1.1.0 (2024-09-10)
 
 
