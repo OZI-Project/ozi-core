@@ -9,7 +9,7 @@ dependencies = [
     'idna>=2',
     'meson[ninja]>=1.1.0',
     'ozi-spec~=0.9.5',
-    'ozi-templates~=2.11.1',
+    'ozi-templates~=2.12.0',
     'packaging~=24.1',
     'prompt-toolkit',
     'pyparsing~=3.1',
