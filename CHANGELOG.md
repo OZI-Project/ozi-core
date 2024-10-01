@@ -1,4 +1,12 @@
 # ozi-core CHANGELOG
+## 1.2.2 (2024-10-01)
+
+
+### 🐛 Fixed Bugs
+
+* correct locale file location — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`392d0ab`](https://github.com/OZI-Project/ozi-core/commit/392d0ab8a3d19fa0367672b799ad12078c5c6437))
+
 ## 1.2.1 (2024-10-01)
 
 
