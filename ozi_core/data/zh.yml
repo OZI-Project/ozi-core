@@ -1,5 +1,6 @@
 adm-maintainers: 除了作者之外，『$project_name』還有其他維護者嗎？
 adm-confirm: 确认创建项目？元数据：
+adm-metadata: 元数据：
 adm-disclaimer-text: >
   本警报中提供的信息不构成法律建议，也不旨在构成法律建议。
   本警报中的所有信息、内容和材料仅供一般参考。
@@ -20,7 +21,7 @@ adm-disclaimer-text: >
 adm-disclaimer-title: 免責聲明
 btn-back: ← 返回
 btn-exit: ✘ 退出
-btn-home: ⌂ 提示符
+btn-prompt: ⌂ 提示符
 btn-menu: ☰  選單
 btn-no: 不
 btn-ok: ✔ 好的
