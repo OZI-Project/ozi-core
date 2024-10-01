@@ -6,6 +6,7 @@ adm-confirm: >
   Confirm project creation?
 
   "PKG-INFO Metadata:"
+adm-metadata: "PKG-INFO Metadata:"
 adm-disclaimer-text: >
   The information provided on this prompt does not, and is not intended
   to, constitute legal advice. All information, content, and materials
@@ -32,7 +33,7 @@ adm-disclaimer-text: >
 adm-disclaimer-title: Disclaimer
 btn-back: "← Back"
 btn-exit: "✘ Exit"
-btn-home: "⌂ Prompt"
+btn-prompt: "⌂ Prompt"
 btn-menu: "☰  Menu"
 btn-yes: "Yes"
 btn-no: "No"
