@@ -937,7 +937,7 @@ def menu_loop(
             case 1:
                 if admonition_dialog(
                     title=TRANSLATION('dlg-title'),
-                    heading_label='PKG-INFO Metadata:',
+                    heading_label=TRANSLATION('adm-metadata'),
                     text='\n'.join(
                         prefix.values() if len(prefix) > 0 else {'Name:': 'Name:'},
                     ),
