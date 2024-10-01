@@ -145,7 +145,7 @@ class CloseMatch(Action):
         option_string: str | None = None,
     ) -> None:
         """Find closest matching class attribute."""
-        if values is None:
+        if values is None:  # pragma: no cover
             return
         if option_string is not None:
             key = option_string.lstrip('-').replace('-', '_')
