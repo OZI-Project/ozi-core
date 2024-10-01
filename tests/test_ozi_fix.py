@@ -371,5 +371,6 @@ header = """.. OZI
 @given(payload=st.text(max_size=65535).map(header.__add__), as_message=st.booleans())
 def test_fuzz_pkg_info_extra(payload: str, as_message: bool) -> None:  # noqa: DC102, RUF100
     ozi_core.pkg_extra._pkg_info_extra(
-        payload=payload, as_message=as_message
-    )  # noqa: SLF001
+        payload=payload,
+        as_message=as_message,
+    )

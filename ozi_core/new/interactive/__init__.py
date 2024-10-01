@@ -11,6 +11,7 @@ from typing import TYPE_CHECKING
 
 from tap_producer import TAP
 
+from ozi_core._i18n import TRANSLATION
 from ozi_core.new.interactive.dialog import Project
 from ozi_core.new.interactive.dialog import _style
 from ozi_core.new.interactive.dialog import admonition_dialog
@@ -32,30 +33,9 @@ def interactive_prompt(project: Namespace) -> list[str]:  # noqa: C901  # pragma
 
     if (
         admonition_dialog(
-            title='ozi-new interactive prompt',
-            heading_label='Disclaimer',
-            text="""
-The information provided on this prompt does not, and is not intended
-to, constitute legal advice. All information, content, and materials
-available on this prompt are for general informational purposes only.
-Information on this prompt may not constitute the most up-to-date
-legal or other information.
-
-THE LICENSE TEMPLATES, LICENSE IDENTIFIERS, LICENSE CLASSIFIERS,
-AND LICENSE EXPRESSION PARSING SERVICES, AND ALL OTHER CONTENTS ARE
-PROVIDED "AS IS", NO REPRESENTATIONS ARE MADE THAT THE CONTENT IS
-ERROR-FREE AND/OR APPLICABLE FOR ANY PURPOSE, INCLUDING MERCHANTABILITY.
-
-Readers of this prompt should contact their attorney to obtain advice
-with respect to any particular legal matter. The OZI Project is not a
-law firm and does not provide legal advice. No reader or user of this
-prompt should act or abstain from acting on the basis of information
-on this prompt without first seeking legal advice from counsel in the
-relevant jurisdiction. Legal counsel can ensure that the information
-provided in this prompt is applicable to your particular situation.
-Use of, or reading, this prompt or any of the resources contained
-within does not create an attorney-client relationship.
-""",
+            title=TRANSLATION('dlg-title'),
+            heading_label=TRANSLATION('adm-disclaimer-title'),
+            text=TRANSLATION('adm-disclaimer-text'),
         ).run()
         is None
     ):
@@ -102,8 +82,10 @@ within does not create an attorney-client relationship.
 
     if yes_no_dialog(
         title='ozi-new interactive prompt',
-        text=f'Are there any maintainers of {project_name}?\n(other than the author or authors)',
+        text=TRANSLATION('adm-maintainers'),
         style=_style,
+        yes_text=TRANSLATION('btn-yes'),
+        no_text=TRANSLATION('btn-no'),
     ).run():
         result, output, prefix = _P.maintainer(project_name, output, prefix)
         if isinstance(result, list):
@@ -118,11 +100,11 @@ within does not create an attorney-client relationship.
         return result
 
     while not admonition_dialog(
-        title='ozi-new interactive prompt',
-        heading_label='Confirm project creation?\nPKG-INFO Metadata:',
+        title=TRANSLATION('dlg-title'),
+        heading_label=TRANSLATION('adm-confirm'),
         text='\n'.join(prefix.values()),
-        ok_text='✔ Ok',
-        cancel_text='☰  Menu',
+        ok_text=TRANSLATION('btn-ok'),
+        cancel_text=TRANSLATION('btn-menu'),
     ).run():
         result, output, prefix = menu_loop(output, prefix)
         if isinstance(result, list):

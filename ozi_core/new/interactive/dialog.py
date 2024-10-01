@@ -33,8 +33,9 @@ from prompt_toolkit.validation import Validator  # pyright: ignore
 from prompt_toolkit.widgets import Button  # pyright: ignore
 from prompt_toolkit.widgets import Dialog  # pyright: ignore
 from prompt_toolkit.widgets import Label  # pyright: ignore
-from prompt_toolkit.widgets import RadioList  # pyright: ignore
+from prompt_toolkit.widgets import RadioList
 
+from ozi_core._i18n import TRANSLATION
 from ozi_core.new.interactive._style import _style
 from ozi_core.new.interactive._style import _style_dict
 from ozi_core.new.interactive.validator import LengthValidator
@@ -48,6 +49,13 @@ from ozi_core.trove import from_prefix
 if TYPE_CHECKING:
 
     from prompt_toolkit.key_binding.key_processor import KeyPressEvent  # pyright: ignore
+
+
+def checkbox(checked: bool) -> str:
+    if checked:
+        return '☑'
+    else:
+        return '☐'
 
 
 class Project:  # pragma: no cover
@@ -89,8 +97,7 @@ class Project:  # pragma: no cover
                 'Name',
                 output,
                 prefix,
-                'What is the name of the project?',
-                '(PyPI package name: no spaces, alphanumeric words, ".-_" as delimiters)',
+                TRANSLATION('pro-name'),
                 validator=DynamicValidator(_check_package_exists),
             )
             if result is True:
@@ -109,8 +116,7 @@ class Project:  # pragma: no cover
                 'Summary',
                 output,
                 prefix,
-                f'What does the project, {project_name}, do?',
-                '(a short summary 1-2 sentences)',
+                TRANSLATION('pro-summary', projectname=project_name),
                 validator=LengthValidator(),
             )
             if result is True:
@@ -129,7 +135,7 @@ class Project:  # pragma: no cover
                 'Keywords',
                 output,
                 prefix,
-                f'What are some keywords used to describe {project_name}?\n(comma-separated list)',
+                TRANSLATION('pro-keywords', projectname=project_name),
                 validator=LengthValidator(),
             )
             if result is True:
@@ -148,7 +154,7 @@ class Project:  # pragma: no cover
                 'Home-page',
                 output,
                 prefix,
-                f'What is the home-page URL for {project_name}?',
+                TRANSLATION('pro-homepage', projectname=project_name),
                 validator=LengthValidator(),
             )
             if result is True:
@@ -167,7 +173,7 @@ class Project:  # pragma: no cover
                 'Author',
                 output,
                 prefix,
-                f'Who is the author or authors of {project_name}?\n(comma-separated list)',
+                TRANSLATION('pro-author', projectname=project_name),
                 validator=LengthValidator(),
                 split_on=',',
             )
@@ -187,7 +193,7 @@ class Project:  # pragma: no cover
                 'Author-email',
                 output,
                 prefix,
-                f'What are the email addresses of the author or authors of {project_name}?\n(comma-separated list)',  # noqa: B950, RUF100, E501
+                TRANSLATION('pro-author-email', projectname=project_name),
                 validator=LengthValidator(),
                 split_on=',',
             )
@@ -208,12 +214,12 @@ class Project:  # pragma: no cover
                 values=sorted(
                     (zip(from_prefix(Prefix().license), from_prefix(Prefix().license))),
                 ),
-                title='ozi-new interactive prompt',
-                text=f'Please select a license classifier for {project_name}:',
+                title=TRANSLATION('dlg-title'),
+                text=TRANSLATION('pro-license', projectname=project_name),
                 style=_style,
                 default=_default,
-                cancel_text='☰  Menu',
-                ok_text='✔ Ok',
+                cancel_text=TRANSLATION('btn-menu'),
+                ok_text=TRANSLATION('btn-ok'),
             ).run()
             if license_ is None:
                 result, output, prefix = menu_loop(output, prefix)
@@ -228,9 +234,13 @@ class Project:  # pragma: no cover
                     break
                 message_dialog(
                     style=_style,
-                    title='ozi-new interactive prompt',
-                    text=f'Invalid input "{license_}"\nPress ENTER to continue.',
-                    ok_text='✔ Ok',
+                    title=TRANSLATION('dlg-title'),
+                    text=TRANSLATION(
+                        'msg-invalid-input',
+                        value=license_ if license_ and isinstance(license_, str) else '',
+                        errmsg='',
+                    ),
+                    ok_text=TRANSLATION('btn-ok'),
                 ).run()
         prefix.update(
             {f'{Prefix().license}': f'{Prefix().license}{license_ if license_ else ""}'},
@@ -261,29 +271,41 @@ class Project:  # pragma: no cover
 
             if len(possible_spdx) < 1:
                 _license_expression = input_dialog(
-                    title='ozi-new interactive prompt',
-                    text=f'License: {_license}\nEdit SPDX license expression for {project_name}:',
+                    title=TRANSLATION('dlg-title'),
+                    text=TRANSLATION(
+                        'pro-license-expression-input',
+                        license=_license,
+                        projectname=project_name,
+                    ),
                     default=_default[0],
                     style=_style,
-                    cancel_text='⇒ Skip',
+                    cancel_text=TRANSLATION('btn-skip'),
                 ).run()
             elif len(possible_spdx) == 1:
                 _license_expression = input_dialog(
-                    title='ozi-new interactive prompt',
-                    text=f'License: {_license}\nEdit SPDX license expression for {project_name}:',
+                    title=TRANSLATION('dlg-title'),
+                    text=TRANSLATION(
+                        'pro-license-expression-input',
+                        license=_license,
+                        projectname=project_name,
+                    ),
                     default=_default[0],
                     style=_style,
-                    cancel_text='⇒ Skip',
-                    ok_text='✔ Ok',
+                    cancel_text=TRANSLATION('btn-skip'),
+                    ok_text=TRANSLATION('btn-ok'),
                 ).run()
             else:
                 license_id = radiolist_dialog(
                     values=sorted(zip(possible_spdx, possible_spdx)),
-                    title='ozi-new interactive prompt',
-                    text=f'License: {_license}\nPlease select a SPDX license-id for {project_name}:',
+                    title=TRANSLATION('dlg-title'),
+                    text=TRANSLATION(
+                        'pro-license-expression-radio',
+                        license=_license,
+                        projectname=project_name,
+                    ),
                     style=_style,
-                    cancel_text='☰  Menu',
-                    ok_text='✔ Ok',
+                    cancel_text=TRANSLATION('btn-menu'),
+                    ok_text=TRANSLATION('btn-ok'),
                 ).run()
                 if license_id is None:
                     output.update({'--license-expression': _default})
@@ -292,12 +314,16 @@ class Project:  # pragma: no cover
                         return result, output, prefix
                 else:
                     _license_expression = input_dialog(
-                        title='ozi-new interactive prompt',
-                        text=f'License: {_license}\nEdit SPDX license expression for {project_name}:',
+                        title=TRANSLATION('dlg-title'),
+                        text=TRANSLATION(
+                            'pro-license-expression-input',
+                            license=_license,
+                            projectname=project_name,
+                        ),
                         default=license_id,
                         style=_style,
-                        cancel_text='⇒ Skip',
-                        ok_text='✔ Ok',
+                        cancel_text=TRANSLATION('btn-skip'),
+                        ok_text=TRANSLATION('btn-ok'),
                     ).run()
                     if validate_message(license_id if license_id else '', LengthValidator())[
                         0
@@ -306,9 +332,13 @@ class Project:  # pragma: no cover
                     else:
                         message_dialog(
                             style=_style,
-                            title='ozi-new interactive prompt',
-                            text=f'Invalid input "{license_id}"\nPress ENTER to continue.',
-                            ok_text='✔ Ok',
+                            title=TRANSLATION('dlg-title'),
+                            text=TRANSLATION(
+                                'msg-invalid-input',
+                                value=license_id,
+                                errmsg='',
+                            ),
+                            ok_text=TRANSLATION('btn-ok'),
                         ).run()
             break
         if _license_expression:
@@ -333,7 +363,7 @@ class Project:  # pragma: no cover
                 'Maintainer',
                 output,
                 prefix,
-                f'What is the maintainer or maintainers name of {project_name}?\n(comma-separated list)',  # noqa: B950, RUF100, E501
+                TRANSLATION('pro-maintainer', projectname=project_name),
                 validator=LengthValidator(),
                 split_on=',',
             )
@@ -353,7 +383,7 @@ class Project:  # pragma: no cover
                 'Maintainer-email',
                 output,
                 prefix,
-                f'What are the email addresses of the maintainer or maintainers of {project_name}?\n(comma-separated list)',  # noqa: B950, RUF100, E501
+                TRANSLATION('pro-maintainer-email', projectname=project_name),
                 validator=LengthValidator(),
                 split_on=',',
             )
@@ -372,30 +402,30 @@ class Project:  # pragma: no cover
         output.setdefault('--requires-dist', [])
         while True:
             match button_dialog(
-                title='ozi-new interactive prompt',
+                title=TRANSLATION('dlg-title'),
                 text='\n'.join(
                     (
                         'Requires-Dist:',
                         '\n'.join(_requires_dist),
                         '\n',
-                        f'Add or remove dependency requirements to {project_name}:',
+                        TRANSLATION('pro-requires-dist', projectname=project_name),
                     ),
                 ),
                 buttons=[
-                    ('Add', True),
-                    ('Remove', False),
-                    ('✔ Ok', 'ok'),
-                    ('☰  Menu', None),
+                    (TRANSLATION('pro-requires-dist-add'), True),
+                    (TRANSLATION('pro-requires-dist-remove'), False),
+                    (TRANSLATION('btn-ok'), 'ok'),
+                    (TRANSLATION('btn-menu'), None),
                 ],
                 style=_style,
             ).run():
                 case True:
                     requirement = input_dialog(
-                        title='ozi-new interactive prompt',
-                        text='Search PyPI packages:',
+                        title=TRANSLATION('dlg-title'),
+                        text=TRANSLATION('pro-requires-dist-search'),
                         validator=PackageValidator(),
                         style=_style,
-                        cancel_text='← Back',
+                        cancel_text=TRANSLATION('btn-back'),
                     ).run()
                     if requirement:
                         _requires_dist += [requirement]
@@ -410,11 +440,11 @@ class Project:  # pragma: no cover
                 case False:
                     if len(_requires_dist) != 0:
                         del_requirement = checkboxlist_dialog(
-                            title='ozi-new interactive prompt',
-                            text='Select packages to delete:',
+                            title=TRANSLATION('dlg-title'),
+                            text=TRANSLATION('pro-requires-dist-cbl-remove'),
                             values=list(zip(_requires_dist, _requires_dist)),
                             style=_style,
-                            cancel_text='← Back',
+                            cancel_text=TRANSLATION('btn-back'),
                         ).run()
                         if del_requirement:
                             _requires_dist = list(
@@ -427,10 +457,10 @@ class Project:  # pragma: no cover
                                 prefix.pop(f'Requires-Dist: {req}')
                     else:
                         message_dialog(
-                            title='ozi-new interactive prompt',
-                            text='No requirements to remove.',
+                            title=TRANSLATION('dlg-title'),
+                            text=TRANSLATION('pro-requires-dist-msg-remove-no-requirements'),
                             style=_style,
-                            ok_text='✔ Ok',
+                            ok_text=TRANSLATION('btn-ok'),
                         ).run()
                 case x if x and x == 'ok':
                     break
@@ -453,12 +483,12 @@ class Project:  # pragma: no cover
                 ('md', 'Markdown'),
                 ('txt', 'Plaintext'),
             ),
-            title='ozi-new interactive prompt',
-            text=f'Please select README type for {project_name}:',
+            title=TRANSLATION('dlg-title'),
+            text=TRANSLATION('pro-readme-type'),
             style=_style,
             default=_default,
-            ok_text='✔ Ok',
-            cancel_text='← Back',
+            ok_text=TRANSLATION('btn-ok'),
+            cancel_text=TRANSLATION('btn-back'),
         ).run()
         if readme_type is not None:
             output.update(
@@ -489,12 +519,12 @@ class Project:  # pragma: no cover
                 ('Typed', 'Typed'),
                 ('Stubs Only', 'Stubs Only'),
             ),
-            title='ozi-new interactive prompt',
-            text=f'Please select typing classifier for {project_name}:',
+            title=TRANSLATION('dlg-title'),
+            text=TRANSLATION('pro-typing'),
             style=_style,
-            ok_text='✔ Ok',
+            ok_text=TRANSLATION('btn-ok'),
             default=_default,
-            cancel_text='← Back',
+            cancel_text=TRANSLATION('btn-back'),
         ).run()
         if result is not None:
             output.update({'--typing': [result] if isinstance(result, str) else []})
@@ -522,25 +552,44 @@ class Project:  # pragma: no cover
         while True:
             result = checkboxlist_dialog(
                 values=(
-                    ('Changelog', 'Changelog'),
-                    ('Documentation', 'Documentation'),
-                    ('Bug Report', 'Bug Report'),
-                    ('Funding', 'Funding'),
-                    ('Source', 'Source'),
+                    (
+                        TRANSLATION('pro-project-urls-cbl-changelog'),
+                        TRANSLATION('pro-project-urls-cbl-changelog'),
+                    ),
+                    (
+                        TRANSLATION('pro-project-urls-cbl-documentation'),
+                        TRANSLATION('pro-project-urls-cbl-documentation'),
+                    ),
+                    (
+                        TRANSLATION('pro-project-urls-cbl-bug-report'),
+                        TRANSLATION('pro-project-urls-cbl-bug-report'),
+                    ),
+                    (
+                        TRANSLATION('pro-project-urls-cbl-funding'),
+                        TRANSLATION('pro-project-urls-cbl-funding'),
+                    ),
+                    (
+                        TRANSLATION('pro-project-urls-cbl-source'),
+                        TRANSLATION('pro-project-urls-cbl-source'),
+                    ),
                 ),
-                title='ozi-new interactive prompt',
-                text=f'Please select project URLs you want to add to {project_name}:',
+                title=TRANSLATION('dlg-title'),
+                text=TRANSLATION('pro-project-urls-cbl', projectname=project_name),
                 style=_style,
-                ok_text='✔ Ok',
-                cancel_text='← Back',
+                ok_text=TRANSLATION('btn-ok'),
+                cancel_text=TRANSLATION('btn-back'),
             ).run()
             if result is not None:
                 for i in result:
                     url = input_dialog(
-                        title='ozi-new interactive prompt',
-                        text=f'Please enter the {i} URL for {project_name}:',
-                        ok_text='✔ Ok',
-                        cancel_text='← Back',
+                        title=TRANSLATION('dlg-title'),
+                        text=TRANSLATION(
+                            'pro-project-urls-input',
+                            urltype=i,
+                            projectname=project_name,
+                        ),
+                        ok_text=TRANSLATION('btn-ok'),
+                        cancel_text=TRANSLATION('btn-back'),
                         default='https://',
                         style=_style,
                     ).run()
@@ -578,15 +627,15 @@ def menu_loop(
     while True:
         _default: str | list[str] | None = None
         match button_dialog(
-            title='ozi-new interactive prompt',
-            text='Main menu, select an action:',
+            title=TRANSLATION('dlg-title'),
+            text=TRANSLATION('main-menu-text'),
             buttons=[
-                ('∋ Metadata', 1),
-                ('⚙ Options', 0),
-                ('↺ Reset', False),
-                ('✘ Exit', None),
-                ('✎ Edit', -1),
-                ('← Back', True),
+                (TRANSLATION('main-menu-btn-metadata'), 1),
+                (TRANSLATION('main-menu-btn-options'), 0),
+                (TRANSLATION('main-menu-btn-reset'), False),
+                (TRANSLATION('btn-exit'), None),
+                (TRANSLATION('main-menu-btn-edit'), -1),
+                (TRANSLATION('btn-back'), True),
             ],
             style=_style,
         ).run():
@@ -594,47 +643,57 @@ def menu_loop(
                 break
             case False:
                 if yes_no_dialog(
-                    title='ozi-new interactive prompt',
-                    text='Reset prompt and start over?',
+                    title=TRANSLATION('dlg-title'),
+                    text=TRANSLATION('main-menu-yn-reset'),
                     style=_style,
+                    yes_text=TRANSLATION('btn-yes'),
+                    no_text=TRANSLATION('btn-no'),
                 ).run():
                     return ['interactive', '.'], output, prefix
             case None:
                 if yes_no_dialog(
-                    title='ozi-new interactive prompt',
-                    text='Exit the prompt?',
+                    title=TRANSLATION('dlg-title'),
+                    text=TRANSLATION('main-menu-yn-exit'),
                     style=_style,
+                    yes_text=TRANSLATION('btn-yes'),
+                    no_text=TRANSLATION('btn-no'),
                 ).run():
                     return [], output, prefix
             case -1:
                 while True:
                     match radiolist_dialog(
-                        title='ozi-new interactive prompt',
-                        text='Edit menu, select content to edit:',
+                        title=TRANSLATION('dlg-title'),
+                        text=TRANSLATION('edit-menu-text'),
                         values=[
-                            ('name', 'Name'),
-                            ('summary', 'Summary'),
-                            ('keywords', 'Keywords'),
-                            ('home_page', 'Home-page'),
-                            ('author', 'Author'),
-                            ('author_email', 'Email'),
-                            ('license_', 'License'),
-                            ('license_expression', 'Extra: License-Expression'),
-                            ('maintainer', 'Maintainer'),
-                            ('maintainer_email', 'Maintainer-email'),
-                            ('project_urls', 'Project-URL'),
-                            ('requires_dist', 'Requires-Dist (requirements)'),
-                            ('audience', 'Intended Audience'),
-                            ('environment', 'Environment'),
-                            ('framework', 'Framework'),
-                            ('language', 'Natural Language'),
-                            ('status', 'Status'),
-                            ('topic', 'Topic'),
-                            ('typing', 'Typing'),
-                            ('readme_type', 'Description-Content-Type'),
+                            ('name', TRANSLATION('edit-menu-btn-name')),
+                            ('summary', TRANSLATION('edit-menu-btn-summary')),
+                            ('keywords', TRANSLATION('edit-menu-btn-keywords')),
+                            ('home_page', TRANSLATION('edit-menu-btn-homepage')),
+                            ('author', TRANSLATION('edit-menu-btn-author')),
+                            ('author_email', TRANSLATION('edit-menu-btn-email')),
+                            ('license_', TRANSLATION('edit-menu-btn-license')),
+                            (
+                                'license_expression',
+                                TRANSLATION('edit-menu-btn-license-expression'),
+                            ),
+                            ('maintainer', TRANSLATION('edit-menu-btn-maintainer')),
+                            (
+                                'maintainer_email',
+                                TRANSLATION('edit-menu-btn-maintainer-email'),
+                            ),
+                            ('project_urls', TRANSLATION('edit-menu-btn-project-url')),
+                            ('requires_dist', TRANSLATION('edit-menu-btn-requires-dist')),
+                            ('audience', TRANSLATION('edit-menu-btn-audience')),
+                            ('environment', TRANSLATION('edit-menu-btn-environment')),
+                            ('framework', TRANSLATION('edit-menu-btn-framework')),
+                            ('language', TRANSLATION('edit-menu-btn-language')),
+                            ('status', TRANSLATION('edit-menu-btn-status')),
+                            ('topic', TRANSLATION('edit-menu-btn-topic')),
+                            ('typing', TRANSLATION('edit-menu-btn-typing')),
+                            ('readme_type', TRANSLATION('edit-menu-btn-readme-type')),
                         ],
-                        cancel_text='← Back',
-                        ok_text='✔ Ok',
+                        cancel_text=TRANSLATION('btn-back'),
+                        ok_text=TRANSLATION('btn-ok'),
                         style=_style,
                     ).run():
                         case None:
@@ -713,24 +772,55 @@ def menu_loop(
             case 0:
                 while True:
                     match radiolist_dialog(
-                        title='ozi-new interactive prompt',
-                        text='Options menu, select an option:',
+                        title=TRANSLATION('dlg-title'),
+                        text=TRANSLATION('opt-menu-title'),
                         values=[
-                            ('enable_cython', f'Enable Cython: {_P.enable_cython}'),
-                            ('enable_uv', f'Enable uv: {_P.enable_uv}'),
+                            (
+                                'enable_cython',
+                                TRANSLATION(
+                                    'opt-menu-enable-cython',
+                                    value=checkbox(_P.enable_cython),
+                                ),
+                            ),
+                            (
+                                'enable_uv',
+                                TRANSLATION(
+                                    'opt-menu-enable-uv',
+                                    value=checkbox(_P.enable_uv),
+                                ),
+                            ),
                             (
                                 'github_harden_runner',
-                                f'Hardened GitHub CI/CD: {_P.github_harden_runner}',
+                                TRANSLATION(
+                                    'opt-menu-github-harden-runner',
+                                    value=checkbox(_P.github_harden_runner),
+                                ),
                             ),
-                            ('strict', f'Strict Mode: {_P.strict}'),
-                            ('verify_email', f'Verify Email: {_P.verify_email}'),
-                            ('allow_file', 'Allow File Patterns ...'),
-                            ('ci_provider', 'CI Provider ...'),
-                            ('copyright_head', 'Copyright Header ...'),
+                            (
+                                'strict',
+                                TRANSLATION('opt-menu-strict', value=checkbox(_P.strict)),
+                            ),
+                            (
+                                'verify_email',
+                                TRANSLATION(
+                                    'opt-menu-verify-email',
+                                    value=checkbox(_P.verify_email),
+                                ),
+                            ),
+                            ('allow_file', TRANSLATION('opt-menu-allow-file')),
+                            ('ci_provider', TRANSLATION('opt-menu-ci-provider')),
+                            ('copyright_head', TRANSLATION('opt-menu-copyright-head')),
+                            (
+                                'language',
+                                TRANSLATION(
+                                    'opt-menu-language',
+                                    value=TRANSLATION('lang-' + TRANSLATION.locale),
+                                ),
+                            ),
                         ],
                         style=_style,
-                        cancel_text='← Back',
-                        ok_text='✔ Ok',
+                        cancel_text=TRANSLATION('btn-back'),
+                        ok_text=TRANSLATION('btn-ok'),
                     ).run():
                         case x if x and x in (
                             'enable_cython',
@@ -782,11 +872,11 @@ def menu_loop(
                                 ],
                             )
                             result = input_dialog(
-                                title='ozi-new interactive prompt',
-                                text='Edit copyright header:',
+                                title=TRANSLATION('dlg-title'),
+                                text=TRANSLATION('opt-menu-copyright-head-input'),
                                 style=_style,
-                                cancel_text='← Back',
-                                ok_text='✔ Ok',
+                                cancel_text=TRANSLATION('btn-back'),
+                                ok_text=TRANSLATION('btn-ok'),
                                 default=_default[0],
                             ).run()
                             if result in _default:
@@ -798,11 +888,11 @@ def menu_loop(
                                 list(METADATA.spec.python.src.allow_files),
                             )
                             result = input_dialog(
-                                title='ozi-new interactive prompt',
-                                text='Edit allowed existing files:',
+                                title=TRANSLATION('dlg-title'),
+                                text=TRANSLATION('opt-menu-allow-file-input'),
                                 style=_style,
-                                cancel_text='← Back',
-                                ok_text='✔ Ok',
+                                cancel_text=TRANSLATION('btn-back'),
+                                ok_text=TRANSLATION('btn-ok'),
                                 default=','.join(_default),
                             ).run()
                             if result != ','.join(_default) and result is not None:
@@ -811,28 +901,48 @@ def menu_loop(
                         case x if x and x == 'ci_provider':
                             _default = output.setdefault('--ci-provider', ['github'])
                             result = radiolist_dialog(
-                                title='ozi-new interactive prompt',
-                                text='Change continuous integration providers:',
+                                title=TRANSLATION('dlg-title'),
+                                text=TRANSLATION('opt-menu-ci-provider-input'),
                                 values=[('github', 'GitHub')],
-                                cancel_text='← Back',
-                                ok_text='✔ Ok',
+                                cancel_text=TRANSLATION('btn-back'),
+                                ok_text=TRANSLATION('btn-ok'),
                                 default=_default[0],
                                 style=_style,
                             ).run()
                             if result in _default and result is not None:
                                 _P.ci_provider = result
                                 output.update({'--ci-provider': [_P.ci_provider]})
+                        case x if x == 'language':
+                            result = radiolist_dialog(
+                                title=TRANSLATION('dlg-title'),
+                                text=TRANSLATION('opt-menu-language-text'),
+                                values=list(
+                                    zip(
+                                        TRANSLATION.data.keys(),
+                                        [
+                                            TRANSLATION('lang-' + i)
+                                            for i in TRANSLATION.data.keys()
+                                        ],
+                                    ),
+                                ),
+                                cancel_text=TRANSLATION('btn-back'),
+                                ok_text=TRANSLATION('btn-ok'),
+                                default=TRANSLATION.locale,
+                                style=_style,
+                            ).run()
+                            if result is not None:
+                                TRANSLATION.locale = result
                         case _:
                             break
             case 1:
                 if admonition_dialog(
-                    title='ozi-new interactive prompt',
+                    title=TRANSLATION('dlg-title'),
                     heading_label='PKG-INFO Metadata:',
                     text='\n'.join(
                         prefix.values() if len(prefix) > 0 else {'Name:': 'Name:'},
                     ),
-                    ok_text='⌂ Prompt',
-                    cancel_text='← Back',
+                    ok_text=TRANSLATION('btn-prompt'),
+                    cancel_text=TRANSLATION('btn-back'),
                 ).run():
                     break
     return None, output, prefix
@@ -848,11 +958,11 @@ def classifier_checkboxlist(key: str) -> list[str] | None:  # pragma: no cover
                 )
             ),
         ),
-        title='ozi-new interactive prompt',
-        text=f'Please select {key} classifier or classifiers:',
+        title=TRANSLATION('dlg-title'),
+        text=TRANSLATION('pro-classifier-cbl'),
         style=_style,
-        ok_text='✔ Ok',
-        cancel_text='← Back',
+        ok_text=TRANSLATION('btn-ok'),
+        cancel_text=TRANSLATION('btn-back'),
     ).run()
     return result
 
@@ -871,13 +981,13 @@ def header_input(
 ]:  # pragma: no cover
     _default = output.setdefault(f'--{label.lower()}', [])
     header = input_dialog(
-        title='ozi-new interactive prompt',
+        title=TRANSLATION('dlg-title'),
         text='\n'.join(args),
         validator=validator,
         default=_default[0] if len(_default) > 0 else '',
         style=_style,
-        cancel_text='☰  Menu',
-        ok_text='✔ Ok',
+        cancel_text=TRANSLATION('btn-menu'),
+        ok_text=TRANSLATION('btn-ok'),
     ).run()
     if header is None:
         output.update(
@@ -900,10 +1010,10 @@ def header_input(
                     output.update({f'--{label.lower()}': [header]})
                 return True, output, prefix
             message_dialog(
-                title='ozi-new interactive prompt',
-                text=f'Invalid input "{header}"\n{errmsg}\nPress ENTER to continue.',
+                title=TRANSLATION('dlg-title'),
+                text=TRANSLATION('msg-input-invalid', value=header, errmsg=errmsg),
                 style=_style,
-                ok_text='✔ Ok',
+                ok_text=TRANSLATION('btn-ok'),
             ).run()
         output.update(
             {f'--{label.lower()}': _default if len(_default) > 0 else []},
@@ -989,17 +1099,21 @@ class Admonition(RadioList[_T]):
         pass  # pragma: no cover
 
 
-def admonition_dialog(
+def admonition_dialog(  # noqa: C901
     title: str = '',
     text: str = '',
     heading_label: str = '',
-    ok_text: str = '✔ Ok',
-    cancel_text: str = '✘ Exit',
+    ok_text: str | None = None,
+    cancel_text: str | None = None,
     style: BaseStyle | None = None,
 ) -> Application[list[Any]]:  # pragma: no cover
     """Admonition dialog shortcut.
     The focus can be moved between the list and the Ok/Cancel button with tab.
     """
+    if ok_text is None:
+        ok_text = TRANSLATION('btn-ok')
+    if cancel_text is None:
+        cancel_text = TRANSLATION('btn-exit')
 
     def _return_none() -> None:
         """Button handler that returns None."""

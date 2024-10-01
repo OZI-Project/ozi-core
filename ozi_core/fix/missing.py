@@ -94,7 +94,7 @@ def render_pkg_info(target: Path, name: str, _license: str) -> Message:  # noqa:
                         f'Description-Content-Type: {readme_ext_to_content_type.get(ext)}\n'
                     )
             required += ''.join(
-                [f'Classifier: {req}\n' for req in ozi_build.get('classifiers', [])]
+                [f'Classifier: {req}\n' for req in ozi_build.get('classifiers', [])],
             )
             msg = (
                 PKG_INFO.replace('@LICENSE@', _license)
