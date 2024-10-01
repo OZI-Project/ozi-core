@@ -94,7 +94,7 @@ def render_pkg_info(target: Path, name: str, _license: str) -> Message:  # noqa:
                         f'Description-Content-Type: {readme_ext_to_content_type.get(ext)}\n'
                     )
             required += ''.join(
-                [f'Classifier: {req}\n' for req in ozi_build.get('classifiers', [])]
+                [f'Classifier: {req}\n' for req in ozi_build.get('classifiers', [])],
             )
             msg = (
                 PKG_INFO.replace('@LICENSE@', _license)
@@ -108,7 +108,7 @@ def render_pkg_info(target: Path, name: str, _license: str) -> Message:  # noqa:
             return message_from_string(msg)
 
 
-def python_support(pkg_info: Message) -> set[tuple[str, str]]:  # pragma: no cover
+def python_support(pkg_info: Message) -> set[tuple[str, str]]:
     """Check PKG-INFO Message for python support."""
     remaining_pkg_info = {
         (k, v)
@@ -119,11 +119,11 @@ def python_support(pkg_info: Message) -> set[tuple[str, str]]:  # pragma: no cov
         if (k, v) in remaining_pkg_info:
             TAP.ok(k, v)
         else:
-            TAP.not_ok('MISSING', v)
+            TAP.not_ok('MISSING', v)  # pragma: no cover
     return remaining_pkg_info
 
 
-def required_extra_pkg_info(pkg_info: Message) -> dict[str, str]:  # pragma: no cover
+def required_extra_pkg_info(pkg_info: Message) -> dict[str, str]:
     """Check missing required OZI extra PKG-INFO"""
     remaining_pkg_info = python_support(pkg_info)
     remaining_pkg_info.difference_update(set(iter(METADATA.ozi.python_support.classifiers)))
@@ -131,7 +131,9 @@ def required_extra_pkg_info(pkg_info: Message) -> dict[str, str]:  # pragma: no 
         TAP.ok(k, v)
     extra_pkg_info, errstr = parse_extra_pkg_info(pkg_info)
     if errstr not in ('', None):
-        TAP.not_ok('MISSING', str(errstr))
+        TAP.not_ok('MISSING', str(errstr))  # pragma: no cover
+    for k, v in extra_pkg_info.items():
+        TAP.ok(k, v)
     return extra_pkg_info
 
 
@@ -152,17 +154,15 @@ def required_pkg_info(
         else:  # pragma: no cover
             TAP.not_ok('MISSING', i)
     extra_pkg_info = required_extra_pkg_info(pkg_info)
-    name = re.sub(r'[-_.]+', '-', pkg_info.get('Name', '')).lower()  # pragma: no cover
-    for k, v in extra_pkg_info.items():  # pragma: no cover
-        TAP.ok(k, v)  # pragma: no cover
-    return name, extra_pkg_info  # pragma: no cover
+    name = re.sub(r'[-_.]+', '-', pkg_info.get('Name', '')).lower()
+    return name, extra_pkg_info
 
 
 def required_files(
     kind: str,
     target: Path,
     name: str,
-) -> list[str]:  # pragma: no cover
+) -> list[str]:
     """Count missing files required by OZI"""
     found_files = []
     match kind:
@@ -209,17 +209,17 @@ def report(
         'source',
         target,
         name,
-    )  # pragma: defer to good-issue
+    )
     found_test_files = required_files(
         'test',
         target,
         name,
-    )  # pragma: defer to good-issue
+    )
     found_root_files = required_files(
         'root',
         target,
         name,
-    )  # pragma: defer to good-issue
+    )
     all_files = (  # pragma: defer to TAP-Consumer
         ['PKG-INFO'],
         extra_pkg_info,

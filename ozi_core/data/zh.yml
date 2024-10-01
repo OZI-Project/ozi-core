@@ -1,0 +1,138 @@
+adm-maintainers: 除了作者之外，『$project_name』還有其他維護者嗎？
+adm-confirm: 确认创建项目？元数据：
+adm-disclaimer-text: >
+  本警报中提供的信息不构成法律建议，也不旨在构成法律建议。
+  本警报中的所有信息、内容和材料仅供一般参考。
+  本警报中的信息，无论是否合法，可能不是最新的。
+
+
+  许可证模板、许可证标识符、许可证分类器和许可证表达式解析服务以及所有其他
+  均按『原样』提供，不保证内容
+  无错误和/或适用于任何目的，包括适销性。
+  本警报的读者应联系他们的律师以获取有关任何特定法律问题的建议。
+
+
+  OZI 项目不是律师事务所，不提供法律建议。
+  任何读者或用户都不得根据本警报中的信息采取行动或不采取行动，
+  除非事先寻求具有相关管辖权的律师的法律建议。
+  法律顾问可以确保本警报中提供的信息适合您的特定情况。
+  使用或阅读本警报或其中包含的任何资源不会建立律师-客户关系。
+adm-disclaimer-title: 免責聲明
+btn-back: ← 返回
+btn-exit: ✘ 退出
+btn-home: ⌂ 提示符
+btn-menu: ☰  選單
+btn-no: 不
+btn-ok: ✔ 好的
+btn-skip: ⇒ 绕行
+btn-yes: 是的
+dlg-title: ozi-new 互動提示符
+edit-menu-text: 编辑选单，选择要编辑的内容：
+edit-menu-btn-name: 姓名（Ｎａｍｅ）
+edit-menu-btn-summary: 概括（Ｓｕｍｍａｒｙ）
+edit-menu-btn-keywords: 关键字（Ｋｅｙｗｏｒｄｓ）
+edit-menu-btn-homepage: 头版（Ｈｏｍｅ－ｐａｇｅ）
+edit-menu-btn-author: 作者（Ａｕｔｈｏｒ）
+edit-menu-btn-email: 电子邮件（Ａｕｔｈｏｒ－ｅｍａｉｌ）
+edit-menu-btn-license: 软体许可（Ｌｉｃｅｎｓｅ）
+edit-menu-btn-license-expression: 附：软体许可表达式（Ｌｉｃｅｎｓｅ－Ｅｘｐｒｅｓｓｉｏｎ）
+edit-menu-btn-maintainer: 维护者（Ｍａｉｎｔａｉｎｅｒ）
+edit-menu-btn-maintainer-email: 维护者电子邮件（Ｍａｉｎｔａｉｎｅｒ－ｅｍａｉｌ）
+edit-menu-btn-project-url: 专案网址（Ｐｒｏｊｅｃｔ－ＵＲＬ）
+edit-menu-btn-requires-dist: 要求（Ｒｅｑｕｉｒｅｓ－Ｄｉｓｔ）
+edit-menu-btn-audience: 目标受众（Ｉｎｔｅｎｄｅｄ　Ａｕｄｉｅｎｃｅ）
+edit-menu-btn-environment: 环境（Ｅｎｖｉｒｏｎｍｅｎｔ）
+edit-menu-btn-framework: 框架（Ｆｒａｍｅｗｏｒｋ）
+edit-menu-btn-language: 自然语言（Ｎａｔｕｒａｌ　Ｌａｎｇｕａｇｅ）
+edit-menu-btn-status: 地位（Ｓｔａｔｕｓ）
+edit-menu-btn-topic: 话题（Ｔｏｐｉｃ）
+edit-menu-btn-typing: 类型（Ｔｙｐｉｎｇ）
+edit-menu-btn-readme-type: 自述文件内容类型（Ｄｅｓｃｒｉｐｔｉｏｎ－Ｃｏｎｔｅｎｔ－Ｔｙｐｅ）
+err-name-exists: 同名的项目已存在。
+err-name-invalid: 项目名称无效。
+err-no-empty: 不能为空。
+err-pkg-not-found: 找不到包包。
+err-too-long: 输入太长。
+lang-en: 英语（Ｅｎｇｌｉｓｈ）
+lang-zh: 中文
+main-menu-btn-edit: ✎ 编辑
+main-menu-btn-metadata: ∋ 元数据
+main-menu-btn-options: ⚙ 选项
+main-menu-btn-reset: ↺ 重置
+main-menu-text: 主选单，选择动作：
+main-menu-yn-exit: 退出提示符？
+main-menu-yn-reset: 重置提示并重新开始？
+msg-input-invalid: >
+  输入无效：$value
+
+  $errmsg
+
+  按『↵』持续
+opt-menu-allow-file-input: 编辑允许的存档正规表示式：
+opt-menu-allow-file: 允许的归档正规表示式⋯⋯
+opt-menu-ci-provider-input: 更换持续整合提供者：
+opt-menu-ci-provider: 持续整合提供者⋯⋯
+opt-menu-copyright-head-input: 编辑版权文件头：
+opt-menu-copyright-head: 版权文件头⋯⋯
+opt-menu-enable-cython: 允许Ｃｙｔｈｏｎ：$value
+opt-menu-enable-uv: 允许ｕｖ：$value
+opt-menu-github-harden-runner: 安全的ＧｉｔＨｕｂ持续整合和分发：$value
+opt-menu-language: 界面语言：$value
+opt-menu-language-text: 选择用户界面语言
+opt-menu-strict: 严格模式：$value
+opt-menu-title: 选项选单，选择一个选项：
+opt-menu-verify-email: 验证电子邮件：$value
+pro-author-email: >
+  作者的电子邮件地址是『$projectname』？
+
+  （分隔列表）
+pro-author: >
+  『$projectname』的作者是谁？
+
+  （分隔列表）
+pro-homepage: 『$projectname』的主页ＵＲＬ是什么？
+pro-keywords: >
+  用来描述『$projectname』的关键字是什么？
+
+  （分隔列表）
+pro-license-expression-input: >
+  许可：$license
+
+  编辑『$projectname』的ＳＰＤＸ许可证表达式：
+pro-license-expression-radio: >
+  许可：$license
+
+  请为『$projectname』选择ＳＰＤＸ许可证ＩＤ：
+pro-license: 请为『$projectname』选择许可证分类器。
+pro-maintainer-email: >
+  『$projectname』维护者的电子邮件地址是什么
+
+  （分隔列表）
+pro-maintainer: >
+  谁是『$projectname』的维护者？
+
+  （分隔列表）
+pro-name: >
+  项目名称是什么？
+
+  （ＰｙＰＩ套件名称：无空格、字母数字字元、『._-』作为分隔符）
+pro-project-urls-cbl-bug-report: 错误报告（Ｂｕｇ　Ｒｅｐｏｒｔ）
+pro-project-urls-cbl-changelog: 变更日志（Ｃｈａｎｇｅｌｏｇ）
+pro-project-urls-cbl-documentation: 文件（Ｄｏｃｕｍｅｎｔａｔｉｏｎ）
+pro-project-urls-cbl-funding: 资金（Ｆｕｎｄｉｎｇ）
+pro-project-urls-cbl-source: 原始码（Ｓｏｕｒｃｅ）
+pro-project-urls-cbl: 请选择您要新增至『$projectname』的专案ＵＲＬ：
+pro-project-urls-input: 请输入『$projectname』的$urltypeＵＲＬ：
+pro-readme-type: 请为『$projectname』选择自述文件类型：
+pro-requires-dist-add: 新增
+pro-requires-dist-search: 搜寻ＰｙＰＩ包：
+pro-requires-dist-cbl-remove: 选择要删除的包：
+pro-requires-dist-msg-remove-no-requirements: 没有删除请求。
+pro-requires-dist-remove: 删除
+pro-requires-dist: 新增或删除对『$projectname』的依赖关系要求。
+pro-summary: >
+  项目『$projectname』是做什么的？
+
+  （简短摘要 1〜2 句话）
+pro-typing: 请为『$projectname』选择一个类型存根分类器：
+pro-classifier-cbl: 请选择『$key』分类器：

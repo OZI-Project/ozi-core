@@ -1,4 +1,83 @@
 # ozi-core CHANGELOG
+## 1.2.0 (2024-09-18)
+
+
+### Feature
+
+
+* feat: OZI 1.22 — Eden Ross Duff, MSc &lt;rjdbcm@outlook.com&gt;
+([`6f4c7b5`](https://github.com/OZI-Project/ozi-core/commit/6f4c7b50ec756e613f2e7ed5ab6fd4227ad10517))
+
+## 1.1.1 (2024-09-11)
+
+
+### Build
+
+
+* (deps): update ozi-templates requirement from ~=2.11.1 to ~=2.12.0
+
+Updates the requirements on [ozi-templates](https://github.com/OZI-Project/ozi-templates) to permit the latest version.
+- [Release notes](https://github.com/OZI-Project/ozi-templates/releases)
+- [Changelog](https://github.com/OZI-Project/ozi-templates/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/OZI-Project/ozi-templates/compare/2.11.1...2.12.0)
+
+
+updated-dependencies:
+- dependency-name: ozi-templates
+  dependency-type: direct:production
+... — dependabot[bot] &lt;support@github.com&gt;
+([`5d57ccc`](https://github.com/OZI-Project/ozi-core/commit/5d57ccc446f36773b6f1588c280d5add8214f7f3))
+
+* (deps): bump step-security/harden-runner from 2.9.1 to 2.10.1
+
+Bumps [step-security/harden-runner](https://github.com/step-security/harden-runner) from 2.9.1 to 2.10.1.
+- [Release notes](https://github.com/step-security/harden-runner/releases)
+- [Commits](https://github.com/step-security/harden-runner/compare/5c7944e73c4c2a096b17a9cb74d65b6c2bbafbde...91182cccc01eb5e619899d80e4e971d6181294a7)
+
+
+updated-dependencies:
+- dependency-name: step-security/harden-runner
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] &lt;support@github.com&gt;
+([`c624d07`](https://github.com/OZI-Project/ozi-core/commit/c624d07abc4c6d83010e75ce5dafc91420ec807c))
+
+* (deps): update ozi-spec requirement from ~=0.9.5 to ~=0.10.0
+
+Updates the requirements on [ozi-spec](https://github.com/OZI-Project/ozi-spec) to permit the latest version.
+- [Release notes](https://github.com/OZI-Project/ozi-spec/releases)
+- [Changelog](https://github.com/OZI-Project/ozi-spec/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/OZI-Project/ozi-spec/compare/0.9.5...0.10.0)
+
+
+updated-dependencies:
+- dependency-name: ozi-spec
+  dependency-type: direct:production
+... — dependabot[bot] &lt;support@github.com&gt;
+([`04c7765`](https://github.com/OZI-Project/ozi-core/commit/04c776564057f68b81a0fbf0aec642f4cfa366af))
+
+
+### Feature
+
+
+* feat: Merge pull request #162 from OZI-Project/dependabot/pip/ozi-templates-approx-eq-2.12.0
+
+build(deps): update ozi-templates requirement from ~=2.11.1 to ~=2.12.0
+([`efc5cb6`](https://github.com/OZI-Project/ozi-core/commit/efc5cb656ea0de930ebd2671fb493b8adab8156b))
+
+
+### 🐛 Fixed Bugs
+
+* package metadata download-url correction — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`08a20ee`](https://github.com/OZI-Project/ozi-core/commit/08a20eedf26623035e15f900742a156aa1d32b18))
+
+
+### Unknown
+
+
+* :construction_worker: clean up some ``no cover`` — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`d73e3a2`](https://github.com/OZI-Project/ozi-core/commit/d73e3a2250def23409a53aabcc2d0edc916e179e))
+
 ## 1.1.0 (2024-09-10)
 
 
