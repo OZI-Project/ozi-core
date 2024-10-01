@@ -21,7 +21,7 @@ class Translation:
 
     def __init__(self: Self) -> None:
         self.data = {}
-        self._locale = _LOCALE[:2] if _LOCALE else 'en'
+        self._locale: str = _LOCALE[:2] if _LOCALE else 'en'
 
         files = glob.glob(os.path.join(Path(__file__).parent / 'data', '*.yml'))
         for f in files:
