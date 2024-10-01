@@ -9,6 +9,6 @@ source_files = [
 foreach file : files(source_files)
     fs.copyfile(file)
     if not meson.is_subproject() or get_option('install-subprojects').enabled()
-        python.install_sources(file, pure: true, subdir: 'ozi_core')
+        python.install_sources(file, pure: true, subdir: 'ozi_core' / 'data')
     endif
 endforeach
