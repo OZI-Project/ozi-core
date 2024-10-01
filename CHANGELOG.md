@@ -1,4 +1,15 @@
 # ozi-core CHANGELOG
+## 1.2.3 (2024-10-01)
+
+
+### 🐛 Fixed Bugs
+
+* (coverage): no cover — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`7fb3df0`](https://github.com/OZI-Project/ozi-core/commit/7fb3df0e049c905a1fa9a94e7f26436eca741b0d))
+
+* (i18n): patch some missing translations — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`5383a6f`](https://github.com/OZI-Project/ozi-core/commit/5383a6fc645e1bf9c8bec13a7c00054c5bb20f70))
+
 ## 1.2.2 (2024-10-01)
 
 
