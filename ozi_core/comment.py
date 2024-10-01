@@ -117,7 +117,9 @@ def pattern_search(
 
 
 def diagnose(
-    line: str, rel_path: Path, line_no: int
+    line: str,
+    rel_path: Path,
+    line_no: int,
 ) -> Generator[tuple[str, str], None, None]:
     """Diagnose OZI comment pattern for a single line.
 
