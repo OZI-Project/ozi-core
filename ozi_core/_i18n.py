@@ -10,9 +10,18 @@ import os
 from locale import getlocale
 from pathlib import Path
 from string import Template
-from typing import Self
+from typing import TYPE_CHECKING
+from typing import Any
 
 import yaml
+
+if TYPE_CHECKING:  # pragma: no cover
+    import sys
+
+    if sys.version_info >= (3, 11):
+        from typing import Self
+    elif sys.version_info < (3, 11):
+        from typing_extensions import Self
 
 _LOCALE = getlocale()[0]
 
@@ -21,7 +30,7 @@ class Translation:
 
     def __init__(self: Self) -> None:
         self.data = {}
-        self._locale: str = _LOCALE[:2] if _LOCALE else 'en'
+        self._locale = _LOCALE[:2] if _LOCALE else 'en'
 
         files = glob.glob(os.path.join(Path(__file__).parent / 'data', '*.yml'))
         for f in files:
@@ -30,7 +39,7 @@ class Translation:
                 self.data[loc] = yaml.safe_load(fh)
 
     @property
-    def locale(self: Self) -> str:  # pragma: no cover
+    def locale(self: Self) -> str | Any:  # pragma: no cover
         return self._locale
 
     @locale.setter
