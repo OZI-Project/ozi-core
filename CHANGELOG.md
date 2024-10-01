@@ -1,4 +1,22 @@
 # ozi-core CHANGELOG
+## 1.2.1 (2024-10-01)
+
+
+### 🐛 Fixed Bugs
+
+* (i18n):  typechecking for Python 3.10 — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`8d2a844`](https://github.com/OZI-Project/ozi-core/commit/8d2a844be7a0b16bd07482f2f4cc7bb3198cfcba))
+
+
+### Performance
+
+
+* perf(mypy): type locale as str — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`b416fc0`](https://github.com/OZI-Project/ozi-core/commit/b416fc02eaa6c5654e81544de5021615f0aedf17))
+
+* perf: update OZI wrapfile to 1.22 — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`8e20899`](https://github.com/OZI-Project/ozi-core/commit/8e20899ddf07d5a4085779699939188abfae41fb))
+
 ## 1.2.0 (2024-09-18)
 
 
@@ -70,6 +88,13 @@ build(deps): update ozi-templates requirement from ~=2.11.1 to ~=2.12.0
 
 * package metadata download-url correction — rjdbcm &lt;rjdbcm@outlook.com&gt;
 ([`08a20ee`](https://github.com/OZI-Project/ozi-core/commit/08a20eedf26623035e15f900742a156aa1d32b18))
+
+
+### Performance
+
+
+* perf(i18n): interactive prompt and added Chinese (simplified) language support — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`9c63941`](https://github.com/OZI-Project/ozi-core/commit/9c63941044724e49cf73e287a773a1a2b31bd3ca))
 
 
 ### Unknown
