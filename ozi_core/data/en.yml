@@ -137,6 +137,9 @@ pro-project-urls-cbl-source: Source
 pro-project-urls-cbl: "Please select project URLs you want to add to $projectname:"
 pro-project-urls-input: "Please enter the $urltype URL for $projectname:"
 pro-readme-type: "Please select README type for $projectname:"
+pro-readme-type-radio-md: Markdown
+pro-readme-type-radio-rst: reStructuredText
+pro-readme-type-radio-txt: Plaintext
 pro-requires-dist-add: Add
 pro-requires-dist-search: "Search PyPI packages:"
 pro-requires-dist-cbl-remove: "Select packages to delete:"
@@ -148,4 +151,6 @@ pro-summary: >
 
   (a short summary 1-2 sentences)
 pro-typing: "Please select typing classifier for $projectname:"
+pro-typing-radio-typed: Typed
+pro-typing-radio-stubs-only: Stubs Only
 pro-classifier-cbl: "Please select $key classifier or classifiers:"
