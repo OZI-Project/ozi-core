@@ -1,4 +1,72 @@
 # ozi-core CHANGELOG
+## 1.2.4 (2024-10-02)
+
+
+### Build
+
+
+* (deps): bump OZI-Project/release from 1.0.0 to 1.0.1
+
+Bumps [OZI-Project/release](https://github.com/ozi-project/release) from 1.0.0 to 1.0.1.
+- [Release notes](https://github.com/ozi-project/release/releases)
+- [Commits](https://github.com/ozi-project/release/compare/98248899bb8b235e3198105f080093ea5b9751d8...3015ae773cba4b74f1ff7afb55ad1e6324d56f51)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/release
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] &lt;support@github.com&gt;
+([`a882caa`](https://github.com/OZI-Project/ozi-core/commit/a882caab8127afb2cbd057337a5188e107d6880e))
+
+* (deps): bump OZI-Project/checkpoint from 1.0.0 to 1.0.1
+
+Bumps [OZI-Project/checkpoint](https://github.com/ozi-project/checkpoint) from 1.0.0 to 1.0.1.
+- [Release notes](https://github.com/ozi-project/checkpoint/releases)
+- [Commits](https://github.com/ozi-project/checkpoint/compare/1.0.0...1.0.1)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/checkpoint
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] &lt;support@github.com&gt;
+([`027e98b`](https://github.com/OZI-Project/ozi-core/commit/027e98b58c3fa2d7cf90fb902b9aa5807b20e25a))
+
+* (deps): bump OZI-Project/publish from 1.0.0 to 1.0.2
+
+Bumps [OZI-Project/publish](https://github.com/ozi-project/publish) from 1.0.0 to 1.0.2.
+- [Release notes](https://github.com/ozi-project/publish/releases)
+- [Commits](https://github.com/ozi-project/publish/compare/1.0.0...1.0.2)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/publish
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] &lt;support@github.com&gt;
+([`6f90e4f`](https://github.com/OZI-Project/ozi-core/commit/6f90e4fda98a13f35f5df8a53ed6c80f78e6a2d0))
+
+* (deps): bump OZI-Project/draft from 1.0.0 to 1.0.2
+
+Bumps [OZI-Project/draft](https://github.com/ozi-project/draft) from 1.0.0 to 1.0.2.
+- [Release notes](https://github.com/ozi-project/draft/releases)
+- [Commits](https://github.com/ozi-project/draft/compare/1.0.0...1.0.2)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/draft
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] &lt;support@github.com&gt;
+([`a774a0e`](https://github.com/OZI-Project/ozi-core/commit/a774a0ea6c8813de5852e5a88d4c7771cca84e56))
+
+
+### 🐛 Fixed Bugs
+
+* typos in i18n — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`4927181`](https://github.com/OZI-Project/ozi-core/commit/492718139b3ace0a8ebe360e6b813185bb35d044))
+
 ## 1.2.3 (2024-10-01)
 
 
