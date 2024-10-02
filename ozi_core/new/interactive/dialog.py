@@ -484,7 +484,7 @@ class Project:  # pragma: no cover
                 ('txt', 'Plaintext'),
             ),
             title=TRANSLATION('dlg-title'),
-            text=TRANSLATION('pro-readme-type'),
+            text=TRANSLATION('pro-readme-type', projectname=project_name),
             style=_style,
             default=_default,
             ok_text=TRANSLATION('btn-ok'),
@@ -516,11 +516,11 @@ class Project:  # pragma: no cover
         _default = output.setdefault('--typing', [])
         result = radiolist_dialog(
             values=(
-                ('Typed', 'Typed'),
-                ('Stubs Only', 'Stubs Only'),
+                ('Typed', TRANSLATION('pro-typing-radio-typed')),
+                ('Stubs Only', TRANSLATION('pro-typing-radio-stubs-only')),
             ),
             title=TRANSLATION('dlg-title'),
-            text=TRANSLATION('pro-typing'),
+            text=TRANSLATION('pro-typing', projectname=project_name),
             style=_style,
             ok_text=TRANSLATION('btn-ok'),
             default=_default,
@@ -959,7 +959,7 @@ def classifier_checkboxlist(key: str) -> list[str] | None:  # pragma: no cover
             ),
         ),
         title=TRANSLATION('dlg-title'),
-        text=TRANSLATION('pro-classifier-cbl'),
+        text=TRANSLATION('pro-classifier-cbl', key=TRANSLATION('edit-menu-btn-' + key)),
         style=_style,
         ok_text=TRANSLATION('btn-ok'),
         cancel_text=TRANSLATION('btn-back'),
