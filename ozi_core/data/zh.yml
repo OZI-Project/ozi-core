@@ -1,4 +1,4 @@
-adm-maintainers: 除了作者之外，『$project_name』還有其他維護者嗎？
+adm-maintainers: 除了作者之外，『$project_name』还有其他维护者吗？
 adm-confirm: 确认创建项目？元数据：
 adm-metadata: 元数据：
 adm-disclaimer-text: >
@@ -13,7 +13,7 @@ adm-disclaimer-text: >
   本警报的读者应联系他们的律师以获取有关任何特定法律问题的建议。
 
 
-  OZI 项目不是律师事务所，不提供法律建议。
+  ＯＺＩ项目不是律师事务所，不提供法律建议。
   任何读者或用户都不得根据本警报中的信息采取行动或不采取行动，
   除非事先寻求具有相关管辖权的律师的法律建议。
   法律顾问可以确保本警报中提供的信息适合您的特定情况。
@@ -55,7 +55,7 @@ err-no-empty: 不能为空。
 err-pkg-not-found: 找不到包包。
 err-too-long: 输入太长。
 lang-en: 英语（Ｅｎｇｌｉｓｈ）
-lang-zh: 中文
+lang-zh: 简体中文
 main-menu-btn-edit: ✎ 编辑
 main-menu-btn-metadata: ∋ 元数据
 main-menu-btn-options: ⚙ 选项
@@ -125,6 +125,9 @@ pro-project-urls-cbl-source: 原始码（Ｓｏｕｒｃｅ）
 pro-project-urls-cbl: 请选择您要新增至『$projectname』的专案ＵＲＬ：
 pro-project-urls-input: 请输入『$projectname』的$urltypeＵＲＬ：
 pro-readme-type: 请为『$projectname』选择自述文件类型：
+pro-readme-type-radio-rst: 轻量级标记语言ｒｅＳｔｒｕｃｔｕｒｅｄＴｅｘｔ
+pro-readme-type-radio-md: 轻量级标记语言Ｍａｒｋｄｏｗｎ
+pro-readme-type-radio-txt: 纯文本
 pro-requires-dist-add: 新增
 pro-requires-dist-search: 搜寻ＰｙＰＩ包：
 pro-requires-dist-cbl-remove: 选择要删除的包：
@@ -136,4 +139,6 @@ pro-summary: >
 
   （简短摘要 1〜2 句话）
 pro-typing: 请为『$projectname』选择一个类型存根分类器：
+pro-typing-radio-typed: 类型检查（Ｔｙｐｅｄ）
+pro-typing-radio-stubs-only: 仅限类型检查存根（Ｓｔｕｂｓ　Ｏｎｌｙ）
 pro-classifier-cbl: 请选择『$key』分类器：

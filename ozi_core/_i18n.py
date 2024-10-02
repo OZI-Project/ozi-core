@@ -49,10 +49,10 @@ class Translation:
         else:
             print('Invalid locale')
 
-    def __call__(self: Self, key: str, **kwargs: str) -> str:  # pragma: no cover
+    def __call__(self: Self, _key: str, **kwargs: str) -> str:  # pragma: no cover
         if self.locale not in self.data:
-            return key
-        text = self.data[self.locale].get(key, key)
+            return _key
+        text = self.data[self.locale].get(_key, _key)
         return Template(text).safe_substitute(**kwargs)
 
 
