@@ -49,7 +49,7 @@ def wrap(project: Namespace) -> None:  # pragma: no cover
 
 def main(args: list[str] | None = None) -> None:  # pragma: no cover
     """Main ozi.new entrypoint."""
-    if not args:
+    if args is None:
         TAP.version(14)
     ozi_new = parser.parse_args(args=args)
     ozi_new.argv = shlex.join(args) if args else shlex.join(sys.argv[1:])
