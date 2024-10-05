@@ -5,6 +5,20 @@
 ### Build
 
 
+* (deps): bump OZI-Project/release from 1.0.1 to 1.0.2
+
+Bumps [OZI-Project/release](https://github.com/ozi-project/release) from 1.0.1 to 1.0.2.
+- [Release notes](https://github.com/ozi-project/release/releases)
+- [Commits](https://github.com/ozi-project/release/compare/3015ae773cba4b74f1ff7afb55ad1e6324d56f51...48fdd720e637c583fe162559ebe23d5ae0e24f8f)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/release
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] &lt;support@github.com&gt;
+([`ae1a78e`](https://github.com/OZI-Project/ozi-core/commit/ae1a78e1ef385b5372f2277633d1a145685bba89))
+
 * (deps): bump OZI-Project/draft from 1.0.2 to 1.1.0
 
 Bumps [OZI-Project/draft](https://github.com/ozi-project/draft) from 1.0.2 to 1.1.0.
