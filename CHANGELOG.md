@@ -1,4 +1,66 @@
 # ozi-core CHANGELOG
+## 1.2.5 (2024-10-05)
+
+
+### Build
+
+
+* (deps): bump OZI-Project/draft from 1.0.2 to 1.1.0
+
+Bumps [OZI-Project/draft](https://github.com/ozi-project/draft) from 1.0.2 to 1.1.0.
+- [Release notes](https://github.com/ozi-project/draft/releases)
+- [Commits](https://github.com/ozi-project/draft/compare/1.0.2...1.1.0)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/draft
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] &lt;support@github.com&gt;
+([`73b379f`](https://github.com/OZI-Project/ozi-core/commit/73b379f795806c415964043c61048da774d2b11d))
+
+* (deps): bump OZI-Project/publish from 1.0.2 to 1.1.0
+
+Bumps [OZI-Project/publish](https://github.com/ozi-project/publish) from 1.0.2 to 1.1.0.
+- [Release notes](https://github.com/ozi-project/publish/releases)
+- [Commits](https://github.com/ozi-project/publish/compare/1.0.2...1.1.0)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/publish
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] &lt;support@github.com&gt;
+([`3f17126`](https://github.com/OZI-Project/ozi-core/commit/3f17126874c680222dccb15388eb5845655b8cc6))
+
+
+### 🐛 Fixed Bugs
+
+* remove 3.10 checkpoint pending deprecation — Eden Ross Duff, MSc, DDiv &lt;rjdbcm@outlook.com&gt;
+([`69f1ef9`](https://github.com/OZI-Project/ozi-core/commit/69f1ef9f0164eaeb04f6a393b719c6a2fdcc7876))
+
+* erroneous call to TAP version after interactive session — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`a03be5f`](https://github.com/OZI-Project/ozi-core/commit/a03be5f76fa04146ed6947f932724741bc38aa1c))
+
+
+### Performance
+
+
+* perf: run lint — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`6ecc276`](https://github.com/OZI-Project/ozi-core/commit/6ecc276a5405e7bb31614c9d142801060a748b3c))
+
+* perf: finish i18n for CLI — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`fe74ffc`](https://github.com/OZI-Project/ozi-core/commit/fe74ffcceb3fd3f627754b8b6178e629e6da58eb))
+
+* perf: internationalize the ``ozi-fix`` interface and ``ozi-new`` validator error messages — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`5eff10a`](https://github.com/OZI-Project/ozi-core/commit/5eff10ac440b2e95d325f0d08d809824dbf2b85f))
+
+* perf: complete internationalization of ``ozi-new`` CLI — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`182839b`](https://github.com/OZI-Project/ozi-core/commit/182839b5665ee21ffbbbc8a21bb26c0e4c2203aa))
+
+* perf: add a License-File prompt and validator — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`976f02e`](https://github.com/OZI-Project/ozi-core/commit/976f02e9f468af8f7190c311f18623519c2eaad9))
+
 ## 1.2.4 (2024-10-02)
 
 
