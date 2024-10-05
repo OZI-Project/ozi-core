@@ -26,6 +26,7 @@ from pyparsing import ParseException
 from spdx_license_list import LICENSES
 from tap_producer import TAP
 
+from ozi_core._i18n import TRANSLATION
 from ozi_core.spdx import spdx_license_expression
 from ozi_core.trove import Prefix
 from ozi_core.trove import from_prefix
@@ -109,9 +110,8 @@ class CloseMatch(Action):
             no_match = True
         if no_match:
             warn(
-                f'No {key} choice matching "{value}" available.'
-                'To list available options:'
-                f'$ ozi-new -l {key}',
+                TRANSLATION('err-no-close-match', key=key, value=value)
+                + f'$ ozi-new -l {key}',
                 RuntimeWarning,
                 stacklevel=0,
             )
@@ -162,14 +162,17 @@ def check_for_update(
     match max(releases):
         case latest if latest > current_version:
             TAP.not_ok(
-                f'Newer version of OZI ({latest} > {current_version})',
-                'available to download on PyPI',
+                TRANSLATION(
+                    'err-new-version',
+                    latest=str(latest),
+                    currentversion=str(current_version),
+                ),
                 'https://pypi.org/project/OZI/',
             )
         case latest if latest < current_version:
-            TAP.ok('OZI package is development version', str(current_version))
+            TAP.ok(TRANSLATION('term-tap-dev-version'), str(current_version))
         case latest if latest == current_version:
-            TAP.ok('OZI package is up to date', str(current_version))
+            TAP.ok(TRANSLATION('term-tap-up-to-date'), str(current_version))
 
 
 def check_version(version: str) -> NoReturn:  # pragma: defer to PyPI
@@ -184,8 +187,10 @@ def check_version(version: str) -> NoReturn:  # pragma: defer to PyPI
             TAP.end()
         case _:
             TAP.end(
-                skip_reason='OZI package version check failed with status code'
-                f' {response.status_code}.',
+                skip_reason=TRANSLATION(
+                    'version-check-failed',
+                    status=str(response.status_code),
+                ),
             )
 
 

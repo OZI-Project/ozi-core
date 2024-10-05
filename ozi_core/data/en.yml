@@ -38,8 +38,15 @@ btn-menu: "☰  Menu"
 btn-yes: "Yes"
 btn-no: "No"
 err-no-empty: cannot not be empty.
+err-no-close-match: >
+  There is no available $key option matching "$value".
+
+  List available options:
+
 err-too-long: input is too long.
+err-new-version: A newer version of OZI ($latest > $currentversion), available for download on PyPI
 err-pkg-not-found: package not found.
+err-version-check: OZI package version check failed with status code $status
 err-name-exists: project with that name exists.
 err-name-invalid: invalid project name.
 btn-ok: "✔ Ok"
@@ -53,7 +60,7 @@ edit-menu-btn-homepage: Home-page
 edit-menu-btn-author: Author
 edit-menu-btn-email: Author-email
 edit-menu-btn-license: License
-edit-menu-btn-license-expression: "Extra: License-Expression"
+edit-menu-btn-license-expression: License-Expression
 edit-menu-btn-maintainer: Maintainer
 edit-menu-btn-maintainer-email: Maintainer-email
 edit-menu-btn-project-url: Project-URL
@@ -154,3 +161,61 @@ pro-typing: "Please select typing classifier for $projectname:"
 pro-typing-radio-typed: Typed
 pro-typing-radio-stubs-only: Stubs Only
 pro-classifier-cbl: "Please select $key classifier or classifiers:"
+term-help-audience: use zero or more times
+term-help-author-email: use zero or more times, single output
+term-help-author: use zero or more times, single output
+term-help-default: "$name ($text) defaults to: $default"
+term-help-environment: use zero or more times
+term-help-framework: use zero or more times
+term-help-homepage: use once
+term-help-keywords: use once, comma-delimited list
+term-help-language: use zero or more times
+term-help-license: use once
+term-help-maintainer-email: use zero or more times, single output (if different from author email)
+term-help-maintainer: use zero or more times, single output (if different from author)
+term-help-name: use once
+term-help-requires-dist: use zero or more times
+term-help-status: use zero or more times
+term-help-summary: use once
+term-help-topic: use zero or more times
+term-help-typing: use zero or more times
+term-help-license-expression: use once, SPDX license expression
+term-help-project-url: use zero or more times, comma-separated tuples (name, url)
+term-help: $name ($text)
+term-defaults: defaults
+term-required: required
+term-options: options
+term-output: output
+term-default-metadata: default metadata
+term-optional-metadata: optional metadata
+term-required-metadata: required metadata
+term-positional-args: positional arguments
+term-help-new-project: create a new Python project with OZI
+term-desc-new-project: Create a new Python project with OZI.
+term-help-new-target: 'directory path for new project (default: current working directory)'
+term-ci-provider: continuous integration and release provider
+term-copyright-head: copyright header string
+term-help-help: show this help message and exit
+term-help-strict: 'strict mode raises warnings to errors, default: no'
+term-help-github-harden-runner: 'add a harden runner to all non-reusable workflow jobs, default: no'
+term-help-name-allow-file: Add file patterns to be ignored
+term-help-allow-file: In the new project target folder
+term-help-verify-email: 'verify deliverability of email domain, default: no'
+term-help-enable-cython: 'use Cython to build Python extension modules. default: no'
+term-help-check-package-exists: 'check if the package name exists on PyPI, default: yes'
+term-desc-new-interactive: Create a new Python project with OZI using the interactive prompt.
+term-help-new-interactive: create a new Python project using the interactive prompt
+term-help-pretty: 'output indented JSON, default: no'
+term-help-fix-add: add files or directories to a project
+term-help-fix-remove: remove files or directories from a project
+term-help-fix-source: Create a new Python source in an OZI project.
+term-help-fix-test: Create a new Python test in an OZI project.
+term-help-fix-target: target OZI project directory
+term-help-fix-missing: Check your OZI project for missing files.
+term-tap-up-to-date: The OZI package has been updated
+term-tap-dev-version: The OZI package is a development version
+term-help-check-version: Check for a newer version of OZI and exit.
+term-help-version: Print the current version and exit.
+term-help-info: Print all metadata as JSON and exit.
+term-help-valid-license-expression: Validate a SPDX license expression.
+term-help-list-available: Print a list of valid values for a key and exit.
