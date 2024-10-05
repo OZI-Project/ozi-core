@@ -6,8 +6,8 @@
 from __future__ import annotations
 
 import glob
+import locale
 import os
-from locale import getlocale
 from pathlib import Path
 from string import Template
 from typing import TYPE_CHECKING
@@ -23,14 +23,14 @@ if TYPE_CHECKING:  # pragma: no cover
     elif sys.version_info < (3, 11):
         from typing_extensions import Self
 
-_LOCALE = getlocale()[0]
+_LOCALE = locale.getlocale()[0]
 
 
 class Translation:
 
     def __init__(self: Self) -> None:
         self.data = {}
-        self._locale = _LOCALE[:2] if _LOCALE else 'en'
+        self._locale = _LOCALE[:2] if _LOCALE is not None else 'en'
 
         files = glob.glob(os.path.join(Path(__file__).parent / 'data', '*.yml'))
         for f in files:

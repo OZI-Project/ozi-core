@@ -219,3 +219,15 @@ term-help-version: Print the current version and exit.
 term-help-info: Print all metadata as JSON and exit.
 term-help-valid-license-expression: Validate a SPDX license expression.
 term-help-list-available: Print a list of valid values for a key and exit.
+term-continuous-integration-checkpoints: continuous integration checkpoints
+term-project-maintenance-console-app: project maintenance console app
+term-project-authoring-console-app: project authoring console app
+term-choices: choices
+term-tox-e-lint: run formatting, static analysis, and type checking
+term-tox-e-test: run tests and coverage
+term-tox-e-dist: run distribution and packaging
+term-help-fix: show help for the ozi-fix command
+term-help-new: show help for the ozi-new command
+term-spdx-license-expression:
+term-parsing-success: parsed successfully
+term-see-ref: See

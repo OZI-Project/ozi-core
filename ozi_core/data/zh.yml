@@ -210,3 +210,15 @@ term-help-version: 打印当前版本并退出。
 term-help-info: 将所有元数据打印为ＪＳＯＮ并退出。
 term-help-valid-license-expression: 验证ＳＰＤＸ许可证表达式。
 term-help-list-available: 打印某个键的有效值列表并退出。
+term-continuous-integration-checkpoints: 持续集成检查点
+term-project-maintenance-console-app: 项目维护控制台应用程序
+term-project-authoring-console-app: 项目创作控制台应用程序
+term-choices: 选择
+term-tox-e-lint: 运行格式化、静态分析和类型检查
+term-tox-e-test: 运行测试和覆盖率
+term-tox-e-dist: 运行分发和打包
+term-help-fix: 显示ozi-fix命令的帮助
+term-help-new: 显示ozi-new命令的帮助
+term-spdx-license-expression: （ＳＰＤＸ许可证表达式）
+term-parsing-success: 解析成功
+term-see-ref: 参见参考：
