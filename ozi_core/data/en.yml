@@ -44,7 +44,9 @@ err-no-close-match: >
   List available options:
 
 err-too-long: input is too long.
+err-new-version: A newer version of OZI ($latest > $currentversion), available for download on PyPI
 err-pkg-not-found: package not found.
+err-version-check: OZI package version check failed with status code $status
 err-name-exists: project with that name exists.
 err-name-invalid: invalid project name.
 btn-ok: "✔ Ok"
@@ -210,3 +212,10 @@ term-help-fix-source: Create a new Python source in an OZI project.
 term-help-fix-test: Create a new Python test in an OZI project.
 term-help-fix-target: target OZI project directory
 term-help-fix-missing: Check your OZI project for missing files.
+term-tap-up-to-date: The OZI package has been updated
+term-tap-dev-version: The OZI package is a development version
+term-help-check-version: Check for a newer version of OZI and exit.
+term-help-version: Print the current version and exit.
+term-help-info: Print all metadata as JSON and exit.
+term-help-valid-license-expression: Validate a SPDX license expression.
+term-help-list-available: Print a list of valid values for a key and exit.

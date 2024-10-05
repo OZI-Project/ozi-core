@@ -161,14 +161,13 @@ def check_for_update(
     match max(releases):
         case latest if latest > current_version:
             TAP.not_ok(
-                f'Newer version of OZI ({latest} > {current_version})',
-                'available to download on PyPI',
+                TRANSLATION('err-new-version', latest=str(latest), currentversion=str(current_version)),
                 'https://pypi.org/project/OZI/',
             )
         case latest if latest < current_version:
-            TAP.ok('OZI package is development version', str(current_version))
+            TAP.ok(TRANSLATION('term-tap-dev-version'), str(current_version))
         case latest if latest == current_version:
-            TAP.ok('OZI package is up to date', str(current_version))
+            TAP.ok(TRANSLATION('term-tap-up-to-date'), str(current_version))
 
 
 def check_version(version: str) -> NoReturn:  # pragma: defer to PyPI
@@ -183,8 +182,7 @@ def check_version(version: str) -> NoReturn:  # pragma: defer to PyPI
             TAP.end()
         case _:
             TAP.end(
-                skip_reason='OZI package version check failed with status code'
-                f' {response.status_code}.',
+                skip_reason=TRANSLATION('version-check-failed', status=str(response.status_code)),
             )
 
 
