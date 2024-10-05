@@ -38,6 +38,11 @@ btn-menu: "☰  Menu"
 btn-yes: "Yes"
 btn-no: "No"
 err-no-empty: cannot not be empty.
+err-no-close-match: >
+  There is no available $key option matching "$value".
+
+  List available options:
+
 err-too-long: input is too long.
 err-pkg-not-found: package not found.
 err-name-exists: project with that name exists.
@@ -178,6 +183,7 @@ term-help: $name ($text)
 term-defaults: defaults
 term-required: required
 term-options: options
+term-output: output
 term-default-metadata: default metadata
 term-optional-metadata: optional metadata
 term-required-metadata: required metadata
@@ -197,3 +203,10 @@ term-help-enable-cython: 'use Cython to build Python extension modules. default:
 term-help-check-package-exists: 'check if the package name exists on PyPI, default: yes'
 term-desc-new-interactive: Create a new Python project with OZI using the interactive prompt.
 term-help-new-interactive: create a new Python project using the interactive prompt
+term-help-pretty: 'output indented JSON, default: no'
+term-help-fix-add: add files or directories to a project
+term-help-fix-remove: remove files or directories from a project
+term-help-fix-source: Create a new Python source in an OZI project.
+term-help-fix-test: Create a new Python test in an OZI project.
+term-help-fix-target: target OZI project directory
+term-help-fix-missing: Check your OZI project for missing files.

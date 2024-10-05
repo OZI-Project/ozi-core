@@ -8,32 +8,15 @@ from argparse import SUPPRESS
 from argparse import ArgumentParser
 from argparse import BooleanOptionalAction
 
+from ozi_core._i18n import TRANSLATION
+
 parser = ArgumentParser(
     prog='ozi-fix',
     description=sys.modules[__name__].__doc__,
     add_help=False,
-    usage="""%(prog)s [options] | [positional arguments]
+    usage=f"""%(prog)s [{TRANSLATION('term-options')}] | [{TRANSLATION('term-positional-args')}]
 
-The information provided on this application does not, and is not intended to,
-constitute legal advice. All information, content, and materials available
-on this application are for general informational purposes only.
-Information on this application may not constitute the most up-to-date legal
-or other information.
-
-THE LICENSE TEMPLATES, LICENSE IDENTIFIERS, LICENSE CLASSIFIERS, AND
-LICENSE EXPRESSION PARSING SERVICES, AND ALL OTHER CONTENTS ARE PROVIDED
-"AS IS", NO REPRESENTATIONS ARE MADE THAT THE CONTENT IS ERROR-FREE
-AND/OR APPLICABLE FOR ANY PURPOSE, INCLUDING MERCHANTABILITY.
-
-Readers of this disclaimer should contact their attorney to obtain advice
-with respect to any particular legal matter. The OZI Project is not a
-law firm and does not provide legal advice. No reader or user of this
-application should act or abstain from acting on the basis of information
-on this application without first seeking legal advice from counsel in the
-relevant jurisdiction. Legal counsel can ensure that the information
-provided in this application is applicable to your particular situation.
-Use of, or reading, this application or any of resources contained within
-does not create an attorney-client relationship.
+{TRANSLATION('adm-disclaimer-text')}
 """,
 )
 parser.add_argument(
@@ -66,14 +49,14 @@ parser.add_argument(
 )
 subparser = parser.add_subparsers(help='', metavar='', dest='fix')
 helpers = parser.add_mutually_exclusive_group()
-helpers.add_argument('-h', '--help', action='help', help='show this help message and exit')
+helpers.add_argument('-h', '--help', action='help', help=TRANSLATION('term-help-help'))
 missing_parser = subparser.add_parser(
     'missing',
     prog='ozi-fix missing',
     aliases=['m', 'mis'],
-    usage='%(prog)s [options] [output] target',
+    usage=f'%(prog)s [{TRANSLATION("term-options")}] [{TRANSLATION("term-output")}] target',
     allow_abbrev=True,
-    help='Check for missing files in an OZI project.',
+    help=TRANSLATION('term-help-fix-missing'),
 )
 missing_parser.add_argument(
     '--add',
@@ -91,41 +74,41 @@ missing_parser.add_argument(
     default=['ozi.phony'],
     help=SUPPRESS,
 )
-missing_output = missing_parser.add_argument_group('output')
+missing_output = missing_parser.add_argument_group(TRANSLATION('term-output'))
 missing_output.add_argument(
     '--strict',
     default=False,
     action=BooleanOptionalAction,
-    help='strict mode raises warnings to errors, default: no',
+    help=TRANSLATION('term-help-strict'),
 )
 missing_output.add_argument(
     '--pretty',
     default=False,
     action=BooleanOptionalAction,
-    help='pretty mode outputs indented json, default: no',
+    help=TRANSLATION('term-help-pretty'),
 )
 missing_parser.add_argument(
     'target',
     type=str,
     nargs='?',
     default='.',
-    help='target OZI project directory',
+    help=TRANSLATION('term-help-fix-target'),
 )
 source_parser = subparser.add_parser(
     'source',
     aliases=['s', 'src'],
     prog='ozi-fix source',
-    usage='%(prog)s [options] [output] target',
+    usage=f'%(prog)s [{TRANSLATION("term-options")}] [{TRANSLATION("term-output")}] target',
     allow_abbrev=True,
-    help='Create a new Python source in an OZI project.',
+    help=TRANSLATION('term-help-fix-source'),
 )
 test_parser = subparser.add_parser(
     'test',
     prog='ozi-fix test',
-    usage='%(prog)s [options] [output] target',
+    usage=f'%(prog)s [{TRANSLATION("term-options")}] [{TRANSLATION("term-output")}] target',
     aliases=['t', 'tests'],
     allow_abbrev=True,
-    help='Create a new Python test in an OZI project.',
+    help=TRANSLATION('term-help-fix-test'),
 )
 source_parser.add_argument(
     '-a',
@@ -134,7 +117,7 @@ source_parser.add_argument(
     nargs='?',
     action='append',
     default=['ozi.phony'],
-    help='add file or dir/ to project',
+    help=TRANSLATION('term-help-fix-add'),
 )
 source_parser.add_argument(
     '-r',
@@ -143,7 +126,7 @@ source_parser.add_argument(
     nargs='?',
     action='append',
     default=['ozi.phony'],
-    help='remove file or dir/ from project',
+    help=TRANSLATION('term-help-fix-remove'),
 )
 source_parser.add_argument(
     '-c',
@@ -151,27 +134,27 @@ source_parser.add_argument(
     metavar='HEADER',
     type=str,
     default='',
-    help='copyright header string',
+    help=TRANSLATION('term-copyright-head'),
 )
-source_output = source_parser.add_argument_group('output')
+source_output = source_parser.add_argument_group(TRANSLATION('term-output'))
 source_output.add_argument(
     '--strict',
     default=False,
     action=BooleanOptionalAction,
-    help='strict mode raises warnings to errors, default: no',
+    help=TRANSLATION('term-help-strict'),
 )
 source_output.add_argument(
     '--pretty',
     default=False,
     action=BooleanOptionalAction,
-    help='pretty mode outputs indented json, default: no',
+    help=TRANSLATION('term-help-pretty'),
 )
 source_parser.add_argument(
     'target',
     type=str,
     nargs='?',
     default='.',
-    help='target OZI project directory',
+    help=TRANSLATION('term-help-fix-target'),
 )
 test_parser.add_argument(
     '-a',
@@ -180,7 +163,7 @@ test_parser.add_argument(
     nargs='?',
     action='append',
     default=['ozi.phony'],
-    help='add file or dir/ to project',
+    help=TRANSLATION('term-help-fix-add'),
 )
 test_parser.add_argument(
     '-r',
@@ -189,7 +172,7 @@ test_parser.add_argument(
     nargs='?',
     action='append',
     default=['ozi.phony'],
-    help='remove file or dir/ from project',
+    help=TRANSLATION('term-help-fix-remove'),
 )
 test_parser.add_argument(
     '-c',
@@ -197,25 +180,25 @@ test_parser.add_argument(
     metavar='HEADER',
     type=str,
     default='',
-    help='copyright header string',
+    help=TRANSLATION('term-copyright-head'),
 )
-test_output = test_parser.add_argument_group('output')
+test_output = test_parser.add_argument_group(TRANSLATION('term-output'))
 test_output.add_argument(
     '--strict',
     default=False,
     action=BooleanOptionalAction,
-    help='strict mode raises warnings to errors, default: no',
+    help=TRANSLATION('term-help-strict'),
 )
 test_output.add_argument(
     '--pretty',
     default=False,
     action=BooleanOptionalAction,
-    help='pretty mode outputs indented json, default: no',
+    help=TRANSLATION('term-help-pretty'),
 )
 test_parser.add_argument(
     'target',
     type=str,
     nargs='?',
     default='.',
-    help='target OZI project directory',
+    help=TRANSLATION('term-help-fix-target'),
 )

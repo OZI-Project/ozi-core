@@ -26,6 +26,7 @@ from pyparsing import ParseException
 from spdx_license_list import LICENSES
 from tap_producer import TAP
 
+from ozi_core._i18n import TRANSLATION
 from ozi_core.spdx import spdx_license_expression
 from ozi_core.trove import Prefix
 from ozi_core.trove import from_prefix
@@ -109,9 +110,7 @@ class CloseMatch(Action):
             no_match = True
         if no_match:
             warn(
-                f'No {key} choice matching "{value}" available.'
-                'To list available options:'
-                f'$ ozi-new -l {key}',
+                TRANSLATION('err-no-close-match', key=key, value=value)+f'$ ozi-new -l {key}',
                 RuntimeWarning,
                 stacklevel=0,
             )

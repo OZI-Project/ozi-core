@@ -52,6 +52,11 @@ edit-menu-btn-typing: 类型（Ｔｙｐｉｎｇ）
 edit-menu-btn-readme-type: 自述文件内容类型（Ｄｅｓｃｒｉｐｔｉｏｎ－Ｃｏｎｔｅｎｔ－Ｔｙｐｅ）
 err-name-exists: 同名的项目已存在。
 err-name-invalid: 项目名称无效。
+err-no-close-match: >
+  没有与『$value』匹配的可用$key选项。
+
+  列出可用选项：
+
 err-no-empty: 不能为空。
 err-pkg-not-found: 找不到包包。
 err-too-long: 输入太长。
@@ -168,6 +173,7 @@ term-help: $name（$text）
 term-defaults: 默认值
 term-required: 需要
 term-options: 选项
+term-output: 输出
 term-default-metadata: 默认元数据
 term-optional-metadata: 可选元数据
 term-required-metadata: 必需元数据
@@ -188,3 +194,10 @@ term-help-enable-cython: 使用Ｃｙｔｈｏｎ构建Ｐｙｔｈｏｎ扩展�
 term-help-check-package-exists: 检查ＰｙＰＩ上是否存在包名称，默认：是
 term-desc-new-interactive: 使用交互式提示通过ＯＺＩ创建一个新的Ｐｙｔｈｏｎ项目。
 term-help-new-interactive: 使用交互式提示创建一个新的Ｐｙｔｈｏｎ项目
+term-help-pretty: 输出缩进的ＪＳＯＮ，默认：否
+term-help-fix-add: 向项目添加文件或目录
+term-help-fix-remove: 从项目中删除文件或目录
+term-help-fix-source: 在ＯＺＩ项目中创建一个新的Ｐｙｔｈｏｎ源。
+term-help-fix-test: 在ＯＺＩ项目中创建一个新的Ｐｙｔｈｏｎ测试。
+term-help-fix-target: 目标ＯＺＩ项目目录
+term-help-fix-missing: 检查您的ＯＺＩ项目是否缺少文件。
