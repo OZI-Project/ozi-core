@@ -39,6 +39,7 @@ from ozi_core._i18n import TRANSLATION
 from ozi_core.new.interactive._style import _style
 from ozi_core.new.interactive._style import _style_dict
 from ozi_core.new.interactive.validator import LengthValidator
+from ozi_core.new.interactive.validator import LicenseFileValidator
 from ozi_core.new.interactive.validator import NotReservedValidator
 from ozi_core.new.interactive.validator import PackageValidator
 from ozi_core.new.interactive.validator import ProjectNameValidator
@@ -137,6 +138,25 @@ class Project:  # pragma: no cover
                 prefix,
                 TRANSLATION('pro-keywords', projectname=project_name),
                 validator=LengthValidator(),
+            )
+            if result is True:
+                return result, output, prefix
+            if isinstance(result, list):
+                return result, output, prefix
+
+    @staticmethod
+    def license_file(
+        project_name: str,
+        output: dict[str, list[str]],
+        prefix: dict[str, str],
+    ) -> tuple[None | list[str] | str | bool, dict[str, list[str]], dict[str, str]]:
+        while True:
+            result, output, prefix = header_input(
+                'License-File',
+                output,
+                prefix,
+                TRANSLATION('pro-license-file', projectname=project_name),
+                validator=LicenseFileValidator(),
             )
             if result is True:
                 return result, output, prefix
