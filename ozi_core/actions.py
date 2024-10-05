@@ -110,7 +110,8 @@ class CloseMatch(Action):
             no_match = True
         if no_match:
             warn(
-                TRANSLATION('err-no-close-match', key=key, value=value)+f'$ ozi-new -l {key}',
+                TRANSLATION('err-no-close-match', key=key, value=value)
+                + f'$ ozi-new -l {key}',
                 RuntimeWarning,
                 stacklevel=0,
             )
@@ -161,7 +162,11 @@ def check_for_update(
     match max(releases):
         case latest if latest > current_version:
             TAP.not_ok(
-                TRANSLATION('err-new-version', latest=str(latest), currentversion=str(current_version)),
+                TRANSLATION(
+                    'err-new-version',
+                    latest=str(latest),
+                    currentversion=str(current_version),
+                ),
                 'https://pypi.org/project/OZI/',
             )
         case latest if latest < current_version:
@@ -182,7 +187,10 @@ def check_version(version: str) -> NoReturn:  # pragma: defer to PyPI
             TAP.end()
         case _:
             TAP.end(
-                skip_reason=TRANSLATION('version-check-failed', status=str(response.status_code)),
+                skip_reason=TRANSLATION(
+                    'version-check-failed',
+                    status=str(response.status_code),
+                ),
             )
 
 
