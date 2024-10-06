@@ -53,6 +53,8 @@ class Translation:
         if self.locale not in self.data:
             return _key
         text = self.data[self.locale].get(_key, _key)
+        if text is None:
+            return ''
         return Template(text).safe_substitute(**kwargs)
 
 
