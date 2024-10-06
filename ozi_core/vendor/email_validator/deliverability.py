@@ -53,7 +53,7 @@ def validate_email_deliverability(
             # For reporting, put them in priority order and remove the trailing dot in the qnames.
             mtas = sorted(
                 [
-                    (r.preference, str(r.exchange).rstrip('.'))
+                    (r.preference, str(r.exchange).rstrip('.'))  # pyright: ignore
                     for r in response  # pyright: ignore
                 ],
             )
@@ -111,7 +111,7 @@ def validate_email_deliverability(
             try:
                 response = dns_resolver.resolve(domain, 'TXT')
                 for rec in response:  # pyright: ignore
-                    value = b''.join(rec.strings)
+                    value = b''.join(rec.strings)  # pyright: ignore
                     if value.startswith(b'v=spf1 '):
                         deliverability_info['spf'] = value.decode('ascii', errors='replace')
                         if value == b'v=spf1 -all':
