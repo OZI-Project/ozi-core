@@ -1,4 +1,19 @@
 # ozi-core CHANGELOG
+## 1.2.6 (2024-10-06)
+
+
+### 🐛 Fixed Bugs
+
+* add some pyright ignores — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`a80f17f`](https://github.com/OZI-Project/ozi-core/commit/a80f17fa5ca11dfc91eeb778fc3dd8ac2832e930))
+
+
+### Performance
+
+
+* perf: more translations for the CLI — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`95ea579`](https://github.com/OZI-Project/ozi-core/commit/95ea579211f14e9ac1a4378af396ec3ccdae67a1))
+
 ## 1.2.5 (2024-10-05)
 
 
