@@ -1,4 +1,214 @@
 # ozi-core CHANGELOG
+## 1.2.6 (2024-10-06)
+
+
+### 🐛 Fixed Bugs
+
+* add some pyright ignores — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`a80f17f`](https://github.com/OZI-Project/ozi-core/commit/a80f17fa5ca11dfc91eeb778fc3dd8ac2832e930))
+
+
+### Performance
+
+
+* perf: more translations for the CLI — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`95ea579`](https://github.com/OZI-Project/ozi-core/commit/95ea579211f14e9ac1a4378af396ec3ccdae67a1))
+
+## 1.2.5 (2024-10-05)
+
+
+### Build
+
+
+* (deps): bump OZI-Project/release from 1.0.2 to 1.0.3
+
+Bumps [OZI-Project/release](https://github.com/ozi-project/release) from 1.0.2 to 1.0.3.
+- [Release notes](https://github.com/ozi-project/release/releases)
+- [Commits](https://github.com/ozi-project/release/compare/48fdd720e637c583fe162559ebe23d5ae0e24f8f...d764d82aa0900effc1590b0281ff35d67be592fd)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/release
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] &lt;support@github.com&gt;
+([`a1289cd`](https://github.com/OZI-Project/ozi-core/commit/a1289cd42100f470ba19b771c5cd71aba7365f31))
+
+* (deps): bump OZI-Project/release from 1.0.1 to 1.0.2
+
+Bumps [OZI-Project/release](https://github.com/ozi-project/release) from 1.0.1 to 1.0.2.
+- [Release notes](https://github.com/ozi-project/release/releases)
+- [Commits](https://github.com/ozi-project/release/compare/3015ae773cba4b74f1ff7afb55ad1e6324d56f51...48fdd720e637c583fe162559ebe23d5ae0e24f8f)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/release
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] &lt;support@github.com&gt;
+([`ae1a78e`](https://github.com/OZI-Project/ozi-core/commit/ae1a78e1ef385b5372f2277633d1a145685bba89))
+
+* (deps): bump OZI-Project/draft from 1.0.2 to 1.1.0
+
+Bumps [OZI-Project/draft](https://github.com/ozi-project/draft) from 1.0.2 to 1.1.0.
+- [Release notes](https://github.com/ozi-project/draft/releases)
+- [Commits](https://github.com/ozi-project/draft/compare/1.0.2...1.1.0)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/draft
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] &lt;support@github.com&gt;
+([`73b379f`](https://github.com/OZI-Project/ozi-core/commit/73b379f795806c415964043c61048da774d2b11d))
+
+* (deps): bump OZI-Project/publish from 1.0.2 to 1.1.0
+
+Bumps [OZI-Project/publish](https://github.com/ozi-project/publish) from 1.0.2 to 1.1.0.
+- [Release notes](https://github.com/ozi-project/publish/releases)
+- [Commits](https://github.com/ozi-project/publish/compare/1.0.2...1.1.0)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/publish
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] &lt;support@github.com&gt;
+([`3f17126`](https://github.com/OZI-Project/ozi-core/commit/3f17126874c680222dccb15388eb5845655b8cc6))
+
+
+### 🐛 Fixed Bugs
+
+* remove 3.10 checkpoint pending deprecation — Eden Ross Duff, MSc, DDiv &lt;rjdbcm@outlook.com&gt;
+([`69f1ef9`](https://github.com/OZI-Project/ozi-core/commit/69f1ef9f0164eaeb04f6a393b719c6a2fdcc7876))
+
+* erroneous call to TAP version after interactive session — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`a03be5f`](https://github.com/OZI-Project/ozi-core/commit/a03be5f76fa04146ed6947f932724741bc38aa1c))
+
+
+### Performance
+
+
+* perf: run lint — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`6ecc276`](https://github.com/OZI-Project/ozi-core/commit/6ecc276a5405e7bb31614c9d142801060a748b3c))
+
+* perf: finish i18n for CLI — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`fe74ffc`](https://github.com/OZI-Project/ozi-core/commit/fe74ffcceb3fd3f627754b8b6178e629e6da58eb))
+
+* perf: internationalize the ``ozi-fix`` interface and ``ozi-new`` validator error messages — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`5eff10a`](https://github.com/OZI-Project/ozi-core/commit/5eff10ac440b2e95d325f0d08d809824dbf2b85f))
+
+* perf: complete internationalization of ``ozi-new`` CLI — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`182839b`](https://github.com/OZI-Project/ozi-core/commit/182839b5665ee21ffbbbc8a21bb26c0e4c2203aa))
+
+* perf: add a License-File prompt and validator — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`976f02e`](https://github.com/OZI-Project/ozi-core/commit/976f02e9f468af8f7190c311f18623519c2eaad9))
+
+## 1.2.4 (2024-10-02)
+
+
+### Build
+
+
+* (deps): bump OZI-Project/release from 1.0.0 to 1.0.1
+
+Bumps [OZI-Project/release](https://github.com/ozi-project/release) from 1.0.0 to 1.0.1.
+- [Release notes](https://github.com/ozi-project/release/releases)
+- [Commits](https://github.com/ozi-project/release/compare/98248899bb8b235e3198105f080093ea5b9751d8...3015ae773cba4b74f1ff7afb55ad1e6324d56f51)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/release
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] &lt;support@github.com&gt;
+([`a882caa`](https://github.com/OZI-Project/ozi-core/commit/a882caab8127afb2cbd057337a5188e107d6880e))
+
+* (deps): bump OZI-Project/checkpoint from 1.0.0 to 1.0.1
+
+Bumps [OZI-Project/checkpoint](https://github.com/ozi-project/checkpoint) from 1.0.0 to 1.0.1.
+- [Release notes](https://github.com/ozi-project/checkpoint/releases)
+- [Commits](https://github.com/ozi-project/checkpoint/compare/1.0.0...1.0.1)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/checkpoint
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] &lt;support@github.com&gt;
+([`027e98b`](https://github.com/OZI-Project/ozi-core/commit/027e98b58c3fa2d7cf90fb902b9aa5807b20e25a))
+
+* (deps): bump OZI-Project/publish from 1.0.0 to 1.0.2
+
+Bumps [OZI-Project/publish](https://github.com/ozi-project/publish) from 1.0.0 to 1.0.2.
+- [Release notes](https://github.com/ozi-project/publish/releases)
+- [Commits](https://github.com/ozi-project/publish/compare/1.0.0...1.0.2)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/publish
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] &lt;support@github.com&gt;
+([`6f90e4f`](https://github.com/OZI-Project/ozi-core/commit/6f90e4fda98a13f35f5df8a53ed6c80f78e6a2d0))
+
+* (deps): bump OZI-Project/draft from 1.0.0 to 1.0.2
+
+Bumps [OZI-Project/draft](https://github.com/ozi-project/draft) from 1.0.0 to 1.0.2.
+- [Release notes](https://github.com/ozi-project/draft/releases)
+- [Commits](https://github.com/ozi-project/draft/compare/1.0.0...1.0.2)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/draft
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] &lt;support@github.com&gt;
+([`a774a0e`](https://github.com/OZI-Project/ozi-core/commit/a774a0ea6c8813de5852e5a88d4c7771cca84e56))
+
+
+### 🐛 Fixed Bugs
+
+* typos in i18n — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`4927181`](https://github.com/OZI-Project/ozi-core/commit/492718139b3ace0a8ebe360e6b813185bb35d044))
+
+## 1.2.3 (2024-10-01)
+
+
+### 🐛 Fixed Bugs
+
+* (coverage): no cover — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`7fb3df0`](https://github.com/OZI-Project/ozi-core/commit/7fb3df0e049c905a1fa9a94e7f26436eca741b0d))
+
+* (i18n): patch some missing translations — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`5383a6f`](https://github.com/OZI-Project/ozi-core/commit/5383a6fc645e1bf9c8bec13a7c00054c5bb20f70))
+
+## 1.2.2 (2024-10-01)
+
+
+### 🐛 Fixed Bugs
+
+* correct locale file location — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`392d0ab`](https://github.com/OZI-Project/ozi-core/commit/392d0ab8a3d19fa0367672b799ad12078c5c6437))
+
+## 1.2.1 (2024-10-01)
+
+
+### 🐛 Fixed Bugs
+
+* (i18n):  typechecking for Python 3.10 — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`8d2a844`](https://github.com/OZI-Project/ozi-core/commit/8d2a844be7a0b16bd07482f2f4cc7bb3198cfcba))
+
+
+### Performance
+
+
+* perf(mypy): type locale as str — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`b416fc0`](https://github.com/OZI-Project/ozi-core/commit/b416fc02eaa6c5654e81544de5021615f0aedf17))
+
+* perf: update OZI wrapfile to 1.22 — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`8e20899`](https://github.com/OZI-Project/ozi-core/commit/8e20899ddf07d5a4085779699939188abfae41fb))
+
 ## 1.2.0 (2024-09-18)
 
 
@@ -70,6 +280,13 @@ build(deps): update ozi-templates requirement from ~=2.11.1 to ~=2.12.0
 
 * package metadata download-url correction — rjdbcm &lt;rjdbcm@outlook.com&gt;
 ([`08a20ee`](https://github.com/OZI-Project/ozi-core/commit/08a20eedf26623035e15f900742a156aa1d32b18))
+
+
+### Performance
+
+
+* perf(i18n): interactive prompt and added Chinese (simplified) language support — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`9c63941`](https://github.com/OZI-Project/ozi-core/commit/9c63941044724e49cf73e287a773a1a2b31bd3ca))
 
 
 ### Unknown
