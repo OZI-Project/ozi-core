@@ -1,4 +1,12 @@
 # ozi-core CHANGELOG
+## 1.2.7 (2024-10-06)
+
+
+### 🐛 Fixed Bugs
+
+* empty translation values coerced to str — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`f1f14eb`](https://github.com/OZI-Project/ozi-core/commit/f1f14eb1daedd21d156faaed0826d4ffe1e09d1d))
+
 ## 1.2.6 (2024-10-06)
 
 
