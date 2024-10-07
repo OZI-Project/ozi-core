@@ -158,9 +158,7 @@ class Project:  # pragma: no cover
     ) -> tuple[None | list[str] | str | bool, dict[str, list[str]], dict[str, str]]:
         while True:
             result = radiolist_dialog(
-                values=(
-                    ('LICENSE.txt', 'LICENSE.txt'),
-                ),
+                values=(('LICENSE.txt', 'LICENSE.txt'),),
                 title=TRANSLATION('dlg-title'),
                 text=TRANSLATION('pro-license-file', projectname=project_name),
                 style=_style,
@@ -169,7 +167,9 @@ class Project:  # pragma: no cover
                 cancel_text=TRANSLATION('btn-back'),
             ).run()
             if result is not None:
-                output.update({'--license-file': [result] if isinstance(result, str) else []})
+                output.update(
+                    {'--license-file': [result] if isinstance(result, str) else []}
+                )
             prefix.update(
                 (
                     {
@@ -853,7 +853,7 @@ class Project:  # pragma: no cover
                                             title=TRANSLATION('dlg-title'),
                                             text=TRANSLATION(
                                                 'pro-classifier-cbl',
-                                                key=TRANSLATION('edit-menu-btn-' + x)
+                                                key=TRANSLATION('edit-menu-btn-' + x),
                                             ),
                                             style=_style,
                                             ok_text=TRANSLATION('btn-ok'),
