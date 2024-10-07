@@ -157,17 +157,28 @@ class Project:  # pragma: no cover
         prefix: dict[str, str],
     ) -> tuple[None | list[str] | str | bool, dict[str, list[str]], dict[str, str]]:
         while True:
-            result, output, prefix = self.header_input(
-                'License-File',
-                output,
-                prefix,
-                TRANSLATION('pro-license-file', projectname=project_name),
-                validator=LicenseFileValidator(),
+            result = radiolist_dialog(
+                values=(
+                    ('LICENSE.txt', 'LICENSE.txt'),
+                ),
+                title=TRANSLATION('dlg-title'),
+                text=TRANSLATION('pro-license-file', projectname=project_name),
+                style=_style,
+                default='LICENSE.txt',
+                ok_text=TRANSLATION('btn-ok'),
+                cancel_text=TRANSLATION('btn-back'),
+            ).run()
+            if result is not None:
+                output.update({'--license-file': [result] if isinstance(result, str) else []})
+            prefix.update(
+                (
+                    {
+                        'License-File ::': f'License-File :: {result}',  # noqa: B950, RUF100, E501
+                    }
+                    if result
+                    else {}
+                ),
             )
-            if result is True:
-                return result, output, prefix
-            if isinstance(result, list):
-                return result, output, prefix
 
     def home_page(
         self: Self,
@@ -373,7 +384,7 @@ class Project:  # pragma: no cover
             output.update({'--license-expression': _default})
         prefix.update(
             {
-                'Extra: License-Expression ::': f'Extra: License-Expression :: {_license_expression if _license_expression else ""}',  # pyright: ignore  # noqa: B950, RUF100, E501
+                'License-Expression ::': f'License-Expression :: {_license_expression if _license_expression else ""}',  # pyright: ignore  # noqa: B950, RUF100, E501
             },
         )  # pyright: ignore  # noqa: B950, RUF100
         return _license_expression, output, prefix
@@ -753,6 +764,7 @@ class Project:  # pragma: no cover
                                     'license_expression',
                                     TRANSLATION('edit-menu-btn-license-expression'),
                                 ),
+                                ('license_file', TRANSLATION('edit-menu-btn-license-file')),
                                 ('maintainer', TRANSLATION('edit-menu-btn-maintainer')),
                                 (
                                     'maintainer_email',
@@ -828,14 +840,32 @@ class Project:  # pragma: no cover
                                         'topic',
                                     ):
                                         output.setdefault(f'--{x}', [])
-                                        classifier = classifier_checkboxlist(x)
+                                        header = getattr(Prefix(), x)
+                                        classifier = checkboxlist_dialog(
+                                            values=sorted(
+                                                (
+                                                    zip(
+                                                        from_prefix(header),
+                                                        from_prefix(header),
+                                                    )
+                                                ),
+                                            ),
+                                            title=TRANSLATION('dlg-title'),
+                                            text=TRANSLATION(
+                                                'pro-classifier-cbl',
+                                                key=TRANSLATION('edit-menu-btn-' + x)
+                                            ),
+                                            style=_style,
+                                            ok_text=TRANSLATION('btn-ok'),
+                                            cancel_text=TRANSLATION('btn-back'),
+                                        ).run()
                                         if classifier is not None:
                                             for i in classifier:
                                                 output[f'--{x}'].append(i)
                                         prefix.update(
                                             (
                                                 {
-                                                    f'{getattr(Prefix(), x)}': f'{getattr(Prefix(), x)}{classifier}',  # noqa: B950, RUF100, E501
+                                                    f'{header}': f'{header}{classifier}',
                                                 }
                                                 if classifier
                                                 else {}
@@ -1030,25 +1060,6 @@ class Project:  # pragma: no cover
                     ).run():
                         break
         return None, output, prefix
-
-
-def classifier_checkboxlist(key: str) -> list[str] | None:  # pragma: no cover
-    result = checkboxlist_dialog(
-        values=sorted(
-            (
-                zip(
-                    from_prefix(getattr(Prefix(), key)),
-                    from_prefix(getattr(Prefix(), key)),
-                )
-            ),
-        ),
-        title=TRANSLATION('dlg-title'),
-        text=TRANSLATION('pro-classifier-cbl', key=TRANSLATION('edit-menu-btn-' + key)),
-        style=_style,
-        ok_text=TRANSLATION('btn-ok'),
-        cancel_text=TRANSLATION('btn-back'),
-    ).run()
-    return result
 
 
 _T = TypeVar('_T')
