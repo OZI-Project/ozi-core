@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import sys
 from typing import TYPE_CHECKING
 from typing import Any
 from typing import Sequence
@@ -51,6 +52,11 @@ if TYPE_CHECKING:
 
     from prompt_toolkit.key_binding.key_processor import KeyPressEvent  # pyright: ignore
 
+    if sys.version_info >= (3, 11):
+        from typing import Self
+    elif sys.version_info < (3, 11):
+        from typing_extensions import Self
+
 
 def checkbox(checked: bool) -> str:
     if checked:
@@ -80,8 +86,8 @@ class Project:  # pragma: no cover
         self.strict = strict
         self.verify_email = verify_email
 
-    @staticmethod
     def name(  # noqa: C901,RUF100
+        self: Self,
         output: dict[str, list[str]],
         prefix: dict[str, str],
         check_package_exists: bool = True,
@@ -94,7 +100,7 @@ class Project:  # pragma: no cover
                 return ProjectNameValidator()
 
         while True:
-            result, output, prefix = header_input(
+            result, output, prefix = self.header_input(
                 'Name',
                 output,
                 prefix,
@@ -106,14 +112,14 @@ class Project:  # pragma: no cover
             if isinstance(result, list):
                 return result, output, prefix
 
-    @staticmethod
     def summary(
+        self: Self,
         project_name: str,
         output: dict[str, list[str]],
         prefix: dict[str, str],
     ) -> tuple[None | list[str] | str | bool, dict[str, list[str]], dict[str, str]]:
         while True:
-            result, output, prefix = header_input(
+            result, output, prefix = self.header_input(
                 'Summary',
                 output,
                 prefix,
@@ -125,14 +131,14 @@ class Project:  # pragma: no cover
             if isinstance(result, list):
                 return result, output, prefix
 
-    @staticmethod
     def keywords(
+        self: Self,
         project_name: str,
         output: dict[str, list[str]],
         prefix: dict[str, str],
     ) -> tuple[None | list[str] | str | bool, dict[str, list[str]], dict[str, str]]:
         while True:
-            result, output, prefix = header_input(
+            result, output, prefix = self.header_input(
                 'Keywords',
                 output,
                 prefix,
@@ -144,14 +150,14 @@ class Project:  # pragma: no cover
             if isinstance(result, list):
                 return result, output, prefix
 
-    @staticmethod
     def license_file(
+        self: Self,
         project_name: str,
         output: dict[str, list[str]],
         prefix: dict[str, str],
     ) -> tuple[None | list[str] | str | bool, dict[str, list[str]], dict[str, str]]:
         while True:
-            result, output, prefix = header_input(
+            result, output, prefix = self.header_input(
                 'License-File',
                 output,
                 prefix,
@@ -163,14 +169,14 @@ class Project:  # pragma: no cover
             if isinstance(result, list):
                 return result, output, prefix
 
-    @staticmethod
     def home_page(
+        self: Self,
         project_name: str,
         output: dict[str, list[str]],
         prefix: dict[str, str],
     ) -> tuple[None | list[str] | str | bool, dict[str, list[str]], dict[str, str]]:
         while True:
-            result, output, prefix = header_input(
+            result, output, prefix = self.header_input(
                 'Home-page',
                 output,
                 prefix,
@@ -182,14 +188,14 @@ class Project:  # pragma: no cover
             if isinstance(result, list):
                 return result, output, prefix
 
-    @staticmethod
     def author(
+        self: Self,
         project_name: str,
         output: dict[str, list[str]],
         prefix: dict[str, str],
     ) -> tuple[None | list[str] | str | bool, dict[str, list[str]], dict[str, str]]:
         while True:
-            result, output, prefix = header_input(
+            result, output, prefix = self.header_input(
                 'Author',
                 output,
                 prefix,
@@ -202,14 +208,14 @@ class Project:  # pragma: no cover
             if isinstance(result, list):
                 return result, output, prefix
 
-    @staticmethod
     def author_email(
+        self: Self,
         project_name: str,
         output: dict[str, list[str]],
         prefix: dict[str, str],
     ) -> tuple[None | list[str] | str | bool, dict[str, list[str]], dict[str, str]]:
         while True:
-            result, output, prefix = header_input(
+            result, output, prefix = self.header_input(
                 'Author-email',
                 output,
                 prefix,
@@ -222,8 +228,8 @@ class Project:  # pragma: no cover
             if isinstance(result, list):
                 return result, output, prefix
 
-    @staticmethod
     def license_(  # noqa: C901,RUF100
+        self: Self,
         project_name: str,
         output: dict[str, list[str]],
         prefix: dict[str, str],
@@ -242,7 +248,7 @@ class Project:  # pragma: no cover
                 ok_text=TRANSLATION('btn-ok'),
             ).run()
             if license_ is None:
-                result, output, prefix = menu_loop(output, prefix)
+                result, output, prefix = self.menu_loop(output, prefix)
                 if isinstance(result, list):
                     output.update({'--license': _default})
                     return result, output, prefix
@@ -271,8 +277,8 @@ class Project:  # pragma: no cover
             output.update({'--license': _default})
         return str(license_), output, prefix
 
-    @staticmethod
     def license_expression(  # noqa: C901
+        self: Self,
         project_name: str,
         _license: str,
         output: dict[str, list[str]],
@@ -329,7 +335,7 @@ class Project:  # pragma: no cover
                 ).run()
                 if license_id is None:
                     output.update({'--license-expression': _default})
-                    result, output, prefix = menu_loop(output, prefix)
+                    result, output, prefix = self.menu_loop(output, prefix)
                     if isinstance(result, list):
                         return result, output, prefix
                 else:
@@ -372,14 +378,14 @@ class Project:  # pragma: no cover
         )  # pyright: ignore  # noqa: B950, RUF100
         return _license_expression, output, prefix
 
-    @staticmethod
     def maintainer(
+        self: Self,
         project_name: str,
         output: dict[str, list[str]],
         prefix: dict[str, str],
     ) -> tuple[None | list[str] | str | bool, dict[str, list[str]], dict[str, str]]:
         while True:
-            result, output, prefix = header_input(
+            result, output, prefix = self.header_input(
                 'Maintainer',
                 output,
                 prefix,
@@ -392,14 +398,14 @@ class Project:  # pragma: no cover
             if isinstance(result, list):
                 return result, output, prefix
 
-    @staticmethod
     def maintainer_email(
+        self: Self,
         project_name: str,
         output: dict[str, list[str]],
         prefix: dict[str, str],
     ) -> tuple[None | list[str] | str | bool, dict[str, list[str]], dict[str, str]]:
         while True:
-            result, output, prefix = header_input(
+            result, output, prefix = self.header_input(
                 'Maintainer-email',
                 output,
                 prefix,
@@ -412,8 +418,8 @@ class Project:  # pragma: no cover
             if isinstance(result, list):
                 return result, output, prefix
 
-    @staticmethod
     def requires_dist(
+        self: Self,
         project_name: str,
         output: dict[str, list[str]],
         prefix: dict[str, str],
@@ -485,13 +491,13 @@ class Project:  # pragma: no cover
                 case x if x and x == 'ok':
                     break
                 case None:
-                    result, output, prefix = menu_loop(output, prefix)
+                    result, output, prefix = self.menu_loop(output, prefix)
                     if result is not None:
                         return result, output, prefix
         return None, output, prefix
 
-    @staticmethod
     def readme_type(
+        self: Self,
         project_name: str,
         output: dict[str, list[str]],
         prefix: dict[str, str],
@@ -527,8 +533,8 @@ class Project:  # pragma: no cover
         )
         return str(readme_type), output, prefix
 
-    @staticmethod
     def typing(
+        self: Self,
         project_name: str,
         output: dict[str, list[str]],
         prefix: dict[str, str],
@@ -561,8 +567,8 @@ class Project:  # pragma: no cover
         )
         return str(result), output, prefix
 
-    @staticmethod
     def project_urls(
+        self: Self,
         project_name: str,
         output: dict[str, list[str]],
         prefix: dict[str, str],
@@ -632,340 +638,398 @@ class Project:  # pragma: no cover
 
         return f'{result}, {url}', output, prefix
 
-
-_P = Project()
-
-
-def menu_loop(
-    output: dict[str, list[str]],
-    prefix: dict[str, str],
-) -> tuple[
-    None | list[str] | bool,
-    dict[str, list[str]],
-    dict[str, str],
-]:  # pragma: no cover
-    while True:
-        _default: str | list[str] | None = None
-        match button_dialog(
+    def header_input(
+        self: Self,
+        label: str,
+        output: dict[str, list[str]],
+        prefix: dict[str, str],
+        *args: str,
+        validator: Validator | None = None,
+        split_on: str | None = None,
+    ) -> tuple[
+        bool | None | list[str],
+        dict[str, list[str]],
+        dict[str, str],
+    ]:  # pragma: no cover
+        _default = output.setdefault(f'--{label.lower()}', [])
+        header = input_dialog(
             title=TRANSLATION('dlg-title'),
-            text=TRANSLATION('main-menu-text'),
-            buttons=[
-                (TRANSLATION('main-menu-btn-metadata'), 1),
-                (TRANSLATION('main-menu-btn-options'), 0),
-                (TRANSLATION('main-menu-btn-reset'), False),
-                (TRANSLATION('btn-exit'), None),
-                (TRANSLATION('main-menu-btn-edit'), -1),
-                (TRANSLATION('btn-back'), True),
-            ],
+            text='\n'.join(args),
+            validator=validator,
+            default=_default[0] if len(_default) > 0 else '',
             style=_style,
-        ).run():
-            case True:
-                break
-            case False:
-                if yes_no_dialog(
+            cancel_text=TRANSLATION('btn-menu'),
+            ok_text=TRANSLATION('btn-ok'),
+        ).run()
+        if header is None:
+            output.update(
+                {
+                    f'--{label.lower()}': _default if len(_default) > 0 else [],
+                },
+            )
+            result, output, prefix = self.menu_loop(output, prefix)
+            return result, output, prefix
+        else:
+            if validator is not None:
+                valid, errmsg = validate_message(header, validator)
+                if valid:
+                    prefix.update({label: f'{label}: {header}'})
+                    if split_on:
+                        output.update(
+                            {f'--{label.lower()}': header.rstrip(split_on).split(split_on)},
+                        )
+                    else:
+                        output.update({f'--{label.lower()}': [header]})
+                    return True, output, prefix
+                message_dialog(
                     title=TRANSLATION('dlg-title'),
-                    text=TRANSLATION('main-menu-yn-reset'),
+                    text=TRANSLATION('msg-input-invalid', value=header, errmsg=errmsg),
                     style=_style,
-                    yes_text=TRANSLATION('btn-yes'),
-                    no_text=TRANSLATION('btn-no'),
-                ).run():
-                    return ['interactive', '.'], output, prefix
-            case None:
-                if yes_no_dialog(
-                    title=TRANSLATION('dlg-title'),
-                    text=TRANSLATION('main-menu-yn-exit'),
-                    style=_style,
-                    yes_text=TRANSLATION('btn-yes'),
-                    no_text=TRANSLATION('btn-no'),
-                ).run():
-                    return [], output, prefix
-            case -1:
-                while True:
-                    match radiolist_dialog(
+                    ok_text=TRANSLATION('btn-ok'),
+                ).run()
+            output.update(
+                {f'--{label.lower()}': _default if len(_default) > 0 else []},
+            )
+        return None, output, prefix
+
+    def menu_loop(
+        self: Project,
+        output: dict[str, list[str]],
+        prefix: dict[str, str],
+    ) -> tuple[
+        None | list[str] | bool,
+        dict[str, list[str]],
+        dict[str, str],
+    ]:  # pragma: no cover
+        while True:
+            _default: str | list[str] | None = None
+            match button_dialog(
+                title=TRANSLATION('dlg-title'),
+                text=TRANSLATION('main-menu-text'),
+                buttons=[
+                    (TRANSLATION('main-menu-btn-metadata'), 1),
+                    (TRANSLATION('main-menu-btn-options'), 0),
+                    (TRANSLATION('main-menu-btn-reset'), False),
+                    (TRANSLATION('btn-exit'), None),
+                    (TRANSLATION('main-menu-btn-edit'), -1),
+                    (TRANSLATION('btn-back'), True),
+                ],
+                style=_style,
+            ).run():
+                case True:
+                    break
+                case False:
+                    if yes_no_dialog(
                         title=TRANSLATION('dlg-title'),
-                        text=TRANSLATION('edit-menu-text'),
-                        values=[
-                            ('name', TRANSLATION('edit-menu-btn-name')),
-                            ('summary', TRANSLATION('edit-menu-btn-summary')),
-                            ('keywords', TRANSLATION('edit-menu-btn-keywords')),
-                            ('home_page', TRANSLATION('edit-menu-btn-homepage')),
-                            ('author', TRANSLATION('edit-menu-btn-author')),
-                            ('author_email', TRANSLATION('edit-menu-btn-email')),
-                            ('license_', TRANSLATION('edit-menu-btn-license')),
-                            (
-                                'license_expression',
-                                TRANSLATION('edit-menu-btn-license-expression'),
-                            ),
-                            ('maintainer', TRANSLATION('edit-menu-btn-maintainer')),
-                            (
-                                'maintainer_email',
-                                TRANSLATION('edit-menu-btn-maintainer-email'),
-                            ),
-                            ('project_urls', TRANSLATION('edit-menu-btn-project-url')),
-                            ('requires_dist', TRANSLATION('edit-menu-btn-requires-dist')),
-                            ('audience', TRANSLATION('edit-menu-btn-audience')),
-                            ('environment', TRANSLATION('edit-menu-btn-environment')),
-                            ('framework', TRANSLATION('edit-menu-btn-framework')),
-                            ('language', TRANSLATION('edit-menu-btn-language')),
-                            ('status', TRANSLATION('edit-menu-btn-status')),
-                            ('topic', TRANSLATION('edit-menu-btn-topic')),
-                            ('typing', TRANSLATION('edit-menu-btn-typing')),
-                            ('readme_type', TRANSLATION('edit-menu-btn-readme-type')),
-                        ],
-                        cancel_text=TRANSLATION('btn-back'),
-                        ok_text=TRANSLATION('btn-ok'),
+                        text=TRANSLATION('main-menu-yn-reset'),
                         style=_style,
+                        yes_text=TRANSLATION('btn-yes'),
+                        no_text=TRANSLATION('btn-no'),
                     ).run():
-                        case None:
-                            break
-                        case x if x and isinstance(x, str):
-                            project_name = (
-                                prefix.get('Name', '').replace('Name', '').strip(': ')
-                            )
-                            match x:
-                                case x if x == 'name':
-                                    result, output, prefix = _P.name(output, prefix)
-                                    if isinstance(result, list):
-                                        return result, output, prefix
-                                case x if x == 'license_expression':
-                                    result, output, prefix = _P.license_expression(
-                                        project_name,
-                                        prefix.get(
-                                            'License',
-                                            '',
-                                        )
-                                        .replace(
-                                            'License',
-                                            '',
-                                        )
-                                        .strip(': '),
-                                        output,
-                                        prefix,
-                                    )
-                                    if isinstance(result, list):
-                                        return result, output, prefix
-                                case x if x == 'license_':
-                                    result, output, prefix = _P.license_(
-                                        project_name,
-                                        output,
-                                        prefix,
-                                    )
-                                    if isinstance(result, str):
-                                        result, output, prefix = _P.license_expression(
+                        return ['interactive', '.'], output, prefix
+                case None:
+                    if yes_no_dialog(
+                        title=TRANSLATION('dlg-title'),
+                        text=TRANSLATION('main-menu-yn-exit'),
+                        style=_style,
+                        yes_text=TRANSLATION('btn-yes'),
+                        no_text=TRANSLATION('btn-no'),
+                    ).run():
+                        return [], output, prefix
+                case -1:
+                    while True:
+                        match radiolist_dialog(
+                            title=TRANSLATION('dlg-title'),
+                            text=TRANSLATION('edit-menu-text'),
+                            values=[
+                                ('name', TRANSLATION('edit-menu-btn-name')),
+                                ('summary', TRANSLATION('edit-menu-btn-summary')),
+                                ('keywords', TRANSLATION('edit-menu-btn-keywords')),
+                                ('home_page', TRANSLATION('edit-menu-btn-homepage')),
+                                ('author', TRANSLATION('edit-menu-btn-author')),
+                                ('author_email', TRANSLATION('edit-menu-btn-email')),
+                                ('license_', TRANSLATION('edit-menu-btn-license')),
+                                (
+                                    'license_expression',
+                                    TRANSLATION('edit-menu-btn-license-expression'),
+                                ),
+                                ('maintainer', TRANSLATION('edit-menu-btn-maintainer')),
+                                (
+                                    'maintainer_email',
+                                    TRANSLATION('edit-menu-btn-maintainer-email'),
+                                ),
+                                ('project_urls', TRANSLATION('edit-menu-btn-project-url')),
+                                (
+                                    'requires_dist',
+                                    TRANSLATION('edit-menu-btn-requires-dist'),
+                                ),
+                                ('audience', TRANSLATION('edit-menu-btn-audience')),
+                                ('environment', TRANSLATION('edit-menu-btn-environment')),
+                                ('framework', TRANSLATION('edit-menu-btn-framework')),
+                                ('language', TRANSLATION('edit-menu-btn-language')),
+                                ('status', TRANSLATION('edit-menu-btn-status')),
+                                ('topic', TRANSLATION('edit-menu-btn-topic')),
+                                ('typing', TRANSLATION('edit-menu-btn-typing')),
+                                ('readme_type', TRANSLATION('edit-menu-btn-readme-type')),
+                            ],
+                            cancel_text=TRANSLATION('btn-back'),
+                            ok_text=TRANSLATION('btn-ok'),
+                            style=_style,
+                        ).run():
+                            case None:
+                                break
+                            case x if x and isinstance(x, str):
+                                project_name = (
+                                    prefix.get('Name', '').replace('Name', '').strip(': ')
+                                )
+                                match x:
+                                    case x if x == 'name':
+                                        result, output, prefix = self.name(output, prefix)
+                                        if isinstance(result, list):
+                                            return result, output, prefix
+                                    case x if x == 'license_expression':
+                                        result, output, prefix = self.license_expression(
                                             project_name,
-                                            result,
+                                            prefix.get(
+                                                'License',
+                                                '',
+                                            )
+                                            .replace(
+                                                'License',
+                                                '',
+                                            )
+                                            .strip(': '),
                                             output,
                                             prefix,
                                         )
-                                    if isinstance(result, list):  # pyright: ignore
-                                        return result, output, prefix
-                                case x if x and x in (
-                                    'audience',
-                                    'environment',
-                                    'framework',
-                                    'language',
-                                    'status',
-                                    'topic',
-                                ):
-                                    output.setdefault(f'--{x}', [])
-                                    classifier = classifier_checkboxlist(x)
-                                    if classifier is not None:
-                                        for i in classifier:
-                                            output[f'--{x}'].append(i)
-                                    prefix.update(
-                                        (
-                                            {
-                                                f'{getattr(Prefix(), x)}': f'{getattr(Prefix(), x)}{classifier}',  # noqa: B950, RUF100, E501
-                                            }
-                                            if classifier
-                                            else {}
-                                        ),
-                                    )
-                                case x:
-                                    result, output, prefix = getattr(_P, x)(
-                                        project_name,
-                                        output,
-                                        prefix,
-                                    )
-                                    if isinstance(result, list):
-                                        return result, output, prefix
-            case 0:
-                while True:
-                    match radiolist_dialog(
-                        title=TRANSLATION('dlg-title'),
-                        text=TRANSLATION('opt-menu-title'),
-                        values=[
-                            (
-                                'enable_cython',
-                                TRANSLATION(
-                                    'opt-menu-enable-cython',
-                                    value=checkbox(_P.enable_cython),
-                                ),
-                            ),
-                            (
-                                'enable_uv',
-                                TRANSLATION(
-                                    'opt-menu-enable-uv',
-                                    value=checkbox(_P.enable_uv),
-                                ),
-                            ),
-                            (
-                                'github_harden_runner',
-                                TRANSLATION(
-                                    'opt-menu-github-harden-runner',
-                                    value=checkbox(_P.github_harden_runner),
-                                ),
-                            ),
-                            (
-                                'strict',
-                                TRANSLATION('opt-menu-strict', value=checkbox(_P.strict)),
-                            ),
-                            (
-                                'verify_email',
-                                TRANSLATION(
-                                    'opt-menu-verify-email',
-                                    value=checkbox(_P.verify_email),
-                                ),
-                            ),
-                            ('allow_file', TRANSLATION('opt-menu-allow-file')),
-                            ('ci_provider', TRANSLATION('opt-menu-ci-provider')),
-                            ('copyright_head', TRANSLATION('opt-menu-copyright-head')),
-                            (
-                                'language',
-                                TRANSLATION(
-                                    'opt-menu-language',
-                                    value=TRANSLATION('lang-' + TRANSLATION.locale),
-                                ),
-                            ),
-                        ],
-                        style=_style,
-                        cancel_text=TRANSLATION('btn-back'),
-                        ok_text=TRANSLATION('btn-ok'),
-                    ).run():
-                        case x if x and x in (
-                            'enable_cython',
-                            'enable_uv',
-                            'github_harden_runner',
-                            'verify_email',
-                        ):
-                            for i in (
-                                f'--{x.replace("_", "-")}',
-                                f'--no-{x.replace("_", "-")}',
-                            ):
-                                if i in output:
-                                    output.pop(i)
-                            setting = getattr(_P, x)
-                            if setting is None:
-                                setattr(_P, x, True)
-                            else:
-                                flag = '' if not setting else 'no-'
-                                output.update(
-                                    {
-                                        f'--{flag}{x.replace("_", "-")}': [
-                                            f'--{flag}{x.replace("_", "-")}',
-                                        ],
-                                    },
-                                )
-                                setattr(_P, x, not setting)
-                        case x if x and x == 'strict':
-                            for i in ('--strict', '--no-strict'):
-                                if i in output:
-                                    output.pop(i)
-                            setting = getattr(_P, x)
-                            if setting is None:
-                                setattr(_P, x, False)
-                            else:
-                                flag = '' if setting else 'no-'
-                                output.update(
-                                    {
-                                        f'--{flag}{x.replace("_", "-")}': [
-                                            f'--{flag}{x.replace("_", "-")}',
-                                        ],
-                                    },
-                                )
-                                setattr(_P, x, not setting)
-                        case x if x and x == 'copyright_head':
-                            _default = output.setdefault(
-                                '--copyright-head',
-                                [
-                                    'Part of {project_name}.\nSee LICENSE.txt in the project root for details.',  # noqa: B950, RUF100, E501
-                                ],
-                            )
-                            result = input_dialog(
-                                title=TRANSLATION('dlg-title'),
-                                text=TRANSLATION('opt-menu-copyright-head-input'),
-                                style=_style,
-                                cancel_text=TRANSLATION('btn-back'),
-                                ok_text=TRANSLATION('btn-ok'),
-                                default=_default[0],
-                            ).run()
-                            if result in _default:
-                                _P.copyright_head = result
-                                output.update({'--copyright-head': [_P.copyright_head]})
-                        case x if x and x == 'allow_file':
-                            _default = output.setdefault(
-                                '--allow-file',
-                                list(METADATA.spec.python.src.allow_files),
-                            )
-                            result = input_dialog(
-                                title=TRANSLATION('dlg-title'),
-                                text=TRANSLATION('opt-menu-allow-file-input'),
-                                style=_style,
-                                cancel_text=TRANSLATION('btn-back'),
-                                ok_text=TRANSLATION('btn-ok'),
-                                default=','.join(_default),
-                            ).run()
-                            if result != ','.join(_default) and result is not None:
-                                _P.allow_file = [i.strip() for i in result.split(',')]
-                                output.update({'--allow-file': [result]})
-                        case x if x and x == 'ci_provider':
-                            _default = output.setdefault('--ci-provider', ['github'])
-                            result = radiolist_dialog(
-                                title=TRANSLATION('dlg-title'),
-                                text=TRANSLATION('opt-menu-ci-provider-input'),
-                                values=[('github', 'GitHub')],
-                                cancel_text=TRANSLATION('btn-back'),
-                                ok_text=TRANSLATION('btn-ok'),
-                                default=_default[0],
-                                style=_style,
-                            ).run()
-                            if result in _default and result is not None:
-                                _P.ci_provider = result
-                                output.update({'--ci-provider': [_P.ci_provider]})
-                        case x if x == 'language':
-                            result = radiolist_dialog(
-                                title=TRANSLATION('dlg-title'),
-                                text=TRANSLATION('opt-menu-language-text'),
-                                values=list(
-                                    zip(
-                                        TRANSLATION.data.keys(),
-                                        [
-                                            TRANSLATION('lang-' + i)
-                                            for i in TRANSLATION.data.keys()
-                                        ],
+                                        if isinstance(result, list):
+                                            return result, output, prefix
+                                    case x if x == 'license_':
+                                        result, output, prefix = self.license_(
+                                            project_name,
+                                            output,
+                                            prefix,
+                                        )
+                                        if isinstance(result, str):
+                                            result, output, prefix = self.license_expression(
+                                                project_name,
+                                                result,
+                                                output,
+                                                prefix,
+                                            )
+                                        if isinstance(result, list):  # pyright: ignore
+                                            return result, output, prefix
+                                    case x if x and x in (
+                                        'audience',
+                                        'environment',
+                                        'framework',
+                                        'language',
+                                        'status',
+                                        'topic',
+                                    ):
+                                        output.setdefault(f'--{x}', [])
+                                        classifier = classifier_checkboxlist(x)
+                                        if classifier is not None:
+                                            for i in classifier:
+                                                output[f'--{x}'].append(i)
+                                        prefix.update(
+                                            (
+                                                {
+                                                    f'{getattr(Prefix(), x)}': f'{getattr(Prefix(), x)}{classifier}',  # noqa: B950, RUF100, E501
+                                                }
+                                                if classifier
+                                                else {}
+                                            ),
+                                        )
+                                    case x:
+                                        result, output, prefix = getattr(self, x)(
+                                            project_name,
+                                            output,
+                                            prefix,
+                                        )
+                                        if isinstance(result, list):
+                                            return result, output, prefix
+                case 0:
+                    while True:
+                        match radiolist_dialog(
+                            title=TRANSLATION('dlg-title'),
+                            text=TRANSLATION('opt-menu-title'),
+                            values=[
+                                (
+                                    'enable_cython',
+                                    TRANSLATION(
+                                        'opt-menu-enable-cython',
+                                        value=checkbox(self.enable_cython),
                                     ),
                                 ),
-                                cancel_text=TRANSLATION('btn-back'),
-                                ok_text=TRANSLATION('btn-ok'),
-                                default=TRANSLATION.locale,
-                                style=_style,
-                            ).run()
-                            if result is not None:
-                                TRANSLATION.locale = result
-                        case _:
-                            break
-            case 1:
-                if admonition_dialog(
-                    title=TRANSLATION('dlg-title'),
-                    heading_label=TRANSLATION('adm-metadata'),
-                    text='\n'.join(
-                        prefix.values() if len(prefix) > 0 else {'Name:': 'Name:'},
-                    ),
-                    ok_text=TRANSLATION('btn-prompt'),
-                    cancel_text=TRANSLATION('btn-back'),
-                ).run():
-                    break
-    return None, output, prefix
+                                (
+                                    'enable_uv',
+                                    TRANSLATION(
+                                        'opt-menu-enable-uv',
+                                        value=checkbox(self.enable_uv),
+                                    ),
+                                ),
+                                (
+                                    'github_harden_runner',
+                                    TRANSLATION(
+                                        'opt-menu-github-harden-runner',
+                                        value=checkbox(self.github_harden_runner),
+                                    ),
+                                ),
+                                (
+                                    'strict',
+                                    TRANSLATION(
+                                        'opt-menu-strict', value=checkbox(self.strict)
+                                    ),
+                                ),
+                                (
+                                    'verify_email',
+                                    TRANSLATION(
+                                        'opt-menu-verify-email',
+                                        value=checkbox(self.verify_email),
+                                    ),
+                                ),
+                                ('allow_file', TRANSLATION('opt-menu-allow-file')),
+                                ('ci_provider', TRANSLATION('opt-menu-ci-provider')),
+                                ('copyright_head', TRANSLATION('opt-menu-copyright-head')),
+                                (
+                                    'language',
+                                    TRANSLATION(
+                                        'opt-menu-language',
+                                        value=TRANSLATION('lang-' + TRANSLATION.locale),
+                                    ),
+                                ),
+                            ],
+                            style=_style,
+                            cancel_text=TRANSLATION('btn-back'),
+                            ok_text=TRANSLATION('btn-ok'),
+                        ).run():
+                            case x if x and x in (
+                                'enable_cython',
+                                'enable_uv',
+                                'github_harden_runner',
+                                'verify_email',
+                            ):
+                                for i in (
+                                    f'--{x.replace("_", "-")}',
+                                    f'--no-{x.replace("_", "-")}',
+                                ):
+                                    if i in output:
+                                        output.pop(i)
+                                setting = getattr(self, x)
+                                if setting is None:
+                                    setattr(self, x, True)
+                                else:
+                                    flag = '' if not setting else 'no-'
+                                    output.update(
+                                        {
+                                            f'--{flag}{x.replace("_", "-")}': [
+                                                f'--{flag}{x.replace("_", "-")}',
+                                            ],
+                                        },
+                                    )
+                                    setattr(self, x, not setting)
+                            case x if x and x == 'strict':
+                                for i in ('--strict', '--no-strict'):
+                                    if i in output:
+                                        output.pop(i)
+                                setting = getattr(self, x)
+                                if setting is None:
+                                    setattr(self, x, False)
+                                else:
+                                    flag = '' if setting else 'no-'
+                                    output.update(
+                                        {
+                                            f'--{flag}{x.replace("_", "-")}': [
+                                                f'--{flag}{x.replace("_", "-")}',
+                                            ],
+                                        },
+                                    )
+                                    setattr(self, x, not setting)
+                            case x if x and x == 'copyright_head':
+                                _default = output.setdefault(
+                                    '--copyright-head',
+                                    [
+                                        'Part of {project_name}.\nSee LICENSE.txt in the project root for details.',  # noqa: B950, RUF100, E501
+                                    ],
+                                )
+                                result = input_dialog(
+                                    title=TRANSLATION('dlg-title'),
+                                    text=TRANSLATION('opt-menu-copyright-head-input'),
+                                    style=_style,
+                                    cancel_text=TRANSLATION('btn-back'),
+                                    ok_text=TRANSLATION('btn-ok'),
+                                    default=_default[0],
+                                ).run()
+                                if result in _default:
+                                    self.copyright_head = result
+                                    output.update(
+                                        {'--copyright-head': [self.copyright_head]}
+                                    )
+                            case x if x and x == 'allow_file':
+                                _default = output.setdefault(
+                                    '--allow-file',
+                                    list(METADATA.spec.python.src.allow_files),
+                                )
+                                result = input_dialog(
+                                    title=TRANSLATION('dlg-title'),
+                                    text=TRANSLATION('opt-menu-allow-file-input'),
+                                    style=_style,
+                                    cancel_text=TRANSLATION('btn-back'),
+                                    ok_text=TRANSLATION('btn-ok'),
+                                    default=','.join(_default),
+                                ).run()
+                                if result != ','.join(_default) and result is not None:
+                                    self.allow_file = [i.strip() for i in result.split(',')]
+                                    output.update({'--allow-file': [result]})
+                            case x if x and x == 'ci_provider':
+                                _default = output.setdefault('--ci-provider', ['github'])
+                                result = radiolist_dialog(
+                                    title=TRANSLATION('dlg-title'),
+                                    text=TRANSLATION('opt-menu-ci-provider-input'),
+                                    values=[('github', 'GitHub')],
+                                    cancel_text=TRANSLATION('btn-back'),
+                                    ok_text=TRANSLATION('btn-ok'),
+                                    default=_default[0],
+                                    style=_style,
+                                ).run()
+                                if result in _default and result is not None:
+                                    self.ci_provider = result
+                                    output.update({'--ci-provider': [self.ci_provider]})
+                            case x if x == 'language':
+                                result = radiolist_dialog(
+                                    title=TRANSLATION('dlg-title'),
+                                    text=TRANSLATION('opt-menu-language-text'),
+                                    values=list(
+                                        zip(
+                                            TRANSLATION.data.keys(),
+                                            [
+                                                TRANSLATION('lang-' + i)
+                                                for i in TRANSLATION.data.keys()
+                                            ],
+                                        ),
+                                    ),
+                                    cancel_text=TRANSLATION('btn-back'),
+                                    ok_text=TRANSLATION('btn-ok'),
+                                    default=TRANSLATION.locale,
+                                    style=_style,
+                                ).run()
+                                if result is not None:
+                                    TRANSLATION.locale = result
+                            case _:
+                                break
+                case 1:
+                    if admonition_dialog(
+                        title=TRANSLATION('dlg-title'),
+                        heading_label=TRANSLATION('adm-metadata'),
+                        text='\n'.join(
+                            prefix.values() if len(prefix) > 0 else {'Name:': 'Name:'},
+                        ),
+                        ok_text=TRANSLATION('btn-prompt'),
+                        cancel_text=TRANSLATION('btn-back'),
+                    ).run():
+                        break
+        return None, output, prefix
 
 
 def classifier_checkboxlist(key: str) -> list[str] | None:  # pragma: no cover
@@ -985,60 +1049,6 @@ def classifier_checkboxlist(key: str) -> list[str] | None:  # pragma: no cover
         cancel_text=TRANSLATION('btn-back'),
     ).run()
     return result
-
-
-def header_input(
-    label: str,
-    output: dict[str, list[str]],
-    prefix: dict[str, str],
-    *args: str,
-    validator: Validator | None = None,
-    split_on: str | None = None,
-) -> tuple[
-    bool | None | list[str],
-    dict[str, list[str]],
-    dict[str, str],
-]:  # pragma: no cover
-    _default = output.setdefault(f'--{label.lower()}', [])
-    header = input_dialog(
-        title=TRANSLATION('dlg-title'),
-        text='\n'.join(args),
-        validator=validator,
-        default=_default[0] if len(_default) > 0 else '',
-        style=_style,
-        cancel_text=TRANSLATION('btn-menu'),
-        ok_text=TRANSLATION('btn-ok'),
-    ).run()
-    if header is None:
-        output.update(
-            {
-                f'--{label.lower()}': _default if len(_default) > 0 else [],
-            },
-        )
-        result, output, prefix = menu_loop(output, prefix)
-        return result, output, prefix
-    else:
-        if validator is not None:
-            valid, errmsg = validate_message(header, validator)
-            if valid:
-                prefix.update({label: f'{label}: {header}'})
-                if split_on:
-                    output.update(
-                        {f'--{label.lower()}': header.rstrip(split_on).split(split_on)},
-                    )
-                else:
-                    output.update({f'--{label.lower()}': [header]})
-                return True, output, prefix
-            message_dialog(
-                title=TRANSLATION('dlg-title'),
-                text=TRANSLATION('msg-input-invalid', value=header, errmsg=errmsg),
-                style=_style,
-                ok_text=TRANSLATION('btn-ok'),
-            ).run()
-        output.update(
-            {f'--{label.lower()}': _default if len(_default) > 0 else []},
-        )
-    return None, output, prefix
 
 
 _T = TypeVar('_T')
@@ -1061,7 +1071,6 @@ class Admonition(RadioList[_T]):
         default: _T | None = None,
     ) -> None:  # pragma: no cover
         super().__init__(values, default)
-        # Key bindings.
         kb = KeyBindings()
 
         @kb.add('pageup')
