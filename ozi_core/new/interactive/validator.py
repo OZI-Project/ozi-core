@@ -59,15 +59,6 @@ class LengthValidator(Validator):
             raise ValidationError(512, TRANSLATION('err-too-long'))
 
 
-class LicenseFileValidator(Validator):
-    def validate(
-        self,  # noqa: ANN101,RUF100
-        document: Document,
-    ) -> None:  # pragma: no cover
-        if document.text != 'LICENSE.txt':
-            ValidationError(0, 'only LICENSE.txt supported')
-
-
 class PackageValidator(Validator):
     def validate(
         self,  # noqa: ANN101,RUF100

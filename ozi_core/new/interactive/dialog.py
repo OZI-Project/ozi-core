@@ -40,7 +40,6 @@ from ozi_core._i18n import TRANSLATION
 from ozi_core.new.interactive._style import _style
 from ozi_core.new.interactive._style import _style_dict
 from ozi_core.new.interactive.validator import LengthValidator
-from ozi_core.new.interactive.validator import LicenseFileValidator
 from ozi_core.new.interactive.validator import NotReservedValidator
 from ozi_core.new.interactive.validator import PackageValidator
 from ozi_core.new.interactive.validator import ProjectNameValidator
