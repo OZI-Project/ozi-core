@@ -1,4 +1,13 @@
 # ozi-core CHANGELOG
+## 1.2.8 (2024-10-07)
+
+
+### Performance
+
+
+* perf: clean up interactive prompt implementation — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`6a1a86b`](https://github.com/OZI-Project/ozi-core/commit/6a1a86b3addc391b103556d7281379451242253a))
+
 ## 1.2.7 (2024-10-06)
 
 
