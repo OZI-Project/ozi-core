@@ -61,6 +61,7 @@ edit-menu-btn-author: Author
 edit-menu-btn-email: Author-email
 edit-menu-btn-license: License
 edit-menu-btn-license-expression: License-Expression
+edit-menu-btn-license-file: License-File
 edit-menu-btn-maintainer: Maintainer
 edit-menu-btn-maintainer-email: Maintainer-email
 edit-menu-btn-project-url: Project-URL
@@ -74,7 +75,7 @@ edit-menu-btn-topic: Topic
 edit-menu-btn-typing: Typing
 edit-menu-btn-readme-type: Description-Content-Type
 lang-en: English
-lang-zh: Chinese (Simplified)
+lang-zh: 简体中文 Chinese (Simplified)
 main-menu-btn-edit: "✎ Edit"
 main-menu-btn-metadata: "∋ Metadata"
 main-menu-btn-options: "⚙ Options"
@@ -124,6 +125,7 @@ pro-license-expression-radio: >
 
   "Please select a SPDX license-id for $projectname:"
 pro-license: Please select a license classifier for $projectname
+pro-license-file: Select a license file name for $projectname
 pro-maintainer-email: >
   What are the email addresses of the maintainer or maintainers of $projectname?
 
@@ -171,6 +173,7 @@ term-help-homepage: use once
 term-help-keywords: use once, comma-delimited list
 term-help-language: use zero or more times
 term-help-license: use once
+term-help-license-file: use once
 term-help-maintainer-email: use zero or more times, single output (if different from author email)
 term-help-maintainer: use zero or more times, single output (if different from author)
 term-help-name: use once

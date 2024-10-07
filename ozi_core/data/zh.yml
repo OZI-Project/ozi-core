@@ -19,13 +19,13 @@ adm-disclaimer-text: >
   法律顾问可以确保本警报中提供的信息适合您的特定情况。
   使用或阅读本警报或其中包含的任何资源不会建立律师-客户关系。
 adm-disclaimer-title: 免責聲明
-btn-back: ← 返回
-btn-exit: ✘ 退出
-btn-prompt: ⌂ 提示符
-btn-menu: ☰  選單
+btn-back: 返回
+btn-exit: 退出
+btn-prompt: 提示符
+btn-menu: 選單
 btn-no: 不
-btn-ok: ✔ 好的
-btn-skip: ⇒ 绕行
+btn-ok: 好的
+btn-skip: 跳过
 btn-yes: 是的
 dlg-title: ozi-new 互動提示符
 edit-menu-text: 编辑选单，选择要编辑的内容：
@@ -64,11 +64,11 @@ err-too-long: 输入太长。
 err-version-check: ＯＺＩ软件包版本检查失败，状态代码为：$status
 lang-en: 英语（Ｅｎｇｌｉｓｈ）
 lang-zh: 简体中文
-main-menu-btn-edit: ✎ 编辑
-main-menu-btn-metadata: ∋ 元数据
-main-menu-btn-options: ⚙ 选项
-main-menu-btn-reset: ↺ 重置
-main-menu-text: 主选单，选择动作：
+main-menu-btn-edit: 编辑
+main-menu-btn-metadata: 查看元数据
+main-menu-btn-options: 更改选项
+main-menu-btn-reset: 重置
+main-menu-text: 選單，选择动作：
 main-menu-yn-exit: 退出提示符？
 main-menu-yn-reset: 重置提示并重新开始？
 msg-input-invalid: >
@@ -113,6 +113,7 @@ pro-license-expression-radio: >
 
   请为『$projectname』选择ＳＰＤＸ许可证ＩＤ：
 pro-license: 请为『$projectname』选择许可证分类器。
+pro-license-file: 为『$projectname』选择许可证文件名
 pro-maintainer-email: >
   『$projectname』维护者的电子邮件地址是什么
 
