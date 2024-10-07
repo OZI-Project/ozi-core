@@ -208,7 +208,7 @@ def license_expression(expr: str) -> NoReturn:  # pragma: no cover
     """Validate a SPDX license expression."""
     try:
         spdx_license_expression.parse_string(expr, parse_all=True)
-        TAP.ok(expr, 'parsed successfully')
+        TAP.ok(expr, TRANSLATION('term-parsing-success'))
     except ParseException as e:
         TAP.not_ok(expr, str(e))
     TAP.end()

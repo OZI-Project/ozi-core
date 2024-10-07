@@ -15,7 +15,6 @@ from ozi_core._i18n import TRANSLATION
 from ozi_core.new.interactive.dialog import Project
 from ozi_core.new.interactive.dialog import _style
 from ozi_core.new.interactive.dialog import admonition_dialog
-from ozi_core.new.interactive.dialog import menu_loop
 from ozi_core.new.interactive.dialog import yes_no_dialog
 
 if TYPE_CHECKING:
@@ -106,7 +105,7 @@ def interactive_prompt(project: Namespace) -> list[str]:  # noqa: C901  # pragma
         ok_text=TRANSLATION('btn-ok'),
         cancel_text=TRANSLATION('btn-menu'),
     ).run():
-        result, output, prefix = menu_loop(output, prefix)
+        result, output, prefix = _P.menu_loop(output, prefix)
         if isinstance(result, list):
             return result
 
@@ -116,5 +115,5 @@ def interactive_prompt(project: Namespace) -> list[str]:  # noqa: C901  # pragma
         for i in v:
             if len(i) > 0:
                 ret_args += [k, i]
-    TAP.diagnostic('ozi-new project args', ' '.join(ret_args))
+    TAP.diagnostic(f'ozi-new {" ".join(ret_args)}')
     return ret_args
