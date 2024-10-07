@@ -80,7 +80,7 @@ def interactive_prompt(project: Namespace) -> list[str]:  # noqa: C901  # pragma
         return result
 
     if yes_no_dialog(
-        title='ozi-new interactive prompt',
+        title=TRANSLATION('dlg-title'),
         text=TRANSLATION('adm-maintainers'),
         style=_style,
         yes_text=TRANSLATION('btn-yes'),
