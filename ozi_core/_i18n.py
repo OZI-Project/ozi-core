@@ -28,6 +28,8 @@ _LOCALE = locale.getlocale()[0]
 
 class Translation:
 
+    __slots__ = ('_locale', 'data')
+
     def __init__(self: Self) -> None:
         self.data = {}
         self._locale = _LOCALE[:2] if _LOCALE is not None else 'en'
