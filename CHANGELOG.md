@@ -1,4 +1,25 @@
 # ozi-core CHANGELOG
+## 1.2.9 (2024-10-07)
+
+
+### 🐛 Fixed Bugs
+
+* add License-File dialog — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`aed82bc`](https://github.com/OZI-Project/ozi-core/commit/aed82bcda0749919824ca22a3644b5e5b27e1821))
+
+
+### Performance
+
+
+* perf: remove LicenseFileValidator — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`c446f4e`](https://github.com/OZI-Project/ozi-core/commit/c446f4e2f74c0a6e0c193f7831f5846647bb54bd))
+
+* perf: better Chinese UX — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`bf64f1b`](https://github.com/OZI-Project/ozi-core/commit/bf64f1bed7b74c9e1134b46f22450b14c378761a))
+
+* perf: fix missing title translation — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`db02db5`](https://github.com/OZI-Project/ozi-core/commit/db02db51da361172966eae038095abec3c19abfa))
+
 ## 1.2.8 (2024-10-07)
 
 
