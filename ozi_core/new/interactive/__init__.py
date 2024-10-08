@@ -9,8 +9,6 @@ import os
 import sys
 from typing import TYPE_CHECKING
 
-from tap_producer import TAP
-
 from ozi_core._i18n import TRANSLATION
 from ozi_core.new.interactive.dialog import Project
 from ozi_core.new.interactive.dialog import _style
@@ -115,5 +113,4 @@ def interactive_prompt(project: Namespace) -> list[str]:  # noqa: C901  # pragma
         for i in v:
             if len(i) > 0:
                 ret_args += [k, i]
-    TAP.diagnostic(f'ozi-new {" ".join(ret_args)}')
     return ret_args

@@ -7,9 +7,18 @@ from __future__ import annotations
 
 import shlex
 import sys
-import termios
-import tty
 from typing import TYPE_CHECKING
+from unittest.mock import Mock
+
+if sys.platform != 'win32':
+    import termios
+    import tty
+else:
+    tty = Mock()
+    termios = Mock()
+    tty.setraw = lambda x: None
+    termios.tcgetattr = lambda x: None
+    termios.tcsetattr = lambda x, y, z: None
 
 from ozi_spec import METADATA  # pyright: ignore
 from ozi_templates import load_environment  # type: ignore
@@ -62,6 +71,7 @@ def main(args: list[str] | None = None) -> None:  # pragma: no cover
             tty.setraw(sys.stdin)
             args = interactive_prompt(ozi_new)
             termios.tcsetattr(fd, termios.TCSADRAIN, original_attributes)
+            TAP.diagnostic(f'ozi-new {" ".join(args)}')
             ozi_new = parser.parse_args(args=args)
             main(args)
         case ozi_new if ozi_new.new in ['p', 'project']:
