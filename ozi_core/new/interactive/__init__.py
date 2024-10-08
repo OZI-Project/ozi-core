@@ -14,6 +14,7 @@ if sys.platform != 'win32':
 else:
     curses = Mock()
     curses.tigetstr = lambda x: b''
+    curses.setupterm = lambda: None
 
 from ozi_core._i18n import TRANSLATION
 from ozi_core.new.interactive.dialog import Project
