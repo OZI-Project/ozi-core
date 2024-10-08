@@ -4,10 +4,16 @@
 
 from __future__ import annotations
 
-import curses
 import os
 import sys
 from typing import TYPE_CHECKING
+from unittest.mock import Mock
+
+if sys.platform != 'win32':
+    import curses
+else:
+    curses = Mock()
+    curses.tigetstr = lambda x: b''
 
 from ozi_core._i18n import TRANSLATION
 from ozi_core.new.interactive.dialog import Project
