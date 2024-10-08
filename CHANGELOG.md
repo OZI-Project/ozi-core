@@ -1,4 +1,13 @@
 # ozi-core CHANGELOG
+## 1.2.11 (2024-10-08)
+
+
+### Performance
+
+
+* perf: ozi-spec~=0.10.2 semantic-release v9.9 — Eden Ross Duff, MSc, DDiv &lt;rjdbcm@outlook.com&gt;
+([`d1c8b55`](https://github.com/OZI-Project/ozi-core/commit/d1c8b555de58bd3c851b2f4dcd786b24c7eddb86))
+
 ## 1.2.10 (2024-10-08)
 
 
