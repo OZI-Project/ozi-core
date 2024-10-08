@@ -13,7 +13,7 @@ from unittest.mock import Mock
 if sys.platform != 'win32':
     import termios
     import tty
-else:
+else:  # pragma: no cover
     tty = Mock()
     termios = Mock()
     tty.setraw = lambda x: None
