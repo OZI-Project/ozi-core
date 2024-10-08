@@ -10,12 +10,14 @@ from ozi_spec import METADATA  # pyright: ignore
 from prompt_toolkit import Application  # pyright: ignore
 from prompt_toolkit.application.current import get_app  # pyright: ignore
 from prompt_toolkit.filters import Condition  # pyright: ignore
+from prompt_toolkit.filters import FilterOrBool  # pyright: ignore
 from prompt_toolkit.key_binding import KeyBindings  # pyright: ignore
 from prompt_toolkit.key_binding import merge_key_bindings  # pyright: ignore
 from prompt_toolkit.key_binding.bindings.focus import focus_next  # pyright: ignore
 from prompt_toolkit.key_binding.bindings.focus import focus_previous  # pyright: ignore
 from prompt_toolkit.key_binding.defaults import load_key_bindings  # pyright: ignore
 from prompt_toolkit.layout import ConditionalMargin  # pyright: ignore
+from prompt_toolkit.layout import Dimension as D  # pyright: ignore
 from prompt_toolkit.layout import HSplit  # pyright: ignore
 from prompt_toolkit.layout import Layout  # pyright: ignore
 from prompt_toolkit.layout import ScrollbarMargin  # pyright: ignore
@@ -23,7 +25,6 @@ from prompt_toolkit.layout import Window  # pyright: ignore
 from prompt_toolkit.layout.controls import FormattedTextControl  # pyright: ignore
 from prompt_toolkit.shortcuts import button_dialog  # pyright: ignore
 from prompt_toolkit.shortcuts import checkboxlist_dialog  # pyright: ignore
-from prompt_toolkit.shortcuts import input_dialog  # pyright: ignore
 from prompt_toolkit.shortcuts import message_dialog  # pyright: ignore
 from prompt_toolkit.shortcuts import radiolist_dialog  # pyright: ignore
 from prompt_toolkit.shortcuts import yes_no_dialog  # pyright: ignore
@@ -35,6 +36,8 @@ from prompt_toolkit.widgets import Button  # pyright: ignore
 from prompt_toolkit.widgets import Dialog  # pyright: ignore
 from prompt_toolkit.widgets import Label  # pyright: ignore
 from prompt_toolkit.widgets import RadioList
+from prompt_toolkit.widgets import TextArea
+from prompt_toolkit.widgets.toolbars import ValidationToolbar
 
 from ozi_core._i18n import TRANSLATION
 from ozi_core.new.interactive._style import _style
@@ -49,6 +52,9 @@ from ozi_core.trove import from_prefix
 
 if TYPE_CHECKING:
 
+    from prompt_toolkit.buffer import Buffer  # pyright: ignore
+    from prompt_toolkit.completion import Completer  # pyright: ignore
+    from prompt_toolkit.formatted_text import AnyFormattedText  # pyright: ignore
     from prompt_toolkit.key_binding.key_processor import KeyPressEvent  # pyright: ignore
 
     if sys.version_info >= (3, 11):
@@ -1138,6 +1144,11 @@ class Admonition(RadioList[_T]):
         pass  # pragma: no cover
 
 
+def _return_none() -> None:
+    """Button handler that returns None."""
+    get_app().exit()
+
+
 def admonition_dialog(  # noqa: C901
     title: str = '',
     text: str = '',
@@ -1153,10 +1164,6 @@ def admonition_dialog(  # noqa: C901
         ok_text = TRANSLATION('btn-ok')
     if cancel_text is None:
         cancel_text = TRANSLATION('btn-exit')
-
-    def _return_none() -> None:
-        """Button handler that returns None."""
-        get_app().exit()
 
     if style is None:
         style_dict = _style_dict
@@ -1189,6 +1196,74 @@ def admonition_dialog(  # noqa: C901
         ],
         with_background=True,
         width=min(max(longest_line + 8, 40), 80),
+    )
+    bindings = KeyBindings()
+    bindings.add('tab')(focus_next)
+    bindings.add('s-tab')(focus_previous)
+
+    return Application(
+        layout=Layout(dialog),
+        key_bindings=merge_key_bindings([load_key_bindings(), bindings]),
+        mouse_support=True,
+        style=style,
+        full_screen=True,
+    )
+
+
+def input_dialog(
+    title: AnyFormattedText = '',
+    text: AnyFormattedText = '',
+    ok_text: str | None = None,
+    cancel_text: str | None = None,
+    completer: Completer | None = None,
+    validator: Validator | None = None,
+    password: FilterOrBool = False,
+    style: BaseStyle | None = None,
+    default: str = '',
+) -> Application[str]:
+    """
+    Display a text input box.
+    Return the given text, or None when cancelled.
+    """
+    if ok_text is None:
+        ok_text = TRANSLATION('btn-ok')
+    if cancel_text is None:
+        cancel_text = TRANSLATION('btn-back')
+
+    def accept(buf: Buffer) -> bool:
+        get_app().layout.focus(ok_button)
+        return True  # Keep text.
+
+    def ok_handler() -> None:
+        get_app().exit(result=textfield.text)
+
+    ok_button = Button(text=ok_text, handler=ok_handler)
+    cancel_button = Button(text=cancel_text, handler=_return_none)
+    lines = default.splitlines()
+    longest_line = len(max(lines, key=len)) if len(lines) > 0 else 40
+    textfield = TextArea(
+        text=default,
+        multiline=True,
+        password=password,
+        completer=completer,
+        validator=validator,
+        accept_handler=accept,
+        height=max(len(lines), 1),
+        width=min(max(longest_line + 8, 40), 80),
+    )
+
+    dialog = Dialog(
+        title=title,
+        body=HSplit(
+            [
+                Label(text=text, dont_extend_height=True),
+                textfield,
+                ValidationToolbar(),
+            ],
+            padding=D(preferred=1, max=1),
+        ),
+        buttons=[ok_button, cancel_button],
+        with_background=True,
     )
     bindings = KeyBindings()
     bindings.add('tab')(focus_next)
