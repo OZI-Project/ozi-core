@@ -4,12 +4,17 @@
 
 from __future__ import annotations
 
-import curses
 import os
 import sys
 from typing import TYPE_CHECKING
+from unittest.mock import Mock
 
-from tap_producer import TAP
+if sys.platform != 'win32':
+    import curses
+else:
+    curses = Mock()
+    curses.tigetstr = lambda x: b''
+    curses.setupterm = lambda: None
 
 from ozi_core._i18n import TRANSLATION
 from ozi_core.new.interactive.dialog import Project
@@ -115,5 +120,4 @@ def interactive_prompt(project: Namespace) -> list[str]:  # noqa: C901  # pragma
         for i in v:
             if len(i) > 0:
                 ret_args += [k, i]
-    TAP.diagnostic(f'ozi-new {" ".join(ret_args)}')
     return ret_args
