@@ -1,4 +1,64 @@
 # ozi-core CHANGELOG
+## 1.2.10 (2024-10-08)
+
+
+### 🐛 Fixed Bugs
+
+* add no cover to import guard — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`efc9a16`](https://github.com/OZI-Project/ozi-core/commit/efc9a163057a61fd4026f191fab683a98c95715d))
+
+
+### Performance
+
+
+* perf: add import guard for curses on win32
+([`5816226`](https://github.com/OZI-Project/ozi-core/commit/58162268fbd74992e91726a41d24020e5f61ef36))
+
+* perf: add import guard for curses on win32 — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`52d1a3f`](https://github.com/OZI-Project/ozi-core/commit/52d1a3f3810e125466f8d7e5581b5008658b791b))
+
+* perf: chinese UI title more readable — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`089a5df`](https://github.com/OZI-Project/ozi-core/commit/089a5dfcff7d8ce0e6db7bc4022219b88b2e766a))
+
+* perf(ozi-new): import guard in case of win32 — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`155eda0`](https://github.com/OZI-Project/ozi-core/commit/155eda09e02bb63dd720ababf257934037b528df))
+
+* perf: set raw terminal mode for interactive prompt — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`1a37bc7`](https://github.com/OZI-Project/ozi-core/commit/1a37bc7b30d56ef3f15936c8a26d1b59caf5385c))
+
+* perf: flexible input dialog width and height based on default — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`e9ae813`](https://github.com/OZI-Project/ozi-core/commit/e9ae813e861fb4144c7bf1a75ff98e1bb17c707e))
+
+## 1.2.9 (2024-10-07)
+
+
+### 🐛 Fixed Bugs
+
+* add License-File dialog — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`aed82bc`](https://github.com/OZI-Project/ozi-core/commit/aed82bcda0749919824ca22a3644b5e5b27e1821))
+
+
+### Performance
+
+
+* perf: remove LicenseFileValidator — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`c446f4e`](https://github.com/OZI-Project/ozi-core/commit/c446f4e2f74c0a6e0c193f7831f5846647bb54bd))
+
+* perf: better Chinese UX — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`bf64f1b`](https://github.com/OZI-Project/ozi-core/commit/bf64f1bed7b74c9e1134b46f22450b14c378761a))
+
+* perf: fix missing title translation — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`db02db5`](https://github.com/OZI-Project/ozi-core/commit/db02db51da361172966eae038095abec3c19abfa))
+
+## 1.2.8 (2024-10-07)
+
+
+### Performance
+
+
+* perf: clean up interactive prompt implementation — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`6a1a86b`](https://github.com/OZI-Project/ozi-core/commit/6a1a86b3addc391b103556d7281379451242253a))
+
 ## 1.2.7 (2024-10-06)
 
 
