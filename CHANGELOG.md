@@ -1,4 +1,18 @@
 # ozi-core CHANGELOG
+## 1.2.12 (2024-10-09)
+
+
+### 🐛 Fixed Bugs
+
+* lint complaints — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`eb2fd82`](https://github.com/OZI-Project/ozi-core/commit/eb2fd8259c59771a478e186791bf218d15569ff4))
+
+* type locale data — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`a55512d`](https://github.com/OZI-Project/ozi-core/commit/a55512d5af8750e96cdc71752d1f3a94a282a736))
+
+* locales are now pre-compiled - es issue with docs display — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`5ee0203`](https://github.com/OZI-Project/ozi-core/commit/5ee020302e254ea48a342c279632ddd245d68c61))
+
 ## 1.2.11 (2024-10-08)
 
 
