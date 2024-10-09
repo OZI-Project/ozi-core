@@ -1,4 +1,12 @@
 # ozi-core CHANGELOG
+## 1.2.13 (2024-10-09)
+
+
+### 🐛 Fixed Bugs
+
+* hard locale file for the time being — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`e7285e8`](https://github.com/OZI-Project/ozi-core/commit/e7285e884e12b49b78121851a1cd10ebfb8f28ea))
+
 ## 1.2.12 (2024-10-09)
 
 
