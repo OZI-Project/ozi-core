@@ -4,6 +4,9 @@
 
 ### 🐛 Fixed Bugs
 
+* install PyYAML during build — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`8b7c5f9`](https://github.com/OZI-Project/ozi-core/commit/8b7c5f9dbf0b9cec467c0ff17e1fd744f18caabd))
+
 * lint complaints — rjdbcm &lt;rjdbcm@outlook.com&gt;
 ([`eb2fd82`](https://github.com/OZI-Project/ozi-core/commit/eb2fd8259c59771a478e186791bf218d15569ff4))
 
