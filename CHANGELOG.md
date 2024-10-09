@@ -1,4 +1,38 @@
 # ozi-core CHANGELOG
+## 1.2.13 (2024-10-09)
+
+
+### 🐛 Fixed Bugs
+
+* hard locale file for the time being — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`e7285e8`](https://github.com/OZI-Project/ozi-core/commit/e7285e884e12b49b78121851a1cd10ebfb8f28ea))
+
+## 1.2.12 (2024-10-09)
+
+
+### 🐛 Fixed Bugs
+
+* install PyYAML during build — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`8b7c5f9`](https://github.com/OZI-Project/ozi-core/commit/8b7c5f9dbf0b9cec467c0ff17e1fd744f18caabd))
+
+* lint complaints — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`eb2fd82`](https://github.com/OZI-Project/ozi-core/commit/eb2fd8259c59771a478e186791bf218d15569ff4))
+
+* type locale data — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`a55512d`](https://github.com/OZI-Project/ozi-core/commit/a55512d5af8750e96cdc71752d1f3a94a282a736))
+
+* locales are now pre-compiled - es issue with docs display — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`5ee0203`](https://github.com/OZI-Project/ozi-core/commit/5ee020302e254ea48a342c279632ddd245d68c61))
+
+## 1.2.11 (2024-10-08)
+
+
+### Performance
+
+
+* perf: ozi-spec~=0.10.2 semantic-release v9.9 — Eden Ross Duff, MSc, DDiv &lt;rjdbcm@outlook.com&gt;
+([`d1c8b55`](https://github.com/OZI-Project/ozi-core/commit/d1c8b555de58bd3c851b2f4dcd786b24c7eddb86))
+
 ## 1.2.10 (2024-10-08)
 
 
