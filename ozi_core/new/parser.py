@@ -48,7 +48,7 @@ interactive_parser.add_argument(
     type=str,
     nargs='?',
     default='.',
-    help=TRANSLATION('term-help-target'),
+    help=TRANSLATION('term-help-new-target'),
 )
 interactive_defaults = interactive_parser.add_argument_group(TRANSLATION('term-defaults'))
 interactive_defaults.add_argument(
@@ -393,5 +393,5 @@ ozi_required.add_argument(
     type=str,
     nargs='?',
     default='.',
-    help=TRANSLATION('term-help-target'),
+    help=TRANSLATION('term-help-new-target'),
 )
