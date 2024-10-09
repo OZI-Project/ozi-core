@@ -5,15 +5,12 @@
 """Internationalization utilities."""
 from __future__ import annotations
 
-import glob
 import locale
-import os
-from pathlib import Path
 from string import Template
 from typing import TYPE_CHECKING
 from typing import Any
 
-import yaml
+from ozi_core._locales import data
 
 if TYPE_CHECKING:  # pragma: no cover
     import sys
@@ -31,14 +28,8 @@ class Translation:
     __slots__ = ('_locale', 'data')
 
     def __init__(self: Self) -> None:
-        self.data = {}
+        self.data = data
         self._locale = _LOCALE[:2] if _LOCALE is not None else 'en'
-
-        files = glob.glob(os.path.join(Path(__file__).parent / 'data', '*.yml'))
-        for f in files:
-            loc = os.path.splitext(os.path.basename(f))[0]
-            with open(f, 'r', encoding='utf8') as fh:
-                self.data[loc] = yaml.safe_load(fh)
 
     @property
     def locale(self: Self) -> str | Any:  # pragma: no cover

@@ -125,7 +125,7 @@ ignore_nosec = true
 verbose = true
 
 [tool.black]
-extend-exclude = "(\\.pyi|venv|meson-private|subprojects)"
+extend-exclude = "(\\.pyi|venv|meson-private|subprojects|_locales.py)"
 line-length = 93
 
 [tool.coverage.report]
@@ -166,7 +166,8 @@ extend-exclude  = [
     "subprojects",
     "build-env-*",
     "build*",
-    "*.pyi"
+    "*.pyi",
+    "_locales.py"
 ]
 extend-ignore   = "E203,E501,TC007,TC008"
 extend-select   = "B950"
