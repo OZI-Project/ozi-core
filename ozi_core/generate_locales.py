@@ -20,5 +20,5 @@ def load_locale_data() -> dict[str, str]:  # pragma: no cover
 
 if __name__ == '__main__':
     text = f"""# This file was generated at build time. DO NOT EDIT
-data = {pprint.pformat(load_locale_data(), width=100)}"""
+data: dict[str, dict[str, str | None] | dict[str, str]] = {pprint.pformat(load_locale_data(), width=100)}"""
     print(text)
