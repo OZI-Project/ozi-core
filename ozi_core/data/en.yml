@@ -205,6 +205,7 @@ term-help-name-allow-file: Add file patterns to be ignored
 term-help-allow-file: In the new project target folder
 term-help-verify-email: 'verify deliverability of email domain, default: no'
 term-help-enable-cython: 'use Cython to build Python extension modules. default: no'
+term-help-enable-uv: 'Use uv to compile and install Python requirements, default: no'
 term-help-check-package-exists: 'check if the package name exists on PyPI, default: yes'
 term-desc-new-interactive: Create a new Python project with OZI using the interactive prompt.
 term-help-new-interactive: create a new Python project using the interactive prompt
