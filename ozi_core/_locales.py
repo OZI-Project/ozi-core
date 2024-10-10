@@ -1,30 +1,32 @@
 # This file was generated at build time. DO NOT EDIT
-data: dict[str, dict[str, str | None] | dict[str, str]] = {'en': {'adm-confirm': 'Confirm project creation?\n"PKG-INFO Metadata:"\n',
+data: dict[str, dict[str, str | None] | dict[str, str]] = {
+    'en': {
+        'adm-confirm': 'Confirm project creation?\n"PKG-INFO Metadata:"\n',
         'adm-disclaimer-text': 'The information provided on this prompt does not, and is not '
-                               'intended to, constitute legal advice. All information, content, '
-                               'and materials available on this prompt are for general '
-                               'informational purposes only. Information on this prompt may not '
-                               'constitute the most up-to-date legal or other information.\n'
-                               '\n'
-                               'THE LICENSE TEMPLATES, LICENSE IDENTIFIERS, LICENSE CLASSIFIERS, '
-                               'AND LICENSE EXPRESSION PARSING SERVICES, AND ALL OTHER CONTENTS '
-                               'ARE PROVIDED "AS IS", NO REPRESENTATIONS ARE MADE THAT THE CONTENT '
-                               'IS ERROR-FREE AND/OR APPLICABLE FOR ANY PURPOSE, INCLUDING '
-                               'MERCHANTABILITY.\n'
-                               '\n'
-                               'Readers of this prompt should contact their attorney to obtain '
-                               'advice with respect to any particular legal matter. The OZI '
-                               'Project is not a law firm and does not provide legal advice. No '
-                               'reader or user of this prompt should act or abstain from acting on '
-                               'the basis of information on this prompt without first seeking '
-                               'legal advice from counsel in the relevant jurisdiction. Legal '
-                               'counsel can ensure that the information provided in this prompt is '
-                               'applicable to your particular situation. Use of, or reading, this '
-                               'prompt or any of the resources contained within does not create an '
-                               'attorney-client relationship.\n',
+        'intended to, constitute legal advice. All information, content, '
+        'and materials available on this prompt are for general '
+        'informational purposes only. Information on this prompt may not '
+        'constitute the most up-to-date legal or other information.\n'
+        '\n'
+        'THE LICENSE TEMPLATES, LICENSE IDENTIFIERS, LICENSE CLASSIFIERS, '
+        'AND LICENSE EXPRESSION PARSING SERVICES, AND ALL OTHER CONTENTS '
+        'ARE PROVIDED "AS IS", NO REPRESENTATIONS ARE MADE THAT THE CONTENT '
+        'IS ERROR-FREE AND/OR APPLICABLE FOR ANY PURPOSE, INCLUDING '
+        'MERCHANTABILITY.\n'
+        '\n'
+        'Readers of this prompt should contact their attorney to obtain '
+        'advice with respect to any particular legal matter. The OZI '
+        'Project is not a law firm and does not provide legal advice. No '
+        'reader or user of this prompt should act or abstain from acting on '
+        'the basis of information on this prompt without first seeking '
+        'legal advice from counsel in the relevant jurisdiction. Legal '
+        'counsel can ensure that the information provided in this prompt is '
+        'applicable to your particular situation. Use of, or reading, this '
+        'prompt or any of the resources contained within does not create an '
+        'attorney-client relationship.\n',
         'adm-disclaimer-title': 'Disclaimer',
         'adm-maintainers': 'Are there any maintainers of $project_name?\n'
-                           '(other than the author or authors)\n',
+        '(other than the author or authors)\n',
         'adm-metadata': 'PKG-INFO Metadata:',
         'btn-back': '← Back',
         'btn-exit': '✘ Exit',
@@ -60,9 +62,9 @@ data: dict[str, dict[str, str | None] | dict[str, str]] = {'en': {'adm-confirm':
         'err-name-exists': 'project with that name exists.',
         'err-name-invalid': 'invalid project name.',
         'err-new-version': 'A newer version of OZI ($latest > $currentversion), available for '
-                           'download on PyPI',
+        'download on PyPI',
         'err-no-close-match': 'There is no available $key option matching "$value".\n'
-                              'List available options:\n',
+        'List available options:\n',
         'err-no-empty': 'cannot not be empty.',
         'err-pkg-not-found': 'package not found.',
         'err-too-long': 'input is too long.',
@@ -93,25 +95,25 @@ data: dict[str, dict[str, str | None] | dict[str, str]] = {'en': {'adm-confirm':
         'opt-menu-verify-email': 'Verify Email: $value',
         'pro-author': 'Who is the author or authors of $projectname?\n(comma-separated list)\n',
         'pro-author-email': 'What are the email addresses of the author or authors of '
-                            '$projectname?\n'
-                            '(comma-separated list)\n',
+        '$projectname?\n'
+        '(comma-separated list)\n',
         'pro-classifier-cbl': 'Please select $key classifier or classifiers:',
         'pro-homepage': 'What is the home-page URL for $projectname?',
         'pro-keywords': 'What are some keywords used to describe $projectname?\n'
-                        '(comma-separated list)\n',
+        '(comma-separated list)\n',
         'pro-license': 'Please select a license classifier for $projectname',
         'pro-license-expression-input': '"License: $license"\n'
-                                        '"Edit SPDX license expression for $projectname:"\n',
+        '"Edit SPDX license expression for $projectname:"\n',
         'pro-license-expression-radio': '"License: $license"\n'
-                                        '"Please select a SPDX license-id for $projectname:"\n',
+        '"Please select a SPDX license-id for $projectname:"\n',
         'pro-license-file': 'Select a license file name for $projectname',
         'pro-maintainer': 'What is the maintainer or maintainers name of $projectname?\n'
-                          '(comma-separated list)\n',
+        '(comma-separated list)\n',
         'pro-maintainer-email': 'What are the email addresses of the maintainer or maintainers of '
-                                '$projectname?\n'
-                                '(comma-separated list)\n',
+        '$projectname?\n'
+        '(comma-separated list)\n',
         'pro-name': 'What is the name of the project?\n'
-                    '(PyPI package name: no spaces, alphanumeric words, ".-_" as delimiters)\n',
+        '(PyPI package name: no spaces, alphanumeric words, ".-_" as delimiters)\n',
         'pro-project-urls-cbl': 'Please select project URLs you want to add to $projectname:',
         'pro-project-urls-cbl-bug-report': 'Bug Report',
         'pro-project-urls-cbl-changelog': 'Changelog',
@@ -130,7 +132,7 @@ data: dict[str, dict[str, str | None] | dict[str, str]] = {'en': {'adm-confirm':
         'pro-requires-dist-remove': 'Remove',
         'pro-requires-dist-search': 'Search PyPI packages:',
         'pro-summary': 'What does the project, $projectname, do?\n'
-                       '(a short summary 1-2 sentences)\n',
+        '(a short summary 1-2 sentences)\n',
         'pro-typing': 'Please select typing classifier for $projectname:',
         'pro-typing-radio-stubs-only': 'Stubs Only',
         'pro-typing-radio-typed': 'Typed',
@@ -141,7 +143,7 @@ data: dict[str, dict[str, str | None] | dict[str, str]] = {'en': {'adm-confirm':
         'term-default-metadata': 'default metadata',
         'term-defaults': 'defaults',
         'term-desc-new-interactive': 'Create a new Python project with OZI using the interactive '
-                                     'prompt.',
+        'prompt.',
         'term-desc-new-project': 'Create a new Python project with OZI.',
         'term-help': '$name ($text)',
         'term-help-allow-file': 'In the new project target folder',
@@ -163,7 +165,7 @@ data: dict[str, dict[str, str | None] | dict[str, str]] = {'en': {'adm-confirm':
         'term-help-fix-test': 'Create a new Python test in an OZI project.',
         'term-help-framework': 'use zero or more times',
         'term-help-github-harden-runner': 'add a harden runner to all non-reusable workflow jobs, '
-                                          'default: no',
+        'default: no',
         'term-help-help': 'show this help message and exit',
         'term-help-homepage': 'use once',
         'term-help-info': 'Print all metadata as JSON and exit.',
@@ -175,14 +177,14 @@ data: dict[str, dict[str, str | None] | dict[str, str]] = {'en': {'adm-confirm':
         'term-help-list-available': 'Print a list of valid values for a key and exit.',
         'term-help-maintainer': 'use zero or more times, single output (if different from author)',
         'term-help-maintainer-email': 'use zero or more times, single output (if different from '
-                                      'author email)',
+        'author email)',
         'term-help-name': 'use once',
         'term-help-name-allow-file': 'Add file patterns to be ignored',
         'term-help-new': 'show help for the ozi-new command',
         'term-help-new-interactive': 'create a new Python project using the interactive prompt',
         'term-help-new-project': 'create a new Python project with OZI',
         'term-help-new-target': 'directory path for new project (default: current working '
-                                'directory)',
+        'directory)',
         'term-help-pretty': 'output indented JSON, default: no',
         'term-help-project-url': 'use zero or more times, comma-separated tuples (name, url)',
         'term-help-requires-dist': 'use zero or more times',
@@ -209,17 +211,19 @@ data: dict[str, dict[str, str | None] | dict[str, str]] = {'en': {'adm-confirm':
         'term-tap-up-to-date': 'The OZI package has been updated',
         'term-tox-e-dist': 'run distribution and packaging',
         'term-tox-e-lint': 'run formatting, static analysis, and type checking',
-        'term-tox-e-test': 'run tests and coverage'},
- 'zh': {'adm-confirm': '确认创建项目？元数据：',
+        'term-tox-e-test': 'run tests and coverage',
+    },
+    'zh': {
+        'adm-confirm': '确认创建项目？元数据：',
         'adm-disclaimer-text': '本警报中提供的信息不构成法律建议，也不旨在构成法律建议。 本警报中的所有信息、内容和材料仅供一般参考。 '
-                               '本警报中的信息，无论是否合法，可能不是最新的。\n'
-                               '\n'
-                               '许可证模板、许可证标识符、许可证分类器和许可证表达式解析服务以及所有其他 均按『原样』提供，不保证内容 '
-                               '无错误和/或适用于任何目的，包括适销性。 本警报的读者应联系他们的律师以获取有关任何特定法律问题的建议。\n'
-                               '\n'
-                               'ＯＺＩ项目不是律师事务所，不提供法律建议。 任何读者或用户都不得根据本警报中的信息采取行动或不采取行动， '
-                               '除非事先寻求具有相关管辖权的律师的法律建议。 法律顾问可以确保本警报中提供的信息适合您的特定情况。 '
-                               '使用或阅读本警报或其中包含的任何资源不会建立律师-客户关系。\n',
+        '本警报中的信息，无论是否合法，可能不是最新的。\n'
+        '\n'
+        '许可证模板、许可证标识符、许可证分类器和许可证表达式解析服务以及所有其他 均按『原样』提供，不保证内容 '
+        '无错误和/或适用于任何目的，包括适销性。 本警报的读者应联系他们的律师以获取有关任何特定法律问题的建议。\n'
+        '\n'
+        'ＯＺＩ项目不是律师事务所，不提供法律建议。 任何读者或用户都不得根据本警报中的信息采取行动或不采取行动， '
+        '除非事先寻求具有相关管辖权的律师的法律建议。 法律顾问可以确保本警报中提供的信息适合您的特定情况。 '
+        '使用或阅读本警报或其中包含的任何资源不会建立律师-客户关系。\n',
         'adm-disclaimer-title': '免責聲明',
         'adm-maintainers': '除了作者之外，『$project_name』还有其他维护者吗？',
         'adm-metadata': '元数据：',
@@ -390,4 +394,6 @@ data: dict[str, dict[str, str | None] | dict[str, str]] = {'en': {'adm-confirm':
         'term-tap-up-to-date': 'ＯＺＩ软件包已更新',
         'term-tox-e-dist': '运行分发和打包',
         'term-tox-e-lint': '运行格式化、静态分析和类型检查',
-        'term-tox-e-test': '运行测试和覆盖率'}}
+        'term-tox-e-test': '运行测试和覆盖率',
+    },
+}
