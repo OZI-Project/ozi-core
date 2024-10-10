@@ -1,4 +1,15 @@
 # ozi-core CHANGELOG
+## 1.2.15 (2024-10-10)
+
+
+### 🐛 Fixed Bugs
+
+* default to english locale in case of unsupported language — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`d41ed78`](https://github.com/OZI-Project/ozi-core/commit/d41ed783972f6f64d14014a783e52b14fc85d130))
+
+* incorrect/missing translation asset keys
+([`9b34997`](https://github.com/OZI-Project/ozi-core/commit/9b349970c4d4d6031473e184e9fbf5953ee93a61))
+
 ## 1.2.14 (2024-10-09)
 
 
