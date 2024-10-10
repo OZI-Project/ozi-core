@@ -109,7 +109,7 @@ required.add_argument(
     type=str,
     help=TRANSLATION(
         'term-help',
-        name=TRANSLATION('edit-menu-btn-author-email'),
+        name=TRANSLATION('edit-menu-btn-email'),
         text=TRANSLATION('term-help-author-email'),
     ),
     default=[],
