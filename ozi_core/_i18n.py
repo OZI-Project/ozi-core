@@ -29,7 +29,9 @@ class Translation:
 
     def __init__(self: Self) -> None:
         self.data = data
-        self._locale = _LOCALE[:2] if _LOCALE is not None else 'en'
+        self._locale = (
+            _LOCALE[:2] if _LOCALE is not None and _LOCALE[:2] in self.data else 'en'
+        )
 
     @property
     def locale(self: Self) -> str | Any:  # pragma: no cover
