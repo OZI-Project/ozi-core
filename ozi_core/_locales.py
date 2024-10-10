@@ -152,6 +152,7 @@ data: dict[str, dict[str, str | None] | dict[str, str]] = {'en': {'adm-confirm':
         'term-help-check-version': 'Check for a newer version of OZI and exit.',
         'term-help-default': '$name ($text) defaults to: $default',
         'term-help-enable-cython': 'use Cython to build Python extension modules. default: no',
+        'term-help-enable-uv': 'Use uv to compile and install Python requirements, default: no',
         'term-help-environment': 'use zero or more times',
         'term-help-fix': 'show help for the ozi-fix command',
         'term-help-fix-add': 'add files or directories to a project',

@@ -21,4 +21,7 @@ def load_locale_data() -> dict[str, str]:  # pragma: no cover
 if __name__ == '__main__':
     text = """# This file was generated at build time. DO NOT EDIT
 data: dict[str, dict[str, str | None] | dict[str, str]] = {locales}"""
-    print(text.format(locales=pprint.pformat(load_locale_data(), width=100)))
+    print(
+        text.format(locales=pprint.pformat(load_locale_data(), width=100)),
+        file=open('_locales.py', 'w', encoding='utf8'),
+    )
