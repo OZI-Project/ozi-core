@@ -1,79 +1,69 @@
+adm-confirm: >
+  Confirm project creation?
+
+  PKG-INFO Metadata:
+adm-disclaimer-text: >
+  The information provided on this prompt does not, and is
+  not intended to, constitute legal advice. All information, content, and
+  materials available on this prompt are for general informational purposes
+  only. Information on this prompt may not constitute the most up-to-date legal
+  or other information.
+
+
+  THE LICENSE TEMPLATES, LICENSE IDENTIFIERS, LICENSE CLASSIFIERS, AND LICENSE EXPRESSION PARSING SERVICES, AND ALL OTHER CONTENTS ARE PROVIDED "AS IS", NO REPRESENTATIONS ARE MADE THAT THE CONTENT IS ERROR-FREE AND/OR APPLICABLE FOR ANY PURPOSE, INCLUDING MERCHANTABILITY.
+
+
+  Readers of this prompt should contact their attorney to obtain advice with respect to any particular legal matter. The OZI Project is not a law firm and does not provide legal advice. No reader or user of this prompt should act or abstain from acting on the basis of information on this prompt without first seeking legal advice from counsel in the relevant jurisdiction. Legal counsel can ensure that the information provided in this prompt is applicable to your particular situation. Use of, or reading, this prompt or any of the resources contained within does not create an attorney-client relationship.
+adm-disclaimer-title: Disclaimer
 adm-maintainers: >
   Are there any maintainers of $project_name?
 
   (other than the author or authors)
-adm-confirm: > 
-  Confirm project creation?
-
-  "PKG-INFO Metadata:"
 adm-metadata: "PKG-INFO Metadata:"
-adm-disclaimer-text: >
-  The information provided on this prompt does not, and is not intended
-  to, constitute legal advice. All information, content, and materials
-  available on this prompt are for general informational purposes only.
-  Information on this prompt may not constitute the most up-to-date
-  legal or other information.
-
-
-  THE LICENSE TEMPLATES, LICENSE IDENTIFIERS, LICENSE CLASSIFIERS,
-  AND LICENSE EXPRESSION PARSING SERVICES, AND ALL OTHER CONTENTS ARE
-  PROVIDED "AS IS", NO REPRESENTATIONS ARE MADE THAT THE CONTENT IS
-  ERROR-FREE AND/OR APPLICABLE FOR ANY PURPOSE, INCLUDING MERCHANTABILITY.
-
-
-  Readers of this prompt should contact their attorney to obtain advice
-  with respect to any particular legal matter. The OZI Project is not a
-  law firm and does not provide legal advice. No reader or user of this
-  prompt should act or abstain from acting on the basis of information
-  on this prompt without first seeking legal advice from counsel in the
-  relevant jurisdiction. Legal counsel can ensure that the information
-  provided in this prompt is applicable to your particular situation.
-  Use of, or reading, this prompt or any of the resources contained
-  within does not create an attorney-client relationship.
-adm-disclaimer-title: Disclaimer
 btn-back: "← Back"
 btn-exit: "✘ Exit"
-btn-prompt: "⌂ Prompt"
 btn-menu: "☰  Menu"
-btn-yes: "Yes"
 btn-no: "No"
-err-no-empty: cannot not be empty.
-err-no-close-match: >
-  There is no available $key option matching "$value".
-
-  List available options:
-
-err-too-long: input is too long.
-err-new-version: A newer version of OZI ($latest > $currentversion), available for download on PyPI
-err-pkg-not-found: package not found.
-err-version-check: OZI package version check failed with status code $status
-err-name-exists: project with that name exists.
-err-name-invalid: invalid project name.
 btn-ok: "✔ Ok"
+btn-prompt: "⌂ Prompt"
 btn-skip: "⇒ Skip"
+btn-yes: "Yes"
 dlg-title: ozi-new interactive prompt
-edit-menu-text: "Edit menu, select content to edit:"
-edit-menu-btn-name: Name
-edit-menu-btn-summary: Summary
-edit-menu-btn-keywords: Keywords
-edit-menu-btn-homepage: Home-page
+edit-menu-btn-audience: Intended Audience
 edit-menu-btn-author: Author
 edit-menu-btn-email: Author-email
+edit-menu-btn-environment: Environment
+edit-menu-btn-framework: Framework
+edit-menu-btn-homepage: Home-page
+edit-menu-btn-keywords: Keywords
+edit-menu-btn-language: Natural Language
 edit-menu-btn-license: License
 edit-menu-btn-license-expression: License-Expression
 edit-menu-btn-license-file: License-File
 edit-menu-btn-maintainer: Maintainer
 edit-menu-btn-maintainer-email: Maintainer-email
+edit-menu-btn-name: Name
 edit-menu-btn-project-url: Project-URL
+edit-menu-btn-readme-type: Description-Content-Type
 edit-menu-btn-requires-dist: Requires-Dist (requirements)
-edit-menu-btn-audience: Intended Audience
-edit-menu-btn-environment: Environment
-edit-menu-btn-framework: Framework
-edit-menu-btn-language: Natural Language
 edit-menu-btn-status: Status
+edit-menu-btn-summary: Summary
 edit-menu-btn-topic: Topic
 edit-menu-btn-typing: Typing
-edit-menu-btn-readme-type: Description-Content-Type
+edit-menu-text: "Edit menu, select content to edit:"
+err-name-exists: project with that name exists.
+err-name-invalid: invalid project name.
+err-new-version: A newer version of OZI ($latest > $currentversion), available
+  for download on PyPI
+err-no-close-match: >
+  There is no available $key option matching "$value".
+
+  List available options:
+err-no-empty: cannot not be empty.
+err-pkg-not-found: package not found.
+
+err-too-long: input is too long.
+err-version-check: OZI package version check failed with status code $status
 lang-en: English
 lang-zh: 简体中文 Chinese (Simplified)
 main-menu-btn-edit: "✎ Edit"
@@ -89,149 +79,153 @@ msg-input-invalid: >
   $errmsg
 
   Press ENTER to continue.
-opt-menu-allow-file-input: "Edit allowed existing files:"
 opt-menu-allow-file: Allow File Patterns ...
-opt-menu-ci-provider-input: "Change continuous integration providers:"
+opt-menu-allow-file-input: "Edit allowed existing files:"
 opt-menu-ci-provider: CI Provider ...
-opt-menu-copyright-head-input: "Edit copyright header:"
+opt-menu-ci-provider-input: "Change continuous integration providers:"
 opt-menu-copyright-head: Copyright Header ...
+opt-menu-copyright-head-input: "Edit copyright header:"
 opt-menu-enable-cython: "Enable Cython: $value"
 opt-menu-enable-uv: "Enable uv: $value"
 opt-menu-github-harden-runner: "Hardened GitHub CI/CD: $value"
+opt-menu-language: 'Interface Language: $value'
+opt-menu-language-text: 'Select the user interface language:'
 opt-menu-strict: "Strict Mode: $value"
 opt-menu-title: "Options menu, select an option:"
 opt-menu-verify-email: "Verify Email: $value"
-opt-menu-language: 'Interface Language: $value'
-opt-menu-language-text: 'Select the user interface language:'
-pro-author-email: >
-  What are the email addresses of the author or authors of $projectname?
-
-  (comma-separated list)
 pro-author: >
   Who is the author or authors of $projectname?
 
   (comma-separated list)
+pro-author-email: >
+  What are the email addresses of the author or authors of
+  $projectname?
+
+  (comma-separated list)
+pro-classifier-cbl: "Please select $key classifier or classifiers:"
 pro-homepage: What is the home-page URL for $projectname?
 pro-keywords: >
   What are some keywords used to describe $projectname?
 
   (comma-separated list)
-pro-license-expression-input: >
-  "License: $license"
-
-  "Edit SPDX license expression for $projectname:"
-pro-license-expression-radio: > 
-  "License: $license"
-
-  "Please select a SPDX license-id for $projectname:"
 pro-license: Please select a license classifier for $projectname
-pro-license-file: Select a license file name for $projectname
-pro-maintainer-email: >
-  What are the email addresses of the maintainer or maintainers of $projectname?
+pro-license-expression-input: >
+  License: $license
 
-  (comma-separated list)
+  Edit SPDX license expression for $projectname:
+pro-license-expression-radio: >
+  License: $license
+
+  Please select a SPDX license-id for $projectname:
+pro-license-file: Select a license file name for $projectname
 pro-maintainer: >
   What is the maintainer or maintainers name of $projectname?
+
+  (comma-separated list)
+pro-maintainer-email: >
+  What are the email addresses of the maintainer or
+  maintainers of $projectname?
 
   (comma-separated list)
 pro-name: >
   What is the name of the project?
 
   (PyPI package name: no spaces, alphanumeric words, ".-_" as delimiters)
+pro-project-urls-cbl: "Please select project URLs you want to add to $projectname:"
 pro-project-urls-cbl-bug-report: Bug Report
 pro-project-urls-cbl-changelog: Changelog
 pro-project-urls-cbl-documentation: Documentation
 pro-project-urls-cbl-funding: Funding
 pro-project-urls-cbl-source: Source
-pro-project-urls-cbl: "Please select project URLs you want to add to $projectname:"
 pro-project-urls-input: "Please enter the $urltype URL for $projectname:"
 pro-readme-type: "Please select README type for $projectname:"
 pro-readme-type-radio-md: Markdown
 pro-readme-type-radio-rst: reStructuredText
 pro-readme-type-radio-txt: Plaintext
+pro-requires-dist: Add or remove dependency requirements to $projectname
 pro-requires-dist-add: Add
-pro-requires-dist-search: "Search PyPI packages:"
 pro-requires-dist-cbl-remove: "Select packages to delete:"
 pro-requires-dist-msg-remove-no-requirements: No requirements to remove.
 pro-requires-dist-remove: Remove
-pro-requires-dist: Add or remove dependency requirements to $projectname
+pro-requires-dist-search: "Search PyPI packages:"
 pro-summary: >
   What does the project, $projectname, do?
 
   (a short summary 1-2 sentences)
 pro-typing: "Please select typing classifier for $projectname:"
-pro-typing-radio-typed: Typed
 pro-typing-radio-stubs-only: Stubs Only
-pro-classifier-cbl: "Please select $key classifier or classifiers:"
+pro-typing-radio-typed: Typed
+term-choices: choices
+term-ci-provider: continuous integration and release provider
+term-continuous-integration-checkpoints: continuous integration checkpoints
+term-copyright-head: copyright header string
+term-default-metadata: default metadata
+term-defaults: defaults
+term-desc-new-interactive: Create a new Python project with OZI using the interactive prompt.
+term-desc-new-project: Create a new Python project with OZI.
+term-help: $name ($text)
+term-help-allow-file: In the new project target folder
 term-help-audience: use zero or more times
-term-help-author-email: use zero or more times, single output
 term-help-author: use zero or more times, single output
+term-help-author-email: use zero or more times, single output
+term-help-check-package-exists: 'check if the package name exists on PyPI, default: yes'
+term-help-check-version: Check for a newer version of OZI and exit.
 term-help-default: "$name ($text) defaults to: $default"
+term-help-enable-cython: 'use Cython to build Python extension modules. default: no'
+term-help-enable-uv: 'Use uv to compile and install Python requirements, default: no'
 term-help-environment: use zero or more times
+term-help-fix: show help for the ozi-fix command
+term-help-fix-add: add files or directories to a project
+term-help-fix-missing: Check your OZI project for missing files.
+term-help-fix-remove: remove files or directories from a project
+term-help-fix-source: Create a new Python source in an OZI project.
+term-help-fix-target: target OZI project directory
+term-help-fix-test: Create a new Python test in an OZI project.
 term-help-framework: use zero or more times
+term-help-github-harden-runner: 'add a harden runner to all non-reusable workflow jobs, default: no'
+term-help-help: show this help message and exit
 term-help-homepage: use once
+term-help-info: Print all metadata as JSON and exit.
 term-help-keywords: use once, comma-delimited list
 term-help-language: use zero or more times
 term-help-license: use once
+term-help-license-expression: use once, SPDX license expression
 term-help-license-file: use once
-term-help-maintainer-email: use zero or more times, single output (if different from author email)
+term-help-list-available: Print a list of valid values for a key and exit.
 term-help-maintainer: use zero or more times, single output (if different from author)
+term-help-maintainer-email: use zero or more times, single output (if different from author email)
 term-help-name: use once
+term-help-name-allow-file: Add file patterns to be ignored
+term-help-new: show help for the ozi-new command
+term-help-new-interactive: create a new Python project using the interactive prompt
+term-help-new-project: create a new Python project with OZI
+term-help-new-target: 'directory path for new project (default: current working directory)'
+term-help-pretty: 'output indented JSON, default: no'
+term-help-project-url: use zero or more times, comma-separated tuples (name, url)
 term-help-requires-dist: use zero or more times
 term-help-status: use zero or more times
+term-help-strict: 'strict mode raises warnings to errors, default: no'
 term-help-summary: use once
 term-help-topic: use zero or more times
 term-help-typing: use zero or more times
-term-help-license-expression: use once, SPDX license expression
-term-help-project-url: use zero or more times, comma-separated tuples (name, url)
-term-help: $name ($text)
-term-defaults: defaults
-term-required: required
+term-help-valid-license-expression: Validate a SPDX license expression.
+term-help-verify-email: 'verify deliverability of email domain, default: no'
+term-help-version: Print the current version and exit.
+term-optional-metadata: optional metadata
 term-options: options
 term-output: output
-term-default-metadata: default metadata
-term-optional-metadata: optional metadata
-term-required-metadata: required metadata
+term-parsing-success: parsed successfully
 term-positional-args: positional arguments
-term-help-new-project: create a new Python project with OZI
-term-desc-new-project: Create a new Python project with OZI.
-term-help-new-target: 'directory path for new project (default: current working directory)'
-term-ci-provider: continuous integration and release provider
-term-copyright-head: copyright header string
-term-help-help: show this help message and exit
-term-help-strict: 'strict mode raises warnings to errors, default: no'
-term-help-github-harden-runner: 'add a harden runner to all non-reusable workflow jobs, default: no'
-term-help-name-allow-file: Add file patterns to be ignored
-term-help-allow-file: In the new project target folder
-term-help-verify-email: 'verify deliverability of email domain, default: no'
-term-help-enable-cython: 'use Cython to build Python extension modules. default: no'
-term-help-enable-uv: 'Use uv to compile and install Python requirements, default: no'
-term-help-check-package-exists: 'check if the package name exists on PyPI, default: yes'
-term-desc-new-interactive: Create a new Python project with OZI using the interactive prompt.
-term-help-new-interactive: create a new Python project using the interactive prompt
-term-help-pretty: 'output indented JSON, default: no'
-term-help-fix-add: add files or directories to a project
-term-help-fix-remove: remove files or directories from a project
-term-help-fix-source: Create a new Python source in an OZI project.
-term-help-fix-test: Create a new Python test in an OZI project.
-term-help-fix-target: target OZI project directory
-term-help-fix-missing: Check your OZI project for missing files.
-term-tap-up-to-date: The OZI package has been updated
-term-tap-dev-version: The OZI package is a development version
-term-help-check-version: Check for a newer version of OZI and exit.
-term-help-version: Print the current version and exit.
-term-help-info: Print all metadata as JSON and exit.
-term-help-valid-license-expression: Validate a SPDX license expression.
-term-help-list-available: Print a list of valid values for a key and exit.
-term-continuous-integration-checkpoints: continuous integration checkpoints
-term-project-maintenance-console-app: project maintenance console app
 term-project-authoring-console-app: project authoring console app
-term-choices: choices
+term-project-maintenance-console-app: project maintenance console app
+term-required: required
+term-required-metadata: required metadata
+term-see-ref: See
+term-spdx-license-expression:
+term-tap-dev-version: The OZI package is a development version
+term-tap-first-license: Multiple licenses match, only the first one is selected
+term-tap-up-to-date: The OZI package has been updated
+term-tap-user-template-not-found: User template not found
+term-tox-e-dist: run distribution and packaging
 term-tox-e-lint: run formatting, static analysis, and type checking
 term-tox-e-test: run tests and coverage
-term-tox-e-dist: run distribution and packaging
-term-help-fix: show help for the ozi-fix command
-term-help-new: show help for the ozi-new command
-term-spdx-license-expression:
-term-parsing-success: parsed successfully
-term-see-ref: See
