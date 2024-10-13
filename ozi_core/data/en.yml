@@ -251,3 +251,11 @@ term-tox-e-dist: run distribution and packaging
 term-tox-e-lint: run formatting, static analysis, and type checking
 term-tox-e-test: run tests and coverage
 term-classifier: Classifier
+term-missing: missing
+term-found: found
+term-subdir: subdir
+term-warn-remove-dir: >
+  Cannot delete a non-empty or non-existent $key: "$child"
+term-comment-diagnostic: comment diagnostic
+term-score: score
+term-tap-meson-build-license-array: An array of licenses is found in meson.build, OZI will only use the first one.

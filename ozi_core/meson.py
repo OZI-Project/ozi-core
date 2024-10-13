@@ -26,6 +26,8 @@ from mesonbuild.mparser import StringNode
 from mesonbuild.mparser import UMinusNode
 from tap_producer import TAP
 
+from ozi_core._i18n import TRANSLATION
+
 SelectValue: TypeAlias = type[AssignmentNode | PlusAssignmentNode | NotNode | UMinusNode]
 
 SelectItems: TypeAlias = type[ForeachClauseNode]
@@ -70,7 +72,7 @@ def project_metadata(ast: CodeBlockNode) -> tuple[str, str]:
     if isinstance(license_, ArrayNode):  # pragma: no cover
         license_ = license_.args.arguments[0]
         TAP.diagnostic(
-            'Found an array of licenses in meson.build, OZI will only use the first.',
+            TRANSLATION('term-tap-meson-build-license-array'),
             licenses=license_.value,  # pyright: ignore
         )
 

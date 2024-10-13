@@ -49,7 +49,9 @@ def valid_project_url(project_url: Sequence[str]) -> None:
     """Validate a list of project urls strings of the format ``name,url``."""
     for name, url in [str(i).split(',') for i in project_url]:
         if len(name) > 32:
-            TAP.not_ok(TRANSLATION('edit-menu-btn-project-url'), TRANSLATION('term-tap-name-gt32'))
+            TAP.not_ok(
+                TRANSLATION('edit-menu-btn-project-url'), TRANSLATION('term-tap-name-gt32')
+            )
         parsed_url = urlparse(url)
         match parsed_url:
             case p if p.scheme != 'https':
@@ -120,7 +122,9 @@ def valid_contact_info(  # noqa: C901
         TAP.not_ok(
             TRANSLATION('edit-menu-btn-maintainer-email'),
             TRANSLATION('term-tap-identical-email'),
-            TRANSLATION('term-tap-leave-blank', key=TRANSLATION('edit-menu-btn-maintainer-email')),
+            TRANSLATION(
+                'term-tap-leave-blank', key=TRANSLATION('edit-menu-btn-maintainer-email')
+            ),
         )
     elif any(map(len, maintainer_email)) and not any(map(len, author_email)):
         TAP.not_ok(

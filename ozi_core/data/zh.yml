@@ -236,3 +236,10 @@ term-tox-e-dist: 运行分发和打包
 term-tox-e-lint: 运行格式化、静态分析和类型检查
 term-tox-e-test: 运行测试和覆盖率
 term-classifier: 分类器
+term-missing: 丢失的
+term-found: 成立
+term-subdir: 子目錄
+term-warn-remove-dir: 无法删除非空或不存在的$key：『$child』
+term-comment-diagnostic: 评论诊断
+term-score: 比分
+term-tap-meson-build-license-array: 在『meson.build』中发现了一个许可证数组，ＯＺＩ只会使用第一个。
