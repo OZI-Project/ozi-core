@@ -4,6 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 config_files = [
     '__init__.py',
+    'defaults.py',
     'parser.py',
     'validate.py',
 ]

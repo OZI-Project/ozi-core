@@ -21,6 +21,7 @@ from tap_producer import TAP
 from trove_classifiers import classifiers
 
 from ozi_core._i18n import TRANSLATION
+from ozi_core.new.defaults import COPYRIGHT_HEAD
 from ozi_core.spdx import spdx_license_expression
 from ozi_core.vendor.email_validator import EmailNotValidError
 from ozi_core.vendor.email_validator import EmailSyntaxError
@@ -200,21 +201,18 @@ def valid_copyright_head(copyright_head: str, project_name: str, license_file: s
     :param license_file: the license filename
     :type license_file: str
     """
-    if len(copyright_head) == 0:
-        copyright_head = '\n'.join(
-            [
-                f'Part of {project_name}.',
-                f'See {license_file} in the project root for details.',
-            ],
+    if copyright_head == COPYRIGHT_HEAD:  # pragma: no cover
+        copyright_head = copyright_head.format(
+            project_name=project_name, license_file=license_file
         )
         TAP.ok(TRANSLATION('term-copyright-head'), TRANSLATION('term-defaults'))
     else:
-        if project_name not in copyright_head:
+        if project_name not in copyright_head:  # pragma: no cover
             TAP.diagnostic(
                 TRANSLATION('term-copyright-head'),
                 TRANSLATION('term-tap-header-name-not-found'),
             )
-        elif license_file not in copyright_head:  # pragma: no cover
+        if license_file not in copyright_head:  # pragma: no cover
             TAP.diagnostic(
                 TRANSLATION('term-copyright-head'),
                 TRANSLATION('term-tap-header-license-file-not-found'),

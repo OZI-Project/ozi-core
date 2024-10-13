@@ -13,6 +13,7 @@ from ozi_spec import METADATA  # pyright: ignore
 
 from ozi_core._i18n import TRANSLATION
 from ozi_core.actions import CloseMatch
+from ozi_core.new.defaults import COPYRIGHT_HEAD
 
 parser = argparse.ArgumentParser(
     prog='ozi-new',
@@ -67,7 +68,7 @@ ozi_defaults.add_argument(
     '-c',
     '--copyright-head',
     type=str,
-    default='',
+    default=COPYRIGHT_HEAD,
     help=TRANSLATION('term-copyright-head'),
     metavar='HEADER',
 )
