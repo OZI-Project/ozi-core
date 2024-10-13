@@ -5,6 +5,8 @@
 config_files = [
     '__init__.py',
     'dialog.py',
+    'menu.py',
+    'project.py',
     'validator.py',
     '_style.py',
 ]

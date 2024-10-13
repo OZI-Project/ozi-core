@@ -17,6 +17,7 @@ from warnings import warn
 
 from ozi_spec import METADATA  # pyright: ignore
 
+from ozi_core._i18n import TRANSLATION
 from ozi_core.render import build_child
 from ozi_core.render import build_file
 from ozi_core.render import find_user_template
@@ -226,6 +227,6 @@ class Rewriter:
                 child.rmdir()
             except OSError:
                 warn(
-                    f'Could not remove non-empty or non-existing {self.fix}: "{child}".',
+                    TRANSLATION('term-warn-remove-dir'),
                     RuntimeWarning,
                 )

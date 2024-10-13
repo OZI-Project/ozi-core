@@ -18,7 +18,8 @@ from tap_producer import TAP
 
 from ozi_core.fix.missing import report  # pyright: ignore
 from ozi_core.fix.parser import parser  # pyright: ignore
-from ozi_core.fix.rewrite_command import Rewriter  # pyright: ignore
+from ozi_core.fix.rewrite_command import Rewriter
+from ozi_core.new.validate import valid_copyright_head  # pyright: ignore
 
 if TYPE_CHECKING:  # pragma: no cover
     from argparse import Namespace
@@ -56,11 +57,8 @@ def main() -> NoReturn:  # pragma: no cover
                 name, *_ = report(project.target)
                 project.name = underscorify(name)
                 project.license_file = 'LICENSE.txt'
-                project.copyright_head = '\n'.join(
-                    [
-                        f'Part of {name}.',
-                        f'See {project.license_file} in the project root for details.',
-                    ],
+                project.copyright_head = valid_copyright_head(
+                    project.copyright_head, name, project.license_file
                 )
                 rewriter = Rewriter(str(project.target), project.name, project.fix, env)
                 rewriter += project.add

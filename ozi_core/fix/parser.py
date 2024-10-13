@@ -9,6 +9,7 @@ from argparse import ArgumentParser
 from argparse import BooleanOptionalAction
 
 from ozi_core._i18n import TRANSLATION
+from ozi_core.new.defaults import COPYRIGHT_HEAD
 
 parser = ArgumentParser(
     prog='ozi-fix',
@@ -133,7 +134,7 @@ source_parser.add_argument(
     '--copyright-head',
     metavar='HEADER',
     type=str,
-    default='',
+    default=COPYRIGHT_HEAD,
     help=TRANSLATION('term-copyright-head'),
 )
 source_output = source_parser.add_argument_group(TRANSLATION('term-output'))
@@ -179,7 +180,7 @@ test_parser.add_argument(
     '--copyright-head',
     metavar='HEADER',
     type=str,
-    default='',
+    default=COPYRIGHT_HEAD,
     help=TRANSLATION('term-copyright-head'),
 )
 test_output = test_parser.add_argument_group(TRANSLATION('term-output'))

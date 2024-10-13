@@ -20,6 +20,8 @@ from pyparsing import Regex
 from tap_producer import TAP
 from trove_classifiers import classifiers
 
+from ozi_core._i18n import TRANSLATION
+from ozi_core.new.defaults import COPYRIGHT_HEAD
 from ozi_core.spdx import spdx_license_expression
 from ozi_core.vendor.email_validator import EmailNotValidError
 from ozi_core.vendor.email_validator import EmailSyntaxError
@@ -39,48 +41,64 @@ _CLASSIFIERS = {i.partition(' :: ')[2].strip() for i in classifiers}
 def valid_classifier(classifier: str) -> None:
     """Validate a classifier string"""
     if classifier in _CLASSIFIERS or classifier in classifiers:
-        TAP.ok('Classifier', classifier)
+        TAP.ok(TRANSLATION('term-classifier'), classifier)
     else:  # pragma: no cover
-        TAP.not_ok('Classifier', 'invalid', classifier)
+        TAP.not_ok(TRANSLATION('term-classifier'), classifier)
 
 
 def valid_project_url(project_url: Sequence[str]) -> None:
     """Validate a list of project urls strings of the format ``name,url``."""
     for name, url in [str(i).split(',') for i in project_url]:
         if len(name) > 32:
-            TAP.not_ok('Project-URL', 'name', 'too long', '>32 characters')
-        else:
-            TAP.ok('Project-URL', 'name')
+            TAP.not_ok(
+                TRANSLATION('edit-menu-btn-project-url'), TRANSLATION('term-tap-name-gt32')
+            )
         parsed_url = urlparse(url)
         match parsed_url:
             case p if p.scheme != 'https':
-                TAP.diagnostic('only https:// url scheme is supported')
-                TAP.not_ok('Project-URL', 'url', 'scheme', 'unsupported')
+                TAP.diagnostic(TRANSLATION('term-tap-https-only'))
+                TAP.not_ok(
+                    TRANSLATION('edit-menu-btn-project-url'),
+                    TRANSLATION('term-tap-unsupported-url-scheme'),
+                )
             case p if p.netloc == '':
-                TAP.not_ok('Project-URL', 'url', 'netloc', 'not parseable')
+                TAP.not_ok(
+                    TRANSLATION('edit-menu-btn-project-url'),
+                    TRANSLATION('term-tap-empty-netloc'),
+                )
             case _:
-                TAP.ok('Project-URL', 'netloc')
+                TAP.ok(
+                    TRANSLATION('edit-menu-btn-project-url'), TRANSLATION('term-tap-netloc')
+                )
 
 
 def valid_home_page(home_page: str) -> None:
     """Validate a project homepage url"""
     home_url = urlparse(home_page)
     if home_url.scheme != 'https':  # pragma: defer to good-issue
-        TAP.not_ok('Home-page', 'url', 'scheme', 'unsupported')
+        TAP.diagnostic(TRANSLATION('term-tap-https-only'))
+        TAP.not_ok(
+            TRANSLATION('edit-menu-btn-home-page'),
+            TRANSLATION('term-tap-unsupported-url-scheme'),
+        )
     else:
-        TAP.ok('Home-page', 'scheme')
+        TAP.ok(TRANSLATION('edit-menu-btn-home-page'), TRANSLATION('term-tap-url-scheme'))
     if home_url.netloc == '':  # pragma: defer to good-issue
-        TAP.not_ok('Home-page url netloc could not be parsed.')
+        TAP.not_ok(
+            TRANSLATION('edit-menu-btn-home-page'), TRANSLATION('term-tap-empty-netloc')
+        )
     else:
-        TAP.ok('Home-page', 'netloc')
+        TAP.ok(TRANSLATION('edit-menu-btn-home-page'), TRANSLATION('term-tap-netloc'))
 
 
 def valid_summary(summary: str) -> None:
     """Validate project summary length."""
     if len(summary) > 512:
-        TAP.not_ok('Summary', '>512 characters', 'PyPI limit')
+        TAP.not_ok(
+            TRANSLATION('edit-menu-btn-summary'), TRANSLATION('term-tap-summary-gt512')
+        )
     else:
-        TAP.ok('Summary')
+        TAP.ok(TRANSLATION('edit-menu-btn-summary'))
 
 
 def valid_contact_info(  # noqa: C901
@@ -103,39 +121,51 @@ def valid_contact_info(  # noqa: C901
     author_and_maintainer_email = False
     if set(author_email).intersection(maintainer_email):
         TAP.not_ok(
-            'One or more Author-Email and Maintainer-Email are identical.',
-            'Maintainer-Email should be empty',
+            TRANSLATION('edit-menu-btn-maintainer-email'),
+            TRANSLATION('term-tap-identical-email'),
+            TRANSLATION(
+                'term-tap-leave-blank', key=TRANSLATION('edit-menu-btn-maintainer-email')
+            ),
         )
     elif any(map(len, maintainer_email)) and not any(map(len, author_email)):
-        TAP.not_ok('Maintainer-Email', 'provided without setting Author-Email')
+        TAP.not_ok(
+            TRANSLATION('edit-menu-btn-maintainer-email'),
+            TRANSLATION('term-tap-leave-blank', key=TRANSLATION('edit-menu-btn-email')),
+        )
     elif any(map(len, maintainer_email)) and any(map(len, author_email)):
         author_and_maintainer_email = True
-        TAP.ok('Author-Email(s) and Maintainter-Email(s) provided.')
+        TAP.ok(TRANSLATION('edit-menu-btn-email'))
+        TAP.ok(TRANSLATION('edit-menu-btn-maintainer-email'))
     else:
-        TAP.ok('Author-Email(s) provided.')
+        TAP.ok(TRANSLATION('edit-menu-btn-email'))
 
     if set(author_email).intersection(maintainer_email):
         TAP.not_ok(  # pragma: defer to good-issue
-            'Author and Maintainer are identical',
-            'Maintainer should be empty',
+            TRANSLATION('edit-menu-btn-maintainer'),
+            TRANSLATION('term-tap-identical-author'),
+            TRANSLATION('term-tap-leave-blank', key=TRANSLATION('edit-menu-btn-maintainer')),
         )
     elif len(maintainer) and not author:
-        TAP.not_ok('Maintainer', 'provided without setting Author')
+        TAP.not_ok(
+            TRANSLATION('edit-menu-btn-maintainer'),
+            TRANSLATION('term-tap-not-set', key=TRANSLATION('edit-menu-btn-author')),
+        )
     elif len(maintainer) and len(author):
-        TAP.ok('Author and Maintainer provided.')
+        TAP.ok(TRANSLATION('edit-menu-btn-author'))
+        TAP.ok(TRANSLATION('edit-menu-btn-maintainer'))
     elif author_and_maintainer_email and not maintainer:
         TAP.not_ok(  # pragma: defer to good issue
-            'Maintainer-Email',
-            'expected Maintainer name missing',
+            TRANSLATION('edit-menu-btn-maintainer-email'),
+            TRANSLATION('term-tap-not-set', key=TRANSLATION('edit-menu-btn-maintainer')),
         )
     else:
-        TAP.ok('Author provided.')
+        TAP.ok(TRANSLATION('edit-menu-btn-author'))
 
 
 def valid_license(_license: str, license_expression: str) -> str:
     """Validate license and check against license expression."""
     if isinstance(_license, list):  # pragma: no cover
-        TAP.diagnostic('multiple licenses match, only selected the first', licenses=_license)
+        TAP.diagnostic(TRANSLATION('term-tap-first-license'), licenses=_license)
         _license = _license[0]
     possible_spdx: Sequence[str] = METADATA.spec.python.pkg.license.ambiguous.get(
         _license,
@@ -147,13 +177,17 @@ def valid_license(_license: str, license_expression: str) -> str:
         and license_expression.split(' ')[0] not in possible_spdx
     ):  # pragma: no cover
         TAP.diagnostic(
-            'ambiguous license, set --license-expression to one based on the following:',
+            TRANSLATION('term-tap-ambiguous-license'),
             licenses=tuple(possible_spdx),
             reference='https://github.com/pypa/trove-classifiers/issues/17',
         )
-        TAP.not_ok('License', 'ambiguous per PEP 639', _license)
+        TAP.not_ok(
+            TRANSLATION('edit-menu-btn-license'),
+            TRANSLATION('term-tap-ambiguous-pep639'),
+            _license,
+        )
     else:
-        TAP.ok('License')
+        TAP.ok(TRANSLATION('edit-menu-btn-license'))
     return _license
 
 
@@ -167,20 +201,23 @@ def valid_copyright_head(copyright_head: str, project_name: str, license_file: s
     :param license_file: the license filename
     :type license_file: str
     """
-    if len(copyright_head) == 0:
-        copyright_head = '\n'.join(
-            [
-                f'Part of {project_name}.',
-                f'See {license_file} in the project root for details.',
-            ],
+    if copyright_head == COPYRIGHT_HEAD:  # pragma: no cover
+        copyright_head = copyright_head.format(
+            project_name=project_name, license_file=license_file
         )
-        TAP.ok('Default-Copyright-Header')
+        TAP.ok(TRANSLATION('term-copyright-head'), TRANSLATION('term-defaults'))
     else:
-        if project_name not in copyright_head:
-            TAP.diagnostic('project name not found in copyright header')
-        elif license_file not in copyright_head:  # pragma: no cover
-            TAP.diagnostic('license filename not found in copyright header')
-        TAP.ok('Custom-Copyright-Header')
+        if project_name not in copyright_head:  # pragma: no cover
+            TAP.diagnostic(
+                TRANSLATION('term-copyright-head'),
+                TRANSLATION('term-tap-header-name-not-found'),
+            )
+        if license_file not in copyright_head:  # pragma: no cover
+            TAP.diagnostic(
+                TRANSLATION('term-copyright-head'),
+                TRANSLATION('term-tap-header-license-file-not-found'),
+            )
+        TAP.ok(TRANSLATION('term-copyright-head'), TRANSLATION('term-custom'))
     return copyright_head
 
 
@@ -188,9 +225,9 @@ def valid_project_name(name: str | ParseResults) -> None:
     """Validate a project name."""
     try:
         Regex('^([A-Z]|[A-Z][A-Z0-9._-]*[A-Z0-9])$', re.IGNORECASE).set_name(
-            'Package-Index-Name',
+            TRANSLATION('edit-menu-btn-name'),
         ).parse_string(str(name))
-        TAP.ok('Name')
+        TAP.ok(TRANSLATION('edit-menu-btn-name'))
     except ParseException as e:
         TAP.not_ok(*str(e).split('\n'))
 
@@ -204,9 +241,9 @@ def valid_spdx(expr: Any | ParseResults) -> None:
         ).parse_string(
             str(expr),
         )[0]
-        TAP.ok('License-Expression')
+        TAP.ok(TRANSLATION('edit-menu-btn-license-expression'))
     except ParseException as e:  # pragma: defer to good-issue
-        TAP.not_ok(*str(e).split('\n'))
+        TAP.not_ok(TRANSLATION('edit-menu-btn-license-expression'), *str(e).split('\n'))
 
 
 def valid_email(email: str, verify: bool = False) -> ValidatedEmail | None:
@@ -231,10 +268,10 @@ def valid_emails(
         match emailinfo:
             case ValidatedEmail() if email in author_email:
                 _author_email += [emailinfo.normalized]
-                TAP.ok('Author-Email')
+                TAP.ok(TRANSLATION('edit-menu-btn-email'))
             case ValidatedEmail() if email in maintainer_email:
                 _maintainer_email += [emailinfo.normalized]
-                TAP.ok('Maintainer-Email')
+                TAP.ok(TRANSLATION('edit-menu-btn-maintainer-email'))
             case None:  # pragma: no cover
                 continue
     return _author_email, _maintainer_email
@@ -297,13 +334,13 @@ def postprocess_arguments(project: Namespace) -> Namespace:
     if any(
         i for i in project.target.iterdir() if i not in project.allow_file
     ):  # defer to good-issue
-        TAP.not_ok('target directory not empty', 'no files will be created', skip=True)
+        TAP.not_ok('target', TRANSLATION('term-tap-target-not-empty'), skip=True)
     match project.ci_provider:
         case 'github':  # pragma: no cover
             pass
         case _:
             TAP.not_ok(
-                f'--ci-provider "{project.ci_provider}" unrecognized. ci_user will not be set.',
+                TRANSLATION('term-tap-invalid-ci-provider', ciprovider=project.ci_provider),
             )
     project.allow_file = set(map(Path, project.allow_file))
     return project

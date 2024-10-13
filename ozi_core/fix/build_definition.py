@@ -13,6 +13,7 @@ from ozi_spec import METADATA  # pyright: ignore
 from tap_producer import TAP
 
 from ozi_core import comment
+from ozi_core._i18n import TRANSLATION
 from ozi_core.meson import get_items_by_suffix
 from ozi_core.meson import query_build_value
 
@@ -39,13 +40,13 @@ def inspect_files(
         )
         if found_literal and file not in _found_files:
             build_file = str((rel_path / file).parent / 'meson.build')
-            TAP.ok(f'{build_file} lists {rel_path / file}')
+            TAP.ok(f'{build_file} {TRANSLATION("term-found")} {rel_path / file}')
             build_files += [str(rel_path / file)]
             comment.comment_diagnostic(target, rel_path, file)
             _found_files.append(file)
         if str(rel_path / file) not in build_files and file not in found_files:
             build_file = str(rel_path / 'meson.build')
-            TAP.not_ok(f'{build_file} missing {rel_path / file}')
+            TAP.not_ok(f'{build_file} {TRANSLATION("term-missing")} {rel_path / file}')
             _found_files.append(file)
     return _found_files
 
@@ -63,8 +64,8 @@ def process(
             if os.path.isfile(target / rel_path / file)
             and not os.path.islink(target / rel_path / file)
         ]
-    except FileNotFoundError:
-        TAP.not_ok('Missing required project directory.')
+    except FileNotFoundError as e:
+        TAP.not_ok(TRANSLATION('term-missing'), e.filename)
         extra_files = []
     found_files = found_files if found_files else []
     extra_files = list(set(extra_files).symmetric_difference(set(found_files)))
@@ -88,19 +89,17 @@ def validate(
             case [directory, _] if directory not in IGNORE_MISSING:
                 TAP.ok(
                     str(rel_path / 'meson.build'),
-                    'subdir',
+                    TRANSLATION('term-subdir'),
                     str(directory),
                 )
                 yield Path(rel_path / directory)
             case [directory, _]:
                 TAP.ok(
                     str(rel_path / 'meson.build'),
-                    'missing',
+                    TRANSLATION('term-missing'),
                     str(directory),
                     skip=True,
                 )
-            case _:
-                TAP.diagnostic('build_definition.validate', 'invalid arguments')
 
 
 def walk(
