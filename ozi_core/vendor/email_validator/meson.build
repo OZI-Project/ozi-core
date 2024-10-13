@@ -6,7 +6,6 @@ python_files = [
     '__init__.py',
     '__init__.pyi',
     '__main__.py',
-    '__main__.pyi',
     'deliverability.py',
     'deliverability.pyi',
     'exceptions_types.py',
