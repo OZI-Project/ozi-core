@@ -4,14 +4,22 @@
 # SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 python_files = [
     '__init__.py',
+    '__init__.pyi',
     '__main__.py',
+    '__main__.pyi',
     'deliverability.py',
+    'deliverability.pyi',
     'exceptions_types.py',
+    'exceptions_types.pyi',
     'py.typed',
     'rfc_constants.py',
+    'rfc_constants.pyi',
     'syntax.py',
+    'syntax.pyi',
     'validate_email.py',
+    'validate_email.pyi',
     'version.py',
+    'version.pyi',
 ]
 foreach file : files(python_files)
     fs.copyfile(file)
