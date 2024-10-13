@@ -4,11 +4,17 @@
 # SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 config_files = [
     '__init__.py',
-    'dialog.py',
-    'menu.py',
-    'project.py',
-    'validator.py',
+    '__init__.pyi',
     '_style.py',
+    '_style.pyi',
+    'dialog.py',
+    'dialog.pyi',
+    'menu.py',
+    'menu.pyi',
+    'project.py',
+    'project.pyi',
+    'validator.py',
+    'validator.pyi',
 ]
 foreach file: config_files
     if not meson.is_subproject() or get_option('install-subprojects').enabled()
