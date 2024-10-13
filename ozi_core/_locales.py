@@ -180,10 +180,12 @@ data: dict[str, dict[str, str | None] | dict[str, str]] = {
         'term-choices': 'choices',
         'term-ci-provider': 'continuous integration and release '
                             'provider',
+        'term-classifier': 'Classifier',
         'term-continuous-integration-checkpoints': 'continuous '
                                                    'integration '
                                                    'checkpoints',
         'term-copyright-head': 'copyright header string',
+        'term-custom': 'custom',
         'term-default-metadata': 'default metadata',
         'term-defaults': 'defaults',
         'term-desc-new-interactive': 'Create a new Python project with '
@@ -275,11 +277,36 @@ data: dict[str, dict[str, str | None] | dict[str, str]] = {
         'term-required-metadata': 'required metadata',
         'term-see-ref': 'See',
         'term-spdx-license-expression': None,
+        'term-tap-ambiguous-license': 'ambiguous license, set '
+                                      '--license-expression to one '
+                                      'based on the following:\n',
+        'term-tap-ambiguous-pep639': 'ambiguous per PEP-639',
         'term-tap-dev-version': 'The OZI package is a development '
                                 'version',
+        'term-tap-empty-netloc': 'URL netloc blank',
         'term-tap-first-license': 'Multiple licenses match, only the '
                                   'first one is selected',
+        'term-tap-header-license-file-not-found': 'license file name '
+                                                  'not found',
+        'term-tap-header-name-not-found': 'project name not found',
+        'term-tap-https-only': 'only https:// URL scheme is supported',
+        'term-tap-identical-author': 'the Author and Maintainer are '
+                                     'the same',
+        'term-tap-identical-email': 'one or more Author-email and '
+                                    'Maintainer-email are the same',
+        'term-tap-invalid-ci-provider': '--ci-provider $ciprovider '
+                                        'unrecognized. user will not '
+                                        'be set.',
+        'term-tap-leave-blank': '$key should be left blank',
+        'term-tap-name-gt32': '>32 character limit\n',
+        'term-tap-netloc': 'URL netloc',
+        'term-tap-not-set': '$key is not set',
+        'term-tap-summary-gt512': '>512 character limit\n',
+        'term-tap-target-not-empty': 'the directory is not empty and '
+                                     'no files will be created',
+        'term-tap-unsupported-url-scheme': 'URL scheme unsupported',
         'term-tap-up-to-date': 'The OZI package has been updated',
+        'term-tap-url-scheme': 'URL scheme',
         'term-tap-user-template-not-found': 'User template not found',
         'term-tox-e-dist': 'run distribution and packaging',
         'term-tox-e-lint': 'run formatting, static analysis, and type '
@@ -402,8 +429,10 @@ data: dict[str, dict[str, str | None] | dict[str, str]] = {
         'pro-typing-radio-typed': '类型检查（Ｔｙｐｅｄ）',
         'term-choices': '选择',
         'term-ci-provider': '持续集成和发布提供商',
+        'term-classifier': '分类器',
         'term-continuous-integration-checkpoints': '持续集成检查点',
         'term-copyright-head': '版权标题字符串',
+        'term-custom': '定制',
         'term-default-metadata': '默认元数据',
         'term-defaults': '默认值',
         'term-desc-new-interactive': '使用交互式提示通过ＯＺＩ创建一个新的Ｐｙｔｈｏｎ项目。',
@@ -467,9 +496,27 @@ data: dict[str, dict[str, str | None] | dict[str, str]] = {
         'term-required-metadata': '必需元数据',
         'term-see-ref': '参见参考：',
         'term-spdx-license-expression': '（ＳＰＤＸ许可证表达式）',
+        'term-tap-ambiguous-license': '如果许可证不明确，请将『--license-expression』设置为基于以下内容的许可证：',
+        'term-tap-ambiguous-pep639': '根据ＰＥＰ－６３９存在歧义',
         'term-tap-dev-version': 'ＯＺＩ软件包是开发版本',
+        'term-tap-empty-netloc': 'ＵＲＬ网络位置为空',
         'term-tap-first-license': '多个许可证匹配，仅选择第一个',
+        'term-tap-header-license-file-not-found': '未找到许可证文件名',
+        'term-tap-header-name-not-found': '未找到项目名称',
+        'term-tap-https-only': '仅支持『https://』ＵＲＬ方案',
+        'term-tap-identical-author': '作者和维护者是同一个',
+        'term-tap-identical-email': '一个或多个作者电子邮件和维护者电子邮件相同',
+        'term-tap-invalid-ci-provider': '『--ci-provider '
+                                        '$ciprovider』无法识别。用户将不会被设置',
+        'term-tap-leave-blank': '『$key』应为空',
+        'term-tap-name-gt32': '名称＞３２个字符',
+        'term-tap-netloc': '网络位置',
+        'term-tap-not-set': '『$key』未设置',
+        'term-tap-summary-gt512': '＞５１２个字符限制',
+        'term-tap-target-not-empty': '该目录不为空，不会创建任何文件',
+        'term-tap-unsupported-url-scheme': '不支持ＵＲＬ方案',
         'term-tap-up-to-date': 'ＯＺＩ软件包已更新',
+        'term-tap-url-scheme': 'ＵＲＬ方案',
         'term-tap-user-template-not-found': '未找到用户模板',
         'term-tox-e-dist': '运行分发和打包',
         'term-tox-e-lint': '运行格式化、静态分析和类型检查',
