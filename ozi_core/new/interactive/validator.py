@@ -1,3 +1,5 @@
+"""Validators for interactive prompts."""
+
 from __future__ import annotations
 
 import re
@@ -14,6 +16,7 @@ from ozi_core._i18n import TRANSLATION
 
 @lru_cache
 def pypi_package_exists(package: str) -> bool:  # pragma: no cover
+    """Check if a package name exists on PyPI."""
     return (
         requests.get(
             f'https://pypi.org/simple/{package}',
@@ -24,7 +27,9 @@ def pypi_package_exists(package: str) -> bool:  # pragma: no cover
 
 
 class ProjectNameValidator(Validator):
-    def validate(
+    """Validate that a package name is valid."""
+
+    def validate(  # noqa: DC102
         self,  # noqa: ANN101,RUF100
         document: Document,
     ) -> None:  # pragma: no cover
@@ -39,7 +44,9 @@ class ProjectNameValidator(Validator):
 
 
 class NotReservedValidator(ThreadedValidator):
-    def validate(
+    """Validate that a package name is available."""
+
+    def validate(  # noqa: DC102
         self,  # noqa: ANN101,RUF100
         document: Document,
     ) -> None:  # pragma: no cover
@@ -49,7 +56,9 @@ class NotReservedValidator(ThreadedValidator):
 
 
 class LengthValidator(Validator):
-    def validate(
+    """Validate text is between 1 and 512 chartacters in length."""
+
+    def validate(  # noqa: DC102
         self,  # noqa: ANN101,RUF100
         document: Document,
     ) -> None:  # pragma: no cover
@@ -60,7 +69,9 @@ class LengthValidator(Validator):
 
 
 class PackageValidator(Validator):
-    def validate(
+    """Validate a package name exists on PyPI."""
+
+    def validate(  # noqa: DC102
         self,  # noqa: ANN101,RUF100
         document: Document,
     ) -> None:  # pragma: no cover

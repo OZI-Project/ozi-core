@@ -19,6 +19,8 @@ from ozi_spec import METADATA  # pyright: ignore
 from ozi_templates.filter import underscorify  # type: ignore
 from tap_producer import TAP
 
+from ozi_core._i18n import TRANSLATION
+
 if TYPE_CHECKING:  # pragma: no cover
     import sys
 
@@ -47,7 +49,7 @@ def find_user_template(target: str, file: str, fix: str) -> str | None:
         with open(fp, encoding='UTF-8') as template:
             user_template = template.read()
     else:
-        TAP.diagnostic('User tempate not found', template=str(fp))
+        TAP.diagnostic(TRANSLATION('term-tap-user-template-not-found'), template=str(fp))
         user_template = None
     return user_template
 

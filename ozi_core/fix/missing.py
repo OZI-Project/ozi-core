@@ -15,6 +15,7 @@ from ozi_spec import METADATA  # pyright: ignore
 from ozi_templates.filter import underscorify  # type: ignore
 from tap_producer import TAP
 
+from ozi_core._i18n import TRANSLATION
 from ozi_core.fix.build_definition import walk
 from ozi_core.meson import load_ast
 from ozi_core.meson import project_metadata
@@ -119,7 +120,7 @@ def python_support(pkg_info: Message) -> set[tuple[str, str]]:
         if (k, v) in remaining_pkg_info:
             TAP.ok(k, v)
         else:
-            TAP.not_ok('MISSING', v)  # pragma: no cover
+            TAP.not_ok(TRANSLATION('term-missing'), v)  # pragma: no cover
     return remaining_pkg_info
 
 
@@ -131,7 +132,7 @@ def required_extra_pkg_info(pkg_info: Message) -> dict[str, str]:
         TAP.ok(k, v)
     extra_pkg_info, errstr = parse_extra_pkg_info(pkg_info)
     if errstr not in ('', None):
-        TAP.not_ok('MISSING', str(errstr))  # pragma: no cover
+        TAP.not_ok(TRANSLATION('term-missing'), str(errstr))  # pragma: no cover
     for k, v in extra_pkg_info.items():
         TAP.ok(k, v)
     return extra_pkg_info
@@ -152,7 +153,7 @@ def required_pkg_info(
         if v is not None:
             TAP.ok(i, v)
         else:  # pragma: no cover
-            TAP.not_ok('MISSING', i)
+            TAP.not_ok(TRANSLATION('term-missing'), i)
     extra_pkg_info = required_extra_pkg_info(pkg_info)
     name = re.sub(r'[-_.]+', '-', pkg_info.get('Name', '')).lower()
     return name, extra_pkg_info
@@ -181,7 +182,7 @@ def required_files(
     for file in expected_files:
         f = rel_path / file
         if not target.joinpath(f).exists():  # pragma: no cover
-            TAP.not_ok('MISSING', str(f))
+            TAP.not_ok(TRANSLATION('term-missing'), str(f))
             continue  # pragma: defer to https://github.com/nedbat/coveragepy/issues/198
         TAP.ok(str(f))
         found_files.append(file)
@@ -204,7 +205,7 @@ def report(
         name, extra_pkg_info = required_pkg_info(target)
     except FileNotFoundError:
         name = ''
-        TAP.not_ok('MISSING', 'PKG-INFO')
+        TAP.not_ok(TRANSLATION('term-missing'), TRANSLATION('term-required-metadata'))
     found_source_files = required_files(
         'source',
         target,
@@ -230,7 +231,7 @@ def report(
     try:  # pragma: defer to TAP-Consumer
         sum(map(len, all_files))
     except TypeError:  # pragma: defer to TAP-Consumer
-        TAP.bail_out('MISSING required files or metadata.')
+        TAP.bail_out(TRANSLATION('term-missing'))
     return (  # pragma: defer to TAP-Consumer
         name,
         pkg_info,
