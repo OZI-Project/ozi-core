@@ -1,4 +1,19 @@
 # ozi-core CHANGELOG
+## 1.2.17 (2024-10-14)
+
+
+### Performance
+
+
+* perf: correct stub typechecking — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`b6d7656`](https://github.com/OZI-Project/ozi-core/commit/b6d7656c945767619173f2f6026b8a97dafbf825))
+
+* perf: add stubfiles
+([`743c9e8`](https://github.com/OZI-Project/ozi-core/commit/743c9e8c06d4272f5b05be8bff368fd016109a14))
+
+* perf: add stubfiles — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`d97b1fb`](https://github.com/OZI-Project/ozi-core/commit/d97b1fb43ea808dcac5e1c7bfd53697cb0a24a85))
+
 ## 1.2.16 (2024-10-13)
 
 
