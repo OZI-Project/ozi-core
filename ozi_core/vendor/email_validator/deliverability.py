@@ -39,7 +39,7 @@ def validate_email_deliverability(
         if timeout is None:
             timeout = DEFAULT_TIMEOUT
         dns_resolver = dns.resolver.get_default_resolver()
-        dns_resolver.lifetime = timeout
+        dns_resolver.lifetime = timeout  # pyright: ignore
     elif timeout is not None:
         raise ValueError("It's not valid to pass both timeout and dns_resolver.")
 

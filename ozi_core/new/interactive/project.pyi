@@ -12,55 +12,55 @@ class Project:
     def __init__(self, allow_file: list[str] | None = ..., ci_provider: str | None = ..., copyright_head: str | None = ..., enable_cython: bool = ..., enable_uv: bool = ..., github_harden_runner: bool = ..., strict: bool = ..., verify_email: bool = ..., check_package_exists: bool = ...) -> None:
         ...
     
-    def __call__(self: Self) -> list[str]:
+    def __call__(self) -> list[str]:
         ...
     
-    def name(self: Self, output: dict[str, list[str]], prefix: dict[str, str]) -> tuple[None | list[str] | str | bool, dict[str, list[str]], dict[str, str]]:
+    def name(self, output: dict[str, list[str]], prefix: dict[str, str]) -> tuple[None | list[str] | str | bool, dict[str, list[str]], dict[str, str]]:
         ...
     
-    def summary(self: Self, project_name: str, output: dict[str, list[str]], prefix: dict[str, str]) -> tuple[None | list[str] | str | bool, dict[str, list[str]], dict[str, str]]:
+    def summary(self, project_name: str, output: dict[str, list[str]], prefix: dict[str, str]) -> tuple[None | list[str] | str | bool, dict[str, list[str]], dict[str, str]]:
         ...
     
-    def keywords(self: Self, project_name: str, output: dict[str, list[str]], prefix: dict[str, str]) -> tuple[None | list[str] | str | bool, dict[str, list[str]], dict[str, str]]:
+    def keywords(self, project_name: str, output: dict[str, list[str]], prefix: dict[str, str]) -> tuple[None | list[str] | str | bool, dict[str, list[str]], dict[str, str]]:
         ...
     
-    def license_file(self: Self, project_name: str, output: dict[str, list[str]], prefix: dict[str, str]) -> tuple[None | list[str] | str | bool, dict[str, list[str]], dict[str, str]]:
+    def license_file(self, project_name: str, output: dict[str, list[str]], prefix: dict[str, str]) -> tuple[None | list[str] | str | bool, dict[str, list[str]], dict[str, str]]:
         ...
     
-    def home_page(self: Self, project_name: str, output: dict[str, list[str]], prefix: dict[str, str]) -> tuple[None | list[str] | str | bool, dict[str, list[str]], dict[str, str]]:
+    def home_page(self, project_name: str, output: dict[str, list[str]], prefix: dict[str, str]) -> tuple[None | list[str] | str | bool, dict[str, list[str]], dict[str, str]]:
         ...
     
-    def author(self: Self, project_name: str, output: dict[str, list[str]], prefix: dict[str, str]) -> tuple[None | list[str] | str | bool, dict[str, list[str]], dict[str, str]]:
+    def author(self, project_name: str, output: dict[str, list[str]], prefix: dict[str, str]) -> tuple[None | list[str] | str | bool, dict[str, list[str]], dict[str, str]]:
         ...
     
-    def author_email(self: Self, project_name: str, output: dict[str, list[str]], prefix: dict[str, str]) -> tuple[None | list[str] | str | bool, dict[str, list[str]], dict[str, str]]:
+    def author_email(self, project_name: str, output: dict[str, list[str]], prefix: dict[str, str]) -> tuple[None | list[str] | str | bool, dict[str, list[str]], dict[str, str]]:
         ...
     
-    def license_(self: Self, project_name: str, output: dict[str, list[str]], prefix: dict[str, str]) -> tuple[None | list[str] | str, dict[str, list[str]], dict[str, str]]:
+    def license_(self, project_name: str, output: dict[str, list[str]], prefix: dict[str, str]) -> tuple[None | list[str] | str, dict[str, list[str]], dict[str, str]]:
         ...
     
-    def license_expression(self: Self, project_name: str, _license: str, output: dict[str, list[str]], prefix: dict[str, str]) -> tuple[None | list[str] | str, dict[str, list[str]], dict[str, str]]:
+    def license_expression(self, project_name: str, _license: str, output: dict[str, list[str]], prefix: dict[str, str]) -> tuple[None | list[str] | str, dict[str, list[str]], dict[str, str]]:
         ...
     
-    def maintainer(self: Self, project_name: str, output: dict[str, list[str]], prefix: dict[str, str]) -> tuple[None | list[str] | str | bool, dict[str, list[str]], dict[str, str]]:
+    def maintainer(self, project_name: str, output: dict[str, list[str]], prefix: dict[str, str]) -> tuple[None | list[str] | str | bool, dict[str, list[str]], dict[str, str]]:
         ...
     
-    def maintainer_email(self: Self, project_name: str, output: dict[str, list[str]], prefix: dict[str, str]) -> tuple[None | list[str] | str | bool, dict[str, list[str]], dict[str, str]]:
+    def maintainer_email(self, project_name: str, output: dict[str, list[str]], prefix: dict[str, str]) -> tuple[None | list[str] | str | bool, dict[str, list[str]], dict[str, str]]:
         ...
     
-    def requires_dist(self: Self, project_name: str, output: dict[str, list[str]], prefix: dict[str, str]) -> tuple[list[str] | str | bool | None, dict[str, list[str]], dict[str, str]]:
+    def requires_dist(self, project_name: str, output: dict[str, list[str]], prefix: dict[str, str]) -> tuple[list[str] | str | bool | None, dict[str, list[str]], dict[str, str]]:
         ...
     
-    def readme_type(self: Self, project_name: str, output: dict[str, list[str]], prefix: dict[str, str]) -> tuple[str | list[str], dict[str, list[str]], dict[str, str]]:
+    def readme_type(self, project_name: str, output: dict[str, list[str]], prefix: dict[str, str]) -> tuple[str | list[str], dict[str, list[str]], dict[str, str]]:
         ...
     
-    def typing(self: Self, project_name: str, output: dict[str, list[str]], prefix: dict[str, str]) -> tuple[str | list[str], dict[str, list[str]], dict[str, str]]:
+    def typing(self, project_name: str, output: dict[str, list[str]], prefix: dict[str, str]) -> tuple[str | list[str], dict[str, list[str]], dict[str, str]]:
         ...
     
-    def project_urls(self: Self, project_name: str, output: dict[str, list[str]], prefix: dict[str, str]) -> tuple[str, dict[str, list[str]], dict[str, str]]:
+    def project_urls(self, project_name: str, output: dict[str, list[str]], prefix: dict[str, str]) -> tuple[str, dict[str, list[str]], dict[str, str]]:
         ...
     
-    def header_input(self: Self, label: str, output: dict[str, list[str]], prefix: dict[str, str], *args: str, validator: Validator | None = ..., split_on: str | None = ...) -> tuple[bool | None | list[str], dict[str, list[str]], dict[str, str],]:
+    def header_input(self, label: str, output: dict[str, list[str]], prefix: dict[str, str], *args: str, validator: Validator | None = ..., split_on: str | None = ...) -> tuple[bool | None | list[str], dict[str, list[str]], dict[str, str],]:
         ...
     
 
