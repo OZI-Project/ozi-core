@@ -1,4 +1,50 @@
 # ozi-core CHANGELOG
+## 1.2.17 (2024-10-14)
+
+
+### Performance
+
+
+* perf: correct stub typechecking — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`b6d7656`](https://github.com/OZI-Project/ozi-core/commit/b6d7656c945767619173f2f6026b8a97dafbf825))
+
+* perf: add stubfiles
+([`743c9e8`](https://github.com/OZI-Project/ozi-core/commit/743c9e8c06d4272f5b05be8bff368fd016109a14))
+
+* perf: add stubfiles — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`d97b1fb`](https://github.com/OZI-Project/ozi-core/commit/d97b1fb43ea808dcac5e1c7bfd53697cb0a24a85))
+
+## 1.2.16 (2024-10-13)
+
+
+### 🐛 Fixed Bugs
+
+* temporarily disable automated build time locale generation — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`efa70de`](https://github.com/OZI-Project/ozi-core/commit/efa70de173e94ead61e2fddeaf5b17853e8e3a13))
+
+
+### Performance
+
+
+* perf: better copyright header parsing — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`5a63060`](https://github.com/OZI-Project/ozi-core/commit/5a63060b3b8796672f9388d173c980c47b64ed60))
+
+* perf: refresh locales at build time, fix some typos — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`ebad03f`](https://github.com/OZI-Project/ozi-core/commit/ebad03ff899ede4aad6159a96fabd547a2784b99))
+
+
+### Unknown
+
+
+* :globe_with_meridians:(ozi-fix): internationalize the TAP output — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`4465a05`](https://github.com/OZI-Project/ozi-core/commit/4465a05bfa66e3ac24944f5b48c3b85ce0f8f6b5))
+
+* :globe_with_meridians:(ozi-new): internationalize the TAP output — rjdbcm &lt;rjdbcm@outlook.com&gt;
+([`02437ee`](https://github.com/OZI-Project/ozi-core/commit/02437eea3aa02198c736380080627fd2d0f52d24))
+
+* :hammer: refactor interactive dialogs
+([`13a2846`](https://github.com/OZI-Project/ozi-core/commit/13a284682ff53b5eef0632b4b68606e2d58a5cd8))
+
 ## 1.2.15 (2024-10-10)
 
 
