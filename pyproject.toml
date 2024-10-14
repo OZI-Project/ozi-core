@@ -8,8 +8,8 @@ dependencies = [
     'dnspython',
     'idna>=2',
     'meson[ninja]>=1.1.0',
-    'ozi-spec~=0.10.2',
-    'ozi-templates~=2.12.1',
+    'ozi-spec~=0.10.6',
+    'ozi-templates~=2.12.3',
     'packaging~=24.1',
     'prompt-toolkit',
     'pyparsing~=3.1',
@@ -193,16 +193,6 @@ exclude = [
 [[tool.mypy.overrides]]
 module = ["ozi_core.vendor.*"]
 ignore_errors = true
-
-[[tool.mypy.overrides]]
-module = ["ozi_spec.*"]
-ignore_errors = true
-ignore_missing_imports = true
-
-[[tool.mypy.overrides]]
-module = ["ozi_templates.*"]
-ignore_errors = true
-ignore_missing_imports = true
 
 [[tool.mypy.overrides]]
 module = ["spdx_license_list.*"]
