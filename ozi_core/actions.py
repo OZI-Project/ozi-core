@@ -17,9 +17,9 @@ from typing import NoReturn
 from warnings import warn
 
 import requests
-from ozi_spec import METADATA  # pyright: ignore
-from ozi_spec import OZI  # pyright: ignore
-from ozi_spec import Metadata  # pyright: ignore
+from ozi_spec import METADATA
+from ozi_spec import OZI
+from ozi_spec import Metadata
 from packaging.version import Version
 from packaging.version import parse
 from pyparsing import ParseException

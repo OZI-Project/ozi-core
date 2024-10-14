@@ -9,7 +9,7 @@ import os
 from pathlib import Path
 from typing import Generator
 
-from ozi_spec import METADATA  # pyright: ignore
+from ozi_spec import METADATA
 from tap_producer import TAP
 
 from ozi_core import comment

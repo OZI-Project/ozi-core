@@ -4,7 +4,7 @@ import sys
 from typing import TYPE_CHECKING
 from typing import Sequence
 
-from ozi_spec import METADATA  # pyright: ignore
+from ozi_spec import METADATA
 from prompt_toolkit.shortcuts import button_dialog  # pyright: ignore
 from prompt_toolkit.shortcuts import checkboxlist_dialog  # pyright: ignore
 from prompt_toolkit.shortcuts import message_dialog  # pyright: ignore

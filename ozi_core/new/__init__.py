@@ -20,15 +20,15 @@ else:  # pragma: no cover
     termios.tcgetattr = lambda x: None
     termios.tcsetattr = lambda x, y, z: None
 
-from ozi_spec import METADATA  # pyright: ignore
-from ozi_templates import load_environment  # type: ignore
+from ozi_spec import METADATA
+from ozi_templates import load_environment
 from tap_producer import TAP
 
-from ozi_core.new.interactive import interactive_prompt  # pyright: ignore
-from ozi_core.new.parser import parser  # pyright: ignore
-from ozi_core.new.validate import postprocess_arguments  # pyright: ignore
-from ozi_core.new.validate import preprocess_arguments  # pyright: ignore
-from ozi_core.render import RenderedContent  # pyright: ignore
+from ozi_core.new.interactive import interactive_prompt
+from ozi_core.new.parser import parser
+from ozi_core.new.validate import postprocess_arguments
+from ozi_core.new.validate import preprocess_arguments
+from ozi_core.render import RenderedContent
 
 if TYPE_CHECKING:  # pragma: no cover
     from argparse import Namespace

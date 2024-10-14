@@ -11,15 +11,15 @@ from pathlib import Path
 from typing import TYPE_CHECKING
 from typing import NoReturn
 
-from ozi_spec import METADATA  # pyright: ignore
-from ozi_templates import load_environment  # type: ignore
-from ozi_templates.filter import underscorify  # type: ignore
+from ozi_spec import METADATA
+from ozi_templates import load_environment
+from ozi_templates.filter import underscorify  # pyright: ignore
 from tap_producer import TAP
 
-from ozi_core.fix.missing import report  # pyright: ignore
-from ozi_core.fix.parser import parser  # pyright: ignore
+from ozi_core.fix.missing import report
+from ozi_core.fix.parser import parser
 from ozi_core.fix.rewrite_command import Rewriter
-from ozi_core.new.validate import valid_copyright_head  # pyright: ignore
+from ozi_core.new.validate import valid_copyright_head
 
 if TYPE_CHECKING:  # pragma: no cover
     from argparse import Namespace

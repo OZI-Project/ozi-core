@@ -14,7 +14,7 @@ from typing import Callable
 from typing import TypeAlias
 from unittest.mock import Mock
 
-from ozi_spec import METADATA  # pyright: ignore
+from ozi_spec import METADATA
 from ozi_templates import load_environment
 from tap_producer import TAP
 
