@@ -81,7 +81,7 @@ def validate_email(
     # part.
     local_part_info = validate_email_local_part(
         local_part,
-        allow_smtputf8=allow_smtputf8,
+        allow_smtputf8=allow_smtputf8,  # pyright: ignore
         allow_empty_local=allow_empty_local,
         quoted_local_part=is_quoted_local_part,
     )

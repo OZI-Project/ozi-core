@@ -12,7 +12,7 @@ from typing import TYPE_CHECKING
 from typing import NoReturn
 
 from jinja2 import Environment
-from ozi_spec import METADATA
+from ozi_spec import METADATA  # pyright: ignore
 from ozi_templates import load_environment
 from ozi_templates.filter import underscorify
 from tap_producer import TAP

@@ -30,10 +30,6 @@ from ozi_core.vendor.email_validator import validate_email
 
 if TYPE_CHECKING:  # pragma: no cover
     from argparse import Namespace
-    from typing import Callable
-    from typing import TypeAlias
-
-    Composable: TypeAlias = Callable[[Namespace], Namespace]
 
 _CLASSIFIERS = {i.partition(' :: ')[2].strip() for i in classifiers}
 
