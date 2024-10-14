@@ -43,18 +43,18 @@ class Rewriter:
     name: str
     fix: str
     env: Environment
-    commands: list[dict[str, str]] = ...
-    path_map: Mapping[str, Callable[[str], Path]] = ...
-    base_templates: dict[Annotated[str, 'fix'], Annotated[Template, 'base_template'],] = ...
+    commands: list[dict[str, str]] = [{}]
+    path_map: Mapping[str, Callable[[str], Path]] = {}
+    base_templates: dict[Annotated[str, 'fix'], Annotated[Template, 'base_template'],] = {}
     def __post_init__(self: Rewriter) -> None:
         """Setup the path_map"""
         ...
     
-    def __iadd__(self: Self, other: list[str]) -> Self:
+    def __iadd__(self, other: list[str]) -> Rewriter:
         """Add a list of paths"""
         ...
     
-    def __isub__(self: Self, other: list[str]) -> Self:
+    def __isub__(self, other: list[str]) -> Rewriter:
         """Remove a list of paths"""
         ...
     

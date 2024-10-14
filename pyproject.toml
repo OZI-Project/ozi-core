@@ -195,11 +195,12 @@ module = ["ozi_core.vendor.*"]
 ignore_errors = true
 
 [[tool.mypy.overrides]]
-module = ["ozi_core.new.interactive.*"]
+module = ["ozi_spec.*"]
 ignore_errors = true
+ignore_missing_imports = true
 
 [[tool.mypy.overrides]]
-module = ["ozi_spec.*"]
+module = ["ozi_templates.*"]
 ignore_errors = true
 ignore_missing_imports = true
 

@@ -70,7 +70,7 @@ def build_child(env: Environment, parent: str, child: Path) -> None:
     ...
 
 class RenderedContent:
-    def __init__(self: Self, env: Environment, target: Path, name: str, ci_provider: str, readme_type: str) -> None:
+    def __init__(self, env: Environment, target: Path, name: str, ci_provider: str, readme_type: str) -> None:
         """OZI new project content to render.
 
         .. versionadded:: 1.15.2
@@ -86,7 +86,7 @@ class RenderedContent:
         """
         ...
     
-    def render(self: Self) -> None:
+    def render(self) -> None:
         """Render the project."""
         ...
     

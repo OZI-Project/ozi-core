@@ -6,16 +6,13 @@ from argparse import Namespace
 from typing import TYPE_CHECKING
 from typing import Any
 from typing import Sequence
-from typing import TypeAlias
 
 from pyparsing import ParseResults
 
 from ozi_core.vendor.email_validator import ValidatedEmail
 
-"""ozi-new input validation."""
-if TYPE_CHECKING:
-    Composable: TypeAlias = ...
-_CLASSIFIERS = ...
+_CLASSIFIERS: set[str] = ...
+
 def valid_classifier(classifier: str) -> None:
     """Validate a classifier string"""
     ...

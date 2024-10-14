@@ -35,11 +35,11 @@ class ExactMatch:
 class CloseMatch(Action):
     """Special argparse choices action. Warn the user if a close match could not be found."""
     exact_match = ...
-    def __init__(self: Self, option_strings: list[str], dest: str, nargs: int | str | None = ..., **kwargs: Any) -> None:
+    def __init__(self, option_strings: list[str], dest: str, nargs: int | str | None = ..., **kwargs: Any) -> None:
         """Argparse init"""
         ...
     
-    def close_matches(self: Self, key: str, value: str) -> Sequence[str]:
+    def close_matches(self, key: str, value: str) -> Sequence[str]:
         """Get a close matches for a Python project packaging core metadata key.
 
         :param key: Python project packaging core metadata key name (normalized)
@@ -51,7 +51,7 @@ class CloseMatch(Action):
         """
         ...
     
-    def __call__(self: Self, parser: ArgumentParser, namespace: Namespace, values: str | Sequence[str] | None, option_string: str | None = ...) -> None:
+    def __call__(self, parser: ArgumentParser, namespace: Namespace, values: str | Sequence[str] | None, option_string: str | None = ...) -> None:
         """Find closest matching class attribute."""
         ...
     

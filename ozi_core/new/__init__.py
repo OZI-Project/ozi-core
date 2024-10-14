@@ -32,10 +32,6 @@ from ozi_core.render import RenderedContent  # pyright: ignore
 
 if TYPE_CHECKING:  # pragma: no cover
     from argparse import Namespace
-    from typing import Callable
-    from typing import TypeAlias
-
-    Composable: TypeAlias = Callable[[Namespace], Namespace]
 
 
 def project(project: Namespace) -> None:

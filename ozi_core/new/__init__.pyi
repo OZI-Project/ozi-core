@@ -14,7 +14,7 @@ from typing import Callable
 from typing import TypeAlias
 from unittest.mock import Mock
 
-from ozi_spec import METADATA
+from ozi_spec import METADATA  # pyright: ignore
 from ozi_templates import load_environment
 from tap_producer import TAP
 
@@ -26,11 +26,10 @@ from ozi_core.render import RenderedContent
 
 """ozi-new: quick-start OZI project creation script."""
 if sys.platform != 'win32':
-    ...
+    ...  # import curses
 else:
     ...
-if TYPE_CHECKING:
-    Composable: TypeAlias = ...
+
 def project(project: Namespace) -> None:
     """Create a new project in a target directory."""
     ...
