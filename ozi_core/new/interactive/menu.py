@@ -5,7 +5,7 @@ from enum import auto
 from enum import unique
 from typing import Any
 
-from ozi_spec import METADATA  # pyright: ignore
+from ozi_spec import METADATA
 from prompt_toolkit.shortcuts import button_dialog  # pyright: ignore
 from prompt_toolkit.shortcuts import checkboxlist_dialog  # pyright: ignore
 from prompt_toolkit.shortcuts import radiolist_dialog  # pyright: ignore

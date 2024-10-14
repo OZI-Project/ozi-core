@@ -6,7 +6,7 @@ from enum import Enum
 from enum import unique
 from typing import Any
 
-from ozi_spec import METADATA  # pyright: ignore
+from ozi_spec import METADATA
 
 def checkbox(checked: bool) -> str:
     ...
