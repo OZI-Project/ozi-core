@@ -1,4 +1,15 @@
 # ozi-core CHANGELOG
+## 1.3.1 (2024-10-14)
+
+
+### Fixes
+
+
+* fix: ozi-spec~=0.10.7
+
+OZI version 1.23 — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`339625f`](https://github.com/OZI-Project/ozi-core/commit/339625f76951eea5d24bac09597f75d60787f4b7))
+
 ## 1.3.0 (2024-10-14)
 
 
