@@ -96,7 +96,7 @@ class Project:  # pragma: no cover
 
         if yes_no_dialog(
             title=TRANSLATION('dlg-title'),
-            text=TRANSLATION('adm-maintainers'),
+            text=TRANSLATION('adm-maintainers', project_name=project_name),
             style=_style,
             yes_text=TRANSLATION('btn-yes'),
             no_text=TRANSLATION('btn-no'),

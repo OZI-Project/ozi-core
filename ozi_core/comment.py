@@ -192,8 +192,9 @@ def comment_diagnostic(target: Path, rel_path: Path, file: str) -> None:  # prag
         with open(target.joinpath(rel_path) / file, 'r', encoding='UTF-8') as g:
             count, diag = diagnostic(g.readlines(), rel_path / file)
             if count.total() > 0:
-                TAP.diagnostic(
+                TAP.ok(
                     TRANSLATION('term-comment-diagnostic'),
+                    skip=False,
                     **{k: str(v) for k, v in count.items()}
                     | diag
                     | {TRANSLATION('term-score'): f'{score(count)}/5.0'},

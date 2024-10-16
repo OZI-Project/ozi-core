@@ -52,7 +52,7 @@ def valid_project_url(project_url: Sequence[str]) -> None:
         parsed_url = urlparse(url)
         match parsed_url:
             case p if p.scheme != 'https':
-                TAP.diagnostic(TRANSLATION('term-tap-https-only'))
+                TAP.comment(TRANSLATION('term-tap-https-only'))
                 TAP.not_ok(
                     TRANSLATION('edit-menu-btn-project-url'),
                     TRANSLATION('term-tap-unsupported-url-scheme'),
@@ -72,19 +72,19 @@ def valid_home_page(home_page: str) -> None:
     """Validate a project homepage url"""
     home_url = urlparse(home_page)
     if home_url.scheme != 'https':  # pragma: defer to good-issue
-        TAP.diagnostic(TRANSLATION('term-tap-https-only'))
+        TAP.comment(TRANSLATION('term-tap-https-only'))
         TAP.not_ok(
-            TRANSLATION('edit-menu-btn-home-page'),
+            TRANSLATION('edit-menu-btn-homepage'),
             TRANSLATION('term-tap-unsupported-url-scheme'),
         )
     else:
-        TAP.ok(TRANSLATION('edit-menu-btn-home-page'), TRANSLATION('term-tap-url-scheme'))
+        TAP.ok(TRANSLATION('edit-menu-btn-homepage'), TRANSLATION('term-tap-url-scheme'))
     if home_url.netloc == '':  # pragma: defer to good-issue
         TAP.not_ok(
-            TRANSLATION('edit-menu-btn-home-page'), TRANSLATION('term-tap-empty-netloc')
+            TRANSLATION('edit-menu-btn-homepage'), TRANSLATION('term-tap-empty-netloc')
         )
     else:
-        TAP.ok(TRANSLATION('edit-menu-btn-home-page'), TRANSLATION('term-tap-netloc'))
+        TAP.ok(TRANSLATION('edit-menu-btn-homepage'), TRANSLATION('term-tap-netloc'))
 
 
 def valid_summary(summary: str) -> None:
@@ -161,7 +161,7 @@ def valid_contact_info(  # noqa: C901
 def valid_license(_license: str, license_expression: str) -> str:
     """Validate license and check against license expression."""
     if isinstance(_license, list):  # pragma: no cover
-        TAP.diagnostic(TRANSLATION('term-tap-first-license'), licenses=_license)
+        TAP.ok(TRANSLATION('term-tap-first-license'), skip=False, licenses=_license)
         _license = _license[0]
     possible_spdx: Sequence[str] = METADATA.spec.python.pkg.license.ambiguous.get(
         _license,
@@ -172,15 +172,14 @@ def valid_license(_license: str, license_expression: str) -> str:
         and len(METADATA.spec.python.pkg.license.ambiguous[_license]) > 1
         and license_expression.split(' ')[0] not in possible_spdx
     ):  # pragma: no cover
-        TAP.diagnostic(
-            TRANSLATION('term-tap-ambiguous-license'),
-            licenses=tuple(possible_spdx),
-            reference='https://github.com/pypa/trove-classifiers/issues/17',
-        )
         TAP.not_ok(
             TRANSLATION('edit-menu-btn-license'),
             TRANSLATION('term-tap-ambiguous-pep639'),
             _license,
+            skip=False,
+            message=TRANSLATION('term-tap-ambiguous-license'),
+            licenses=tuple(possible_spdx),
+            reference='https://github.com/pypa/trove-classifiers/issues/17',
         )
     else:
         TAP.ok(TRANSLATION('edit-menu-btn-license'))
@@ -204,12 +203,12 @@ def valid_copyright_head(copyright_head: str, project_name: str, license_file: s
         TAP.ok(TRANSLATION('term-copyright-head'), TRANSLATION('term-defaults'))
     else:
         if project_name not in copyright_head:  # pragma: no cover
-            TAP.diagnostic(
+            TAP.comment(
                 TRANSLATION('term-copyright-head'),
                 TRANSLATION('term-tap-header-name-not-found'),
             )
         if license_file not in copyright_head:  # pragma: no cover
-            TAP.diagnostic(
+            TAP.comment(
                 TRANSLATION('term-copyright-head'),
                 TRANSLATION('term-tap-header-license-file-not-found'),
             )
