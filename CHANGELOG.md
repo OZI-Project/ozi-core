@@ -1,4 +1,15 @@
 # ozi-core CHANGELOG
+## 1.3.2 (2024-10-16)
+
+
+### Fixes
+
+
+* fix: correct TAP output, README symlink
+
+TAP-Producer 1.2.0 — rjdbcm <rjdbcm@outlook.com>
+([`127c7b2`](https://github.com/OZI-Project/ozi-core/commit/127c7b2c3f121ecadbe78d92390c65ff179d5bed))
+
 ## 1.3.1 (2024-10-14)
 
 
