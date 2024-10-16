@@ -71,7 +71,7 @@ def project_metadata(ast: CodeBlockNode) -> tuple[str, str]:
 
     if isinstance(license_, ArrayNode):  # pragma: no cover
         license_ = license_.args.arguments[0]
-        TAP.diagnostic(
+        TAP.comment(
             TRANSLATION('term-tap-meson-build-license-array'),
             licenses=license_.value,  # pyright: ignore
         )

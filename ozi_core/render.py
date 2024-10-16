@@ -49,7 +49,7 @@ def find_user_template(target: str, file: str, fix: str) -> str | None:
         with open(fp, encoding='UTF-8') as template:
             user_template = template.read()
     else:
-        TAP.diagnostic(TRANSLATION('term-tap-user-template-not-found'), template=str(fp))
+        TAP.ok(TRANSLATION('term-tap-user-template-not-found'), skip=True, template=str(fp))
         user_template = None
     return user_template
 
@@ -215,7 +215,7 @@ class RenderedContent:
             Path(
                 abspath,
                 f'README.{self.readme_type}',
-            ).symlink_to(Path(abspath, 'README'))
+            ).symlink_to(Path('README'))
         else:  # pragma: no cover
             pass
 
