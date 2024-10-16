@@ -67,7 +67,7 @@ def main(args: list[str] | None = None) -> None:  # pragma: no cover
             tty.setraw(sys.stdin)
             args = interactive_prompt(ozi_new)
             termios.tcsetattr(fd, termios.TCSADRAIN, original_attributes)
-            TAP.diagnostic(f'ozi-new {" ".join(args)}')
+            TAP.comment(f'ozi-new {" ".join(args)}')
             ozi_new = parser.parse_args(args=args)
             main(args)
         case ozi_new if ozi_new.new in ['p', 'project']:
