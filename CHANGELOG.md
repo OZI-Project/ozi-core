@@ -1,4 +1,20 @@
 # ozi-core CHANGELOG
+## 1.3.3 (2024-10-18)
+
+
+### Build system
+
+
+* build(deps): TAP-Producer~=1.3.0 — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`b58e477`](https://github.com/OZI-Project/ozi-core/commit/b58e4777804e4082a279d05560ba5db16e6c01fd))
+
+
+### Fixes
+
+
+* fix: correct API use for TAP-Producer 1.3 — rjdbcm <rjdbcm@outlook.com>
+([`2207a29`](https://github.com/OZI-Project/ozi-core/commit/2207a29982b2b592249f625772e76a981a2f5cfe))
+
 ## 1.3.2 (2024-10-16)
 
 
