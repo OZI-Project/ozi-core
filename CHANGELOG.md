@@ -1,5 +1,52 @@
 # ozi-core CHANGELOG
+## 1.3.4 (2024-10-18)
+
+
+### Build system
+
+
+* build(deps): bump OZI-Project/draft from 1.3.0 to 1.4.0
+
+Bumps [OZI-Project/draft](https://github.com/ozi-project/draft) from 1.3.0 to 1.4.0.
+- [Release notes](https://github.com/ozi-project/draft/releases)
+- [Commits](https://github.com/ozi-project/draft/compare/1.3.0...1.4.0)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/draft
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`ea0e895`](https://github.com/OZI-Project/ozi-core/commit/ea0e8958ccea055c5dcf880df7088774a9c8015c))
+
+* build(deps): bump OZI-Project/publish from 1.3.0 to 1.4.0
+
+Bumps [OZI-Project/publish](https://github.com/ozi-project/publish) from 1.3.0 to 1.4.0.
+- [Release notes](https://github.com/ozi-project/publish/releases)
+- [Commits](https://github.com/ozi-project/publish/compare/1.3.0...1.4.0)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/publish
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`9a5d860`](https://github.com/OZI-Project/ozi-core/commit/9a5d86011ef5fbb434787264a98d2452fcc68556))
+
+* build(deps): ozi-spec~=0.10.8 — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`81e9f2e`](https://github.com/OZI-Project/ozi-core/commit/81e9f2efa683ea5ee74ce54d75229209c33e3882))
+
+* build(deps): TAP-Producer~=1.3.2 — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`fcf69fd`](https://github.com/OZI-Project/ozi-core/commit/fcf69fd07da3f053ce74d506c4c185fb82d5b531))
+
 ## 1.3.3 (2024-10-18)
+
+
+### Bug fixes
+
+
+* fix: correct API use for TAP-Producer 1.3 — rjdbcm <rjdbcm@outlook.com>
+([`2207a29`](https://github.com/OZI-Project/ozi-core/commit/2207a29982b2b592249f625772e76a981a2f5cfe))
 
 
 ### Build system
@@ -8,17 +55,10 @@
 * build(deps): TAP-Producer~=1.3.0 — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
 ([`b58e477`](https://github.com/OZI-Project/ozi-core/commit/b58e4777804e4082a279d05560ba5db16e6c01fd))
 
-
-### Fixes
-
-
-* fix: correct API use for TAP-Producer 1.3 — rjdbcm <rjdbcm@outlook.com>
-([`2207a29`](https://github.com/OZI-Project/ozi-core/commit/2207a29982b2b592249f625772e76a981a2f5cfe))
-
 ## 1.3.2 (2024-10-16)
 
 
-### Fixes
+### Bug fixes
 
 
 * fix: correct TAP output, README symlink
@@ -29,7 +69,7 @@ TAP-Producer 1.2.0 — rjdbcm <rjdbcm@outlook.com>
 ## 1.3.1 (2024-10-14)
 
 
-### Fixes
+### Bug fixes
 
 
 * fix: ozi-spec~=0.10.7
@@ -127,7 +167,7 @@ updated-dependencies:
 ## 1.2.16 (2024-10-13)
 
 
-### Fixes
+### Bug fixes
 
 
 * fix: temporarily disable automated build time locale generation — rjdbcm <rjdbcm@outlook.com>
@@ -159,7 +199,7 @@ updated-dependencies:
 ## 1.2.15 (2024-10-10)
 
 
-### Fixes
+### Bug fixes
 
 
 * fix: default to english locale in case of unsupported language — rjdbcm <rjdbcm@outlook.com>
@@ -171,7 +211,7 @@ updated-dependencies:
 ## 1.2.14 (2024-10-09)
 
 
-### Fixes
+### Bug fixes
 
 
 * fix: missing help text for target — rjdbcm <rjdbcm@outlook.com>
@@ -184,7 +224,7 @@ updated-dependencies:
 ## 1.2.11 (2024-10-08)
 
 
-### Fixes
+### Bug fixes
 
 
 * fix: hard locale file for the time being — rjdbcm <rjdbcm@outlook.com>
@@ -199,7 +239,7 @@ updated-dependencies:
 * fix: type locale data — rjdbcm <rjdbcm@outlook.com>
 ([`a55512d`](https://github.com/OZI-Project/ozi-core/commit/a55512d5af8750e96cdc71752d1f3a94a282a736))
 
-* fix: locales are now pre-compiled -  issue with docs display — rjdbcm <rjdbcm@outlook.com>
+* fix: locales are now pre-compiled - fixes issue with docs display — rjdbcm <rjdbcm@outlook.com>
 ([`5ee0203`](https://github.com/OZI-Project/ozi-core/commit/5ee020302e254ea48a342c279632ddd245d68c61))
 
 
@@ -219,7 +259,7 @@ updated-dependencies:
 ## 1.2.10 (2024-10-08)
 
 
-### Fixes
+### Bug fixes
 
 
 * fix: add no cover to import guard — rjdbcm <rjdbcm@outlook.com>
@@ -250,7 +290,7 @@ updated-dependencies:
 ## 1.2.9 (2024-10-07)
 
 
-### Fixes
+### Bug fixes
 
 
 * fix: add License-File dialog — rjdbcm <rjdbcm@outlook.com>
@@ -281,7 +321,7 @@ updated-dependencies:
 ## 1.2.7 (2024-10-06)
 
 
-### Fixes
+### Bug fixes
 
 
 * fix: empty translation values coerced to str — rjdbcm <rjdbcm@outlook.com>
@@ -290,7 +330,7 @@ updated-dependencies:
 ## 1.2.6 (2024-10-06)
 
 
-### Fixes
+### Bug fixes
 
 
 * fix: add some pyright ignores — rjdbcm <rjdbcm@outlook.com>
@@ -304,6 +344,16 @@ updated-dependencies:
 ([`95ea579`](https://github.com/OZI-Project/ozi-core/commit/95ea579211f14e9ac1a4378af396ec3ccdae67a1))
 
 ## 1.2.5 (2024-10-05)
+
+
+### Bug fixes
+
+
+* fix: remove 3.10 checkpoint pending deprecation — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`69f1ef9`](https://github.com/OZI-Project/ozi-core/commit/69f1ef9f0164eaeb04f6a393b719c6a2fdcc7876))
+
+* fix: erroneous call to TAP version after interactive session — rjdbcm <rjdbcm@outlook.com>
+([`a03be5f`](https://github.com/OZI-Project/ozi-core/commit/a03be5f76fa04146ed6947f932724741bc38aa1c))
 
 
 ### Build system
@@ -366,16 +416,6 @@ updated-dependencies:
 ([`3f17126`](https://github.com/OZI-Project/ozi-core/commit/3f17126874c680222dccb15388eb5845655b8cc6))
 
 
-### Fixes
-
-
-* fix: remove 3.10 checkpoint pending deprecation — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
-([`69f1ef9`](https://github.com/OZI-Project/ozi-core/commit/69f1ef9f0164eaeb04f6a393b719c6a2fdcc7876))
-
-* fix: erroneous call to TAP version after interactive session — rjdbcm <rjdbcm@outlook.com>
-([`a03be5f`](https://github.com/OZI-Project/ozi-core/commit/a03be5f76fa04146ed6947f932724741bc38aa1c))
-
-
 ### Performance improvements
 
 
@@ -395,6 +435,13 @@ updated-dependencies:
 ([`976f02e`](https://github.com/OZI-Project/ozi-core/commit/976f02e9f468af8f7190c311f18623519c2eaad9))
 
 ## 1.2.4 (2024-10-02)
+
+
+### Bug fixes
+
+
+* fix: typos in i18n — rjdbcm <rjdbcm@outlook.com>
+([`4927181`](https://github.com/OZI-Project/ozi-core/commit/492718139b3ace0a8ebe360e6b813185bb35d044))
 
 
 ### Build system
@@ -456,17 +503,10 @@ updated-dependencies:
 ... — dependabot[bot] <support@github.com>
 ([`a774a0e`](https://github.com/OZI-Project/ozi-core/commit/a774a0ea6c8813de5852e5a88d4c7771cca84e56))
 
-
-### Fixes
-
-
-* fix: typos in i18n — rjdbcm <rjdbcm@outlook.com>
-([`4927181`](https://github.com/OZI-Project/ozi-core/commit/492718139b3ace0a8ebe360e6b813185bb35d044))
-
 ## 1.2.3 (2024-10-01)
 
 
-### Fixes
+### Bug fixes
 
 
 * fix(coverage): no cover — rjdbcm <rjdbcm@outlook.com>
@@ -478,7 +518,7 @@ updated-dependencies:
 ## 1.2.2 (2024-10-01)
 
 
-### Fixes
+### Bug fixes
 
 
 * fix: correct locale file location — rjdbcm <rjdbcm@outlook.com>
@@ -487,7 +527,7 @@ updated-dependencies:
 ## 1.2.1 (2024-10-01)
 
 
-### Fixes
+### Bug fixes
 
 
 * fix(i18n): fix typechecking for Python 3.10 — rjdbcm <rjdbcm@outlook.com>
@@ -513,6 +553,13 @@ updated-dependencies:
 ([`6f4c7b5`](https://github.com/OZI-Project/ozi-core/commit/6f4c7b50ec756e613f2e7ed5ab6fd4227ad10517))
 
 ## 1.1.1 (2024-09-11)
+
+
+### Bug fixes
+
+
+* fix: package metadata download-url correction — rjdbcm <rjdbcm@outlook.com>
+([`08a20ee`](https://github.com/OZI-Project/ozi-core/commit/08a20eedf26623035e15f900742a156aa1d32b18))
 
 
 ### Build system
@@ -568,13 +615,6 @@ updated-dependencies:
 
 build(deps): update ozi-templates requirement from ~=2.11.1 to ~=2.12.0
 ([`efc5cb6`](https://github.com/OZI-Project/ozi-core/commit/efc5cb656ea0de930ebd2671fb493b8adab8156b))
-
-
-### Fixes
-
-
-* fix: package metadata download-url correction — rjdbcm <rjdbcm@outlook.com>
-([`08a20ee`](https://github.com/OZI-Project/ozi-core/commit/08a20eedf26623035e15f900742a156aa1d32b18))
 
 
 ### Performance improvements
@@ -683,6 +723,13 @@ updated-dependencies:
 ## 1.0.12 (2024-09-06)
 
 
+### Bug fixes
+
+
+* fix: ozi-spec 0.9.4 — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`e575dc3`](https://github.com/OZI-Project/ozi-core/commit/e575dc3992e9a54dc37f539516bd0bcb0242a862))
+
+
 ### Build system
 
 
@@ -746,13 +793,6 @@ updated-dependencies:
 ([`5722ecc`](https://github.com/OZI-Project/ozi-core/commit/5722ecc8a5f4257d4c56d83a91e3d22c2cfb6086))
 
 
-### Fixes
-
-
-* fix: ozi-spec 0.9.4 — Eden Ross Duff, MSc <rjdbcm@outlook.com>
-([`e575dc3`](https://github.com/OZI-Project/ozi-core/commit/e575dc3992e9a54dc37f539516bd0bcb0242a862))
-
-
 ### Unknown
 
 
@@ -762,7 +802,7 @@ updated-dependencies:
 ## 1.0.11 (2024-09-03)
 
 
-### Fixes
+### Bug fixes
 
 
 * fix: ozi-spec 0.9.3 — rjdbcm <rjdbcm@outlook.com>
@@ -771,7 +811,7 @@ updated-dependencies:
 ## 1.0.10 (2024-08-31)
 
 
-### Fixes
+### Bug fixes
 
 
 * fix: create README symlink with absolute path — rjdbcm <rjdbcm@outlook.com>
@@ -780,7 +820,7 @@ updated-dependencies:
 ## 1.0.9 (2024-08-31)
 
 
-### Fixes
+### Bug fixes
 
 
 * fix(ozi-fix missing): no longer check if a readme file is a symlink to detect content type — rjdbcm <rjdbcm@outlook.com>
@@ -812,7 +852,7 @@ updated-dependencies:
 ## 1.0.5 (2024-08-30)
 
 
-### Fixes
+### Bug fixes
 
 
 * fix(ozi-fix missing): rendering — rjdbcm <rjdbcm@outlook.com>
@@ -821,7 +861,7 @@ updated-dependencies:
 ## 1.0.4 (2024-08-30)
 
 
-### Fixes
+### Bug fixes
 
 
 * fix(ozi-fix missing): README content type detection, core metadata — rjdbcm <rjdbcm@outlook.com>
@@ -830,7 +870,7 @@ updated-dependencies:
 ## 1.0.3 (2024-08-30)
 
 
-### Fixes
+### Bug fixes
 
 
 * fix: README text renders — rjdbcm <rjdbcm@outlook.com>
@@ -839,7 +879,7 @@ updated-dependencies:
 ## 1.0.2 (2024-08-30)
 
 
-### Fixes
+### Bug fixes
 
 
 * fix(ozi-fix missing): classifiers now render properly — rjdbcm <rjdbcm@outlook.com>
@@ -848,7 +888,7 @@ updated-dependencies:
 ## 1.0.1 (2024-08-30)
 
 
-### Fixes
+### Bug fixes
 
 
 * fix: render METADATA for ``ozi-fix missing`` — rjdbcm <rjdbcm@outlook.com>
@@ -876,6 +916,22 @@ BREAKING CHANGE: 1.0
 ([`eb199c1`](https://github.com/OZI-Project/ozi-core/commit/eb199c1e98e6d38363b51e4b8a86b866eb6e2a42))
 
 ## 0.4.0 (2024-08-29)
+
+
+### Bug fixes
+
+
+* fix: Update pyproject.toml tox requirements install — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`c79cac8`](https://github.com/OZI-Project/ozi-core/commit/c79cac8aedd88ad0a97c9cc179743b93503de8de))
+
+* fix: remove requirements — rjdbcm <rjdbcm@outlook.com>
+([`7835209`](https://github.com/OZI-Project/ozi-core/commit/7835209bcf5c09c7171a2b5a531fcedf3fbb4f00))
+
+* fix: remove requires-python key — rjdbcm <rjdbcm@outlook.com>
+([`63aed2c`](https://github.com/OZI-Project/ozi-core/commit/63aed2c8808e936865cf24e8a3b063975041db88))
+
+* fix: update wrapfile — rjdbcm <rjdbcm@outlook.com>
+([`8470c88`](https://github.com/OZI-Project/ozi-core/commit/8470c885dd7a6aafa4e377c88f187b1b346fa8de))
 
 
 ### Build system
@@ -913,22 +969,6 @@ updated-dependencies:
 
 * feat: OZI.build 1.3 ozi-templates 2.10 ozi-spec 0.9 — rjdbcm <rjdbcm@outlook.com>
 ([`df99c91`](https://github.com/OZI-Project/ozi-core/commit/df99c9126bbf522e47a15cf4d6d96090390ab861))
-
-
-### Fixes
-
-
-* fix: Update pyproject.toml tox requirements install — Eden Ross Duff, MSc <rjdbcm@outlook.com>
-([`c79cac8`](https://github.com/OZI-Project/ozi-core/commit/c79cac8aedd88ad0a97c9cc179743b93503de8de))
-
-* fix: remove requirements — rjdbcm <rjdbcm@outlook.com>
-([`7835209`](https://github.com/OZI-Project/ozi-core/commit/7835209bcf5c09c7171a2b5a531fcedf3fbb4f00))
-
-* fix: remove requires-python key — rjdbcm <rjdbcm@outlook.com>
-([`63aed2c`](https://github.com/OZI-Project/ozi-core/commit/63aed2c8808e936865cf24e8a3b063975041db88))
-
-* fix: update wrapfile — rjdbcm <rjdbcm@outlook.com>
-([`8470c88`](https://github.com/OZI-Project/ozi-core/commit/8470c885dd7a6aafa4e377c88f187b1b346fa8de))
 
 
 ### Performance improvements
@@ -1097,7 +1137,7 @@ updated-dependencies:
 ## 0.2.4 (2024-08-18)
 
 
-### Fixes
+### Bug fixes
 
 
 * fix: hide TAP version output during rewriter — rjdbcm <rjdbcm@outlook.com>
@@ -1198,6 +1238,16 @@ Wheels are now built with release 0.8 which can build extension wheels! — rjdb
 ## 0.1.20 (2024-08-12)
 
 
+### Bug fixes
+
+
+* fix: OZI-Project/release@0.8.9 — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`24a04fc`](https://github.com/OZI-Project/ozi-core/commit/24a04fc6443fc65cae87513faf49907ae42ea276))
+
+* fix: update release workflow — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`2be9889`](https://github.com/OZI-Project/ozi-core/commit/2be98899a9c31cd141fbe2b4d18782c0ce8f0caa))
+
+
 ### Build system
 
 
@@ -1224,20 +1274,10 @@ updated-dependencies:
 ... — dependabot[bot] <support@github.com>
 ([`d3d5cb0`](https://github.com/OZI-Project/ozi-core/commit/d3d5cb05694abf0d50833b89781558579a92cc4d))
 
-
-### Fixes
-
-
-* fix: OZI-Project/release@0.8.9 — Eden Ross Duff, MSc <rjdbcm@outlook.com>
-([`24a04fc`](https://github.com/OZI-Project/ozi-core/commit/24a04fc6443fc65cae87513faf49907ae42ea276))
-
-* fix: update release workflow — Eden Ross Duff, MSc <rjdbcm@outlook.com>
-([`2be9889`](https://github.com/OZI-Project/ozi-core/commit/2be98899a9c31cd141fbe2b4d18782c0ce8f0caa))
-
 ## 0.1.19 (2024-08-12)
 
 
-### Fixes
+### Bug fixes
 
 
 * fix: patch trigger — Eden Ross Duff, MSc <rjdbcm@outlook.com>
@@ -1260,6 +1300,13 @@ updated-dependencies:
 ## 0.1.18 (2024-08-11)
 
 
+### Bug fixes
+
+
+* fix(ozi-new): set TAP.version before parsing args — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`4ce1d1c`](https://github.com/OZI-Project/ozi-core/commit/4ce1d1c055ac3b5c4ac852382325ae73453ac834))
+
+
 ### Build system
 
 
@@ -1279,13 +1326,6 @@ updated-dependencies:
   update-type: version-update:semver-minor
 ... — dependabot[bot] <support@github.com>
 ([`d78bc4a`](https://github.com/OZI-Project/ozi-core/commit/d78bc4ab30aebaad18cca25531c7f1fe300100c4))
-
-
-### Fixes
-
-
-* fix(ozi-new): set TAP.version before parsing args — Eden Ross Duff, MSc <rjdbcm@outlook.com>
-([`4ce1d1c`](https://github.com/OZI-Project/ozi-core/commit/4ce1d1c055ac3b5c4ac852382325ae73453ac834))
 
 ## 0.1.17 (2024-08-07)
 
@@ -1458,7 +1498,7 @@ Release
 ## 0.1.13 (2024-07-28)
 
 
-### Fixes
+### Bug fixes
 
 
 * fix: gitpython~=3.1 — rjdbcm <rjdbcm@outlook.com>
@@ -1467,7 +1507,7 @@ Release
 ## 0.1.12 (2024-07-25)
 
 
-### Fixes
+### Bug fixes
 
 
 * fix(requirements.in): ozi-spec~=0.5.7 — Eden Ross Duff, MSc <rjdbcm@outlook.com>
@@ -1532,6 +1572,33 @@ updated-dependencies:
 ## 0.1.8 (2024-07-19)
 
 ## 0.1.7 (2024-07-19)
+
+
+### Bug fixes
+
+
+* fix: use ``ozi.version`` as key for wrapfile release revision selection — rjdbcm <rjdbcm@outlook.com>
+([`708552c`](https://github.com/OZI-Project/ozi-core/commit/708552cf3928b49393f8443c11659e8db71ba093))
+
+* fix: move remaining core functionality to package — rjdbcm <rjdbcm@outlook.com>
+([`0bb22a3`](https://github.com/OZI-Project/ozi-core/commit/0bb22a3efa9022386155a8cf3626e89429552a3a))
+
+* fix: ozi-core~=0.5.6 — rjdbcm <rjdbcm@outlook.com>
+([`485227f`](https://github.com/OZI-Project/ozi-core/commit/485227fc49d271ff8d946fc3cff33c4555c40f8e))
+
+* fix: correct changelog title — rjdbcm <rjdbcm@outlook.com>
+([`a01e5ce`](https://github.com/OZI-Project/ozi-core/commit/a01e5ceb1f51e084ceb4bc49bd15f08de8dd450c))
+
+* fix: correct ``templates/templates/*`` names to include ``.j2`` extension — rjdbcm <rjdbcm@outlook.com>
+([`ba9a68d`](https://github.com/OZI-Project/ozi-core/commit/ba9a68d5bfaba9513af8480fcc604527211de017))
+
+* fix: ozi-spec~=0.5.5
+
+Implements sigstore-v3 workflows. — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`a2b2eac`](https://github.com/OZI-Project/ozi-core/commit/a2b2eacb4113d711077724c8b9ceced4071ac6f6))
+
+* fix: ozi-spec~=0.5.4 — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`dc31546`](https://github.com/OZI-Project/ozi-core/commit/dc31546e5e1714f823535edceb8ee70ba6cbb60e))
 
 
 ### Build system
@@ -1639,33 +1706,6 @@ updated-dependencies:
 ([`d867913`](https://github.com/OZI-Project/ozi-core/commit/d8679132219753a12f47e57411a221d4a95d310b))
 
 
-### Fixes
-
-
-* fix: use ``ozi.version`` as key for wrapfile release revision selection — rjdbcm <rjdbcm@outlook.com>
-([`708552c`](https://github.com/OZI-Project/ozi-core/commit/708552cf3928b49393f8443c11659e8db71ba093))
-
-* fix: move remaining core functionality to package — rjdbcm <rjdbcm@outlook.com>
-([`0bb22a3`](https://github.com/OZI-Project/ozi-core/commit/0bb22a3efa9022386155a8cf3626e89429552a3a))
-
-* fix: ozi-core~=0.5.6 — rjdbcm <rjdbcm@outlook.com>
-([`485227f`](https://github.com/OZI-Project/ozi-core/commit/485227fc49d271ff8d946fc3cff33c4555c40f8e))
-
-* fix: correct changelog title — rjdbcm <rjdbcm@outlook.com>
-([`a01e5ce`](https://github.com/OZI-Project/ozi-core/commit/a01e5ceb1f51e084ceb4bc49bd15f08de8dd450c))
-
-* fix: correct ``templates/templates/*`` names to include ``.j2`` extension — rjdbcm <rjdbcm@outlook.com>
-([`ba9a68d`](https://github.com/OZI-Project/ozi-core/commit/ba9a68d5bfaba9513af8480fcc604527211de017))
-
-* fix: ozi-spec~=0.5.5
-
-Implements sigstore-v3 workflows. — Eden Ross Duff, MSc <rjdbcm@outlook.com>
-([`a2b2eac`](https://github.com/OZI-Project/ozi-core/commit/a2b2eacb4113d711077724c8b9ceced4071ac6f6))
-
-* fix: ozi-spec~=0.5.4 — Eden Ross Duff, MSc <rjdbcm@outlook.com>
-([`dc31546`](https://github.com/OZI-Project/ozi-core/commit/dc31546e5e1714f823535edceb8ee70ba6cbb60e))
-
-
 ### Performance improvements
 
 
@@ -1687,7 +1727,7 @@ Patch/sigstore v3
 ## 0.1.6 (2024-07-18)
 
 
-### Fixes
+### Bug fixes
 
 
 * fix: OZI.build>=0.0.27 — rjdbcm <rjdbcm@outlook.com>
@@ -1696,7 +1736,7 @@ Patch/sigstore v3
 ## 0.1.5 (2024-07-18)
 
 
-### Fixes
+### Bug fixes
 
 
 * fix: ozi-spec~=0.5.2 — rjdbcm <rjdbcm@outlook.com>
@@ -1705,7 +1745,7 @@ Patch/sigstore v3
 ## 0.1.4 (2024-07-12)
 
 
-### Fixes
+### Bug fixes
 
 
 * fix: ozi missing parser accepts target — rjdbcm <rjdbcm@outlook.com>
@@ -1732,7 +1772,7 @@ Patch/sigstore v3
 ## 0.1.1 (2024-07-11)
 
 
-### Fixes
+### Bug fixes
 
 
 * fix: comment scoring is fixed
@@ -1751,14 +1791,7 @@ Patch/sigstore v3
 ## 0.0.1 (2024-07-11)
 
 
-### Features
-
-
-* feat: remove ``print_version`` and add version arg to ``check_version`` — rjdbcm <rjdbcm@outlook.com>
-([`d88a200`](https://github.com/OZI-Project/ozi-core/commit/d88a2008163c244b56ffffdacb0727ca0d039f85))
-
-
-### Fixes
+### Bug fixes
 
 
 * fix: override version arg for ``actions.info`` — rjdbcm <rjdbcm@outlook.com>
@@ -1772,6 +1805,13 @@ Patch/sigstore v3
 
 * fix(requirements.in): add ``prompt-toolkit`` — Eden Ross Duff, MSc <rjdbcm@outlook.com>
 ([`f5ccb78`](https://github.com/OZI-Project/ozi-core/commit/f5ccb78f3e1f6165052b25635c85564219cc0315))
+
+
+### Features
+
+
+* feat: remove ``print_version`` and add version arg to ``check_version`` — rjdbcm <rjdbcm@outlook.com>
+([`d88a200`](https://github.com/OZI-Project/ozi-core/commit/d88a2008163c244b56ffffdacb0727ca0d039f85))
 
 ## 0.0.0 (2024-07-10)
 
