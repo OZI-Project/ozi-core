@@ -308,7 +308,7 @@ def _valid_project(project: Namespace) -> Namespace:
 def preprocess_arguments(project: Namespace) -> Namespace:
     """Preprocess (validate) arguments for project namespace."""
     if project.strict:
-        with TAP.strict():  # pragma: no cover
+        with TAP.strict():  # pragma: no cover  # pyright: ignore
             return _valid_project(project)
     else:
         return _valid_project(project)
