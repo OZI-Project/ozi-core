@@ -52,23 +52,26 @@ def main() -> NoReturn:  # pragma: no cover
             name, *_ = report(project.target)
             TAP.end()
         case [False, _]:
-            with TAP.suppress():
-                project, env = _setup(project)
-                name, *_ = report(project.target)
-                project.name = underscorify(name)
-                project.license_file = 'LICENSE.txt'
-                project.copyright_head = valid_copyright_head(
-                    project.copyright_head, name, project.license_file
-                )
-                rewriter = Rewriter(str(project.target), project.name, project.fix, env)
-                rewriter += project.add
-                rewriter -= project.remove
-            if len(project.add) > 0 or len(project.remove) > 0:
-                print(json.dumps(rewriter.commands, indent=4 if project.pretty else None))
-            else:
-                parser.print_help()
+            with TAP() as t:
+                with t.subtest():  # pyright: ignore
+                    project, env = _setup(project)
+                    name, *_ = report(project.target)
+                    project.name = underscorify(name)
+                    project.license_file = 'LICENSE.txt'
+                    project.copyright_head = valid_copyright_head(
+                        project.copyright_head, name, project.license_file
+                    )
+                    rewriter = Rewriter(str(project.target), project.name, project.fix, env)
+                    rewriter += project.add
+                    rewriter -= project.remove
+                if len(project.add) > 0 or len(project.remove) > 0:
+                    print(
+                        json.dumps(rewriter.commands, indent=4 if project.pretty else None)
+                    )
+                else:
+                    parser.print_help()
         case [True, True]:
-            with TAP.strict():
+            with TAP.strict():  # pyright: ignore
                 project, _ = _setup(project)
                 name, *_ = report(project.target)
             TAP.end()

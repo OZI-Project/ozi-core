@@ -192,6 +192,7 @@ def check_version(version: str) -> NoReturn:  # pragma: defer to PyPI
                     status=str(response.status_code),
                 ),
             )
+    exit(0)
 
 
 def info(version: str) -> NoReturn:  # pragma: no cover
@@ -212,3 +213,4 @@ def license_expression(expr: str) -> NoReturn:  # pragma: no cover
     except ParseException as e:
         TAP.not_ok(expr, str(e))
     TAP.end()
+    exit(0)
