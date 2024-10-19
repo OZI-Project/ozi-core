@@ -1,4 +1,13 @@
 # ozi-core CHANGELOG
+## 1.3.5 (2024-10-19)
+
+
+### Bug fixes
+
+
+* fix(ozi-fix): correctly suppress TAP output — rjdbcm <rjdbcm@outlook.com>
+([`ac53fe7`](https://github.com/OZI-Project/ozi-core/commit/ac53fe73f1e9ca74b894300fdd2a7b54feb65395))
+
 ## 1.3.4 (2024-10-18)
 
 
