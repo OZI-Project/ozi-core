@@ -63,6 +63,7 @@ def main() -> NoReturn:  # pragma: no cover
                     rewriter = Rewriter(str(project.target), project.name, project.fix, env)
                     rewriter += project.add
                     rewriter -= project.remove
+                    t.plan()
                 if len(project.add) > 0 or len(project.remove) > 0:
                     print(
                         json.dumps(rewriter.commands, indent=4 if project.pretty else None)
