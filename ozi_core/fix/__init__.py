@@ -46,14 +46,13 @@ def main() -> NoReturn:  # pragma: no cover
     """Main ozi.fix entrypoint."""
     project = parser.parse_args()
     project.missing = project.fix == 'missing' or project.fix == 'm'
-    match [project.missing, project.strict]:
-        case [True, False]:
-            project, _ = _setup(project)
-            name, *_ = report(project.target)
-            TAP.end()
-        case [False, _]:
-            with TAP() as t:
-                with t.subtest():  # pyright: ignore
+    with TAP() as t:
+        match [project.missing, project.strict]:
+            case [True, False]:
+                project, _ = _setup(project)
+                name, *_ = report(project.target)
+            case [False, _]:
+                with t.suppress():  # pyright: ignore
                     project, env = _setup(project)
                     name, *_ = report(project.target)
                     project.name = underscorify(name)
@@ -70,11 +69,10 @@ def main() -> NoReturn:  # pragma: no cover
                     )
                 else:
                     parser.print_help()
-        case [True, True]:
-            with TAP.strict():  # pyright: ignore
-                project, _ = _setup(project)
-                name, *_ = report(project.target)
-            TAP.end()
-        case [_, _]:
-            TAP.bail_out('Name discovery failed.')
+            case [True, True]:
+                with t.strict():  # pyright: ignore
+                    project, _ = _setup(project)
+                    name, *_ = report(project.target)
+            case [_, _]:
+                t.bail_out('Name discovery failed.')
     exit(0)
