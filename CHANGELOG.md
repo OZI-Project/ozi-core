@@ -1,4 +1,13 @@
 # ozi-core CHANGELOG
+## 1.3.6 (2024-10-19)
+
+
+### Bug fixes
+
+
+* fix: dont print TAP plan after dumping json — rjdbcm <rjdbcm@outlook.com>
+([`bc68a76`](https://github.com/OZI-Project/ozi-core/commit/bc68a76cf05c3f9e16f9c2ac63ebb611858ac686))
+
 ## 1.3.5 (2024-10-19)
 
 
