@@ -22,13 +22,6 @@ from tap_producer import TAP
 from ozi_core._i18n import TRANSLATION
 
 if TYPE_CHECKING:  # pragma: no cover
-    import sys
-
-    if sys.version_info >= (3, 11):
-        from typing import Self
-    elif sys.version_info < (3, 11):
-        from typing_extensions import Self
-
     from jinja2 import Environment
 
 
@@ -179,7 +172,7 @@ def build_child(env: Environment, parent: str, child: Path) -> None:
 
 class RenderedContent:
     def __init__(
-        self: Self,  # pyright: ignore
+        self: RenderedContent,  # pyright: ignore
         env: Environment,
         target: Path,
         name: str,
@@ -206,7 +199,7 @@ class RenderedContent:
         self.readme_type = readme_type
         self.ci_user = ''
 
-    def render(self: Self) -> None:
+    def render(self: RenderedContent) -> None:
         """Render the project."""
         self.ci_user = render_ci_files_set_user(self.env, self.target, self.ci_provider)
         render_project_files(self.env, self.target, self.name)

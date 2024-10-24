@@ -4,11 +4,11 @@
 license = {file = "LICENSE.txt"}
 dependencies = [
     'GitPython~=3.1',
-    'TAP-Producer~=1.3.2',
+    'TAP-Producer~=1.4.1',
     'dnspython',
     'idna>=2',
     'meson[ninja]>=1.1.0',
-    'ozi-spec~=0.10.8',
+    'ozi-spec~=0.10.9',
     'ozi-templates~=2.12.4',
     'packaging~=24.1',
     'prompt-toolkit',

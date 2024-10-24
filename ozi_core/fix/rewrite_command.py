@@ -23,17 +23,11 @@ from ozi_core.render import build_file
 from ozi_core.render import find_user_template
 
 if TYPE_CHECKING:  # pragma: no cover
-    import sys
     from collections.abc import Callable
     from collections.abc import Mapping
 
     from jinja2 import Environment
     from jinja2 import Template
-
-    if sys.version_info >= (3, 11):
-        from typing import Self
-    elif sys.version_info < (3, 11):
-        from typing_extensions import Self
 
 
 @dataclass
@@ -114,7 +108,7 @@ class Rewriter:
             'test': self.env.get_template(METADATA.spec.python.src.template.add_root),
         }
 
-    def _add_dunder_init(self: Self, filename: str) -> None:
+    def _add_dunder_init(self: Rewriter, filename: str) -> None:
         """Render a :file:`{filename}/__init__.py`."""
         build_file(
             self.env,
@@ -131,7 +125,7 @@ class Rewriter:
         )
 
     def _add_files(
-        self: Self,
+        self: Rewriter,
         child: Path,
         filename: str,
         cmd_files: RewriteCommand,
@@ -174,7 +168,7 @@ class Rewriter:
             cmd_files = self._add_files(child, filename, cmd_files)
         return cmd_files, cmd_children
 
-    def __iadd__(self: Self, other: list[str]) -> Self:
+    def __iadd__(self: Rewriter, other: list[str]) -> Rewriter:
         """Add a list of paths"""
         cmd_files = RewriteCommand()
         cmd_children = RewriteCommand()
@@ -204,7 +198,7 @@ class Rewriter:
             cmd_files.rem(self.fix, 'files', str(Path(filename)))
         return cmd_files, cmd_children
 
-    def __isub__(self: Self, other: list[str]) -> Self:
+    def __isub__(self: Rewriter, other: list[str]) -> Rewriter:
         """Remove a list of paths"""
         cmd_files = RewriteCommand()
         cmd_children = RewriteCommand()
@@ -220,7 +214,7 @@ class Rewriter:
             ]
         return self
 
-    def __rm_dir(self: Self, filename: str, child: Path) -> None:
+    def __rm_dir(self: Rewriter, filename: str, child: Path) -> None:
         """Try to remove a directory if empty."""
         if filename.endswith('/'):
             try:
