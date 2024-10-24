@@ -36,11 +36,6 @@ if TYPE_CHECKING:  # pragma: no cover
     from argparse import Namespace
     from collections.abc import Sequence
 
-    if sys.version_info >= (3, 11):
-        from typing import Self
-    elif sys.version_info < (3, 11):
-        from typing_extensions import Self
-
 _prefix = Prefix()
 
 
@@ -67,7 +62,7 @@ class CloseMatch(Action):
     exact_match = ExactMatch()
 
     def __init__(
-        self: Self,  # pyright: ignore
+        self: CloseMatch,  # pyright: ignore
         option_strings: list[str],
         dest: str,
         nargs: int | str | None = None,
@@ -81,7 +76,7 @@ class CloseMatch(Action):
         super().__init__(option_strings, dest, nargs=nargs, **kwargs)
 
     def close_matches(
-        self: Self,
+        self: CloseMatch,
         key: str,
         value: str,
     ) -> Sequence[str]:
@@ -118,7 +113,7 @@ class CloseMatch(Action):
         return matches
 
     def _set_matches(
-        self: Self,
+        self: CloseMatch,
         key: str,
         values: str | Sequence[str],
         namespace: Namespace,
@@ -138,7 +133,7 @@ class CloseMatch(Action):
                 )
 
     def __call__(
-        self: Self,
+        self: CloseMatch,
         parser: ArgumentParser,
         namespace: Namespace,
         values: str | Sequence[str] | None,

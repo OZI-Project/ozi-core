@@ -1,8 +1,6 @@
 from __future__ import annotations
 
-import sys
 from typing import TYPE_CHECKING
-from typing import Sequence
 
 from ozi_spec import METADATA
 from prompt_toolkit.shortcuts import button_dialog  # pyright: ignore
@@ -28,15 +26,12 @@ from ozi_core.trove import Prefix
 from ozi_core.trove import from_prefix
 
 if TYPE_CHECKING:  # pragma: no cover
-    if sys.version_info >= (3, 11):
-        from typing import Self
-    elif sys.version_info < (3, 11):
-        from typing_extensions import Self
+    from collections.abc import Sequence
 
 
 class Project:  # pragma: no cover
-    def __init__(
-        self,  # noqa: ANN101,RUF100
+    def __init__(  # noqa: DC104,ANN101,RUF100
+        self: Project,
         allow_file: list[str] | None = None,
         ci_provider: str | None = None,
         copyright_head: str | None = None,
@@ -57,7 +52,8 @@ class Project:  # pragma: no cover
         self.verify_email = verify_email
         self.check_package_exists = check_package_exists
 
-    def __call__(self: Self) -> list[str]:  # noqa: C901  # pragma: no cover
+    def __call__(self: Project) -> list[str]:  # noqa: C901  # pragma: no cover
+        """Start the interactive prompt."""
         if (
             admonition_dialog(
                 title=TRANSLATION('dlg-title'),
@@ -133,7 +129,7 @@ class Project:  # pragma: no cover
         return ret_args
 
     def name(  # noqa: C901,RUF100
-        self: Self,
+        self: Project,
         output: dict[str, list[str]],
         prefix: dict[str, str],
     ) -> tuple[None | list[str] | str | bool, dict[str, list[str]], dict[str, str]]:
@@ -158,7 +154,7 @@ class Project:  # pragma: no cover
                 return result, output, prefix
 
     def summary(
-        self: Self,
+        self: Project,
         project_name: str,
         output: dict[str, list[str]],
         prefix: dict[str, str],
@@ -177,7 +173,7 @@ class Project:  # pragma: no cover
                 return result, output, prefix
 
     def keywords(
-        self: Self,
+        self: Project,
         project_name: str,
         output: dict[str, list[str]],
         prefix: dict[str, str],
@@ -196,7 +192,7 @@ class Project:  # pragma: no cover
                 return result, output, prefix
 
     def license_file(
-        self: Self,
+        self: Project,
         project_name: str,
         output: dict[str, list[str]],
         prefix: dict[str, str],
@@ -226,7 +222,7 @@ class Project:  # pragma: no cover
             )
 
     def home_page(
-        self: Self,
+        self: Project,
         project_name: str,
         output: dict[str, list[str]],
         prefix: dict[str, str],
@@ -245,7 +241,7 @@ class Project:  # pragma: no cover
                 return result, output, prefix
 
     def author(
-        self: Self,
+        self: Project,
         project_name: str,
         output: dict[str, list[str]],
         prefix: dict[str, str],
@@ -265,7 +261,7 @@ class Project:  # pragma: no cover
                 return result, output, prefix
 
     def author_email(
-        self: Self,
+        self: Project,
         project_name: str,
         output: dict[str, list[str]],
         prefix: dict[str, str],
@@ -285,7 +281,7 @@ class Project:  # pragma: no cover
                 return result, output, prefix
 
     def license_(  # noqa: C901,RUF100
-        self: Self,
+        self: Project,
         project_name: str,
         output: dict[str, list[str]],
         prefix: dict[str, str],
@@ -334,7 +330,7 @@ class Project:  # pragma: no cover
         return str(license_), output, prefix
 
     def license_expression(  # noqa: C901
-        self: Self,
+        self: Project,
         project_name: str,
         _license: str,
         output: dict[str, list[str]],
@@ -435,7 +431,7 @@ class Project:  # pragma: no cover
         return _license_expression, output, prefix
 
     def maintainer(
-        self: Self,
+        self: Project,
         project_name: str,
         output: dict[str, list[str]],
         prefix: dict[str, str],
@@ -455,7 +451,7 @@ class Project:  # pragma: no cover
                 return result, output, prefix
 
     def maintainer_email(
-        self: Self,
+        self: Project,
         project_name: str,
         output: dict[str, list[str]],
         prefix: dict[str, str],
@@ -475,7 +471,7 @@ class Project:  # pragma: no cover
                 return result, output, prefix
 
     def requires_dist(
-        self: Self,
+        self: Project,
         project_name: str,
         output: dict[str, list[str]],
         prefix: dict[str, str],
@@ -553,7 +549,7 @@ class Project:  # pragma: no cover
         return None, output, prefix
 
     def readme_type(
-        self: Self,
+        self: Project,
         project_name: str,
         output: dict[str, list[str]],
         prefix: dict[str, str],
@@ -590,7 +586,7 @@ class Project:  # pragma: no cover
         return str(readme_type), output, prefix
 
     def typing(
-        self: Self,
+        self: Project,
         project_name: str,
         output: dict[str, list[str]],
         prefix: dict[str, str],
@@ -624,7 +620,7 @@ class Project:  # pragma: no cover
         return str(result), output, prefix
 
     def project_urls(
-        self: Self,
+        self: Project,
         project_name: str,
         output: dict[str, list[str]],
         prefix: dict[str, str],
@@ -696,7 +692,7 @@ class Project:  # pragma: no cover
         return f'{result}, {url}', output, prefix
 
     def header_input(
-        self: Self,
+        self: Project,
         label: str,
         output: dict[str, list[str]],
         prefix: dict[str, str],

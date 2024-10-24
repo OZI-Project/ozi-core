@@ -14,18 +14,13 @@ class Translation:
     __slots__ = ('_locale', 'data')
     def __init__(self) -> None:
         ...
-    
     @property
     def locale(self) -> str | Any:
         ...
-    
     @locale.setter
     def locale(self, loc: str) -> None:
         ...
-    
     def __call__(self, _key: str, **kwargs: str) -> str:
         ...
-    
-
 
 TRANSLATION: Translation = ...

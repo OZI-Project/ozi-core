@@ -26,7 +26,7 @@ def current_version() -> str:
     try:
         version_ = version('OZI')
     except PackageNotFoundError:  # pragma: no cover
-        version_ = str('1.22')
+        version_ = '1.23'
     return version_
 
 

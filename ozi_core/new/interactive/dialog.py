@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import sys
 from typing import TYPE_CHECKING
 from typing import Any
 from typing import Sequence
@@ -35,17 +34,11 @@ from ozi_core._i18n import TRANSLATION
 from ozi_core.new.interactive._style import _style_dict
 
 if TYPE_CHECKING:
-
     from prompt_toolkit.buffer import Buffer  # pyright: ignore
     from prompt_toolkit.completion import Completer  # pyright: ignore
     from prompt_toolkit.formatted_text import AnyFormattedText  # pyright: ignore
     from prompt_toolkit.key_binding.key_processor import KeyPressEvent  # pyright: ignore
     from prompt_toolkit.validation import Validator  # pyright: ignore
-
-    if sys.version_info >= (3, 11):
-        from typing import Self
-    elif sys.version_info < (3, 11):
-        from typing_extensions import Self
 
 
 _T = TypeVar('_T')
@@ -62,8 +55,8 @@ class Admonition(RadioList[_T]):
     checked_style = 'class:admonition-checked'
     multiple_selection = False
 
-    def __init__(  # noqa: C901
-        self: Self,
+    def __init__(  # noqa: C901,DC104
+        self: Admonition,
         values: Sequence[tuple[_T, Any]],
         default: _T | None = None,
     ) -> None:  # pragma: no cover
@@ -71,7 +64,7 @@ class Admonition(RadioList[_T]):
         kb = KeyBindings()
 
         @kb.add('pageup')
-        def _pageup(event: KeyPressEvent) -> None:
+        def _pageup(event: KeyPressEvent) -> None:  # noqa: DC103
             w = event.app.layout.current_window
             if w.render_info:
                 self._selected_index = max(
@@ -80,7 +73,7 @@ class Admonition(RadioList[_T]):
                 )
 
         @kb.add('pagedown')
-        def _pagedown(event: KeyPressEvent) -> None:
+        def _pagedown(event: KeyPressEvent) -> None:  # noqa: DC103
             w = event.app.layout.current_window
             if w.render_info:
                 self._selected_index = min(
@@ -89,16 +82,16 @@ class Admonition(RadioList[_T]):
                 )
 
         @kb.add('up')
-        def _up(event: KeyPressEvent) -> None:
+        def _up(event: KeyPressEvent) -> None:  # noqa: DC103
             _pageup(event)
 
         @kb.add('down')
-        def _down(event: KeyPressEvent) -> None:
+        def _down(event: KeyPressEvent) -> None:  # noqa: DC103
             _pagedown(event)
 
         @kb.add('enter')
         @kb.add(' ')
-        def _click(event: KeyPressEvent) -> None:
+        def _click(event: KeyPressEvent) -> None:  # noqa: DC103
             self._handle_enter()
 
         self.control = FormattedTextControl(
@@ -121,7 +114,7 @@ class Admonition(RadioList[_T]):
             always_hide_cursor=True,
         )
 
-    def _handle_enter(self) -> None:  # noqa: ANN101,RUF100
+    def _handle_enter(self) -> None:  # noqa: DC103,ANN101,RUF100
         pass  # pragma: no cover
 
 
@@ -158,7 +151,7 @@ def admonition_dialog(  # noqa: C901
         )
         style = Style.from_dict(style_dict)
 
-    def ok_handler() -> None:
+    def ok_handler() -> None:  # noqa: DC102
         get_app().exit(result=True)
 
     lines = text.splitlines()
@@ -211,11 +204,11 @@ def input_dialog(
     if cancel_text is None:
         cancel_text = TRANSLATION('btn-back')
 
-    def accept(buf: Buffer) -> bool:
+    def accept(buf: Buffer) -> bool:  # noqa: DC102
         get_app().layout.focus(ok_button)
         return True  # Keep text.
 
-    def ok_handler() -> None:
+    def ok_handler() -> None:  # noqa: DC102
         get_app().exit(result=textfield.text)
 
     ok_button = Button(text=ok_text, handler=ok_handler)
