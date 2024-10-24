@@ -1,4 +1,20 @@
 # ozi-core CHANGELOG
+## 1.3.7 (2024-10-24)
+
+
+### Bug fixes
+
+
+* fix: update fallback version to 1.23 — rjdbcm <rjdbcm@outlook.com>
+([`1de7c4a`](https://github.com/OZI-Project/ozi-core/commit/1de7c4a8855b647b3844896f9af4632467382002))
+
+
+### Performance improvements
+
+
+* perf: TAP-Producer~=1.4.1 and remove undocumented dependency on typing_extensions <3.11 — rjdbcm <rjdbcm@outlook.com>
+([`8bba66c`](https://github.com/OZI-Project/ozi-core/commit/8bba66c96f0ba008cb878f4a29ccd2a007ba8342))
+
 ## 1.3.6 (2024-10-19)
 
 
