@@ -8,19 +8,10 @@ from __future__ import annotations
 from dataclasses import asdict
 from dataclasses import dataclass
 from functools import lru_cache
-from typing import TYPE_CHECKING
 from warnings import warn
 
 from ozi_spec._license import NOT_SUPPORTED  # pyright: ignore
 from trove_classifiers import classifiers
-
-if TYPE_CHECKING:  # pragma: no cover
-    import sys
-
-    if sys.version_info >= (3, 11):
-        from typing import Self
-    elif sys.version_info < (3, 11):
-        from typing_extensions import Self
 
 
 @lru_cache
@@ -53,7 +44,7 @@ class Prefix:
     status: str = 'Development Status :: '
     topic: str = 'Topic :: '
 
-    def __post_init__(self: Self) -> None:
+    def __post_init__(self: Prefix) -> None:
         """Check if any of the default attributes are deprecated upstream."""
         if not valid_trove_prefixes.issuperset(asdict(self).values()):  # pragma: no cover
             warn('Possible deprecated Classifier prefix literal.', FutureWarning)

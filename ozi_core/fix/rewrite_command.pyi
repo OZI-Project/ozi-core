@@ -16,6 +16,7 @@ from jinja2 import Template
 """Primitives for generating meson rewrite commands."""
 if TYPE_CHECKING:
     ...
+
 @dataclass
 class RewriteCommand:
     """Meson rewriter command input"""
@@ -29,12 +30,9 @@ class RewriteCommand:
     def add(self: RewriteCommand, mode: str, kind: str, source: str) -> dict[str, Union[str, list[str]]]:
         """Add sources and tests to an OZI project."""
         ...
-    
     def rem(self: RewriteCommand, mode: str, kind: str, source: str) -> dict[str, Union[str, list[str]]]:
         """Add sources and tests to an OZI project."""
         ...
-    
-
 
 @dataclass
 class Rewriter:
@@ -49,14 +47,9 @@ class Rewriter:
     def __post_init__(self: Rewriter) -> None:
         """Setup the path_map"""
         ...
-    
-    def __iadd__(self, other: list[str]) -> Rewriter:
+    def __iadd__(self: Rewriter, other: list[str]) -> Rewriter:
         """Add a list of paths"""
         ...
-    
-    def __isub__(self, other: list[str]) -> Rewriter:
+    def __isub__(self: Rewriter, other: list[str]) -> Rewriter:
         """Remove a list of paths"""
         ...
-    
-
-
