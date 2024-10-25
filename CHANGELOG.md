@@ -1,4 +1,23 @@
 # ozi-core CHANGELOG
+## 1.4.0 (2024-10-25)
+
+
+### Bug fixes
+
+
+* fix: generate locales at build time — rjdbcm <rjdbcm@outlook.com>
+([`83e3c40`](https://github.com/OZI-Project/ozi-core/commit/83e3c401f35d644de406db9668e1265301096fe7))
+
+* fix: generate locales at build time — rjdbcm <rjdbcm@outlook.com>
+([`b481dc7`](https://github.com/OZI-Project/ozi-core/commit/b481dc7201c145cd5edf90ee0e911169dac47a5c))
+
+
+### Features
+
+
+* feat: ozi-spec~=0.11.0 — rjdbcm <rjdbcm@outlook.com>
+([`f78d693`](https://github.com/OZI-Project/ozi-core/commit/f78d69391998f795de987595680bb6d22a68a8fb))
+
 ## 1.3.7 (2024-10-24)
 
 
