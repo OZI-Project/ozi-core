@@ -1,4 +1,15 @@
 # ozi-core CHANGELOG
+## 1.4.1 (2024-10-25)
+
+
+### Bug fixes
+
+
+* fix: ozi-spec~=0.11.1
+
+OZI-Project/checkpoint 1.1.1 — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`5763687`](https://github.com/OZI-Project/ozi-core/commit/5763687061a3bb7027defa61ccd2873622233350))
+
 ## 1.4.0 (2024-10-25)
 
 
