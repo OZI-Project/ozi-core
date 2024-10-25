@@ -25,5 +25,5 @@ data: dict[str, dict[str, str | None] | dict[str, str]] = {locales}"""
         text.format(
             locales=pprint.pformat(load_locale_data(), width=72).replace('{', '{\n', 1)
         ),
-        file=open(Path(__file__).parent / '_locales.py', 'w', encoding='utf8'),
+        file=open(Path('ozi_core', '_locales.py'), 'w', encoding='utf8'),
     )

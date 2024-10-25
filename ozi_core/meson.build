@@ -2,17 +2,20 @@
 # Part of the OZI Project, under the Apache License v2.0 with LLVM Exceptions.
 # See LICENSE.txt for license information.
 # SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
-# run_command(
-#     python,
-#     [meson.current_source_dir()/'generate_locales.py'],
-#     check: true
-# )
+custom_target(
+    '_locales.py',
+    input: 'generate_locales.py',
+    output: '_locales.py',
+    command: [python, '@INPUT@'],
+    build_always_stale: true,
+    install: true,
+    install_dir: 'ozi_core'
+)
 source_files = [
     '__init__.py',
     '__init__.pyi',
     '_i18n.py',
     '_i18n.pyi',
-    '_locales.py',
     '_locales.pyi',
     'actions.py',
     'actions.pyi',
