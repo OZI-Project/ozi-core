@@ -1,4 +1,13 @@
 # ozi-core CHANGELOG
+## 1.4.2 (2024-10-25)
+
+
+### Build system
+
+
+* build: update fallback version to 1.24 — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`465dd5d`](https://github.com/OZI-Project/ozi-core/commit/465dd5d767799c7669835f1fafd8a2688ded89e4))
+
 ## 1.4.1 (2024-10-25)
 
 
