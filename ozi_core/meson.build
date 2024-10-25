@@ -7,9 +7,9 @@ custom_target(
     input: 'generate_locales.py',
     output: '_locales.py',
     command: [python, '@INPUT@'],
-    build_always_stale: true,
+    build_by_default: true,
     install: true,
-    install_dir: 'ozi_core'
+    install_dir: python.get_install_dir() / 'ozi_core',
 )
 source_files = [
     '__init__.py',
