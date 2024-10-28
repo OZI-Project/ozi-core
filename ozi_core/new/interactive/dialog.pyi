@@ -38,7 +38,7 @@ def admonition_dialog(title: str = ..., text: str = ..., heading_label: str = ..
     """
     ...
 
-def input_dialog(title: AnyFormattedText = ..., text: AnyFormattedText = ..., ok_text: str | None = ..., cancel_text: str | None = ..., completer: Completer | None = ..., validator: Validator | None = ..., password: FilterOrBool = ..., style: BaseStyle | None = ..., default: str = ...) -> Application[str]:
+def input_dialog(title: AnyFormattedText = ..., text: AnyFormattedText = ..., ok_text: str | None = ..., cancel_text: str | None = ..., completer: Completer | None = ..., validator: Validator | None = ..., password: FilterOrBool = ..., style: BaseStyle | None = ..., multiline: bool = ..., default: str = ...) -> Application[str]:
     """
     Display a text input box.
     Return the given text, or None when cancelled.

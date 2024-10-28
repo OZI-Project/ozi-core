@@ -218,6 +218,7 @@ def options_menu(  # pragma: no cover
                     cancel_text=TRANSLATION('btn-back'),
                     ok_text=TRANSLATION('btn-ok'),
                     default=_default[0],
+                    multiline=True,
                 ).run()
                 if result in _default:
                     project.copyright_head = result
