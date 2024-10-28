@@ -1,4 +1,93 @@
 # ozi-core CHANGELOG
+## 1.4.4 (2024-10-28)
+
+
+### Build system
+
+
+* build(deps): ozi-spec~=0.11.2 — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`e74e7b9`](https://github.com/OZI-Project/ozi-core/commit/e74e7b9b7f61d6fbc24706f8b3bca0f8e2bc7381))
+
+## 1.4.3 (2024-10-28)
+
+
+### Bug fixes
+
+
+* fix: only use multiline input_dialog for copyright header — rjdbcm <rjdbcm@outlook.com>
+([`df89a10`](https://github.com/OZI-Project/ozi-core/commit/df89a10bedf867264e29cb6803017f3e532827d7))
+
+
+### Build system
+
+
+* build(deps): update ozi-templates requirement from ~=2.12.5 to ~=2.13.0
+
+Updates the requirements on [ozi-templates](https://github.com/OZI-Project/ozi-templates) to permit the latest version.
+- [Release notes](https://github.com/OZI-Project/ozi-templates/releases)
+- [Changelog](https://github.com/OZI-Project/ozi-templates/blob/2.13.0/CHANGELOG.md)
+- [Commits](https://github.com/OZI-Project/ozi-templates/compare/2.12.5...2.13.0)
+
+
+updated-dependencies:
+- dependency-name: ozi-templates
+  dependency-type: direct:production
+... — dependabot[bot] <support@github.com>
+([`719ccea`](https://github.com/OZI-Project/ozi-core/commit/719ccea81f271427e318ce8bc7e32f094b97a44c))
+
+* build(deps): bump OZI-Project/checkpoint from 1.0.2 to 1.1.1
+
+Bumps [OZI-Project/checkpoint](https://github.com/ozi-project/checkpoint) from 1.0.2 to 1.1.1.
+- [Release notes](https://github.com/ozi-project/checkpoint/releases)
+- [Commits](https://github.com/ozi-project/checkpoint/compare/1.0.2...1.1.1)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/checkpoint
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`8d85692`](https://github.com/OZI-Project/ozi-core/commit/8d8569240db9a9df177e3efc6b6fc55d6b3eabc4))
+
+## 1.4.2 (2024-10-25)
+
+
+### Build system
+
+
+* build: update fallback version to 1.24 — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`465dd5d`](https://github.com/OZI-Project/ozi-core/commit/465dd5d767799c7669835f1fafd8a2688ded89e4))
+
+## 1.4.1 (2024-10-25)
+
+
+### Bug fixes
+
+
+* fix: ozi-spec~=0.11.1
+
+OZI-Project/checkpoint 1.1.1 — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`5763687`](https://github.com/OZI-Project/ozi-core/commit/5763687061a3bb7027defa61ccd2873622233350))
+
+## 1.4.0 (2024-10-25)
+
+
+### Bug fixes
+
+
+* fix: generate locales at build time — rjdbcm <rjdbcm@outlook.com>
+([`83e3c40`](https://github.com/OZI-Project/ozi-core/commit/83e3c401f35d644de406db9668e1265301096fe7))
+
+* fix: generate locales at build time — rjdbcm <rjdbcm@outlook.com>
+([`b481dc7`](https://github.com/OZI-Project/ozi-core/commit/b481dc7201c145cd5edf90ee0e911169dac47a5c))
+
+
+### Features
+
+
+* feat: ozi-spec~=0.11.0 — rjdbcm <rjdbcm@outlook.com>
+([`f78d693`](https://github.com/OZI-Project/ozi-core/commit/f78d69391998f795de987595680bb6d22a68a8fb))
+
 ## 1.3.7 (2024-10-24)
 
 
