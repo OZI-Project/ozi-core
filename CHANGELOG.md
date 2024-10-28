@@ -1,4 +1,45 @@
 # ozi-core CHANGELOG
+## 1.4.3 (2024-10-28)
+
+
+### Bug fixes
+
+
+* fix: only use multiline input_dialog for copyright header — rjdbcm <rjdbcm@outlook.com>
+([`df89a10`](https://github.com/OZI-Project/ozi-core/commit/df89a10bedf867264e29cb6803017f3e532827d7))
+
+
+### Build system
+
+
+* build(deps): update ozi-templates requirement from ~=2.12.5 to ~=2.13.0
+
+Updates the requirements on [ozi-templates](https://github.com/OZI-Project/ozi-templates) to permit the latest version.
+- [Release notes](https://github.com/OZI-Project/ozi-templates/releases)
+- [Changelog](https://github.com/OZI-Project/ozi-templates/blob/2.13.0/CHANGELOG.md)
+- [Commits](https://github.com/OZI-Project/ozi-templates/compare/2.12.5...2.13.0)
+
+
+updated-dependencies:
+- dependency-name: ozi-templates
+  dependency-type: direct:production
+... — dependabot[bot] <support@github.com>
+([`719ccea`](https://github.com/OZI-Project/ozi-core/commit/719ccea81f271427e318ce8bc7e32f094b97a44c))
+
+* build(deps): bump OZI-Project/checkpoint from 1.0.2 to 1.1.1
+
+Bumps [OZI-Project/checkpoint](https://github.com/ozi-project/checkpoint) from 1.0.2 to 1.1.1.
+- [Release notes](https://github.com/ozi-project/checkpoint/releases)
+- [Commits](https://github.com/ozi-project/checkpoint/compare/1.0.2...1.1.1)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/checkpoint
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`8d85692`](https://github.com/OZI-Project/ozi-core/commit/8d8569240db9a9df177e3efc6b6fc55d6b3eabc4))
+
 ## 1.4.2 (2024-10-25)
 
 
