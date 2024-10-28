@@ -193,6 +193,7 @@ def input_dialog(
     validator: Validator | None = None,
     password: FilterOrBool = False,
     style: BaseStyle | None = None,
+    multiline: bool = False,
     default: str = '',
 ) -> Application[str]:
     """
@@ -217,7 +218,7 @@ def input_dialog(
     longest_line = len(max(lines, key=len)) if len(lines) > 0 else 40
     textfield = TextArea(
         text=default,
-        multiline=True,
+        multiline=multiline,
         password=password,
         completer=completer,
         validator=validator,
