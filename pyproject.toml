@@ -8,7 +8,7 @@ dependencies = [
     'dnspython',
     'idna>=2',
     'meson[ninja]>=1.1.0',
-    'ozi-spec~=0.11.2',
+    'ozi-spec~=0.11.4',
     'ozi-templates~=2.13.0',
     'packaging~=24.1',
     'prompt-toolkit',
