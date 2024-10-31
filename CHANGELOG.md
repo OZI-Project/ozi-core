@@ -1,4 +1,20 @@
 # ozi-core CHANGELOG
+## 1.4.6 (2024-10-31)
+
+
+### Build system
+
+
+* build(deps): ozi-templates~=2.13.8 — rjdbcm <rjdbcm@outlook.com>
+([`142da4a`](https://github.com/OZI-Project/ozi-core/commit/142da4a639b7286611a5340da2673ec7fd28da80))
+
+
+### Performance improvements
+
+
+* perf: test that harden-runner blocks render — rjdbcm <rjdbcm@outlook.com>
+([`32544ad`](https://github.com/OZI-Project/ozi-core/commit/32544ad35f7e759e188c8e6a9b1d44c0b7c7cd22))
+
 ## 1.4.5 (2024-10-29)
 
 
