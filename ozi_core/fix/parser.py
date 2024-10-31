@@ -203,3 +203,18 @@ test_parser.add_argument(
     default='.',
     help=TRANSLATION('term-help-fix-target'),
 )
+interactive_parser = subparser.add_parser(
+    'interactive',
+    prog='ozi-fix interactive',
+    aliases=['i'],
+    usage='%(prog)s target',
+    allow_abbrev=True,
+    help=TRANSLATION('term-help-fix-interactive'),
+)
+interactive_parser.add_argument(
+    'target',
+    type=str,
+    nargs='?',
+    default='.',
+    help=TRANSLATION('term-help-fix-target'),
+)

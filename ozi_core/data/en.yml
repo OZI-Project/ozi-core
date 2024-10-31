@@ -28,7 +28,8 @@ btn-ok: "✔ Ok"
 btn-prompt: "⌂ Prompt"
 btn-skip: "⇒ Skip"
 btn-yes: "Yes"
-dlg-title: ozi-new interactive prompt
+new-dlg-title: ozi-new interactive prompt
+fix-dlg-title: ozi-fix interactive prompt
 edit-menu-btn-audience: Intended Audience
 edit-menu-btn-author: Author
 edit-menu-btn-email: Author-email
@@ -66,10 +67,10 @@ err-too-long: input is too long.
 err-version-check: OZI package version check failed with status code $status
 lang-en: English
 lang-zh: 简体中文 Chinese (Simplified)
-main-menu-btn-edit: "✎ Edit"
-main-menu-btn-metadata: "∋ Metadata"
-main-menu-btn-options: "⚙ Options"
-main-menu-btn-reset: "↺ Reset"
+btn-edit: "✎ Edit"
+btn-metadata: "∋ Metadata"
+btn-options: "⚙ Options"
+btn-reset: "↺ Reset"
 main-menu-text: "Main menu, select an action:"
 main-menu-yn-exit: Exit the prompt?
 main-menu-yn-reset: Reset prompt and start over?
@@ -143,10 +144,10 @@ pro-readme-type-radio-md: Markdown
 pro-readme-type-radio-rst: reStructuredText
 pro-readme-type-radio-txt: Plaintext
 pro-requires-dist: Add or remove dependency requirements to $projectname
-pro-requires-dist-add: Add
+btn-add: Add
 pro-requires-dist-cbl-remove: "Select packages to delete:"
 pro-requires-dist-msg-remove-no-requirements: No requirements to remove.
-pro-requires-dist-remove: Remove
+btn-remove: Remove
 pro-requires-dist-search: "Search PyPI packages:"
 pro-summary: >
   What does the project, $projectname, do?

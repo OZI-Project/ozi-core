@@ -46,6 +46,7 @@ source_children = [
     'vendor',
     'fix',
     'new',
+    'ui',
 ]
 foreach child: source_children
     subdir(child)

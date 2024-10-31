@@ -19,7 +19,8 @@ btn-ok: 好的
 btn-prompt: 提示符
 btn-skip: 跳过
 btn-yes: 是的
-dlg-title: ｏｚｉ－ｎｅｗ 互 動 提 示 符
+new-dlg-title: ｏｚｉ－ｎｅｗ 互 動 提 示 符
+fix-dlg-title: ｏｚｉ－ｆｉｘ 互 動 提 示 符
 edit-menu-btn-audience: 目标受众（Ｉｎｔｅｎｄｅｄ　Ａｕｄｉｅｎｃｅ）
 edit-menu-btn-author: 作者（Ａｕｔｈｏｒ）
 edit-menu-btn-email: 电子邮件（Ａｕｔｈｏｒ－ｅｍａｉｌ）
@@ -56,10 +57,10 @@ err-too-long: 输入太长。
 err-version-check: ＯＺＩ软件包版本检查失败，状态代码为：$status
 lang-en: 英语（Ｅｎｇｌｉｓｈ）
 lang-zh: 简体中文
-main-menu-btn-edit: 编辑
-main-menu-btn-metadata: 查看元数据
-main-menu-btn-options: 更改选项
-main-menu-btn-reset: 重置
+btn-edit: 编辑
+btn-metadata: 查看元数据
+btn-options: 更改选项
+btn-reset: 重置
 main-menu-text: 選單，选择动作：
 main-menu-yn-exit: 退出提示符？
 main-menu-yn-reset: 重置提示并重新开始？
@@ -131,10 +132,10 @@ pro-readme-type-radio-md: 轻量级标记语言Ｍａｒｋｄｏｗｎ
 pro-readme-type-radio-rst: 轻量级标记语言ｒｅＳｔｒｕｃｔｕｒｅｄＴｅｘｔ
 pro-readme-type-radio-txt: 纯文本
 pro-requires-dist: 新增或删除对『$projectname』的依赖关系要求。
-pro-requires-dist-add: 新增
+btn-add: 新增
 pro-requires-dist-cbl-remove: 选择要删除的包：
 pro-requires-dist-msg-remove-no-requirements: 没有删除请求。
-pro-requires-dist-remove: 删除
+btn-remove: 删除
 pro-requires-dist-search: 搜寻ＰｙＰＩ包：
 pro-summary: >
   项目『$projectname』是做什么的？
