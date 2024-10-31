@@ -30,6 +30,7 @@ from ozi_core.new import project as new_project  # pyright: ignore
         {
             'verify_email': st.just(False),
             'strict': st.booleans(),
+            'github_harden_runner': st.booleans(),
             'target': st.data(),
             'keywords': st.from_regex(r'^(([a-z_]*[a-z0-9],)*){2,650}$', fullmatch=True),
             'ci_provider': st.just('github'),
