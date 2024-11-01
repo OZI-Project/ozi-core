@@ -1,9 +1,12 @@
 # ozi-core CHANGELOG
-## 1.4.6 (2024-10-31)
+## 1.4.6 (2024-11-01)
 
 
 ### Build system
 
+
+* build(endpoints): add sigstore urls to allow list — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`7912ae8`](https://github.com/OZI-Project/ozi-core/commit/7912ae89c67d1a0ff76dea4da81241e7e96d7c8e))
 
 * build(deps): ozi-templates~=2.13.8 — rjdbcm <rjdbcm@outlook.com>
 ([`142da4a`](https://github.com/OZI-Project/ozi-core/commit/142da4a639b7286611a5340da2673ec7fd28da80))
