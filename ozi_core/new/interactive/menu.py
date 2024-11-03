@@ -9,12 +9,13 @@ from prompt_toolkit.shortcuts import radiolist_dialog  # pyright: ignore
 from prompt_toolkit.shortcuts import yes_no_dialog  # pyright: ignore
 
 from ozi_core._i18n import TRANSLATION
+from ozi_core.trove import Prefix
+from ozi_core.trove import from_prefix
 from ozi_core.ui._style import _style
 from ozi_core.ui.dialog import admonition_dialog
 from ozi_core.ui.dialog import input_dialog
-from ozi_core.trove import Prefix
-from ozi_core.trove import from_prefix
-from ozi_core.ui.menu import MenuButton, checkbox
+from ozi_core.ui.menu import MenuButton
+from ozi_core.ui.menu import checkbox
 
 
 def main_menu(  # pragma: no cover

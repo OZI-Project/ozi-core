@@ -6,7 +6,6 @@ from typing import Any
 
 from ozi_spec import METADATA
 
-
 def main_menu(project: Any, output: dict[str, list[str]], prefix: dict[str, str]) -> tuple[None | list[str] | bool, dict[str, list[str]], dict[str, str]]:
     ...
 

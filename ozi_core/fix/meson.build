@@ -7,6 +7,7 @@ config_files = [
     '__init__.pyi',
     'build_definition.py',
     'build_definition.pyi',
+    'interactive.py',
     'missing.py',
     'missing.pyi',
     'parser.py',

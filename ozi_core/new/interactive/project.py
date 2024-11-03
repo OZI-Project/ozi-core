@@ -12,10 +12,6 @@ from prompt_toolkit.validation import DynamicValidator  # pyright: ignore
 from prompt_toolkit.validation import Validator  # pyright: ignore
 
 from ozi_core._i18n import TRANSLATION
-from ozi_core.ui._style import _style
-from ozi_core.ui.dialog import admonition_dialog
-from ozi_core.ui.dialog import input_dialog
-from ozi_core.ui.menu import MenuButton
 from ozi_core.new.interactive.menu import main_menu
 from ozi_core.new.interactive.validator import LengthValidator
 from ozi_core.new.interactive.validator import NotReservedValidator
@@ -24,6 +20,10 @@ from ozi_core.new.interactive.validator import ProjectNameValidator
 from ozi_core.new.interactive.validator import validate_message
 from ozi_core.trove import Prefix
 from ozi_core.trove import from_prefix
+from ozi_core.ui._style import _style
+from ozi_core.ui.dialog import admonition_dialog
+from ozi_core.ui.dialog import input_dialog
+from ozi_core.ui.menu import MenuButton
 
 if TYPE_CHECKING:  # pragma: no cover
     from collections.abc import Sequence

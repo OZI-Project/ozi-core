@@ -55,7 +55,7 @@ def process(
     target: Path,
     rel_path: Path,
     found_files: list[str] | None = None,
-) -> list[str]:  # pragma: no cover
+) -> dict[str, list[str]]:  # pragma: no cover
     """Process an OZI project build definition's files."""
     try:
         extra_files = [
@@ -75,7 +75,7 @@ def process(
         found_files=found_files,
         extra_files=extra_files,
     )
-    return files['found'] + files['missing']
+    return files
 
 
 def validate(
@@ -107,9 +107,11 @@ def walk(
     rel_path: Path,
     found_files: list[str] | None = None,
     project_name: str | None = None,
-) -> None:  # pragma: no cover
+) -> Generator[dict[Path, dict[str, list[str]]], None, None]:  # pragma: no cover
     """Walk an OZI standard build definition directory."""
-    found_files = process(target, rel_path, found_files)
+    files = process(target, rel_path, found_files)
+    yield {rel_path: files}
+    found_files = files['found'] + files['missing']
     children = list(
         validate(
             target,

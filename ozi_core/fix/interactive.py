@@ -2,21 +2,22 @@ from __future__ import annotations
 
 import os
 import sys
+from io import UnsupportedOperation
 from typing import TYPE_CHECKING
 from unittest.mock import Mock
 
-from ozi_core._i18n import TRANSLATION
-from ozi_core.fix.build_definition import inspect_files
-from ozi_core.fix.missing import get_relpath_expected_files
-from ozi_core.ui._style import _style
-from ozi_core.ui.dialog import input_dialog
-from ozi_core.ui.menu import MenuButton
-
 from prompt_toolkit.shortcuts.dialogs import button_dialog
 from prompt_toolkit.shortcuts.dialogs import checkboxlist_dialog
-from prompt_toolkit.shortcuts.dialogs import radiolist_dialog
 from prompt_toolkit.shortcuts.dialogs import message_dialog
+from prompt_toolkit.shortcuts.dialogs import radiolist_dialog
 from prompt_toolkit.shortcuts.dialogs import yes_no_dialog
+from tap_producer import TAP
+
+from ozi_core._i18n import TRANSLATION
+from ozi_core.fix.build_definition import walk
+from ozi_core.fix.missing import get_relpath_expected_files
+from ozi_core.ui._style import _style
+from ozi_core.ui.menu import MenuButton
 
 if sys.platform != 'win32':
     import curses
@@ -27,6 +28,7 @@ else:
 
 if TYPE_CHECKING:
     from argparse import Namespace
+    from pathlib import Path
 
 
 def main_menu(  # pragma: no cover
@@ -68,6 +70,27 @@ def main_menu(  # pragma: no cover
 
 
 class Prompt:
+    def __init__(self: Prompt, target: Path) -> None:
+        self.target = target
+        self.fix: str = ''
+
+    def set_fix_mode(
+        self: Prompt,
+        project_name: str,
+        output: dict[str, list[str]],
+        prefix: dict[str, str],
+    ) -> tuple[list[str] | str | bool | None, dict[str, list[str]], dict[str, str]]:
+        self.fix = radiolist_dialog(
+            title=TRANSLATION('fix-dlg-title'),
+            text=TRANSLATION('fix-add'),
+            style=_style,
+            cancel_text=MenuButton.BACK._str,
+            values=[('source', 'source'), ('test', 'test'), ('root', 'root')],
+        ).run()
+        if self.fix is not None:
+            output['fix'].append(self.fix)
+        return None, output, prefix
+
     def add_or_remove(
         self: Prompt,
         project_name: str,
@@ -96,29 +119,36 @@ class Prompt:
                 style=_style,
             ).run():
                 case MenuButton.ADD.value:
-                    add_path = radiolist_dialog(
-                        title=TRANSLATION('fix-dlg-title'),
-                        text=TRANSLATION('fix-add'),
-                        style=_style,
-                        cancel_text=MenuButton.BACK._str,
-                        values=[('source', 'source'), ('test', 'test'), ('root', 'root')],
-                    ).run()
-                    if add_path:
-                        rel_path, expected = get_relpath_expected_files(add_path, project_name)
-                        inspect_files(project.target, rel_path, expected)
-                        input_dialog(
+                    rel_path, _ = get_relpath_expected_files(self.fix, project_name)
+                    files = []
+                    with TAP.suppress():
+                        for d in walk(self.target, rel_path, []):
+                            for k, v in d.items():
+                                files += [str(k / i) for i in v['missing']]
+                    if len(files) > 0:
+                        result = checkboxlist_dialog(
                             title=TRANSLATION('fix-dlg-title'),
-                            text=''
-                        )
-                        add_files += []
-                        prefix.update(
-                            {
-                                f'Add: {add_path}': (
-                                    f'Add: {add_path}'
-                                ),
-                            },
-                        )
-                        output['--add'].append(add_path)
+                            text='',
+                            values=[(i, i) for i in files],
+                            style=_style,
+                        ).run()
+                        if result is not None:
+                            add_files += result
+                            prefix.update(
+                                {
+                                    f'Add-{self.fix}: {add_files}': (
+                                        f'Add-{self.fix}: {add_files}'
+                                    ),
+                                },
+                            )
+                            for f in files:
+                                output['--add'].append(f)
+                    else:
+                        message_dialog(
+                            title=TRANSLATION('fix-dlg-title'),
+                            text=f'no missing {self.fix} files',
+                            style=_style,
+                        ).run()
                 case MenuButton.REMOVE.value:
                     if len(add_files) != 0:
                         del_files = checkboxlist_dialog(
@@ -153,18 +183,29 @@ class Prompt:
         return None, output, prefix
 
 
-def interactive_prompt(project: Namespace) -> list[str]:  # pragma: no cover
+def interactive_prompt(project: Namespace) -> list[str]:  # pragma: no cover # noqa: C901
     ret_args = ['source']
-    curses.setupterm()
-    e3 = curses.tigetstr('E3') or b''
-    clear_screen_seq = curses.tigetstr('clear') or b''
-    os.write(sys.stdout.fileno(), e3 + clear_screen_seq)
-    p = Prompt()
-    result, output, prefix = p.add_or_remove(project_name=project.name, output={}, prefix={})
+    try:
+        curses.setupterm()
+        e3 = curses.tigetstr('E3') or b''
+        clear_screen_seq = curses.tigetstr('clear') or b''
+        os.write(sys.stdout.fileno(), e3 + clear_screen_seq)
+    except UnsupportedOperation:
+        pass
+    p = Prompt(project.target)
+    result, output, prefix = p.set_fix_mode(
+        project_name=project.name, output={'fix': []}, prefix={}
+    )
     if isinstance(result, list):
         return result
+    result, output, prefix = p.add_or_remove(
+        project_name=project.name, output=output, prefix=prefix
+    )
+    if isinstance(result, list):
+        return result
+    fix = output.pop('fix')
     for k, v in output.items():
         for i in v:
             if len(i) > 0:
                 ret_args += [k, i]
-    return ret_args + ['.']
+    return fix + ret_args + ['.']

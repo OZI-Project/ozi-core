@@ -5,11 +5,10 @@
 """ozi-fix: Project fix script that outputs a meson rewriter JSON array."""
 from __future__ import annotations
 
-from contextlib import redirect_stdout, suppress
-import io
 import json
 import os
 import sys
+from contextlib import suppress
 from pathlib import Path
 from typing import TYPE_CHECKING
 from typing import NoReturn
@@ -30,8 +29,8 @@ from ozi_templates import load_environment
 from ozi_templates.filter import underscorify  # pyright: ignore
 from tap_producer import TAP
 
-from ozi_core.fix.missing import report
 from ozi_core.fix.interactive import interactive_prompt
+from ozi_core.fix.missing import report
 from ozi_core.fix.parser import parser
 from ozi_core.fix.rewrite_command import Rewriter
 from ozi_core.new.validate import valid_copyright_head
@@ -75,9 +74,7 @@ def main(args: list[str] | None = None) -> NoReturn:  # pragma: no cover
             args = interactive_prompt(project)
             termios.tcsetattr(fd, termios.TCSADRAIN, original_attributes)
             TAP.comment(f'ozi-fix {" ".join(args)}')
-            json_out = io.StringIO()
-            with redirect_stdout(json_out):
-                main(args)
+            main(args)
         case [False, True, False]:
             project, _ = _setup(project)
             name, *_ = report(project.target)
@@ -95,9 +92,7 @@ def main(args: list[str] | None = None) -> NoReturn:  # pragma: no cover
                 rewriter -= project.remove
                 TAP.plan()
             if len(project.add) > 0 or len(project.remove) > 0:
-                print(
-                    json.dumps(rewriter.commands, indent=4 if project.pretty else None)
-                )
+                print(json.dumps(rewriter.commands, indent=4 if project.pretty else None))
             else:
                 parser.print_help()
         case [False, True, True]:
