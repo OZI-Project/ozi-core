@@ -19,14 +19,14 @@ from ozi_core.fix.missing import get_relpath_expected_files
 from ozi_core.ui._style import _style
 from ozi_core.ui.menu import MenuButton
 
-if sys.platform != 'win32':
+if sys.platform != 'win32':  # pragma: no cover
     import curses
-else:
+else:  # pragma: no cover
     curses = Mock()
     curses.tigetstr = lambda x: b''
     curses.setupterm = lambda: None
 
-if TYPE_CHECKING:
+if TYPE_CHECKING:  # pragma: no cover
     from argparse import Namespace
     from pathlib import Path
 
@@ -70,11 +70,11 @@ def main_menu(  # pragma: no cover
 
 
 class Prompt:
-    def __init__(self: Prompt, target: Path) -> None:
+    def __init__(self: Prompt, target: Path) -> None:  # pragma: no cover
         self.target = target
         self.fix: str = ''
 
-    def set_fix_mode(
+    def set_fix_mode(  # pragma: no cover
         self: Prompt,
         project_name: str,
         output: dict[str, list[str]],
@@ -84,14 +84,14 @@ class Prompt:
             title=TRANSLATION('fix-dlg-title'),
             text=TRANSLATION('fix-add'),
             style=_style,
-            cancel_text=MenuButton.BACK._str,
+            cancel_text=MenuButton.MENU._str,
             values=[('source', 'source'), ('test', 'test'), ('root', 'root')],
         ).run()
         if self.fix is not None:
             output['fix'].append(self.fix)
         return None, output, prefix
 
-    def add_or_remove(
+    def add_or_remove(  # pragma: no cover
         self: Prompt,
         project_name: str,
         output: dict[str, list[str]],

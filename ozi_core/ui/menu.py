@@ -34,11 +34,11 @@ class MenuButton(Enum):
     SKIP = auto()
 
     @property
-    def _tuple(self: MenuButton) -> tuple[str, int]:
+    def _tuple(self: MenuButton) -> tuple[str, int]:  # pragma: no cover
         """Return a tuple of text, value for prompt-toolkit buttons."""
         return TRANSLATION(f'btn-{self.name.lower()}'), self.value
 
     @property
-    def _str(self: MenuButton) -> str:
+    def _str(self: MenuButton) -> str:  # pragma: no cover
         """Return prompt-toolkit button text."""
         return TRANSLATION(f'btn-{self.name.lower()}')

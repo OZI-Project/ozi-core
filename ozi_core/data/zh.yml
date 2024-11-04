@@ -11,16 +11,20 @@ adm-disclaimer-text: >
 adm-disclaimer-title: 免責聲明
 adm-maintainers: 除了作者之外，『$project_name』还有其他维护者吗？
 adm-metadata: 元数据：
+btn-add: 新增
 btn-back: 返回
+btn-edit: 编辑
 btn-exit: 退出
 btn-menu: 選單
+btn-metadata: 查看元数据
 btn-no: 不
 btn-ok: 好的
+btn-options: 更改选项
 btn-prompt: 提示符
+btn-remove: 删除
+btn-reset: 重置
 btn-skip: 跳过
 btn-yes: 是的
-new-dlg-title: ｏｚｉ－ｎｅｗ 互 動 提 示 符
-fix-dlg-title: ｏｚｉ－ｆｉｘ 互 動 提 示 符
 edit-menu-btn-audience: 目标受众（Ｉｎｔｅｎｄｅｄ　Ａｕｄｉｅｎｃｅ）
 edit-menu-btn-author: 作者（Ａｕｔｈｏｒ）
 edit-menu-btn-email: 电子邮件（Ａｕｔｈｏｒ－ｅｍａｉｌ）
@@ -55,12 +59,11 @@ err-no-empty: 不能为空。
 err-pkg-not-found: 找不到包包。
 err-too-long: 输入太长。
 err-version-check: ＯＺＩ软件包版本检查失败，状态代码为：$status
+fix-add: 选择要添加或删除的文件类型：
+fix-add-or-remove: 使用添加或删除按钮查找要添加或删除的文件：
+fix-dlg-title: ｏｚｉ－ｆｉｘ 互 動 提 示 符
 lang-en: 英语（Ｅｎｇｌｉｓｈ）
 lang-zh: 简体中文
-btn-edit: 编辑
-btn-metadata: 查看元数据
-btn-options: 更改选项
-btn-reset: 重置
 main-menu-text: 選單，选择动作：
 main-menu-yn-exit: 退出提示符？
 main-menu-yn-reset: 重置提示并重新开始？
@@ -70,6 +73,7 @@ msg-input-invalid: >
   $errmsg
 
   按『↵』持续
+new-dlg-title: ｏｚｉ－ｎｅｗ 互 動 提 示 符
 opt-menu-allow-file: 允许的归档正规表示式⋯⋯
 opt-menu-allow-file-input: 编辑允许的存档正规表示式：
 opt-menu-ci-provider: 持续整合提供者⋯⋯
@@ -132,10 +136,8 @@ pro-readme-type-radio-md: 轻量级标记语言Ｍａｒｋｄｏｗｎ
 pro-readme-type-radio-rst: 轻量级标记语言ｒｅＳｔｒｕｃｔｕｒｅｄＴｅｘｔ
 pro-readme-type-radio-txt: 纯文本
 pro-requires-dist: 新增或删除对『$projectname』的依赖关系要求。
-btn-add: 新增
 pro-requires-dist-cbl-remove: 选择要删除的包：
 pro-requires-dist-msg-remove-no-requirements: 没有删除请求。
-btn-remove: 删除
 pro-requires-dist-search: 搜寻ＰｙＰＩ包：
 pro-summary: >
   项目『$projectname』是做什么的？
@@ -146,12 +148,16 @@ pro-typing-radio-stubs-only: 仅限类型检查存根（Ｓｔｕｂｓ　Ｏｎ
 pro-typing-radio-typed: 类型检查（Ｔｙｐｅｄ）
 term-choices: 选择
 term-ci-provider: 持续集成和发布提供商
+term-classifier: 分类器
+term-comment-diagnostic: 评论诊断
 term-continuous-integration-checkpoints: 持续集成检查点
 term-copyright-head: 版权标题字符串
+term-custom: 定制
 term-default-metadata: 默认元数据
 term-defaults: 默认值
 term-desc-new-interactive: 使用交互式提示通过ＯＺＩ创建一个新的Ｐｙｔｈｏｎ项目。
 term-desc-new-project: 使用ＯＺＩ创建一个新的Ｐｙｔｈｏｎ项目
+term-found: 成立
 term-help: $name（$text）
 term-help-allow-file: 在新项目目标文件夹中
 term-help-audience: 使用零次或多次
@@ -165,6 +171,7 @@ term-help-enable-uv: 使用ｕｖ编译并安装Ｐｙｔｈｏｎ要求，默�
 term-help-environment: 使用零次或多次
 term-help-fix: 显示ozi-fix命令的帮助
 term-help-fix-add: 向项目添加文件或目录
+term-help-fix-interactive: 以交互方式将缺少的源文件和测试文件添加到项目中。
 term-help-fix-missing: 检查您的ＯＺＩ项目是否缺少文件。
 term-help-fix-remove: 从项目中删除文件或目录
 term-help-fix-source: 在ＯＺＩ项目中创建一个新的Ｐｙｔｈｏｎ源。
@@ -200,6 +207,7 @@ term-help-typing: 使用零次或多次
 term-help-valid-license-expression: 验证ＳＰＤＸ许可证表达式。
 term-help-verify-email: 验证电子邮件域的可传递性，默认：否
 term-help-version: 打印当前版本并退出。
+term-missing: 丢失的
 term-optional-metadata: 可选元数据
 term-options: 选项
 term-output: 输出
@@ -209,38 +217,33 @@ term-project-authoring-console-app: 项目创作控制台应用程序
 term-project-maintenance-console-app: 项目维护控制台应用程序
 term-required: 需要
 term-required-metadata: 必需元数据
+term-score: 比分
 term-see-ref: 参见参考：
 term-spdx-license-expression: （ＳＰＤＸ许可证表达式）
-term-tap-dev-version: ＯＺＩ软件包是开发版本
-term-tap-first-license: 多个许可证匹配，仅选择第一个
-term-tap-up-to-date: ＯＺＩ软件包已更新
-term-tap-user-template-not-found: 未找到用户模板
-term-tap-https-only: 仅支持『https://』ＵＲＬ方案
-term-tap-netloc: 网络位置
-term-tap-empty-netloc: ＵＲＬ网络位置为空
-term-tap-url-scheme: ＵＲＬ方案
-term-tap-unsupported-url-scheme: 不支持ＵＲＬ方案
-term-tap-summary-gt512: '＞５１２个字符限制'
-term-tap-name-gt32: 名称＞３２个字符
-term-tap-target-not-empty: 该目录不为空，不会创建任何文件
-term-tap-ambiguous-pep639: 根据ＰＥＰ－６３９存在歧义
+term-subdir: 子目錄
 term-tap-ambiguous-license: 如果许可证不明确，请将『--license-expression』设置为基于以下内容的许可证：
-term-tap-header-name-not-found: 未找到项目名称
+term-tap-ambiguous-pep639: 根据ＰＥＰ－６３９存在歧义
+term-tap-dev-version: ＯＺＩ软件包是开发版本
+term-tap-empty-netloc: ＵＲＬ网络位置为空
+term-tap-first-license: 多个许可证匹配，仅选择第一个
 term-tap-header-license-file-not-found: 未找到许可证文件名
-term-tap-identical-email: 一个或多个作者电子邮件和维护者电子邮件相同
+term-tap-header-name-not-found: 未找到项目名称
+term-tap-https-only: 仅支持『https://』ＵＲＬ方案
 term-tap-identical-author: 作者和维护者是同一个
-term-tap-leave-blank: 『$key』应为空
-term-tap-not-set: 『$key』未设置
+term-tap-identical-email: 一个或多个作者电子邮件和维护者电子邮件相同
 term-tap-invalid-ci-provider: 『--ci-provider $ciprovider』无法识别。用户将不会被设置
-term-custom: 定制
+term-tap-leave-blank: 『$key』应为空
+term-tap-meson-build-license-array: 在『meson.build』中发现了一个许可证数组，ＯＺＩ只会使用第一个。
+term-tap-name-gt32: 名称＞３２个字符
+term-tap-netloc: 网络位置
+term-tap-not-set: 『$key』未设置
+term-tap-summary-gt512: ＞５１２个字符限制
+term-tap-target-not-empty: 该目录不为空，不会创建任何文件
+term-tap-unsupported-url-scheme: 不支持ＵＲＬ方案
+term-tap-up-to-date: ＯＺＩ软件包已更新
+term-tap-url-scheme: ＵＲＬ方案
+term-tap-user-template-not-found: 未找到用户模板
 term-tox-e-dist: 运行分发和打包
 term-tox-e-lint: 运行格式化、静态分析和类型检查
 term-tox-e-test: 运行测试和覆盖率
-term-classifier: 分类器
-term-missing: 丢失的
-term-found: 成立
-term-subdir: 子目錄
 term-warn-remove-dir: 无法删除非空或不存在的$key：『$child』
-term-comment-diagnostic: 评论诊断
-term-score: 比分
-term-tap-meson-build-license-array: 在『meson.build』中发现了一个许可证数组，ＯＺＩ只会使用第一个。

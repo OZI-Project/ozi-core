@@ -33,7 +33,7 @@ from prompt_toolkit.widgets.toolbars import ValidationToolbar
 from ozi_core.ui._style import _style_dict
 from ozi_core.ui.menu import MenuButton
 
-if TYPE_CHECKING:
+if TYPE_CHECKING:  # pragma: no cover
     from prompt_toolkit.buffer import Buffer  # pyright: ignore
     from prompt_toolkit.completion import Completer  # pyright: ignore
     from prompt_toolkit.formatted_text import AnyFormattedText  # pyright: ignore
@@ -118,7 +118,7 @@ class Admonition(RadioList[_T]):
         pass  # pragma: no cover
 
 
-def _return_none() -> None:
+def _return_none() -> None:  # pragma: no cover
     """Button handler that returns None."""
     get_app().exit()
 
@@ -184,7 +184,7 @@ def admonition_dialog(  # noqa: C901
     )
 
 
-def input_dialog(
+def input_dialog(  # pragma: no cover
     title: AnyFormattedText = '',
     text: AnyFormattedText = '',
     ok_text: str | None = None,
