@@ -1,8 +1,5 @@
 from __future__ import annotations
 
-from enum import Enum
-from enum import auto
-from enum import unique
 from typing import Any
 
 from ozi_spec import METADATA
@@ -12,35 +9,13 @@ from prompt_toolkit.shortcuts import radiolist_dialog  # pyright: ignore
 from prompt_toolkit.shortcuts import yes_no_dialog  # pyright: ignore
 
 from ozi_core._i18n import TRANSLATION
-from ozi_core.new.interactive._style import _style
-from ozi_core.new.interactive.dialog import admonition_dialog
-from ozi_core.new.interactive.dialog import input_dialog
 from ozi_core.trove import Prefix
 from ozi_core.trove import from_prefix
-
-
-def checkbox(checked: bool) -> str:  # pragma: no cover
-    if checked:
-        return '☑'
-    else:
-        return '☐'
-
-
-@unique
-class MenuButton(Enum):
-    """Non-composable menu action enum."""
-
-    ADD = auto()
-    BACK = auto()
-    EDIT = auto()
-    EXIT = auto()
-    MENU = auto()
-    METADATA = auto()
-    OK = auto()
-    OPTIONS = auto()
-    PROMPT = auto()
-    REMOVE = auto()
-    RESET = auto()
+from ozi_core.ui._style import _style
+from ozi_core.ui.dialog import admonition_dialog
+from ozi_core.ui.dialog import input_dialog
+from ozi_core.ui.menu import MenuButton
+from ozi_core.ui.menu import checkbox
 
 
 def main_menu(  # pragma: no cover
@@ -50,55 +25,55 @@ def main_menu(  # pragma: no cover
 ) -> tuple[None | list[str] | bool, dict[str, list[str]], dict[str, str]]:
     while True:
         match button_dialog(
-            title=TRANSLATION('dlg-title'),
+            title=TRANSLATION('new-dlg-title'),
             text=TRANSLATION('main-menu-text'),
             buttons=[
-                (TRANSLATION('main-menu-btn-metadata'), MenuButton.METADATA),
-                (TRANSLATION('main-menu-btn-options'), MenuButton.OPTIONS),
-                (TRANSLATION('main-menu-btn-reset'), MenuButton.RESET),
-                (TRANSLATION('btn-exit'), MenuButton.EXIT),
-                (TRANSLATION('main-menu-btn-edit'), MenuButton.EDIT),
-                (TRANSLATION('btn-back'), MenuButton.BACK),
+                MenuButton.METADATA._tuple,
+                MenuButton.OPTIONS._tuple,
+                MenuButton.RESET._tuple,
+                MenuButton.EXIT._tuple,
+                MenuButton.EDIT._tuple,
+                MenuButton.BACK._tuple,
             ],
             style=_style,
         ).run():
-            case MenuButton.BACK:
+            case MenuButton.BACK.value:
                 break
-            case MenuButton.RESET:
+            case MenuButton.RESET.value:
                 if yes_no_dialog(
-                    title=TRANSLATION('dlg-title'),
+                    title=TRANSLATION('new-dlg-title'),
                     text=TRANSLATION('main-menu-yn-reset'),
                     style=_style,
-                    yes_text=TRANSLATION('btn-yes'),
-                    no_text=TRANSLATION('btn-no'),
+                    yes_text=MenuButton.YES._str,
+                    no_text=MenuButton.NO._str,
                 ).run():
                     return ['interactive', '.'], output, prefix
-            case MenuButton.EXIT:
+            case MenuButton.EXIT.value:
                 if yes_no_dialog(
-                    title=TRANSLATION('dlg-title'),
+                    title=TRANSLATION('new-dlg-title'),
                     text=TRANSLATION('main-menu-yn-exit'),
                     style=_style,
-                    yes_text=TRANSLATION('btn-yes'),
-                    no_text=TRANSLATION('btn-no'),
+                    yes_text=MenuButton.YES._str,
+                    no_text=MenuButton.NO._str,
                 ).run():
                     return [], output, prefix
-            case MenuButton.EDIT:
+            case MenuButton.EDIT.value:
                 result, output, prefix = edit_menu(project, output, prefix)
                 if isinstance(result, list):
                     return result, output, prefix
-            case MenuButton.OPTIONS:
+            case MenuButton.OPTIONS.value:
                 result, output, prefix = options_menu(project, output, prefix)
                 if isinstance(result, list):
                     return result, output, prefix
-            case MenuButton.METADATA:
+            case MenuButton.METADATA.value:
                 if admonition_dialog(
-                    title=TRANSLATION('dlg-title'),
+                    title=TRANSLATION('new-dlg-title'),
                     heading_label=TRANSLATION('adm-metadata'),
                     text='\n'.join(
                         prefix.values() if len(prefix) > 0 else {'Name:': 'Name:'},
                     ),
-                    ok_text=TRANSLATION('btn-prompt'),
-                    cancel_text=TRANSLATION('btn-back'),
+                    ok_text=MenuButton.PROMPT._str,
+                    cancel_text=MenuButton.BACK._str,
                 ).run():
                     break
     return None, output, prefix
@@ -112,7 +87,7 @@ def options_menu(  # pragma: no cover
     _default: str | list[str] | None = None
     while True:
         match radiolist_dialog(
-            title=TRANSLATION('dlg-title'),
+            title=TRANSLATION('new-dlg-title'),
             text=TRANSLATION('opt-menu-title'),
             values=[
                 (
@@ -159,8 +134,8 @@ def options_menu(  # pragma: no cover
                 ),
             ],
             style=_style,
-            cancel_text=TRANSLATION('btn-back'),
-            ok_text=TRANSLATION('btn-ok'),
+            cancel_text=MenuButton.BACK._str,
+            ok_text=MenuButton.OK._str,
         ).run():
             case x if x and x in (
                 'enable_cython',
@@ -212,11 +187,11 @@ def options_menu(  # pragma: no cover
                     ],
                 )
                 result = input_dialog(
-                    title=TRANSLATION('dlg-title'),
+                    title=TRANSLATION('new-dlg-title'),
                     text=TRANSLATION('opt-menu-copyright-head-input'),
                     style=_style,
-                    cancel_text=TRANSLATION('btn-back'),
-                    ok_text=TRANSLATION('btn-ok'),
+                    cancel_text=MenuButton.BACK._str,
+                    ok_text=MenuButton.OK._str,
                     default=_default[0],
                     multiline=True,
                 ).run()
@@ -229,11 +204,11 @@ def options_menu(  # pragma: no cover
                     list(METADATA.spec.python.src.allow_files),
                 )
                 result = input_dialog(
-                    title=TRANSLATION('dlg-title'),
+                    title=TRANSLATION('new-dlg-title'),
                     text=TRANSLATION('opt-menu-allow-file-input'),
                     style=_style,
-                    cancel_text=TRANSLATION('btn-back'),
-                    ok_text=TRANSLATION('btn-ok'),
+                    cancel_text=MenuButton.BACK._str,
+                    ok_text=MenuButton.OK._str,
                     default=','.join(_default),
                 ).run()
                 if result != ','.join(_default) and result is not None:
@@ -242,11 +217,11 @@ def options_menu(  # pragma: no cover
             case x if x and x == 'ci_provider':
                 _default = output.setdefault('--ci-provider', ['github'])
                 result = radiolist_dialog(
-                    title=TRANSLATION('dlg-title'),
+                    title=TRANSLATION('new-dlg-title'),
                     text=TRANSLATION('opt-menu-ci-provider-input'),
                     values=[('github', 'GitHub')],
-                    cancel_text=TRANSLATION('btn-back'),
-                    ok_text=TRANSLATION('btn-ok'),
+                    cancel_text=MenuButton.BACK._str,
+                    ok_text=MenuButton.OK._str,
                     default=_default[0],
                     style=_style,
                 ).run()
@@ -255,7 +230,7 @@ def options_menu(  # pragma: no cover
                     output.update({'--ci-provider': [project.ci_provider]})
             case x if x == 'language':
                 result = radiolist_dialog(
-                    title=TRANSLATION('dlg-title'),
+                    title=TRANSLATION('new-dlg-title'),
                     text=TRANSLATION('opt-menu-language-text'),
                     values=list(
                         zip(
@@ -263,8 +238,8 @@ def options_menu(  # pragma: no cover
                             [TRANSLATION(f'lang-{i}') for i in TRANSLATION.data.keys()],
                         ),
                     ),
-                    cancel_text=TRANSLATION('btn-back'),
-                    ok_text=TRANSLATION('btn-ok'),
+                    cancel_text=MenuButton.BACK._str,
+                    ok_text=MenuButton.OK._str,
                     default=TRANSLATION.locale,
                     style=_style,
                 ).run()
@@ -282,7 +257,7 @@ def edit_menu(  # pragma: no cover
 ) -> tuple[None | list[str] | bool, dict[str, list[str]], dict[str, str]]:
     while True:
         match radiolist_dialog(
-            title=TRANSLATION('dlg-title'),
+            title=TRANSLATION('new-dlg-title'),
             text=TRANSLATION('edit-menu-text'),
             values=[
                 ('name', TRANSLATION('edit-menu-btn-name')),
@@ -316,8 +291,8 @@ def edit_menu(  # pragma: no cover
                 ('typing', TRANSLATION('edit-menu-btn-typing')),
                 ('readme_type', TRANSLATION('edit-menu-btn-readme-type')),
             ],
-            cancel_text=TRANSLATION('btn-back'),
-            ok_text=TRANSLATION('btn-ok'),
+            cancel_text=MenuButton.BACK._str,
+            ok_text=MenuButton.OK._str,
             style=_style,
         ).run():
             case None:
@@ -380,14 +355,14 @@ def edit_menu(  # pragma: no cover
                                     )
                                 ),
                             ),
-                            title=TRANSLATION('dlg-title'),
+                            title=TRANSLATION('new-dlg-title'),
                             text=TRANSLATION(
                                 'pro-classifier-cbl',
                                 key=TRANSLATION(f'edit-menu-btn-{x}'),
                             ),
                             style=_style,
-                            ok_text=TRANSLATION('btn-ok'),
-                            cancel_text=TRANSLATION('btn-back'),
+                            ok_text=MenuButton.OK._str,
+                            cancel_text=MenuButton.BACK._str,
                         ).run()
                         if classifier is not None:
                             for i in classifier:

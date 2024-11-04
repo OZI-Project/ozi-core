@@ -5,10 +5,6 @@
 config_files = [
     '__init__.py',
     '__init__.pyi',
-    '_style.py',
-    '_style.pyi',
-    'dialog.py',
-    'dialog.pyi',
     'menu.py',
     'menu.pyi',
     'project.py',
