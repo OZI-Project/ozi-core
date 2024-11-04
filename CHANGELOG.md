@@ -1,4 +1,26 @@
 # ozi-core CHANGELOG
+## 1.4.7 (2024-11-04)
+
+
+### Performance improvements
+
+
+* perf: add translated strings to ozi-fix interactive — rjdbcm <rjdbcm@outlook.com>
+([`ac1f0e6`](https://github.com/OZI-Project/ozi-core/commit/ac1f0e63c0711e45548a304f517b00c2e5799b92))
+
+* perf: fix.build_definition.walk function now a generator — rjdbcm <rjdbcm@outlook.com>
+([`86385ad`](https://github.com/OZI-Project/ozi-core/commit/86385ad0af04a619a8d8152545fa6fd4dd8cf39d))
+
+* perf: refactor UI to add an ozi-fix interactive mode — rjdbcm <rjdbcm@outlook.com>
+([`980831d`](https://github.com/OZI-Project/ozi-core/commit/980831d967ce3067bec5c8a8e5e3b24632990c7d))
+
+
+### Unknown
+
+
+* :hammer: refactor UI to add an ozi-fix interactive mode — rjdbcm <rjdbcm@outlook.com>
+([`4734d92`](https://github.com/OZI-Project/ozi-core/commit/4734d9279656cbbceff075c385e7f3e951e48817))
+
 ## 1.4.6 (2024-11-01)
 
 
