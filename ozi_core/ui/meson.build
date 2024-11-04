@@ -13,7 +13,7 @@ config_files = [
 ]
 foreach file: config_files
     if not meson.is_subproject() or get_option('install-subprojects').enabled()
-        python.install_sources(file, subdir: 'ozi_core'/'new'/'interactive')
+        python.install_sources(file, subdir: 'ozi_core'/'ui')
     endif
     fs.copyfile(file)
 endforeach
