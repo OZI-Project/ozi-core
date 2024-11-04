@@ -19,16 +19,15 @@ adm-maintainers: >
   Are there any maintainers of $project_name?
 
   (other than the author or authors)
-adm-metadata: "PKG-INFO Metadata:"
-btn-back: "← Back"
-btn-exit: "✘ Exit"
-btn-menu: "☰  Menu"
-btn-no: "No"
-btn-ok: "✔ Ok"
-btn-prompt: "⌂ Prompt"
-btn-skip: "⇒ Skip"
-btn-yes: "Yes"
-dlg-title: ozi-new interactive prompt
+adm-metadata: 'PKG-INFO Metadata:'
+btn-back: ← Back
+btn-exit: ✘ Exit
+btn-menu: ☰  Menu
+btn-no: 'No'
+btn-ok: ✔ Ok
+btn-prompt: ⌂ Prompt
+btn-skip: ⇒ Skip
+btn-yes: 'Yes'
 edit-menu-btn-audience: Intended Audience
 edit-menu-btn-author: Author
 edit-menu-btn-email: Author-email
@@ -50,27 +49,28 @@ edit-menu-btn-status: Status
 edit-menu-btn-summary: Summary
 edit-menu-btn-topic: Topic
 edit-menu-btn-typing: Typing
-edit-menu-text: "Edit menu, select content to edit:"
+edit-menu-text: 'Edit menu, select content to edit:'
 err-name-exists: project with that name exists.
 err-name-invalid: invalid project name.
+fix-dlg-title: ozi-fix interactive prompt
+new-dlg-title: ozi-new interactive prompt
 err-new-version: A newer version of OZI ($latest > $currentversion), available
   for download on PyPI
 err-no-close-match: >
   There is no available $key option matching "$value".
 
   List available options:
+btn-edit: ✎ Edit
+btn-metadata: ∋ Metadata
+btn-options: ⚙ Options
+btn-reset: ↺ Reset
 err-no-empty: cannot not be empty.
 err-pkg-not-found: package not found.
-
 err-too-long: input is too long.
 err-version-check: OZI package version check failed with status code $status
 lang-en: English
 lang-zh: 简体中文 Chinese (Simplified)
-main-menu-btn-edit: "✎ Edit"
-main-menu-btn-metadata: "∋ Metadata"
-main-menu-btn-options: "⚙ Options"
-main-menu-btn-reset: "↺ Reset"
-main-menu-text: "Main menu, select an action:"
+main-menu-text: 'Main menu, select an action:'
 main-menu-yn-exit: Exit the prompt?
 main-menu-yn-reset: Reset prompt and start over?
 msg-input-invalid: >
@@ -80,19 +80,19 @@ msg-input-invalid: >
 
   Press ENTER to continue.
 opt-menu-allow-file: Allow File Patterns ...
-opt-menu-allow-file-input: "Edit allowed existing files:"
+opt-menu-allow-file-input: 'Edit allowed existing files:'
 opt-menu-ci-provider: CI Provider ...
-opt-menu-ci-provider-input: "Change continuous integration providers:"
+opt-menu-ci-provider-input: 'Change continuous integration providers:'
 opt-menu-copyright-head: Copyright Header ...
-opt-menu-copyright-head-input: "Edit copyright header:"
-opt-menu-enable-cython: "Enable Cython: $value"
-opt-menu-enable-uv: "Enable uv: $value"
-opt-menu-github-harden-runner: "Hardened GitHub CI/CD: $value"
+opt-menu-copyright-head-input: 'Edit copyright header:'
+opt-menu-enable-cython: 'Enable Cython: $value'
+opt-menu-enable-uv: 'Enable uv: $value'
+opt-menu-github-harden-runner: 'Hardened GitHub CI/CD: $value'
 opt-menu-language: 'Interface Language: $value'
 opt-menu-language-text: 'Select the user interface language:'
-opt-menu-strict: "Strict Mode: $value"
-opt-menu-title: "Options menu, select an option:"
-opt-menu-verify-email: "Verify Email: $value"
+opt-menu-strict: 'Strict Mode: $value'
+opt-menu-title: 'Options menu, select an option:'
+opt-menu-verify-email: 'Verify Email: $value'
 pro-author: >
   Who is the author or authors of $projectname?
 
@@ -131,38 +131,44 @@ pro-name: >
   What is the name of the project?
 
   (PyPI package name: no spaces, alphanumeric words, ".-_" as delimiters)
-pro-project-urls-cbl: "Please select project URLs you want to add to $projectname:"
+btn-add: Add
+btn-remove: Remove
+pro-project-urls-cbl: 'Please select project URLs you want to add to $projectname:'
 pro-project-urls-cbl-bug-report: Bug Report
 pro-project-urls-cbl-changelog: Changelog
 pro-project-urls-cbl-documentation: Documentation
 pro-project-urls-cbl-funding: Funding
 pro-project-urls-cbl-source: Source
-pro-project-urls-input: "Please enter the $urltype URL for $projectname:"
-pro-readme-type: "Please select README type for $projectname:"
+pro-project-urls-input: 'Please enter the $urltype URL for $projectname:'
+pro-readme-type: 'Please select README type for $projectname:'
 pro-readme-type-radio-md: Markdown
 pro-readme-type-radio-rst: reStructuredText
 pro-readme-type-radio-txt: Plaintext
 pro-requires-dist: Add or remove dependency requirements to $projectname
-pro-requires-dist-add: Add
-pro-requires-dist-cbl-remove: "Select packages to delete:"
+pro-requires-dist-cbl-remove: 'Select packages to delete:'
 pro-requires-dist-msg-remove-no-requirements: No requirements to remove.
-pro-requires-dist-remove: Remove
-pro-requires-dist-search: "Search PyPI packages:"
+pro-requires-dist-search: 'Search PyPI packages:'
 pro-summary: >
   What does the project, $projectname, do?
 
   (a short summary 1-2 sentences)
-pro-typing: "Please select typing classifier for $projectname:"
+fix-add: 'Select the kind of files to add:'
+fix-add-or-remove: 'Use add or remove button to find files to add or remove:'
+pro-typing: 'Please select typing classifier for $projectname:'
 pro-typing-radio-stubs-only: Stubs Only
 pro-typing-radio-typed: Typed
 term-choices: choices
 term-ci-provider: continuous integration and release provider
+term-classifier: Classifier
+term-comment-diagnostic: comment diagnostic
 term-continuous-integration-checkpoints: continuous integration checkpoints
 term-copyright-head: copyright header string
+term-custom: custom
 term-default-metadata: default metadata
 term-defaults: defaults
 term-desc-new-interactive: Create a new Python project with OZI using the interactive prompt.
 term-desc-new-project: Create a new Python project with OZI.
+term-found: found
 term-help: $name ($text)
 term-help-allow-file: In the new project target folder
 term-help-audience: use zero or more times
@@ -170,12 +176,13 @@ term-help-author: use zero or more times, single output
 term-help-author-email: use zero or more times, single output
 term-help-check-package-exists: 'check if the package name exists on PyPI, default: yes'
 term-help-check-version: Check for a newer version of OZI and exit.
-term-help-default: "$name ($text) defaults to: $default"
+term-help-default: '$name ($text) defaults to: $default'
 term-help-enable-cython: 'use Cython to build Python extension modules. default: no'
 term-help-enable-uv: 'Use uv to compile and install Python requirements, default: no'
 term-help-environment: use zero or more times
 term-help-fix: show help for the ozi-fix command
 term-help-fix-add: add files or directories to a project
+term-help-fix-interactive: Add missing source and test files to a project interactively.
 term-help-fix-missing: Check your OZI project for missing files.
 term-help-fix-remove: remove files or directories from a project
 term-help-fix-source: Create a new Python source in an OZI project.
@@ -211,6 +218,7 @@ term-help-typing: use zero or more times
 term-help-valid-license-expression: Validate a SPDX license expression.
 term-help-verify-email: 'verify deliverability of email domain, default: no'
 term-help-version: Print the current version and exit.
+term-missing: missing
 term-optional-metadata: optional metadata
 term-options: options
 term-output: output
@@ -220,42 +228,36 @@ term-project-authoring-console-app: project authoring console app
 term-project-maintenance-console-app: project maintenance console app
 term-required: required
 term-required-metadata: required metadata
+term-score: score
 term-see-ref: See
-term-spdx-license-expression:
+term-spdx-license-expression: null
+term-subdir: subdir
+term-tap-ambiguous-license: |
+  ambiguous license, set --license-expression to one based on the following:
+term-tap-ambiguous-pep639: ambiguous per PEP-639
 term-tap-dev-version: The OZI package is a development version
-term-tap-first-license: Multiple licenses match, only the first one is selected
-term-tap-https-only: only https:// URL scheme is supported
-term-tap-netloc: URL netloc
 term-tap-empty-netloc: URL netloc blank
-term-tap-url-scheme: URL scheme
-term-tap-unsupported-url-scheme: URL scheme unsupported
+term-tap-first-license: Multiple licenses match, only the first one is selected
+term-tap-header-license-file-not-found: license file name not found
+term-tap-header-name-not-found: project name not found
+term-tap-https-only: only https:// URL scheme is supported
+term-tap-identical-email: one or more Author-email and Maintainer-email are the same
+term-tap-invalid-ci-provider: '--ci-provider $ciprovider unrecognized. user will not be set.'
+term-tap-leave-blank: $key should be left blank
+term-tap-meson-build-license-array: An array of licenses is found in meson.build, OZI will only use the first one.
 term-tap-name-gt32: >
   >32 character limit
+term-tap-netloc: URL netloc
+term-tap-not-set: $key is not set
 term-tap-summary-gt512: >
   >512 character limit
 term-tap-target-not-empty: the directory is not empty and no files will be created
-term-tap-ambiguous-pep639: ambiguous per PEP-639
-term-tap-ambiguous-license: >
-  ambiguous license, set --license-expression to one based on the following:
-term-custom: custom
-term-tap-header-name-not-found: project name not found
-term-tap-header-license-file-not-found: license file name not found
-term-tap-identical-email: one or more Author-email and Maintainer-email are the same
-term-tap-identical-author: the Author and Maintainer are the same
-term-tap-leave-blank: $key should be left blank
-term-tap-not-set: $key is not set
-term-tap-invalid-ci-provider: --ci-provider $ciprovider unrecognized. user will not be set.
+term-tap-unsupported-url-scheme: URL scheme unsupported
 term-tap-up-to-date: The OZI package has been updated
+term-tap-url-scheme: URL scheme
 term-tap-user-template-not-found: User template not found
 term-tox-e-dist: run distribution and packaging
 term-tox-e-lint: run formatting, static analysis, and type checking
 term-tox-e-test: run tests and coverage
-term-classifier: Classifier
-term-missing: missing
-term-found: found
-term-subdir: subdir
-term-warn-remove-dir: >
+term-warn-remove-dir: |
   Cannot delete a non-empty or non-existent $key: "$child"
-term-comment-diagnostic: comment diagnostic
-term-score: score
-term-tap-meson-build-license-array: An array of licenses is found in meson.build, OZI will only use the first one.
