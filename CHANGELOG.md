@@ -1,4 +1,13 @@
 # ozi-core CHANGELOG
+## 1.4.8 (2024-11-04)
+
+
+### Bug fixes
+
+
+* fix: correct ui submodule install path — rjdbcm <rjdbcm@outlook.com>
+([`f9f0969`](https://github.com/OZI-Project/ozi-core/commit/f9f0969a4e9b897f1f9c223f8ab316bd651e69c1))
+
 ## 1.4.7 (2024-11-04)
 
 
