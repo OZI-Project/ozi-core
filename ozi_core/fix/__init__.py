@@ -10,6 +10,7 @@ import os
 import sys
 from contextlib import suppress
 from pathlib import Path
+from subprocess import PIPE, Popen
 from typing import TYPE_CHECKING
 from typing import NoReturn
 from unittest.mock import Mock
@@ -92,7 +93,17 @@ def main(args: list[str] | None = None) -> NoReturn:  # pragma: no cover
                 rewriter -= project.remove
                 TAP.plan()
             if len(project.add) > 0 or len(project.remove) > 0:
-                print(json.dumps(rewriter.commands, indent=4 if project.pretty else None))
+                out = json.dumps(rewriter.commands, indent=4 if project.pretty else None)
+                if project.interactive_io:
+                    res = Popen(
+                        ['tox', '-e', 'invoke', '--', 'rewrite', out],
+                        stdin=PIPE,
+                    )
+                    res.communicate()
+                    if res.returncode != 0:
+                        TAP.comment('ozi-fix failed to rewrite project files')
+                else:
+                    print(out)
             else:
                 parser.print_help()
         case [False, True, True]:
