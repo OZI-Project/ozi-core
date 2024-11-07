@@ -184,7 +184,7 @@ class Prompt:
 
 
 def interactive_prompt(project: Namespace) -> list[str]:  # pragma: no cover # noqa: C901
-    ret_args = ['source']
+    ret_args = []
     try:
         curses.setupterm()
         e3 = curses.tigetstr('E3') or b''
@@ -208,4 +208,4 @@ def interactive_prompt(project: Namespace) -> list[str]:  # pragma: no cover # n
         for i in v:
             if len(i) > 0:
                 ret_args += [k, i]
-    return fix + ret_args + ['.']
+    return fix + ret_args + ['--interactive-io', '.']
