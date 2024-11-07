@@ -1,4 +1,84 @@
 # ozi-core CHANGELOG
+## 1.4.9 (2024-11-07)
+
+
+### Bug fixes
+
+
+* fix: ozi-templates~=2.13.11 — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`cbea6d8`](https://github.com/OZI-Project/ozi-core/commit/cbea6d8c8f6105fe9750932cfde8dd286293fd31))
+
+* fix: ozi-spec 0.11.5 — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`43feb7b`](https://github.com/OZI-Project/ozi-core/commit/43feb7bf31fdd8fb065cb9b4272ed5be202b4a90))
+
+
+### Build system
+
+
+* build(deps): bump OZI-Project/publish from 1.4.0 to 1.4.1
+
+Bumps [OZI-Project/publish](https://github.com/ozi-project/publish) from 1.4.0 to 1.4.1.
+- [Release notes](https://github.com/ozi-project/publish/releases)
+- [Commits](https://github.com/ozi-project/publish/compare/1.4.0...1.4.1)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/publish
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`4b23f06`](https://github.com/OZI-Project/ozi-core/commit/4b23f0655ceb2fcd0052d90aedb12757a6e485ad))
+
+## 1.4.8 (2024-11-04)
+
+
+### Bug fixes
+
+
+* fix: correct ui submodule install path — rjdbcm <rjdbcm@outlook.com>
+([`f9f0969`](https://github.com/OZI-Project/ozi-core/commit/f9f0969a4e9b897f1f9c223f8ab316bd651e69c1))
+
+## 1.4.7 (2024-11-04)
+
+
+### Performance improvements
+
+
+* perf: add translated strings to ozi-fix interactive — rjdbcm <rjdbcm@outlook.com>
+([`ac1f0e6`](https://github.com/OZI-Project/ozi-core/commit/ac1f0e63c0711e45548a304f517b00c2e5799b92))
+
+* perf: fix.build_definition.walk function now a generator — rjdbcm <rjdbcm@outlook.com>
+([`86385ad`](https://github.com/OZI-Project/ozi-core/commit/86385ad0af04a619a8d8152545fa6fd4dd8cf39d))
+
+* perf: refactor UI to add an ozi-fix interactive mode — rjdbcm <rjdbcm@outlook.com>
+([`980831d`](https://github.com/OZI-Project/ozi-core/commit/980831d967ce3067bec5c8a8e5e3b24632990c7d))
+
+
+### Unknown
+
+
+* :hammer: refactor UI to add an ozi-fix interactive mode — rjdbcm <rjdbcm@outlook.com>
+([`4734d92`](https://github.com/OZI-Project/ozi-core/commit/4734d9279656cbbceff075c385e7f3e951e48817))
+
+## 1.4.6 (2024-11-01)
+
+
+### Build system
+
+
+* build(endpoints): add sigstore urls to allow list — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`7912ae8`](https://github.com/OZI-Project/ozi-core/commit/7912ae89c67d1a0ff76dea4da81241e7e96d7c8e))
+
+* build(deps): ozi-templates~=2.13.8 — rjdbcm <rjdbcm@outlook.com>
+([`142da4a`](https://github.com/OZI-Project/ozi-core/commit/142da4a639b7286611a5340da2673ec7fd28da80))
+
+
+### Performance improvements
+
+
+* perf: test that harden-runner blocks render — rjdbcm <rjdbcm@outlook.com>
+([`32544ad`](https://github.com/OZI-Project/ozi-core/commit/32544ad35f7e759e188c8e6a9b1d44c0b7c7cd22))
+
 ## 1.4.5 (2024-10-29)
 
 
