@@ -50,18 +50,15 @@ foreach source : root_files
         fs.copyfile(source, 'README.rst')
     endif
 endforeach
-root_children = ['ozi_core', 'tests']
+subdir('ozi_core')
+subdir('tests')
+root_children = []
 foreach child: root_children
     subdir(child)
 endforeach
 if false
     executable('root_files', root_files)
-    executable('source_files', source_files)
-    executable('ext_files', ext_files)
-    executable('test_files', test_files)
     executable('root_children', root_children)
-    executable('source_children', source_children)
-    executable('test_children', test_children)
 endif
 if not meson.is_subproject()
     dev = subproject('ozi')

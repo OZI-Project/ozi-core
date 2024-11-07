@@ -150,6 +150,12 @@ source_output.add_argument(
     action=BooleanOptionalAction,
     help=TRANSLATION('term-help-pretty'),
 )
+source_output.add_argument(
+    '--interactive-io',
+    default=False,
+    action=BooleanOptionalAction,
+    help=SUPPRESS,
+)
 source_parser.add_argument(
     'target',
     type=str,
@@ -195,6 +201,12 @@ test_output.add_argument(
     default=False,
     action=BooleanOptionalAction,
     help=TRANSLATION('term-help-pretty'),
+)
+test_output.add_argument(
+    '--interactive-io',
+    default=False,
+    action=BooleanOptionalAction,
+    help=SUPPRESS,
 )
 test_parser.add_argument(
     'target',
