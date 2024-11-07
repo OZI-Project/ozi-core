@@ -1,4 +1,34 @@
 # ozi-core CHANGELOG
+## 1.4.9 (2024-11-07)
+
+
+### Bug fixes
+
+
+* fix: ozi-templates~=2.13.11 — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`cbea6d8`](https://github.com/OZI-Project/ozi-core/commit/cbea6d8c8f6105fe9750932cfde8dd286293fd31))
+
+* fix: ozi-spec 0.11.5 — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`43feb7b`](https://github.com/OZI-Project/ozi-core/commit/43feb7bf31fdd8fb065cb9b4272ed5be202b4a90))
+
+
+### Build system
+
+
+* build(deps): bump OZI-Project/publish from 1.4.0 to 1.4.1
+
+Bumps [OZI-Project/publish](https://github.com/ozi-project/publish) from 1.4.0 to 1.4.1.
+- [Release notes](https://github.com/ozi-project/publish/releases)
+- [Commits](https://github.com/ozi-project/publish/compare/1.4.0...1.4.1)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/publish
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`4b23f06`](https://github.com/OZI-Project/ozi-core/commit/4b23f0655ceb2fcd0052d90aedb12757a6e485ad))
+
 ## 1.4.8 (2024-11-04)
 
 
