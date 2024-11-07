@@ -197,6 +197,6 @@ jobs:
           rekor.sigstore.dev:443
           tuf-repo-cdn.sigstore.dev:443
 
-    - uses: OZI-Project/publish@1.4.0
+    - uses: OZI-Project/publish@1.4.1
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
