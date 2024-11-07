@@ -10,7 +10,8 @@ import os
 import sys
 from contextlib import suppress
 from pathlib import Path
-from subprocess import PIPE, Popen
+from subprocess import PIPE
+from subprocess import Popen
 from typing import TYPE_CHECKING
 from typing import NoReturn
 from unittest.mock import Mock
