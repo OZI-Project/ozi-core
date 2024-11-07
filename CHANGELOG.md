@@ -1,4 +1,23 @@
 # ozi-core CHANGELOG
+## 1.4.10 (2024-11-07)
+
+
+### Performance improvements
+
+
+* perf(ozi-fix interactive): automatic meson rewriter invocation — rjdbcm <rjdbcm@outlook.com>
+([`ea6a4be`](https://github.com/OZI-Project/ozi-core/commit/ea6a4be3b535036f27d77c543a8d09ea15c1446a))
+
+* perf: OZI 1.24 wrapfile — rjdbcm <rjdbcm@outlook.com>
+([`7cf1644`](https://github.com/OZI-Project/ozi-core/commit/7cf164432c391cfe0c2f9fbae40e00f43b8d447c))
+
+
+### Unknown
+
+
+* lint: run isort — rjdbcm <rjdbcm@outlook.com>
+([`7118775`](https://github.com/OZI-Project/ozi-core/commit/7118775bcb2d5ac238450b42904b8bce53d44e0d))
+
 ## 1.4.9 (2024-11-07)
 
 
