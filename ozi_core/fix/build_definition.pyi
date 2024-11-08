@@ -7,6 +7,12 @@ from typing import Generator
 
 """Build definition check utilities."""
 IGNORE_MISSING = ...
+
+def unroll_subdirs(target: Path, rel_path: Path) -> str:
+    """Opens a meson.build file and returns the file with literal subdir loops converted
+    to single static assignment form.
+    """
+
 def inspect_files(target: Path, rel_path: Path, found_files: list[str], extra_files: list[str]) -> dict[str, list[str]]:
     ...
 

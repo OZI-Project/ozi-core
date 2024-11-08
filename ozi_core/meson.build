@@ -41,16 +41,17 @@ foreach file : files(source_files)
         python.install_sources(file, pure: true, subdir: 'ozi_core')
     endif
 endforeach
-source_children = [
-    'data',
-    'vendor',
-    'fix',
-    'new',
-    'ui',
-]
-foreach child: source_children
+
+source_children = []
+subdir('data')
+subdir('vendor')
+subdir('fix')
+subdir('new')
+subdir('ui')
+foreach child : source_children
     subdir(child)
 endforeach
+
 if false
     executable('source_files', source_files)
     executable('ext_files', ext_files)
