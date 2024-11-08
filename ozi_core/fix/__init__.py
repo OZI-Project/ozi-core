@@ -10,7 +10,8 @@ import os
 import sys
 from contextlib import suppress
 from pathlib import Path
-from subprocess import PIPE, Popen
+from subprocess import PIPE
+from subprocess import Popen
 from typing import TYPE_CHECKING
 from typing import NoReturn
 from unittest.mock import Mock
@@ -30,7 +31,10 @@ from ozi_templates import load_environment
 from ozi_templates.filter import underscorify  # pyright: ignore
 from tap_producer import TAP
 
+from ozi_core.fix.build_definition import unroll_subdirs
+from ozi_core.fix.build_definition import walk
 from ozi_core.fix.interactive import interactive_prompt
+from ozi_core.fix.missing import get_relpath_expected_files
 from ozi_core.fix.missing import report
 from ozi_core.fix.parser import parser
 from ozi_core.fix.rewrite_command import Rewriter
@@ -91,6 +95,12 @@ def main(args: list[str] | None = None) -> NoReturn:  # pragma: no cover
                 rewriter = Rewriter(str(project.target), project.name, project.fix, env)
                 rewriter += project.add
                 rewriter -= project.remove
+                for d in walk(
+                    project.target, get_relpath_expected_files(project.fix, name)[0], []
+                ):
+                    for k in d.keys():
+                        build_text = unroll_subdirs(project.target, k)
+                        Path(project.target / k / 'meson.build').write_text(build_text)
                 TAP.plan()
             if len(project.add) > 0 or len(project.remove) > 0:
                 out = json.dumps(rewriter.commands, indent=4 if project.pretty else None)

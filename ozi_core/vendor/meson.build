@@ -12,7 +12,7 @@ foreach file : files(python_files)
     endif
 endforeach
 if false
-    executable('source_files', python_files)
+    executable('source_child_vendor_files', python_files)
 endif
 source_child_vendor_children = ['email_validator']
 foreach child: source_child_vendor_children
