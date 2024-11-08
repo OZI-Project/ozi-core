@@ -1,4 +1,13 @@
 # ozi-core CHANGELOG
+## 1.4.11 (2024-11-08)
+
+
+### Performance improvements
+
+
+* perf(ozi-fix): unroll ``meson.build`` subdir call loops before outputting rewriter commands — rjdbcm <rjdbcm@outlook.com>
+([`5f71978`](https://github.com/OZI-Project/ozi-core/commit/5f719785602b18b674729f514125caf6e7f3f007))
+
 ## 1.4.10 (2024-11-07)
 
 
