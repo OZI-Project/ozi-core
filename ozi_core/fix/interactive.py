@@ -123,8 +123,8 @@ class Prompt:
                     files = []
                     with TAP.suppress():
                         for d in walk(self.target, rel_path, []):
-                            for k, v in d.items():
-                                files += [str(k / i) for i in v['missing']]
+                            for v in d.values():
+                                files += [str(i) for i in v['missing']]
                     if len(files) > 0:
                         result = checkboxlist_dialog(
                             title=TRANSLATION('fix-dlg-title'),

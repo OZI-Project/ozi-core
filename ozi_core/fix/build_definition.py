@@ -10,6 +10,25 @@ from pathlib import Path
 from typing import Generator
 
 from ozi_spec import METADATA
+from pyparsing import Combine
+from pyparsing import DelimitedList
+from pyparsing import FollowedBy
+from pyparsing import Group
+from pyparsing import Keyword
+from pyparsing import LineEnd
+from pyparsing import Literal
+from pyparsing import OneOrMore
+from pyparsing import Optional
+from pyparsing import SkipTo
+from pyparsing import StringEnd
+from pyparsing import White
+from pyparsing import Word
+from pyparsing import ZeroOrMore
+from pyparsing import alphanums
+from pyparsing import alphas
+from pyparsing import match_previous_literal
+from pyparsing import quoted_string
+from pyparsing import rest_of_line
 from tap_producer import TAP
 
 from ozi_core import comment
@@ -23,6 +42,57 @@ IGNORE_MISSING = {
     *METADATA.spec.python.src.repo.ignore_dirs,
     *METADATA.spec.python.src.allow_files,
 }
+_commasepitem = (
+    Combine(
+        OneOrMore(
+            ~Literal(",")
+            + ~LineEnd()
+            + quoted_string
+            + Optional(White(" \t") + ~FollowedBy(LineEnd() | ","))
+        )
+    )
+    .streamline()
+    .set_name("commaItem")
+)
+comma_separated_list = DelimitedList(
+    Optional(quoted_string.copy() | _commasepitem, default="")
+).set_name("comma separated list")
+SP = White(' ', min=1)
+NL = White('\n', min=1)
+bound = Word(alphas, alphanums + '_')
+assigned = Word(alphas, alphanums + '_')
+array_assign = (
+    assigned + Literal('=') + Literal('[') + Optional(comma_separated_list, default='')
+    | quoted_string + Literal(']') + rest_of_line
+).set_parse_action(
+    lambda t: [
+        ' '.join(t[:3]) + t[-2] + t[-1],  # type: ignore
+        *[f'subdir({i})' for i in t[3:-2] if len(i)],
+    ]
+)
+foreach_bind = (
+    Keyword('foreach') + bound + ':' + match_previous_literal(assigned) + rest_of_line
+).set_parse_action(lambda t: ' '.join(t).strip())
+foreach_end = (Keyword('endforeach') + rest_of_line).set_parse_action(
+    lambda t: ' '.join(t).strip()
+)
+subdir_call = (
+    'subdir(' + match_previous_literal(bound) + ')' + rest_of_line
+).set_parse_action(lambda t: '    ' + ''.join(t))
+literal_subdir_loop = array_assign + foreach_bind + subdir_call + foreach_end
+unrollable_subdirs = (
+    ZeroOrMore(SkipTo(literal_subdir_loop, include=True))
+    + SkipTo(StringEnd(), include=True).leave_whitespace()
+)
+
+
+def unroll_subdirs(target: Path, rel_path: Path) -> str:  # pragma: defer to E2E
+    """Opens a meson.build file and returns the file with literal subdir loops converted
+    to single static assignment form.
+    """
+    with open(target / rel_path / 'meson.build', 'r') as f:
+        text = unrollable_subdirs.parse_file(f)
+    return '\n'.join(text)
 
 
 def inspect_files(
