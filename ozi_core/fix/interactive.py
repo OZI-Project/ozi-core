@@ -8,7 +8,6 @@ from unittest.mock import Mock
 
 from prompt_toolkit.shortcuts.dialogs import button_dialog
 from prompt_toolkit.shortcuts.dialogs import checkboxlist_dialog
-from prompt_toolkit.shortcuts.dialogs import message_dialog
 from prompt_toolkit.shortcuts.dialogs import radiolist_dialog
 from prompt_toolkit.shortcuts.dialogs import yes_no_dialog
 from tap_producer import TAP
@@ -17,6 +16,7 @@ from ozi_core._i18n import TRANSLATION
 from ozi_core.fix.build_definition import walk
 from ozi_core.fix.missing import get_relpath_expected_files
 from ozi_core.ui._style import _style
+from ozi_core.ui.dialog import input_dialog
 from ozi_core.ui.menu import MenuButton
 
 if sys.platform != 'win32':  # pragma: no cover
@@ -72,7 +72,7 @@ def main_menu(  # pragma: no cover
 class Prompt:
     def __init__(self: Prompt, target: Path) -> None:  # pragma: no cover
         self.target = target
-        self.fix: str = ''
+        self.fix: str = 'root'
 
     def set_fix_mode(  # pragma: no cover
         self: Prompt,
@@ -98,6 +98,7 @@ class Prompt:
         prefix: dict[str, str],
     ) -> tuple[list[str] | str | bool | None, dict[str, list[str]], dict[str, str]]:
         add_files: list[str] = []
+        rem_files: list[str] = []
         output.setdefault('--add', [])
         output.setdefault('--remove', [])
         while True:
@@ -125,15 +126,15 @@ class Prompt:
                         for d in walk(self.target, rel_path, []):
                             for v in d.values():
                                 files += [str(i) for i in v['missing']]
-                    if len(files) > 0:
-                        result = checkboxlist_dialog(
-                            title=TRANSLATION('fix-dlg-title'),
-                            text='',
-                            values=[(i, i) for i in files],
-                            style=_style,
-                        ).run()
-                        if result is not None:
-                            add_files += result
+                    result = checkboxlist_dialog(
+                        title=TRANSLATION('fix-dlg-title'),
+                        text='',
+                        values=[('input', '<input>')] + [(i, i) for i in sorted(files)],
+                        style=_style,
+                    ).run()
+                    if result is not None:
+                        add_files += [i for i in result if i != 'input']
+                        if len(add_files) > 0:
                             prefix.update(
                                 {
                                     f'Add-{self.fix}: {add_files}': (
@@ -141,39 +142,63 @@ class Prompt:
                                     ),
                                 },
                             )
-                            for f in files:
+                            for f in add_files:
                                 output['--add'].append(f)
-                    else:
-                        message_dialog(
-                            title=TRANSLATION('fix-dlg-title'),
-                            text=f'no missing {self.fix} files',
-                            style=_style,
-                        ).run()
+                        if 'input' in set(result):
+                            result = input_dialog(
+                                title=TRANSLATION('fix-dlg-title'),
+                                cancel_text=MenuButton.MENU._str,
+                            ).run()
+                            if result is not None:
+                                add_files += [result]
+                                prefix.update(
+                                    {
+                                        f'Add-{self.fix}: {add_files}': (
+                                            f'Add-{self.fix}: {add_files}'
+                                        ),
+                                    },
+                                )
+                                output['--add'].append(str(result))
                 case MenuButton.REMOVE.value:
-                    if len(add_files) != 0:
-                        del_files = checkboxlist_dialog(
-                            title=TRANSLATION('fix-dlg-title'),
-                            text=TRANSLATION('fix-remove'),
-                            values=list(zip(add_files, add_files)),
-                            style=_style,
-                            cancel_text=MenuButton.BACK._str,
-                        ).run()
-                        if del_files:
-                            add_files = list(
-                                set(add_files).symmetric_difference(
-                                    set(del_files),
-                                ),
+                    rel_path, _ = get_relpath_expected_files(self.fix, project_name)
+                    files = []
+                    with TAP.suppress():
+                        for d in walk(self.target, rel_path, []):
+                            for v in d.values():
+                                files += [str(i) for i in v['found']]
+                    result = checkboxlist_dialog(
+                        title=TRANSLATION('fix-dlg-title'),
+                        text='',
+                        values=[('input', '<input>')] + [(i, i) for i in sorted(files)],
+                        style=_style,
+                    ).run()
+                    if result is not None:
+                        rem_files += [i for i in result if i != 'input']
+                        if len(rem_files) > 0:
+                            prefix.update(
+                                {
+                                    f'Remove-{self.fix}: {rem_files}': (
+                                        f'Remove-{self.fix}: {rem_files}'
+                                    ),
+                                },
                             )
-                            for f in del_files:
+                            for f in rem_files:
                                 output['--remove'].append(f)
-                                prefix.update({f'Remove: {f}': f'Remove: {f}'})
-                    else:
-                        message_dialog(
-                            title=TRANSLATION('fix-dlg-title'),
-                            text=TRANSLATION('fix-nothing-to-remove'),
-                            style=_style,
-                            ok_text=MenuButton.OK._str,
-                        ).run()
+                        if 'input' in set(result):
+                            result = input_dialog(
+                                title=TRANSLATION('fix-dlg-title'),
+                                cancel_text=MenuButton.MENU._str,
+                            ).run()
+                            if result is not None:
+                                rem_files += [result]
+                                prefix.update(
+                                    {
+                                        f'Remove-{self.fix}: {rem_files}': (
+                                            f'Remove-{self.fix}: {rem_files}'
+                                        ),
+                                    },
+                                )
+                                output['--remove'].append(str(result))
                 case MenuButton.OK.value:
                     break
                 case MenuButton.MENU.value:
