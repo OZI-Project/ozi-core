@@ -1,4 +1,31 @@
 # ozi-core CHANGELOG
+## 1.4.12 (2024-11-09)
+
+
+### Build system
+
+
+* build(deps): bump OZI-Project/publish from 1.4.1 to 1.4.2
+
+Bumps [OZI-Project/publish](https://github.com/ozi-project/publish) from 1.4.1 to 1.4.2.
+- [Release notes](https://github.com/ozi-project/publish/releases)
+- [Commits](https://github.com/ozi-project/publish/compare/1.4.1...1.4.2)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/publish
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`b00567d`](https://github.com/OZI-Project/ozi-core/commit/b00567d6cd6ed16c34751610849272affd066cdd))
+
+
+### Performance improvements
+
+
+* perf(ozi-fix interactive): ability to input files and folders — rjdbcm <rjdbcm@outlook.com>
+([`c832796`](https://github.com/OZI-Project/ozi-core/commit/c832796b96e5bc3668a6ff5863b95e4fcf3e2245))
+
 ## 1.4.11 (2024-11-08)
 
 
