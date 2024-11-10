@@ -1,4 +1,13 @@
 # ozi-core CHANGELOG
+## 1.4.14 (2024-11-10)
+
+
+### Build system
+
+
+* build(deps): ozi-templates~=2.13.14 — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`c5c5cc3`](https://github.com/OZI-Project/ozi-core/commit/c5c5cc3bb80b50ed4b2233f0a11d82020cde289f))
+
 ## 1.4.13 (2024-11-10)
 
 
