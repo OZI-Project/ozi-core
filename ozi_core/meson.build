@@ -42,14 +42,14 @@ foreach file : files(source_files)
     endif
 endforeach
 
-source_children = []
-subdir('data')
-subdir('vendor')
 subdir('fix')
 subdir('new')
 subdir('ui')
+source_children = ['data', 'ozi.phony', 'vendor']
 foreach child : source_children
-    subdir(child)
+    if child != 'ozi.phony'
+        subdir(child)
+    endif
 endforeach
 
 if false
