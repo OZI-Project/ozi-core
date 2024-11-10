@@ -1,4 +1,30 @@
 # ozi-core CHANGELOG
+## 1.4.13 (2024-11-10)
+
+
+### Bug fixes
+
+
+* fix: render.build_child ignores errors on existing directory — rjdbcm <rjdbcm@outlook.com>
+([`1049e9a`](https://github.com/OZI-Project/ozi-core/commit/1049e9ae6d31cf51a7f8c0000779ee82f2eb02cf))
+
+* fix: revert to OZI-Project/publish 1.4.1 — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`a64f4f5`](https://github.com/OZI-Project/ozi-core/commit/a64f4f56db2ee423a2198e142837f3c78bbeadde))
+
+
+### Build system
+
+
+* build(deps): ozi-templates~=2.13.13 — rjdbcm <rjdbcm@outlook.com>
+([`c493822`](https://github.com/OZI-Project/ozi-core/commit/c493822352e08bc0a36dc10afff8fca6f1ffc88a))
+
+
+### Performance improvements
+
+
+* perf: meson rewriter compatibility improvements — rjdbcm <rjdbcm@outlook.com>
+([`8a96beb`](https://github.com/OZI-Project/ozi-core/commit/8a96beb0a06fbc6ca257b4164634b78e6460fa19))
+
 ## 1.4.12 (2024-11-09)
 
 
