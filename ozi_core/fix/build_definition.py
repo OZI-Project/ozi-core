@@ -5,6 +5,7 @@
 """Build definition check utilities."""
 from __future__ import annotations
 
+import difflib
 import os
 from pathlib import Path
 from typing import Generator
@@ -62,24 +63,37 @@ NL = White('\n', min=1)
 bound = Word(alphas, alphanums + '_')
 assigned = Word(alphas, alphanums + '_')
 array_assign = (
-    assigned + Literal('=') + Literal('[') + Optional(comma_separated_list, default='')
-    | quoted_string + Literal(']') + rest_of_line
+    assigned
+    + Literal('=')
+    + Literal('[')
+    + Optional(comma_separated_list, default='')
+    + Literal(']')
+    + rest_of_line
 ).set_parse_action(
     lambda t: [
-        ' '.join(t[:3]) + t[-2] + t[-1],  # type: ignore
-        *[f'subdir({i})' for i in t[3:-2] if len(i)],
+        *[f'subdir({i})' for i in t[3:-2] if len(i) and i.strip('\'"') != 'ozi.phony'],
+        ' '.join(t[:3]) + "'ozi.phony'" + t[-2] + t[-1],  # type: ignore
     ]
 )
 foreach_bind = (
     Keyword('foreach') + bound + ':' + match_previous_literal(assigned) + rest_of_line
 ).set_parse_action(lambda t: ' '.join(t).strip())
+bindvar = match_previous_literal(bound)
 foreach_end = (Keyword('endforeach') + rest_of_line).set_parse_action(
     lambda t: ' '.join(t).strip()
 )
-subdir_call = (
-    'subdir(' + match_previous_literal(bound) + ')' + rest_of_line
-).set_parse_action(lambda t: '    ' + ''.join(t))
-literal_subdir_loop = array_assign + foreach_bind + subdir_call + foreach_end
+if_ozi_phony = (
+    Keyword('if') + bindvar + Literal('!=') + Literal("'ozi.phony'") + rest_of_line
+).set_parse_action(lambda t: '    ' + ' '.join(t).strip())
+endif = (Keyword('endif') + rest_of_line).set_parse_action(
+    lambda t: '    ' + ' '.join(t).strip()
+)
+subdir_call = ('subdir(' + bindvar + ')' + rest_of_line).set_parse_action(
+    lambda t: '        ' + ''.join(t)
+)
+literal_subdir_loop = (
+    array_assign + foreach_bind + if_ozi_phony + subdir_call + endif + foreach_end
+)
 unrollable_subdirs = (
     ZeroOrMore(SkipTo(literal_subdir_loop, include=True))
     + SkipTo(StringEnd(), include=True).leave_whitespace()
@@ -92,7 +106,7 @@ def unroll_subdirs(target: Path, rel_path: Path) -> str:  # pragma: defer to E2E
     """
     with open(target / rel_path / 'meson.build', 'r') as f:
         text = unrollable_subdirs.parse_file(f)
-    return '\n'.join(text)
+    return '\n'.join([i.strip('\n') for i in text])
 
 
 def inspect_files(

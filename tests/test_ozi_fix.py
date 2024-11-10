@@ -6,6 +6,7 @@
 from __future__ import annotations
 
 import argparse
+import difflib
 import os
 import pathlib
 from copy import deepcopy
@@ -38,6 +39,74 @@ required_pkg_info_patterns = (
     'Summary',
     'Version',
 )
+
+SAMPLE_MESON_BUILD = """# ozi/meson.build
+# Part of the OZI Project, under the Apache License v2.0 with LLVM Exceptions.
+# See LICENSE.txt for license information.
+# SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+custom_target(
+    '_locales.py',
+    input: 'generate_locales.py',
+    output: '_locales.py',
+    command: [python, '@INPUT@'],
+    build_by_default: true,
+    install: true,
+    install_dir: python.get_install_dir() / 'ozi_core',
+)
+source_files = [
+  '__init__.py',
+  '__init__.pyi',
+  '_i18n.py',
+  '_i18n.pyi',
+  '_locales.pyi',
+  'actions.py',
+  'actions.pyi',
+  'comment.py',
+  'comment.pyi',
+  'generate_locales.py',
+  'generate_locales.pyi',
+  'meson.py',
+  'meson.pyi',
+  'pkg_extra.py',
+  'pkg_extra.pyi',
+  'py.typed',
+  'render.py',
+  'render.pyi',
+  'spdx.py',
+  'spdx.pyi',
+  'trove.py',
+  'trove.pyi'
+]
+foreach file : files(source_files)
+    fs.copyfile(file)
+    if not meson.is_subproject() or get_option('install-subprojects').enabled()
+        python.install_sources(file, pure: true, subdir: 'ozi_core')
+    endif
+endforeach
+source_children = [
+    'data',
+    'vendor',
+    'fix',
+    'new',
+    'ui',
+]
+foreach child: source_children
+    if child != 'ozi.phony'
+        subdir(child)
+    endif
+endforeach
+if false
+    executable('source_files', source_files)
+    executable('ext_files', ext_files)
+    executable('source_children', source_children)
+endif
+foo_children = []
+foreach child: foo_children
+    if child != 'ozi.phony'
+        subdir(child)
+    endif
+endforeach
+"""
 
 bad_namespace = argparse.Namespace(
     strict=False,
@@ -378,70 +447,18 @@ def test_fuzz_pkg_info_extra(payload: str, as_message: bool) -> None:  # noqa: D
 
 
 def test_meson_unroll_subdirs() -> None:
-    test = """# ozi/meson.build
-# Part of the OZI Project, under the Apache License v2.0 with LLVM Exceptions.
-# See LICENSE.txt for license information.
-# SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
-custom_target(
-    '_locales.py',
-    input: 'generate_locales.py',
-    output: '_locales.py',
-    command: [python, '@INPUT@'],
-    build_by_default: true,
-    install: true,
-    install_dir: python.get_install_dir() / 'ozi_core',
-)
-source_files = [
-  '__init__.py',
-  '__init__.pyi',
-  '_i18n.py',
-  '_i18n.pyi',
-  '_locales.pyi',
-  'actions.py',
-  'actions.pyi',
-  'comment.py',
-  'comment.pyi',
-  'generate_locales.py',
-  'generate_locales.pyi',
-  'meson.py',
-  'meson.pyi',
-  'pkg_extra.py',
-  'pkg_extra.pyi',
-  'py.typed',
-  'render.py',
-  'render.pyi',
-  'spdx.py',
-  'spdx.pyi',
-  'trove.py',
-  'trove.pyi'
-]
-foreach file : files(source_files)
-    fs.copyfile(file)
-    if not meson.is_subproject() or get_option('install-subprojects').enabled()
-        python.install_sources(file, pure: true, subdir: 'ozi_core')
-    endif
-endforeach
-source_children = [
-    'data',
-    'vendor',
-    'fix',
-    'new',
-    'ui',
-]
-foreach child: source_children
-    subdir(child)
-endforeach
-if false
-    executable('source_files', source_files)
-    executable('ext_files', ext_files)
-    executable('source_children', source_children)
-endif
-"""
-    print(test)
-    x = unrollable_subdirs.parse_string(test)
-    print(x)
-    y = '\n'.join(x)
-    print(y)
-    z = unrollable_subdirs.parse_string(y)
-    print('\n'.join(z))
-    assert y == '\n'.join(z)
+    x = unrollable_subdirs.parse_string(SAMPLE_MESON_BUILD)
+    y = '\n'.join([i.rstrip('\n') for i in x])
+    assert "\nfoo_children = ['ozi.phony']\n" in y
+    assert "\nsource_children = ['ozi.phony']\nforeach" in y
+    assert "\nsubdir('data')\n" in y
+    assert "\nsubdir('vendor')\n" in y
+    assert "\nsubdir('fix')\n" in y
+    assert "\nsubdir('new')\n" in y
+    assert "\nsubdir('ui')\n" in y
+    assert y != SAMPLE_MESON_BUILD
+    z = '\n'.join([i.rstrip('\n') for i in unrollable_subdirs.parse_string(y)])
+    assert y == z
+    assert ''.join(difflib.context_diff(SAMPLE_MESON_BUILD, y)) == ''.join(
+        difflib.context_diff(SAMPLE_MESON_BUILD, z)
+    )
