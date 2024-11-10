@@ -1,4 +1,75 @@
 # ozi-core CHANGELOG
+## 1.4.14 (2024-11-10)
+
+
+### Build system
+
+
+* build(deps): ozi-templates~=2.13.14 — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`c5c5cc3`](https://github.com/OZI-Project/ozi-core/commit/c5c5cc3bb80b50ed4b2233f0a11d82020cde289f))
+
+## 1.4.13 (2024-11-10)
+
+
+### Bug fixes
+
+
+* fix: render.build_child ignores errors on existing directory — rjdbcm <rjdbcm@outlook.com>
+([`1049e9a`](https://github.com/OZI-Project/ozi-core/commit/1049e9ae6d31cf51a7f8c0000779ee82f2eb02cf))
+
+* fix: revert to OZI-Project/publish 1.4.1 — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`a64f4f5`](https://github.com/OZI-Project/ozi-core/commit/a64f4f56db2ee423a2198e142837f3c78bbeadde))
+
+
+### Build system
+
+
+* build(deps): ozi-templates~=2.13.13 — rjdbcm <rjdbcm@outlook.com>
+([`c493822`](https://github.com/OZI-Project/ozi-core/commit/c493822352e08bc0a36dc10afff8fca6f1ffc88a))
+
+
+### Performance improvements
+
+
+* perf: meson rewriter compatibility improvements — rjdbcm <rjdbcm@outlook.com>
+([`8a96beb`](https://github.com/OZI-Project/ozi-core/commit/8a96beb0a06fbc6ca257b4164634b78e6460fa19))
+
+## 1.4.12 (2024-11-09)
+
+
+### Build system
+
+
+* build(deps): bump OZI-Project/publish from 1.4.1 to 1.4.2
+
+Bumps [OZI-Project/publish](https://github.com/ozi-project/publish) from 1.4.1 to 1.4.2.
+- [Release notes](https://github.com/ozi-project/publish/releases)
+- [Commits](https://github.com/ozi-project/publish/compare/1.4.1...1.4.2)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/publish
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`b00567d`](https://github.com/OZI-Project/ozi-core/commit/b00567d6cd6ed16c34751610849272affd066cdd))
+
+
+### Performance improvements
+
+
+* perf(ozi-fix interactive): ability to input files and folders — rjdbcm <rjdbcm@outlook.com>
+([`c832796`](https://github.com/OZI-Project/ozi-core/commit/c832796b96e5bc3668a6ff5863b95e4fcf3e2245))
+
+## 1.4.11 (2024-11-08)
+
+
+### Performance improvements
+
+
+* perf(ozi-fix): unroll ``meson.build`` subdir call loops before outputting rewriter commands — rjdbcm <rjdbcm@outlook.com>
+([`5f71978`](https://github.com/OZI-Project/ozi-core/commit/5f719785602b18b674729f514125caf6e7f3f007))
+
 ## 1.4.10 (2024-11-07)
 
 
