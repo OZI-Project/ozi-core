@@ -1,4 +1,56 @@
 # ozi-core CHANGELOG
+## 1.4.16 (2024-11-11)
+
+
+### Build system
+
+
+* build(deps): ozi-templates~=2.13.15 — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`fce5480`](https://github.com/OZI-Project/ozi-core/commit/fce5480cbba4a5907613425d100696423fae0dc0))
+
+* build: fix tox paths for cross-platform — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`3025862`](https://github.com/OZI-Project/ozi-core/commit/3025862a16456129d6a8826b8c658c5613afbaad))
+
+* build(deps): bump OZI-Project/checkpoint from 1.1.2 to 1.1.3
+
+Bumps [OZI-Project/checkpoint](https://github.com/ozi-project/checkpoint) from 1.1.2 to 1.1.3.
+- [Release notes](https://github.com/ozi-project/checkpoint/releases)
+- [Commits](https://github.com/ozi-project/checkpoint/compare/1.1.2...1.1.3)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/checkpoint
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`f75506d`](https://github.com/OZI-Project/ozi-core/commit/f75506d5eeb81335f2b9025cbf4b02193e52e7f6))
+
+* build(deps): bump OZI-Project/checkpoint from 1.1.1 to 1.1.2
+
+Bumps [OZI-Project/checkpoint](https://github.com/ozi-project/checkpoint) from 1.1.1 to 1.1.2.
+- [Release notes](https://github.com/ozi-project/checkpoint/releases)
+- [Commits](https://github.com/ozi-project/checkpoint/compare/1.1.1...1.1.2)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/checkpoint
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`74a7c20`](https://github.com/OZI-Project/ozi-core/commit/74a7c207c31541ab5cc24117b710c9ebd0422240))
+
+* build:  create dev.yml checkpoints for CI — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`8c3b9a5`](https://github.com/OZI-Project/ozi-core/commit/8c3b9a546b222806b5862653487dd68603b80edc))
+
+## 1.4.15 (2024-11-11)
+
+
+### Performance improvements
+
+
+* perf(ozi-fix): add input validation — rjdbcm <rjdbcm@outlook.com>
+([`364eb12`](https://github.com/OZI-Project/ozi-core/commit/364eb12b585d5ce077bb8fc03b6c7bcf1e8e085d))
+
 ## 1.4.14 (2024-11-10)
 
 
