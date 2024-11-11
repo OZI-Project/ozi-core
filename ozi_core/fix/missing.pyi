@@ -16,34 +16,33 @@ if TYPE_CHECKING:
     ...
 PKG_INFO = ...
 readme_ext_to_content_type = ...
+
+def get_relpath_expected_files(
+    kind: str,
+    name: str,
+) -> tuple[Path, tuple[str, ...] | tuple[()]]: ...
+
 def render_requirements(target: Path) -> str:
     """Render requirements.in as it would appear in PKG-INFO"""
-    ...
 
 def render_pkg_info(target: Path, name: str, _license: str) -> Message:
     """Render PKG-INFO as it would be produced during packaging."""
-    ...
 
 def python_support(pkg_info: Message) -> set[tuple[str, str]]:
     """Check PKG-INFO Message for python support."""
-    ...
 
 def required_extra_pkg_info(pkg_info: Message) -> dict[str, str]:
     """Check missing required OZI extra PKG-INFO"""
-    ...
 
 def required_pkg_info(target: Path) -> tuple[str, dict[str, str]]:
     """Find missing required PKG-INFO"""
-    ...
 
 def required_files(kind: str, target: Path, name: str) -> list[str]:
     """Count missing files required by OZI"""
-    ...
 
 def report(target: Path) -> tuple[str, Message | None, list[str], list[str], list[str]]:
     """Report missing OZI project files
     :param target: Relative path to target directory.
     :return: Normalized Name, PKG-INFO, found_root, found_sources, found_tests
     """
-    ...
 

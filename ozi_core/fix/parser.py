@@ -9,6 +9,7 @@ from argparse import ArgumentParser
 from argparse import BooleanOptionalAction
 
 from ozi_core._i18n import TRANSLATION
+from ozi_core.fix.validate import AppendRewriteCommandTarget
 from ozi_core.new.defaults import COPYRIGHT_HEAD
 
 parser = ArgumentParser(
@@ -24,7 +25,7 @@ parser.add_argument(
     '--add',
     metavar='FILENAME',
     nargs='?',
-    action='append',
+    action=AppendRewriteCommandTarget,
     default=['ozi.phony'],
     help=SUPPRESS,
 )
@@ -32,7 +33,7 @@ parser.add_argument(
     '--remove',
     metavar='FILENAME',
     nargs='?',
-    action='append',
+    action=AppendRewriteCommandTarget,
     default=['ozi.phony'],
     help=SUPPRESS,
 )
@@ -63,7 +64,7 @@ missing_parser.add_argument(
     '--add',
     metavar='FILENAME',
     nargs='?',
-    action='append',
+    action=AppendRewriteCommandTarget,
     default=['ozi.phony'],
     help=SUPPRESS,
 )
@@ -71,7 +72,7 @@ missing_parser.add_argument(
     '--remove',
     metavar='FILENAME',
     nargs='?',
-    action='append',
+    action=AppendRewriteCommandTarget,
     default=['ozi.phony'],
     help=SUPPRESS,
 )
@@ -116,7 +117,7 @@ source_parser.add_argument(
     '--add',
     metavar='FILENAME',
     nargs='?',
-    action='append',
+    action=AppendRewriteCommandTarget,
     default=['ozi.phony'],
     help=TRANSLATION('term-help-fix-add'),
 )
@@ -125,7 +126,7 @@ source_parser.add_argument(
     '--remove',
     metavar='FILENAME',
     nargs='?',
-    action='append',
+    action=AppendRewriteCommandTarget,
     default=['ozi.phony'],
     help=TRANSLATION('term-help-fix-remove'),
 )
@@ -150,6 +151,12 @@ source_output.add_argument(
     action=BooleanOptionalAction,
     help=TRANSLATION('term-help-pretty'),
 )
+source_output.add_argument(
+    '--interactive-io',
+    default=False,
+    action=BooleanOptionalAction,
+    help=SUPPRESS,
+)
 source_parser.add_argument(
     'target',
     type=str,
@@ -162,7 +169,7 @@ test_parser.add_argument(
     '--add',
     metavar='FILENAME',
     nargs='?',
-    action='append',
+    action=AppendRewriteCommandTarget,
     default=['ozi.phony'],
     help=TRANSLATION('term-help-fix-add'),
 )
@@ -171,7 +178,7 @@ test_parser.add_argument(
     '--remove',
     metavar='FILENAME',
     nargs='?',
-    action='append',
+    action=AppendRewriteCommandTarget,
     default=['ozi.phony'],
     help=TRANSLATION('term-help-fix-remove'),
 )
@@ -196,7 +203,28 @@ test_output.add_argument(
     action=BooleanOptionalAction,
     help=TRANSLATION('term-help-pretty'),
 )
+test_output.add_argument(
+    '--interactive-io',
+    default=False,
+    action=BooleanOptionalAction,
+    help=SUPPRESS,
+)
 test_parser.add_argument(
+    'target',
+    type=str,
+    nargs='?',
+    default='.',
+    help=TRANSLATION('term-help-fix-target'),
+)
+interactive_parser = subparser.add_parser(
+    'interactive',
+    prog='ozi-fix interactive',
+    aliases=['i'],
+    usage='%(prog)s target',
+    allow_abbrev=True,
+    help=TRANSLATION('term-help-fix-interactive'),
+)
+interactive_parser.add_argument(
     'target',
     type=str,
     nargs='?',

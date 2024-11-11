@@ -1,4 +1,226 @@
 # ozi-core CHANGELOG
+## 1.4.16 (2024-11-11)
+
+
+### Build system
+
+
+* build(deps): ozi-templates~=2.13.15 — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`fce5480`](https://github.com/OZI-Project/ozi-core/commit/fce5480cbba4a5907613425d100696423fae0dc0))
+
+* build: fix tox paths for cross-platform — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`3025862`](https://github.com/OZI-Project/ozi-core/commit/3025862a16456129d6a8826b8c658c5613afbaad))
+
+* build(deps): bump OZI-Project/checkpoint from 1.1.2 to 1.1.3
+
+Bumps [OZI-Project/checkpoint](https://github.com/ozi-project/checkpoint) from 1.1.2 to 1.1.3.
+- [Release notes](https://github.com/ozi-project/checkpoint/releases)
+- [Commits](https://github.com/ozi-project/checkpoint/compare/1.1.2...1.1.3)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/checkpoint
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`f75506d`](https://github.com/OZI-Project/ozi-core/commit/f75506d5eeb81335f2b9025cbf4b02193e52e7f6))
+
+* build(deps): bump OZI-Project/checkpoint from 1.1.1 to 1.1.2
+
+Bumps [OZI-Project/checkpoint](https://github.com/ozi-project/checkpoint) from 1.1.1 to 1.1.2.
+- [Release notes](https://github.com/ozi-project/checkpoint/releases)
+- [Commits](https://github.com/ozi-project/checkpoint/compare/1.1.1...1.1.2)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/checkpoint
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`74a7c20`](https://github.com/OZI-Project/ozi-core/commit/74a7c207c31541ab5cc24117b710c9ebd0422240))
+
+* build:  create dev.yml checkpoints for CI — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`8c3b9a5`](https://github.com/OZI-Project/ozi-core/commit/8c3b9a546b222806b5862653487dd68603b80edc))
+
+## 1.4.15 (2024-11-11)
+
+
+### Performance improvements
+
+
+* perf(ozi-fix): add input validation — rjdbcm <rjdbcm@outlook.com>
+([`364eb12`](https://github.com/OZI-Project/ozi-core/commit/364eb12b585d5ce077bb8fc03b6c7bcf1e8e085d))
+
+## 1.4.14 (2024-11-10)
+
+
+### Build system
+
+
+* build(deps): ozi-templates~=2.13.14 — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`c5c5cc3`](https://github.com/OZI-Project/ozi-core/commit/c5c5cc3bb80b50ed4b2233f0a11d82020cde289f))
+
+## 1.4.13 (2024-11-10)
+
+
+### Bug fixes
+
+
+* fix: render.build_child ignores errors on existing directory — rjdbcm <rjdbcm@outlook.com>
+([`1049e9a`](https://github.com/OZI-Project/ozi-core/commit/1049e9ae6d31cf51a7f8c0000779ee82f2eb02cf))
+
+* fix: revert to OZI-Project/publish 1.4.1 — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`a64f4f5`](https://github.com/OZI-Project/ozi-core/commit/a64f4f56db2ee423a2198e142837f3c78bbeadde))
+
+
+### Build system
+
+
+* build(deps): ozi-templates~=2.13.13 — rjdbcm <rjdbcm@outlook.com>
+([`c493822`](https://github.com/OZI-Project/ozi-core/commit/c493822352e08bc0a36dc10afff8fca6f1ffc88a))
+
+
+### Performance improvements
+
+
+* perf: meson rewriter compatibility improvements — rjdbcm <rjdbcm@outlook.com>
+([`8a96beb`](https://github.com/OZI-Project/ozi-core/commit/8a96beb0a06fbc6ca257b4164634b78e6460fa19))
+
+## 1.4.12 (2024-11-09)
+
+
+### Build system
+
+
+* build(deps): bump OZI-Project/publish from 1.4.1 to 1.4.2
+
+Bumps [OZI-Project/publish](https://github.com/ozi-project/publish) from 1.4.1 to 1.4.2.
+- [Release notes](https://github.com/ozi-project/publish/releases)
+- [Commits](https://github.com/ozi-project/publish/compare/1.4.1...1.4.2)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/publish
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`b00567d`](https://github.com/OZI-Project/ozi-core/commit/b00567d6cd6ed16c34751610849272affd066cdd))
+
+
+### Performance improvements
+
+
+* perf(ozi-fix interactive): ability to input files and folders — rjdbcm <rjdbcm@outlook.com>
+([`c832796`](https://github.com/OZI-Project/ozi-core/commit/c832796b96e5bc3668a6ff5863b95e4fcf3e2245))
+
+## 1.4.11 (2024-11-08)
+
+
+### Performance improvements
+
+
+* perf(ozi-fix): unroll ``meson.build`` subdir call loops before outputting rewriter commands — rjdbcm <rjdbcm@outlook.com>
+([`5f71978`](https://github.com/OZI-Project/ozi-core/commit/5f719785602b18b674729f514125caf6e7f3f007))
+
+## 1.4.10 (2024-11-07)
+
+
+### Performance improvements
+
+
+* perf(ozi-fix interactive): automatic meson rewriter invocation — rjdbcm <rjdbcm@outlook.com>
+([`ea6a4be`](https://github.com/OZI-Project/ozi-core/commit/ea6a4be3b535036f27d77c543a8d09ea15c1446a))
+
+* perf: OZI 1.24 wrapfile — rjdbcm <rjdbcm@outlook.com>
+([`7cf1644`](https://github.com/OZI-Project/ozi-core/commit/7cf164432c391cfe0c2f9fbae40e00f43b8d447c))
+
+
+### Unknown
+
+
+* lint: run isort — rjdbcm <rjdbcm@outlook.com>
+([`7118775`](https://github.com/OZI-Project/ozi-core/commit/7118775bcb2d5ac238450b42904b8bce53d44e0d))
+
+## 1.4.9 (2024-11-07)
+
+
+### Bug fixes
+
+
+* fix: ozi-templates~=2.13.11 — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`cbea6d8`](https://github.com/OZI-Project/ozi-core/commit/cbea6d8c8f6105fe9750932cfde8dd286293fd31))
+
+* fix: ozi-spec 0.11.5 — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`43feb7b`](https://github.com/OZI-Project/ozi-core/commit/43feb7bf31fdd8fb065cb9b4272ed5be202b4a90))
+
+
+### Build system
+
+
+* build(deps): bump OZI-Project/publish from 1.4.0 to 1.4.1
+
+Bumps [OZI-Project/publish](https://github.com/ozi-project/publish) from 1.4.0 to 1.4.1.
+- [Release notes](https://github.com/ozi-project/publish/releases)
+- [Commits](https://github.com/ozi-project/publish/compare/1.4.0...1.4.1)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/publish
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`4b23f06`](https://github.com/OZI-Project/ozi-core/commit/4b23f0655ceb2fcd0052d90aedb12757a6e485ad))
+
+## 1.4.8 (2024-11-04)
+
+
+### Bug fixes
+
+
+* fix: correct ui submodule install path — rjdbcm <rjdbcm@outlook.com>
+([`f9f0969`](https://github.com/OZI-Project/ozi-core/commit/f9f0969a4e9b897f1f9c223f8ab316bd651e69c1))
+
+## 1.4.7 (2024-11-04)
+
+
+### Performance improvements
+
+
+* perf: add translated strings to ozi-fix interactive — rjdbcm <rjdbcm@outlook.com>
+([`ac1f0e6`](https://github.com/OZI-Project/ozi-core/commit/ac1f0e63c0711e45548a304f517b00c2e5799b92))
+
+* perf: fix.build_definition.walk function now a generator — rjdbcm <rjdbcm@outlook.com>
+([`86385ad`](https://github.com/OZI-Project/ozi-core/commit/86385ad0af04a619a8d8152545fa6fd4dd8cf39d))
+
+* perf: refactor UI to add an ozi-fix interactive mode — rjdbcm <rjdbcm@outlook.com>
+([`980831d`](https://github.com/OZI-Project/ozi-core/commit/980831d967ce3067bec5c8a8e5e3b24632990c7d))
+
+
+### Unknown
+
+
+* :hammer: refactor UI to add an ozi-fix interactive mode — rjdbcm <rjdbcm@outlook.com>
+([`4734d92`](https://github.com/OZI-Project/ozi-core/commit/4734d9279656cbbceff075c385e7f3e951e48817))
+
+## 1.4.6 (2024-11-01)
+
+
+### Build system
+
+
+* build(endpoints): add sigstore urls to allow list — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`7912ae8`](https://github.com/OZI-Project/ozi-core/commit/7912ae89c67d1a0ff76dea4da81241e7e96d7c8e))
+
+* build(deps): ozi-templates~=2.13.8 — rjdbcm <rjdbcm@outlook.com>
+([`142da4a`](https://github.com/OZI-Project/ozi-core/commit/142da4a639b7286611a5340da2673ec7fd28da80))
+
+
+### Performance improvements
+
+
+* perf: test that harden-runner blocks render — rjdbcm <rjdbcm@outlook.com>
+([`32544ad`](https://github.com/OZI-Project/ozi-core/commit/32544ad35f7e759e188c8e6a9b1d44c0b7c7cd22))
+
 ## 1.4.5 (2024-10-29)
 
 

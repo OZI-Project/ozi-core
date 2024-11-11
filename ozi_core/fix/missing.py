@@ -47,6 +47,26 @@ readme_ext_to_content_type = {
 }
 
 
+def get_relpath_expected_files(
+    kind: str,
+    name: str,
+) -> tuple[Path, tuple[str, ...] | tuple[()]]:
+    match kind:
+        case 'test':
+            rel_path = Path('tests')
+            expected_files = METADATA.spec.python.src.required.test
+        case 'root':
+            rel_path = Path('.')
+            expected_files = METADATA.spec.python.src.required.root
+        case 'source':
+            rel_path = Path(underscorify(name).lower())
+            expected_files = METADATA.spec.python.src.required.source
+        case _:  # pragma: no cover
+            rel_path = Path('.')
+            expected_files = ()
+    return rel_path, expected_files
+
+
 def render_requirements(target: Path) -> str:
     """Render requirements.in as it would appear in PKG-INFO"""
     try:
@@ -166,19 +186,7 @@ def required_files(
 ) -> list[str]:
     """Count missing files required by OZI"""
     found_files = []
-    match kind:
-        case 'test':
-            rel_path = Path('tests')
-            expected_files = METADATA.spec.python.src.required.test
-        case 'root':
-            rel_path = Path('.')
-            expected_files = METADATA.spec.python.src.required.root
-        case 'source':
-            rel_path = Path(underscorify(name).lower())
-            expected_files = METADATA.spec.python.src.required.source
-        case _:  # pragma: no cover
-            rel_path = Path('.')
-            expected_files = ()
+    rel_path, expected_files = get_relpath_expected_files(kind, name)
     for file in expected_files:
         f = rel_path / file
         if not target.joinpath(f).exists():  # pragma: no cover
@@ -186,7 +194,14 @@ def required_files(
             continue  # pragma: defer to https://github.com/nedbat/coveragepy/issues/198
         TAP.ok(str(f))
         found_files.append(file)
-    walk(target, rel_path, found_files=found_files, project_name=underscorify(name).lower())
+    list(
+        walk(
+            target,
+            rel_path,
+            found_files=found_files,
+            project_name=underscorify(name).lower(),
+        ),
+    )
     return found_files
 
 

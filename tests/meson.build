@@ -14,3 +14,7 @@ test_children = []
 foreach child: test_children
     subdir(child)
 endforeach
+if false
+    executable('test_files', test_files)
+    executable('test_children', test_children)
+endif

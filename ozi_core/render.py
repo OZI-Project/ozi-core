@@ -151,7 +151,7 @@ def build_child(env: Environment, parent: str, child: Path) -> None:
     :param child: path to a new child directory
     :type child: Path
     """
-    child.mkdir(parents=True)
+    child.mkdir(parents=True, exist_ok=True)
     parent = parent.rstrip('/')
     heirs = parent.split('/')
     if len(heirs) > 1:
