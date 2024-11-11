@@ -337,6 +337,7 @@ allowlist_externals =
 package = wheel
 deps =
      uv
+     setuptools_scm[toml]
 commands_pre =
      python -m uv pip install OZI.build[core,uv]~=1.5
      pipx install --python=python meson
