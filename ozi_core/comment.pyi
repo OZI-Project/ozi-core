@@ -39,7 +39,6 @@ def calculate_score(lines: int, t1: int, t2: int, t3: int) -> float:
     :return: comment quality score out of 5.0
     :rtype: float
     """
-    ...
 
 @lru_cache
 def pattern_cache(key: str) -> re.Pattern[str]:
@@ -50,7 +49,6 @@ def pattern_cache(key: str) -> re.Pattern[str]:
     :return: compiled regular expression pattern
     :rtype: re.Pattern[str]
     """
-    ...
 
 def pattern_search(line: str) -> Generator[tuple[str, str], None, None]:
     """Search for OZI specification comment patterns.
@@ -60,7 +58,6 @@ def pattern_search(line: str) -> Generator[tuple[str, str], None, None]:
     :yield: key, match for key in :py:class:`ozi_spec.CommentPatterns` excluding ``help``
     :rtype: Generator[tuple[str, str], None, None]
     """
-    ...
 
 def diagnose(line: str, rel_path: Path, line_no: int) -> Generator[tuple[str, str], None, None]:
     """Diagnose OZI comment pattern for a single line.
@@ -72,7 +69,6 @@ def diagnose(line: str, rel_path: Path, line_no: int) -> Generator[tuple[str, st
     :param line_no: current line number
     :type line_no: int
     """
-    ...
 
 def diagnostic(lines: Sequence[str], rel_path: Path, start: int = ...) -> tuple[Counter[str], dict[str, str]]:
     """Diagnose OZI comment pattern for a sequence of lines (usually a single file).
@@ -86,7 +82,6 @@ def diagnostic(lines: Sequence[str], rel_path: Path, start: int = ...) -> tuple[
     :rtype: tuple[Counter[str], dict[str, str]]
     :return: count of lines and comment pattern matches as a dict
     """
-    ...
 
 def score_file(count: Counter[str]) -> float:
     """Score a single file comment diagnostic.
@@ -95,7 +90,6 @@ def score_file(count: Counter[str]) -> float:
 
         Use :py:func:`ozi.comment.score` instead.
     """
-    ...
 
 def score(count: Counter[str]) -> float:
     """Score a single comment diagnostic.
@@ -105,9 +99,7 @@ def score(count: Counter[str]) -> float:
     :return: span comment score out of 5.0
     :rtype: float
     """
-    ...
 
 def comment_diagnostic(target: Path, rel_path: Path, file: str) -> None:
     """Run a scored comment diagnostic on a python file."""
-    ...
 

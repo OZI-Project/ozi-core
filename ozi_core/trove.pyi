@@ -18,7 +18,6 @@ def get_trove_prefix(text: str) -> str | None:
     :return: the prefix if the classifier text is valid otherwise None
     :rtype: str | None
     """
-    ...
 
 valid_trove_prefixes = ...
 @dataclass(frozen=True, slots=True, eq=True)
@@ -33,12 +32,10 @@ class Prefix:
     topic: str = 'Topic :: '
     def __post_init__(self) -> None:
         """Check if any of the default attributes are deprecated upstream."""
-        ...
-    
+
 
 
 @lru_cache
 def from_prefix(prefix: str) -> tuple[str, ...]:
     """Return all matching classifiers for a prefix string."""
-    ...
 

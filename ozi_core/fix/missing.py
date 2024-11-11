@@ -200,7 +200,7 @@ def required_files(
             rel_path,
             found_files=found_files,
             project_name=underscorify(name).lower(),
-        )
+        ),
     )
     return found_files
 

@@ -34,7 +34,6 @@ def load_ast(source_root: str) -> CodeBlockNode | None:
     :return: The AST for a meson build definition if one is available OR None.
     :rtype: CodeBlockNode | None
     """
-    ...
 
 def project_metadata(ast: CodeBlockNode) -> tuple[str, str]:
     """Extract project metadata from :file:`meson.build`
@@ -44,7 +43,6 @@ def project_metadata(ast: CodeBlockNode) -> tuple[str, str]:
     :return: The project name and license identifier.
     :rtype: tuple[str, str]
     """
-    ...
 
 @lru_cache(typed=True)
 def query_simple(ast: CodeBlockNode, select: SelectValue = ..., where: WhereValue = ...) -> set[BaseNode]:
@@ -59,7 +57,6 @@ def query_simple(ast: CodeBlockNode, select: SelectValue = ..., where: WhereValu
     :return: Set of all nodes matching the selector.
     :rtype: set[BaseNode]
     """
-    ...
 
 @lru_cache(typed=True)
 def query_complex(ast: CodeBlockNode, select: SelectValue = ..., where: WhereValue = ..., get: type[ElementaryNode] = ...) -> set[str]:
@@ -76,7 +73,6 @@ def query_complex(ast: CodeBlockNode, select: SelectValue = ..., where: WhereVal
     :return: A set of node values matching the selector
     :rtype: set[str]
     """
-    ...
 
 @lru_cache(typed=True)
 def query_loop_assignments(ast: CodeBlockNode, select: SelectItems = ..., where: type[ElementaryNode] = ..., get: type[ElementaryNode] = ...) -> set[str]:
@@ -93,7 +89,6 @@ def query_loop_assignments(ast: CodeBlockNode, select: SelectItems = ..., where:
     :return: A set of query matches
     :rtype: set[str]
     """
-    ...
 
 @lru_cache(typed=True)
 def find_var_suffix(ast: CodeBlockNode, var_suffix: str) -> set[str]:
@@ -106,7 +101,6 @@ def find_var_suffix(ast: CodeBlockNode, var_suffix: str) -> set[str]:
     :return: A set of query matches
     :rtype: set[str] | None
     """
-    ...
 
 def query_build_value(source_root: str, query: str) -> bool | None:
     """Load a :file:`meson.build` project and check if a query exists in array assignments.
@@ -119,7 +113,6 @@ def query_build_value(source_root: str, query: str) -> bool | None:
              :file:`meson.build` could not be loaded.
     :rtype: set[str] | None
     """
-    ...
 
 def get_items_by_suffix(source_root: str, query: str) -> set[str] | None:
     """Load a :file:`meson.build` project and return build items.
@@ -129,5 +122,4 @@ def get_items_by_suffix(source_root: str, query: str) -> set[str] | None:
     :param query: The text to look for.
     :type query: str
     """
-    ...
 

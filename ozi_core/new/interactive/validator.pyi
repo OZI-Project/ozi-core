@@ -12,34 +12,33 @@ from prompt_toolkit.validation import Validator
 @lru_cache
 def pypi_package_exists(package: str) -> bool:
     """Check if a package name exists on PyPI."""
-    ...
 
 class ProjectNameValidator(Validator):
     """Validate that a package name is valid."""
     def validate(self, document: Document) -> None:
         ...
-    
+
 
 
 class NotReservedValidator(ThreadedValidator):
     """Validate that a package name is available."""
     def validate(self, document: Document) -> None:
         ...
-    
+
 
 
 class LengthValidator(Validator):
     """Validate text is between 1 and 512 chartacters in length."""
     def validate(self, document: Document) -> None:
         ...
-    
+
 
 
 class PackageValidator(Validator):
     """Validate a package name exists on PyPI."""
     def validate(self, document: Document) -> None:
         ...
-    
+
 
 
 def validate_message(text: str, validator: Validator) -> tuple[bool, str]:
@@ -52,5 +51,4 @@ def validate_message(text: str, validator: Validator) -> tuple[bool, str]:
     :return: validation, error message
     :rtype: tuple[bool, str]
     """
-    ...
 
