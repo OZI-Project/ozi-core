@@ -344,9 +344,9 @@ commands_pre =
 commands =
      meson setup {env_tmp_dir} -Dozi:dist=disabled -Dozi:tox-env-dir={env_dir}
      meson compile -C {env_tmp_dir}
-     rm -rf {env_tmp_dir}/.gitignore
+     rm -rf {env_tmp_dir}{/}.gitignore
 commands_post =
-     {env_python} -m invoke --search-root={env_tmp_dir}/subprojects/ozi/ozi checkpoint --suite={env_name} {posargs}
+     {env_python} -m invoke --search-root={env_tmp_dir}{/}subprojects{/}ozi{/}ozi checkpoint --suite={env_name} {posargs}
 
 [testenv:dist]
 description = OZI distribution checkpoint
@@ -359,7 +359,7 @@ description = OZI unit tests checkpoint
 commands =
      meson setup {env_tmp_dir} -Dozi:ozi-blastpipe=disabled -Dozi:dist=disabled -Dozi:tox-env-dir={env_dir}
      meson compile -C {env_tmp_dir}
-     rm -rf {env_tmp_dir}/.gitignore
+     rm -rf {env_tmp_dir}{/}.gitignore
 
 [testenv:fix]
 description = quickly fix minor source issues 
@@ -383,6 +383,6 @@ commands =
 description = OZI invoke task entrypoint, for more info use "tox -e invoke -- --list"
 no_package = true
 commands_post =
-     {env_python} -m invoke --search-root={env_tmp_dir}/subprojects/ozi/ozi {posargs}
+     {env_python} -m invoke --search-root={env_tmp_dir}{/}subprojects{/}ozi{/}ozi {posargs}
 
 """
