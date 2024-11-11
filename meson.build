@@ -13,7 +13,13 @@ project(
         'python3',
         [
             '-c',
-            'from setuptools_scm import get_version;print(get_version(normalize=False))',
+            '''# script
+try:
+    from setuptools_scm import get_version
+    print(get_version(normalize=False))
+except Exception as e:
+    print(str(e))
+''',
         ],
         check: true,
     ).stdout().strip(),
