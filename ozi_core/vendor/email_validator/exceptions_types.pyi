@@ -6,17 +6,14 @@ from typing import Optional
 
 class EmailNotValidError(ValueError):
     """Parent class of all exceptions raised by this module."""
-    ...
 
 
 class EmailSyntaxError(EmailNotValidError):
     """Exception raised when an email address fails validation because of its form."""
-    ...
 
 
 class EmailUndeliverableError(EmailNotValidError):
     """Exception raised when an email address fails validation because its domain name does not appear deliverable."""
-    ...
 
 
 class ValidatedEmail:
@@ -35,28 +32,26 @@ class ValidatedEmail:
     mx_fallback_type: str
     def __init__(self, **kwargs) -> None:
         ...
-    
-    def __repr__(self) -> str:
-        ...
-    
+
+
     def __getattr__(self, key): # -> str:
         ...
-    
+
     @property
     def email(self): # -> str:
         ...
-    
+
     def __getitem__(self, key): # -> str | bool | list[Any] | None:
         ...
-    
+
     def __eq__(self, other) -> bool:
         ...
-    
+
     def as_constructor(self): # -> str:
         ...
-    
+
     def as_dict(self): # -> dict[str, Any]:
         ...
-    
+
 
 

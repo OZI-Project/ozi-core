@@ -85,7 +85,10 @@ class Project:  # pragma: no cover
         _license = result if result else ''
 
         result, output, prefix = self.license_expression(
-            project_name, _license, output, prefix
+            project_name,
+            _license,
+            output,
+            prefix,
         )
         if isinstance(result, list):
             return result
@@ -209,7 +212,7 @@ class Project:  # pragma: no cover
             ).run()
             if result is not None:
                 output.update(
-                    {'--license-file': [result] if isinstance(result, str) else []}
+                    {'--license-file': [result] if isinstance(result, str) else []},
                 )
             prefix.update(
                 (

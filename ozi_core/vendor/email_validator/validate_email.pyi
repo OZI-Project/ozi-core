@@ -13,5 +13,4 @@ def validate_email(email: Union[str, bytes], /, *, allow_smtputf8: Optional[bool
     with information about the address if it is valid or, if the address is not
     valid, raises an EmailNotValidError. This is the main function of the module.
     """
-    ...
 

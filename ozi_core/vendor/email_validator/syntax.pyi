@@ -7,14 +7,12 @@ def split_email(email): # -> tuple[str, str | Any, Literal[True]] | tuple[Any, A
 
 def get_length_reason(addr, utf8=..., limit=...) -> str:
     """Helper function to return an error message related to invalid length."""
-    ...
 
 def safe_character_display(c): # -> LiteralString | str:
     ...
 
 def validate_email_local_part(local: str, allow_smtputf8: bool = ..., allow_empty_local: bool = ..., quoted_local_part: bool = ...): # -> dict[str, Any]:
     """Validates the syntax of the local part of an email address."""
-    ...
 
 def check_unsafe_chars(s, allow_space=...): # -> None:
     ...
@@ -24,7 +22,6 @@ def check_dot_atom(label, start_descr, end_descr, is_hostname): # -> None:
 
 def validate_email_domain_name(domain, test_environment=..., globally_deliverable=...): # -> dict[str, str]:
     """Validates the syntax of the domain part of an email address."""
-    ...
 
 def validate_email_length(addrinfo): # -> None:
     ...

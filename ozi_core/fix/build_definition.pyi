@@ -18,11 +18,9 @@ def inspect_files(target: Path, rel_path: Path, found_files: list[str], extra_fi
 
 def process(target: Path, rel_path: Path, found_files: list[str] | None = ...) -> dict[str, list[str]]:
     """Process an OZI project build definition's files."""
-    ...
 
 def validate(target: Path, rel_path: Path, subdirs: list[str], children: set[str] | None) -> Generator[Path, None, None]:
     """Validate an OZI standard build definition's directories."""
-    ...
 
 def walk(
     target: Path,
@@ -31,4 +29,3 @@ def walk(
     project_name: str | None = None,
 ) -> Generator[dict[Path, dict[str, list[str]]], None, None]:
     """Walk an OZI standard build definition directory."""
-    ...

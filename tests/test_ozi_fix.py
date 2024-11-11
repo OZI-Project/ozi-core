@@ -460,5 +460,5 @@ def test_meson_unroll_subdirs() -> None:
     z = '\n'.join([i.rstrip('\n') for i in unrollable_subdirs.parse_string(y)])
     assert y == z
     assert ''.join(difflib.context_diff(SAMPLE_MESON_BUILD, y)) == ''.join(
-        difflib.context_diff(SAMPLE_MESON_BUILD, z)
+        difflib.context_diff(SAMPLE_MESON_BUILD, z),
     )

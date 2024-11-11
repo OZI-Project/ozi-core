@@ -47,7 +47,8 @@ def valid_project_url(project_url: Sequence[str]) -> None:
     for name, url in [str(i).split(',') for i in project_url]:
         if len(name) > 32:
             TAP.not_ok(
-                TRANSLATION('edit-menu-btn-project-url'), TRANSLATION('term-tap-name-gt32')
+                TRANSLATION('edit-menu-btn-project-url'),
+                TRANSLATION('term-tap-name-gt32'),
             )
         parsed_url = urlparse(url)
         match parsed_url:
@@ -64,7 +65,8 @@ def valid_project_url(project_url: Sequence[str]) -> None:
                 )
             case _:
                 TAP.ok(
-                    TRANSLATION('edit-menu-btn-project-url'), TRANSLATION('term-tap-netloc')
+                    TRANSLATION('edit-menu-btn-project-url'),
+                    TRANSLATION('term-tap-netloc'),
                 )
 
 
@@ -81,7 +83,8 @@ def valid_home_page(home_page: str) -> None:
         TAP.ok(TRANSLATION('edit-menu-btn-homepage'), TRANSLATION('term-tap-url-scheme'))
     if home_url.netloc == '':  # pragma: defer to good-issue
         TAP.not_ok(
-            TRANSLATION('edit-menu-btn-homepage'), TRANSLATION('term-tap-empty-netloc')
+            TRANSLATION('edit-menu-btn-homepage'),
+            TRANSLATION('term-tap-empty-netloc'),
         )
     else:
         TAP.ok(TRANSLATION('edit-menu-btn-homepage'), TRANSLATION('term-tap-netloc'))
@@ -91,7 +94,8 @@ def valid_summary(summary: str) -> None:
     """Validate project summary length."""
     if len(summary) > 512:
         TAP.not_ok(
-            TRANSLATION('edit-menu-btn-summary'), TRANSLATION('term-tap-summary-gt512')
+            TRANSLATION('edit-menu-btn-summary'),
+            TRANSLATION('term-tap-summary-gt512'),
         )
     else:
         TAP.ok(TRANSLATION('edit-menu-btn-summary'))
@@ -120,7 +124,8 @@ def valid_contact_info(  # noqa: C901
             TRANSLATION('edit-menu-btn-maintainer-email'),
             TRANSLATION('term-tap-identical-email'),
             TRANSLATION(
-                'term-tap-leave-blank', key=TRANSLATION('edit-menu-btn-maintainer-email')
+                'term-tap-leave-blank',
+                key=TRANSLATION('edit-menu-btn-maintainer-email'),
             ),
         )
     elif any(map(len, maintainer_email)) and not any(map(len, author_email)):
@@ -198,7 +203,8 @@ def valid_copyright_head(copyright_head: str, project_name: str, license_file: s
     """
     if copyright_head == COPYRIGHT_HEAD:  # pragma: no cover
         copyright_head = copyright_head.format(
-            project_name=project_name, license_file=license_file
+            project_name=project_name,
+            license_file=license_file,
         )
         TAP.ok(TRANSLATION('term-copyright-head'), TRANSLATION('term-defaults'))
     else:

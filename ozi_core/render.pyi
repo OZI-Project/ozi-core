@@ -25,9 +25,8 @@ def find_user_template(target: str, file: str, fix: str) -> str | None:
     :return: a user-defined template as a string
     :rtype: str | None
     """
-    ...
 
-def map_to_template(fix: (Literal['child', 'github_workflows', 'root', 'source', 'subprojects', 'templates', 'test',] | AnyStr), filename: str) -> str:
+def map_to_template(fix: (Literal['child', 'github_workflows', 'root', 'source', 'subprojects', 'templates', 'test'] | AnyStr), filename: str) -> str:
     """Map an appropriate template for an ozi-fix mode and filename.
 
     .. versionadded:: 1.5
@@ -39,9 +38,8 @@ def map_to_template(fix: (Literal['child', 'github_workflows', 'root', 'source',
     :return: template path
     :rtype: str
     """
-    ...
 
-def build_file(env: Environment, fix: (Literal['child', 'github_workflows', 'root', 'source', 'subprojects', 'templates', 'test',] | AnyStr), path: Path, user_template: str | None, **kwargs: str) -> None:
+def build_file(env: Environment, fix: (Literal['child', 'github_workflows', 'root', 'source', 'subprojects', 'templates', 'test'] | AnyStr), path: Path, user_template: str | None, **kwargs: str) -> None:
     """Render project file based on OZI templates.
 
     .. versionadded:: 1.5
@@ -55,7 +53,6 @@ def build_file(env: Environment, fix: (Literal['child', 'github_workflows', 'roo
     :param user_template: path to a user template to extend
     :type user_template: str | None
     """
-    ...
 
 def build_child(env: Environment, parent: str, child: Path) -> None:
     """Add a child directory to a parent in an existing OZI-style project.
@@ -67,7 +64,6 @@ def build_child(env: Environment, parent: str, child: Path) -> None:
     :param child: path to a new child directory
     :type child: Path
     """
-    ...
 
 class RenderedContent:
     def __init__(self, env: Environment, target: Path, name: str, ci_provider: str, readme_type: str) -> None:
@@ -84,12 +80,10 @@ class RenderedContent:
         :param readme_type: the README file extension
         :type readme_type: str
         """
-        ...
-    
+
     def render(self) -> None:
         """Render the project."""
-        ...
-    
+
 
 
 def render_ci_files_set_user(env: Environment, target: Path, ci_provider: str) -> str:
@@ -104,7 +98,6 @@ def render_ci_files_set_user(env: Environment, target: Path, ci_provider: str) -
     :return: the ci_user of the target repository for the continuous integration provider
     :rtype: str
     """
-    ...
 
 def render_project_files(env: Environment, target: Path, name: str) -> None:
     """Render the primary new project files(excluding CI).
@@ -116,5 +109,4 @@ def render_project_files(env: Environment, target: Path, name: str) -> None:
     :param name: the canonical project name (without normalization)
     :type name: str
     """
-    ...
 

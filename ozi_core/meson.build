@@ -45,13 +45,14 @@ endforeach
 subdir('fix')
 subdir('new')
 subdir('ui')
-source_children = ['data', 'ozi.phony', 'vendor']
+subdir('data')
+subdir('vendor')
+source_children = ['ozi.phony']
 foreach child : source_children
     if child != 'ozi.phony'
         subdir(child)
     endif
 endforeach
-
 if false
     executable('source_files', source_files)
     executable('ext_files', ext_files)
