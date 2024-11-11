@@ -1,4 +1,13 @@
 # ozi-core CHANGELOG
+## 1.4.15 (2024-11-11)
+
+
+### Performance improvements
+
+
+* perf(ozi-fix): add input validation — rjdbcm <rjdbcm@outlook.com>
+([`364eb12`](https://github.com/OZI-Project/ozi-core/commit/364eb12b585d5ce077bb8fc03b6c7bcf1e8e085d))
+
 ## 1.4.14 (2024-11-10)
 
 
