@@ -37,8 +37,7 @@ class CloseMatch(Action):
     exact_match = ...
     def __init__(self, option_strings: list[str], dest: str, nargs: int | str | None = ..., **kwargs: Any) -> None:
         """Argparse init"""
-        ...
-    
+
     def close_matches(self, key: str, value: str) -> Sequence[str]:
         """Get a close matches for a Python project packaging core metadata key.
 
@@ -49,31 +48,24 @@ class CloseMatch(Action):
         :return: sequence with the best match or an empty sequence
         :rtype: Sequence[str]
         """
-        ...
-    
+
     def __call__(self, parser: ArgumentParser, namespace: Namespace, values: str | Sequence[str] | None, option_string: str | None = ...) -> None:
         """Find closest matching class attribute."""
-        ...
-    
+
 
 
 def check_for_update(current_version: Version, releases: Collection[Version]) -> None:
     """Issue a warning if installed version of OZI is not up to date."""
-    ...
 
 def check_version(version: str) -> NoReturn:
     """Check for a newer version of OZI and exit."""
-    ...
 
 def info(version: str) -> NoReturn:
     """Print all metadata as JSON and exit."""
-    ...
 
 def list_available(key: str) -> NoReturn:
     """Print a list of valid values for a key and exit."""
-    ...
 
 def license_expression(expr: str) -> NoReturn:
     """Validate a SPDX license expression."""
-    ...
 

@@ -29,19 +29,17 @@ class Admonition(RadioList[_T]):
     multiple_selection = False
     def __init__(self, values: Sequence[tuple[_T, Any]], default: _T | None = ...) -> None:
         ...
-    
+
 
 
 def admonition_dialog(title: str = ..., text: str = ..., heading_label: str = ..., ok_text: str | None = ..., cancel_text: str | None = ..., style: BaseStyle | None = ...) -> Application[list[Any]]:
     """Admonition dialog shortcut.
     The focus can be moved between the list and the Ok/Cancel button with tab.
     """
-    ...
 
 def input_dialog(title: AnyFormattedText = ..., text: AnyFormattedText = ..., ok_text: str | None = ..., cancel_text: str | None = ..., completer: Completer | None = ..., validator: Validator | None = ..., password: FilterOrBool = ..., style: BaseStyle | None = ..., multiline: bool = ..., default: str = ...) -> Application[str]:
     """
     Display a text input box.
     Return the given text, or None when cancelled.
     """
-    ...
 

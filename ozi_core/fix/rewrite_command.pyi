@@ -29,10 +29,8 @@ class RewriteCommand:
     target_type: str = ...
     def add(self: RewriteCommand, mode: str, kind: str, source: str) -> dict[str, Union[str, list[str]]]:
         """Add sources and tests to an OZI project."""
-        ...
     def rem(self: RewriteCommand, mode: str, kind: str, source: str) -> dict[str, Union[str, list[str]]]:
         """Add sources and tests to an OZI project."""
-        ...
 
 @dataclass
 class Rewriter:
@@ -41,15 +39,12 @@ class Rewriter:
     name: str
     fix: str
     env: Environment
-    commands: list[dict[str, str]] = [{}]
+    commands: list[dict[str, str]] = ...
     path_map: Mapping[str, Callable[[str], Path]] = {}
-    base_templates: dict[Annotated[str, 'fix'], Annotated[Template, 'base_template'],] = {}
+    base_templates: dict[Annotated[str, 'fix'], Annotated[Template, 'base_template']] = {}
     def __post_init__(self: Rewriter) -> None:
         """Setup the path_map"""
-        ...
     def __iadd__(self: Rewriter, other: list[str]) -> Rewriter:
         """Add a list of paths"""
-        ...
     def __isub__(self: Rewriter, other: list[str]) -> Rewriter:
         """Remove a list of paths"""
-        ...

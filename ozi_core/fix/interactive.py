@@ -8,6 +8,7 @@ from unittest.mock import Mock
 
 from prompt_toolkit.shortcuts.dialogs import button_dialog
 from prompt_toolkit.shortcuts.dialogs import checkboxlist_dialog
+from prompt_toolkit.shortcuts.dialogs import message_dialog
 from prompt_toolkit.shortcuts.dialogs import radiolist_dialog
 from prompt_toolkit.shortcuts.dialogs import yes_no_dialog
 from tap_producer import TAP
@@ -15,6 +16,8 @@ from tap_producer import TAP
 from ozi_core._i18n import TRANSLATION
 from ozi_core.fix.build_definition import walk
 from ozi_core.fix.missing import get_relpath_expected_files
+from ozi_core.fix.validate import RewriteCommandTargetValidator
+from ozi_core.new.interactive.validator import validate_message
 from ozi_core.ui._style import _style
 from ozi_core.ui.dialog import input_dialog
 from ozi_core.ui.menu import MenuButton
@@ -148,17 +151,35 @@ class Prompt:
                             result = input_dialog(
                                 title=TRANSLATION('fix-dlg-title'),
                                 cancel_text=MenuButton.MENU._str,
+                                style=_style,
+                                validator=RewriteCommandTargetValidator(),
                             ).run()
                             if result is not None:
-                                add_files += [result]
-                                prefix.update(
-                                    {
-                                        f'Add-{self.fix}: {add_files}': (
-                                            f'Add-{self.fix}: {add_files}'
-                                        ),
-                                    },
+                                valid, errmsg = validate_message(
+                                    result,
+                                    RewriteCommandTargetValidator(),
                                 )
-                                output['--add'].append(str(result))
+                                if valid:
+                                    add_files += [result]
+                                    prefix.update(
+                                        {
+                                            f'Add-{self.fix}: {add_files}': (
+                                                f'Add-{self.fix}: {add_files}'
+                                            ),
+                                        },
+                                    )
+                                    output['--add'].append(str(result))
+                                else:
+                                    message_dialog(
+                                        title=TRANSLATION('fix-dlg-title'),
+                                        text=TRANSLATION(
+                                            'msg-input-invalid',
+                                            value=result,
+                                            errmsg=errmsg,
+                                        ),
+                                        style=_style,
+                                        ok_text=MenuButton.OK._str,
+                                    ).run()
                 case MenuButton.REMOVE.value:
                     rel_path, _ = get_relpath_expected_files(self.fix, project_name)
                     files = []
@@ -188,17 +209,35 @@ class Prompt:
                             result = input_dialog(
                                 title=TRANSLATION('fix-dlg-title'),
                                 cancel_text=MenuButton.MENU._str,
+                                style=_style,
+                                validator=RewriteCommandTargetValidator(),
                             ).run()
                             if result is not None:
-                                rem_files += [result]
-                                prefix.update(
-                                    {
-                                        f'Remove-{self.fix}: {rem_files}': (
-                                            f'Remove-{self.fix}: {rem_files}'
-                                        ),
-                                    },
+                                valid, errmsg = validate_message(
+                                    result,
+                                    RewriteCommandTargetValidator(),
                                 )
-                                output['--remove'].append(str(result))
+                                if valid:
+                                    rem_files += [result]
+                                    prefix.update(
+                                        {
+                                            f'Remove-{self.fix}: {rem_files}': (
+                                                f'Remove-{self.fix}: {rem_files}'
+                                            ),
+                                        },
+                                    )
+                                    output['--remove'].append(str(result))
+                                else:
+                                    message_dialog(
+                                        title=TRANSLATION('fix-dlg-title'),
+                                        text=TRANSLATION(
+                                            'msg-input-invalid',
+                                            value=result,
+                                            errmsg=errmsg,
+                                        ),
+                                        style=_style,
+                                        ok_text=MenuButton.OK._str,
+                                    ).run()
                 case MenuButton.OK.value:
                     break
                 case MenuButton.MENU.value:
@@ -219,12 +258,16 @@ def interactive_prompt(project: Namespace) -> list[str]:  # pragma: no cover # n
         pass
     p = Prompt(project.target)
     result, output, prefix = p.set_fix_mode(
-        project_name=project.name, output={'fix': []}, prefix={}
+        project_name=project.name,
+        output={'fix': []},
+        prefix={},
     )
     if isinstance(result, list):
         return result
     result, output, prefix = p.add_or_remove(
-        project_name=project.name, output=output, prefix=prefix
+        project_name=project.name,
+        output=output,
+        prefix=prefix,
     )
     if isinstance(result, list):
         return result

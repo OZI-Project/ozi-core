@@ -90,13 +90,17 @@ def main(args: list[str] | None = None) -> NoReturn:  # pragma: no cover
                 project.name = underscorify(name)
                 project.license_file = 'LICENSE.txt'
                 project.copyright_head = valid_copyright_head(
-                    project.copyright_head, name, project.license_file
+                    project.copyright_head,
+                    name,
+                    project.license_file,
                 )
                 rewriter = Rewriter(str(project.target), project.name, project.fix, env)
                 rewriter += project.add
                 rewriter -= project.remove
                 for d in walk(
-                    project.target, get_relpath_expected_files(project.fix, name)[0], []
+                    project.target,
+                    get_relpath_expected_files(project.fix, name)[0],
+                    [],
                 ):
                     for k in d.keys():
                         build_text = unroll_subdirs(project.target, k)

@@ -55,7 +55,7 @@ class Admonition(RadioList[_T]):
     checked_style = 'class:admonition-checked'
     multiple_selection = False
 
-    def __init__(  # noqa: C901,DC104
+    def __init__(  # noqa: C901
         self: Admonition,
         values: Sequence[tuple[_T, Any]],
         default: _T | None = None,
@@ -64,7 +64,7 @@ class Admonition(RadioList[_T]):
         kb = KeyBindings()
 
         @kb.add('pageup')
-        def _pageup(event: KeyPressEvent) -> None:  # noqa: DC103
+        def _pageup(event: KeyPressEvent) -> None:
             w = event.app.layout.current_window
             if w.render_info:
                 self._selected_index = max(
@@ -73,7 +73,7 @@ class Admonition(RadioList[_T]):
                 )
 
         @kb.add('pagedown')
-        def _pagedown(event: KeyPressEvent) -> None:  # noqa: DC103
+        def _pagedown(event: KeyPressEvent) -> None:
             w = event.app.layout.current_window
             if w.render_info:
                 self._selected_index = min(
@@ -82,16 +82,16 @@ class Admonition(RadioList[_T]):
                 )
 
         @kb.add('up')
-        def _up(event: KeyPressEvent) -> None:  # noqa: DC103
+        def _up(event: KeyPressEvent) -> None:
             _pageup(event)
 
         @kb.add('down')
-        def _down(event: KeyPressEvent) -> None:  # noqa: DC103
+        def _down(event: KeyPressEvent) -> None:
             _pagedown(event)
 
         @kb.add('enter')
         @kb.add(' ')
-        def _click(event: KeyPressEvent) -> None:  # noqa: DC103
+        def _click(event: KeyPressEvent) -> None:
             self._handle_enter()
 
         self.control = FormattedTextControl(
@@ -123,7 +123,7 @@ def _return_none() -> None:  # pragma: no cover
     get_app().exit()
 
 
-def admonition_dialog(  # noqa: C901
+def admonition_dialog(
     title: str = '',
     text: str = '',
     heading_label: str = '',
@@ -151,7 +151,7 @@ def admonition_dialog(  # noqa: C901
         )
         style = Style.from_dict(style_dict)
 
-    def ok_handler() -> None:  # noqa: DC102
+    def ok_handler() -> None:
         get_app().exit(result=True)
 
     lines = text.splitlines()
@@ -205,11 +205,11 @@ def input_dialog(  # pragma: no cover
     if cancel_text is None:
         cancel_text = MenuButton.BACK._str
 
-    def accept(buf: Buffer) -> bool:  # noqa: DC102
+    def accept(buf: Buffer) -> bool:
         get_app().layout.focus(ok_button)
         return True  # Keep text.
 
-    def ok_handler() -> None:  # noqa: DC102
+    def ok_handler() -> None:
         get_app().exit(result=textfield.text)
 
     ok_button = Button(text=ok_text, handler=ok_handler)

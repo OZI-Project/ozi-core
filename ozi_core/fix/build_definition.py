@@ -5,7 +5,6 @@
 """Build definition check utilities."""
 from __future__ import annotations
 
-import difflib
 import os
 from pathlib import Path
 from typing import Generator
@@ -14,7 +13,6 @@ from ozi_spec import METADATA
 from pyparsing import Combine
 from pyparsing import DelimitedList
 from pyparsing import FollowedBy
-from pyparsing import Group
 from pyparsing import Keyword
 from pyparsing import LineEnd
 from pyparsing import Literal
@@ -46,18 +44,18 @@ IGNORE_MISSING = {
 _commasepitem = (
     Combine(
         OneOrMore(
-            ~Literal(",")
+            ~Literal(',')
             + ~LineEnd()
             + quoted_string
-            + Optional(White(" \t") + ~FollowedBy(LineEnd() | ","))
-        )
+            + Optional(White(' \t') + ~FollowedBy(LineEnd() | ',')),
+        ),
     )
     .streamline()
-    .set_name("commaItem")
+    .set_name('commaItem')
 )
 comma_separated_list = DelimitedList(
-    Optional(quoted_string.copy() | _commasepitem, default="")
-).set_name("comma separated list")
+    Optional(quoted_string.copy() | _commasepitem, default=''),
+).set_name('comma separated list')
 SP = White(' ', min=1)
 NL = White('\n', min=1)
 bound = Word(alphas, alphanums + '_')
@@ -73,23 +71,23 @@ array_assign = (
     lambda t: [
         *[f'subdir({i})' for i in t[3:-2] if len(i) and i.strip('\'"') != 'ozi.phony'],
         ' '.join(t[:3]) + "'ozi.phony'" + t[-2] + t[-1],  # type: ignore
-    ]
+    ],
 )
 foreach_bind = (
     Keyword('foreach') + bound + ':' + match_previous_literal(assigned) + rest_of_line
 ).set_parse_action(lambda t: ' '.join(t).strip())
 bindvar = match_previous_literal(bound)
 foreach_end = (Keyword('endforeach') + rest_of_line).set_parse_action(
-    lambda t: ' '.join(t).strip()
+    lambda t: ' '.join(t).strip(),
 )
 if_ozi_phony = (
     Keyword('if') + bindvar + Literal('!=') + Literal("'ozi.phony'") + rest_of_line
 ).set_parse_action(lambda t: '    ' + ' '.join(t).strip())
 endif = (Keyword('endif') + rest_of_line).set_parse_action(
-    lambda t: '    ' + ' '.join(t).strip()
+    lambda t: '    ' + ' '.join(t).strip(),
 )
 subdir_call = ('subdir(' + bindvar + ')' + rest_of_line).set_parse_action(
-    lambda t: '        ' + ''.join(t)
+    lambda t: '        ' + ''.join(t),
 )
 literal_subdir_loop = (
     array_assign + foreach_bind + if_ozi_phony + subdir_call + endif + foreach_end
