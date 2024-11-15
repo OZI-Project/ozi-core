@@ -1,9 +1,106 @@
 # ozi-core CHANGELOG
+## 1.5.0 (2024-11-15)
+
+
+### Build system
+
+
+* build(deps): bump OZI-Project/release from 1.0.4 to 1.0.5
+
+Bumps [OZI-Project/release](https://github.com/ozi-project/release) from 1.0.4 to 1.0.5.
+- [Release notes](https://github.com/ozi-project/release/releases)
+- [Commits](https://github.com/ozi-project/release/compare/74350f112641257ed33f06f83c3e6fc7ae92059b...1a3cb28a9a9d51fa8e333740a8b863c0f23ab3da)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/release
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`8d7d27c`](https://github.com/OZI-Project/ozi-core/commit/8d7d27ced4955f2fa02a78c22c5b43c72630227e))
+
+* build(deps): bump OZI-Project/draft from 1.4.0 to 1.5.0
+
+Bumps [OZI-Project/draft](https://github.com/ozi-project/draft) from 1.4.0 to 1.5.0.
+- [Release notes](https://github.com/ozi-project/draft/releases)
+- [Commits](https://github.com/ozi-project/draft/compare/1.4.0...1.5.0)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/draft
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`5f54cbf`](https://github.com/OZI-Project/ozi-core/commit/5f54cbf521937e973130ce289518768fc0235815))
+
+* build(deps): bump OZI-Project/publish from 1.4.1 to 1.5.0
+
+Bumps [OZI-Project/publish](https://github.com/ozi-project/publish) from 1.4.1 to 1.5.0.
+- [Release notes](https://github.com/ozi-project/publish/releases)
+- [Commits](https://github.com/ozi-project/publish/compare/1.4.1...1.5.0)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/publish
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`a6b118d`](https://github.com/OZI-Project/ozi-core/commit/a6b118d93840e36b0ec29ae9da9fa3672a62f45b))
+
+* build(deps): bump OZI-Project/checkpoint from 1.1.3 to 1.2.1
+
+Bumps [OZI-Project/checkpoint](https://github.com/ozi-project/checkpoint) from 1.1.3 to 1.2.1.
+- [Release notes](https://github.com/ozi-project/checkpoint/releases)
+- [Commits](https://github.com/ozi-project/checkpoint/compare/1.1.3...1.2.1)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/checkpoint
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`d9bea4e`](https://github.com/OZI-Project/ozi-core/commit/d9bea4e2a6a7f09d07519d24ab25d97cfbb64d61))
+
+* build(deps): update ozi-templates requirement from ~=2.13.15 to ~=2.14.0
+
+Updates the requirements on [ozi-templates](https://github.com/OZI-Project/ozi-templates) to permit the latest version.
+- [Release notes](https://github.com/OZI-Project/ozi-templates/releases)
+- [Changelog](https://github.com/OZI-Project/ozi-templates/blob/2.14.0/CHANGELOG.md)
+- [Commits](https://github.com/OZI-Project/ozi-templates/compare/2.13.15...2.14.0)
+
+
+updated-dependencies:
+- dependency-name: ozi-templates
+  dependency-type: direct:production
+... — dependabot[bot] <support@github.com>
+([`e0ea88e`](https://github.com/OZI-Project/ozi-core/commit/e0ea88ea423613534a303b1cdd26ec61477b450e))
+
+
+### Features
+
+
+* feat: spec v0.12 — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`04c270c`](https://github.com/OZI-Project/ozi-core/commit/04c270c2b4c03b7976352d460097ce89c84c9629))
+
 ## 1.4.17 (2024-11-15)
 
 
 ### Build system
 
+
+* build(deps): update ozi-spec requirement from ~=0.11.7 to ~=0.12.0
+
+Updates the requirements on [ozi-spec](https://github.com/OZI-Project/ozi-spec) to permit the latest version.
+- [Release notes](https://github.com/OZI-Project/ozi-spec/releases)
+- [Changelog](https://github.com/OZI-Project/ozi-spec/blob/0.12.0/CHANGELOG.md)
+- [Commits](https://github.com/OZI-Project/ozi-spec/compare/0.11.7...0.12.0)
+
+
+updated-dependencies:
+- dependency-name: ozi-spec
+  dependency-type: direct:production
+... — dependabot[bot] <support@github.com>
+([`352f207`](https://github.com/OZI-Project/ozi-core/commit/352f2074489dcc66a605c898f7d1e2eb8f3dd30a))
 
 * build(deps): ozi-spec~=0.11.7 — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
 ([`8a00811`](https://github.com/OZI-Project/ozi-core/commit/8a008116bcac9831e43a4a7e8d0e07901b408bf0))
@@ -1270,7 +1367,7 @@ updated-dependencies:
 ## 1.0.0 (2024-08-29)
 
 
-### Breaking
+### Bug fixes
 
 
 * fix: correct release
