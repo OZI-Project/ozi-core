@@ -12,7 +12,7 @@
 ozi-core
 ========
 
-Core library modules and CLI scripts for OZI packaging tools.
+Core library modules, commandline interfaces, and tests for OZI packaging tools.
 
 .. image:: https://raw.githubusercontent.com/sigstore/community/main/artwork/badge/sigstore_codesigned_purple.png
  :align: right
