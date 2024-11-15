@@ -1,4 +1,13 @@
 # ozi-core CHANGELOG
+## 1.4.17 (2024-11-15)
+
+
+### Build system
+
+
+* build(deps): ozi-spec~=0.11.7 — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`8a00811`](https://github.com/OZI-Project/ozi-core/commit/8a008116bcac9831e43a4a7e8d0e07901b408bf0))
+
 ## 1.4.16 (2024-11-11)
 
 
