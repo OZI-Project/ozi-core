@@ -212,20 +212,22 @@ class Prompt:
         output: dict[str, list[str]],
         prefix: dict[str, str],
     ) -> tuple[list[str] | str | bool | None, dict[str, list[str]], dict[str, str]]:
-        self.fix = radiolist_dialog(
-            title=TRANSLATION('fix-dlg-title'),
-            text=TRANSLATION('fix-add'),
-            style=_style,
-            cancel_text=MenuButton.MENU._str,
-            values=[('source', 'source'), ('test', 'test'), ('root', 'root')],
-        ).run()
-        if self.fix is not None:
-            output['fix'].append(self.fix)
-        else:
-            result, output, prefix = main_menu(self, output, prefix)
-            if result is not None:
-                return result, output, prefix
-        return None, output, prefix
+        while True:
+            self.fix = radiolist_dialog(
+                title=TRANSLATION('fix-dlg-title'),
+                text=TRANSLATION('fix-add'),
+                style=_style,
+                cancel_text=MenuButton.MENU._str,
+                ok_text=MenuButton.OK._str,
+                values=[('source', 'source'), ('test', 'test'), ('root', 'root')],
+            ).run()
+            if self.fix is not None:
+                output['fix'].append(self.fix)
+                return None, output, prefix
+            else:
+                result, output, prefix = main_menu(self, output, prefix)
+                if result is not None:
+                    return result, output, prefix
 
     def add_or_remove(  # pragma: no cover
         self: Prompt,
