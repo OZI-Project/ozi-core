@@ -21,6 +21,7 @@ source_files = [
   'actions.pyi',
   'comment.py',
   'comment.pyi',
+  'config.py',
   'generate_locales.py',
   'generate_locales.pyi',
   'meson.py',
