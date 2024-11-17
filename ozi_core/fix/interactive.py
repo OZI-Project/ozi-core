@@ -204,6 +204,7 @@ class Prompt:
         self.copyright_head = (
             copyright_head if copyright_head is not None else COPYRIGHT_HEAD
         )
+        TRANSLATION.locale = asdict(read_user_config())['interactive']['language']
 
     def set_fix_mode(  # pragma: no cover
         self: Prompt,
