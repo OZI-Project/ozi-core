@@ -217,6 +217,7 @@ class Prompt:
             text=TRANSLATION('fix-add'),
             style=_style,
             cancel_text=MenuButton.MENU._str,
+            ok_text=MenuButton.OK._str,
             values=[('source', 'source'), ('test', 'test'), ('root', 'root')],
         ).run()
         if self.fix is not None:
