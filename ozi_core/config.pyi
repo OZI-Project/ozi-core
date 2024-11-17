@@ -1,5 +1,7 @@
-from _typeshed import Incomplete
 from dataclasses import dataclass
+
+from _typeshed import Incomplete
+
 from ozi_core import __version__ as __version__
 
 core_version: Incomplete

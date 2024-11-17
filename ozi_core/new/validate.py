@@ -21,8 +21,8 @@ from tap_producer import TAP
 from trove_classifiers import classifiers
 
 from ozi_core._i18n import TRANSLATION
-from ozi_core.new.defaults import COPYRIGHT_HEAD
 from ozi_core.spdx import spdx_license_expression
+from ozi_core.ui.defaults import COPYRIGHT_HEAD
 from ozi_core.vendor.email_validator import EmailNotValidError
 from ozi_core.vendor.email_validator import EmailSyntaxError
 from ozi_core.vendor.email_validator import ValidatedEmail

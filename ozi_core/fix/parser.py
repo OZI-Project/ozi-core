@@ -10,7 +10,9 @@ from argparse import BooleanOptionalAction
 
 from ozi_core._i18n import TRANSLATION
 from ozi_core.fix.validate import AppendRewriteCommandTarget
-from ozi_core.new.defaults import COPYRIGHT_HEAD
+from ozi_core.ui.defaults import COPYRIGHT_HEAD
+from ozi_core.ui.defaults import FIX_PRETTY
+from ozi_core.ui.defaults import FIX_STRICT
 
 parser = ArgumentParser(
     prog='ozi-fix',
@@ -39,13 +41,13 @@ parser.add_argument(
 )
 parser.add_argument(
     '--strict',
-    default=False,
+    default=FIX_STRICT,
     action=BooleanOptionalAction,
     help=SUPPRESS,
 )
 parser.add_argument(
     '--pretty',
-    default=False,
+    default=FIX_PRETTY,
     action=BooleanOptionalAction,
     help=SUPPRESS,
 )
@@ -79,13 +81,13 @@ missing_parser.add_argument(
 missing_output = missing_parser.add_argument_group(TRANSLATION('term-output'))
 missing_output.add_argument(
     '--strict',
-    default=False,
+    default=FIX_STRICT,
     action=BooleanOptionalAction,
     help=TRANSLATION('term-help-strict'),
 )
 missing_output.add_argument(
     '--pretty',
-    default=False,
+    default=FIX_PRETTY,
     action=BooleanOptionalAction,
     help=TRANSLATION('term-help-pretty'),
 )
@@ -141,13 +143,13 @@ source_parser.add_argument(
 source_output = source_parser.add_argument_group(TRANSLATION('term-output'))
 source_output.add_argument(
     '--strict',
-    default=False,
+    default=FIX_STRICT,
     action=BooleanOptionalAction,
     help=TRANSLATION('term-help-strict'),
 )
 source_output.add_argument(
     '--pretty',
-    default=False,
+    default=FIX_PRETTY,
     action=BooleanOptionalAction,
     help=TRANSLATION('term-help-pretty'),
 )
@@ -193,13 +195,13 @@ test_parser.add_argument(
 test_output = test_parser.add_argument_group(TRANSLATION('term-output'))
 test_output.add_argument(
     '--strict',
-    default=False,
+    default=FIX_STRICT,
     action=BooleanOptionalAction,
     help=TRANSLATION('term-help-strict'),
 )
 test_output.add_argument(
     '--pretty',
-    default=False,
+    default=FIX_PRETTY,
     action=BooleanOptionalAction,
     help=TRANSLATION('term-help-pretty'),
 )
