@@ -18,9 +18,11 @@ from packaging.version import Version
 if TYPE_CHECKING:
     ...
 _prefix = ...
+
 @dataclass
 class ExactMatch:
     """Exact matches data for packaging core metadata."""
+
     audience: tuple[str, ...] = ...
     language: tuple[str, ...] = ...
     framework: tuple[str, ...] = ...
@@ -31,11 +33,17 @@ class ExactMatch:
     status: tuple[str, ...] = ...
     topic: tuple[str, ...] = ...
 
-
 class CloseMatch(Action):
     """Special argparse choices action. Warn the user if a close match could not be found."""
+
     exact_match = ...
-    def __init__(self, option_strings: list[str], dest: str, nargs: int | str | None = ..., **kwargs: Any) -> None:
+    def __init__(
+        self,
+        option_strings: list[str],
+        dest: str,
+        nargs: int | str | None = ...,
+        **kwargs: Any
+    ) -> None:
         """Argparse init"""
 
     def close_matches(self, key: str, value: str) -> Sequence[str]:
@@ -49,10 +57,14 @@ class CloseMatch(Action):
         :rtype: Sequence[str]
         """
 
-    def __call__(self, parser: ArgumentParser, namespace: Namespace, values: str | Sequence[str] | None, option_string: str | None = ...) -> None:
+    def __call__(
+        self,
+        parser: ArgumentParser,
+        namespace: Namespace,
+        values: str | Sequence[str] | None,
+        option_string: str | None = ...,
+    ) -> None:
         """Find closest matching class attribute."""
-
-
 
 def check_for_update(current_version: Version, releases: Collection[Version]) -> None:
     """Issue a warning if installed version of OZI is not up to date."""
@@ -68,4 +80,3 @@ def list_available(key: str) -> NoReturn:
 
 def license_expression(expr: str) -> NoReturn:
     """Validate a SPDX license expression."""
-
