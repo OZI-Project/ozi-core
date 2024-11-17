@@ -1,4 +1,13 @@
 # ozi-core CHANGELOG
+## 1.5.2 (2024-11-17)
+
+
+### Bug fixes
+
+
+* fix: add translated string for options save dialog
+([`fb43c37`](https://github.com/OZI-Project/ozi-core/commit/fb43c378b4de29e165642756222bd67c51fe008a))
+
 ## 1.5.1 (2024-11-17)
 
 
