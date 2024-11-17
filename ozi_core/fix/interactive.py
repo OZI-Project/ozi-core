@@ -76,7 +76,7 @@ def options_menu(  # pragma: no cover
             ok_text=MenuButton.OK._str,
         ).run():
             case x if x and x in ('strict', 'pretty'):
-                for i in ('--strict', '--no-strict'):
+                for i in (f'--{x}', f'--no-{x}'):
                     if i in output:
                         output.pop(i)
                 setting = getattr(prompt, x)
