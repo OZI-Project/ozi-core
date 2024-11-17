@@ -48,7 +48,7 @@ readme_ext_to_content_type = {
 
 
 def get_relpath_expected_files(
-    kind: str,
+    kind: str | None,
     name: str,
 ) -> tuple[Path, tuple[str, ...] | tuple[()]]:
     match kind:

@@ -6,7 +6,6 @@ from dataclasses import asdict
 from io import UnsupportedOperation
 from typing import TYPE_CHECKING
 from typing import Any
-from typing import Literal
 from unittest.mock import Mock
 
 from prompt_toolkit.shortcuts.dialogs import button_dialog
@@ -113,8 +112,8 @@ def options_menu(  # pragma: no cover
                     text=TRANSLATION('opt-menu-language-text'),
                     values=list(
                         zip(
-                            TRANSLATION.data.keys(),
-                            [TRANSLATION(f'lang-{i}') for i in TRANSLATION.data.keys()],
+                            TRANSLATION.data.keys(),  # type: ignore
+                            [TRANSLATION(f'lang-{i}') for i in TRANSLATION.data.keys()],  # type: ignore
                         ),
                     ),
                     cancel_text=MenuButton.BACK._str,
@@ -199,7 +198,7 @@ class Prompt:
         copyright_head: str | None = None,
     ) -> None:
         self.target = target
-        self.fix: Literal['source', 'root', 'test'] | None = 'root'
+        self.fix: str | None = 'root'
         self.strict = strict if strict is not None else FIX_STRICT
         self.pretty = pretty if pretty is not None else FIX_PRETTY
         self.copyright_head = (
