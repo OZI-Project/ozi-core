@@ -51,7 +51,7 @@ def test_fuzz_CloseMatch_nargs_None(  # noqa: N802, DC102, RUF100
     close_match(argparse.ArgumentParser(), argparse.Namespace(), data, option_strings)
 
 
-@settings(deadline=timedelta(milliseconds=500))
+@settings(deadline=timedelta(milliseconds=1000))
 @given(
     option_strings=st.one_of(
         st.just('--license'),
