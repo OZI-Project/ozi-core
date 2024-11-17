@@ -1,4 +1,26 @@
 # ozi-core CHANGELOG
+## 1.5.1 (2024-11-17)
+
+
+### Bug fixes
+
+
+* fix: remove __init__ from dataclasses in stubs — rjdbcm <rjdbcm@outlook.com>
+([`49f1889`](https://github.com/OZI-Project/ozi-core/commit/49f1889b70ca831c08f9e15e5fa84a9300bb1a49))
+
+* fix: run black — rjdbcm <rjdbcm@outlook.com>
+([`f8098bd`](https://github.com/OZI-Project/ozi-core/commit/f8098bdd10387fba138b4d8c818dcadc741370b3))
+
+* fix: clean up stubs — rjdbcm <rjdbcm@outlook.com>
+([`0ec4271`](https://github.com/OZI-Project/ozi-core/commit/0ec42713adbeead137520dd74d3069af7b6af542))
+
+
+### Performance improvements
+
+
+* perf: add config.yml file for user-defined defaults in interactive CLI — rjdbcm <rjdbcm@outlook.com>
+([`0dbfdd5`](https://github.com/OZI-Project/ozi-core/commit/0dbfdd5ea895254a378f19ac289f61de623241e3))
+
 ## 1.5.0 (2024-11-15)
 
 
