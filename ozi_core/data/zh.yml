@@ -88,6 +88,7 @@ opt-menu-language-text: 选择用户界面语言
 opt-menu-strict: 严格模式：$value
 opt-menu-title: 选项选单，选择一个选项：
 opt-menu-verify-email: 验证电子邮件：$value
+opt-menu-save-config: 保存选项配置吗？
 pro-author: >
   『$projectname』的作者是谁？
 

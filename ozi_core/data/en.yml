@@ -93,6 +93,7 @@ opt-menu-language-text: 'Select the user interface language:'
 opt-menu-strict: 'Strict Mode: $value'
 opt-menu-title: 'Options menu, select an option:'
 opt-menu-verify-email: 'Verify Email: $value'
+opt-menu-save-config: 'Save options configuration?'
 pro-author: >
   Who is the author or authors of $projectname?
 
