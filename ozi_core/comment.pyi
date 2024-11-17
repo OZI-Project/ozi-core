@@ -17,12 +17,13 @@ if TYPE_CHECKING:
 TIER3_COMMENTS = ...
 TIER2_COMMENTS = ...
 TIER1_COMMENTS = ...
+
 class CommentQuality(IntFlag):
     """Comment tiers for scoring project quality."""
+
     TIER1 = ...
     TIER2 = ...
     TIER3 = ...
-
 
 def calculate_score(lines: int, t1: int, t2: int, t3: int) -> float:
     """Calculate a quality score out of five.
@@ -59,7 +60,9 @@ def pattern_search(line: str) -> Generator[tuple[str, str], None, None]:
     :rtype: Generator[tuple[str, str], None, None]
     """
 
-def diagnose(line: str, rel_path: Path, line_no: int) -> Generator[tuple[str, str], None, None]:
+def diagnose(
+    line: str, rel_path: Path, line_no: int
+) -> Generator[tuple[str, str], None, None]:
     """Diagnose OZI comment pattern for a single line.
 
     :param line: line text verbatim
@@ -70,7 +73,9 @@ def diagnose(line: str, rel_path: Path, line_no: int) -> Generator[tuple[str, st
     :type line_no: int
     """
 
-def diagnostic(lines: Sequence[str], rel_path: Path, start: int = ...) -> tuple[Counter[str], dict[str, str]]:
+def diagnostic(
+    lines: Sequence[str], rel_path: Path, start: int = ...
+) -> tuple[Counter[str], dict[str, str]]:
     """Diagnose OZI comment pattern for a sequence of lines (usually a single file).
 
     :param lines: lines to check
@@ -102,4 +107,3 @@ def score(count: Counter[str]) -> float:
 
 def comment_diagnostic(target: Path, rel_path: Path, file: str) -> None:
     """Run a scored comment diagnostic on a python file."""
-

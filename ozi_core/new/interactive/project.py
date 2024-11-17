@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from dataclasses import asdict
 from typing import TYPE_CHECKING
 
 from ozi_spec import METADATA
@@ -12,6 +13,7 @@ from prompt_toolkit.validation import DynamicValidator  # pyright: ignore
 from prompt_toolkit.validation import Validator  # pyright: ignore
 
 from ozi_core._i18n import TRANSLATION
+from ozi_core.config import read_user_config
 from ozi_core.new.interactive.menu import main_menu
 from ozi_core.new.interactive.validator import LengthValidator
 from ozi_core.new.interactive.validator import NotReservedValidator
@@ -35,22 +37,26 @@ class Project:  # pragma: no cover
         allow_file: list[str] | None = None,
         ci_provider: str | None = None,
         copyright_head: str | None = None,
-        enable_cython: bool = False,
-        enable_uv: bool = False,
-        github_harden_runner: bool = False,
-        strict: bool = True,
-        verify_email: bool = False,
-        check_package_exists: bool = True,
+        enable_cython: bool | None = None,
+        enable_uv: bool | None = None,
+        github_harden_runner: bool | None = None,
+        strict: bool | None = None,
+        verify_email: bool | None = None,
+        check_package_exists: bool | None = None,
     ) -> None:
         self.allow_file = allow_file
         self.ci_provider = ci_provider
         self.copyright_head = copyright_head
-        self.enable_cython = enable_cython
-        self.enable_uv = enable_uv
-        self.github_harden_runner = github_harden_runner
-        self.strict = strict
-        self.verify_email = verify_email
-        self.check_package_exists = check_package_exists
+        self.enable_cython = enable_cython if enable_cython is not None else False
+        self.enable_uv = enable_uv if enable_uv is not None else False
+        self.github_harden_runner = (
+            github_harden_runner if github_harden_runner is not None else False
+        )
+        self.strict = strict if strict is not None else True
+        self.verify_email = verify_email if verify_email is not None else False
+        self.check_package_exists = (
+            check_package_exists if check_package_exists is not None else True
+        )
 
     def __call__(self: Project) -> list[str]:  # noqa: C901  # pragma: no cover
         """Start the interactive prompt."""
@@ -250,6 +256,9 @@ class Project:  # pragma: no cover
         prefix: dict[str, str],
     ) -> tuple[None | list[str] | str | bool, dict[str, list[str]], dict[str, str]]:
         while True:
+            config = asdict(read_user_config())
+            key = config['new']['author']
+            output['--author'] = [key] if key is not None else []
             result, output, prefix = self.header_input(
                 'Author',
                 output,
@@ -270,6 +279,9 @@ class Project:  # pragma: no cover
         prefix: dict[str, str],
     ) -> tuple[None | list[str] | str | bool, dict[str, list[str]], dict[str, str]]:
         while True:
+            config = asdict(read_user_config())
+            key = config['new']['author_email']
+            output['--author-email'] = [key] if key is not None else []
             result, output, prefix = self.header_input(
                 'Author-email',
                 output,
@@ -440,6 +452,9 @@ class Project:  # pragma: no cover
         prefix: dict[str, str],
     ) -> tuple[None | list[str] | str | bool, dict[str, list[str]], dict[str, str]]:
         while True:
+            config = asdict(read_user_config())
+            key = config['new']['maintainer']
+            output['--maintainer'] = [key] if key is not None else []
             result, output, prefix = self.header_input(
                 'Maintainer',
                 output,
@@ -460,6 +475,9 @@ class Project:  # pragma: no cover
         prefix: dict[str, str],
     ) -> tuple[None | list[str] | str | bool, dict[str, list[str]], dict[str, str]]:
         while True:
+            config = asdict(read_user_config())
+            key = config['new']['maintainer_email']
+            output['--maintainer-email'] = [key] if key is not None else []
             result, output, prefix = self.header_input(
                 'Maintainer-email',
                 output,
@@ -557,7 +575,9 @@ class Project:  # pragma: no cover
         output: dict[str, list[str]],
         prefix: dict[str, str],
     ) -> tuple[str | list[str], dict[str, list[str]], dict[str, str]]:
-        _default = output.setdefault('--readme-type', [])
+        config = asdict(read_user_config())
+        key = config['new']['readme_type']
+        _default = output.setdefault('--readme-type', [key] if key is not None else [])
         readme_type = radiolist_dialog(
             values=(
                 ('rst', 'ReStructuredText'),

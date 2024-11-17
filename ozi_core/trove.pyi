@@ -9,6 +9,7 @@ from typing import TYPE_CHECKING
 """Trove packaging classifiers interface."""
 if TYPE_CHECKING:
     ...
+
 @lru_cache
 def get_trove_prefix(text: str) -> str | None:
     """Get a trove classifier prefix from a classifier string.
@@ -20,9 +21,11 @@ def get_trove_prefix(text: str) -> str | None:
     """
 
 valid_trove_prefixes = ...
+
 @dataclass(frozen=True, slots=True, eq=True)
 class Prefix:
     """Trove :term:`classifier` prefix literals for :term:`PyPI`"""
+
     audience: str = 'Intended Audience :: '
     environment: str = 'Environment :: '
     framework: str = 'Framework :: '
@@ -33,9 +36,6 @@ class Prefix:
     def __post_init__(self) -> None:
         """Check if any of the default attributes are deprecated upstream."""
 
-
-
 @lru_cache
 def from_prefix(prefix: str) -> tuple[str, ...]:
     """Return all matching classifiers for a prefix string."""
-
