@@ -1,4 +1,13 @@
 # ozi-core CHANGELOG
+## 1.5.6 (2024-11-17)
+
+
+### Bug fixes
+
+
+* fix: pretty mode setting works in ozi-fix interactive — rjdbcm <rjdbcm@outlook.com>
+([`0da3aa4`](https://github.com/OZI-Project/ozi-core/commit/0da3aa452cfb49d7b0f57dfa9e4cb7fe5debc9b1))
+
 ## 1.5.5 (2024-11-17)
 
 
