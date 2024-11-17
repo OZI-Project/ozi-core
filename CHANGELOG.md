@@ -1,4 +1,13 @@
 # ozi-core CHANGELOG
+## 1.5.4 (2024-11-17)
+
+
+### Bug fixes
+
+
+* fix: use the user-defined language locale in interactive prompts — rjdbcm <rjdbcm@outlook.com>
+([`c691377`](https://github.com/OZI-Project/ozi-core/commit/c691377662f361acb9e4b0af0a4df69a9aa604b7))
+
 ## 1.5.3 (2024-11-17)
 
 
