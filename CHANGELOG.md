@@ -1,4 +1,74 @@
 # ozi-core CHANGELOG
+## 1.5.7 (2024-11-17)
+
+
+### Bug fixes
+
+
+* fix: setting pretty in interactive mode ozi-fix works — rjdbcm <rjdbcm@outlook.com>
+([`01182ec`](https://github.com/OZI-Project/ozi-core/commit/01182ec339fda7a124c1e41192423b092aa149e7))
+
+## 1.5.6 (2024-11-17)
+
+
+### Bug fixes
+
+
+* fix: pretty mode setting works in ozi-fix interactive — rjdbcm <rjdbcm@outlook.com>
+([`0da3aa4`](https://github.com/OZI-Project/ozi-core/commit/0da3aa452cfb49d7b0f57dfa9e4cb7fe5debc9b1))
+
+## 1.5.5 (2024-11-17)
+
+
+### Bug fixes
+
+
+* fix: update deadline for flaky test — rjdbcm <rjdbcm@outlook.com>
+([`f5f7b68`](https://github.com/OZI-Project/ozi-core/commit/f5f7b68e215a0de8f06403644398ed6591ab4fef))
+
+* fix: correctly loop fix mode interactive dialog — rjdbcm <rjdbcm@outlook.com>
+([`bea79f0`](https://github.com/OZI-Project/ozi-core/commit/bea79f005be28a32c9c5b7b9bd346d78a903e8c2))
+
+* fix: remove generated locales file used for testing — rjdbcm <rjdbcm@outlook.com>
+([`bd646fd`](https://github.com/OZI-Project/ozi-core/commit/bd646fdb518e2a973d4a11718822e936a29d8823))
+
+* fix: translate fix mode dialog ok button — rjdbcm <rjdbcm@outlook.com>
+([`a20fd2a`](https://github.com/OZI-Project/ozi-core/commit/a20fd2a8c4a1f51820a4be76f190c05a8139260f))
+
+## 1.5.4 (2024-11-17)
+
+
+### Bug fixes
+
+
+* fix: use the user-defined language locale in interactive prompts — rjdbcm <rjdbcm@outlook.com>
+([`c691377`](https://github.com/OZI-Project/ozi-core/commit/c691377662f361acb9e4b0af0a4df69a9aa604b7))
+
+## 1.5.3 (2024-11-17)
+
+
+### Bug fixes
+
+
+* fix: add options menu to set ozi-fix options and menu language — rjdbcm <rjdbcm@outlook.com>
+([`c1d5206`](https://github.com/OZI-Project/ozi-core/commit/c1d520689c07470fb3830106948871ae61991ff0))
+
+
+### Unknown
+
+
+* run lint — rjdbcm <rjdbcm@outlook.com>
+([`d6f07e8`](https://github.com/OZI-Project/ozi-core/commit/d6f07e8914c7331ca176da326ce01aaba5495f38))
+
+## 1.5.2 (2024-11-17)
+
+
+### Bug fixes
+
+
+* fix: add translated string for options save dialog
+([`fb43c37`](https://github.com/OZI-Project/ozi-core/commit/fb43c378b4de29e165642756222bd67c51fe008a))
+
 ## 1.5.1 (2024-11-17)
 
 
