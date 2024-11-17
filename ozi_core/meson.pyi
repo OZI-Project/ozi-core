@@ -45,7 +45,9 @@ def project_metadata(ast: CodeBlockNode) -> tuple[str, str]:
     """
 
 @lru_cache(typed=True)
-def query_simple(ast: CodeBlockNode, select: SelectValue = ..., where: WhereValue = ...) -> set[BaseNode]:
+def query_simple(
+    ast: CodeBlockNode, select: SelectValue = ..., where: WhereValue = ...
+) -> set[BaseNode]:
     """Run a simplistic query with no node filtering.
 
     :param ast: The AST for a :file:`meson.build`.
@@ -59,7 +61,12 @@ def query_simple(ast: CodeBlockNode, select: SelectValue = ..., where: WhereValu
     """
 
 @lru_cache(typed=True)
-def query_complex(ast: CodeBlockNode, select: SelectValue = ..., where: WhereValue = ..., get: type[ElementaryNode] = ...) -> set[str]:
+def query_complex(
+    ast: CodeBlockNode,
+    select: SelectValue = ...,
+    where: WhereValue = ...,
+    get: type[ElementaryNode] = ...,
+) -> set[str]:
     """Run a complex (filtered) query of build item values.
 
     :param ast: The AST for a :file:`meson.build`.
@@ -75,7 +82,12 @@ def query_complex(ast: CodeBlockNode, select: SelectValue = ..., where: WhereVal
     """
 
 @lru_cache(typed=True)
-def query_loop_assignments(ast: CodeBlockNode, select: SelectItems = ..., where: type[ElementaryNode] = ..., get: type[ElementaryNode] = ...) -> set[str]:
+def query_loop_assignments(
+    ast: CodeBlockNode,
+    select: SelectItems = ...,
+    where: type[ElementaryNode] = ...,
+    get: type[ElementaryNode] = ...,
+) -> set[str]:
     """Get a set of selected array items (must be assigned to a variable).
 
     :param ast: The AST for a :file:`meson.build`.
@@ -122,4 +134,3 @@ def get_items_by_suffix(source_root: str, query: str) -> set[str] | None:
     :param query: The text to look for.
     :type query: str
     """
-

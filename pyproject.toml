@@ -11,6 +11,7 @@ dependencies = [
     'ozi-spec~=0.12.0',
     'ozi-templates~=2.14.0',
     'packaging~=24.1',
+    'platformdirs~=4.3',
     'prompt-toolkit',
     'pyparsing~=3.1',
     'requests',

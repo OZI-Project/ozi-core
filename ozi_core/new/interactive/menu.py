@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from dataclasses import asdict
 from typing import Any
 
 from ozi_spec import METADATA
@@ -9,6 +10,9 @@ from prompt_toolkit.shortcuts import radiolist_dialog  # pyright: ignore
 from prompt_toolkit.shortcuts import yes_no_dialog  # pyright: ignore
 
 from ozi_core._i18n import TRANSLATION
+from ozi_core.config import OziConfig
+from ozi_core.config import read_user_config
+from ozi_core.config import write_user_config
 from ozi_core.trove import Prefix
 from ozi_core.trove import from_prefix
 from ozi_core.ui._style import _style
@@ -246,6 +250,17 @@ def options_menu(  # pragma: no cover
                 if result is not None:
                     TRANSLATION.locale = result
             case _:
+                if yes_no_dialog(
+                    title=TRANSLATION('new-dlg-title'),
+                    text=TRANSLATION('opt-menu-save-config'),
+                    yes_text=MenuButton.YES._str,
+                    no_text=MenuButton.NO._str,
+                    style=_style,
+                ).run():
+                    config = asdict(read_user_config())
+                    config['new'].update(**vars(project))
+                    config['interactive'].update(language=TRANSLATION.locale)
+                    write_user_config(OziConfig(**config))
                 break
     return None, output, prefix
 
@@ -345,6 +360,7 @@ def edit_menu(  # pragma: no cover
                         'topic',
                     ):
                         output.setdefault(f'--{x}', [])
+                        config = asdict(read_user_config())
                         header = getattr(Prefix(), x)
                         classifier = checkboxlist_dialog(
                             values=sorted(
@@ -360,6 +376,9 @@ def edit_menu(  # pragma: no cover
                                 'pro-classifier-cbl',
                                 key=TRANSLATION(f'edit-menu-btn-{x}'),
                             ),
+                            default_values=(
+                                config['new']['language'] if x == 'language' else None
+                            ),
                             style=_style,
                             ok_text=MenuButton.OK._str,
                             cancel_text=MenuButton.BACK._str,
@@ -367,6 +386,11 @@ def edit_menu(  # pragma: no cover
                         if classifier is not None:
                             for i in classifier:
                                 output[f'--{x}'].append(i)
+                                if x in ['language']:
+                                    config['new'].update(
+                                        {x: output[f'--{x}']} | vars(project)
+                                    )
+                                    write_user_config(OziConfig(**config))
                         prefix.update(
                             (
                                 {
@@ -376,6 +400,32 @@ def edit_menu(  # pragma: no cover
                                 else {}
                             ),
                         )
+                    case x if x and x in (
+                        'author',
+                        'author_email',
+                        'maintainer',
+                        'maintainer_email',
+                        'readme_type',
+                    ):
+                        result, output, prefix = getattr(project, x)(
+                            project_name,
+                            output,
+                            prefix,
+                        )
+                        if isinstance(result, list):
+                            return result, output, prefix
+                        if yes_no_dialog(
+                            title=TRANSLATION('new-dlg-title'),
+                            text=TRANSLATION('opt-menu-save-config'),
+                            yes_text=MenuButton.YES._str,
+                            no_text=MenuButton.NO._str,
+                            style=_style,
+                        ).run():
+                            config = asdict(read_user_config())
+                            config['new'].update(
+                                {x: output[f'--{x.replace("_", "-")}'][0]} | vars(project)
+                            )
+                            write_user_config(OziConfig(**config))
                     case x:
                         result, output, prefix = getattr(project, x)(
                             project_name,
