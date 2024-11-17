@@ -6,6 +6,8 @@ source_ui_files = [
     '__init__.py',
     'menu.py',
     'menu.pyi',
+    'defaults.py',
+    'defaults.pyi',
     'dialog.py',
     'dialog.pyi',
     '_style.py',

@@ -2,8 +2,11 @@ from __future__ import annotations
 
 import os
 import sys
+from dataclasses import asdict
 from io import UnsupportedOperation
 from typing import TYPE_CHECKING
+from typing import Any
+from typing import Literal
 from unittest.mock import Mock
 
 from prompt_toolkit.shortcuts.dialogs import button_dialog
@@ -14,13 +17,20 @@ from prompt_toolkit.shortcuts.dialogs import yes_no_dialog
 from tap_producer import TAP
 
 from ozi_core._i18n import TRANSLATION
+from ozi_core.config import OziConfig
+from ozi_core.config import read_user_config
+from ozi_core.config import write_user_config
 from ozi_core.fix.build_definition import walk
 from ozi_core.fix.missing import get_relpath_expected_files
 from ozi_core.fix.validate import RewriteCommandTargetValidator
 from ozi_core.new.interactive.validator import validate_message
 from ozi_core.ui._style import _style
+from ozi_core.ui.defaults import COPYRIGHT_HEAD
+from ozi_core.ui.defaults import FIX_PRETTY
+from ozi_core.ui.defaults import FIX_STRICT
 from ozi_core.ui.dialog import input_dialog
 from ozi_core.ui.menu import MenuButton
+from ozi_core.ui.menu import checkbox
 
 if sys.platform != 'win32':  # pragma: no cover
     import curses
@@ -34,7 +44,110 @@ if TYPE_CHECKING:  # pragma: no cover
     from pathlib import Path
 
 
+def options_menu(  # pragma: no cover
+    prompt: Any,
+    output: dict[str, list[str]],
+    prefix: dict[str, str],
+) -> tuple[None | list[str] | bool, dict[str, list[str]], dict[str, str]]:
+    _default: str | list[str] | None = None
+    while True:
+        match radiolist_dialog(
+            title=TRANSLATION('fix-dlg-title'),
+            text=TRANSLATION('opt-menu-title'),
+            values=[
+                (
+                    'strict',
+                    TRANSLATION('opt-menu-strict', value=checkbox(prompt.strict)),
+                ),
+                (
+                    'pretty',
+                    TRANSLATION('opt-menu-pretty', value=checkbox(prompt.pretty)),
+                ),
+                ('copyright_head', TRANSLATION('opt-menu-copyright-head')),
+                (
+                    'language',
+                    TRANSLATION(
+                        'opt-menu-language',
+                        value=TRANSLATION(f'lang-{TRANSLATION.locale}'),
+                    ),
+                ),
+            ],
+            style=_style,
+            cancel_text=MenuButton.BACK._str,
+            ok_text=MenuButton.OK._str,
+        ).run():
+            case x if x and x == 'strict':
+                for i in ('--strict', '--no-strict'):
+                    if i in output:
+                        output.pop(i)
+                setting = getattr(prompt, x)
+                if setting is None:
+                    setattr(prompt, x, False)
+                else:
+                    flag = '' if setting else 'no-'
+                    output.update(
+                        {
+                            f'--{flag}{x.replace("_", "-")}': [
+                                f'--{flag}{x.replace("_", "-")}',
+                            ],
+                        },
+                    )
+                    setattr(prompt, x, not setting)
+            case x if x and x == 'copyright_head':
+                _default = output.setdefault('--copyright-head', [COPYRIGHT_HEAD])
+                result = input_dialog(
+                    title=TRANSLATION('fix-dlg-title'),
+                    text=TRANSLATION('opt-menu-copyright-head-input'),
+                    style=_style,
+                    cancel_text=MenuButton.BACK._str,
+                    ok_text=MenuButton.OK._str,
+                    default=_default[0],
+                    multiline=True,
+                ).run()
+                if result in _default:
+                    prompt.copyright_head = result
+                    output.update({'--copyright-head': [prompt.copyright_head]})
+            case x if x == 'language':
+                result = radiolist_dialog(
+                    title=TRANSLATION('fix-dlg-title'),
+                    text=TRANSLATION('opt-menu-language-text'),
+                    values=list(
+                        zip(
+                            TRANSLATION.data.keys(),
+                            [TRANSLATION(f'lang-{i}') for i in TRANSLATION.data.keys()],
+                        ),
+                    ),
+                    cancel_text=MenuButton.BACK._str,
+                    ok_text=MenuButton.OK._str,
+                    default=TRANSLATION.locale,
+                    style=_style,
+                ).run()
+                if result is not None:
+                    TRANSLATION.locale = result
+            case _:
+                if yes_no_dialog(
+                    title=TRANSLATION('fix-dlg-title'),
+                    text=TRANSLATION('opt-menu-save-config'),
+                    yes_text=MenuButton.YES._str,
+                    no_text=MenuButton.NO._str,
+                    style=_style,
+                ).run():
+                    config = asdict(read_user_config())
+                    config['fix'].update(
+                        **{
+                            k: v
+                            for k, v in vars(prompt).items()
+                            if k not in ['fix', 'target']
+                        }
+                    )
+                    config['interactive'].update(language=TRANSLATION.locale)
+                    write_user_config(OziConfig(**config))
+                break
+    return None, output, prefix
+
+
 def main_menu(  # pragma: no cover
+    prompt: Any,
     output: dict[str, list[str]],
     prefix: dict[str, str],
 ) -> tuple[None | list[str] | bool, dict[str, list[str]], dict[str, str]]:
@@ -43,12 +156,17 @@ def main_menu(  # pragma: no cover
             title=TRANSLATION('new-dlg-title'),
             text=TRANSLATION('main-menu-text'),
             buttons=[
+                MenuButton.OPTIONS._tuple,
                 MenuButton.RESET._tuple,
                 MenuButton.EXIT._tuple,
                 MenuButton.BACK._tuple,
             ],
             style=_style,
         ).run():
+            case MenuButton.OPTIONS.value:
+                result, output, prefix = options_menu(prompt, output, prefix)
+                if isinstance(result, list):
+                    return result, output, prefix
             case MenuButton.BACK.value:
                 break
             case MenuButton.RESET.value:
@@ -73,9 +191,20 @@ def main_menu(  # pragma: no cover
 
 
 class Prompt:
-    def __init__(self: Prompt, target: Path) -> None:  # pragma: no cover
+    def __init__(  # pragma: no cover
+        self: Prompt,
+        target: Path,
+        strict: bool | None = None,
+        pretty: bool | None = None,
+        copyright_head: str | None = None,
+    ) -> None:
         self.target = target
-        self.fix: str = 'root'
+        self.fix: Literal['source', 'root', 'test'] | None = 'root'
+        self.strict = strict if strict is not None else FIX_STRICT
+        self.pretty = pretty if pretty is not None else FIX_PRETTY
+        self.copyright_head = (
+            copyright_head if copyright_head is not None else COPYRIGHT_HEAD
+        )
 
     def set_fix_mode(  # pragma: no cover
         self: Prompt,
@@ -92,6 +221,10 @@ class Prompt:
         ).run()
         if self.fix is not None:
             output['fix'].append(self.fix)
+        else:
+            result, output, prefix = main_menu(self, output, prefix)
+            if result is not None:
+                return result, output, prefix
         return None, output, prefix
 
     def add_or_remove(  # pragma: no cover
@@ -241,7 +374,7 @@ class Prompt:
                 case MenuButton.OK.value:
                     break
                 case MenuButton.MENU.value:
-                    result, output, prefix = main_menu(output, prefix)
+                    result, output, prefix = main_menu(self, output, prefix)
                     if result is not None:
                         return result, output, prefix
         return None, output, prefix

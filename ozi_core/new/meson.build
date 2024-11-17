@@ -5,8 +5,6 @@
 source_new_files = [
     '__init__.py',
     '__init__.pyi',
-    'defaults.py',
-    'defaults.pyi',
     'parser.py',
     'parser.pyi',
     'validate.py',
