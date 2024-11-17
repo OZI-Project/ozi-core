@@ -57,6 +57,7 @@ class Project:  # pragma: no cover
         self.check_package_exists = (
             check_package_exists if check_package_exists is not None else True
         )
+        TRANSLATION.locale = asdict(read_user_config())['interactive']['language']
 
     def __call__(self: Project) -> list[str]:  # noqa: C901  # pragma: no cover
         """Start the interactive prompt."""
