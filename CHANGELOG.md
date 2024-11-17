@@ -1,4 +1,20 @@
 # ozi-core CHANGELOG
+## 1.5.3 (2024-11-17)
+
+
+### Bug fixes
+
+
+* fix: add options menu to set ozi-fix options and menu language — rjdbcm <rjdbcm@outlook.com>
+([`c1d5206`](https://github.com/OZI-Project/ozi-core/commit/c1d520689c07470fb3830106948871ae61991ff0))
+
+
+### Unknown
+
+
+* run lint — rjdbcm <rjdbcm@outlook.com>
+([`d6f07e8`](https://github.com/OZI-Project/ozi-core/commit/d6f07e8914c7331ca176da326ce01aaba5495f38))
+
 ## 1.5.2 (2024-11-17)
 
 
