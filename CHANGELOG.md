@@ -1,4 +1,22 @@
 # ozi-core CHANGELOG
+## 1.5.5 (2024-11-17)
+
+
+### Bug fixes
+
+
+* fix: update deadline for flaky test — rjdbcm <rjdbcm@outlook.com>
+([`f5f7b68`](https://github.com/OZI-Project/ozi-core/commit/f5f7b68e215a0de8f06403644398ed6591ab4fef))
+
+* fix: correctly loop fix mode interactive dialog — rjdbcm <rjdbcm@outlook.com>
+([`bea79f0`](https://github.com/OZI-Project/ozi-core/commit/bea79f005be28a32c9c5b7b9bd346d78a903e8c2))
+
+* fix: remove generated locales file used for testing — rjdbcm <rjdbcm@outlook.com>
+([`bd646fd`](https://github.com/OZI-Project/ozi-core/commit/bd646fdb518e2a973d4a11718822e936a29d8823))
+
+* fix: translate fix mode dialog ok button — rjdbcm <rjdbcm@outlook.com>
+([`a20fd2a`](https://github.com/OZI-Project/ozi-core/commit/a20fd2a8c4a1f51820a4be76f190c05a8139260f))
+
 ## 1.5.4 (2024-11-17)
 
 
