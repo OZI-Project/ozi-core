@@ -16,11 +16,13 @@ except PackageNotFoundError:
     core_version = 'git-dev'
 
 
-HEADER = '\n'.join([
-    f'# {Path(user_config_dir("OZI")) / "config.yml"}',
-    f'# OZI version: {__version__}',
-    f'# ozi-core version: {core_version}\n',
-])
+HEADER = '\n'.join(
+    [
+        f'# {Path(user_config_dir("OZI")) / "config.yml"}',
+        f'# OZI version: {__version__}',
+        f'# ozi-core version: {core_version}\n',
+    ]
+)
 
 
 @dataclass(kw_only=True)
