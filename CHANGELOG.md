@@ -1,4 +1,13 @@
 # ozi-core CHANGELOG
+## 1.5.8 (2024-11-17)
+
+
+### Bug fixes
+
+
+* fix: read user config on ozi-fix interactive prompt __init__ — rjdbcm <rjdbcm@outlook.com>
+([`c925813`](https://github.com/OZI-Project/ozi-core/commit/c9258138c14260679f717cb55b262faca6dc7cbf))
+
 ## 1.5.7 (2024-11-17)
 
 
