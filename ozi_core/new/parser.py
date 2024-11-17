@@ -13,7 +13,7 @@ from ozi_spec import METADATA
 
 from ozi_core._i18n import TRANSLATION
 from ozi_core.actions import CloseMatch
-from ozi_core.new.defaults import COPYRIGHT_HEAD
+from ozi_core.ui.defaults import COPYRIGHT_HEAD
 
 parser = argparse.ArgumentParser(
     prog='ozi-new',
