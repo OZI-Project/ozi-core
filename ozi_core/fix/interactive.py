@@ -391,7 +391,7 @@ def interactive_prompt(project: Namespace) -> list[str]:  # pragma: no cover # n
         os.write(sys.stdout.fileno(), e3 + clear_screen_seq)
     except UnsupportedOperation:
         pass
-    p = Prompt(project.target)
+    p = Prompt(project.target, **asdict(read_user_config())['fix'])
     result, output, prefix = p.set_fix_mode(
         project_name=project.name,
         output={'fix': []},
