@@ -1,4 +1,27 @@
 # ozi-core CHANGELOG
+## 1.5.9 (2024-11-18)
+
+
+### Build system
+
+
+* build(deps): ozi-spec~=0.12.1 — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`8d59810`](https://github.com/OZI-Project/ozi-core/commit/8d598109c29e7e57a016f7273afa771815097ea6))
+
+* build(deps): update ozi-templates requirement from ~=2.14.0 to ~=2.15.0
+
+Updates the requirements on [ozi-templates](https://github.com/OZI-Project/ozi-templates) to permit the latest version.
+- [Release notes](https://github.com/OZI-Project/ozi-templates/releases)
+- [Changelog](https://github.com/OZI-Project/ozi-templates/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/OZI-Project/ozi-templates/compare/2.14.0...2.15.0)
+
+
+updated-dependencies:
+- dependency-name: ozi-templates
+  dependency-type: direct:production
+... — dependabot[bot] <support@github.com>
+([`43ffac1`](https://github.com/OZI-Project/ozi-core/commit/43ffac13c1182878b39d4885c3531db1f0612d91))
+
 ## 1.5.8 (2024-11-17)
 
 
