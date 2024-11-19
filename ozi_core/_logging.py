@@ -13,7 +13,7 @@ LOG_PATH.parent.mkdir(parents=True, exist_ok=True)
 
 
 class CompressedRotatingFileHandler(logging.handlers.RotatingFileHandler):
-    def doRollover(self: CompressedRotatingFileHandler) -> None:
+    def doRollover(self: CompressedRotatingFileHandler) -> None:  # pragma: no cover
         super().doRollover()
         with gzip.open(f'{self.baseFilename}.gz', 'wb') as f:
             f.write(Path(self.baseFilename).read_bytes())
