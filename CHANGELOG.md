@@ -1,4 +1,31 @@
 # ozi-core CHANGELOG
+## 1.5.11 (2024-11-19)
+
+
+### Bug fixes
+
+
+* fix: properly filter log records during pytest exec — rjdbcm <rjdbcm@outlook.com>
+([`c06cc64`](https://github.com/OZI-Project/ozi-core/commit/c06cc647484002b09bdc2a980a141709f42d0c0c))
+
+
+### Build system
+
+
+* build(deps): bump step-security/harden-runner from 2.10.1 to 2.10.2
+
+Bumps [step-security/harden-runner](https://github.com/step-security/harden-runner) from 2.10.1 to 2.10.2.
+- [Release notes](https://github.com/step-security/harden-runner/releases)
+- [Commits](https://github.com/step-security/harden-runner/compare/91182cccc01eb5e619899d80e4e971d6181294a7...0080882f6c36860b6ba35c610c98ce87d4e2f26f)
+
+
+updated-dependencies:
+- dependency-name: step-security/harden-runner
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`9c0d9c9`](https://github.com/OZI-Project/ozi-core/commit/9c0d9c9dc4435158e9ea11ba4db4ca38b21a07e3))
+
 ## 1.5.10 (2024-11-19)
 
 
