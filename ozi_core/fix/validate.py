@@ -47,7 +47,7 @@ class AppendRewriteCommandTarget(Action):
         items = getattr(namespace, self.dest, None)
         items = _copy_items(items)
         items.append(values)  # type: ignore
-        setattr(namespace, self.dest, [values])
+        setattr(namespace, self.dest, [items])
 
 
 class RewriteCommandTargetValidator(Validator):

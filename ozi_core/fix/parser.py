@@ -28,7 +28,7 @@ parser.add_argument(
     metavar='FILENAME',
     nargs='?',
     action=AppendRewriteCommandTarget,
-    default=['ozi.phony'],
+    default=[],
     help=SUPPRESS,
 )
 parser.add_argument(
@@ -36,7 +36,7 @@ parser.add_argument(
     metavar='FILENAME',
     nargs='?',
     action=AppendRewriteCommandTarget,
-    default=['ozi.phony'],
+    default=[],
     help=SUPPRESS,
 )
 parser.add_argument(
@@ -67,7 +67,7 @@ missing_parser.add_argument(
     metavar='FILENAME',
     nargs='?',
     action=AppendRewriteCommandTarget,
-    default=['ozi.phony'],
+    default=[],
     help=SUPPRESS,
 )
 missing_parser.add_argument(
@@ -75,7 +75,7 @@ missing_parser.add_argument(
     metavar='FILENAME',
     nargs='?',
     action=AppendRewriteCommandTarget,
-    default=['ozi.phony'],
+    default=[],
     help=SUPPRESS,
 )
 missing_output = missing_parser.add_argument_group(TRANSLATION('term-output'))
@@ -120,7 +120,7 @@ source_parser.add_argument(
     metavar='FILENAME',
     nargs='?',
     action=AppendRewriteCommandTarget,
-    default=['ozi.phony'],
+    default=[],
     help=TRANSLATION('term-help-fix-add'),
 )
 source_parser.add_argument(
@@ -129,7 +129,7 @@ source_parser.add_argument(
     metavar='FILENAME',
     nargs='?',
     action=AppendRewriteCommandTarget,
-    default=['ozi.phony'],
+    default=[],
     help=TRANSLATION('term-help-fix-remove'),
 )
 source_parser.add_argument(
@@ -172,7 +172,7 @@ test_parser.add_argument(
     metavar='FILENAME',
     nargs='?',
     action=AppendRewriteCommandTarget,
-    default=['ozi.phony'],
+    default=[],
     help=TRANSLATION('term-help-fix-add'),
 )
 test_parser.add_argument(
@@ -181,7 +181,7 @@ test_parser.add_argument(
     metavar='FILENAME',
     nargs='?',
     action=AppendRewriteCommandTarget,
-    default=['ozi.phony'],
+    default=[],
     help=TRANSLATION('term-help-fix-remove'),
 )
 test_parser.add_argument(
