@@ -10,6 +10,9 @@ from string import Template
 from typing import Any
 
 from ozi_core._locales import data
+from ozi_core._logging import get_logger
+
+logger = get_logger(__name__)
 
 _LOCALE = locale.getlocale()[0]
 
@@ -45,6 +48,7 @@ class Translation:
             return _key
         text = self.data[self.locale].get(_key, _key)
         if text is None:
+            logger.debug('could not find {_key}')
             return ''
         return Template(text).safe_substitute(**kwargs)
 

@@ -27,14 +27,13 @@ from mesonbuild.mparser import UMinusNode
 from tap_producer import TAP
 
 from ozi_core._i18n import TRANSLATION
+from ozi_core._logging import get_logger
 
 SelectValue: TypeAlias = type[AssignmentNode | PlusAssignmentNode | NotNode | UMinusNode]
-
 SelectItems: TypeAlias = type[ForeachClauseNode]
-
 WhereValue: TypeAlias = type[ArrayNode | DictNode | MethodNode | FunctionNode]
-
 WhereItems: TypeAlias = type[IdNode]
+logger = get_logger(__name__)
 
 
 def load_ast(source_root: str) -> CodeBlockNode | None:
@@ -48,7 +47,8 @@ def load_ast(source_root: str) -> CodeBlockNode | None:
     ast = AstInterpreter(source_root, '', '')  # pyright: ignore
     try:
         ast.load_root_meson_file()
-    except InvalidArguments:  # pragma: no cover
+    except InvalidArguments as e:  # pragma: no cover
+        logger.debug(str(e))
         return None
     return ast.ast
 

@@ -17,6 +17,8 @@ source_files = [
   '_i18n.py',
   '_i18n.pyi',
   '_locales.pyi',
+  '_logging.py',
+'_logging.pyi',
   'actions.py',
   'actions.pyi',
   'comment.py',

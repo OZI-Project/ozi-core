@@ -7,6 +7,7 @@
 from __future__ import annotations
 
 import configparser
+import sys
 from pathlib import Path
 from typing import TYPE_CHECKING
 from typing import AnyStr
@@ -20,9 +21,12 @@ from ozi_templates.filter import underscorify  # pyright: ignore
 from tap_producer import TAP
 
 from ozi_core._i18n import TRANSLATION
+from ozi_core._logging import get_logger
 
 if TYPE_CHECKING:  # pragma: no cover
     from jinja2 import Environment
+
+logger = get_logger(__name__)
 
 
 def find_user_template(target: str, file: str, fix: str) -> str | None:
@@ -227,9 +231,12 @@ def render_ci_files_set_user(env: Environment, target: Path, ci_provider: str) -
     """
     repo = Repo.init(target, mkdir=False)
     try:
-        ci_user = repo.config_reader().get('user', 'name')
-    except (InvalidGitRepositoryError, configparser.NoSectionError):  # pragma: no cover
+        ci_user = repo.config_reader('user').get('user', 'name')
+    except (InvalidGitRepositoryError, configparser.NoSectionError) as e:  # pragma: no cover
         ci_user = ''
+        logger.debug(str(e))
+        if 'pytest' not in sys.modules:
+            TAP.not_ok('ci_user was not set', skip=True)
 
     match ci_provider:
         case 'github':
