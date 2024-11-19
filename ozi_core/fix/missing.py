@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import re
 import sys
+from contextlib import suppress
 from email import message_from_string
 from pathlib import Path
 from typing import TYPE_CHECKING
@@ -194,14 +195,15 @@ def required_files(
             continue  # pragma: defer to https://github.com/nedbat/coveragepy/issues/198
         TAP.ok(str(f))
         found_files.append(file)
-    list(
-        walk(
-            target,
-            rel_path,
-            found_files=found_files,
-            project_name=underscorify(name).lower(),
-        ),
-    )
+    with suppress(FileNotFoundError):
+        list(
+            walk(
+                target,
+                rel_path,
+                found_files=found_files,
+                project_name=underscorify(name).lower(),
+            ),
+        )
     return found_files
 
 
