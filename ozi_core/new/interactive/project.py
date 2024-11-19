@@ -138,25 +138,24 @@ class Project:  # pragma: no cover
                     ret_args += [k, i]
         return ret_args
 
-    def name(  # noqa: C901,RUF100
+    def _check_package_exists(self: Project) -> Validator:
+        if self.check_package_exists:
+            return NotReservedValidator(ProjectNameValidator())
+        else:
+            return ProjectNameValidator()
+
+    def name(
         self: Project,
         output: dict[str, list[str]],
         prefix: dict[str, str],
     ) -> tuple[None | list[str] | str | bool, dict[str, list[str]], dict[str, str]]:
-
-        def _check_package_exists() -> Validator:
-            if self.check_package_exists:
-                return NotReservedValidator(ProjectNameValidator())
-            else:
-                return ProjectNameValidator()
-
         while True:
             result, output, prefix = self.header_input(
                 'Name',
                 output,
                 prefix,
                 TRANSLATION('pro-name'),
-                validator=DynamicValidator(_check_package_exists),
+                validator=DynamicValidator(self._check_package_exists),
             )
             if result is True:
                 return prefix.get('Name', '').replace('Name', '').strip(': '), output, prefix
