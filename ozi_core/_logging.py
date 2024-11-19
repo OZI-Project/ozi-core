@@ -4,12 +4,19 @@ import gzip
 import json
 import logging
 import logging.handlers
+import os
+import sys
 from pathlib import Path
 
 from platformdirs import user_log_dir
 
 LOG_PATH = Path(user_log_dir('OZI')) / 'log.txt'
 LOG_PATH.parent.mkdir(parents=True, exist_ok=True)
+
+
+class PytestFilter(logging.Filter):
+    def filter(self: PytestFilter, record: logging.LogRecord) -> bool:
+        return os.environ.get('PYTEST_VERSION') is None or 'pytest' not in sys.modules
 
 
 class CompressedRotatingFileHandler(logging.handlers.RotatingFileHandler):
@@ -42,4 +49,5 @@ def get_logger(name: str) -> logging.Logger:
     )
     handler.setFormatter(formatter)
     logger.addHandler(handler)
+    logger.addFilter(PytestFilter())
     return logger
