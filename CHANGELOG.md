@@ -1,4 +1,42 @@
 # ozi-core CHANGELOG
+## 1.5.10 (2024-11-19)
+
+
+### Bug fixes
+
+
+* fix: ozi-fix correctly appends to add and remove args — rjdbcm <rjdbcm@outlook.com>
+([`ca1f9fc`](https://github.com/OZI-Project/ozi-core/commit/ca1f9fc9ca72d53cd1983ce8aa4589340c513046))
+
+* fix: add _logging.pyi — rjdbcm <rjdbcm@outlook.com>
+([`18e36dd`](https://github.com/OZI-Project/ozi-core/commit/18e36dde8bc757dd9dfee09c30baccbe9e89224f))
+
+* fix: add some sparse logs for developer debug — rjdbcm <rjdbcm@outlook.com>
+([`cbc0375`](https://github.com/OZI-Project/ozi-core/commit/cbc03758605fd3ed2a9d297f7482696c8c7af9df))
+
+* fix: suppress FileNotFoundError in required_files check — rjdbcm <rjdbcm@outlook.com>
+([`98c52cb`](https://github.com/OZI-Project/ozi-core/commit/98c52cb25f3281328f14ee74259f10ed9988599f))
+
+* fix: move nested function _check_package_exists — rjdbcm <rjdbcm@outlook.com>
+([`ff590bf`](https://github.com/OZI-Project/ozi-core/commit/ff590bfa5ce0b45706b47b4180bdeb0b24a51bb9))
+
+
+### Performance improvements
+
+
+* perf: alert user that ci_user was not set but skip in testing — rjdbcm <rjdbcm@outlook.com>
+([`376c6cf`](https://github.com/OZI-Project/ozi-core/commit/376c6cf6d0e24cfc35b7185ce38e7175990d257d))
+
+
+### Unknown
+
+
+* increase lint timeout — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`bf8c22b`](https://github.com/OZI-Project/ozi-core/commit/bf8c22bf862f3f41fab8a72226962aeb1d1f919c))
+
+* isort — rjdbcm <rjdbcm@outlook.com>
+([`cf37f6d`](https://github.com/OZI-Project/ozi-core/commit/cf37f6d30f8decfce8415be64a03929e6c86ed97))
+
 ## 1.5.9 (2024-11-18)
 
 
