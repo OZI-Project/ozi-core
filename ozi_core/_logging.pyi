@@ -1,9 +1,10 @@
 import logging
 import logging.handlers
 
-from _typeshed import Incomplete
+LOG_PATH: str
 
-LOG_PATH: Incomplete
+class PytestFilter(logging.Filter):
+    def filter(self: PytestFilter, record: logging.LogRecord) -> bool: ...
 
 class CompressedRotatingFileHandler(logging.handlers.RotatingFileHandler):
     def doRollover(self) -> None: ...
