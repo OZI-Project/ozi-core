@@ -10,6 +10,8 @@ import sys
 from argparse import Action
 from dataclasses import dataclass
 from difflib import get_close_matches
+from glob import glob
+from pathlib import Path
 from typing import TYPE_CHECKING
 from typing import Any
 from typing import Collection
@@ -27,6 +29,8 @@ from spdx_license_list import LICENSES
 from tap_producer import TAP
 
 from ozi_core._i18n import TRANSLATION
+from ozi_core._logging import LOG_PATH
+from ozi_core.config import CONF_PATH
 from ozi_core.spdx import spdx_license_expression
 from ozi_core.trove import Prefix
 from ozi_core.trove import from_prefix
@@ -207,5 +211,28 @@ def license_expression(expr: str) -> NoReturn:  # pragma: no cover
         TAP.ok(expr, TRANSLATION('term-parsing-success'))
     except ParseException as e:
         TAP.not_ok(expr, str(e))
+    TAP.end()
+    exit(0)
+
+
+def uninstall_user_files() -> NoReturn:  # pragma: defer to E2E
+    """Remove configuration and log files created by OZI."""
+    TAP.ok(f'remove {CONF_PATH} if it exists')
+    CONF_PATH.unlink(missing_ok=True)
+    TAP.ok(f'remove {LOG_PATH} if it exists')
+    LOG_PATH.unlink(missing_ok=True)
+    for i in glob(f'{LOG_PATH}.*'):
+        TAP.ok(f'remove {i}')
+        Path(i).unlink()
+    try:
+        CONF_PATH.parent.rmdir()
+        TAP.ok(f'remove {CONF_PATH.parent} directory')
+    except OSError as e:
+        TAP.not_ok(str(e))
+    try:
+        LOG_PATH.parent.rmdir()
+        TAP.ok(f'remove {LOG_PATH.parent} directory')
+    except OSError as e:
+        TAP.not_ok(str(e))
     TAP.end()
     exit(0)
