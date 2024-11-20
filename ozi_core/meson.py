@@ -6,6 +6,7 @@
 from __future__ import annotations
 
 from functools import lru_cache
+from logging import getLogger
 from typing import TypeAlias
 
 from mesonbuild.ast.interpreter import AstInterpreter
@@ -27,13 +28,16 @@ from mesonbuild.mparser import UMinusNode
 from tap_producer import TAP
 
 from ozi_core._i18n import TRANSLATION
-from ozi_core._logging import get_logger
+from ozi_core._logging import PytestFilter
+from ozi_core._logging import config_logger
 
 SelectValue: TypeAlias = type[AssignmentNode | PlusAssignmentNode | NotNode | UMinusNode]
 SelectItems: TypeAlias = type[ForeachClauseNode]
 WhereValue: TypeAlias = type[ArrayNode | DictNode | MethodNode | FunctionNode]
 WhereItems: TypeAlias = type[IdNode]
-logger = get_logger(__name__)
+config_logger()
+logger = getLogger('ozi_core.meson')
+logger.addFilter(PytestFilter())
 
 
 def load_ast(source_root: str) -> CodeBlockNode | None:

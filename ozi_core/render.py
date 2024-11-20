@@ -9,6 +9,7 @@ from __future__ import annotations
 import configparser
 import os
 import sys
+from logging import getLogger
 from pathlib import Path
 from typing import TYPE_CHECKING
 from typing import AnyStr
@@ -22,12 +23,15 @@ from ozi_templates.filter import underscorify  # pyright: ignore
 from tap_producer import TAP
 
 from ozi_core._i18n import TRANSLATION
-from ozi_core._logging import get_logger
+from ozi_core._logging import PytestFilter
+from ozi_core._logging import config_logger
 
 if TYPE_CHECKING:  # pragma: no cover
     from jinja2 import Environment
 
-logger = get_logger(__name__)
+config_logger()
+logger = getLogger('ozi_core.render')
+logger.addFilter(PytestFilter())
 
 
 def find_user_template(target: str, file: str, fix: str) -> str | None:

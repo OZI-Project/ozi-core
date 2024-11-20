@@ -10,12 +10,12 @@ from pathlib import Path
 
 from platformdirs import user_log_dir
 
-LOG_PATH = Path(user_log_dir('OZI')) / 'log.txt'
+LOG_PATH = Path(user_log_dir('OZI')) / 'log.json'
 LOG_PATH.parent.mkdir(parents=True, exist_ok=True)
 
 
 class PytestFilter(logging.Filter):
-    def filter(self: PytestFilter, record: logging.LogRecord) -> bool:
+    def filter(self: PytestFilter, record: logging.LogRecord) -> bool:  # pragma: no cover
         return os.environ.get('PYTEST_VERSION') is None or 'pytest' not in sys.modules
 
 
@@ -27,8 +27,9 @@ class CompressedRotatingFileHandler(logging.handlers.RotatingFileHandler):
         Path(self.baseFilename).write_text('')
 
 
-def get_logger(name: str) -> logging.Logger:
-    logger = logging.getLogger(name)
+def config_logger() -> None:
+    logger = logging.getLogger('ozi_core')
+    logger.propagate = False
     logger.setLevel(logging.DEBUG)
     formatter = logging.Formatter(
         json.dumps(
@@ -50,4 +51,3 @@ def get_logger(name: str) -> logging.Logger:
     handler.setFormatter(formatter)
     logger.addHandler(handler)
     logger.addFilter(PytestFilter())
-    return logger
