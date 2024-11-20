@@ -1,4 +1,20 @@
 # ozi-core CHANGELOG
+## 1.5.14 (2024-11-20)
+
+
+### Bug fixes
+
+
+* fix: log paths are correctly typed, add an ``uninstall_user_files`` action — rjdbcm <rjdbcm@outlook.com>
+([`9651fda`](https://github.com/OZI-Project/ozi-core/commit/9651fdac9c18d90452eab70eb0755a7b1bc6e84d))
+
+
+### Unknown
+
+
+* lint — rjdbcm <rjdbcm@outlook.com>
+([`4fc82ab`](https://github.com/OZI-Project/ozi-core/commit/4fc82ab395730915458fa4de0d0ad3a99fd7c981))
+
 ## 1.5.13 (2024-11-20)
 
 
