@@ -1,11 +1,11 @@
 from dataclasses import dataclass
-
-from _typeshed import Incomplete
+from pathlib import Path
 
 from ozi_core import __version__ as __version__
 
-core_version: Incomplete
-HEADER: Incomplete
+core_version: str
+HEADER: str
+CONF_PATH: Path
 
 @dataclass(kw_only=True)
 class OziInteractiveConfig:

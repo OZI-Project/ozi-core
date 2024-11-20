@@ -23,6 +23,7 @@ HEADER = '\n'.join(
         f'# ozi-core version: {core_version}\n',
     ]
 )
+CONF_PATH = Path(user_config_dir('OZI')) / 'config.yml'
 
 
 @dataclass(kw_only=True)
@@ -72,10 +73,9 @@ class OziConfig:
 
 
 def read_user_config() -> OziConfig:  # pragma: defer to E2E
-    conf = Path(user_config_dir('OZI')) / 'config.yml'
-    conf.touch(exist_ok=True)
-    conf.parent.mkdir(exist_ok=True)
-    data = yaml.safe_load(conf.read_text())
+    CONF_PATH.touch(exist_ok=True)
+    CONF_PATH.parent.mkdir(exist_ok=True)
+    data = yaml.safe_load(CONF_PATH.read_text())
     if data is not None:
         return OziConfig(**data)
     else:
@@ -85,7 +85,7 @@ def read_user_config() -> OziConfig:  # pragma: defer to E2E
 def write_user_config(  # pragma: defer to E2E
     data: OziConfig,
 ) -> None:
-    (Path(user_config_dir('OZI')) / 'config.yml').write_text(
+    CONF_PATH.write_text(
         HEADER + yaml.safe_dump(data=asdict(data), allow_unicode=True),
         encoding='utf-8',
     )

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import os
 import sys
+from contextlib import suppress
 from dataclasses import asdict
 from io import UnsupportedOperation
 from typing import TYPE_CHECKING
@@ -384,13 +385,11 @@ class Prompt:
 
 def interactive_prompt(project: Namespace) -> list[str]:  # pragma: no cover # noqa: C901
     ret_args = []
-    try:
+    with suppress(UnsupportedOperation):
         curses.setupterm()
         e3 = curses.tigetstr('E3') or b''
         clear_screen_seq = curses.tigetstr('clear') or b''
         os.write(sys.stdout.fileno(), e3 + clear_screen_seq)
-    except UnsupportedOperation:
-        pass
     p = Prompt(project.target, **asdict(read_user_config())['fix'])
     result, output, prefix = p.set_fix_mode(
         project_name=project.name,
