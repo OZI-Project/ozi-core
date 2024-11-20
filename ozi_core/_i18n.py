@@ -6,14 +6,17 @@
 from __future__ import annotations
 
 import locale
+from logging import getLogger
 from string import Template
 from typing import Any
 
 from ozi_core._locales import data
-from ozi_core._logging import get_logger
+from ozi_core._logging import PytestFilter
+from ozi_core._logging import config_logger
 
-logger = get_logger(__name__)
-
+config_logger()
+logger = getLogger('ozi_core._i18n')
+logger.addFilter(PytestFilter())
 _LOCALE = locale.getlocale()[0]
 
 
