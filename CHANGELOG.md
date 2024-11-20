@@ -1,4 +1,13 @@
 # ozi-core CHANGELOG
+## 1.5.12 (2024-11-20)
+
+
+### Bug fixes
+
+
+* fix: no more duplicate log entries, log file extension corrected to ``.json`` — rjdbcm <rjdbcm@outlook.com>
+([`65c1ccf`](https://github.com/OZI-Project/ozi-core/commit/65c1ccf2574248aba9b53f796ab54fe7efa7618a))
+
 ## 1.5.11 (2024-11-19)
 
 
