@@ -1,7 +1,8 @@
 import logging
 import logging.handlers
+from pathlib import Path
 
-LOG_PATH: str
+LOG_PATH: Path
 
 class PytestFilter(logging.Filter):
     def filter(self: PytestFilter, record: logging.LogRecord) -> bool: ...

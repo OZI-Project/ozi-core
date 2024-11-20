@@ -80,3 +80,6 @@ def list_available(key: str) -> NoReturn:
 
 def license_expression(expr: str) -> NoReturn:
     """Validate a SPDX license expression."""
+
+def uninstall_user_files() -> NoReturn:
+    """Remove configuration and log files created by OZI."""
