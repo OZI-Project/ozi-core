@@ -215,7 +215,7 @@ def license_expression(expr: str) -> NoReturn:  # pragma: no cover
     exit(0)
 
 
-def uninstall_user_files() -> NoReturn:  # pragma: defer to E2E
+def uninstall_user_files() -> NoReturn:  # noqa: C901  # pragma: defer to E2E
     """Remove configuration and log files created by OZI."""
     TAP.ok(f'remove {CONF_PATH} if it exists')
     CONF_PATH.unlink(missing_ok=True)
