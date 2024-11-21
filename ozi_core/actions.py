@@ -232,6 +232,7 @@ def uninstall_user_files() -> NoReturn:  # noqa: C901  # pragma: defer to E2E
     try:
         LOG_PATH.parent.rmdir()
         TAP.ok(f'remove {LOG_PATH.parent} directory')
+        TAP.ok(f'remove {LOG_PATH.parent.parent} directory')
     except OSError as e:
         TAP.not_ok(str(e))
     TAP.end()
