@@ -43,7 +43,7 @@ class Translation:
         if loc in self.data:
             self._locale = loc
         else:
-            print('Invalid locale')
+            logger.debug(f'Invalid locale: {loc}')
 
     def __call__(self: Translation, _key: str, **kwargs: str) -> str:  # pragma: no cover
         """Get translation text by key and pass optional substitions as keyword arguments."""
@@ -51,8 +51,9 @@ class Translation:
             return _key
         text = self.data[self.locale].get(_key, _key)
         if text is None:
-            logger.debug('could not find {_key}')
             return ''
+        elif text is _key:
+            logger.debug(f'no translation for "{_key}" in locale "{self.locale}"')
         return Template(text).safe_substitute(**kwargs)
 
 
