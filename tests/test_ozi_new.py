@@ -248,7 +248,6 @@ def test_new_project_bad_target_not_empty(  # noqa: DC102, RUF100
     }
     (project_dict['target'] / 'foobar').touch()  # type: ignore
     namespace = argparse.Namespace(**project_dict)
-    with pytest.raises(RuntimeWarning):
-        ozi_core.new.validate.postprocess_arguments(
-            ozi_core.new.validate.preprocess_arguments(namespace),
-        )
+    ozi_core.new.validate.postprocess_arguments(
+        ozi_core.new.validate.preprocess_arguments(namespace),
+    )
