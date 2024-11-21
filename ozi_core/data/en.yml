@@ -220,6 +220,7 @@ term-help-typing: use zero or more times
 term-help-valid-license-expression: Validate a SPDX license expression.
 term-help-verify-email: 'verify deliverability of email domain, default: no'
 term-help-version: Print the current version and exit.
+term-help-uninstall-user-files: Remove configuration and log files created by OZI.
 term-missing: missing
 term-optional-metadata: optional metadata
 term-options: options

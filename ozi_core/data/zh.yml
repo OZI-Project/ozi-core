@@ -209,6 +209,7 @@ term-help-typing: 使用零次或多次
 term-help-valid-license-expression: 验证ＳＰＤＸ许可证表达式。
 term-help-verify-email: 验证电子邮件域的可传递性，默认：否
 term-help-version: 打印当前版本并退出。
+term-help-uninstall-user-files: 删除由ＯＺＩ创建的配置和日志文件。
 term-missing: 丢失的
 term-optional-metadata: 可选元数据
 term-options: 选项
