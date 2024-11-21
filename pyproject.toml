@@ -1,5 +1,6 @@
 # Part of ozi-core.
 # See LICENSE.txt in the project root for details.
+
 [project]
 license = {file = "LICENSE.txt"}
 dependencies = [
