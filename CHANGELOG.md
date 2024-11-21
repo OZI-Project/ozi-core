@@ -1,4 +1,13 @@
 # ozi-core CHANGELOG
+## 1.5.16 (2024-11-21)
+
+
+### Bug fixes
+
+
+* fix: add ``uninstall_user_files`` help translation, fix logging in ``_i18n`` — rjdbcm <rjdbcm@outlook.com>
+([`cccfe39`](https://github.com/OZI-Project/ozi-core/commit/cccfe39351b21ed0684296f2b439343d4ffd2d45))
+
 ## 1.5.15 (2024-11-21)
 
 
