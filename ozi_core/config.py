@@ -73,8 +73,8 @@ class OziConfig:
 
 
 def read_user_config() -> OziConfig:  # pragma: defer to E2E
-    CONF_PATH.touch(exist_ok=True)
     CONF_PATH.parent.mkdir(exist_ok=True)
+    CONF_PATH.touch(exist_ok=True)
     data = yaml.safe_load(CONF_PATH.read_text())
     if data is not None:
         return OziConfig(**data)
