@@ -337,9 +337,9 @@ def postprocess_arguments(project: Namespace) -> Namespace:
     ):  # defer to good-issue
         TAP.not_ok('target', TRANSLATION('term-tap-target-not-empty'), skip=True)
     match project.ci_provider:
-        case 'github':  # pragma: no cover
+        case 'github':
             pass
-        case _:
+        case _:  # pragma: no cover
             TAP.not_ok(
                 TRANSLATION('term-tap-invalid-ci-provider', ciprovider=project.ci_provider),
             )

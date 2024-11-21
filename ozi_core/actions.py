@@ -107,7 +107,7 @@ class CloseMatch(Action):
         else:  # pragma: no cover
             matches = [value]
             no_match = True
-        if no_match:
+        if no_match:  # pragma: no cover
             warn(
                 TRANSLATION('err-no-close-match', key=key, value=value)
                 + f'$ ozi-new -l {key}',
