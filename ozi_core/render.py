@@ -7,8 +7,6 @@
 from __future__ import annotations
 
 import configparser
-import os
-import sys
 from logging import getLogger
 from pathlib import Path
 from typing import TYPE_CHECKING
@@ -240,8 +238,7 @@ def render_ci_files_set_user(env: Environment, target: Path, ci_provider: str) -
     except (InvalidGitRepositoryError, configparser.NoSectionError) as e:  # pragma: no cover
         ci_user = ''
         logger.debug(str(e))
-        if os.environ.get('PYTEST_VERSION') is None or 'pytest' not in sys.modules:
-            TAP.not_ok('ci_user was not set', skip=True)
+        TAP.not_ok('ci_user was not set', skip=True)
 
     match ci_provider:
         case 'github':
