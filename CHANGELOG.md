@@ -1,4 +1,13 @@
 # ozi-core CHANGELOG
+## 1.5.15 (2024-11-21)
+
+
+### Build system
+
+
+* build(deps): upgrade from TAP-Producer~=1.4.1 to TAP-Producer~=1.5.0 — rjdbcm <rjdbcm@outlook.com>
+([`a773c73`](https://github.com/OZI-Project/ozi-core/commit/a773c73e3eef78976a671714f5f4ffbfb2528a9e))
+
 ## 1.5.14 (2024-11-20)
 
 
