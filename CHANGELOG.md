@@ -1,4 +1,20 @@
 # ozi-core CHANGELOG
+## 1.5.17 (2024-11-21)
+
+
+### Bug fixes
+
+
+* fix: manual release trigger — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`b612da4`](https://github.com/OZI-Project/ozi-core/commit/b612da457ee32b3a3994a3f5ad86ec502daee101))
+
+
+### Unknown
+
+
+* :bug: fix fail to load config if it doesnt exist — rjdbcm <rjdbcm@outlook.com>
+([`359e53d`](https://github.com/OZI-Project/ozi-core/commit/359e53dec001921b1a12a870d64351ec7f10c667))
+
 ## 1.5.16 (2024-11-21)
 
 
