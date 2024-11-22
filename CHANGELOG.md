@@ -1,4 +1,16 @@
 # ozi-core CHANGELOG
+## 1.5.19 (2024-11-22)
+
+
+### Performance improvements
+
+
+* perf: include logger name in log format — rjdbcm <rjdbcm@outlook.com>
+([`e36fc63`](https://github.com/OZI-Project/ozi-core/commit/e36fc6384af67f9e38001ba210b907c8f2fe6fd2))
+
+* perf: cache ``meson.build`` ast — rjdbcm <rjdbcm@outlook.com>
+([`bb61ef7`](https://github.com/OZI-Project/ozi-core/commit/bb61ef72f84c075023ac49e1cde1814143a9b8d3))
+
 ## 1.5.18 (2024-11-22)
 
 
