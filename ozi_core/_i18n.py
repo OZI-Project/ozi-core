@@ -15,15 +15,13 @@ from ozi_core._logging import PytestFilter
 from ozi_core._logging import config_logger
 
 config_logger()
-logger = getLogger('ozi_core._i18n')
-logger.addFilter(PytestFilter())
 _LOCALE = locale.getlocale()[0]
 
 
 class Translation:
     """Translation API for use inside OZI tools."""
 
-    __slots__ = ('_locale', 'data')
+    __slots__ = ('__logger', '_locale', 'data')
 
     def __init__(self: Translation) -> None:
         """Try to get the system locale and load translations."""
@@ -31,6 +29,8 @@ class Translation:
         self._locale = (
             _LOCALE[:2] if _LOCALE is not None and _LOCALE[:2] in self.data else 'en'
         )
+        self.__logger = getLogger(f'ozi_core.{__name__}.{self.__class__.__name__}')
+        self.__logger.addFilter(PytestFilter())
 
     @property
     def locale(self: Translation) -> str | Any:  # pragma: no cover
@@ -43,7 +43,7 @@ class Translation:
         if loc in self.data:
             self._locale = loc
         else:
-            logger.debug(f'Invalid locale: {loc}')
+            self.__logger.debug(f'Invalid locale: {loc}')
 
     def __call__(self: Translation, _key: str, **kwargs: str) -> str:  # pragma: no cover
         """Get translation text by key and pass optional substitions as keyword arguments."""
@@ -53,7 +53,7 @@ class Translation:
         if text is None:
             return ''
         elif text is _key:
-            logger.debug(f'no translation for "{_key}" in locale "{self.locale}"')
+            self.__logger.debug(f'no translation for "{_key}" in locale "{self.locale}"')
         return Template(text).safe_substitute(**kwargs)
 
 
