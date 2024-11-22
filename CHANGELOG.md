@@ -1,4 +1,13 @@
 # ozi-core CHANGELOG
+## 1.5.18 (2024-11-22)
+
+
+### Bug fixes
+
+
+* fix: ``--add`` and ``--remove`` no longer nested list — rjdbcm <rjdbcm@outlook.com>
+([`2a26622`](https://github.com/OZI-Project/ozi-core/commit/2a26622c387c8876548dc292bfbe8a064be0a7af))
+
 ## 1.5.17 (2024-11-21)
 
 
