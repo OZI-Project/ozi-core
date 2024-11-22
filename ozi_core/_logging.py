@@ -36,6 +36,7 @@ def config_logger() -> None:
             {
                 'time': '%(asctime)-s',
                 'level': '%(levelname)-s',
+                'logger': '%(name)s',
                 'module': '%(module)-s',
                 'funcName': '%(funcName)-s',
                 'message': '%(message)s',

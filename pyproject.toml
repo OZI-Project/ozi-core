@@ -5,7 +5,7 @@
 license = {file = "LICENSE.txt"}
 dependencies = [
     'GitPython~=3.1',
-    'TAP-Producer~=1.5.0',
+    'TAP-Producer~=1.5.1',
     'dnspython',
     'idna>=2',
     'meson[ninja]>=1.1.0',
