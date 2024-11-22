@@ -34,6 +34,7 @@ WhereValue: TypeAlias = type[ArrayNode | DictNode | MethodNode | FunctionNode]
 WhereItems: TypeAlias = type[IdNode]
 
 
+@lru_cache
 def load_ast(source_root: str) -> CodeBlockNode | None:
     """Load the :abbr:`AST (Abstract Syntax Tree)` from the root :file:`meson.build`.
 
