@@ -1,4 +1,75 @@
 # ozi-core CHANGELOG
+## 1.5.19 (2024-11-22)
+
+
+### Performance improvements
+
+
+* perf: include logger name in log format — rjdbcm <rjdbcm@outlook.com>
+([`e36fc63`](https://github.com/OZI-Project/ozi-core/commit/e36fc6384af67f9e38001ba210b907c8f2fe6fd2))
+
+* perf: cache ``meson.build`` ast — rjdbcm <rjdbcm@outlook.com>
+([`bb61ef7`](https://github.com/OZI-Project/ozi-core/commit/bb61ef72f84c075023ac49e1cde1814143a9b8d3))
+
+## 1.5.18 (2024-11-22)
+
+
+### Bug fixes
+
+
+* fix: ``--add`` and ``--remove`` no longer nested list — rjdbcm <rjdbcm@outlook.com>
+([`2a26622`](https://github.com/OZI-Project/ozi-core/commit/2a26622c387c8876548dc292bfbe8a064be0a7af))
+
+## 1.5.17 (2024-11-21)
+
+
+### Bug fixes
+
+
+* fix: manual release trigger — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`b612da4`](https://github.com/OZI-Project/ozi-core/commit/b612da457ee32b3a3994a3f5ad86ec502daee101))
+
+
+### Unknown
+
+
+* :bug: fix fail to load config if it doesnt exist — rjdbcm <rjdbcm@outlook.com>
+([`359e53d`](https://github.com/OZI-Project/ozi-core/commit/359e53dec001921b1a12a870d64351ec7f10c667))
+
+## 1.5.16 (2024-11-21)
+
+
+### Bug fixes
+
+
+* fix: add ``uninstall_user_files`` help translation, fix logging in ``_i18n`` — rjdbcm <rjdbcm@outlook.com>
+([`cccfe39`](https://github.com/OZI-Project/ozi-core/commit/cccfe39351b21ed0684296f2b439343d4ffd2d45))
+
+## 1.5.15 (2024-11-21)
+
+
+### Build system
+
+
+* build(deps): upgrade from TAP-Producer~=1.4.1 to TAP-Producer~=1.5.0 — rjdbcm <rjdbcm@outlook.com>
+([`a773c73`](https://github.com/OZI-Project/ozi-core/commit/a773c73e3eef78976a671714f5f4ffbfb2528a9e))
+
+## 1.5.14 (2024-11-20)
+
+
+### Bug fixes
+
+
+* fix: log paths are correctly typed, add an ``uninstall_user_files`` action — rjdbcm <rjdbcm@outlook.com>
+([`9651fda`](https://github.com/OZI-Project/ozi-core/commit/9651fdac9c18d90452eab70eb0755a7b1bc6e84d))
+
+
+### Unknown
+
+
+* lint — rjdbcm <rjdbcm@outlook.com>
+([`4fc82ab`](https://github.com/OZI-Project/ozi-core/commit/4fc82ab395730915458fa4de0d0ad3a99fd7c981))
+
 ## 1.5.13 (2024-11-20)
 
 
