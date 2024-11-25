@@ -1,4 +1,16 @@
 # ozi-core CHANGELOG
+## 1.5.21 (2024-11-25)
+
+
+### Bug fixes
+
+
+* fix: ozi-templates~=2.15.1 — rjdbcm <rjdbcm@outlook.com>
+([`cfbfe96`](https://github.com/OZI-Project/ozi-core/commit/cfbfe96e762ebf82a1d32afaf2a7a3141d3cff61))
+
+* fix: restore TAP.end() call for ozi-fix missing — rjdbcm <rjdbcm@outlook.com>
+([`c069a83`](https://github.com/OZI-Project/ozi-core/commit/c069a83186616f997fe493219b9b0014d1d84a31))
+
 ## 1.5.20 (2024-11-25)
 
 
