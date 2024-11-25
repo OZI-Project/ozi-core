@@ -1,4 +1,13 @@
 # ozi-core CHANGELOG
+## 1.5.20 (2024-11-25)
+
+
+### Bug fixes
+
+
+* fix: backtrack further on ozi-templates dep — rjdbcm <rjdbcm@outlook.com>
+([`d19568e`](https://github.com/OZI-Project/ozi-core/commit/d19568ea86843f57b174d8b7234d684018b057e7))
+
 ## 1.5.19 (2024-11-22)
 
 
