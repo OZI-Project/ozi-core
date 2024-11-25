@@ -116,8 +116,10 @@ def main(args: list[str] | None = None) -> NoReturn:  # pragma: no cover
                     res.communicate()
                     if res.returncode != 0:
                         TAP.comment('ozi-fix failed to rewrite project files')
+                    exit(0)
                 else:
                     print(out)
+                    exit(0)
             else:
                 parser.print_help()
         case [False, True, True]:
@@ -128,4 +130,5 @@ def main(args: list[str] | None = None) -> NoReturn:  # pragma: no cover
             TAP.bail_out('subcommands `interactive` and `missing` are mutually exclusive')
         case [_, _, _]:
             TAP.bail_out('Name discovery failed.')
+    TAP.end()
     exit(0)
