@@ -10,7 +10,7 @@ dependencies = [
     'idna>=2',
     'meson[ninja]>=1.1.0',
     'ozi-spec~=0.12.1',
-    'ozi-templates~=2.15.1',
+    'ozi-templates~=2.16.0',
     'packaging~=24.1',
     'platformdirs~=4.3',
     'prompt-toolkit',
