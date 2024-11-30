@@ -9,7 +9,7 @@ dependencies = [
     'dnspython',
     'idna>=2',
     'meson[ninja]>=1.1.0',
-    'ozi-spec~=0.12.1',
+    'ozi-spec~=0.13.0',
     'ozi-templates~=2.15.1',
     'packaging~=24.1',
     'platformdirs~=4.3',
