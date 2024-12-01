@@ -1,4 +1,38 @@
 # ozi-core CHANGELOG
+## 1.5.22 (2024-11-30)
+
+
+### Build system
+
+
+* build(deps): update ozi-spec requirement from ~=0.12.1 to ~=0.13.0
+
+Updates the requirements on [ozi-spec](https://github.com/OZI-Project/ozi-spec) to permit the latest version.
+- [Release notes](https://github.com/OZI-Project/ozi-spec/releases)
+- [Changelog](https://github.com/OZI-Project/ozi-spec/blob/0.13.0/CHANGELOG.md)
+- [Commits](https://github.com/OZI-Project/ozi-spec/compare/0.12.1...0.13.0)
+
+
+updated-dependencies:
+- dependency-name: ozi-spec
+  dependency-type: direct:production
+... — dependabot[bot] <support@github.com>
+([`29ad933`](https://github.com/OZI-Project/ozi-core/commit/29ad933832a72d03ed6fe95ebaf38309f9af3296))
+
+* build(deps): update ozi-templates requirement from ~=2.15.1 to ~=2.16.0
+
+Updates the requirements on [ozi-templates](https://github.com/OZI-Project/ozi-templates) to permit the latest version.
+- [Release notes](https://github.com/OZI-Project/ozi-templates/releases)
+- [Changelog](https://github.com/OZI-Project/ozi-templates/blob/2.16.0/CHANGELOG.md)
+- [Commits](https://github.com/OZI-Project/ozi-templates/compare/2.15.1...2.16.0)
+
+
+updated-dependencies:
+- dependency-name: ozi-templates
+  dependency-type: direct:production
+... — dependabot[bot] <support@github.com>
+([`4a263c0`](https://github.com/OZI-Project/ozi-core/commit/4a263c0a59d66c0f100a24a87b0d20f1a3af97a2))
+
 ## 1.5.21 (2024-11-25)
 
 
