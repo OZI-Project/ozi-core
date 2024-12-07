@@ -1,4 +1,20 @@
 # ozi-core CHANGELOG
+## 1.5.23 (2024-12-06)
+
+
+### Build system
+
+
+* build: ozi-spec 0.13.1 — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`766c02d`](https://github.com/OZI-Project/ozi-core/commit/766c02db94585f17c21848a96346e7ea6a562131))
+
+
+### Unknown
+
+
+* Update ozi.wrap — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`f044748`](https://github.com/OZI-Project/ozi-core/commit/f044748fd5bc0b63c7a383b1428685d002d6710d))
+
 ## 1.5.22 (2024-11-30)
 
 
