@@ -1,4 +1,33 @@
 # ozi-core CHANGELOG
+## 1.6.0 (2024-12-09)
+
+
+### Build system
+
+
+* build(deps): update ozi-spec requirement from ~=0.13.1 to ~=0.14.0
+
+Updates the requirements on [ozi-spec](https://github.com/OZI-Project/ozi-spec) to permit the latest version.
+- [Release notes](https://github.com/OZI-Project/ozi-spec/releases)
+- [Changelog](https://github.com/OZI-Project/ozi-spec/blob/0.14.0/CHANGELOG.md)
+- [Commits](https://github.com/OZI-Project/ozi-spec/compare/0.13.1...0.14.0)
+
+
+updated-dependencies:
+- dependency-name: ozi-spec
+  dependency-type: direct:production
+... — dependabot[bot] <support@github.com>
+([`855a5d1`](https://github.com/OZI-Project/ozi-core/commit/855a5d136d91772de9b96cdc79fc4ef014d77590))
+
+
+### Features
+
+
+* feat: semantic-release~=9.15
+
+build(deps): update ozi-spec requirement from ~=0.13.1 to ~=0.14.0
+([`e2c3a80`](https://github.com/OZI-Project/ozi-core/commit/e2c3a80a91c22d5a31bf88f05ca052901592f875))
+
 ## 1.5.23 (2024-12-06)
 
 
