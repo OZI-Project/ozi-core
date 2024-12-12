@@ -3,17 +3,3 @@ checks:
   method-complexity:
     config:
       threshold: 8
-exclude_patterns:
-- "tests/"
-- "ozi_build/_at.py"
-- "ozi_build/_branch.py"
-- "ozi_build/_categories.py"
-- "ozi_build/_char.py"
-- "ozi_build/_files.py"
-- "ozi_build/_groupref.py"
-- "ozi_build/_ranges.py"
-- "ozi_build/_redos.py"
-- "ozi_build/_repeat.py"
-- "ozi_build/_sequence.py"
-- "ozi_build/_sre.py"
-- "ozi_build/_text.py"
