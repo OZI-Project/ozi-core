@@ -10,6 +10,19 @@
 1.6.0
 ([`e53c742`](https://github.com/OZI-Project/ozi-core/commit/e53c7425f34ea3b93cc19c732afbfefacb41e40d))
 
+
+### Unknown
+
+
+* Update ozi.yml — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`db612f4`](https://github.com/OZI-Project/ozi-core/commit/db612f4e0f8de07d5f74b64ccf92deb4587197db))
+
+* Update purge-artifacts.yml — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`d19cdc1`](https://github.com/OZI-Project/ozi-core/commit/d19cdc1b468bb7e35698ba42e4c7f524635e34a8))
+
+* Create purge-artifacts.yml — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`8c878ce`](https://github.com/OZI-Project/ozi-core/commit/8c878ce00cfa9c5d0c8808ce47be324c4a7c67ad))
+
 ## 1.6.0 (2024-12-09)
 
 
