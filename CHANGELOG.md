@@ -1,4 +1,96 @@
 # ozi-core CHANGELOG
+## 1.8.0 (2024-12-20)
+
+
+### Bug fixes
+
+
+* fix: OZI.build 1.8.2 metadata — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`be03a26`](https://github.com/OZI-Project/ozi-core/commit/be03a269d89fd4b745306c571742faf1fa9ac7cc))
+
+
+### Build system
+
+
+* build(deps): update ozi-templates requirement from ~=2.18.0 to ~=2.19.0
+
+Updates the requirements on [ozi-templates](https://github.com/OZI-Project/ozi-templates) to permit the latest version.
+- [Release notes](https://github.com/OZI-Project/ozi-templates/releases)
+- [Changelog](https://github.com/OZI-Project/ozi-templates/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/OZI-Project/ozi-templates/compare/2.18.0...2.19.0)
+
+
+updated-dependencies:
+- dependency-name: ozi-templates
+  dependency-type: direct:production
+... — dependabot[bot] <support@github.com>
+([`12c34ff`](https://github.com/OZI-Project/ozi-core/commit/12c34ff3a33ac1679a25a45a27a32ba6363afd92))
+
+* build(deps): bump OZI-Project/draft from 1.6.3 to 1.7.0
+
+Bumps [OZI-Project/draft](https://github.com/ozi-project/draft) from 1.6.3 to 1.7.0.
+- [Release notes](https://github.com/ozi-project/draft/releases)
+- [Commits](https://github.com/ozi-project/draft/compare/1.6.3...1.7.0)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/draft
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`bc50ec8`](https://github.com/OZI-Project/ozi-core/commit/bc50ec88c4210dad0b7c885ddafccb3f47e8e93d))
+
+* build(deps): bump OZI-Project/publish from 1.7.1 to 1.7.2
+
+Bumps [OZI-Project/publish](https://github.com/ozi-project/publish) from 1.7.1 to 1.7.2.
+- [Release notes](https://github.com/ozi-project/publish/releases)
+- [Commits](https://github.com/ozi-project/publish/compare/1.7.1...1.7.2)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/publish
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`d282dd7`](https://github.com/OZI-Project/ozi-core/commit/d282dd7b0ab23289c11b941d941a0b0446704e17))
+
+* build(deps): update ozi-templates requirement from ~=2.17.0 to ~=2.18.0
+
+Updates the requirements on [ozi-templates](https://github.com/OZI-Project/ozi-templates) to permit the latest version.
+- [Release notes](https://github.com/OZI-Project/ozi-templates/releases)
+- [Changelog](https://github.com/OZI-Project/ozi-templates/blob/2.18.0/CHANGELOG.md)
+- [Commits](https://github.com/OZI-Project/ozi-templates/compare/2.17.0...2.18.0)
+
+
+updated-dependencies:
+- dependency-name: ozi-templates
+  dependency-type: direct:production
+... — dependabot[bot] <support@github.com>
+([`197c0e0`](https://github.com/OZI-Project/ozi-core/commit/197c0e03555717e02fa24eb8732faeec920e399e))
+
+* build(deps): update ozi-spec requirement from ~=0.15.3 to ~=0.16.0
+
+Updates the requirements on [ozi-spec](https://github.com/OZI-Project/ozi-spec) to permit the latest version.
+- [Release notes](https://github.com/OZI-Project/ozi-spec/releases)
+- [Changelog](https://github.com/OZI-Project/ozi-spec/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/OZI-Project/ozi-spec/compare/0.15.3...0.16.0)
+
+
+updated-dependencies:
+- dependency-name: ozi-spec
+  dependency-type: direct:production
+... — dependabot[bot] <support@github.com>
+([`31cbcd2`](https://github.com/OZI-Project/ozi-core/commit/31cbcd26f8168d6029e2d08c20c4b068223978c5))
+
+
+### Features
+
+
+* feat: spec v0.16
+
+build(deps): update ozi-spec requirement from ~=0.15.3 to ~=0.16.0
+([`60b9967`](https://github.com/OZI-Project/ozi-core/commit/60b99679dad7aa7db4060cf7f50aa02e855ab71c))
+
 ## 1.7.0 (2024-12-17)
 
 
