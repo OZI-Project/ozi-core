@@ -2,14 +2,13 @@
 # See LICENSE.txt in the project root for details.
 
 [project]
-license = {file = "LICENSE.txt"}
 dependencies = [
     'GitPython~=3.1',
     'TAP-Producer~=1.5.6',
     'dnspython',
     'idna>=2',
     'meson[ninja]>=1.1.0',
-    'ozi-templates~=2.18.0',
+    'ozi-templates~=2.19.0',
     'ozi-spec~=0.16.0',
     'packaging~=24.1',
     'platformdirs~=4.3',
@@ -50,7 +49,6 @@ description-file="README.rst"
 download-url="https://github.com/OZI-Project/ozi-core/archive/refs/tags/{version}.tar.gz"
 home-page="https://www.oziproject.dev"
 keywords="OZI,mesonbuild"
-license="Apache-2.0 WITH LLVM-exception"
 meson-python-option-name="python3"
 requires-python=">=3.10, <3.14"
 summary="The OZI Project packaging core library."
