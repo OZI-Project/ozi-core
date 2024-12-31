@@ -1,4 +1,13 @@
 # ozi-core CHANGELOG
+## 1.9.1 (2024-12-31)
+
+
+### Bug fixes
+
+
+* fix: improper passing of kwargs to ``TAP.comment`` — rjdbcm <rjdbcm@outlook.com>
+([`14929a8`](https://github.com/OZI-Project/ozi-core/commit/14929a8dde9dc941a02abc8bb8b3fce8ed98f203))
+
 ## 1.9.0 (2024-12-31)
 
 
