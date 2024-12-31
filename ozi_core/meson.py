@@ -71,7 +71,7 @@ def project_metadata(ast: CodeBlockNode) -> tuple[str, str]:
         license_ = license_.args.arguments[0]
         TAP.comment(
             TRANSLATION('term-tap-meson-build-license-array'),
-            licenses=license_.value,  # pyright: ignore
+            license_.value,  # pyright: ignore
         )
 
     license_ = license_.value  # pyright: ignore
