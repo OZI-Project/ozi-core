@@ -18,7 +18,7 @@ from typing import Collection
 from typing import NoReturn
 from warnings import warn
 
-import requests
+import niquests  # pyright: ignore
 from ozi_spec import METADATA
 from ozi_spec import OZI
 from ozi_spec import Metadata
@@ -176,7 +176,7 @@ def check_for_update(
 
 def check_version(version: str) -> NoReturn:  # pragma: defer to PyPI
     """Check for a newer version of OZI and exit."""
-    response = requests.get('https://pypi.org/pypi/OZI/json', timeout=30)
+    response = niquests.get('https://pypi.org/pypi/OZI/json', timeout=30)
     match response.status_code:
         case 200:
             check_for_update(

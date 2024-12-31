@@ -14,11 +14,10 @@ dependencies = [
     'platformdirs~=4.3',
     'prompt-toolkit',
     'pyparsing~=3.1',
-    'requests',
+    'niquests',
     'spdx-license-list~=3.25',
     'trove-classifiers~=2024.7',
     'types-PyYAML',
-    'types-requests',
 ]
 
 [build-system]

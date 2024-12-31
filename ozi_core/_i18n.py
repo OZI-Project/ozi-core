@@ -19,12 +19,14 @@ _LOCALE = locale.getlocale()[0]
 
 
 class Translation:
-    """Translation API for use inside OZI tools."""
+    """Translation API for use inside OZI tools.
+
+    Try to get the system locale and load translations.
+    """
 
     __slots__ = ('__logger', '_locale', 'data')
 
     def __init__(self: Translation) -> None:
-        """Try to get the system locale and load translations."""
         self.data = data
         self._locale = (
             _LOCALE[:2] if _LOCALE is not None and _LOCALE[:2] in self.data else 'en'
