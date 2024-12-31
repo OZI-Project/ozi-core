@@ -5,7 +5,7 @@ from __future__ import annotations
 import re
 from functools import lru_cache
 
-import requests  # pyright: ignore
+import niquests  # pyright: ignore
 from prompt_toolkit.document import Document  # pyright: ignore
 from prompt_toolkit.validation import ThreadedValidator  # pyright: ignore
 from prompt_toolkit.validation import ValidationError  # pyright: ignore
@@ -18,7 +18,7 @@ from ozi_core._i18n import TRANSLATION
 def pypi_package_exists(package: str) -> bool:  # pragma: no cover
     """Check if a package name exists on PyPI."""
     return (
-        requests.get(
+        niquests.get(
             f'https://pypi.org/simple/{package}',
             timeout=15,
         ).status_code
