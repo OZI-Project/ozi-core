@@ -8,13 +8,13 @@ from argparse import SUPPRESS
 from argparse import ArgumentParser
 from argparse import BooleanOptionalAction
 
+from pathvalidate.argparse import validate_filepath_arg
+
 from ozi_core._i18n import TRANSLATION
 from ozi_core.fix.validate import AppendRewriteCommandTarget
 from ozi_core.ui.defaults import COPYRIGHT_HEAD
 from ozi_core.ui.defaults import FIX_PRETTY
 from ozi_core.ui.defaults import FIX_STRICT
-
-from pathvalidate.argparse import validate_filepath_arg
 
 parser = ArgumentParser(
     prog='ozi-fix',

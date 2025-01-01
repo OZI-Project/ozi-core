@@ -10,12 +10,11 @@ import argparse
 import sys
 
 from ozi_spec import METADATA
+from pathvalidate.argparse import validate_filepath_arg
 
 from ozi_core._i18n import TRANSLATION
 from ozi_core.actions import CloseMatch
 from ozi_core.ui.defaults import COPYRIGHT_HEAD
-
-from pathvalidate.argparse import validate_filepath_arg
 
 parser = argparse.ArgumentParser(
     prog='ozi-new',
