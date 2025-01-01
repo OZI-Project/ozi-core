@@ -1,4 +1,45 @@
 # ozi-core CHANGELOG
+## 1.9.1 (2024-12-31)
+
+
+### Bug fixes
+
+
+* fix: improper passing of kwargs to ``TAP.comment`` — rjdbcm <rjdbcm@outlook.com>
+([`14929a8`](https://github.com/OZI-Project/ozi-core/commit/14929a8dde9dc941a02abc8bb8b3fce8ed98f203))
+
+## 1.9.0 (2024-12-31)
+
+
+### Build system
+
+
+* build(deps): ozi-templates~=2.19.1 — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`8ff31bd`](https://github.com/OZI-Project/ozi-core/commit/8ff31bd5857076cccd5ba491bb65f7a005b041b9))
+
+* build(deps): update ozi-spec requirement from ~=0.16.0 to ~=0.17.1
+
+Updates the requirements on [ozi-spec](https://github.com/OZI-Project/ozi-spec) to permit the latest version.
+- [Release notes](https://github.com/OZI-Project/ozi-spec/releases)
+- [Changelog](https://github.com/OZI-Project/ozi-spec/blob/0.17.1/CHANGELOG.md)
+- [Commits](https://github.com/OZI-Project/ozi-spec/compare/0.16.0...0.17.1)
+
+
+updated-dependencies:
+- dependency-name: ozi-spec
+  dependency-type: direct:production
+... — dependabot[bot] <support@github.com>
+([`a3217c9`](https://github.com/OZI-Project/ozi-core/commit/a3217c9b2fb1ec49dff3f69d2018cda3667574e7))
+
+
+### Features
+
+
+* feat: switch to niquests over requests
+
+requests is no longer actively updated. — rjdbcm <rjdbcm@outlook.com>
+([`c69a3b6`](https://github.com/OZI-Project/ozi-core/commit/c69a3b6c191656a6dcfeba1b6de1eed8b93bcf62))
+
 ## 1.8.0 (2024-12-20)
 
 
