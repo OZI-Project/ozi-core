@@ -1,5 +1,30 @@
 # ozi-core CHANGELOG
+## 1.10.0 (2025-01-01)
+
+
+### Bug fixes
+
+
+* fix: run isort
+([`68b9213`](https://github.com/OZI-Project/ozi-core/commit/68b9213e084553e75d503726d39b22c5932a37ce))
+
+
+### Build system
+
+
+* build(deps): add pathvalidate — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`64df958`](https://github.com/OZI-Project/ozi-core/commit/64df9582d5cbbb0acc2afae74313b4a3a283ca47))
+
+
+### Features
+
+
+* feat: validate user-provided project targets — rjdbcm <rjdbcm@outlook.com>
+([`b4ba010`](https://github.com/OZI-Project/ozi-core/commit/b4ba0103ab743079a0fd891fa78731ddc8a5a913))
+
 ## 1.9.1 (2024-12-31)
+
+## 1.9.0 (2024-12-31)
 
 
 ### Bug fixes
@@ -8,11 +33,23 @@
 * fix: improper passing of kwargs to ``TAP.comment`` — rjdbcm <rjdbcm@outlook.com>
 ([`14929a8`](https://github.com/OZI-Project/ozi-core/commit/14929a8dde9dc941a02abc8bb8b3fce8ed98f203))
 
-## 1.9.0 (2024-12-31)
-
 
 ### Build system
 
+
+* build(deps): update ozi-spec requirement from ~=0.17.1 to ~=0.18.0
+
+Updates the requirements on [ozi-spec](https://github.com/OZI-Project/ozi-spec) to permit the latest version.
+- [Release notes](https://github.com/OZI-Project/ozi-spec/releases)
+- [Changelog](https://github.com/OZI-Project/ozi-spec/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/OZI-Project/ozi-spec/compare/0.17.1...0.18.0)
+
+
+updated-dependencies:
+- dependency-name: ozi-spec
+  dependency-type: direct:production
+... — dependabot[bot] <support@github.com>
+([`01fdd02`](https://github.com/OZI-Project/ozi-core/commit/01fdd0251813096c124288f4a094dda55279071e))
 
 * build(deps): ozi-templates~=2.19.1 — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
 ([`8ff31bd`](https://github.com/OZI-Project/ozi-core/commit/8ff31bd5857076cccd5ba491bb65f7a005b041b9))
@@ -34,6 +71,11 @@ updated-dependencies:
 
 ### Features
 
+
+* feat: OZI.build 1.10
+
+build(deps): update ozi-spec requirement from ~=0.17.1 to ~=0.18.0
+([`4615f53`](https://github.com/OZI-Project/ozi-core/commit/4615f530a0250d22de3549d6568668c12968dad6))
 
 * feat: switch to niquests over requests
 
