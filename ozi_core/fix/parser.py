@@ -14,6 +14,8 @@ from ozi_core.ui.defaults import COPYRIGHT_HEAD
 from ozi_core.ui.defaults import FIX_PRETTY
 from ozi_core.ui.defaults import FIX_STRICT
 
+from pathvalidate.argparse import validate_filepath_arg
+
 parser = ArgumentParser(
     prog='ozi-fix',
     description=sys.modules[__name__].__doc__,
@@ -93,7 +95,7 @@ missing_output.add_argument(
 )
 missing_parser.add_argument(
     'target',
-    type=str,
+    type=validate_filepath_arg,
     nargs='?',
     default='.',
     help=TRANSLATION('term-help-fix-target'),
@@ -161,7 +163,7 @@ source_output.add_argument(
 )
 source_parser.add_argument(
     'target',
-    type=str,
+    type=validate_filepath_arg,
     nargs='?',
     default='.',
     help=TRANSLATION('term-help-fix-target'),
@@ -213,7 +215,7 @@ test_output.add_argument(
 )
 test_parser.add_argument(
     'target',
-    type=str,
+    type=validate_filepath_arg,
     nargs='?',
     default='.',
     help=TRANSLATION('term-help-fix-target'),
@@ -228,7 +230,7 @@ interactive_parser = subparser.add_parser(
 )
 interactive_parser.add_argument(
     'target',
-    type=str,
+    type=validate_filepath_arg,
     nargs='?',
     default='.',
     help=TRANSLATION('term-help-fix-target'),

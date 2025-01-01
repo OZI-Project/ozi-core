@@ -15,6 +15,8 @@ from ozi_core._i18n import TRANSLATION
 from ozi_core.actions import CloseMatch
 from ozi_core.ui.defaults import COPYRIGHT_HEAD
 
+from pathvalidate.argparse import validate_filepath_arg
+
 parser = argparse.ArgumentParser(
     prog='ozi-new',
     description=sys.modules[__name__].__doc__,
@@ -46,7 +48,7 @@ project_parser = subparser.add_parser(
 )
 interactive_parser.add_argument(
     'target',
-    type=str,
+    type=validate_filepath_arg,
     nargs='?',
     default='.',
     help=TRANSLATION('term-help-new-target'),
@@ -391,7 +393,7 @@ ozi_defaults.add_argument(
 )
 ozi_required.add_argument(
     'target',
-    type=str,
+    type=validate_filepath_arg,
     nargs='?',
     default='.',
     help=TRANSLATION('term-help-new-target'),
