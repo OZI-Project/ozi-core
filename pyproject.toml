@@ -1,29 +1,29 @@
 # Part of ozi-core.
 # See LICENSE.txt in the project root for details.
-
 [project]
 dependencies = [
     'GitPython~=3.1',
-    'TAP-Producer~=1.5.6',
-    'dnspython',
-    'idna>=2',
-    'meson[ninja]>=1.1.0',
+    'TAP-Producer~=1.5.9',
+    'dnspython~=2.7.0',
+    'idna~=3.10',
+    'meson[ninja]~=1.1',
     'ozi-templates~=2.19.1',
     'ozi-spec~=0.18.0',
     'packaging~=24.1',
     'platformdirs~=4.3',
-    'prompt-toolkit',
+    'prompt-toolkit~=3.0.48',
     'pyparsing~=3.1',
-    'niquests',
+    'niquests~=3.11.4',
     'spdx-license-list~=3.25',
     'trove-classifiers~=2024.7',
-    'types-PyYAML',
+    'types-PyYAML~=6.0',
+    'pathvalidate~=3.2.1',
 ]
 
 [build-system]
 requires = [
-    'OZI.build[core,uv]~=1.5',
-    'PyYAML',
+    'OZI.build[core,uv]~=1.10.0',
+    'PyYAML~=6.0',
 ]
 build-backend = "ozi_build.buildapi"
 
@@ -61,7 +61,7 @@ ci   = [
     "tox-gh>1.2",
 ]
 # tox -e fix
-fix  = ["black>=24.3", "ruff>=0.1.6", "autoflake", "isort"]
+fix  = ["black>=24.3", "autoflake", "isort"]
 # Default meson test setup
 dist = [
     "python-semantic-release",
@@ -338,7 +338,7 @@ package = wheel
 deps =
      uv
 commands_pre =
-     python -m uv pip install OZI.build[core,uv]~=1.5
+     python -m uv pip install OZI.build[core,uv]~=1.10.0
      pipx install --python=python meson
 commands =
      meson setup {env_tmp_dir} -Dozi:dist=disabled -Dozi:tox-env-dir={env_dir}
