@@ -13,9 +13,9 @@ dependencies = [
     'platformdirs~=4.3',
     'prompt-toolkit~=3.0.48',
     'pyparsing~=3.1',
-    'niquests~=3.11.4',
+    'niquests~=3.12.0',
     'spdx-license-list~=3.25',
-    'trove-classifiers~=2024.7',
+    'trove-classifiers~=2025.1',
     'types-PyYAML~=6.0',
     'pathvalidate~=3.2.1',
 ]
