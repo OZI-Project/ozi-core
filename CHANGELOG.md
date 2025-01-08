@@ -1,4 +1,93 @@
 # ozi-core CHANGELOG
+## 1.10.1 (2025-01-08)
+
+
+### Build system
+
+
+* build(deps): bump OZI-Project/draft from 1.7.0 to 1.8.0
+
+Bumps [OZI-Project/draft](https://github.com/ozi-project/draft) from 1.7.0 to 1.8.0.
+- [Release notes](https://github.com/ozi-project/draft/releases)
+- [Commits](https://github.com/ozi-project/draft/compare/1.7.0...1.8.0)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/draft
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`88eb305`](https://github.com/OZI-Project/ozi-core/commit/88eb305843a80aff9b2fdf454562bedead506036))
+
+* build(deps): bump OZI-Project/publish from 1.7.2 to 1.7.3
+
+Bumps [OZI-Project/publish](https://github.com/ozi-project/publish) from 1.7.2 to 1.7.3.
+- [Release notes](https://github.com/ozi-project/publish/releases)
+- [Commits](https://github.com/ozi-project/publish/compare/1.7.2...1.7.3)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/publish
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`887f9e8`](https://github.com/OZI-Project/ozi-core/commit/887f9e868bbde3c7d962e3695d3eb79f92806f09))
+
+* build(deps): bump OZI-Project/release from 1.1.2 to 1.2.1
+
+Bumps [OZI-Project/release](https://github.com/ozi-project/release) from 1.1.2 to 1.2.1.
+- [Release notes](https://github.com/ozi-project/release/releases)
+- [Commits](https://github.com/ozi-project/release/compare/0e2db492d3d36479eadc1ba15e509e911816bc39...b716b63d2e71fead7665c1749fd7497f7f147c2e)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/release
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`3da115f`](https://github.com/OZI-Project/ozi-core/commit/3da115f5628cdc8f7ad7d97c870a75aab8989f28))
+
+* build(deps): bump OZI-Project/checkpoint from 1.4.0 to 1.5.1
+
+Bumps [OZI-Project/checkpoint](https://github.com/ozi-project/checkpoint) from 1.4.0 to 1.5.1.
+- [Release notes](https://github.com/ozi-project/checkpoint/releases)
+- [Commits](https://github.com/ozi-project/checkpoint/compare/1.4.0...1.5.1)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/checkpoint
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`87b0718`](https://github.com/OZI-Project/ozi-core/commit/87b071892d1c4c4497e42d5398041be4b7d1eaf4))
+
+* build(deps): update trove-classifiers requirement
+
+Updates the requirements on [trove-classifiers](https://github.com/pypa/trove-classifiers) to permit the latest version.
+- [Release notes](https://github.com/pypa/trove-classifiers/releases)
+- [Commits](https://github.com/pypa/trove-classifiers/compare/2024.7.1...2025.1.6.15)
+
+
+updated-dependencies:
+- dependency-name: trove-classifiers
+  dependency-type: direct:production
+... — dependabot[bot] <support@github.com>
+([`a36d522`](https://github.com/OZI-Project/ozi-core/commit/a36d522d7a740cd2edc308ec142c4bfcb46443ab))
+
+* build(deps): update niquests requirement from ~=3.11.4 to ~=3.12.0
+
+Updates the requirements on [niquests](https://github.com/jawah/niquests) to permit the latest version.
+- [Release notes](https://github.com/jawah/niquests/releases)
+- [Changelog](https://github.com/jawah/niquests/blob/main/HISTORY.md)
+- [Commits](https://github.com/jawah/niquests/compare/v3.11.4...v3.12.0)
+
+
+updated-dependencies:
+- dependency-name: niquests
+  dependency-type: direct:production
+... — dependabot[bot] <support@github.com>
+([`528ea51`](https://github.com/OZI-Project/ozi-core/commit/528ea51734dcbadfda594a3d7e3ca6b6ddf0dbeb))
+
 ## 1.10.0 (2025-01-01)
 
 
