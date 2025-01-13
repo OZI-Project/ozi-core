@@ -38,6 +38,7 @@ from ozi_core.fix.missing import get_relpath_expected_files
 from ozi_core.fix.missing import report
 from ozi_core.fix.parser import parser
 from ozi_core.fix.rewrite_command import Rewriter
+from ozi_core.fix.wrap import update_wrapfile
 from ozi_core.new.validate import valid_copyright_head
 
 if TYPE_CHECKING:  # pragma: no cover
@@ -67,6 +68,8 @@ def main(args: list[str] | None = None) -> NoReturn:  # pragma: no cover
     project = parser.parse_args(args=args)
     project.missing = project.fix in {'missing', 'm', 'mis'}
     project.interactive = project.fix in {'interactive', 'i'}
+    if project.update_wrapfile:
+        update_wrapfile(project.target, METADATA.ozi.version)
     match [project.interactive, project.missing, project.strict]:
         case [True, False, _]:
             with TAP.suppress():  # pyright: ignore

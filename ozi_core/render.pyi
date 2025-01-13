@@ -87,7 +87,13 @@ def build_child(env: Environment, parent: str, child: Path) -> None:
 
 class RenderedContent:
     def __init__(
-        self, env: Environment, target: Path, name: str, ci_provider: str, readme_type: str
+        self,
+        env: Environment,
+        target: Path,
+        name: str,
+        ci_provider: str,
+        readme_type: str,
+        update_wrapfile: bool,
     ) -> None:
         """OZI new project content to render.
 

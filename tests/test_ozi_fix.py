@@ -158,6 +158,7 @@ def bad_project(tmp_path_factory: pytest.TempPathFactory) -> pathlib.Path:
         postprocessed.name,
         postprocessed.ci_provider,
         postprocessed.long_description_content_type,
+        True,
     ).render()
     return fn
 

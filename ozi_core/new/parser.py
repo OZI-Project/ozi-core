@@ -353,6 +353,12 @@ ozi_defaults.add_argument(
     help=TRANSLATION('term-help-verify-email'),
 )
 ozi_defaults.add_argument(
+    '--update-wrapfile',
+    action=argparse.BooleanOptionalAction,
+    default=False,
+    help=TRANSLATION('term-help-update-wrapfile'),
+)
+ozi_defaults.add_argument(
     '--enable-cython',
     default=False,
     action=argparse.BooleanOptionalAction,
