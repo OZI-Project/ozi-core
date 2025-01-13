@@ -28,6 +28,7 @@ from ozi_core.new import project as new_project  # pyright: ignore
 @given(
     project=st.fixed_dictionaries(
         {
+            'update_wrapfile': st.booleans(),
             'verify_email': st.just(False),
             'strict': st.booleans(),
             'github_harden_runner': st.booleans(),
