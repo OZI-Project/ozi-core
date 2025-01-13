@@ -1,9 +1,108 @@
 # ozi-core CHANGELOG
+## 1.11.1 (2025-01-13)
+
+
+### Build system
+
+
+* build(deps): bump OZI-Project/release from 1.3.0 to 1.3.1
+
+Bumps [OZI-Project/release](https://github.com/ozi-project/release) from 1.3.0 to 1.3.1.
+- [Release notes](https://github.com/ozi-project/release/releases)
+- [Commits](https://github.com/ozi-project/release/compare/c5bb9bd741887d0a330d4b40042b4db4f4f1e3e4...5fead75f13134fe16226c4eba87ae80b52876ab0)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/release
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`9edc622`](https://github.com/OZI-Project/ozi-core/commit/9edc622762c7018d2869b7cd6be3b5f5902162b5))
+
+## 1.11.0 (2025-01-13)
+
+
+### Bug fixes
+
+
+* fix: gitignore ozi subproject files — rjdbcm <rjdbcm@outlook.com>
+([`07bf2e4`](https://github.com/OZI-Project/ozi-core/commit/07bf2e45385bbd4beca7afeb4623453d6f1020bd))
+
+* fix: add ``--update-wrapfile`` arg to ``ozi-fix`` — rjdbcm <rjdbcm@outlook.com>
+([`35f28cd`](https://github.com/OZI-Project/ozi-core/commit/35f28cd86e679431302f5903d05ecc8937e72178))
+
+
+### Build system
+
+
+* build(deps): bump OZI-Project/release from 1.2.2 to 1.3.0
+
+Bumps [OZI-Project/release](https://github.com/ozi-project/release) from 1.2.2 to 1.3.0.
+- [Release notes](https://github.com/ozi-project/release/releases)
+- [Commits](https://github.com/ozi-project/release/compare/e5d307c6fbe79ab1956a4355014194b7f30721ba...c5bb9bd741887d0a330d4b40042b4db4f4f1e3e4)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/release
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`20ad05b`](https://github.com/OZI-Project/ozi-core/commit/20ad05b9a5757611706acb7a50e3d3b5c64289b6))
+
+* build(deps): bump OZI-Project/release from 1.2.1 to 1.2.2
+
+Bumps [OZI-Project/release](https://github.com/ozi-project/release) from 1.2.1 to 1.2.2.
+- [Release notes](https://github.com/ozi-project/release/releases)
+- [Commits](https://github.com/ozi-project/release/compare/b716b63d2e71fead7665c1749fd7497f7f147c2e...e5d307c6fbe79ab1956a4355014194b7f30721ba)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/release
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`718f6a2`](https://github.com/OZI-Project/ozi-core/commit/718f6a23a186bb4c469370dd7ce0b88de8fee63c))
+
+
+### Features
+
+
+* feat: update ozi wrapfile when rendering a new project with ``--update-wrapfile``, defaults to false — rjdbcm <rjdbcm@outlook.com>
+([`f42b95d`](https://github.com/OZI-Project/ozi-core/commit/f42b95d73f3166eb27089df820b080c5d2271c4a))
+
 ## 1.10.1 (2025-01-08)
 
 
 ### Build system
 
+
+* build(deps): bump step-security/harden-runner from 2.10.2 to 2.10.3
+
+Bumps [step-security/harden-runner](https://github.com/step-security/harden-runner) from 2.10.2 to 2.10.3.
+- [Release notes](https://github.com/step-security/harden-runner/releases)
+- [Commits](https://github.com/step-security/harden-runner/compare/0080882f6c36860b6ba35c610c98ce87d4e2f26f...c95a14d0e5bab51a9f56296a4eb0e416910cd350)
+
+
+updated-dependencies:
+- dependency-name: step-security/harden-runner
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`e0a4b71`](https://github.com/OZI-Project/ozi-core/commit/e0a4b7140148617ee1f682a0f8a92333e857d6f2))
+
+* build(deps): bump OZI-Project/checkpoint from 1.5.1 to 1.5.3
+
+Bumps [OZI-Project/checkpoint](https://github.com/ozi-project/checkpoint) from 1.5.1 to 1.5.3.
+- [Release notes](https://github.com/ozi-project/checkpoint/releases)
+- [Commits](https://github.com/ozi-project/checkpoint/compare/1.5.1...1.5.3)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/checkpoint
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`57f3dbd`](https://github.com/OZI-Project/ozi-core/commit/57f3dbde3aaa23b7af9fb9d49572af7bdb4da250))
 
 * build(deps): bump OZI-Project/draft from 1.7.0 to 1.8.0
 
@@ -87,6 +186,13 @@ updated-dependencies:
   dependency-type: direct:production
 ... — dependabot[bot] <support@github.com>
 ([`528ea51`](https://github.com/OZI-Project/ozi-core/commit/528ea51734dcbadfda594a3d7e3ca6b6ddf0dbeb))
+
+
+### Features
+
+
+* feat: ``ozi.wrap`` now uses a canonical release tarball — rjdbcm <rjdbcm@outlook.com>
+([`ce9ddbd`](https://github.com/OZI-Project/ozi-core/commit/ce9ddbd9d3260764dcc306eaa97195323374b168))
 
 ## 1.10.0 (2025-01-01)
 
