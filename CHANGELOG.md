@@ -15,6 +15,20 @@
 ### Build system
 
 
+* build(deps): bump OZI-Project/release from 1.2.2 to 1.3.0
+
+Bumps [OZI-Project/release](https://github.com/ozi-project/release) from 1.2.2 to 1.3.0.
+- [Release notes](https://github.com/ozi-project/release/releases)
+- [Commits](https://github.com/ozi-project/release/compare/e5d307c6fbe79ab1956a4355014194b7f30721ba...c5bb9bd741887d0a330d4b40042b4db4f4f1e3e4)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/release
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`20ad05b`](https://github.com/OZI-Project/ozi-core/commit/20ad05b9a5757611706acb7a50e3d3b5c64289b6))
+
 * build(deps): bump OZI-Project/release from 1.2.1 to 1.2.2
 
 Bumps [OZI-Project/release](https://github.com/ozi-project/release) from 1.2.1 to 1.2.2.
