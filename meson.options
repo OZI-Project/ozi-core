@@ -7,12 +7,12 @@
 option(
     'compile-requirements-command',
     type: 'array',
-    value: ['uv', 'pip', 'compile'],
+    value: ['uv', 'pip', '--no-progress', 'compile'],
 )
 option(
     'install-requirements-command',
     type: 'array',
-    value: ['uv', 'pip'],
+    value: ['uv', 'pip', '--no-progress'],
 )
 option(
     'namespace',

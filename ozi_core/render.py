@@ -7,7 +7,6 @@
 from __future__ import annotations
 
 import configparser
-from contextlib import suppress
 from logging import getLogger
 from pathlib import Path
 from typing import TYPE_CHECKING
@@ -24,6 +23,7 @@ from tap_producer import TAP
 from ozi_core._i18n import TRANSLATION
 from ozi_core._logging import PytestFilter
 from ozi_core._logging import config_logger
+from ozi_core.fix.wrap import update_wrapfile
 
 if TYPE_CHECKING:  # pragma: no cover
     from jinja2 import Environment
@@ -186,6 +186,7 @@ class RenderedContent:
         name: str,
         ci_provider: str,
         readme_type: str,
+        update_wrapfile: bool,
     ) -> None:
         """OZI new project content to render.
 
@@ -206,15 +207,15 @@ class RenderedContent:
         self.ci_provider = ci_provider
         self.readme_type = readme_type
         self.ci_user = ''
+        self.update_wrapfile = update_wrapfile
 
     def render(self: RenderedContent) -> None:
         """Render the project."""
         self.ci_user = render_ci_files_set_user(self.env, self.target, self.ci_provider)
         render_project_files(self.env, self.target, self.name)
         abspath = Path(self.target).resolve()
-        Path(abspath, 'subprojects', f'OZI-{METADATA.ozi.version}').symlink_to(
-            Path('..', 'subprojects', 'ozi'), target_is_directory=True
-        )
+        if self.update_wrapfile:  # pragma: defer to E2E
+            update_wrapfile(self.target, METADATA.ozi.version)
         if self.ci_provider == 'github':
             Path(abspath, f'README.{self.readme_type}').symlink_to(Path('README'))
         else:  # pragma: no cover

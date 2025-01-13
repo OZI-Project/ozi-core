@@ -43,6 +43,7 @@ def project(project: Namespace) -> None:
         project.name,
         project.ci_provider,
         project.long_description_content_type,
+        project.update_wrapfile,
     ).render()
 
 
