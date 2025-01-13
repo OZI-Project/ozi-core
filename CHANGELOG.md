@@ -1,9 +1,53 @@
 # ozi-core CHANGELOG
+## 1.11.0 (2025-01-13)
+
+
+### Bug fixes
+
+
+* fix: add ``--update-wrapfile`` arg to ``ozi-fix`` — rjdbcm <rjdbcm@outlook.com>
+([`35f28cd`](https://github.com/OZI-Project/ozi-core/commit/35f28cd86e679431302f5903d05ecc8937e72178))
+
+
+### Features
+
+
+* feat: update ozi wrapfile when rendering a new project with ``--update-wrapfile``, defaults to false — rjdbcm <rjdbcm@outlook.com>
+([`f42b95d`](https://github.com/OZI-Project/ozi-core/commit/f42b95d73f3166eb27089df820b080c5d2271c4a))
+
 ## 1.10.1 (2025-01-08)
 
 
 ### Build system
 
+
+* build(deps): bump step-security/harden-runner from 2.10.2 to 2.10.3
+
+Bumps [step-security/harden-runner](https://github.com/step-security/harden-runner) from 2.10.2 to 2.10.3.
+- [Release notes](https://github.com/step-security/harden-runner/releases)
+- [Commits](https://github.com/step-security/harden-runner/compare/0080882f6c36860b6ba35c610c98ce87d4e2f26f...c95a14d0e5bab51a9f56296a4eb0e416910cd350)
+
+
+updated-dependencies:
+- dependency-name: step-security/harden-runner
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`e0a4b71`](https://github.com/OZI-Project/ozi-core/commit/e0a4b7140148617ee1f682a0f8a92333e857d6f2))
+
+* build(deps): bump OZI-Project/checkpoint from 1.5.1 to 1.5.3
+
+Bumps [OZI-Project/checkpoint](https://github.com/ozi-project/checkpoint) from 1.5.1 to 1.5.3.
+- [Release notes](https://github.com/ozi-project/checkpoint/releases)
+- [Commits](https://github.com/ozi-project/checkpoint/compare/1.5.1...1.5.3)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/checkpoint
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`57f3dbd`](https://github.com/OZI-Project/ozi-core/commit/57f3dbde3aaa23b7af9fb9d49572af7bdb4da250))
 
 * build(deps): bump OZI-Project/draft from 1.7.0 to 1.8.0
 
@@ -87,6 +131,13 @@ updated-dependencies:
   dependency-type: direct:production
 ... — dependabot[bot] <support@github.com>
 ([`528ea51`](https://github.com/OZI-Project/ozi-core/commit/528ea51734dcbadfda594a3d7e3ca6b6ddf0dbeb))
+
+
+### Features
+
+
+* feat: ``ozi.wrap`` now uses a canonical release tarball — rjdbcm <rjdbcm@outlook.com>
+([`ce9ddbd`](https://github.com/OZI-Project/ozi-core/commit/ce9ddbd9d3260764dcc306eaa97195323374b168))
 
 ## 1.10.0 (2025-01-01)
 
