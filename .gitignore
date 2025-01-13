@@ -1,6 +1,8 @@
 # OZI packaging
 sig/
 subprojects/ozi/
+subprojects/OZI-*/
+subprojects/packagecache/
 build*/
 /dist/
 temp/

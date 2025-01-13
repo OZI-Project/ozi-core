@@ -7,6 +7,7 @@
 from __future__ import annotations
 
 import configparser
+from contextlib import suppress
 from logging import getLogger
 from pathlib import Path
 from typing import TYPE_CHECKING
@@ -210,12 +211,12 @@ class RenderedContent:
         """Render the project."""
         self.ci_user = render_ci_files_set_user(self.env, self.target, self.ci_provider)
         render_project_files(self.env, self.target, self.name)
+        abspath = Path(self.target).resolve()
+        Path(abspath, 'subprojects', f'OZI-{METADATA.ozi.version}').symlink_to(
+            Path('..', 'subprojects', 'ozi'), target_is_directory=True
+        )
         if self.ci_provider == 'github':
-            abspath = Path(self.target).resolve()
-            Path(
-                abspath,
-                f'README.{self.readme_type}',
-            ).symlink_to(Path('README'))
+            Path(abspath, f'README.{self.readme_type}').symlink_to(Path('README'))
         else:  # pragma: no cover
             pass
 

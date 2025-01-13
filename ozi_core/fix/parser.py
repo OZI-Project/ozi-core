@@ -53,6 +53,12 @@ parser.add_argument(
     action=BooleanOptionalAction,
     help=SUPPRESS,
 )
+parser.add_argument(
+    '--update-wrapfile',
+    action=BooleanOptionalAction,
+    default=False,
+    help=SUPPRESS,
+)
 subparser = parser.add_subparsers(help='', metavar='', dest='fix')
 helpers = parser.add_mutually_exclusive_group()
 helpers.add_argument('-h', '--help', action='help', help=TRANSLATION('term-help-help'))
@@ -79,6 +85,12 @@ missing_parser.add_argument(
     action=AppendRewriteCommandTarget,
     default=[],
     help=SUPPRESS,
+)
+missing_parser.add_argument(
+    '--update-wrapfile',
+    action=BooleanOptionalAction,
+    default=False,
+    help=TRANSLATION('term-help-fix-update-wrapfile'),
 )
 missing_output = missing_parser.add_argument_group(TRANSLATION('term-output'))
 missing_output.add_argument(
@@ -142,6 +154,12 @@ source_parser.add_argument(
     default=COPYRIGHT_HEAD,
     help=TRANSLATION('term-copyright-head'),
 )
+source_parser.add_argument(
+    '--update-wrapfile',
+    action=BooleanOptionalAction,
+    default=False,
+    help=TRANSLATION('term-help-fix-update-wrapfile'),
+)
 source_output = source_parser.add_argument_group(TRANSLATION('term-output'))
 source_output.add_argument(
     '--strict',
@@ -193,6 +211,12 @@ test_parser.add_argument(
     type=str,
     default=COPYRIGHT_HEAD,
     help=TRANSLATION('term-copyright-head'),
+)
+test_parser.add_argument(
+    '--update-wrapfile',
+    action=BooleanOptionalAction,
+    default=False,
+    help=TRANSLATION('term-help-fix-update-wrapfile'),
 )
 test_output = test_parser.add_argument_group(TRANSLATION('term-output'))
 test_output.add_argument(
