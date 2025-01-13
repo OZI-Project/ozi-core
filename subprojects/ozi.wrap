@@ -1,7 +1,9 @@
-[wrap-git]
-url = https://github.com/OZI-Project/ozi.git
-revision = release/1.26
-depth = 1
+[wrap-file]
+directory = OZI-1.31.4
+source_url = https://github.com/OZI-Project/OZI/archive/refs/tags/1.31.4.tar.gz
+source_hash = 2c669d02c711a0f683edc1d47c50079a7b0fb31d1e2a34d9ff4c7bae316f1094
+source_filename = OZI-1.31.4.tar.gz
 
 [provide]
-dependency_names = ozi-0.13
+dependency_names = ozi, ozi-1.31.4
+

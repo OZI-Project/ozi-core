@@ -15,6 +15,7 @@ source_fix_files = [
     'rewrite_command.py',
     'rewrite_command.pyi',
     'validate.py',
+    'wrap.py',
 ]
 foreach file: source_fix_files
     if not meson.is_subproject() or get_option('install-subprojects').enabled()
