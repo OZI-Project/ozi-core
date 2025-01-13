@@ -5,6 +5,9 @@
 ### Bug fixes
 
 
+* fix: gitignore ozi subproject files — rjdbcm <rjdbcm@outlook.com>
+([`07bf2e4`](https://github.com/OZI-Project/ozi-core/commit/07bf2e45385bbd4beca7afeb4623453d6f1020bd))
+
 * fix: add ``--update-wrapfile`` arg to ``ozi-fix`` — rjdbcm <rjdbcm@outlook.com>
 ([`35f28cd`](https://github.com/OZI-Project/ozi-core/commit/35f28cd86e679431302f5903d05ecc8937e72178))
 
