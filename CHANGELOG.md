@@ -1,4 +1,24 @@
 # ozi-core CHANGELOG
+## 1.11.1 (2025-01-13)
+
+
+### Build system
+
+
+* build(deps): bump OZI-Project/release from 1.3.0 to 1.3.1
+
+Bumps [OZI-Project/release](https://github.com/ozi-project/release) from 1.3.0 to 1.3.1.
+- [Release notes](https://github.com/ozi-project/release/releases)
+- [Commits](https://github.com/ozi-project/release/compare/c5bb9bd741887d0a330d4b40042b4db4f4f1e3e4...5fead75f13134fe16226c4eba87ae80b52876ab0)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/release
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`9edc622`](https://github.com/OZI-Project/ozi-core/commit/9edc622762c7018d2869b7cd6be3b5f5902162b5))
+
 ## 1.11.0 (2025-01-13)
 
 
