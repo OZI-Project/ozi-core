@@ -1,4 +1,24 @@
 # ozi-core CHANGELOG
+## 1.11.2 (2025-01-13)
+
+
+### Build system
+
+
+* build(deps): update ozi-spec requirement from ~=0.18.0 to ~=0.19.0
+
+Updates the requirements on [ozi-spec](https://github.com/OZI-Project/ozi-spec) to permit the latest version.
+- [Release notes](https://github.com/OZI-Project/ozi-spec/releases)
+- [Changelog](https://github.com/OZI-Project/ozi-spec/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/OZI-Project/ozi-spec/compare/0.18.0...0.19.0)
+
+
+updated-dependencies:
+- dependency-name: ozi-spec
+  dependency-type: direct:production
+... — dependabot[bot] <support@github.com>
+([`bd6daa7`](https://github.com/OZI-Project/ozi-core/commit/bd6daa790ecd4c8e89af3407d3e634c66d44f9a8))
+
 ## 1.11.1 (2025-01-13)
 
 
