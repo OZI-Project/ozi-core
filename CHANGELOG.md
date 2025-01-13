@@ -5,6 +5,9 @@
 ### Build system
 
 
+* build: Delete .github/workflows/purge-artifacts.yml — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`5406131`](https://github.com/OZI-Project/ozi-core/commit/5406131612e0c587ed8aebdfad89eebd5705a73e))
+
 * build(deps): update ozi-spec requirement from ~=0.18.0 to ~=0.19.0
 
 Updates the requirements on [ozi-spec](https://github.com/OZI-Project/ozi-spec) to permit the latest version.
