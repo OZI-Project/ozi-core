@@ -9,6 +9,24 @@
 ([`35f28cd`](https://github.com/OZI-Project/ozi-core/commit/35f28cd86e679431302f5903d05ecc8937e72178))
 
 
+### Build system
+
+
+* build(deps): bump OZI-Project/release from 1.2.1 to 1.2.2
+
+Bumps [OZI-Project/release](https://github.com/ozi-project/release) from 1.2.1 to 1.2.2.
+- [Release notes](https://github.com/ozi-project/release/releases)
+- [Commits](https://github.com/ozi-project/release/compare/b716b63d2e71fead7665c1749fd7497f7f147c2e...e5d307c6fbe79ab1956a4355014194b7f30721ba)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/release
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`718f6a2`](https://github.com/OZI-Project/ozi-core/commit/718f6a23a186bb4c469370dd7ce0b88de8fee63c))
+
+
 ### Features
 
 
