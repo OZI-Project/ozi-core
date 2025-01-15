@@ -1,9 +1,67 @@
 # ozi-core CHANGELOG
+## 1.12.0 (2025-01-15)
+
 ## 1.11.2 (2025-01-13)
 
 
 ### Build system
 
+
+* build(deps): bump OZI-Project/publish from 1.7.3 to 1.8.0
+
+Bumps [OZI-Project/publish](https://github.com/ozi-project/publish) from 1.7.3 to 1.8.0.
+- [Release notes](https://github.com/ozi-project/publish/releases)
+- [Commits](https://github.com/ozi-project/publish/compare/1.7.3...1.8.0)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/publish
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`9cb1cd5`](https://github.com/OZI-Project/ozi-core/commit/9cb1cd5d979dc2a6a4a750e8e96cb65814af404e))
+
+* build(deps): bump OZI-Project/draft from 1.8.0 to 1.9.0
+
+Bumps [OZI-Project/draft](https://github.com/ozi-project/draft) from 1.8.0 to 1.9.0.
+- [Release notes](https://github.com/ozi-project/draft/releases)
+- [Commits](https://github.com/ozi-project/draft/compare/1.8.0...1.9.0)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/draft
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`4fae87c`](https://github.com/OZI-Project/ozi-core/commit/4fae87ce3f248812d4546682dd5878e3e43165e5))
+
+* build(deps): bump OZI-Project/checkpoint from 1.5.3 to 1.5.4
+
+Bumps [OZI-Project/checkpoint](https://github.com/ozi-project/checkpoint) from 1.5.3 to 1.5.4.
+- [Release notes](https://github.com/ozi-project/checkpoint/releases)
+- [Commits](https://github.com/ozi-project/checkpoint/compare/1.5.3...1.5.4)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/checkpoint
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`cfaf37b`](https://github.com/OZI-Project/ozi-core/commit/cfaf37bd0dc8d39643ee0851e4271c0f760dce75))
+
+* build(deps): update ozi-spec requirement from ~=0.19.0 to ~=0.20.0
+
+Updates the requirements on [ozi-spec](https://github.com/OZI-Project/ozi-spec) to permit the latest version.
+- [Release notes](https://github.com/OZI-Project/ozi-spec/releases)
+- [Changelog](https://github.com/OZI-Project/ozi-spec/blob/0.20.0/CHANGELOG.md)
+- [Commits](https://github.com/OZI-Project/ozi-spec/compare/0.19.0...0.20.0)
+
+
+updated-dependencies:
+- dependency-name: ozi-spec
+  dependency-type: direct:production
+... — dependabot[bot] <support@github.com>
+([`ad8962d`](https://github.com/OZI-Project/ozi-core/commit/ad8962d79523b52967b9bc21d852fea1a8b92a4e))
 
 * build: Delete .github/workflows/purge-artifacts.yml — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
 ([`5406131`](https://github.com/OZI-Project/ozi-core/commit/5406131612e0c587ed8aebdfad89eebd5705a73e))
@@ -21,6 +79,15 @@ updated-dependencies:
   dependency-type: direct:production
 ... — dependabot[bot] <support@github.com>
 ([`bd6daa7`](https://github.com/OZI-Project/ozi-core/commit/bd6daa790ecd4c8e89af3407d3e634c66d44f9a8))
+
+
+### Features
+
+
+* feat: semantic-release~=9.16
+
+build(deps): bump OZI-Project/publish from 1.7.3 to 1.8.0
+([`ec22d8e`](https://github.com/OZI-Project/ozi-core/commit/ec22d8ecc29f528cd5e9c7513e375df3d94f9f96))
 
 ## 1.11.1 (2025-01-13)
 
