@@ -41,7 +41,7 @@ jobs:
             rekor.sigstore.dev:443
             tuf-repo-cdn.sigstore.dev:443
 
-      - uses: OZI-Project/checkpoint@1.5.3
+      - uses: OZI-Project/checkpoint@1.5.4
         with:
           python-version: "3.11"
 
@@ -71,7 +71,7 @@ jobs:
             rekor.sigstore.dev:443
             tuf-repo-cdn.sigstore.dev:443
 
-      - uses: OZI-Project/checkpoint@1.5.3
+      - uses: OZI-Project/checkpoint@1.5.4
         with:
           python-version: "3.12"
 
