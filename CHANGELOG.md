@@ -1,4 +1,20 @@
 # ozi-core CHANGELOG
+## 1.12.1 (2025-01-17)
+
+
+### Bug fixes
+
+
+* fix: add translations for update-wrapfile functionality — rjdbcm <rjdbcm@outlook.com>
+([`63d57b6`](https://github.com/OZI-Project/ozi-core/commit/63d57b6e4e0fe0ea3fffb2096ce06ddb451facf8))
+
+
+### Unknown
+
+
+* :fire: remove locales added to repo in error — rjdbcm <rjdbcm@outlook.com>
+([`6fe38ab`](https://github.com/OZI-Project/ozi-core/commit/6fe38ab74501851cd6ecb2a43dd3a70ce346302d))
+
 ## 1.12.0 (2025-01-15)
 
 ## 1.11.2 (2025-01-13)
