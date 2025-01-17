@@ -43,6 +43,7 @@ class Project:  # pragma: no cover
         strict: bool | None = None,
         verify_email: bool | None = None,
         check_package_exists: bool | None = None,
+        update_wrapfile: bool | None = None,
     ) -> None:
         self.allow_file = allow_file
         self.ci_provider = ci_provider
@@ -57,6 +58,7 @@ class Project:  # pragma: no cover
         self.check_package_exists = (
             check_package_exists if check_package_exists is not None else True
         )
+        self.update_wrapfile = update_wrapfile if update_wrapfile is not None else False
         TRANSLATION.locale = asdict(read_user_config())['interactive']['language']
 
     def __call__(self: Project) -> list[str]:  # noqa: C901  # pragma: no cover
