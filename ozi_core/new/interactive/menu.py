@@ -120,6 +120,12 @@ def options_menu(  # pragma: no cover
                     TRANSLATION('opt-menu-strict', value=checkbox(project.strict)),
                 ),
                 (
+                    'update_wrapfile',
+                    TRANSLATION(
+                        'opt-menu-update-wrapfile', value=checkbox(project.update_wrapfile)
+                    ),
+                ),
+                (
                     'verify_email',
                     TRANSLATION(
                         'opt-menu-verify-email',
@@ -146,6 +152,7 @@ def options_menu(  # pragma: no cover
                 'enable_uv',
                 'github_harden_runner',
                 'verify_email',
+                'update_wrapfile',
             ):
                 for i in (
                     f'--{x.replace("_", "-")}',

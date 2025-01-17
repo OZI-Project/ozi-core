@@ -90,7 +90,7 @@ missing_parser.add_argument(
     '--update-wrapfile',
     action=BooleanOptionalAction,
     default=False,
-    help=TRANSLATION('term-help-fix-update-wrapfile'),
+    help=TRANSLATION('term-help-update-wrapfile'),
 )
 missing_output = missing_parser.add_argument_group(TRANSLATION('term-output'))
 missing_output.add_argument(
@@ -158,7 +158,7 @@ source_parser.add_argument(
     '--update-wrapfile',
     action=BooleanOptionalAction,
     default=False,
-    help=TRANSLATION('term-help-fix-update-wrapfile'),
+    help=TRANSLATION('term-help-update-wrapfile'),
 )
 source_output = source_parser.add_argument_group(TRANSLATION('term-output'))
 source_output.add_argument(
@@ -216,7 +216,7 @@ test_parser.add_argument(
     '--update-wrapfile',
     action=BooleanOptionalAction,
     default=False,
-    help=TRANSLATION('term-help-fix-update-wrapfile'),
+    help=TRANSLATION('term-help-update-wrapfile'),
 )
 test_output = test_parser.add_argument_group(TRANSLATION('term-output'))
 test_output.add_argument(

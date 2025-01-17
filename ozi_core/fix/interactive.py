@@ -63,6 +63,12 @@ def options_menu(  # pragma: no cover
                     'pretty',
                     TRANSLATION('opt-menu-pretty', value=checkbox(prompt.pretty)),
                 ),
+                (
+                    'update_wrapfile',
+                    TRANSLATION(
+                        'opt-menu-update-wrapfile', value=checkbox(prompt.update_wrapfile)
+                    ),
+                ),
                 ('copyright_head', TRANSLATION('opt-menu-copyright-head')),
                 (
                     'language',
@@ -76,8 +82,8 @@ def options_menu(  # pragma: no cover
             cancel_text=MenuButton.BACK._str,
             ok_text=MenuButton.OK._str,
         ).run():
-            case x if x and x in ('strict', 'pretty'):
-                for i in (f'--{x}', f'--no-{x}'):
+            case x if x and x in ('strict', 'pretty', 'update_wrapfile'):
+                for i in (f'--{x.replace("_", "-")}', f'--no-{x.replace("_", "-")}'):
                     if i in output:
                         output.pop(i)
                 setting = getattr(prompt, x)
@@ -197,6 +203,7 @@ class Prompt:
         strict: bool | None = None,
         pretty: bool | None = None,
         copyright_head: str | None = None,
+        update_wrapfile: bool | None = None,
     ) -> None:
         self.target = target
         self.fix: str | None = 'root'
@@ -205,6 +212,7 @@ class Prompt:
         self.copyright_head = (
             copyright_head if copyright_head is not None else COPYRIGHT_HEAD
         )
+        self.update_wrapfile = update_wrapfile if update_wrapfile is not None else False
         TRANSLATION.locale = asdict(read_user_config())['interactive']['language']
 
     def set_fix_mode(  # pragma: no cover

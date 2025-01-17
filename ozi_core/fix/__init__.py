@@ -38,8 +38,8 @@ from ozi_core.fix.missing import get_relpath_expected_files
 from ozi_core.fix.missing import report
 from ozi_core.fix.parser import parser
 from ozi_core.fix.rewrite_command import Rewriter
-from ozi_core.fix.wrap import update_wrapfile
 from ozi_core.new.validate import valid_copyright_head
+from ozi_core.wrap import update_wrapfile
 
 if TYPE_CHECKING:  # pragma: no cover
     from argparse import Namespace
