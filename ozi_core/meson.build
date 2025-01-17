@@ -37,7 +37,8 @@ source_files = [
   'spdx.py',
   'spdx.pyi',
   'trove.py',
-  'trove.pyi'
+  'trove.pyi',
+  'wrap.py',
 ]
 foreach file : files(source_files)
     fs.copyfile(file)

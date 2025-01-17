@@ -82,6 +82,7 @@ opt-menu-copyright-head: 版权文件头⋯⋯
 opt-menu-copyright-head-input: 编辑版权文件头：
 opt-menu-enable-cython: 允许Ｃｙｔｈｏｎ：$value
 opt-menu-enable-uv: 允许ｕｖ：$value
+opt-menu-update-wrapfile: 更新『subprojects/ozi.wrap』：$value
 opt-menu-github-harden-runner: 安全的ＧｉｔＨｕｂ持续整合和分发：$value
 opt-menu-language: 界面语言：$value
 opt-menu-language-text: 选择用户界面语言
@@ -210,6 +211,7 @@ term-help-valid-license-expression: 验证ＳＰＤＸ许可证表达式。
 term-help-verify-email: 验证电子邮件域的可传递性，默认：否
 term-help-version: 打印当前版本并退出。
 term-help-uninstall-user-files: 删除由ＯＺＩ创建的配置和日志文件。
+term-help-update-wrapfile: 将『subprojects/ozi.wrap』更新至ＯＺＩ的最新版本。
 term-missing: 丢失的
 term-optional-metadata: 可选元数据
 term-options: 选项

@@ -23,7 +23,7 @@ from tap_producer import TAP
 from ozi_core._i18n import TRANSLATION
 from ozi_core._logging import PytestFilter
 from ozi_core._logging import config_logger
-from ozi_core.fix.wrap import update_wrapfile
+from ozi_core.wrap import update_wrapfile
 
 if TYPE_CHECKING:  # pragma: no cover
     from jinja2 import Environment
