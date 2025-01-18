@@ -31,6 +31,7 @@ from ozi_templates import load_environment
 from ozi_templates.filter import underscorify  # pyright: ignore
 from tap_producer import TAP
 
+from ozi_core import __version__
 from ozi_core.fix.build_definition import unroll_subdirs
 from ozi_core.fix.build_definition import walk
 from ozi_core.fix.interactive import interactive_prompt
@@ -69,7 +70,7 @@ def main(args: list[str] | None = None) -> NoReturn:  # pragma: no cover
     project.missing = project.fix in {'missing', 'm', 'mis'}
     project.interactive = project.fix in {'interactive', 'i'}
     if project.update_wrapfile:
-        update_wrapfile(project.target, METADATA.ozi.version)
+        update_wrapfile(project.target, __version__)
     match [project.interactive, project.missing, project.strict]:
         case [True, False, _]:
             with TAP.suppress():  # pyright: ignore
