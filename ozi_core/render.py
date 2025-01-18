@@ -20,6 +20,7 @@ from ozi_spec import METADATA
 from ozi_templates.filter import underscorify  # pyright: ignore
 from tap_producer import TAP
 
+from ozi_core import __version__
 from ozi_core._i18n import TRANSLATION
 from ozi_core._logging import PytestFilter
 from ozi_core._logging import config_logger
@@ -215,7 +216,7 @@ class RenderedContent:
         render_project_files(self.env, self.target, self.name)
         abspath = Path(self.target).resolve()
         if self.update_wrapfile:  # pragma: defer to E2E
-            update_wrapfile(self.target, METADATA.ozi.version)
+            update_wrapfile(self.target, __version__)
         if self.ci_provider == 'github':
             Path(abspath, f'README.{self.readme_type}').symlink_to(Path('README'))
         else:  # pragma: no cover

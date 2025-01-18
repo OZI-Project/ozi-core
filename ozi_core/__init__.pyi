@@ -21,6 +21,6 @@ def current_version() -> str:
 
     """
 
-__version__ = ...
-__author__ = ...
+__version__: str
+__author__: str
 __all__ = ('__version__', '__author__', '__doc__')

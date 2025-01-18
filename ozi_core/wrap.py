@@ -1,6 +1,7 @@
 import os
 from configparser import ConfigParser
 from pathlib import Path
+from shutil import rmtree
 
 from ozi_templates.filter import get_ozi_tarball_sha256  # pyright: ignore
 
@@ -33,6 +34,8 @@ def update_wrapfile(target: Path | str, version: str) -> None:  # noqa: C901
         config.write(f)
     if (ozi_wrap.parent / 'ozi').is_symlink():
         (ozi_wrap.parent / 'ozi').unlink()  # pragma: defer to E2E
+    elif (ozi_wrap.parent / 'ozi').exists():
+        rmtree(ozi_wrap.parent / 'ozi', ignore_errors=True)  # pragma: defer to E2E
     (ozi_wrap.parent / 'ozi').symlink_to(
         '..' / ozi_wrap.parent / f'OZI-{version}', target_is_directory=True
     )
