@@ -1,4 +1,13 @@
 # ozi-core CHANGELOG
+## 1.12.2 (2025-01-18)
+
+
+### Bug fixes
+
+
+* fix: correct version tag argument to ``update_wrapfile`` — rjdbcm <rjdbcm@outlook.com>
+([`0d64ebb`](https://github.com/OZI-Project/ozi-core/commit/0d64ebba966faccb15a0318ec4a382fa548921cb))
+
 ## 1.12.1 (2025-01-17)
 
 
