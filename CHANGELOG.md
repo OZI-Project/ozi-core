@@ -1,4 +1,41 @@
 # ozi-core CHANGELOG
+## 1.12.3 (2025-01-27)
+
+
+### Build system
+
+
+* build(deps): bump pypa/gh-action-pypi-publish from 1.12.3 to 1.12.4
+
+Bumps [pypa/gh-action-pypi-publish](https://github.com/pypa/gh-action-pypi-publish) from 1.12.3 to 1.12.4.
+- [Release notes](https://github.com/pypa/gh-action-pypi-publish/releases)
+- [Commits](https://github.com/pypa/gh-action-pypi-publish/compare/67339c736fd9354cd4f8cb0b744f2b82a74b5c70...76f52bc884231f62b9a034ebfe128415bbaabdfc)
+
+
+updated-dependencies:
+- dependency-name: pypa/gh-action-pypi-publish
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`6c9ab41`](https://github.com/OZI-Project/ozi-core/commit/6c9ab41790a84b09c5d551fcb61ee1b0c3dd5169))
+
+* build(deps): bump step-security/harden-runner from 2.10.3 to 2.10.4
+
+Bumps [step-security/harden-runner](https://github.com/step-security/harden-runner) from 2.10.3 to 2.10.4.
+- [Release notes](https://github.com/step-security/harden-runner/releases)
+- [Commits](https://github.com/step-security/harden-runner/compare/c95a14d0e5bab51a9f56296a4eb0e416910cd350...cb605e52c26070c328afc4562f0b4ada7618a84e)
+
+
+updated-dependencies:
+- dependency-name: step-security/harden-runner
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`bf10648`](https://github.com/OZI-Project/ozi-core/commit/bf10648cbcfc153dbb274c01d712122afd92afef))
+
+* build: hard pin ozi-templates and ozi-spec for reproducible build support — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`66dfe7d`](https://github.com/OZI-Project/ozi-core/commit/66dfe7d7b4db0365e6925bf3bd1acb707bb1c679))
+
 ## 1.12.2 (2025-01-18)
 
 
