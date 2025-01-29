@@ -1,9 +1,56 @@
 # ozi-core CHANGELOG
+## 1.13.0 (2025-01-28)
+
 ## 1.12.4 (2025-01-27)
+
+## 1.12.3 (2025-01-27)
 
 
 ### Build system
 
+
+* build(deps): bump OZI-Project/publish from 1.8.0 to 1.9.0
+
+Bumps [OZI-Project/publish](https://github.com/ozi-project/publish) from 1.8.0 to 1.9.0.
+- [Release notes](https://github.com/ozi-project/publish/releases)
+- [Commits](https://github.com/ozi-project/publish/compare/1.8.0...1.9.0)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/publish
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`cebee0b`](https://github.com/OZI-Project/ozi-core/commit/cebee0bc08b5aa78610c0ea30eccc6552df309fa))
+
+* build(deps): bump OZI-Project/draft from 1.9.0 to 1.10.0
+
+Bumps [OZI-Project/draft](https://github.com/ozi-project/draft) from 1.9.0 to 1.10.0.
+- [Release notes](https://github.com/ozi-project/draft/releases)
+- [Commits](https://github.com/ozi-project/draft/compare/1.9.0...1.10.0)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/draft
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`268f104`](https://github.com/OZI-Project/ozi-core/commit/268f104c7bb5aeda870e29840aa8cab0136a7c05))
+
+* build(deps): bump ozi-spec from 0.20.2 to 0.21.0
+
+Bumps [ozi-spec](https://github.com/OZI-Project/ozi-spec) from 0.20.2 to 0.21.0.
+- [Release notes](https://github.com/OZI-Project/ozi-spec/releases)
+- [Changelog](https://github.com/OZI-Project/ozi-spec/blob/0.21.0/CHANGELOG.md)
+- [Commits](https://github.com/OZI-Project/ozi-spec/compare/0.20.2...0.21.0)
+
+
+updated-dependencies:
+- dependency-name: ozi-spec
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`35a19ca`](https://github.com/OZI-Project/ozi-core/commit/35a19ca3bbb6b4d9d692ee4d48f5b151ae96180d))
 
 * build(deps): bump ozi-spec from 0.20.1 to 0.20.2
 
@@ -35,12 +82,6 @@ updated-dependencies:
 ... — dependabot[bot] <support@github.com>
 ([`bb2e68e`](https://github.com/OZI-Project/ozi-core/commit/bb2e68e50720cf6e397168b98248de67f6f545c4))
 
-## 1.12.3 (2025-01-27)
-
-
-### Build system
-
-
 * build(deps): bump pypa/gh-action-pypi-publish from 1.12.3 to 1.12.4
 
 Bumps [pypa/gh-action-pypi-publish](https://github.com/pypa/gh-action-pypi-publish) from 1.12.3 to 1.12.4.
@@ -71,6 +112,15 @@ updated-dependencies:
 
 * build: hard pin ozi-templates and ozi-spec for reproducible build support — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
 ([`66dfe7d`](https://github.com/OZI-Project/ozi-core/commit/66dfe7d7b4db0365e6925bf3bd1acb707bb1c679))
+
+
+### Features
+
+
+* feat: spec v0.21
+
+build(deps): bump OZI-Project/draft from 1.9.0 to 1.10.0
+([`67a7aa8`](https://github.com/OZI-Project/ozi-core/commit/67a7aa89764def53984f09b0609d6efdd8c733d9))
 
 ## 1.12.2 (2025-01-18)
 
