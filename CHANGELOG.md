@@ -1,4 +1,25 @@
 # ozi-core CHANGELOG
+## 1.14.2 (2025-02-12)
+
+
+### Build system
+
+
+* build(deps): bump ozi-spec from 0.22.1 to 0.22.3
+
+Bumps [ozi-spec](https://github.com/OZI-Project/ozi-spec) from 0.22.1 to 0.22.3.
+- [Release notes](https://github.com/OZI-Project/ozi-spec/releases)
+- [Changelog](https://github.com/OZI-Project/ozi-spec/blob/0.22.3/CHANGELOG.md)
+- [Commits](https://github.com/OZI-Project/ozi-spec/compare/0.22.1...0.22.3)
+
+
+updated-dependencies:
+- dependency-name: ozi-spec
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`a48fb0d`](https://github.com/OZI-Project/ozi-core/commit/a48fb0db3c73a93f02405007266685497b81de6b))
+
 ## 1.14.1 (2025-02-12)
 
 
