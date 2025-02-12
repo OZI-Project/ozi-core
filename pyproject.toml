@@ -22,7 +22,7 @@ dependencies = [
 
 [build-system]
 requires = [
-    'OZI.build[core,uv]~=1.10.0',
+    'OZI.build[core,uv]~=1.11.0',
     'PyYAML~=6.0',
 ]
 build-backend = "ozi_build.buildapi"
@@ -55,7 +55,7 @@ summary="The OZI Project packaging core library."
 [project.optional-dependencies] # also meson test suite names
 # OZI Packaging Dependencies
 # continuous integration
-generate_locales = ["PyYAML"]
+generate-locales = ["PyYAML"]
 ci   = [
     "tox>4",
     "tox-gh>1.2",
@@ -338,7 +338,7 @@ package = wheel
 deps =
      uv
 commands_pre =
-     python -m uv pip install OZI.build[core,uv]~=1.10.0
+     python -m uv pip install OZI.build[core,uv]~=1.11.0
      pipx install --python=python meson
 commands =
      meson setup {env_tmp_dir} -Dozi:dist=disabled -Dozi:tox-env-dir={env_dir}
