@@ -8,7 +8,7 @@ dependencies = [
     'idna~=3.10',
     'meson[ninja]~=1.1',
     'ozi-templates==2.20.1',
-    'ozi-spec==0.22.0',
+    'ozi-spec==0.22.1',
     'packaging~=24.1',
     'platformdirs~=4.3',
     'prompt-toolkit~=3.0.48',
