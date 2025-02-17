@@ -119,8 +119,8 @@ def options_menu(  # pragma: no cover
                     text=TRANSLATION('opt-menu-language-text'),
                     values=list(
                         zip(
-                            TRANSLATION.data.keys(),  # type: ignore
-                            [TRANSLATION(f'lang-{i}') for i in TRANSLATION.data.keys()],  # type: ignore
+                            TRANSLATION.data.keys(),
+                            [TRANSLATION(f'lang-{i}') for i in TRANSLATION.data.keys()],
                         ),
                     ),
                     cancel_text=MenuButton.BACK._str,

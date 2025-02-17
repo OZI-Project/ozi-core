@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>ozi-fix webui</title>
+		<script src="webui.js"></script>
+		<style>
+			{webui_prompt_css}
+		</style>
+	</head>
+	<body>
+		<!-- The Modal - Hidden by default but immediately shown by the backend -->
+		<input type='checkbox' class="hide-modal" id="HideDisclaimer" checked>
+		<div id="Disclaimer" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content">
+			<h3 id="Disclaimer-title">{TRANSLATION('adm-disclaimer-title')}</h3>
+			<span class="close" id="CloseDisclaimer">&times;</span>
+			<br>
+			<textarea rows=20 cols=80 readonly>{TRANSLATION('adm-disclaimer-text')}</textarea>
+			</div>
+		</div>
+		<input type='checkbox' id="HidePage1Contents" class="hide-page">
+		<div id="Page1Contents", class="page">
+			<h1>{TRANSLATION('web-core-metadata')}</h1>
+			<nav aria-label="Breadcrumb" class="breadcrumb">
+				<ol>
+				<li id='Page1'><span aria-current="page">{TRANSLATION('web-core-metadata')}</span></li>
+				<li id='Page2'>{TRANSLATION('edit-menu-btn-license')}</li>
+				<li id='Page3'>{TRANSLATION('term-classifier')} {TRANSLATION('term-metadata')}</li>
+				</ol>
+			</nav>
+			<br>
+		</div>
+	</body>
+</html>

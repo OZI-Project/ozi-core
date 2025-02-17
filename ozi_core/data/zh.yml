@@ -35,6 +35,7 @@ edit-menu-btn-keywords: 关键字（Ｋｅｙｗｏｒｄｓ）
 edit-menu-btn-language: 自然语言（Ｎａｔｕｒａｌ　Ｌａｎｇｕａｇｅ）
 edit-menu-btn-license: 软体许可（Ｌｉｃｅｎｓｅ）
 edit-menu-btn-license-expression: 软体许可表达式（Ｌｉｃｅｎｓｅ－Ｅｘｐｒｅｓｓｉｏｎ）
+edit-menu-btn-license-exception: ｗｉｔｈ（可选例外）
 edit-menu-btn-license-file: 许可证文件（Ｌｉｃｅｎｓｅ－Ｆｉｌｅ）
 edit-menu-btn-maintainer: 维护者（Ｍａｉｎｔａｉｎｅｒ）
 edit-menu-btn-maintainer-email: 维护者电子邮件（Ｍａｉｎｔａｉｎｅｒ－ｅｍａｉｌ）
@@ -106,6 +107,7 @@ pro-keywords: >
 
   （分隔列表）
 pro-license: 请为『$projectname』选择许可证分类器。
+pro-license-expression: 'Select a specific SPDX license expression:'
 pro-license-expression-input: >
   许可：$license
 
@@ -152,6 +154,7 @@ pro-typing-radio-typed: 类型检查（Ｔｙｐｅｄ）
 term-choices: 选择
 term-ci-provider: 持续集成和发布提供商
 term-classifier: 分类器
+term-metadata: 元数据
 term-comment-diagnostic: 评论诊断
 term-continuous-integration-checkpoints: 持续集成检查点
 term-copyright-head: 版权标题字符串
@@ -252,3 +255,5 @@ term-tox-e-dist: 运行分发和打包
 term-tox-e-lint: 运行格式化、静态分析和类型检查
 term-tox-e-test: 运行测试和覆盖率
 term-warn-remove-dir: 无法删除非空或不存在的$key：『$child』
+web-core-metadata: 核心元数据
+web-err-invalid-input: 输入无效

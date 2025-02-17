@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>ozi-new webui</title>
+    <script src="webui.js"></script>
+    <style>
+      {webui_prompt_css}
+    </style>
+  </head>
+  <body>
+    <!-- The Modal - Hidden by default but immediately shown by the backend -->
+    <input type="checkbox" class="hide-modal" id="HideDisclaimer" checked />
+    <div id="Disclaimer" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <h3 id="Disclaimer-title">{TRANSLATION('adm-disclaimer-title')}</h3>
+        <span class="close" id="CloseDisclaimer">&times;</span>
+        <br />
+        <textarea rows="20" cols="80" readonly>
+{TRANSLATION('adm-disclaimer-text')}</textarea
+        >
+      </div>
+    </div>
+    <input type="checkbox" id="HidePage1Contents" class="hide-page" />
+    <div id="Page1Contents" , class="page">
+      <h1>{TRANSLATION('web-core-metadata')}</h1>
+      <nav aria-label="Breadcrumb" class="breadcrumb">
+        <ol>
+          <li id="Page1">
+            <span aria-current="page">{TRANSLATION('web-core-metadata')}</span>
+          </li>
+          <li id="Page2">{TRANSLATION('edit-menu-btn-license')}</li>
+          <li id="Page3">
+            {TRANSLATION('term-classifier')} {TRANSLATION('term-metadata')}
+          </li>
+        </ol>
+      </nav>
+      <br />
+      <div class="container">
+        <div class="column">
+          <label for="Name" id="label-name">{TRANSLATION('pro-name')}</label>
+          <h5 id="err-name" style="color: #dbdd52">&nbsp;</h5>
+        </div>
+        <div class="row">
+          <input
+            type="text"
+            id="Name"
+            OnKeyUp="document.getElementById('err-name').innerHTML='&nbsp;';"
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="column">
+          <label for="Summary" id="label-summary"
+            >{TRANSLATION('pro-summary')}</label
+          >
+          <h5 id="err-summary" style="color: #dbdd52">&nbsp;</h5>
+        </div>
+        <div class="row">
+          <input
+            type="text"
+            id="Summary"
+            OnKeyUp="document.getElementById('err-summary').innerHTML='&nbsp;';"
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="column">
+          <label for="Keywords" id="label-keywords"
+            >{TRANSLATION('pro-keywords')}</label
+          >
+          <h5 id="err-keywords" style="color: #dbdd52">&nbsp;</h5>
+        </div>
+        <div class="row">
+          <input
+            type="text"
+            id="Keywords"
+            OnKeyUp="document.getElementById('err-keywords').innerHTML='&nbsp;';"
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="column">
+          <label for="Author" id="label-author"
+            >{TRANSLATION('pro-author')}</label
+          >
+          <h5 id="err-author" style="color: #dbdd52">&nbsp;</h5>
+        </div>
+        <div class="row">
+          <input
+            type="text"
+            id="Author"
+            OnKeyUp="document.getElementById('err-author').innerHTML='&nbsp;';"
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="column">
+          <label for="Author-email" id="label-author-email"
+            >{TRANSLATION('pro-author-email')}</label
+          >
+          <h5 id="err-author-email" style="color: #dbdd52">&nbsp;</h5>
+        </div>
+        <div class="row">
+          <input
+            type="text"
+            id="Author-email"
+            OnKeyUp="document.getElementById('err-author-email').innerHTML='&nbsp;';"
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="column">
+          <label for="Maintainer" id="label-maintainer"
+            >{TRANSLATION('pro-maintainer')}</label
+          >
+          <h5 id="err-maintainer" style="color: #dbdd52">&nbsp;</h5>
+        </div>
+        <div class="row">
+          <input
+            type="text"
+            id="Maintainer"
+            OnKeyUp="document.getElementById('err-maintainer').innerHTML='&nbsp;';"
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="column">
+          <label for="Maintainer-email" id="label-maintainer-email"
+            >{TRANSLATION('pro-maintainer-email')}</label
+          >
+          <h5 id="err-maintainer-email" style="color: #dbdd52">&nbsp;</h5>
+        </div>
+        <div class="row">
+          <input
+            type="text"
+            id="Maintainer-email"
+            OnKeyUp="document.getElementById('err-maintainer-email').innerHTML='&nbsp;';"
+            autocomplete="off"
+          />
+        </div>
+      </div>
+    </div>
+    <input type="checkbox" id="HidePage2Contents" class="hide-page" checked />
+    <div id="Page2Contents" class="page">
+      <h1>{TRANSLATION('edit-menu-btn-license')}</h1>
+      <nav aria-label="Breadcrumb" class="breadcrumb">
+        <ol>
+          <li id="Page1">{TRANSLATION('web-core-metadata')}</li>
+          <li id="Page2">
+            <span aria-current="page"
+              >{TRANSLATION('edit-menu-btn-license')}</span
+            >
+          </li>
+          <li id="Page3">
+            {TRANSLATION('term-classifier')} {TRANSLATION('term-metadata')}
+          </li>
+        </ol>
+      </nav>
+      <br />
+      <div class="container">
+        <div class="row">
+          <div class="column">
+            <label for="License-Expression" id="label-license-expression"
+              >{TRANSLATION('pro-license-expression')}</label
+            >
+            <div class="row">
+              <select id="License-Expression" autocomplete="off"></select>
+            </div>
+            <label for="License-Exception" id="label-license-expression"
+              >{TRANSLATION('edit-menu-btn-license-exception')}</label
+            >
+            <div class="row">
+              <select id="License-Exception" autocomplete="off"></select>
+            </div>
+          </div>
+          <div class="column">
+            <label for="License" id="label-license"
+              >{TRANSLATION('pro-license')}</label
+            >
+            <div class="row">
+              <select id="License" autocomplete="off">
+                {licenses}
+              </select>
+            </div>
+            <label for="LicenseReader" id="label-license-reader"
+              >{TRANSLATION('edit-menu-btn-license-file')}</label
+            >
+            <button id="RefreshButton">Refresh</button>
+            <progress
+              id="LicenseReaderProgress"
+              aria-label="Content loading…"
+            ></progress>
+            <div class="row">
+              <textarea
+                id="LicenseReader"
+                class="license-reader"
+                rows="25"
+                cols="80"
+                aria-describedby="LicenseReaderProgress"
+                readonly
+              >
+&nbsp;</textarea
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <input type="checkbox" id="HidePage3Contents" class="hide-page" checked />
+    <div id="Page3Contents" class="page">
+      <h1>{TRANSLATION('term-classifier')} {TRANSLATION('term-metadata')}</h1>
+      <nav aria-label="Breadcrumb" class="breadcrumb">
+        <ol>
+          <li id="Page1">{TRANSLATION('web-core-metadata')}</li>
+          <li id="Page2">{TRANSLATION('edit-menu-btn-license')}</li>
+          <li id="Page3">
+            <span aria-current="page"
+              >{TRANSLATION('term-classifier')}
+              {TRANSLATION('term-metadata')}</span
+            >
+          </li>
+        </ol>
+      </nav>
+      <br />
+      <div class="container">
+        <div class="row">
+          <div class="column">
+            <div class="row">
+              <label for="Audience" id="label-audience"
+                >{TRANSLATION('pro-classifier-cbl', key=TRANSLATION('edit-menu-btn-audience'))}</label
+              >
+            </div>
+            <select class="classifiers" id="Audience" size="11" multiple>
+              {audience_choices}
+            </select>
+            <div class="row">
+              <label for="Environment" id="label-environment"
+                >{TRANSLATION('pro-classifier-cbl', key=TRANSLATION('edit-menu-btn-environment'))}</label
+              >
+            </div>
+            <select class="classifiers" id="Environment" size="12" multiple>
+              {environment_choices}
+            </select>
+          </div>
+          <div class="column">
+            <div class="row">
+              <label for="Framework" id="label-framework"
+                >{TRANSLATION('pro-classifier-cbl', key=TRANSLATION('edit-menu-btn-framework'))}</label
+              >
+            </div>
+            <select class="classifiers" id="Framework" size="11" multiple>
+              {framework_choices}
+            </select>
+            <div class="row">
+              <label for="Topic" id="label-topic"
+                >{TRANSLATION('pro-classifier-cbl', key=TRANSLATION('edit-menu-btn-topic'))}</label
+              >
+            </div>
+            <select class="classifiers" id="Topic" size="12" multiple>
+              {topic_choices}
+            </select>
+          </div>
+          <div class="column">
+            <div class="row">
+              <label for="Status" id="label-status"
+                >{TRANSLATION('pro-classifier-cbl', key=TRANSLATION('edit-menu-btn-status'))}</label
+              >
+            </div>
+            <select class="classifiers" id="Status">
+              {status_choices}
+            </select>
+
+            <div class="row">
+              <label for="Language" id="label-language"
+                >{TRANSLATION('pro-classifier-cbl', key=TRANSLATION('edit-menu-btn-language'))}</label
+              >
+            </div>
+            <select class="classifiers" id="Language" size="22" multiple>
+              {language_choices}
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
