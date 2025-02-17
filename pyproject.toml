@@ -7,8 +7,8 @@ dependencies = [
     'dnspython~=2.7.0',
     'idna~=3.10',
     'meson[ninja]~=1.1',
-    'ozi-templates==2.20.1',
-    'ozi-spec==0.22.3',
+    'ozi-templates==2.20.2',
+    'ozi-spec==0.22.4',
     'packaging~=24.1',
     'platformdirs~=4.3',
     'prompt-toolkit~=3.0.48',
@@ -55,6 +55,9 @@ summary="The OZI Project packaging core library."
 [project.optional-dependencies] # also meson test suite names
 # OZI Packaging Dependencies
 # continuous integration
+webui = [
+    "webui2==2.4.5",
+]
 generate-locales = ["PyYAML"]
 ci   = [
     "tox>4",
@@ -155,6 +158,7 @@ omit = [
      'ozi_core/new/interactive/validator.py',
      'ozi_core/new/interactive/dialog.py',
      'ozi_core/fix/parser.py',
+     'ozi_core/ui/web.py',
 ]
 
 [tool.flake8]
@@ -168,7 +172,8 @@ extend-exclude  = [
     "build-env-*",
     "build*",
     "*.pyi",
-    "_locales.py"
+    "_locales.py",
+    "web.py",
 ]
 extend-ignore   = "E203,E501,TC007,TC008"
 extend-select   = "B950"

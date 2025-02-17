@@ -38,6 +38,7 @@ edit-menu-btn-keywords: Keywords
 edit-menu-btn-language: Natural Language
 edit-menu-btn-license: License
 edit-menu-btn-license-expression: License-Expression
+edit-menu-btn-license-exception: with (optional exception)
 edit-menu-btn-license-file: License-File
 edit-menu-btn-maintainer: Maintainer
 edit-menu-btn-maintainer-email: Maintainer-email
@@ -112,6 +113,7 @@ pro-keywords: >
 
   (comma-separated list)
 pro-license: Please select a license classifier for $projectname
+pro-license-expression: 'Select a specific license expression:'
 pro-license-expression-input: >
   License: $license
 
@@ -163,6 +165,7 @@ pro-typing-radio-typed: Typed
 term-choices: choices
 term-ci-provider: continuous integration and release provider
 term-classifier: Classifier
+term-metadata: Metadata
 term-comment-diagnostic: comment diagnostic
 term-continuous-integration-checkpoints: continuous integration checkpoints
 term-copyright-head: copyright header string
@@ -266,3 +269,5 @@ term-tox-e-lint: run formatting, static analysis, and type checking
 term-tox-e-test: run tests and coverage
 term-warn-remove-dir: |
   Cannot delete a non-empty or non-existent $key: "$child"
+web-core-metadata: Core Metadata
+web-err-invalid-input: Invalid Entry

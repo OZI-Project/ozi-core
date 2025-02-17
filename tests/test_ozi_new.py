@@ -164,13 +164,13 @@ def test_fuzz_new_project_good_namespace(  # noqa: DC102, RUF100
             'maintainer_email': ['user@example.com'],
         },
         {
-            'project_url': [('A' * 33 + ', https://oziproject.dev')],
+            'project_url': ['A' * 33 + ', https://oziproject.dev'],
         },
         {
-            'project_url': [('A' * 32 + ', http://oziproject.dev')],
+            'project_url': ['A' * 32 + ', http://oziproject.dev'],
         },
         {
-            'project_url': [('A' * 32 + ', https://')],
+            'project_url': ['A' * 32 + ', https://'],
         },
     ],
 )
