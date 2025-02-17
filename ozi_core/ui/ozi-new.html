@@ -11,7 +11,7 @@
   <body>
     <!-- The Modal - Hidden by default but immediately shown by the backend -->
     <input type="checkbox" class="hide-modal" id="HideDisclaimer" checked />
-    <div id="Disclaimer" class="modal">
+    <div id="Disclaimer" class="modal" aria-modal="true">
       <!-- Modal content -->
       <div class="modal-content">
         <h3 id="Disclaimer-title">{TRANSLATION('adm-disclaimer-title')}</h3>
@@ -199,6 +199,7 @@
                 rows="25"
                 cols="80"
                 aria-describedby="LicenseReaderProgress"
+                aria-readonly="true"
                 readonly
               >
 &nbsp;</textarea
@@ -229,43 +230,72 @@
           <div class="column">
             <div class="row">
               <label for="Audience" id="label-audience"
-                >{TRANSLATION('pro-classifier-cbl', key=TRANSLATION('edit-menu-btn-audience'))}</label
+                >{TRANSLATION('pro-classifier-cbl',
+                key=TRANSLATION('edit-menu-btn-audience'))}</label
               >
             </div>
-            <select class="classifiers" id="Audience" size="11" multiple>
+            <select
+              class="classifiers"
+              id="Audience"
+              size="11"
+              aria-multiselectable="true"
+              multiple
+            >
               {audience_choices}
             </select>
             <div class="row">
               <label for="Environment" id="label-environment"
-                >{TRANSLATION('pro-classifier-cbl', key=TRANSLATION('edit-menu-btn-environment'))}</label
+                >{TRANSLATION('pro-classifier-cbl',
+                key=TRANSLATION('edit-menu-btn-environment'))}</label
               >
             </div>
-            <select class="classifiers" id="Environment" size="12" multiple>
+            <select
+              class="classifiers"
+              id="Environment"
+              size="12"
+              aria-multiselectable="true"
+              multiple
+            >
               {environment_choices}
             </select>
           </div>
           <div class="column">
             <div class="row">
               <label for="Framework" id="label-framework"
-                >{TRANSLATION('pro-classifier-cbl', key=TRANSLATION('edit-menu-btn-framework'))}</label
+                >{TRANSLATION('pro-classifier-cbl',
+                key=TRANSLATION('edit-menu-btn-framework'))}</label
               >
             </div>
-            <select class="classifiers" id="Framework" size="11" multiple>
+            <select
+              class="classifiers"
+              id="Framework"
+              size="11"
+              aria-multiselectable="true"
+              multiple
+            >
               {framework_choices}
             </select>
             <div class="row">
               <label for="Topic" id="label-topic"
-                >{TRANSLATION('pro-classifier-cbl', key=TRANSLATION('edit-menu-btn-topic'))}</label
+                >{TRANSLATION('pro-classifier-cbl',
+                key=TRANSLATION('edit-menu-btn-topic'))}</label
               >
             </div>
-            <select class="classifiers" id="Topic" size="12" multiple>
+            <select
+              class="classifiers"
+              id="Topic"
+              size="12"
+              aria-multiselectable="true"
+              multiple
+            >
               {topic_choices}
             </select>
           </div>
           <div class="column">
             <div class="row">
               <label for="Status" id="label-status"
-                >{TRANSLATION('pro-classifier-cbl', key=TRANSLATION('edit-menu-btn-status'))}</label
+                >{TRANSLATION('pro-classifier-cbl',
+                key=TRANSLATION('edit-menu-btn-status'))}</label
               >
             </div>
             <select class="classifiers" id="Status">
@@ -274,10 +304,17 @@
 
             <div class="row">
               <label for="Language" id="label-language"
-                >{TRANSLATION('pro-classifier-cbl', key=TRANSLATION('edit-menu-btn-language'))}</label
+                >{TRANSLATION('pro-classifier-cbl',
+                key=TRANSLATION('edit-menu-btn-language'))}</label
               >
             </div>
-            <select class="classifiers" id="Language" size="22" multiple>
+            <select
+              class="classifiers"
+              id="Language"
+              size="22"
+              aria-multiselectable="true"
+              multiple
+            >
               {language_choices}
             </select>
           </div>

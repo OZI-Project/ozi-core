@@ -1,6 +1,5 @@
 import html
 import re
-import sys
 from datetime import datetime
 from functools import partial
 from logging import getLogger
@@ -20,7 +19,7 @@ from ozi_core.vendor.email_validator.exceptions_types import EmailNotValidError
 
 config_logger()
 __logger = getLogger(f'ozi_core.{__name__}')
-sys.modules[__name__].__dict__.update(**TRANSLATION.data)
+TRANSLATION.mime_type = 'text/html;charset=UTF-8'
 
 licenses = ''.join(
     [
@@ -32,7 +31,7 @@ licenses = ''.join(
         )
     ]
 )
-licenses = '<option value=""></option>' + licenses
+licenses = '<option value="" aria-hidden="true"></option>' + licenses
 audience_choices = ''.join(
     [f'<option value="{i}">{i}</option>' for i in sorted(from_prefix(Prefix().audience))]
 )
@@ -157,7 +156,7 @@ def load_license_expressions(e: webui.event) -> None:
             )
         ]
     )
-    spdx = '<option value=""></option>' + spdx
+    spdx = '<option value="" aria-hidden="true"></option>' + spdx
     e.window.script(  # pyright: ignore
         f"""
         document.getElementById(`License-Expression`).innerHTML = `{spdx}`;
@@ -194,7 +193,7 @@ def load_license_exceptions(e: webui.event) -> None:
     license_expr = e.window.script(  # pyright: ignore
         " return document.getElementById(`License-Expression`).value; "
     )
-    exceptions = '<option value=""></option>' + ''.join(
+    exceptions = '<option value="" aria-hidden="true"></option>' + ''.join(
         [
             f'<option value="{i}">{i}</option>'
             for i in sorted(
@@ -289,9 +288,9 @@ def show_prompt3(e: webui.event) -> None:
 
 
 def close_disclaimer(e: webui.event) -> None:
-    e.window.run(
+    e.window.run(  # pyright: ignore
         " document.getElementById('HideDisclaimer').checked = true; "
-    )  # pyright: ignore
+    )
 
 
 def close_application(e: webui.event) -> None:
@@ -327,6 +326,7 @@ def main() -> None:
 
     # Wait until all windows are closed
     webui.wait()  # pyright: ignore
+    TRANSLATION.mime_type = 'text/plain;charset=UTF-8'
 
 
 if __name__ == '__main__':
