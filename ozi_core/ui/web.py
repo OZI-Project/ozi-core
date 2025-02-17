@@ -200,7 +200,7 @@ def load_license_exceptions(e: webui.event) -> None:
             for i in sorted(
                 tuple(
                     k
-                    for k, v in SPDX_LICENSE_EXCEPTIONS.items()  # type: ignore
+                    for k, v in SPDX_LICENSE_EXCEPTIONS.items()  # pyright: ignore
                     if license_expr.data in v
                 )
             )
