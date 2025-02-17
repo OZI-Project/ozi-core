@@ -55,7 +55,10 @@ summary="The OZI Project packaging core library."
 [project.optional-dependencies] # also meson test suite names
 # OZI Packaging Dependencies
 # continuous integration
-generate-locales = ["PyYAML"]
+webui = [
+    "webui2==2.4.5",
+]
+generate_locales = ["PyYAML"]
 ci   = [
     "tox>4",
     "tox-gh>1.2",
@@ -155,6 +158,7 @@ omit = [
      'ozi_core/new/interactive/validator.py',
      'ozi_core/new/interactive/dialog.py',
      'ozi_core/fix/parser.py',
+     'ozi_core/ui/web.py',
 ]
 
 [tool.flake8]
@@ -168,7 +172,8 @@ extend-exclude  = [
     "build-env-*",
     "build*",
     "*.pyi",
-    "_locales.py"
+    "_locales.py",
+    "web.py",
 ]
 extend-ignore   = "E203,E501,TC007,TC008"
 extend-select   = "B950"
