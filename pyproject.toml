@@ -58,7 +58,7 @@ summary="The OZI Project packaging core library."
 webui = [
     "webui2==2.4.5",
 ]
-generate_locales = ["PyYAML"]
+generate-locales = ["PyYAML"]
 ci   = [
     "tox>4",
     "tox-gh>1.2",
