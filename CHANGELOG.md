@@ -1,4 +1,13 @@
 # ozi-core CHANGELOG
+## 1.14.5 (2025-02-17)
+
+
+### Bug fixes
+
+
+* fix: incorrect word breaks in translations for text/html — rjdbcm <rjdbcm@outlook.com>
+([`bce498e`](https://github.com/OZI-Project/ozi-core/commit/bce498e36dc9ee844bc2fadb2f9bf3303b57b162))
+
 ## 1.14.4 (2025-02-17)
 
 
