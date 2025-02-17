@@ -1,4 +1,13 @@
 # ozi-core CHANGELOG
+## 1.14.4 (2025-02-17)
+
+
+### Build system
+
+
+* build: add mime_type and postprocess to Translation — rjdbcm <rjdbcm@outlook.com>
+([`5e52e7a`](https://github.com/OZI-Project/ozi-core/commit/5e52e7a3f7bb520b74b27f82803a33c42308eae9))
+
 ## 1.14.3 (2025-02-17)
 
 
