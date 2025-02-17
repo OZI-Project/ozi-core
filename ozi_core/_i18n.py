@@ -69,9 +69,9 @@ class Translation:
         elif self.mime_type == 'text/html;charset=UTF-8':  # pragma: defer to E2E
             text = html.escape(text)
             for i in '（(『/.':
-                text = text.replace(i, f'<wbr />{i}')
+                text = text.replace(i, f'<wbr>{i}')
             for i in '』）)　：－-:':
-                text = text.replace(i, f'{i}<wbr />')
+                text = text.replace(i, f'{i}<wbr>')
         return text
 
     def __call__(self: Translation, _key: str, **kwargs: str) -> str:  # pragma: no cover
