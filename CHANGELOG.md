@@ -1,4 +1,108 @@
 # ozi-core CHANGELOG
+## 1.14.6 (2025-02-18)
+
+
+### Bug fixes
+
+
+* fix: add typographic space ``sp`` key to Translation data — rjdbcm <rjdbcm@outlook.com>
+([`d8cb498`](https://github.com/OZI-Project/ozi-core/commit/d8cb498b932b700caab32bbd3ce87a3794e231ad))
+
+* fix: webui disclaimer text MIME type — rjdbcm <rjdbcm@outlook.com>
+([`3bf9188`](https://github.com/OZI-Project/ozi-core/commit/3bf91887cb77d661ccd51cd75013953ae8c4638c))
+
+## 1.14.5 (2025-02-17)
+
+
+### Bug fixes
+
+
+* fix: incorrect word breaks in translations for text/html — rjdbcm <rjdbcm@outlook.com>
+([`bce498e`](https://github.com/OZI-Project/ozi-core/commit/bce498e36dc9ee844bc2fadb2f9bf3303b57b162))
+
+## 1.14.4 (2025-02-17)
+
+
+### Build system
+
+
+* build: add mime_type and postprocess to Translation — rjdbcm <rjdbcm@outlook.com>
+([`5e52e7a`](https://github.com/OZI-Project/ozi-core/commit/5e52e7a3f7bb520b74b27f82803a33c42308eae9))
+
+## 1.14.3 (2025-02-17)
+
+
+### Bug fixes
+
+
+* fix: optional dependency name — rjdbcm <rjdbcm@outlook.com>
+([`515e6b3`](https://github.com/OZI-Project/ozi-core/commit/515e6b377be964585e7a6d2fc37661e825ab9522))
+
+
+### Build system
+
+
+* build(deps): bump ozi-templates from 2.20.1 to 2.20.2
+
+Bumps [ozi-templates](https://github.com/OZI-Project/ozi-templates) from 2.20.1 to 2.20.2.
+- [Release notes](https://github.com/OZI-Project/ozi-templates/releases)
+- [Changelog](https://github.com/OZI-Project/ozi-templates/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/OZI-Project/ozi-templates/compare/2.20.1...2.20.2)
+
+
+updated-dependencies:
+- dependency-name: ozi-templates
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`be40586`](https://github.com/OZI-Project/ozi-core/commit/be40586b709847eea1b0447c43a73c6a70996ceb))
+
+* build(deps): bump ozi-spec from 0.22.3 to 0.22.4
+
+Bumps [ozi-spec](https://github.com/OZI-Project/ozi-spec) from 0.22.3 to 0.22.4.
+- [Release notes](https://github.com/OZI-Project/ozi-spec/releases)
+- [Changelog](https://github.com/OZI-Project/ozi-spec/blob/0.22.4/CHANGELOG.md)
+- [Commits](https://github.com/OZI-Project/ozi-spec/compare/0.22.3...0.22.4)
+
+
+updated-dependencies:
+- dependency-name: ozi-spec
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`824b8f6`](https://github.com/OZI-Project/ozi-core/commit/824b8f69a3b475e91aeb47c59725ede4288d1351))
+
+* build: add webui interface preview — rjdbcm <rjdbcm@outlook.com>
+([`04e4655`](https://github.com/OZI-Project/ozi-core/commit/04e465569794de51f343f83b6fb426dbc021d153))
+
+
+### Unknown
+
+
+* Update web.py — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`66c95fc`](https://github.com/OZI-Project/ozi-core/commit/66c95fc20d3589957cb98ba3edf56f22d615890f))
+
+## 1.14.2 (2025-02-12)
+
+
+### Build system
+
+
+* build(deps): bump ozi-spec from 0.22.1 to 0.22.3
+
+Bumps [ozi-spec](https://github.com/OZI-Project/ozi-spec) from 0.22.1 to 0.22.3.
+- [Release notes](https://github.com/OZI-Project/ozi-spec/releases)
+- [Changelog](https://github.com/OZI-Project/ozi-spec/blob/0.22.3/CHANGELOG.md)
+- [Commits](https://github.com/OZI-Project/ozi-spec/compare/0.22.1...0.22.3)
+
+
+updated-dependencies:
+- dependency-name: ozi-spec
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`a48fb0d`](https://github.com/OZI-Project/ozi-core/commit/a48fb0db3c73a93f02405007266685497b81de6b))
+
 ## 1.14.1 (2025-02-12)
 
 
