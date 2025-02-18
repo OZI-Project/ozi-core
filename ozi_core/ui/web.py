@@ -19,8 +19,11 @@ from ozi_core.vendor.email_validator.exceptions_types import EmailNotValidError
 
 config_logger()
 __logger = getLogger(f'ozi_core.{__name__}')
+# translations meant for <textarea>
+# should be text/plain;charset=UTF-8
+disclaimer_text = TRANSLATION('adm-disclaimer-text')
+# everything else should be text/html;charset=UTF-8
 TRANSLATION.mime_type = 'text/html;charset=UTF-8'
-
 licenses = ''.join(
     [
         f'<option value="{i}">{i}</option>'
