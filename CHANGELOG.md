@@ -1,4 +1,16 @@
 # ozi-core CHANGELOG
+## 1.14.6 (2025-02-18)
+
+
+### Bug fixes
+
+
+* fix: add typographic space ``sp`` key to Translation data — rjdbcm <rjdbcm@outlook.com>
+([`d8cb498`](https://github.com/OZI-Project/ozi-core/commit/d8cb498b932b700caab32bbd3ce87a3794e231ad))
+
+* fix: webui disclaimer text MIME type — rjdbcm <rjdbcm@outlook.com>
+([`3bf9188`](https://github.com/OZI-Project/ozi-core/commit/3bf91887cb77d661ccd51cd75013953ae8c4638c))
+
 ## 1.14.5 (2025-02-17)
 
 
