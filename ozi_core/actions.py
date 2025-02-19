@@ -55,7 +55,9 @@ class ExactMatch:
     license_id: tuple[str, ...] = tuple(
         k for k, v in LICENSES.items() if v.deprecated_id is False
     )
-    license_exception_id: tuple[str, ...] = METADATA.spec.python.pkg.license.exceptions
+    license_exception_id: tuple[str, ...] = tuple(
+        METADATA.spec.python.pkg.license.exceptions.keys()
+    )
     status: tuple[str, ...] = from_prefix(_prefix.status)
     topic: tuple[str, ...] = from_prefix(_prefix.topic)
 
