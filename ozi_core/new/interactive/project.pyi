@@ -35,9 +35,6 @@ class Project:
     def license_file(
         self, project_name: str, output: dict[str, list[str]], prefix: dict[str, str]
     ) -> tuple[None | list[str] | str | bool, dict[str, list[str]], dict[str, str]]: ...
-    def home_page(
-        self, project_name: str, output: dict[str, list[str]], prefix: dict[str, str]
-    ) -> tuple[None | list[str] | str | bool, dict[str, list[str]], dict[str, str]]: ...
     def author(
         self, project_name: str, output: dict[str, list[str]], prefix: dict[str, str]
     ) -> tuple[None | list[str] | str | bool, dict[str, list[str]], dict[str, str]]: ...

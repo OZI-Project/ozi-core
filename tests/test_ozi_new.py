@@ -68,7 +68,6 @@ from ozi_core.new import project as new_project  # pyright: ignore
                 st.emails(domains=st.just('phony2.oziproject.dev')),
                 max_size=8,
             ),
-            'home_page': st.one_of(st.just('https://oziproject.dev/')),
             'project_url': st.lists(
                 st.just('A, https://oziproject.dev'),
                 max_size=1,
@@ -190,7 +189,6 @@ def test_new_project_bad_args(  # noqa: DC102, RUF100
         'keywords': 'foo,bar,baz',
         'maintainer': [],
         'maintainer_email': [],
-        'home_page': 'https://oziproject.dev/',
         'project_url': [],
         'summary': '',
         'copyright_head': '',
@@ -230,7 +228,6 @@ def test_new_project_bad_target_not_empty(  # noqa: DC102, RUF100
         'author_email': ['noreply@oziproject.dev'],
         'maintainer': [],
         'maintainer_email': [],
-        'home_page': 'https://oziproject.dev/',
         'summary': '',
         'copyright_head': '',
         'project_url': [],

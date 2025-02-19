@@ -285,7 +285,6 @@ def edit_menu(  # pragma: no cover
                 ('name', TRANSLATION('edit-menu-btn-name')),
                 ('summary', TRANSLATION('edit-menu-btn-summary')),
                 ('keywords', TRANSLATION('edit-menu-btn-keywords')),
-                ('home_page', TRANSLATION('edit-menu-btn-homepage')),
                 ('author', TRANSLATION('edit-menu-btn-author')),
                 ('author_email', TRANSLATION('edit-menu-btn-email')),
                 ('license_', TRANSLATION('edit-menu-btn-license')),

@@ -83,7 +83,7 @@ class Project:  # pragma: no cover
         if isinstance(result, str):
             project_name = result
 
-        for i in ('summary', 'keywords', 'home_page', 'author', 'author_email'):
+        for i in ('summary', 'keywords', 'author', 'author_email'):
             result, output, prefix = getattr(self, i)(project_name, output, prefix)
             if isinstance(result, list):
                 return result
@@ -231,25 +231,6 @@ class Project:  # pragma: no cover
                     else {}
                 ),
             )
-
-    def home_page(
-        self: Project,
-        project_name: str,
-        output: dict[str, list[str]],
-        prefix: dict[str, str],
-    ) -> tuple[None | list[str] | str | bool, dict[str, list[str]], dict[str, str]]:
-        while True:
-            result, output, prefix = self.header_input(
-                'Home-page',
-                output,
-                prefix,
-                TRANSLATION('pro-homepage', projectname=project_name),
-                validator=LengthValidator(),
-            )
-            if result is True:
-                return result, output, prefix
-            if isinstance(result, list):
-                return result, output, prefix
 
     def author(
         self: Project,

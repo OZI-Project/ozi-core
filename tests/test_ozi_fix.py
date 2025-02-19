@@ -117,7 +117,6 @@ bad_namespace = argparse.Namespace(
     maintainer_email=[],
     author=['foo'],
     author_email=['noreply@oziproject.dev'],
-    home_page='https://oziproject.dev',
     summary='A' * 512,
     copyright_head='',
     license_expression='CC0-1.0',
