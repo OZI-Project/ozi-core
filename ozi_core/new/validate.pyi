@@ -18,9 +18,6 @@ def valid_classifier(classifier: str) -> None:
 def valid_project_url(project_url: Sequence[str]) -> None:
     """Validate a list of project urls strings of the format ``name,url``."""
 
-def valid_home_page(home_page: str) -> None:
-    """Validate a project homepage url"""
-
 def valid_summary(summary: str) -> None:
     """Validate project summary length."""
 

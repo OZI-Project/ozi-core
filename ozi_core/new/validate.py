@@ -70,26 +70,6 @@ def valid_project_url(project_url: Sequence[str]) -> None:
                 )
 
 
-def valid_home_page(home_page: str) -> None:
-    """Validate a project homepage url"""
-    home_url = urlparse(home_page)
-    if home_url.scheme != 'https':  # pragma: defer to good-issue
-        TAP.comment(TRANSLATION('term-tap-https-only'))
-        TAP.not_ok(
-            TRANSLATION('edit-menu-btn-homepage'),
-            TRANSLATION('term-tap-unsupported-url-scheme'),
-        )
-    else:
-        TAP.ok(TRANSLATION('edit-menu-btn-homepage'), TRANSLATION('term-tap-url-scheme'))
-    if home_url.netloc == '':  # pragma: defer to good-issue
-        TAP.not_ok(
-            TRANSLATION('edit-menu-btn-homepage'),
-            TRANSLATION('term-tap-empty-netloc'),
-        )
-    else:
-        TAP.ok(TRANSLATION('edit-menu-btn-homepage'), TRANSLATION('term-tap-netloc'))
-
-
 def valid_summary(summary: str) -> None:
     """Validate project summary length."""
     if len(summary) > 512:
@@ -286,7 +266,6 @@ def _valid_project(project: Namespace) -> Namespace:
         _license=project.license,
         license_expression=project.license_expression,
     )
-    valid_home_page(home_page=project.home_page)
     valid_project_url(project_url=project.project_url)
     project.copyright_head = valid_copyright_head(
         copyright_head=project.copyright_head,

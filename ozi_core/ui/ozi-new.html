@@ -226,6 +226,33 @@
         <div class="row">
           <div class="column">
             <div class="row">
+              <label for="Status" id="label-status"
+                >{TRANSLATION('pro-classifier-cbl',
+                key=TRANSLATION('edit-menu-btn-status'))}</label
+              >
+            </div>
+            <select class="classifiers" id="Status">
+              {status_choices}
+            </select>
+
+            <div class="row">
+              <label for="Language" id="label-language"
+                >{TRANSLATION('pro-classifier-cbl',
+                key=TRANSLATION('edit-menu-btn-language'))}</label
+              >
+            </div>
+            <select
+              class="classifiers"
+              id="Language"
+              size="22"
+              aria-multiselectable="true"
+              multiple
+            >
+              {language_choices}
+            </select>
+          </div>
+          <div class="column">
+            <div class="row">
               <label for="Audience" id="label-audience"
                 >{TRANSLATION('pro-classifier-cbl',
                 key=TRANSLATION('edit-menu-btn-audience'))}</label
@@ -286,33 +313,6 @@
               multiple
             >
               {topic_choices}
-            </select>
-          </div>
-          <div class="column">
-            <div class="row">
-              <label for="Status" id="label-status"
-                >{TRANSLATION('pro-classifier-cbl',
-                key=TRANSLATION('edit-menu-btn-status'))}</label
-              >
-            </div>
-            <select class="classifiers" id="Status">
-              {status_choices}
-            </select>
-
-            <div class="row">
-              <label for="Language" id="label-language"
-                >{TRANSLATION('pro-classifier-cbl',
-                key=TRANSLATION('edit-menu-btn-language'))}</label
-              >
-            </div>
-            <select
-              class="classifiers"
-              id="Language"
-              size="22"
-              aria-multiselectable="true"
-              multiple
-            >
-              {language_choices}
             </select>
           </div>
         </div>

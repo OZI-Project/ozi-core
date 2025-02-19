@@ -129,16 +129,6 @@ required.add_argument(
     ),
 )
 required.add_argument(
-    '-p',
-    '--home-page',
-    type=str,
-    help=TRANSLATION(
-        'term-help',
-        name=TRANSLATION('edit-menu-btn-homepage'),
-        text=TRANSLATION('term-help-homepage'),
-    ),
-)
-required.add_argument(
     '--license-expression',
     type=str,
     help=TRANSLATION(

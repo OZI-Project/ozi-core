@@ -36,7 +36,7 @@ input:focus { outline: none; border-color: #3498db; }
     display: none
 }
 select.classifiers {
-    max-width: 15rem;
+    max-width: fit-content;
 }
 select {
     min-width: 10rem;
