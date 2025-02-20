@@ -1,4 +1,86 @@
 # ozi-core CHANGELOG
+## 1.15.0 (2025-02-20)
+
+
+### Bug fixes
+
+
+* fix: remove deprecated home-page metadata requirement — rjdbcm <rjdbcm@outlook.com>
+([`5e9d33e`](https://github.com/OZI-Project/ozi-core/commit/5e9d33ed10157c640530102b0ba75b5c0210f367))
+
+* fix: ExactMatch.license_exception_id type casting — rjdbcm <rjdbcm@outlook.com>
+([`103144f`](https://github.com/OZI-Project/ozi-core/commit/103144fd23fc8883d6aaa7d2ac4d1a8e61e75ee9))
+
+* fix: pin trove-classifiers to 2025.2.18.16  — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`c830122`](https://github.com/OZI-Project/ozi-core/commit/c830122214e5f06f68e5f8163c7dfead5c8d84fc))
+
+* fix: pin spdx-license-list to 3.26.0 — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`e5e888f`](https://github.com/OZI-Project/ozi-core/commit/e5e888fc0ad4e8147001f28046d9d5972c25e5cb))
+
+
+### Build system
+
+
+* build(deps): update ozi-build[core,uv] requirement
+
+
+updated-dependencies:
+- dependency-name: ozi-build[core,uv]
+  dependency-type: direct:production
+... — dependabot[bot] <support@github.com>
+([`9e2a9eb`](https://github.com/OZI-Project/ozi-core/commit/9e2a9eb200b6d878c30462e19b5b78e8b2a30914))
+
+* build(deps): bump ozi-templates from 2.20.2 to 2.21.0
+
+Bumps [ozi-templates](https://github.com/OZI-Project/ozi-templates) from 2.20.2 to 2.21.0.
+- [Release notes](https://github.com/OZI-Project/ozi-templates/releases)
+- [Changelog](https://github.com/OZI-Project/ozi-templates/blob/2.21.0/CHANGELOG.md)
+- [Commits](https://github.com/OZI-Project/ozi-templates/compare/2.20.2...2.21.0)
+
+
+updated-dependencies:
+- dependency-name: ozi-templates
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`5ca31f8`](https://github.com/OZI-Project/ozi-core/commit/5ca31f8737f78f6a7b172ae3a6257cb4ada3c10d))
+
+* build(deps): bump ozi-spec from 0.22.4 to 0.23.0
+
+Bumps [ozi-spec](https://github.com/OZI-Project/ozi-spec) from 0.22.4 to 0.23.0.
+- [Release notes](https://github.com/OZI-Project/ozi-spec/releases)
+- [Changelog](https://github.com/OZI-Project/ozi-spec/blob/0.23.0/CHANGELOG.md)
+- [Commits](https://github.com/OZI-Project/ozi-spec/compare/0.22.4...0.23.0)
+
+
+updated-dependencies:
+- dependency-name: ozi-spec
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`d7ca42d`](https://github.com/OZI-Project/ozi-core/commit/d7ca42d04bddb807afe38620f3ef04ba4cce98d7))
+
+* build(deps): bump step-security/harden-runner from 2.10.4 to 2.11.0
+
+Bumps [step-security/harden-runner](https://github.com/step-security/harden-runner) from 2.10.4 to 2.11.0.
+- [Release notes](https://github.com/step-security/harden-runner/releases)
+- [Commits](https://github.com/step-security/harden-runner/compare/cb605e52c26070c328afc4562f0b4ada7618a84e...4d991eb9b905ef189e4c376166672c3f2f230481)
+
+
+updated-dependencies:
+- dependency-name: step-security/harden-runner
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`e71411a`](https://github.com/OZI-Project/ozi-core/commit/e71411a2ba95881c0a60e412839b61094ab2dc5e))
+
+
+### Features
+
+
+* feat: semantic-release 9.20 — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`722504b`](https://github.com/OZI-Project/ozi-core/commit/722504bc9b640736e13ec9d0b80096a8dabd823c))
+
 ## 1.14.6 (2025-02-18)
 
 
