@@ -1,4 +1,67 @@
 # ozi-core CHANGELOG
+## 1.15.1 (2025-02-20)
+
+
+### Build system
+
+
+* build(deps): bump OZI-Project/draft from 1.11.1 to 1.12.0
+
+Bumps [OZI-Project/draft](https://github.com/ozi-project/draft) from 1.11.1 to 1.12.0.
+- [Release notes](https://github.com/ozi-project/draft/releases)
+- [Commits](https://github.com/ozi-project/draft/compare/1.11.1...1.12.0)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/draft
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`63d88ce`](https://github.com/OZI-Project/ozi-core/commit/63d88cee962c0aa805dd8266f0e91b1faf74a877))
+
+* build(deps): bump OZI-Project/publish from 1.10.1 to 1.12.0
+
+Bumps [OZI-Project/publish](https://github.com/ozi-project/publish) from 1.10.1 to 1.12.0.
+- [Release notes](https://github.com/ozi-project/publish/releases)
+- [Commits](https://github.com/ozi-project/publish/compare/1.10.1...1.12.0)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/publish
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`50ad07f`](https://github.com/OZI-Project/ozi-core/commit/50ad07f177773eb0930f5761001af69457b21df4))
+
+* build(deps): bump ozi-templates from 2.21.0 to 2.22.0
+
+Bumps [ozi-templates](https://github.com/OZI-Project/ozi-templates) from 2.21.0 to 2.22.0.
+- [Release notes](https://github.com/OZI-Project/ozi-templates/releases)
+- [Changelog](https://github.com/OZI-Project/ozi-templates/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/OZI-Project/ozi-templates/compare/2.21.0...2.22.0)
+
+
+updated-dependencies:
+- dependency-name: ozi-templates
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`4a31295`](https://github.com/OZI-Project/ozi-core/commit/4a31295e0b874726ee0c1d5024471f8d4f4d151b))
+
+* build(deps): bump webui2 from 2.4.5 to 2.5.2
+
+Bumps [webui2](https://github.com/webui-dev/python-webui) from 2.4.5 to 2.5.2.
+- [Release notes](https://github.com/webui-dev/python-webui/releases)
+- [Commits](https://github.com/webui-dev/python-webui/compare/2.4.5...2.5.2)
+
+
+updated-dependencies:
+- dependency-name: webui2
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`c440400`](https://github.com/OZI-Project/ozi-core/commit/c440400b36312fdad322755611d21152ff6eb1ba))
+
 ## 1.15.0 (2025-02-20)
 
 
