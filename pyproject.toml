@@ -56,7 +56,7 @@ summary="The OZI Project packaging core library."
 # OZI Packaging Dependencies
 # continuous integration
 webui = [
-    "webui2==2.5.2",
+    "webui2==2.5.4",
 ]
 generate-locales = ["PyYAML"]
 ci   = [
