@@ -1,4 +1,5 @@
 sp: null
+colon: ：
 adm-confirm: 确认创建项目？元数据：
 adm-disclaimer-text: >
   本警报中提供的信息不构成法律建议，也不旨在构成法律建议。 本警报中的所有信息、内容和材料仅供一般参考。
@@ -26,6 +27,7 @@ btn-remove: 删除
 btn-reset: 重置
 btn-skip: 跳过
 btn-yes: 是的
+btn-refresh: 更新
 edit-menu-btn-audience: 目标受众（Ｉｎｔｅｎｄｅｄ　Ａｕｄｉｅｎｃｅ）
 edit-menu-btn-author: 作者（Ａｕｔｈｏｒ）
 edit-menu-btn-email: 电子邮件（Ａｕｔｈｏｒ－ｅｍａｉｌ）
@@ -108,7 +110,7 @@ pro-keywords: >
 
   （分隔列表）
 pro-license: 请为『$projectname』选择许可证分类器。
-pro-license-expression: 'Select a specific SPDX license expression:'
+pro-license-expression: 选择特定的ＳＰＤＸ许可证表达式：
 pro-license-expression-input: >
   许可：$license
 
@@ -166,6 +168,9 @@ term-desc-new-interactive: 使用交互式提示通过ＯＺＩ创建一个新�
 term-desc-new-project: 使用ＯＺＩ创建一个新的Ｐｙｔｈｏｎ项目
 term-found: 成立
 term-help: $name（$text）
+term-input: 输入
+term-user-interface: 用户界面
+term-create-project: 创建项目
 term-help-allow-file: 在新项目目标文件夹中
 term-help-audience: 使用零次或多次
 term-help-author: 使用零次或多次，单次输出

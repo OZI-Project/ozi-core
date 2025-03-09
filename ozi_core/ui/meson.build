@@ -10,8 +10,16 @@ configure_file(
     configuration: configuration_data({
         'WEBUI_PROMPT_1_HTML': fs.read(meson.project_source_root() / 'ozi_core' / 'ui' / 'ozi-new.html'),
         'WEBUI_PROMPT_CSS': fs.read(meson.project_source_root() / 'ozi_core' / 'ui' / 'style.css'),
+        'WEBUI_I18N_CSS': fs.read(meson.project_source_root() / 'ozi_core' / 'ui' / 'brand' / 'css' / 'fonts-en.css'),
+        'WEBUI_LOGO': fs.read(meson.project_source_root() / 'ozi_core' / 'ui' / 'brand' / 'images' / 'ozi_logo_v2.svg'),
     }),
 )
+fs.copyfile('brand/fonts/atkinsonhyperlegible/AtkinsonHyperlegible-Bold.ttf', install: true, install_dir: '.')
+fs.copyfile('brand/fonts/atkinsonhyperlegible/AtkinsonHyperlegible-BoldItalic.ttf', install: true, install_dir: '.')
+fs.copyfile('brand/fonts/atkinsonhyperlegible/AtkinsonHyperlegible-Italic.ttf', install: true, install_dir: '.')
+fs.copyfile('brand/fonts/atkinsonhyperlegible/AtkinsonHyperlegible-Regular.ttf', install: true, install_dir: '.')
+fs.copyfile('brand/fonts/martianmono/MartianMono[wdth,wght].ttf', install: true, install_dir: '.')
+fs.copyfile('brand/fonts/notoserifhk/NotoSerifHK[wght].ttf', install: true, install_dir: '.')
 source_ui_files = [
     '__init__.py',
     'menu.py',
