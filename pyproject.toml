@@ -128,7 +128,7 @@ ignore_nosec = true
 verbose = true
 
 [tool.black]
-extend-exclude = "(\\.pyi|venv|meson-private|subprojects|_locales.py)"
+extend-exclude = "(\\.pyi|venv|meson-private|subprojects|_locales.py|web.py)"
 line-length = 93
 
 [tool.coverage.report]

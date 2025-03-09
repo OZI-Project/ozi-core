@@ -83,6 +83,7 @@ class Translation:
             return ''
         elif text is _key:
             self.__logger.debug(f'no translation for "{_key}" in locale "{self.locale}"')
+            return Template(text).safe_substitute(**kwargs)
         return self.postprocess(Template(text).safe_substitute(**kwargs))
 
 
