@@ -1,4 +1,5 @@
 sp: ' '
+colon: ':'
 adm-confirm: >
   Confirm project creation?
 
@@ -29,6 +30,7 @@ btn-ok: ✔ Ok
 btn-prompt: ⌂ Prompt
 btn-skip: ⇒ Skip
 btn-yes: 'Yes'
+btn-refresh: ⟳ Refresh
 edit-menu-btn-audience: Intended Audience
 edit-menu-btn-author: Author
 edit-menu-btn-email: Author-email
@@ -163,6 +165,9 @@ fix-add-or-remove: 'Use add or remove button to find files to add or remove:'
 pro-typing: 'Please select typing classifier for $projectname:'
 pro-typing-radio-stubs-only: Stubs Only
 pro-typing-radio-typed: Typed
+term-input: input
+term-user-interface: user interface
+term-create-project: Create Project
 term-choices: choices
 term-ci-provider: continuous integration and release provider
 term-classifier: Classifier

@@ -3,20 +3,52 @@ body {
     padding-left: 1em;
     color: white;
     font-size: 18px;
-    font-family: 'Arial', sans-serif;
+    font-family: AtkinsonHyperlegible sans-serif;
     text-align: left;
 }
-input[type=checkbox] {
+input.hide[type=checkbox] {
     display: none;
+}
+input[type=checkbox] {
+    align-self: stretch;
 }
 textarea {
     resize: none;
+    margin-bottom: 10px;
+}
+#LicenseReader {
+    text-wrap-mode: nowrap;
+}
+.textarea {
+    display: block;
+    width: 98%;
+    max-height: 20lh;
+    max-width: 87ch;
+    overflow-y: auto;
+    resize: both;
+    min-height: 40px;
+    line-height: 20px;
+}
+.input,
+.textarea {
+  border: 1px solid #ccc;
+  background-color: #030711;
+  font-family: monospace;
+  font-size: 12px;
+  padding: 1px 6px;
+  resize: none;
+  white-space: pre-wrap;
+  scrollbar-color: white;
+  scrollbar-width: thin;
 }
 button, input {
     transition: 0.2s; 
     box-shadow: 0 3px 5px rgba(0,0,0,0.1); 
     border: 1px solid #ccc; 
     border-radius: 3px;
+    font-family: monospace;
+    background-color: #030711;
+    color: white;
 }
 button { 
     cursor: pointer;
@@ -33,35 +65,61 @@ h1 {
 button:hover { background: #c9913d; }
 input:focus { outline: none; border-color: #3498db; }
 [id^=err-] {
-    display: none
+    display: none;
+    font-family: 'NotoSerifHK' serif;
+    white-space: nowrap;
+}
+select[id^=License] {
+    margin-bottom: 10px;
 }
 select.classifiers {
     max-width: fit-content;
+    margin-bottom: 10px;
 }
 select {
     min-width: 10rem;
+    background-color: #030711;
+    color: white;
+    scrollbar-color: white;
+    scrollbar-width: thin;
 }
-/* Hide First Item in Dropdowns */
-select:focus-within:not([multiple], .classifiers) > option:nth-child(1) {
-    display: none;
+@media screen and (min-width: 800px) {
+    .row {
+        display: flex;
+    }
+    .row .column:not(:first-child) {
+        padding-left: 2rem;
+    }
+    input[type=text] {
+        width: 20rem;
+    }
+}
+select.editable {
+    margin-bottom: 10px;
+    min-width: 27.2rem;
 }
 input[type=text] {
     margin-bottom: 10px;
-    width: 20rem;
     max-height: fit-content;
 }
 progress {
     display: none;
 }
+.wrap {
+    flex-wrap: wrap;
+}
 .row {
-    display: flex;
     align-items: baseline;
 }
 .column {
     flex: 50%;
 }
-.row .column:not(:first-child) {
-    padding-left: 2rem;
+.justify-end {
+    display: flex;
+    justify-content: flex-end;
+}
+.row.justify-end > label {
+    padding-bottom: 3px;
 }
 .container {
     display: flex;
@@ -80,14 +138,14 @@ progress {
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     width: 100%; /* Full width */
     height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
+    overflow: hidden; /* Enable scroll if needed */
 }
 .modal-content {
     margin: 15% auto; /* 15% from the top and centered */
     border: 1px solid #888;
     background: linear-gradient(to left, #507d91, #1c596f, #022737);
     padding: 20px;
-    width: 663px; /* Could be more or less, depending on screen size */
+    max-width: min(663px, 100%); /* Could be more or less, depending on screen size */
 }
 .modal-content>h3 {
     display: contents;
@@ -105,35 +163,38 @@ progress {
     text-decoration: none;
 }
 /* Hidden by default but immediately shown by the backend */
-.hide-modal:checked + .modal {
+.hide:checked + .modal {
     display: none;
 }
 /* Breadcrumb */
 .breadcrumb {
     padding: 0 0.5rem;
+    display: flex;
+    justify-content: space-between;
 }
-.breadcrumb ol {
+.breadcrumb menu {
     display: flex;
     flex-wrap: wrap;
+    white-space: nowrap;
     align-items: end;
     margin: 0;
     padding: 0;
     list-style: none;
     cursor: default;
 }
-.breadcrumb li {
+.breadcrumb menu > li {
     cursor: pointer;
 }
 .breadcrumb li span {
     cursor: default;
     text-decoration: underline;
 }
-.breadcrumb li:not(:last-child)::after {
-    display: inline-block;
-    margin: 0 0.25rem;
+.breadcrumb menu:first-of-type > li+li::before {
+    display: inline;
     content: "→";
+    padding: 8px;
     cursor: default;
 }
-.hide-page:checked + .page {
+/* .hide:checked + .page {
     display: none;
-}
+} */
