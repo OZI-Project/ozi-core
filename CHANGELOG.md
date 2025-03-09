@@ -1,4 +1,76 @@
 # ozi-core CHANGELOG
+## 1.15.2 (2025-03-09)
+
+
+### Build system
+
+
+* build: include submodules in checkpoint — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`4f92d7e`](https://github.com/OZI-Project/ozi-core/commit/4f92d7eae4e298457be202aa4cb28988233e2d57))
+
+* build(deps): bump OZI-Project/checkpoint from 1.5.5 to 1.6.0
+
+Bumps [OZI-Project/checkpoint](https://github.com/ozi-project/checkpoint) from 1.5.5 to 1.6.0.
+- [Release notes](https://github.com/ozi-project/checkpoint/releases)
+- [Commits](https://github.com/ozi-project/checkpoint/compare/1.5.5...1.6.0)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/checkpoint
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`a19c0c4`](https://github.com/OZI-Project/ozi-core/commit/a19c0c4417dc364d6309446b035b8612dfc11344))
+
+* build(deps): bump OZI-Project/release from 1.3.3 to 1.3.4
+
+Bumps [OZI-Project/release](https://github.com/ozi-project/release) from 1.3.3 to 1.3.4.
+- [Release notes](https://github.com/ozi-project/release/releases)
+- [Commits](https://github.com/ozi-project/release/compare/ef531325086db519edaf13b95362051f41bb4802...204e7f8af3396d1a4d77afb66ead74b0804ae058)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/release
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`bed13ab`](https://github.com/OZI-Project/ozi-core/commit/bed13abe2ff34ca8af147551337271bb9b192774))
+
+* build(deps): bump webui2 from 2.5.2 to 2.5.4
+
+Bumps [webui2](https://github.com/webui-dev/python-webui) from 2.5.2 to 2.5.4.
+- [Release notes](https://github.com/webui-dev/python-webui/releases)
+- [Commits](https://github.com/webui-dev/python-webui/compare/2.5.2...2.5.4)
+
+
+updated-dependencies:
+- dependency-name: webui2
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`fd021f2`](https://github.com/OZI-Project/ozi-core/commit/fd021f29376315e2bd349a849a71ed645001b496))
+
+* build(deps): bump trove-classifiers from 2025.2.18.16 to 2025.3.3.18
+
+Bumps [trove-classifiers](https://github.com/pypa/trove-classifiers) from 2025.2.18.16 to 2025.3.3.18.
+- [Release notes](https://github.com/pypa/trove-classifiers/releases)
+- [Commits](https://github.com/pypa/trove-classifiers/compare/2025.2.18.16...2025.3.3.18)
+
+
+updated-dependencies:
+- dependency-name: trove-classifiers
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`b5db014`](https://github.com/OZI-Project/ozi-core/commit/b5db0147a2576ccc8958b23b10a3066a526a9180))
+
+
+### Chores
+
+
+* chore: finish translating ozi-new webui preview — rjdbcm <rjdbcm@outlook.com>
+([`1f618ee`](https://github.com/OZI-Project/ozi-core/commit/1f618eecbe1dcd9ce7abe72a79f69e163ac645a4))
+
 ## 1.15.1 (2025-02-20)
 
 
