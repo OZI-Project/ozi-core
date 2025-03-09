@@ -1,7 +1,3 @@
-
-# Part of ozi-core.
-# See LICENSE.txt in the project root for details.
-# Additional copyright and license terms apply, see NOTICE for details.
 name: OZI
 
 on:
@@ -41,9 +37,10 @@ jobs:
             rekor.sigstore.dev:443
             tuf-repo-cdn.sigstore.dev:443
 
-      - uses: OZI-Project/checkpoint@1.5.5
+      - uses: OZI-Project/checkpoint@1.6.0
         with:
           python-version: "3.11"
+          submodules: true
 
   checkpoint-cp312-ubuntu-latest:
     name: checkpoint (Python 3.12 on ubuntu-latest)
@@ -71,14 +68,46 @@ jobs:
             rekor.sigstore.dev:443
             tuf-repo-cdn.sigstore.dev:443
 
-      - uses: OZI-Project/checkpoint@1.5.5
+      - uses: OZI-Project/checkpoint@1.6.0
         with:
           python-version: "3.12"
+          submodules: true
 
+
+  checkpoint-cp313-ubuntu-latest:
+    name: checkpoint (Python 3.13 on ubuntu-latest)
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+    permissions:
+        id-token: write
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@4d991eb9b905ef189e4c376166672c3f2f230481 # v2.11.0
+        with:
+          disable-sudo: true
+          egress-policy: block
+          allowed-endpoints: >
+            files.pythonhosted.org:443
+            github.com:443
+            api.github.com:443
+            oziproject.dev:443
+            www.oziproject.dev:443
+            pypi.org:443
+            registry.npmjs.org:443
+            objects.githubusercontent.com:443
+            fulcio.sigstore.dev:443
+            rekor.sigstore.dev:443
+            tuf-repo-cdn.sigstore.dev:443
+
+      - uses: OZI-Project/checkpoint@1.6.0
+        with:
+          python-version: "3.13"
+          submodules: true
 
   checkpoint:
     runs-on: ubuntu-latest
-    needs: [checkpoint-cp311-ubuntu-latest,checkpoint-cp312-ubuntu-latest,]
+    needs: [checkpoint-cp311-ubuntu-latest,checkpoint-cp312-ubuntu-latest, checkpoint-cp313-ubuntu-latest]
     steps:
       - name: Harden Runner
         uses: step-security/harden-runner@4d991eb9b905ef189e4c376166672c3f2f230481 # v2.11.0
