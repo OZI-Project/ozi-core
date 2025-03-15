@@ -1,6 +1,7 @@
 from dataclasses import asdict
 from dataclasses import dataclass
 from dataclasses import field
+from dataclasses import fields
 from importlib.metadata import PackageNotFoundError
 from importlib.metadata import version
 from pathlib import Path
@@ -26,24 +27,40 @@ HEADER = '\n'.join(
 CONF_PATH = Path(user_config_dir('OZI')) / 'config.yml'
 
 
-@dataclass(kw_only=True)
-class OziInteractiveConfig:
+@dataclass(init=False, kw_only=True)
+class ConfigBase:
+    def __init__(self, **kwargs: dict[str, str | list[str] | bool | None]) -> None:
+        names = set([f.name for f in fields(self)])
+        for k, v in kwargs.items():
+            if k in names:
+                setattr(self, k, v)
+
+
+@dataclass(init=False, kw_only=True)
+class OziInteractiveConfig(ConfigBase):
     """General config options for dialog-based CLI."""
 
     language: str | None = None
 
+    def __init__(self, **kwargs: dict[str, str | list[str] | bool | None]) -> None:
+        super().__init__(**kwargs)
 
-@dataclass(kw_only=True)
-class OziFixConfig:
+
+@dataclass(init=False, kw_only=True)
+class OziFixConfig(ConfigBase):
     """Persistent ``ozi-fix interactive`` settings."""
 
     copyright_head: str | None = None
     pretty: bool | None = None
     strict: bool | None = None
+    update_wrapfile: bool | None = None
+
+    def __init__(self, **kwargs: dict[str, str | list[str] | bool | None]) -> None:
+        super().__init__(**kwargs)
 
 
-@dataclass(kw_only=True)
-class OziNewConfig:
+@dataclass(init=False, kw_only=True)
+class OziNewConfig(ConfigBase):
     """Persistent ``ozi-new interactive`` settings."""
 
     allow_file: list[str] | None = None
@@ -60,7 +77,11 @@ class OziNewConfig:
     language: list[str] | None = None
     readme_type: str | None = None
     strict: bool | None = None
+    update_wrapfile: bool | None = None
     verify_email: bool | None = None
+
+    def __init__(self, **kwargs: dict[str, str | list[str] | bool | None]) -> None:
+        super().__init__(**kwargs)
 
 
 @dataclass(kw_only=True)

@@ -1,5 +1,6 @@
 import html
 import re
+from dataclasses import asdict
 from datetime import datetime
 from functools import partial
 from logging import getLogger
@@ -13,6 +14,9 @@ from webui import webui  # type: ignore
 
 from ozi_core._i18n import TRANSLATION
 from ozi_core._logging import config_logger
+from ozi_core.config import OziConfig
+from ozi_core.config import read_user_config
+from ozi_core.config import write_user_config
 from ozi_core.trove import Prefix
 from ozi_core.trove import from_prefix
 from ozi_core.ui.defaults import COPYRIGHT_HEAD
@@ -46,13 +50,12 @@ def _validate_email(addr: str) -> bool:
 
 
 validators: dict[str, Callable[[str], bool]] = {
-    'Name': lambda x: re.match(r'^([A-Za-z]|[A-Za-z][A-Za-z0-9._-]*[A-Za-z0-9]){1,80}$', x)
-    is not None,
+    'Name': lambda x: re.match(METADATA.spec.python.pkg.pattern.name, x) is not None,
     'Summary': lambda x: 0 < len(x) < 256,
     'Keywords': lambda x: re.match(r'^(([a-z_]*[a-z0-9],)*){2,650}$', x) is not None,
     'Author': lambda x: 0 < len(x) < 512,
     'Author-email': lambda x: all(map(_validate_email, x.split(','))),
-    'Maintainer': lambda x: 0 < len(x) < 512,
+    'Maintainer': lambda x: re.match(METADATA.spec.python.pkg.pattern.author, x) is not None,
     'Maintainer-email': lambda x: all(map(_validate_email, x.split(','))),
     'License': lambda _: True,
     'License-Expression': lambda _: True,
@@ -321,7 +324,7 @@ def get_form_data(e: webui.event) -> dict[str, list[str]]:
         f' return document.getElementById("Status").value; '
     )
     copyright_head = e.window.script(  # pyright: ignore
-        f' return document.getElementById("copyright-head").value; '
+        f' return document.getElementById("copyright-head").innerText; '
     )
     enable_cython = e.window.script(  # pyright: ignore
         f' return document.getElementById("enable-cython").checked; '
@@ -372,7 +375,9 @@ def get_form_data(e: webui.event) -> dict[str, list[str]]:
         'summary': summary.data,
         'keywords': [i.strip() for i in keywords.data.split(',')],
         'author': [i.strip() for i in author.data.split(',')],
+        'maintainer': [i.strip() for i in maintainer.data.split(',')],
         'author_email': [i.strip() for i in author_email.data.split(',')],
+        'maintainer_email': [i.strip() for i in maintainer_email.data.split(',')],
         'copyright_year': str(datetime.now().year),  # type: ignore
         'long_description_content_type': readme_type.data,
         'project_url': [i for i in project_urls.data.split(';') if i],
@@ -398,6 +403,19 @@ def get_form_data(e: webui.event) -> dict[str, list[str]]:
         'github_harden_runner': github_harden_runner.data == 'true',
     }
     return env
+
+
+def save_options(e: webui.event) -> None:
+    config = asdict(read_user_config())
+    new_config = get_form_data(e)
+    new_config['readme_type'] = new_config.pop('long_description_content_type')
+    new_config.pop('author')
+    new_config.pop('author_email')
+    new_config.pop('maintainer')
+    new_config.pop('maintainer_email')
+    config['new'].update(**new_config)
+    config['interactive'].update(language=TRANSLATION.locale)
+    write_user_config(OziConfig(**config))
 
 
 def show_pkg_info(e: webui.event) -> None:
@@ -475,7 +493,12 @@ def update_ui_language(e: webui.event) -> None:
         e.window.run(  # pyright: ignore
             f" document.getElementById(`{k}`).innerHTML = `{v()}`; "
         )
-    e.window.run(" document.getElementById('HideDisclaimer').checked = false; ")  # pyright: ignore
+    e.window.run(  # pyright: ignore
+        f"""
+            document.getElementById('HideDisclaimer').checked = false;
+            const tabHeading = document.getElementById("PageHeading")
+            tabHeading.innerHTML = "{TRANSLATION('btn-options')}";
+        """)
     TRANSLATION.mime_type = 'text/html;charset=UTF-8'
 
 
@@ -709,6 +732,9 @@ class WebInterface:
 
     def __call__(self) -> None:
         TRANSLATION.mime_type = 'text/html;charset=UTF-8'
+        config = read_user_config()
+        if config.interactive['language']:
+            TRANSLATION.locale = config.interactive['language']
         self.window.show(f"""@WEBUI_PROMPT_1_HTML@""")
         self.window.run(" document.getElementById('HideDisclaimer').checked = false; ")
 
@@ -734,6 +760,7 @@ window.bind('RefreshButton', show_license_reader)
 window.bind('AddProjectURL', add_project_url)
 window.bind('RemoveProjectURL', remove_project_url)
 window.bind('locale', update_ui_language)
+window.bind('SaveOptions', save_options)
 interface = WebInterface(window)
 
 
