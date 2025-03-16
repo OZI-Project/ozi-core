@@ -1,4 +1,40 @@
 # ozi-core CHANGELOG
+## 1.15.3 (2025-03-16)
+
+
+### Build system
+
+
+* build(deps): bump trove-classifiers from 2025.3.3.18 to 2025.3.13.13
+
+Bumps [trove-classifiers](https://github.com/pypa/trove-classifiers) from 2025.3.3.18 to 2025.3.13.13.
+- [Release notes](https://github.com/pypa/trove-classifiers/releases)
+- [Commits](https://github.com/pypa/trove-classifiers/compare/2025.3.3.18...2025.3.13.13)
+
+
+updated-dependencies:
+- dependency-name: trove-classifiers
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`eb58244`](https://github.com/OZI-Project/ozi-core/commit/eb582449d94df483540bda1cb63fc64df3da5b19))
+
+
+### Unknown
+
+
+* :rotating_light: fix lint — rjdbcm <rjdbcm@outlook.com>
+([`4c64cc1`](https://github.com/OZI-Project/ozi-core/commit/4c64cc177f34d3d66632fd50ebf83c5a78862fd2))
+
+* :rotating_light: fix lint — rjdbcm <rjdbcm@outlook.com>
+([`431bf9e`](https://github.com/OZI-Project/ozi-core/commit/431bf9eff92942ae738f03a7d111bbc159279c41))
+
+* :bug: update save button text on language change — rjdbcm <rjdbcm@outlook.com>
+([`c0caa02`](https://github.com/OZI-Project/ozi-core/commit/c0caa02f0836aa72819a03dd75eb3df4120cd1ec))
+
+* :hammer: add options configuration save button to webui — rjdbcm <rjdbcm@outlook.com>
+([`b1b9142`](https://github.com/OZI-Project/ozi-core/commit/b1b91421613a8756785024720d9e7fc767ca1ba5))
+
 ## 1.15.2 (2025-03-09)
 
 
