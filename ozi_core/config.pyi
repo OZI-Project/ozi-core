@@ -1,5 +1,8 @@
+from __future__ import annotations
+
 from dataclasses import dataclass
 from pathlib import Path
+from typing import Self
 
 from ozi_core import __version__ as __version__
 
@@ -7,22 +10,28 @@ core_version: str
 HEADER: str
 CONF_PATH: Path
 
-@dataclass(kw_only=True)
-class OziInteractiveConfig:
+@dataclass(init=False, kw_only=True)
+class ConfigBase:
+    def __init__(self: Self, **kwargs: dict[str, str | list[str] | bool | None]) -> None:
+        ...
+
+@dataclass(init=False, kw_only=True)
+class OziInteractiveConfig(ConfigBase):
     """General config options for dialog-based CLI."""
 
     language: str | None = ...
 
-@dataclass(kw_only=True)
-class OziFixConfig:
+@dataclass(init=False, kw_only=True)
+class OziFixConfig(ConfigBase):
     """Persistent ``ozi-fix interactive`` settings."""
 
     copyright_head: str | None = ...
     pretty: bool | None = ...
     strict: bool | None = ...
+    update_wrapfile: bool | None = ...
 
-@dataclass(kw_only=True)
-class OziNewConfig:
+@dataclass(init=False, kw_only=True)
+class OziNewConfig(ConfigBase):
     """Persistent ``ozi-new interactive`` settings."""
 
     allow_file: list[str] | None = ...
@@ -40,9 +49,10 @@ class OziNewConfig:
     readme_type: str | None = ...
     strict: bool | None = ...
     verify_email: bool | None = ...
+    update_wrapfile: bool | None = None
 
-@dataclass(kw_only=True)
-class OziConfig:
+@dataclass(init=False, kw_only=True)
+class OziConfig(ConfigBase):
     """Persistent ``ozi-* interactive`` settings."""
 
     fix: OziFixConfig = ...
