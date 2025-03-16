@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from dataclasses import asdict
 from dataclasses import dataclass
 from dataclasses import field
@@ -5,6 +7,7 @@ from dataclasses import fields
 from importlib.metadata import PackageNotFoundError
 from importlib.metadata import version
 from pathlib import Path
+from typing import Self
 
 import yaml
 from platformdirs import user_config_dir
@@ -29,8 +32,8 @@ CONF_PATH = Path(user_config_dir('OZI')) / 'config.yml'
 
 @dataclass(init=False, kw_only=True)
 class ConfigBase:
-    def __init__(self, **kwargs: dict[str, str | list[str] | bool | None]) -> None:
-        names = set([f.name for f in fields(self)])
+    def __init__(self: Self, **kwargs: dict[str, str | list[str] | bool | None]) -> None:  # pragma: no cover
+        names = {f.name for f in fields(self)}
         for k, v in kwargs.items():
             if k in names:
                 setattr(self, k, v)
@@ -42,7 +45,7 @@ class OziInteractiveConfig(ConfigBase):
 
     language: str | None = None
 
-    def __init__(self, **kwargs: dict[str, str | list[str] | bool | None]) -> None:
+    def __init__(self: Self, **kwargs: dict[str, str | list[str] | bool | None]) -> None:  # pragma: no cover
         super().__init__(**kwargs)
 
 
@@ -55,7 +58,7 @@ class OziFixConfig(ConfigBase):
     strict: bool | None = None
     update_wrapfile: bool | None = None
 
-    def __init__(self, **kwargs: dict[str, str | list[str] | bool | None]) -> None:
+    def __init__(self: Self, **kwargs: dict[str, str | list[str] | bool | None]) -> None:  # pragma: no cover
         super().__init__(**kwargs)
 
 
@@ -80,7 +83,7 @@ class OziNewConfig(ConfigBase):
     update_wrapfile: bool | None = None
     verify_email: bool | None = None
 
-    def __init__(self, **kwargs: dict[str, str | list[str] | bool | None]) -> None:
+    def __init__(self: Self, **kwargs: dict[str, str | list[str] | bool | None]) -> None:  # pragma: no cover
         super().__init__(**kwargs)
 
 

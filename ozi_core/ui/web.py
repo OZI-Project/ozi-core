@@ -734,8 +734,8 @@ class WebInterface:
     def __call__(self) -> None:
         TRANSLATION.mime_type = 'text/html;charset=UTF-8'
         config = read_user_config()
-        if config.interactive['language']:
-            TRANSLATION.locale = config.interactive['language']
+        if config.interactive.language:
+            TRANSLATION.locale = config.interactive.language
         self.window.show(f"""@WEBUI_PROMPT_1_HTML@""")
         self.window.run(" document.getElementById('HideDisclaimer').checked = false; ")
 
