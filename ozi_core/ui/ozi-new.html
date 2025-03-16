@@ -364,31 +364,31 @@
                     OnKeyUp="document.getElementById('err-copyright-head').innerHTML='&nbsp;';"
                     autocomplete="off"
                     contenteditable
-                  >{COPYRIGHT_HEAD}</span>
+                  >{config.new['copyright_head'] if config.new['copyright_head'] else COPYRIGHT_HEAD}</span>
                 </div>
                 <div class="row justify-end">
                   <label for="enable-cython" id="label-enable-cython"
                     >{TRANSLATION('opt-menu-enable-cython').replace('$value', '')}</label
                   >
-                  <input type="checkbox" id="enable-cython"/>
+                  <input type="checkbox" id="enable-cython" {'checked' if config.new['enable_cython'] else ''}/>
                 </div>
                 <div class="row justify-end">
                   <label for="enable-uv" id="label-enable-uv"
                     >{TRANSLATION('opt-menu-enable-uv').replace('$value', '')}</label
                   >
-                  <input type="checkbox" id="enable-uv"/>
+                  <input type="checkbox" id="enable-uv"  {'checked' if config.new['enable_uv'] else ''}/>
                 </div>
                 <div class="row justify-end">
                   <label for="github-harden-runner" id="label-github-harden-runner"
                     >{TRANSLATION('opt-menu-github-harden-runner').replace('$value', '')}</label
                   >
-                  <input type="checkbox" id="github-harden-runner" />
+                  <input type="checkbox" id="github-harden-runner" {'checked' if config.new['github_harden_runner'] else ''}/>
                 </div>
                 <div class="row justify-end">
                   <label for="update-wrapfile" id="label-update-wrapfile"
                     >{TRANSLATION('opt-menu-update-wrapfile').replace('$value', '')}</label
                   >
-                  <input type="checkbox" id="update-wrapfile" />
+                  <input type="checkbox" id="update-wrapfile" {'checked' if config.new['update_wrapfile'] else ''}/>
                 </div>
               </fieldset>
               <fieldset>
@@ -420,6 +420,7 @@
               </fieldset>
             </div>
           </div>
+          <button id="SaveOptions">{TRANSLATION('btn-save')}</button>
         </div>
       </div>
     </form>
