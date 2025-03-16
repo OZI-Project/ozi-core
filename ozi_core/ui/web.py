@@ -107,22 +107,23 @@ label_translation: dict[str, partial[str]] = {
     'LicenseReader': partial(TRANSLATION, 'edit-menu-btn-license-file')
 }
 text_translation = {
+    'AddProjectURL': partial(TRANSLATION, 'btn-add'),
+    'Disclaimer-title': partial(TRANSLATION, 'adm-disclaimer-title'),
+    'Ok': partial(TRANSLATION, 'btn-ok'),
+    'Options': partial(TRANSLATION, 'btn-options'),
     'Page1': partial(TRANSLATION, 'web-core-metadata'),
     'Page2': partial(TRANSLATION, 'edit-menu-btn-license'),
     'Page4': partial(TRANSLATION, 'term-create-project'),
-    'Options': partial(TRANSLATION, 'btn-options'),
-    'Ok': partial(TRANSLATION, 'btn-ok'),
-    'Reset': partial(TRANSLATION, 'btn-reset'),
-    'AddProjectURL': partial(TRANSLATION, 'btn-add'),
-    'RemoveProjectURL': partial(TRANSLATION, 'btn-remove'),
     'RefreshButton': partial(TRANSLATION, 'btn-refresh'),
-    'user-interface-options': partial(TRANSLATION, 'term-user-interface'),
-    'output-options': partial(TRANSLATION, 'term-output'),
-    'input-options': partial(TRANSLATION, 'term-input'),
-    'Disclaimer-title': partial(TRANSLATION, 'adm-disclaimer-title'),
+    'RemoveProjectURL': partial(TRANSLATION, 'btn-remove'),
+    'Reset': partial(TRANSLATION, 'btn-reset'),
+    'SaveOptions': partial(TRANSLATION, 'btn-save'),
     'disclaimer-text': partial(TRANSLATION, 'adm-disclaimer-text'),
+    'input-options': partial(TRANSLATION, 'term-input'),
     'locale-en': partial(TRANSLATION, 'lang-en'),
     'locale-zh': partial(TRANSLATION, 'lang-zh'),
+    'output-options': partial(TRANSLATION, 'term-output'),
+    'user-interface-options': partial(TRANSLATION, 'term-user-interface'),
 }
 
 _validators = validators.copy()
