@@ -32,7 +32,9 @@ CONF_PATH = Path(user_config_dir('OZI')) / 'config.yml'
 
 @dataclass(init=False, kw_only=True)
 class ConfigBase:
-    def __init__(self: Self, **kwargs: dict[str, str | list[str] | bool | None]) -> None:  # pragma: no cover
+    def __init__(  # pragma: no cover
+        self: Self, **kwargs: dict[str, str | list[str] | bool | None]
+    ) -> None:
         names = {f.name for f in fields(self)}
         for k, v in kwargs.items():
             if k in names:
@@ -45,7 +47,9 @@ class OziInteractiveConfig(ConfigBase):
 
     language: str | None = None
 
-    def __init__(self: Self, **kwargs: dict[str, str | list[str] | bool | None]) -> None:  # pragma: no cover
+    def __init__(  # pragma: no cover
+        self: Self, **kwargs: dict[str, str | list[str] | bool | None]
+    ) -> None:
         super().__init__(**kwargs)
 
 
@@ -58,7 +62,9 @@ class OziFixConfig(ConfigBase):
     strict: bool | None = None
     update_wrapfile: bool | None = None
 
-    def __init__(self: Self, **kwargs: dict[str, str | list[str] | bool | None]) -> None:  # pragma: no cover
+    def __init__(  # pragma: no cover
+        self: Self, **kwargs: dict[str, str | list[str] | bool | None]
+    ) -> None:
         super().__init__(**kwargs)
 
 
@@ -83,7 +89,9 @@ class OziNewConfig(ConfigBase):
     update_wrapfile: bool | None = None
     verify_email: bool | None = None
 
-    def __init__(self: Self, **kwargs: dict[str, str | list[str] | bool | None]) -> None:  # pragma: no cover
+    def __init__(  # pragma: no cover
+        self: Self, **kwargs: dict[str, str | list[str] | bool | None]
+    ) -> None:
         super().__init__(**kwargs)
 
 
