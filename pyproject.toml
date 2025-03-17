@@ -193,6 +193,7 @@ exclude = [
     "subprojects",
     "tests",
     "vendor",
+    "web.py",
 ]
 
 [[tool.mypy.overrides]]
