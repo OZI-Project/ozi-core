@@ -123,6 +123,9 @@ text_translation = {
     'locale-en': partial(TRANSLATION, 'lang-en'),
     'locale-zh': partial(TRANSLATION, 'lang-zh'),
     'output-options': partial(TRANSLATION, 'term-output'),
+    'readme-type-md': partial(TRANSLATION, 'pro-readme-type-radio-md'),
+    'readme-type-rst': partial(TRANSLATION, 'pro-readme-type-radio-rst'),
+    'readme-type-txt': partial(TRANSLATION, 'pro-readme-type-radio-txt'),
     'user-interface-options': partial(TRANSLATION, 'term-user-interface'),
 }
 
@@ -733,9 +736,9 @@ class WebInterface:
 
     def __call__(self) -> None:
         TRANSLATION.mime_type = 'text/html;charset=UTF-8'
-        config = read_user_config()
-        if config.interactive.language:
-            TRANSLATION.locale = config.interactive.language
+        config = asdict(read_user_config())
+        if config['interactive']['language']:
+            TRANSLATION.locale = config['interactive']['language']
         self.window.show(f"""@WEBUI_PROMPT_1_HTML@""")
         self.window.run(" document.getElementById('HideDisclaimer').checked = false; ")
 
