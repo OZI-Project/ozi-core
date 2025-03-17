@@ -1,4 +1,29 @@
 # ozi-core CHANGELOG
+## 1.15.4 (2025-03-17)
+
+
+### Build system
+
+
+* build: force patch — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`f4ed9b9`](https://github.com/OZI-Project/ozi-core/commit/f4ed9b905b69fad6c596b2093bb9cd0769dd47d9))
+
+
+### Unknown
+
+
+* :bug: force patch release — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`f058ad4`](https://github.com/OZI-Project/ozi-core/commit/f058ad44d29bb40f1b86cfcad9b933aa48cb3094))
+
+* :rotating_light: run black — rjdbcm <rjdbcm@outlook.com>
+([`816d5b6`](https://github.com/OZI-Project/ozi-core/commit/816d5b6fddf2c3c4ff2ab7ab5231d4070563ddcf))
+
+* :bug: remove deprecated test — rjdbcm <rjdbcm@outlook.com>
+([`03b3865`](https://github.com/OZI-Project/ozi-core/commit/03b3865d69be37621c4b87bf7797e90d8339a8cb))
+
+* :bug: fix config getters in webui — rjdbcm <rjdbcm@outlook.com>
+([`b191734`](https://github.com/OZI-Project/ozi-core/commit/b19173410d8f4eeed63a822a3b063ede890f77dd))
+
 ## 1.15.3 (2025-03-16)
 
 
