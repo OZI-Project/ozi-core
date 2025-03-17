@@ -118,6 +118,7 @@ def test_fuzz_CloseMatch_nargs_append_None_values(  # noqa: N802, DC102, RUF100
     )
     close_match(argparse.ArgumentParser(), argparse.Namespace(), data, option_strings)
 
+
 @settings(deadline=timedelta(milliseconds=500))
 @given(
     option_strings=st.one_of(
