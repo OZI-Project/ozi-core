@@ -42,6 +42,7 @@ jobs:
       - uses: OZI-Project/checkpoint@175eae79f299d6dbad474024b5f791368bd5de85 # 1.6.0
         with:
           python-version: "3.10"
+          submodules: true
 
   checkpoint-cp310-windows-latest:
     name: checkpoint (Python 3.10 on windows-latest)
@@ -74,6 +75,7 @@ jobs:
         with:
           python-version: "3.10"
           os: "windows-latest"
+          submodules: true
 
   checkpoint-cp311-ubuntu-latest:
     name: checkpoint (Python 3.11 on ubuntu-latest)
@@ -105,6 +107,7 @@ jobs:
       - uses: OZI-Project/checkpoint@175eae79f299d6dbad474024b5f791368bd5de85 # 1.6.0
         with:
           python-version: "3.11"
+          submodules: true
 
   checkpoint-cp312-ubuntu-latest:
     name: checkpoint (Python 3.12 on ubuntu-latest)
@@ -136,6 +139,7 @@ jobs:
       - uses: OZI-Project/checkpoint@175eae79f299d6dbad474024b5f791368bd5de85 # 1.6.0
         with:
           python-version: "3.12"
+          submodules: true
 
   checkpoint-cp313-ubuntu-latest:
     name: checkpoint (Python 3.13 on ubuntu-latest)
@@ -168,3 +172,4 @@ jobs:
       - uses: OZI-Project/checkpoint@175eae79f299d6dbad474024b5f791368bd5de85
         with:
           python-version: "3.13"
+          submodules: true
