@@ -1,4 +1,59 @@
 # ozi-core CHANGELOG
+## 1.16.0 (2025-03-21)
+
+
+### Build system
+
+
+* build(deps): bump OZI-Project/publish from 1.12.0 to 1.13.0
+
+Bumps [OZI-Project/publish](https://github.com/ozi-project/publish) from 1.12.0 to 1.13.0.
+- [Release notes](https://github.com/ozi-project/publish/releases)
+- [Commits](https://github.com/ozi-project/publish/compare/1.12.0...1.13.0)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/publish
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`2486560`](https://github.com/OZI-Project/ozi-core/commit/2486560a6844c089f5b8e9f2678fc3d80fa60a52))
+
+* build(deps): bump OZI-Project/draft from 1.12.0 to 1.13.0
+
+Bumps [OZI-Project/draft](https://github.com/ozi-project/draft) from 1.12.0 to 1.13.0.
+- [Release notes](https://github.com/ozi-project/draft/releases)
+- [Commits](https://github.com/ozi-project/draft/compare/1.12.0...1.13.0)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/draft
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`c84c6b2`](https://github.com/OZI-Project/ozi-core/commit/c84c6b27ec72f55612722b806d79b69b007ba215))
+
+* build(deps): bump OZI-Project/release from 1.3.4 to 1.4.0
+
+Bumps [OZI-Project/release](https://github.com/ozi-project/release) from 1.3.4 to 1.4.0.
+- [Release notes](https://github.com/ozi-project/release/releases)
+- [Commits](https://github.com/ozi-project/release/compare/204e7f8af3396d1a4d77afb66ead74b0804ae058...bfb9d90fbd2af52d511a9e08306d1b787b8dcfca)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/release
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`39552a5`](https://github.com/OZI-Project/ozi-core/commit/39552a576e6c932df8d896a0d8c7831c9294d9fc))
+
+
+### Features
+
+
+* feat: ozi-spec==0.24.0 — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`f830f6b`](https://github.com/OZI-Project/ozi-core/commit/f830f6bf3970eb63d356dc9e98cf3e97f024e8d8))
+
 ## 1.15.4 (2025-03-17)
 
 
@@ -15,20 +70,50 @@
 * :bug: force patch release — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
 ([`f058ad4`](https://github.com/OZI-Project/ozi-core/commit/f058ad44d29bb40f1b86cfcad9b933aa48cb3094))
 
-* :rotating_light: run black — rjdbcm <rjdbcm@outlook.com>
-([`816d5b6`](https://github.com/OZI-Project/ozi-core/commit/816d5b6fddf2c3c4ff2ab7ab5231d4070563ddcf))
-
-* :bug: remove deprecated test — rjdbcm <rjdbcm@outlook.com>
-([`03b3865`](https://github.com/OZI-Project/ozi-core/commit/03b3865d69be37621c4b87bf7797e90d8339a8cb))
-
-* :bug: fix config getters in webui — rjdbcm <rjdbcm@outlook.com>
-([`b191734`](https://github.com/OZI-Project/ozi-core/commit/b19173410d8f4eeed63a822a3b063ede890f77dd))
-
 ## 1.15.3 (2025-03-16)
+
+## 1.15.2 (2025-03-09)
+
+## 1.15.1 (2025-02-20)
+
+## 1.15.0 (2025-02-20)
+
+
+### Bug fixes
+
+
+* fix: remove deprecated home-page metadata requirement — rjdbcm <rjdbcm@outlook.com>
+([`5e9d33e`](https://github.com/OZI-Project/ozi-core/commit/5e9d33ed10157c640530102b0ba75b5c0210f367))
+
+* fix: ExactMatch.license_exception_id type casting — rjdbcm <rjdbcm@outlook.com>
+([`103144f`](https://github.com/OZI-Project/ozi-core/commit/103144fd23fc8883d6aaa7d2ac4d1a8e61e75ee9))
+
+* fix: pin trove-classifiers to 2025.2.18.16  — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`c830122`](https://github.com/OZI-Project/ozi-core/commit/c830122214e5f06f68e5f8163c7dfead5c8d84fc))
+
+* fix: pin spdx-license-list to 3.26.0 — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`e5e888f`](https://github.com/OZI-Project/ozi-core/commit/e5e888fc0ad4e8147001f28046d9d5972c25e5cb))
 
 
 ### Build system
 
+
+* build(deps): bump trove-classifiers from 2025.3.13.13 to 2025.3.19.19
+
+Bumps [trove-classifiers](https://github.com/pypa/trove-classifiers) from 2025.3.13.13 to 2025.3.19.19.
+- [Release notes](https://github.com/pypa/trove-classifiers/releases)
+- [Commits](https://github.com/pypa/trove-classifiers/compare/2025.3.13.13...2025.3.19.19)
+
+
+updated-dependencies:
+- dependency-name: trove-classifiers
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`d922cde`](https://github.com/OZI-Project/ozi-core/commit/d922cdeaa1f4f88369882501b370cdb7b5edb928))
+
+* build: update dev workflows — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`84ebd67`](https://github.com/OZI-Project/ozi-core/commit/84ebd677527f70c099a724f839b7e09066e9e237))
 
 * build(deps): bump trove-classifiers from 2025.3.3.18 to 2025.3.13.13
 
@@ -43,28 +128,6 @@ updated-dependencies:
   update-type: version-update:semver-patch
 ... — dependabot[bot] <support@github.com>
 ([`eb58244`](https://github.com/OZI-Project/ozi-core/commit/eb582449d94df483540bda1cb63fc64df3da5b19))
-
-
-### Unknown
-
-
-* :rotating_light: fix lint — rjdbcm <rjdbcm@outlook.com>
-([`4c64cc1`](https://github.com/OZI-Project/ozi-core/commit/4c64cc177f34d3d66632fd50ebf83c5a78862fd2))
-
-* :rotating_light: fix lint — rjdbcm <rjdbcm@outlook.com>
-([`431bf9e`](https://github.com/OZI-Project/ozi-core/commit/431bf9eff92942ae738f03a7d111bbc159279c41))
-
-* :bug: update save button text on language change — rjdbcm <rjdbcm@outlook.com>
-([`c0caa02`](https://github.com/OZI-Project/ozi-core/commit/c0caa02f0836aa72819a03dd75eb3df4120cd1ec))
-
-* :hammer: add options configuration save button to webui — rjdbcm <rjdbcm@outlook.com>
-([`b1b9142`](https://github.com/OZI-Project/ozi-core/commit/b1b91421613a8756785024720d9e7fc767ca1ba5))
-
-## 1.15.2 (2025-03-09)
-
-
-### Build system
-
 
 * build: include submodules in checkpoint — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
 ([`4f92d7e`](https://github.com/OZI-Project/ozi-core/commit/4f92d7eae4e298457be202aa4cb28988233e2d57))
@@ -125,19 +188,6 @@ updated-dependencies:
 ... — dependabot[bot] <support@github.com>
 ([`b5db014`](https://github.com/OZI-Project/ozi-core/commit/b5db0147a2576ccc8958b23b10a3066a526a9180))
 
-
-### Chores
-
-
-* chore: finish translating ozi-new webui preview — rjdbcm <rjdbcm@outlook.com>
-([`1f618ee`](https://github.com/OZI-Project/ozi-core/commit/1f618eecbe1dcd9ce7abe72a79f69e163ac645a4))
-
-## 1.15.1 (2025-02-20)
-
-
-### Build system
-
-
 * build(deps): bump OZI-Project/draft from 1.11.1 to 1.12.0
 
 Bumps [OZI-Project/draft](https://github.com/ozi-project/draft) from 1.11.1 to 1.12.0.
@@ -195,28 +245,6 @@ updated-dependencies:
 ... — dependabot[bot] <support@github.com>
 ([`c440400`](https://github.com/OZI-Project/ozi-core/commit/c440400b36312fdad322755611d21152ff6eb1ba))
 
-## 1.15.0 (2025-02-20)
-
-
-### Bug fixes
-
-
-* fix: remove deprecated home-page metadata requirement — rjdbcm <rjdbcm@outlook.com>
-([`5e9d33e`](https://github.com/OZI-Project/ozi-core/commit/5e9d33ed10157c640530102b0ba75b5c0210f367))
-
-* fix: ExactMatch.license_exception_id type casting — rjdbcm <rjdbcm@outlook.com>
-([`103144f`](https://github.com/OZI-Project/ozi-core/commit/103144fd23fc8883d6aaa7d2ac4d1a8e61e75ee9))
-
-* fix: pin trove-classifiers to 2025.2.18.16  — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
-([`c830122`](https://github.com/OZI-Project/ozi-core/commit/c830122214e5f06f68e5f8163c7dfead5c8d84fc))
-
-* fix: pin spdx-license-list to 3.26.0 — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
-([`e5e888f`](https://github.com/OZI-Project/ozi-core/commit/e5e888fc0ad4e8147001f28046d9d5972c25e5cb))
-
-
-### Build system
-
-
 * build(deps): update ozi-build[core,uv] requirement
 
 
@@ -271,11 +299,46 @@ updated-dependencies:
 ([`e71411a`](https://github.com/OZI-Project/ozi-core/commit/e71411a2ba95881c0a60e412839b61094ab2dc5e))
 
 
+### Chores
+
+
+* chore: finish translating ozi-new webui preview — rjdbcm <rjdbcm@outlook.com>
+([`1f618ee`](https://github.com/OZI-Project/ozi-core/commit/1f618eecbe1dcd9ce7abe72a79f69e163ac645a4))
+
+
 ### Features
 
 
 * feat: semantic-release 9.20 — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
 ([`722504b`](https://github.com/OZI-Project/ozi-core/commit/722504bc9b640736e13ec9d0b80096a8dabd823c))
+
+
+### Unknown
+
+
+* Create codeql.yml — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`1d4f953`](https://github.com/OZI-Project/ozi-core/commit/1d4f953e554ac682462e8b1f420bfe4be02efd8d))
+
+* :rotating_light: run black — rjdbcm <rjdbcm@outlook.com>
+([`816d5b6`](https://github.com/OZI-Project/ozi-core/commit/816d5b6fddf2c3c4ff2ab7ab5231d4070563ddcf))
+
+* :bug: remove deprecated test — rjdbcm <rjdbcm@outlook.com>
+([`03b3865`](https://github.com/OZI-Project/ozi-core/commit/03b3865d69be37621c4b87bf7797e90d8339a8cb))
+
+* :bug: fix config getters in webui — rjdbcm <rjdbcm@outlook.com>
+([`b191734`](https://github.com/OZI-Project/ozi-core/commit/b19173410d8f4eeed63a822a3b063ede890f77dd))
+
+* :rotating_light: fix lint — rjdbcm <rjdbcm@outlook.com>
+([`4c64cc1`](https://github.com/OZI-Project/ozi-core/commit/4c64cc177f34d3d66632fd50ebf83c5a78862fd2))
+
+* :rotating_light: fix lint — rjdbcm <rjdbcm@outlook.com>
+([`431bf9e`](https://github.com/OZI-Project/ozi-core/commit/431bf9eff92942ae738f03a7d111bbc159279c41))
+
+* :bug: update save button text on language change — rjdbcm <rjdbcm@outlook.com>
+([`c0caa02`](https://github.com/OZI-Project/ozi-core/commit/c0caa02f0836aa72819a03dd75eb3df4120cd1ec))
+
+* :hammer: add options configuration save button to webui — rjdbcm <rjdbcm@outlook.com>
+([`b1b9142`](https://github.com/OZI-Project/ozi-core/commit/b1b91421613a8756785024720d9e7fc767ca1ba5))
 
 ## 1.14.6 (2025-02-18)
 
