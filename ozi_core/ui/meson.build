@@ -6,20 +6,20 @@ configure_file(
     input: 'web.py',
     output: 'web.py',
     install: true,
-    install_dir: 'ozi_core'/'ui',
+    install_dir: python.get_install_dir() / 'ozi_core' / 'ui',
     configuration: configuration_data({
-        'WEBUI_PROMPT_1_HTML': fs.read(meson.project_source_root() / 'ozi_core' / 'ui' / 'ozi-new.html'),
-        'WEBUI_PROMPT_CSS': fs.read(meson.project_source_root() / 'ozi_core' / 'ui' / 'style.css'),
-        'WEBUI_I18N_CSS': fs.read(meson.project_source_root() / 'ozi_core' / 'ui' / 'brand' / 'css' / 'fonts-en.css'),
-        'WEBUI_LOGO': fs.read(meson.project_source_root() / 'ozi_core' / 'ui' / 'brand' / 'images' / 'ozi_logo_v2.svg'),
+        'OZI_NEW_HTML': fs.read(meson.project_source_root() / 'ozi_core' / 'ui' / 'ozi-new.html'),
+        'OZI_LOGO_SVG': fs.read(meson.project_source_root() / 'ozi_core' / 'ui' / 'brand' / 'images' / 'ozi_logo_v2.svg'),
     }),
 )
-fs.copyfile('brand/fonts/atkinsonhyperlegible/AtkinsonHyperlegible-Bold.ttf', install: true, install_dir: '.')
-fs.copyfile('brand/fonts/atkinsonhyperlegible/AtkinsonHyperlegible-BoldItalic.ttf', install: true, install_dir: '.')
-fs.copyfile('brand/fonts/atkinsonhyperlegible/AtkinsonHyperlegible-Italic.ttf', install: true, install_dir: '.')
-fs.copyfile('brand/fonts/atkinsonhyperlegible/AtkinsonHyperlegible-Regular.ttf', install: true, install_dir: '.')
-fs.copyfile('brand/fonts/martianmono/MartianMono[wdth,wght].ttf', install: true, install_dir: '.')
-fs.copyfile('brand/fonts/notoserifhk/NotoSerifHK[wght].ttf', install: true, install_dir: '.')
+python.install_sources('style.css', subdir: 'ozi_core' / 'ui' / 'css')
+python.install_sources('brand/css/fonts-en.css', subdir: 'ozi_core' / 'ui' / 'brand' / 'css')
+python.install_sources('brand/fonts/atkinsonhyperlegible/AtkinsonHyperlegible-Bold.ttf', subdir: 'ozi_core' / 'ui' / 'brand' / 'fonts' / 'atkinsonhyperlegible')
+python.install_sources('brand/fonts/atkinsonhyperlegible/AtkinsonHyperlegible-BoldItalic.ttf', subdir: 'ozi_core' / 'ui' / 'brand' / 'fonts' / 'atkinsonhyperlegible')
+python.install_sources('brand/fonts/atkinsonhyperlegible/AtkinsonHyperlegible-Italic.ttf', subdir: 'ozi_core' / 'ui' / 'brand' / 'fonts' / 'atkinsonhyperlegible')
+python.install_sources('brand/fonts/atkinsonhyperlegible/AtkinsonHyperlegible-Regular.ttf', subdir: 'ozi_core' / 'ui' / 'brand' / 'fonts' / 'atkinsonhyperlegible')
+python.install_sources('brand/fonts/martianmono/MartianMono[wdth,wght].ttf', subdir: 'ozi_core' / 'ui' / 'brand' / 'fonts' / 'martianmono')
+python.install_sources('brand/fonts/notoserifhk/NotoSerifHK[wght].ttf', subdir: 'ozi_core' / 'ui' / 'brand' / 'fonts' / 'notoserifhk')
 source_ui_files = [
     '__init__.py',
     'menu.py',

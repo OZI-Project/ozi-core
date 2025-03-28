@@ -35,6 +35,14 @@ interactive_parser = subparser.add_parser(
     prog='ozi-new interactive',
     usage=f'%(prog)s [{TRANSLATION("term-options")}] | [{TRANSLATION("term-positional-args")}]',
 )
+webui_parser = subparser.add_parser(
+    'webui',
+    aliases=['w'],
+    description=TRANSLATION('term-desc-new-webui'),
+    help=TRANSLATION('term-help-new-webui'),
+    prog='ozi-new webui',
+    usage=f'%(prog)s [{TRANSLATION("term-options")}] | [{TRANSLATION("term-positional-args")}]',
+)
 PROJECT_METADATA_HELP = f'[{TRANSLATION("term-required-metadata")}] [{TRANSLATION("term-optional-metadata")}] [{TRANSLATION("term-default-metadata")}]'  # noqa: B950,E501,RUF100
 project_parser = subparser.add_parser(
     'project',
@@ -43,6 +51,13 @@ project_parser = subparser.add_parser(
     help=TRANSLATION('term-help-new-project'),
     prog='ozi-new project',
     usage=f'%(prog)s [{TRANSLATION("term-options")}] {PROJECT_METADATA_HELP} [{TRANSLATION("term-defaults")}] target',  # noqa: B950,E501,RUF100
+)
+webui_parser.add_argument(
+    'target',
+    type=validate_filepath_arg,
+    nargs='?',
+    default='.',
+    help=TRANSLATION('term-help-new-target'),
 )
 interactive_parser.add_argument(
     'target',

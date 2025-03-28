@@ -4,7 +4,9 @@ from dataclasses import asdict
 from datetime import datetime
 from functools import partial
 from logging import getLogger
+from typing import Any
 from typing import Callable
+from typing import Literal
 from urllib.parse import urlparse
 
 from ozi_spec import METADATA  # pyright: ignore
@@ -25,6 +27,7 @@ from ozi_core.vendor.email_validator.exceptions_types import EmailNotValidError
 
 config_logger()
 __logger = getLogger(f'ozi_core.{__name__}')
+_data = {'help': True}
 
 OPTION_EMPTY = '<option value="" aria-hidden="true" selected disabled hidden></option>'
 OPTION_SELECTED = '<option value="{0}" selected>{0}</option>'
@@ -128,6 +131,74 @@ text_translation = {
     'readme-type-txt': partial(TRANSLATION, 'pro-readme-type-radio-txt'),
     'user-interface-options': partial(TRANSLATION, 'term-user-interface'),
 }
+
+licenses = ''.join(
+    [
+        OPTION.format(i)
+        for i in sorted(
+            set(METADATA.spec.python.pkg.license.ambiguous.keys()).intersection(
+                from_prefix(Prefix().license)
+            )
+        )
+    ]
+)
+licenses = OPTION_EMPTY + licenses
+audience_choices = ''.join(
+    [
+        (
+            OPTION_SELECTED.format(i)
+            if i in METADATA.spec.python.pkg.info.classifiers.intended_audience
+            else OPTION.format(i)
+        )
+        for i in sorted(from_prefix(Prefix().audience))
+    ]
+)
+environment_choices = ''.join(
+    [
+        (
+            OPTION_SELECTED.format(i)
+            if i in METADATA.spec.python.pkg.info.classifiers.environment
+            else OPTION.format(i)
+        )
+        for i in sorted(from_prefix(Prefix().environment))
+    ]
+)
+framework_choices = ''.join(
+    [OPTION.format(i) for i in sorted(from_prefix(Prefix().framework))]
+)
+language_choices = ''.join(
+    [
+        (
+            OPTION_SELECTED.format(i)
+            if i in METADATA.spec.python.pkg.info.classifiers.language
+            else OPTION.format(i)
+        )
+        for i in sorted(from_prefix(Prefix().language))
+    ]
+)
+status_choices = ''.join(
+    [
+        (
+            OPTION_SELECTED.format(i)
+            if i in METADATA.spec.python.pkg.info.classifiers.development_status
+            else OPTION.format(i)
+        )
+        for i in sorted(from_prefix(Prefix().status))
+    ]
+)
+topic_choices = ''.join(
+    [OPTION.format(i) for i in sorted(from_prefix(Prefix().topic))]
+)
+locales = [(i, TRANSLATION(f'lang-{i}')) for i in TRANSLATION.data.keys()]
+locale_choices = ''.join(
+    [f'<option id="locale-{k}" value="{k}">{v}</option>' for k, v in sorted(locales)]
+)
+ # translations meant for <textarea>
+# should be text/plain;charset=UTF-8
+TRANSLATION.mime_type = 'text/plain;charset=UTF-8'
+disclaimer_text = TRANSLATION('adm-disclaimer-text')
+# everything else should be text/html;charset=UTF-8
+TRANSLATION.mime_type = 'text/html;charset=UTF-8'
 
 _validators = validators.copy()
 name_valid = _validators.pop('Name')
@@ -480,7 +551,7 @@ def update_ui_language(e: webui.event) -> None:
     locale = e.window.script(  # pyright: ignore
         ' return document.getElementById(`locale`).value; '
     )  # pyright: ignore
-    interface.locale = locale.data
+    TRANSLATION.locale = locale.data
     for k, v in label_translation.items():
         if k in validators:
             continue
@@ -571,31 +642,21 @@ def change_tab(e: webui.event) -> None:
     validate_name(e)
 
 
-def show_prompt1(e: webui.event) -> None:
-    change_tab(e)
-
-
-def show_prompt2(e: webui.event) -> None:
-    change_tab(e)
-
-
-def show_prompt3(e: webui.event) -> None:
-    change_tab(e)
-
-
 def show_prompt4(e: webui.event) -> None:
     change_tab(e)
     show_pkg_info(e)
-
-
-def show_options(e: webui.event) -> None:
-    change_tab(e)
 
 
 def close_disclaimer(e: webui.event) -> None:
     e.window.run(  # pyright: ignore
         " document.getElementById('HideDisclaimer').checked = true; "
     )
+
+
+def create_project(e: webui.event) -> None:
+    global _data
+    _data = get_form_data(e)
+    close_application(e)
 
 
 def close_application(e: webui.event) -> None:
@@ -606,175 +667,52 @@ class WebInterface:
 
     def __init__(self, window: webui.window) -> None:
         self.window = window
-        licenses = ''.join(
-            [
-                OPTION.format(i)
-                for i in sorted(
-                    set(METADATA.spec.python.pkg.license.ambiguous.keys()).intersection(
-                        from_prefix(Prefix().license)
-                    )
-                )
-            ]
-        )
-        self._licenses = OPTION_EMPTY + licenses
-        self._audience_choices = ''.join(
-            [
-                (
-                    OPTION_SELECTED.format(i)
-                    if i in METADATA.spec.python.pkg.info.classifiers.intended_audience
-                    else OPTION.format(i)
-                )
-                for i in sorted(from_prefix(Prefix().audience))
-            ]
-        )
-        self._environment_choices = ''.join(
-            [
-                (
-                    OPTION_SELECTED.format(i)
-                    if i in METADATA.spec.python.pkg.info.classifiers.environment
-                    else OPTION.format(i)
-                )
-                for i in sorted(from_prefix(Prefix().environment))
-            ]
-        )
-        self._framework_choices = ''.join(
-            [OPTION.format(i) for i in sorted(from_prefix(Prefix().framework))]
-        )
-        self._language_choices = ''.join(
-            [
-                (
-                    OPTION_SELECTED.format(i)
-                    if i in METADATA.spec.python.pkg.info.classifiers.language
-                    else OPTION.format(i)
-                )
-                for i in sorted(from_prefix(Prefix().language))
-            ]
-        )
-        self._status_choices = ''.join(
-            [
-                (
-                    OPTION_SELECTED.format(i)
-                    if i in METADATA.spec.python.pkg.info.classifiers.development_status
-                    else OPTION.format(i)
-                )
-                for i in sorted(from_prefix(Prefix().status))
-            ]
-        )
-        self._topic_choices = ''.join(
-            [OPTION.format(i) for i in sorted(from_prefix(Prefix().topic))]
-        )
-        locales = [(i, TRANSLATION(f'lang-{i}')) for i in TRANSLATION.data.keys()]
-        self._locale_choices = ''.join(
-            [f'<option id="locale-{k}" value="{k}">{v}</option>' for k, v in sorted(locales)]
-        )
-        self._locale = TRANSLATION.locale
-        self._disclaimer_text = None
 
-    @property
-    def licenses(self) -> str:
-        return self._licenses
-
-    @property
-    def audience_choices(self) -> str:
-        return self._audience_choices
-
-    @property
-    def environment_choices(self) -> str:
-        return self._environment_choices
-
-    @property
-    def framework_choices(self) -> str:
-        return self._framework_choices
-
-    @property
-    def language_choices(self) -> str:
-        return self._language_choices
-
-    @property
-    def topic_choices(self) -> str:
-        return self._topic_choices
-
-    @property
-    def status_choices(self) -> str:
-        return self._status_choices
-
-    @property
-    def locale_choices(self) -> str:
-        return self._locale_choices
-
-    @property
-    def disclaimer_text(self) -> str:
-        # translations meant for <textarea>
-        # should be text/plain;charset=UTF-8
-        TRANSLATION.mime_type = 'text/plain;charset=UTF-8'
-        text = TRANSLATION('adm-disclaimer-text')
-        # everything else should be text/html;charset=UTF-8
+    def __call__(self, config: dict[str, Any], show: str) -> None:
         TRANSLATION.mime_type = 'text/html;charset=UTF-8'
-        return text
-
-    @property
-    def locale(self) -> str:
-        return self._locale
-
-    @locale.setter
-    def locale(self, value: str) -> None:
-        TRANSLATION.locale = value
-        self._locale = value
-
-    @property
-    def css(self) -> str:
-        return (
-            r"""
-        @WEBUI_PROMPT_CSS@
-        @WEBUI_I18N_CSS@
-        """.replace(
-                '../fonts/notoserifhk/', './'
-            )
-            .replace('../fonts/atkinsonhyperlegible/', './')
-            .replace('../fonts/martianmono/', './')
-        )
-
-    def __call__(self) -> None:
-        TRANSLATION.mime_type = 'text/html;charset=UTF-8'
-        config = asdict(read_user_config())
         if config['interactive']['language']:
             TRANSLATION.locale = config['interactive']['language']
-        self.window.show(f"""@WEBUI_PROMPT_1_HTML@""")
+        self.window.show(show)
         self.window.run(" document.getElementById('HideDisclaimer').checked = false; ")
 
 
-window = webui.window()
-window.set_icon("""@WEBUI_LOGO@""", 'image/svg+xml')
-window.bind('CloseDisclaimer', close_disclaimer)
-window.bind('Name', validate_name)
-window.bind('Summary', validate_summary)
-window.bind('Keywords', validate_keywords)
-window.bind('Author', validate_author)
-window.bind('Author-email', validate_author_email)
-window.bind('Maintainer', validate_maintainer)
-window.bind('Maintainer-email', validate_maintainer_email)
-window.bind('Page1', show_prompt1)
-window.bind('Page2', show_prompt2)
-window.bind('Page3', show_prompt3)
-window.bind('Page4', show_prompt4)
-window.bind('Options', show_options)
-window.bind('License', load_license_expressions)
-window.bind('License-Expression', load_license_exceptions)
-window.bind('RefreshButton', show_license_reader)
-window.bind('AddProjectURL', add_project_url)
-window.bind('RemoveProjectURL', remove_project_url)
-window.bind('locale', update_ui_language)
-window.bind('SaveOptions', save_options)
-interface = WebInterface(window)
-
-
-def main() -> None:
-    interface()
+def main(mode: str) -> dict[str, list[str]]:
+    window = webui.window()
+    config = asdict(read_user_config())
+    window.set_icon("""@OZI_LOGO_SVG@""", 'image/svg+xml')
+    if mode == 'new':
+        window.bind('CloseDisclaimer', close_disclaimer)
+        window.bind('Name', validate_name)
+        window.bind('Summary', validate_summary)
+        window.bind('Keywords', validate_keywords)
+        window.bind('Author', validate_author)
+        window.bind('Author-email', validate_author_email)
+        window.bind('Maintainer', validate_maintainer)
+        window.bind('Maintainer-email', validate_maintainer_email)
+        window.bind('Page1', change_tab)
+        window.bind('Page2', change_tab)
+        window.bind('Page3', change_tab)
+        window.bind('Page4', show_prompt4)
+        window.bind('Options', change_tab)
+        window.bind('License', load_license_expressions)
+        window.bind('License-Expression', load_license_exceptions)
+        window.bind('RefreshButton', show_license_reader)
+        window.bind('AddProjectURL', add_project_url)
+        window.bind('RemoveProjectURL', remove_project_url)
+        window.bind('locale', update_ui_language)
+        window.bind('SaveOptions', save_options)
+        window.bind('Ok', create_project)
+        interface = WebInterface(window)
+        interface(config, f"""@OZI_NEW_HTML@""")
+    elif mode == 'fix':
+        interface = WebInterface(window)
+        interface(config, f"""@OZI_FIX_HTML@""")
     # Wait until all windows are closed
     webui.wait()  # pyright: ignore
     TRANSLATION.mime_type = 'text/plain;charset=UTF-8'
+    return _data
 
 
 if __name__ == '__main__':
 
-    main()
+    print(main('new'))

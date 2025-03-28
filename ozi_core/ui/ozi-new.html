@@ -4,9 +4,8 @@
     <meta charset="UTF-8" />
     <title>ozi-new webui</title>
     <script src="webui.js"></script>
-    <style>
-      {self.css}
-    </style>
+    <link href="css/style.css" rel="stylesheet"></head>
+    <link href="brand/css/fonts-en.css" rel="stylesheet"></head>
   </head>
   <body>
     <!-- The Modal - Hidden by default but immediately shown by the backend -->
@@ -17,7 +16,7 @@
         <h3 id="Disclaimer-title">{TRANSLATION('adm-disclaimer-title')}</h3>
         <span class="close" id="CloseDisclaimer">&times;</span>
         <br />
-        <span class="textarea" id="disclaimer-text" role="textbox" readonly>{self.disclaimer_text}</span>
+        <span class="textarea" id="disclaimer-text" role="textbox" readonly>{disclaimer_text}</span>
       </div>
     </div>
     <form id="ozi-new" method="post">
@@ -205,7 +204,7 @@
               >
               <div class="row">
                 <select id="License" autocomplete="off" required>
-                  {self.licenses}
+                  {licenses}
                 </select>
               </div>
               <label for="LicenseReader" id="label-licensereader"
@@ -243,7 +242,7 @@
                 >
               </div>
               <select class="classifiers" id="Status">
-                {self.status_choices}
+                {status_choices}
               </select>
 
               <div class="row">
@@ -259,7 +258,7 @@
                 aria-multiselectable="true"
                 multiple
               >
-                {self.language_choices}
+                {language_choices}
               </select>
             </div>
             <div class="column">
@@ -276,7 +275,7 @@
                 aria-multiselectable="true"
                 multiple
               >
-                {self.audience_choices}
+                {audience_choices}
               </select>
               <div class="row">
                 <label for="Environment" id="label-environment"
@@ -291,7 +290,7 @@
                 aria-multiselectable="true"
                 multiple
               >
-                {self.environment_choices}
+                {environment_choices}
               </select>
             </div>
             <div class="column">
@@ -308,7 +307,7 @@
                 aria-multiselectable="true"
                 multiple
               >
-                {self.framework_choices}
+                {framework_choices}
               </select>
               <div class="row">
                 <label for="Topic" id="label-topic"
@@ -323,7 +322,7 @@
                 aria-multiselectable="true"
                 multiple
               >
-                {self.topic_choices}
+                {topic_choices}
               </select>
             </div>
           </div>
@@ -350,7 +349,7 @@
                 <legend id="user-interface-options">{TRANSLATION('term-user-interface')}</legend>
                 <label for="locale" id="label-locale">{TRANSLATION('opt-menu-language-text')}</label>
                 <select id="locale">
-                  {self.locale_choices}
+                  {locale_choices}
                 </select>
               </fieldset>
               <fieldset>

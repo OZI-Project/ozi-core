@@ -1,3 +1,14 @@
+@media screen and (min-width: 800px) {
+    .row {
+        display: flex;
+    }
+    .row .column:not(:first-child) {
+        padding-left: 2rem;
+    }
+    input[type=text] {
+        width: 20rem;
+    }
+}
 body {
     background: linear-gradient(to right, #1c596f, #022737, #030711);
     padding-left: 1em;
@@ -6,15 +17,65 @@ body {
     font-family: AtkinsonHyperlegible sans-serif;
     text-align: left;
 }
+button, input {
+    transition: 0.2s; 
+    box-shadow: 0 3px 5px rgba(0,0,0,0.1); 
+    border: 1px solid #ccc; 
+    border-radius: 3px;
+    font-family: monospace;
+    background-color: #030711;
+    color: white;
+}
+button { 
+    cursor: pointer;
+    background: #3498db; 
+    color: #fff;
+}
+button:hover { background: #c9913d; }
+h1 {
+    text-align: center; 
+    text-shadow: -7px 10px 7px rgb(67 57 57 / 76%);
+}
 input.hide[type=checkbox] {
     display: none;
 }
 input[type=checkbox] {
     align-self: stretch;
 }
+input[type=text] {
+    margin-bottom: 10px;
+    max-height: fit-content;
+}
+input:focus { outline: none; border-color: #3498db; }
+progress {
+    display: none;
+}
+select {
+    min-width: 10rem;
+    background-color: #030711;
+    color: white;
+    scrollbar-color: white;
+    scrollbar-width: thin;
+}
+select[id^=License] {
+    margin-bottom: 10px;
+}
+select.classifiers {
+    max-width: fit-content;
+    margin-bottom: 10px;
+}
+select.editable {
+    margin-bottom: 10px;
+    min-width: 27.2rem;
+}
 textarea {
     resize: none;
     margin-bottom: 10px;
+}
+[id^=err-] {
+    display: none;
+    font-family: 'NotoSerifHK' serif;
+    white-space: nowrap;
 }
 #LicenseReader {
     text-wrap-mode: nowrap;
@@ -41,69 +102,8 @@ textarea {
   scrollbar-color: white;
   scrollbar-width: thin;
 }
-button, input {
-    transition: 0.2s; 
-    box-shadow: 0 3px 5px rgba(0,0,0,0.1); 
-    border: 1px solid #ccc; 
-    border-radius: 3px;
-    font-family: monospace;
-    background-color: #030711;
-    color: white;
-}
-button { 
-    cursor: pointer;
-    background: #3498db; 
-    color: #fff;
-}
 .buttons {
     text-align: center;
-}
-h1 {
-    text-align: center; 
-    text-shadow: -7px 10px 7px rgb(67 57 57 / 76%);
-}
-button:hover { background: #c9913d; }
-input:focus { outline: none; border-color: #3498db; }
-[id^=err-] {
-    display: none;
-    font-family: 'NotoSerifHK' serif;
-    white-space: nowrap;
-}
-select[id^=License] {
-    margin-bottom: 10px;
-}
-select.classifiers {
-    max-width: fit-content;
-    margin-bottom: 10px;
-}
-select {
-    min-width: 10rem;
-    background-color: #030711;
-    color: white;
-    scrollbar-color: white;
-    scrollbar-width: thin;
-}
-@media screen and (min-width: 800px) {
-    .row {
-        display: flex;
-    }
-    .row .column:not(:first-child) {
-        padding-left: 2rem;
-    }
-    input[type=text] {
-        width: 20rem;
-    }
-}
-select.editable {
-    margin-bottom: 10px;
-    min-width: 27.2rem;
-}
-input[type=text] {
-    margin-bottom: 10px;
-    max-height: fit-content;
-}
-progress {
-    display: none;
 }
 .wrap {
     flex-wrap: wrap;
@@ -127,7 +127,6 @@ progress {
     justify-content: center;
     align-items: center;
 }
-/* The Modal */
 .modal {
     display: block;
     position: fixed; /* Stay in place */
@@ -162,11 +161,9 @@ progress {
     color: black;
     text-decoration: none;
 }
-/* Hidden by default but immediately shown by the backend */
 .hide:checked + .modal {
     display: none;
 }
-/* Breadcrumb */
 .breadcrumb {
     padding: 0 0.5rem;
     display: flex;
@@ -195,6 +192,3 @@ progress {
     padding: 8px;
     cursor: default;
 }
-/* .hide:checked + .page {
-    display: none;
-} */

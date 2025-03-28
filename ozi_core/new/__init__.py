@@ -29,6 +29,7 @@ from ozi_core.new.parser import parser
 from ozi_core.new.validate import postprocess_arguments
 from ozi_core.new.validate import preprocess_arguments
 from ozi_core.render import RenderedContent
+from ozi_core.ui.web import main as webui_main
 
 if TYPE_CHECKING:  # pragma: no cover
     from argparse import Namespace
@@ -74,8 +75,10 @@ def main(args: list[str] | None = None) -> None:  # pragma: no cover
         case ozi_new if ozi_new.new in ['p', 'project']:
             project(ozi_new)
             TAP.end()
-        case ozi_new if ozi_new.new in ['w', 'wrap']:
-            wrap(ozi_new)
+        case ozi_new if ozi_new.new in ['w', 'webui']:
+            namespace = webui_main(ozi_new)
+            ozi_new = parser.parse_args(namespace=namespace)
+            project(ozi_new)
             TAP.end()
         case _:
             parser.print_usage()
