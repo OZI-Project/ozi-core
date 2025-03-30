@@ -22,10 +22,13 @@ else:  # pragma: no cover
 
 from ozi_spec import METADATA
 from ozi_templates import load_environment
+from reverse_argparse import ReverseArgumentParser
 from tap_producer import TAP
 
+from ozi_core._i18n import TRANSLATION
 from ozi_core.new.interactive import interactive_prompt
 from ozi_core.new.parser import parser
+from ozi_core.new.parser import project_parser
 from ozi_core.new.validate import postprocess_arguments
 from ozi_core.new.validate import preprocess_arguments
 from ozi_core.render import RenderedContent
@@ -64,22 +67,25 @@ def main(args: list[str] | None = None) -> None:  # pragma: no cover
     ozi_new.argv = shlex.join(args) if args else shlex.join(sys.argv[1:])
     match ozi_new:
         case ozi_new if ozi_new.new in ['i', 'interactive']:
+            TRANSLATION.mime_type = 'text/plain;charset=UTF-8'
             fd = sys.stdin.fileno()
             original_attributes = termios.tcgetattr(fd)
             tty.setraw(sys.stdin)
             args = interactive_prompt(ozi_new)
             termios.tcsetattr(fd, termios.TCSADRAIN, original_attributes)
             TAP.comment(f'ozi-new {" ".join(args)}')
-            ozi_new = parser.parse_args(args=args)
             main(args)
         case ozi_new if ozi_new.new in ['p', 'project']:
             project(ozi_new)
             TAP.end()
         case ozi_new if ozi_new.new in ['w', 'webui']:
-            namespace = webui_main(ozi_new)
-            ozi_new = parser.parse_args(namespace=namespace)
-            project(ozi_new)
-            TAP.end()
+            namespace = webui_main('new')
+            reverse_parser = ReverseArgumentParser(project_parser, namespace)
+            if len(reverse_parser._args) == 1:
+                main(['webui', '-h'])
+            else:
+                TAP.comment(reverse_parser.get_effective_command_line_invocation())
+                main([reverse_parser._args[0].split(' ')[1]] + reverse_parser._args[1:])
         case _:
             parser.print_usage()
     return None

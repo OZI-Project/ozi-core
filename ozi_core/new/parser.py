@@ -161,7 +161,6 @@ required.add_argument(
         name=TRANSLATION('edit-menu-btn-license'),
         text=TRANSLATION('term-help-license'),
     ),
-    action=CloseMatch,
 )
 defaults.add_argument(
     '--audience',
@@ -309,7 +308,6 @@ optional.add_argument(
 defaults.add_argument(
     '--status',
     '--development-status',
-    action=CloseMatch,
     default=METADATA.spec.python.pkg.info.classifiers.development_status,
     help=TRANSLATION(
         'term-help-default',

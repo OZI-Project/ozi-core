@@ -1,9 +1,11 @@
 import html
 import re
+from argparse import Namespace
 from dataclasses import asdict
 from datetime import datetime
 from functools import partial
 from logging import getLogger
+from pathlib import Path
 from typing import Any
 from typing import Callable
 from typing import Literal
@@ -27,7 +29,7 @@ from ozi_core.vendor.email_validator.exceptions_types import EmailNotValidError
 
 config_logger()
 __logger = getLogger(f'ozi_core.{__name__}')
-_data = {'help': True}
+_data: dict[str, str | list[str] | bool] = {}
 
 OPTION_EMPTY = '<option value="" aria-hidden="true" selected disabled hidden></option>'
 OPTION_SELECTED = '<option value="{0}" selected>{0}</option>'
@@ -426,7 +428,7 @@ def get_form_data(e: webui.event) -> dict[str, list[str]]:
     framework = e.window.script(AS_LIST_JS.format('Framework'))  # pyright: ignore
     topic = e.window.script(AS_LIST_JS.format('Topic'))  # pyright: ignore
     allow_file = e.window.script(  # pyright: ignore
-        f' return document.getElementById("allow-file").value; '
+        f' return document.getElementById("allow-file").innerText; '
     )
     license_expr = e.window.script(  # pyright: ignore
         " return document.getElementById(`License-Expression`).value; "
@@ -655,7 +657,7 @@ def close_disclaimer(e: webui.event) -> None:
 
 def create_project(e: webui.event) -> None:
     global _data
-    _data = get_form_data(e)
+    _data.update(get_form_data(e))
     close_application(e)
 
 
@@ -666,6 +668,7 @@ def close_application(e: webui.event) -> None:
 class WebInterface:
 
     def __init__(self, window: webui.window) -> None:
+        window.set_root_folder(str(Path(__file__).parent.resolve()))
         self.window = window
 
     def __call__(self, config: dict[str, Any], show: str) -> None:
@@ -676,7 +679,7 @@ class WebInterface:
         self.window.run(" document.getElementById('HideDisclaimer').checked = false; ")
 
 
-def main(mode: str) -> dict[str, list[str]]:
+def main(mode: str) -> Namespace:
     window = webui.window()
     config = asdict(read_user_config())
     window.set_icon("""@OZI_LOGO_SVG@""", 'image/svg+xml')
@@ -710,7 +713,13 @@ def main(mode: str) -> dict[str, list[str]]:
     # Wait until all windows are closed
     webui.wait()  # pyright: ignore
     TRANSLATION.mime_type = 'text/plain;charset=UTF-8'
-    return _data
+    arg_data = _data.copy()
+    for k, v in _data.items():
+        if v == [] or v == [''] or v == '':
+            arg_data.pop(k)
+        elif isinstance(v, str):
+            arg_data.update({k: v.replace('\n', r'\n')})
+    return Namespace(**arg_data)
 
 
 if __name__ == '__main__':
