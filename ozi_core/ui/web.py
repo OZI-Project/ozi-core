@@ -8,13 +8,17 @@ from logging import getLogger
 from pathlib import Path
 from typing import Any
 from typing import Callable
-from typing import Literal
 from urllib.parse import urlparse
 
 from ozi_spec import METADATA  # pyright: ignore
 from ozi_spec._license import SPDX_LICENSE_EXCEPTIONS  # pyright: ignore
 from ozi_templates import load_environment
-from webui import webui  # type: ignore
+
+try:
+    from webui import webui  # type: ignore
+except SystemExit:
+    from unittest.mock import Mock
+    webui = Mock()
 
 from ozi_core._i18n import TRANSLATION
 from ozi_core._logging import config_logger

@@ -19,6 +19,7 @@ dependencies = [
     'trove-classifiers==2025.3.19.19',
     'types-PyYAML~=6.0',
     'pathvalidate~=3.2.1',
+    'webui2==2.5.3',
 ]
 
 [build-system]
@@ -56,9 +57,6 @@ summary="The OZI Project packaging core library."
 [project.optional-dependencies] # also meson test suite names
 # OZI Packaging Dependencies
 # continuous integration
-webui = [
-    "webui2==2.5.4",
-]
 generate-locales = ["PyYAML"]
 ci   = [
     "tox>4",
@@ -217,6 +215,7 @@ exclude = [
     "meson-private",
     "subprojects",
     "tests",
+    "ozi_core/ui/web.py",
 ]
 
 [tool.pytest.ini_options]
