@@ -12,7 +12,6 @@ from ozi_spec import METADATA
 from pathvalidate.argparse import validate_filepath_arg
 
 from ozi_core._i18n import TRANSLATION
-from ozi_core.actions import CloseMatch
 from ozi_core.ui.defaults import COPYRIGHT_HEAD
 
 parser = argparse.ArgumentParser(
@@ -35,6 +34,14 @@ interactive_parser = subparser.add_parser(
     prog='ozi-new interactive',
     usage=f'%(prog)s [{TRANSLATION("term-options")}] | [{TRANSLATION("term-positional-args")}]',
 )
+webui_parser = subparser.add_parser(
+    'webui',
+    aliases=['w'],
+    description=TRANSLATION('term-desc-new-webui'),
+    help=TRANSLATION('term-help-new-webui'),
+    prog='ozi-new webui',
+    usage=f'%(prog)s [{TRANSLATION("term-options")}] | [{TRANSLATION("term-positional-args")}]',
+)
 PROJECT_METADATA_HELP = f'[{TRANSLATION("term-required-metadata")}] [{TRANSLATION("term-optional-metadata")}] [{TRANSLATION("term-default-metadata")}]'  # noqa: B950,E501,RUF100
 project_parser = subparser.add_parser(
     'project',
@@ -43,6 +50,13 @@ project_parser = subparser.add_parser(
     help=TRANSLATION('term-help-new-project'),
     prog='ozi-new project',
     usage=f'%(prog)s [{TRANSLATION("term-options")}] {PROJECT_METADATA_HELP} [{TRANSLATION("term-defaults")}] target',  # noqa: B950,E501,RUF100
+)
+webui_parser.add_argument(
+    'target',
+    type=validate_filepath_arg,
+    nargs='?',
+    default='.',
+    help=TRANSLATION('term-help-new-target'),
 )
 interactive_parser.add_argument(
     'target',
@@ -146,7 +160,6 @@ required.add_argument(
         name=TRANSLATION('edit-menu-btn-license'),
         text=TRANSLATION('term-help-license'),
     ),
-    action=CloseMatch,
 )
 defaults.add_argument(
     '--audience',
@@ -294,7 +307,6 @@ optional.add_argument(
 defaults.add_argument(
     '--status',
     '--development-status',
-    action=CloseMatch,
     default=METADATA.spec.python.pkg.info.classifiers.development_status,
     help=TRANSLATION(
         'term-help-default',
