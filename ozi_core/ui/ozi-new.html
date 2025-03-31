@@ -9,14 +9,93 @@
   </head>
   <body>
     <!-- The Modal - Hidden by default but immediately shown by the backend -->
-    <input type="checkbox" class="hide" id="HideDisclaimer" aria-hidden="true" checked />
     <div id="Disclaimer" class="modal" aria-modal="true">
       <!-- Modal content -->
       <div class="modal-content">
         <h3 id="Disclaimer-title">{TRANSLATION('adm-disclaimer-title')}</h3>
         <span class="close" id="CloseDisclaimer">&times;</span>
-        <br />
+        <hr>
         <span class="textarea" id="disclaimer-text" role="textbox" readonly>{disclaimer_text}</span>
+      </div>
+    </div>
+    <div id="OptionsContents" class="" aria-modal="true" hidden>
+      <div class="modal-content">
+        <h3 id="Options-title">{TRANSLATION('btn-options')}</h3>
+        <span class="close" id="CloseOptions">&times;</span>
+        <hr>
+        <fieldset>
+          <legend id="user-interface-options">{TRANSLATION('term-user-interface')}</legend>
+          <label for="locale" id="label-locale">{TRANSLATION('opt-menu-language-text')}</label>
+          <select id="locale">
+            {locale_choices}
+          </select>
+        </fieldset>
+        <fieldset>
+          <legend id="output-options">{TRANSLATION('term-output')}</legend>
+          <label for="copyright-head" id="label-copyright-head">{TRANSLATION('opt-menu-copyright-head-input')}</label>
+          <h5 id="err-copyright-head" style="color: #dbdd52">&nbsp;</h5>
+          <div class="row">
+            <span
+              class="textarea"
+              id="copyright-head"
+              OnKeyUp="document.getElementById('err-copyright-head').innerHTML='&nbsp;';"
+              autocomplete="off"
+              contenteditable
+            >{config['new']['copyright_head'] if config['new']['copyright_head'] else COPYRIGHT_HEAD}</span>
+          </div>
+          <div class="row justify-end">
+            <label for="enable-cython" id="label-enable-cython"
+              >{TRANSLATION('opt-menu-enable-cython').replace('$value', '')}</label
+            >
+            <input type="checkbox" id="enable-cython" {'checked' if config['new']['enable_cython'] else ''}/>
+          </div>
+          <div class="row justify-end">
+            <label for="enable-uv" id="label-enable-uv"
+              >{TRANSLATION('opt-menu-enable-uv').replace('$value', '')}</label
+            >
+            <input type="checkbox" id="enable-uv"  {'checked' if config['new']['enable_uv'] else ''}/>
+          </div>
+          <div class="row justify-end">
+            <label for="github-harden-runner" id="label-github-harden-runner"
+              >{TRANSLATION('opt-menu-github-harden-runner').replace('$value', '')}</label
+            >
+            <input type="checkbox" id="github-harden-runner" {'checked' if config['new']['github_harden_runner'] else ''}/>
+          </div>
+          <div class="row justify-end">
+            <label for="update-wrapfile" id="label-update-wrapfile"
+              >{TRANSLATION('opt-menu-update-wrapfile').replace('$value', '')}</label
+            >
+            <input type="checkbox" id="update-wrapfile" {'checked' if config['new']['update_wrapfile'] else ''}/>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend id="input-options">{TRANSLATION('term-input')}</legend>
+          <label for="allow-file" id="label-allow-file">{TRANSLATION('opt-menu-allow-file-input')}</label>
+          <h5 id="err-allow-file" style="color: #dbdd52">&nbsp;</h5>
+          <div class="row">
+            <span
+              class="textarea"
+              id="allow-file"
+              OnKeyUp="document.getElementById('err-allow-file').innerHTML='&nbsp;';"
+              autocomplete="off"
+              spellcheck="false"
+              contenteditable
+            >{', '.join(METADATA.spec.python.src.allow_files)}</span>
+          </div>
+          <div class="row justify-end">
+            <label for="strict" id="label-strict"
+              >{TRANSLATION('opt-menu-strict').replace('$value', '')}</label
+            >
+            <input type="checkbox" id="strict" />
+          </div>
+          <div class="row justify-end">
+            <label for="verify-email" id="label-verify-email"
+              >{TRANSLATION('opt-menu-verify-email').replace('$value', '')}</label
+            >
+            <input type="checkbox" id="verify-email" />
+          </div>
+        </fieldset>
+        <button id="SaveOptions">{TRANSLATION('btn-save')}</button>
       </div>
     </div>
     <form id="ozi-new" method="post">
@@ -338,88 +417,6 @@
             <button type="submit" id="Ok">{TRANSLATION('btn-ok')}</button>
             <button type="reset" id="Reset">{TRANSLATION('btn-reset')}</button>
           </div>
-        </div>
-      </div>
-      <div id="OptionsContents" role="tabpanel" class="page" hidden>
-        <br />
-        <div class="container">
-          <div class="row">
-            <div class="column">
-              <fieldset>
-                <legend id="user-interface-options">{TRANSLATION('term-user-interface')}</legend>
-                <label for="locale" id="label-locale">{TRANSLATION('opt-menu-language-text')}</label>
-                <select id="locale">
-                  {locale_choices}
-                </select>
-              </fieldset>
-              <fieldset>
-                <legend id="output-options">{TRANSLATION('term-output')}</legend>
-                <label for="copyright-head" id="label-copyright-head">{TRANSLATION('opt-menu-copyright-head-input')}</label>
-                <h5 id="err-copyright-head" style="color: #dbdd52">&nbsp;</h5>
-                <div class="row">
-                  <span
-                    class="textarea"
-                    id="copyright-head"
-                    OnKeyUp="document.getElementById('err-copyright-head').innerHTML='&nbsp;';"
-                    autocomplete="off"
-                    contenteditable
-                  >{config['new']['copyright_head'] if config['new']['copyright_head'] else COPYRIGHT_HEAD}</span>
-                </div>
-                <div class="row justify-end">
-                  <label for="enable-cython" id="label-enable-cython"
-                    >{TRANSLATION('opt-menu-enable-cython').replace('$value', '')}</label
-                  >
-                  <input type="checkbox" id="enable-cython" {'checked' if config['new']['enable_cython'] else ''}/>
-                </div>
-                <div class="row justify-end">
-                  <label for="enable-uv" id="label-enable-uv"
-                    >{TRANSLATION('opt-menu-enable-uv').replace('$value', '')}</label
-                  >
-                  <input type="checkbox" id="enable-uv"  {'checked' if config['new']['enable_uv'] else ''}/>
-                </div>
-                <div class="row justify-end">
-                  <label for="github-harden-runner" id="label-github-harden-runner"
-                    >{TRANSLATION('opt-menu-github-harden-runner').replace('$value', '')}</label
-                  >
-                  <input type="checkbox" id="github-harden-runner" {'checked' if config['new']['github_harden_runner'] else ''}/>
-                </div>
-                <div class="row justify-end">
-                  <label for="update-wrapfile" id="label-update-wrapfile"
-                    >{TRANSLATION('opt-menu-update-wrapfile').replace('$value', '')}</label
-                  >
-                  <input type="checkbox" id="update-wrapfile" {'checked' if config['new']['update_wrapfile'] else ''}/>
-                </div>
-              </fieldset>
-              <fieldset>
-                <legend id="input-options">{TRANSLATION('term-input')}</legend>
-                <label for="allow-file" id="label-allow-file">{TRANSLATION('opt-menu-allow-file-input')}</label>
-                <h5 id="err-allow-file" style="color: #dbdd52">&nbsp;</h5>
-                <div class="row">
-                  <span
-                    class="textarea"
-                    id="allow-file"
-                    OnKeyUp="document.getElementById('err-allow-file').innerHTML='&nbsp;';"
-                    autocomplete="off"
-                    spellcheck="false"
-                    contenteditable
-                  >{', '.join(METADATA.spec.python.src.allow_files)}</span>
-                </div>
-                <div class="row justify-end">
-                  <label for="strict" id="label-strict"
-                    >{TRANSLATION('opt-menu-strict').replace('$value', '')}</label
-                  >
-                  <input type="checkbox" id="strict" />
-                </div>
-                <div class="row justify-end">
-                  <label for="verify-email" id="label-verify-email"
-                    >{TRANSLATION('opt-menu-verify-email').replace('$value', '')}</label
-                  >
-                  <input type="checkbox" id="verify-email" />
-                </div>
-              </fieldset>
-            </div>
-          </div>
-          <button id="SaveOptions">{TRANSLATION('btn-save')}</button>
         </div>
       </div>
     </form>
