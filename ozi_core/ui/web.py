@@ -14,12 +14,6 @@ from ozi_spec import METADATA  # pyright: ignore
 from ozi_spec._license import SPDX_LICENSE_EXCEPTIONS  # pyright: ignore
 from ozi_templates import load_environment
 
-try:
-    from webui import webui  # type: ignore
-except SystemExit:
-    from unittest.mock import Mock
-    webui = Mock()
-
 from ozi_core._i18n import TRANSLATION
 from ozi_core._logging import config_logger
 from ozi_core.config import OziConfig
@@ -30,6 +24,12 @@ from ozi_core.trove import from_prefix
 from ozi_core.ui.defaults import COPYRIGHT_HEAD
 from ozi_core.vendor.email_validator import validate_email
 from ozi_core.vendor.email_validator.exceptions_types import EmailNotValidError
+# mock webui for pytest test discovery
+try:
+    from webui import webui  # type: ignore
+except SystemExit:
+    from unittest.mock import Mock
+    webui = Mock()
 
 config_logger()
 __logger = getLogger(f'ozi_core.{__name__}')
@@ -120,6 +120,7 @@ text_translation = {
     'Disclaimer-title': partial(TRANSLATION, 'adm-disclaimer-title'),
     'Ok': partial(TRANSLATION, 'btn-ok'),
     'Options': partial(TRANSLATION, 'btn-options'),
+    'Options-title': partial(TRANSLATION, 'btn-options'),
     'Page1': partial(TRANSLATION, 'web-core-metadata'),
     'Page2': partial(TRANSLATION, 'edit-menu-btn-license'),
     'Page4': partial(TRANSLATION, 'term-create-project'),
@@ -574,14 +575,8 @@ def update_ui_language(e: webui.event) -> None:
         e.window.run(  # pyright: ignore
             f" document.getElementById(`{k}`).innerHTML = `{v()}`; "
         )
-    e.window.run(  # pyright: ignore
-        f"""
-            document.getElementById('HideDisclaimer').checked = false;
-            const tabHeading = document.getElementById("PageHeading")
-            tabHeading.innerHTML = "{TRANSLATION('btn-options')}";
-        """)
+    show_modal(e, _id='Disclaimer')
     TRANSLATION.mime_type = 'text/html;charset=UTF-8'
-
 
 
 def remove_project_url(e: webui.event) -> None:
@@ -653,10 +648,40 @@ def show_prompt4(e: webui.event) -> None:
     show_pkg_info(e)
 
 
-def close_disclaimer(e: webui.event) -> None:
+def show_modal(e: webui.event, _id: str | None = None) -> None:
+    _id = _id if _id is not None else e.element
     e.window.run(  # pyright: ignore
-        " document.getElementById('HideDisclaimer').checked = true; "
+        f"""
+        const disclaimer = document.getElementById('{_id}');
+        disclaimer.removeAttribute("hidden");
+        disclaimer.removeAttribute("aria-hidden");
+        disclaimer.classList.add("modal");
+        """
     )
+
+
+def hide_modal(e: webui.event, _id: str | None = None) -> None:
+    _id = _id if _id is not None else e.element
+    e.window.run(  # pyright: ignore
+        f"""
+        const disclaimer = document.getElementById('{_id}');
+        disclaimer.setAttribute("hidden", true);
+        disclaimer.setAttribute("aria-hidden", true);
+        disclaimer.classList.remove("modal");
+        """
+    )
+
+
+def hide_disclaimer(e: webui.event) -> None:
+    hide_modal(e, _id='Disclaimer')
+
+
+def hide_options(e: webui.event) -> None:
+    hide_modal(e, _id='OptionsContents')
+
+
+def show_options(e: webui.event) -> None:
+    show_modal(e, _id='OptionsContents')
 
 
 def create_project(e: webui.event) -> None:
@@ -688,7 +713,7 @@ def main(mode: str) -> Namespace:
     config = asdict(read_user_config())
     window.set_icon("""@OZI_LOGO_SVG@""", 'image/svg+xml')
     if mode == 'new':
-        window.bind('CloseDisclaimer', close_disclaimer)
+        window.bind('CloseDisclaimer', hide_disclaimer)
         window.bind('Name', validate_name)
         window.bind('Summary', validate_summary)
         window.bind('Keywords', validate_keywords)
@@ -700,14 +725,16 @@ def main(mode: str) -> Namespace:
         window.bind('Page2', change_tab)
         window.bind('Page3', change_tab)
         window.bind('Page4', show_prompt4)
-        window.bind('Options', change_tab)
+        window.bind('Options', show_options)
         window.bind('License', load_license_expressions)
         window.bind('License-Expression', load_license_exceptions)
         window.bind('RefreshButton', show_license_reader)
         window.bind('AddProjectURL', add_project_url)
         window.bind('RemoveProjectURL', remove_project_url)
-        window.bind('locale', update_ui_language)
+        window.bind('locale-en', update_ui_language)
+        window.bind('locale-zh', update_ui_language)
         window.bind('SaveOptions', save_options)
+        window.bind('CloseOptions', hide_options)
         window.bind('Ok', create_project)
         interface = WebInterface(window)
         interface(config, f"""@OZI_NEW_HTML@""")

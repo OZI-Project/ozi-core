@@ -1,6 +1,6 @@
-@media screen and (min-width: 800px) {
+@media only screen and (min-width: 768px) { 
     .row {
-        display: flex;
+    display: flex;
     }
     .row .column:not(:first-child) {
         padding-left: 2rem;
@@ -35,6 +35,9 @@ button:hover { background: #c9913d; }
 h1 {
     text-align: center; 
     text-shadow: -7px 10px 7px rgb(67 57 57 / 76%);
+}
+hr {
+    color: transparent;
 }
 input.hide[type=checkbox] {
     display: none;
@@ -160,9 +163,6 @@ textarea {
     cursor: pointer;
     color: black;
     text-decoration: none;
-}
-.hide:checked + .modal {
-    display: none;
 }
 .breadcrumb {
     padding: 0 0.5rem;
