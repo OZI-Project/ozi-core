@@ -24,6 +24,7 @@ from ozi_core.trove import from_prefix
 from ozi_core.ui.defaults import COPYRIGHT_HEAD
 from ozi_core.vendor.email_validator import validate_email
 from ozi_core.vendor.email_validator.exceptions_types import EmailNotValidError
+
 # mock webui for pytest test discovery
 try:
     from webui import webui  # type: ignore
