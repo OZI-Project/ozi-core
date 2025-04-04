@@ -712,7 +712,6 @@ class WebInterface:
 def main(mode: str) -> Namespace:
     window = webui.window()
     config = asdict(read_user_config())
-    window.set_icon("""@OZI_LOGO_SVG@""", 'image/svg+xml')
     if mode == 'new':
         window.bind('CloseDisclaimer', hide_disclaimer)
         window.bind('Name', validate_name)
