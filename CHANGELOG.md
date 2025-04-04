@@ -1,4 +1,13 @@
 # ozi-core CHANGELOG
+## 1.17.1 (2025-04-04)
+
+
+### Build system
+
+
+* build: remove fonts from web submodule — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`bfed2ff`](https://github.com/OZI-Project/ozi-core/commit/bfed2ffcc5631c1b286116fbf019e9ee70ded993))
+
 ## 1.17.0 (2025-04-03)
 
 
