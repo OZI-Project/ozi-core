@@ -67,7 +67,6 @@ def main(args: list[str] | None = None) -> None:  # pragma: no cover
     ozi_new.argv = shlex.join(args) if args else shlex.join(sys.argv[1:])
     match ozi_new:
         case ozi_new if ozi_new.new in ['i', 'interactive']:
-            TRANSLATION.mime_type = 'text/plain;charset=UTF-8'
             fd = sys.stdin.fileno()
             original_attributes = termios.tcgetattr(fd)
             tty.setraw(sys.stdin)
