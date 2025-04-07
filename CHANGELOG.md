@@ -1,4 +1,27 @@
 # ozi-core CHANGELOG
+## 1.17.2 (2025-04-07)
+
+
+### Bug fixes
+
+
+* fix: correct translation mimetype for argparse help text — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`f9754e2`](https://github.com/OZI-Project/ozi-core/commit/f9754e2c568c71618892766e890a38603c057982))
+
+
+### Build system
+
+
+* build: use hosted fonts for webui
+([`6ccd47e`](https://github.com/OZI-Project/ozi-core/commit/6ccd47e7fef1e4760aea1a761ea7d12b0f99ca63))
+
+
+### Chores
+
+
+* chore: clean up imports — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`d1c525e`](https://github.com/OZI-Project/ozi-core/commit/d1c525ebe77cb511815c080832e8be7f37ba408d))
+
 ## 1.17.1 (2025-04-04)
 
 
