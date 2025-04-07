@@ -16,6 +16,7 @@ from ozi_core.ui.defaults import COPYRIGHT_HEAD
 from ozi_core.ui.defaults import FIX_PRETTY
 from ozi_core.ui.defaults import FIX_STRICT
 
+TRANSLATION.mime_type = 'text/plain;charset=UTF-8'
 parser = ArgumentParser(
     prog='ozi-fix',
     description=sys.modules[__name__].__doc__,
