@@ -1,3 +1,49 @@
+@font-face {
+    font-family: 'AtkinsonHyperlegible' sans-serif;
+    font-weight: normal;
+    font-display: swap;
+    /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+    src: url('https://oziproject.dev/assets/brand/fonts/atkinsonhyperlegible/AtkinsonHyperlegible-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'AtkinsonHyperlegible' sans-serif;
+    font-weight: bold;
+    font-display: swap;
+    /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+    src: url('https://oziproject.dev/assets/brand/fonts/atkinsonhyperlegible/AtkinsonHyperlegible-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'AtkinsonHyperlegible' sans-serif;
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+    /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+    src: url('https://oziproject.dev/assets/brand/fonts/atkinsonhyperlegible/AtkinsonHyperlegible-Italic.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'AtkinsonHyperlegible' sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+    /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+    src: url('https://oziproject.dev/assets/brand/fonts/atkinsonhyperlegible/AtkinsonHyperlegible-BoldItalic.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'NotoSerifHK' serif;
+    font-weight: 200 900;
+    font-display: swap;
+    font-variant-east-asian: traditional;
+    /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+    src: url('https://oziproject.dev/assets/brand/fonts/notoserifhk/NotoSerifHK[wght].ttf') format('truetype supports variations');
+}
+@font-face {
+    font-family: 'MartianMono' monospace;
+    font-weight: 100 800;
+    font-stretch: 75% 112.5%;
+    font-display: swap;
+    /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+    src: url('https://oziproject.dev/assets/brand/fonts/martianmono/MartianMono[wdth\,wght].ttf') format('truetype supports variations');
+}
 @media only screen and (min-width: 768px) { 
     .row {
     display: flex;
