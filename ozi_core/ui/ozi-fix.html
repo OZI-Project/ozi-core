@@ -4,33 +4,80 @@
 		<meta charset="UTF-8" />
 		<title>ozi-fix webui</title>
 		<script src="webui.js"></script>
-		<style>
-			{webui_prompt_css}
-		</style>
+		<link href="css/style.css" rel="stylesheet">
 	</head>
 	<body>
-		<!-- The Modal - Hidden by default but immediately shown by the backend -->
-		<input type='checkbox' class="hide-modal" id="HideDisclaimer" checked>
-		<div id="Disclaimer" class="modal">
-			<!-- Modal content -->
+		<div id="Disclaimer" class="modal" aria-modal="true">
 			<div class="modal-content">
-			<h3 id="Disclaimer-title">{TRANSLATION('adm-disclaimer-title')}</h3>
-			<span class="close" id="CloseDisclaimer">&times;</span>
-			<br>
-			<textarea rows=20 cols=80 readonly>{disclaimer_text}</textarea>
+			  <h3 id="Disclaimer-title">{TRANSLATION('adm-disclaimer-title')}</h3>
+			  <span class="close" id="CloseDisclaimer">&times;</span>
+			  <hr>
+			  <span class="textarea" id="disclaimer-text" role="textbox" readonly>{disclaimer_text}</span>
 			</div>
 		</div>
-		<input type='checkbox' id="HidePage1Contents" class="hide-page">
-		<div id="Page1Contents", class="page">
-			<h1>{TRANSLATION('web-core-metadata')}</h1>
-			<nav aria-label="Breadcrumb" class="breadcrumb">
-				<ol>
-				<li id='Page1'><span aria-current="page">{TRANSLATION('web-core-metadata')}</span></li>
-				<li id='Page2'>{TRANSLATION('edit-menu-btn-license')}</li>
-				<li id='Page3'>{TRANSLATION('term-classifier')}{TRANSLATION('sp')}{TRANSLATION('term-metadata')}</li>
-				</ol>
-			</nav>
-			<br>
-		</div>
+    <div id="OptionsContents" class="" aria-modal="true" hidden>
+      <div class="modal-content">
+        <h3 id="Options-title">{TRANSLATION('btn-options')}</h3>
+        <span class="close" id="CloseOptions">&times;</span>
+        <hr>
+        <fieldset>
+          <legend id="user-interface-options">{TRANSLATION('term-user-interface')}</legend>
+          <label for="locale" id="label-locale">{TRANSLATION('opt-menu-language-text')}</label>
+          <select id="locale">
+            {locale_choices}
+          </select>
+        </fieldset>
+        <fieldset>
+          <legend id="output-options">{TRANSLATION('term-output')}</legend>
+          <label for="copyright-head" id="label-copyright-head">{TRANSLATION('opt-menu-copyright-head-input')}</label>
+          <h5 id="err-copyright-head" style="color: #dbdd52">&nbsp;</h5>
+          <div class="row">
+            <span
+              class="textarea"
+              id="copyright-head"
+              OnKeyUp="document.getElementById('err-copyright-head').innerHTML='&nbsp;';"
+              autocomplete="off"
+              contenteditable
+            >{config['new']['copyright_head'] if config['new']['copyright_head'] else COPYRIGHT_HEAD}</span>
+          </div>
+          <div class="row justify-end">
+            <label for="update-wrapfile" id="label-update-wrapfile"
+              >{TRANSLATION('opt-menu-update-wrapfile').replace('$value', '')}</label
+            >
+            <input type="checkbox" id="update-wrapfile" {'checked' if config['new']['update_wrapfile'] else ''}/>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend id="input-options">{TRANSLATION('term-input')}</legend>
+          <div class="row justify-end">
+            <label for="strict" id="label-strict"
+              >{TRANSLATION('opt-menu-strict').replace('$value', '')}</label
+            >
+            <input type="checkbox" id="strict" />
+          </div>
+          <div class="row justify-end">
+            <label for="pretty" id="label-pretty"
+              >{TRANSLATION('opt-menu-pretty').replace('$value', '')}</label
+            >
+            <input type="checkbox" id="pretty" />
+          </div>
+        </fieldset>
+        <button id="SaveOptions">{TRANSLATION('btn-save')}</button>
+      </div>
+    </div>
+		<form id="ozi-fix" method="post">
+			<h1 id="PageHeading">{TRANSLATION('web-core-metadata')}</h1>
+      <nav aria-label="Breadcrumb" role="tablist" class="breadcrumb">
+        <menu>
+          <li id="Page1" role="tab" aria-controls="Page1Contents" aria-disabled="true" tabindex="-1" aria-current="page"><span>{TRANSLATION('term-missing').capitalize()}</span></li>
+          <li id="Page2" role="tab" tabindex="0" aria-controls="Page2Contents">{TRANSLATION('edit-menu-btn-license')}</li>
+          <li id="Page3" role="tab" tabindex="0" aria-controls="Page3Contents">{TRANSLATION('term-classifier')}{TRANSLATION('sp')}{TRANSLATION('term-metadata')}</li>
+          <li id="Page4" role="tab" tabindex="0" aria-controls="Page4Contents">{TRANSLATION('term-create-project')}</li>
+        </menu>
+        <menu>
+          <li id="Options" role="tab" tabindex="0" aria-controls="OptionsContents">{TRANSLATION('btn-options')}</li>
+        </menu>
+      </nav>
+    </form>
 	</body>
 </html>

@@ -14,6 +14,7 @@ from pathvalidate.argparse import validate_filepath_arg
 from ozi_core._i18n import TRANSLATION
 from ozi_core.ui.defaults import COPYRIGHT_HEAD
 
+TRANSLATION.mime_type = 'text/plain;charset=UTF-8'
 parser = argparse.ArgumentParser(
     prog='ozi-new',
     description=sys.modules[__name__].__doc__,
