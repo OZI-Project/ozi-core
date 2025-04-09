@@ -66,18 +66,16 @@
       </div>
     </div>
 		<form id="ozi-fix" method="post">
-			<h1 id="PageHeading">{TRANSLATION('web-core-metadata')}</h1>
+			<h1 id="PageHeading">{TRANSLATION('btn-edit')}</h1>
       <nav aria-label="Breadcrumb" role="tablist" class="breadcrumb">
         <menu>
-          <li id="Page1" role="tab" aria-controls="Page1Contents" aria-disabled="true" tabindex="-1" aria-current="page"><span>{TRANSLATION('term-missing').capitalize()}</span></li>
-          <li id="Page2" role="tab" tabindex="0" aria-controls="Page2Contents">{TRANSLATION('edit-menu-btn-license')}</li>
-          <li id="Page3" role="tab" tabindex="0" aria-controls="Page3Contents">{TRANSLATION('term-classifier')}{TRANSLATION('sp')}{TRANSLATION('term-metadata')}</li>
-          <li id="Page4" role="tab" tabindex="0" aria-controls="Page4Contents">{TRANSLATION('term-create-project')}</li>
+          <li id="Page1" role="tab" aria-controls="Page1Contents" aria-disabled="true" tabindex="-1" aria-current="page"><span>{TRANSLATION('btn-edit')}</span></li>
         </menu>
         <menu>
           <li id="Options" role="tab" tabindex="0" aria-controls="OptionsContents">{TRANSLATION('btn-options')}</li>
         </menu>
       </nav>
+      <div id="Page1Contents" role="tabpanel" class="page"></div>
     </form>
 	</body>
 </html>
