@@ -1,4 +1,13 @@
 # ozi-core CHANGELOG
+## 1.17.3 (2025-04-09)
+
+
+### Bug fixes
+
+
+* fix: add missing translation — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`1fd7cb6`](https://github.com/OZI-Project/ozi-core/commit/1fd7cb6e893c7b509b9fdfb94bafecf15bbe9e7c))
+
 ## 1.17.2 (2025-04-07)
 
 
