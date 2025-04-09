@@ -181,6 +181,7 @@ term-default-metadata: default metadata
 term-defaults: defaults
 term-desc-new-interactive: Create a new Python project with OZI using the interactive prompt.
 term-desc-new-project: Create a new Python project with OZI.
+term-desc-new-webui: Create a new python project with OZI using a graphical interface.
 term-found: found
 term-help: $name ($text)
 term-help-allow-file: In the new project target folder
