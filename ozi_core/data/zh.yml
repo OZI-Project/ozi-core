@@ -167,6 +167,7 @@ term-default-metadata: 默认元数据
 term-defaults: 默认值
 term-desc-new-interactive: 使用交互式提示通过ＯＺＩ创建一个新的Ｐｙｔｈｏｎ项目。
 term-desc-new-project: 使用ＯＺＩ创建一个新的Ｐｙｔｈｏｎ项目
+term-desc-new-webui: 使用ＯＺＩ图形界面创建一个新的Ｐｙｔｈｏｎ项目。
 term-found: 成立
 term-help: $name（$text）
 term-input: 输入
