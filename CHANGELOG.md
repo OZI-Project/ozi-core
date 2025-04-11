@@ -1,4 +1,195 @@
 # ozi-core CHANGELOG
+## 1.17.3 (2025-04-09)
+
+
+### Bug fixes
+
+
+* fix: add missing translation — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`1fd7cb6`](https://github.com/OZI-Project/ozi-core/commit/1fd7cb6e893c7b509b9fdfb94bafecf15bbe9e7c))
+
+## 1.17.2 (2025-04-07)
+
+
+### Bug fixes
+
+
+* fix: correct translation mimetype for argparse help text — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`f9754e2`](https://github.com/OZI-Project/ozi-core/commit/f9754e2c568c71618892766e890a38603c057982))
+
+
+### Build system
+
+
+* build: use hosted fonts for webui
+([`6ccd47e`](https://github.com/OZI-Project/ozi-core/commit/6ccd47e7fef1e4760aea1a761ea7d12b0f99ca63))
+
+
+### Chores
+
+
+* chore: clean up imports — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`d1c525e`](https://github.com/OZI-Project/ozi-core/commit/d1c525ebe77cb511815c080832e8be7f37ba408d))
+
+## 1.17.1 (2025-04-04)
+
+
+### Build system
+
+
+* build: remove fonts from web submodule — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`bfed2ff`](https://github.com/OZI-Project/ozi-core/commit/bfed2ffcc5631c1b286116fbf019e9ee70ded993))
+
+## 1.17.0 (2025-04-03)
+
+
+### Build system
+
+
+* build(deps): bump OZI-Project/checkpoint from 1.6.0 to 1.7.0
+
+Bumps [OZI-Project/checkpoint](https://github.com/ozi-project/checkpoint) from 1.6.0 to 1.7.0.
+- [Release notes](https://github.com/ozi-project/checkpoint/releases)
+- [Commits](https://github.com/ozi-project/checkpoint/compare/1.6.0...1.7.0)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/checkpoint
+  dependency-version: 1.7.0
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`5c23f61`](https://github.com/OZI-Project/ozi-core/commit/5c23f6131cab353a0f6c74d3e404055898708353))
+
+* build(deps): bump OZI-Project/publish from 1.13.0 to 1.13.1
+
+Bumps [OZI-Project/publish](https://github.com/ozi-project/publish) from 1.13.0 to 1.13.1.
+- [Release notes](https://github.com/ozi-project/publish/releases)
+- [Commits](https://github.com/ozi-project/publish/compare/1.13.0...1.13.1)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/publish
+  dependency-version: 1.13.1
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`eb56bf1`](https://github.com/OZI-Project/ozi-core/commit/eb56bf155997334f752d66d2f58489c9391b9794))
+
+* build(deps): bump OZI-Project/draft from 1.13.0 to 1.13.1
+
+Bumps [OZI-Project/draft](https://github.com/ozi-project/draft) from 1.13.0 to 1.13.1.
+- [Release notes](https://github.com/ozi-project/draft/releases)
+- [Commits](https://github.com/ozi-project/draft/compare/1.13.0...1.13.1)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/draft
+  dependency-version: 1.13.1
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`08376ec`](https://github.com/OZI-Project/ozi-core/commit/08376ec36293e444b7495c656fe11b67498e626c))
+
+* build(deps): bump OZI-Project/release from 1.4.0 to 1.5.0
+
+Bumps [OZI-Project/release](https://github.com/ozi-project/release) from 1.4.0 to 1.5.0.
+- [Release notes](https://github.com/ozi-project/release/releases)
+- [Commits](https://github.com/ozi-project/release/compare/bfb9d90fbd2af52d511a9e08306d1b787b8dcfca...924761bcd1ad9c77bbc34363118b2cee4334b8a5)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/release
+  dependency-version: 1.5.0
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`59c9ca6`](https://github.com/OZI-Project/ozi-core/commit/59c9ca62a82de5b015f9fdeaa0412ca138f59616))
+
+* build(deps): update ozi-build[core,uv] requirement
+
+
+updated-dependencies:
+- dependency-name: ozi-build[core,uv]
+  dependency-version: 1.13.0
+  dependency-type: direct:production
+... — dependabot[bot] <support@github.com>
+([`a195d05`](https://github.com/OZI-Project/ozi-core/commit/a195d053e4cc324c8cac862414550801d49401d6))
+
+* build(deps): bump step-security/harden-runner from 2.11.0 to 2.11.1
+
+Bumps [step-security/harden-runner](https://github.com/step-security/harden-runner) from 2.11.0 to 2.11.1.
+- [Release notes](https://github.com/step-security/harden-runner/releases)
+- [Commits](https://github.com/step-security/harden-runner/compare/4d991eb9b905ef189e4c376166672c3f2f230481...c6295a65d1254861815972266d5933fd6e532bdf)
+
+
+updated-dependencies:
+- dependency-name: step-security/harden-runner
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`f4cd959`](https://github.com/OZI-Project/ozi-core/commit/f4cd95914b014833cf7bbbf355cc6db0bda8cc65))
+
+* build: update meson.build fallback_version — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`d8e0145`](https://github.com/OZI-Project/ozi-core/commit/d8e0145453ba6971c6a3bdab4a8bb68bad7e801e))
+
+* build: ozi-templates==2.23 ozi-spec==0.25 — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`a5778bd`](https://github.com/OZI-Project/ozi-core/commit/a5778bd4c71a6c04ae713f738e71b3bd794e4688))
+
+* build(deps): update niquests requirement from ~=3.13.0 to ~=3.14.0
+
+Updates the requirements on [niquests](https://github.com/jawah/niquests) to permit the latest version.
+- [Release notes](https://github.com/jawah/niquests/releases)
+- [Changelog](https://github.com/jawah/niquests/blob/main/HISTORY.md)
+- [Commits](https://github.com/jawah/niquests/compare/v3.13.0...v3.14.0)
+
+
+updated-dependencies:
+- dependency-name: niquests
+  dependency-type: direct:production
+... — dependabot[bot] <support@github.com>
+([`e89f79a`](https://github.com/OZI-Project/ozi-core/commit/e89f79a42dfca26fb8c2c98bfb83d5a91a38dded))
+
+* build: update ozi-templates==2.22.0 to ozi-templates==2.22.2 — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`95226f9`](https://github.com/OZI-Project/ozi-core/commit/95226f90fac64d75289bc9e4476c12497742635f))
+
+* build(deps): bump webui2 from 2.5.3 to 2.5.5
+
+Bumps [webui2](https://github.com/webui-dev/python-webui) from 2.5.3 to 2.5.5.
+- [Release notes](https://github.com/webui-dev/python-webui/releases)
+- [Commits](https://github.com/webui-dev/python-webui/compare/2.5.3...2.5.5)
+
+
+updated-dependencies:
+- dependency-name: webui2
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`b751824`](https://github.com/OZI-Project/ozi-core/commit/b751824105fee04f6c9056bed76f901e7b963745))
+
+* build: add reverse-argparse as a dependency — rjdbcm <rjdbcm@outlook.com>
+([`002a294`](https://github.com/OZI-Project/ozi-core/commit/002a294b028dcb8ffbb204ce3825d9fffd8a074b))
+
+* build: move fonts — rjdbcm <rjdbcm@outlook.com>
+([`49c490f`](https://github.com/OZI-Project/ozi-core/commit/49c490f15c663442e7c021d3e74b6f74067b4e15))
+
+
+### Chores
+
+
+* chore: run isort — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`62757eb`](https://github.com/OZI-Project/ozi-core/commit/62757eb4a24e5514ff18883c28db2636d81d61fb))
+
+* chore: clean up webui logic — rjdbcm <rjdbcm@outlook.com>
+([`b3c6d08`](https://github.com/OZI-Project/ozi-core/commit/b3c6d08fbd9191407df6a14c2c36cc0773e67ca9))
+
+
+### Features
+
+
+* feat: add webui2 as a full dependency — rjdbcm <rjdbcm@outlook.com>
+([`7a04a6e`](https://github.com/OZI-Project/ozi-core/commit/7a04a6e07d8d2149671d9f0a2e35f9dd9fb217b3))
+
 ## 1.16.0 (2025-03-21)
 
 
