@@ -22,6 +22,7 @@ from ozi_core.config import write_user_config
 from ozi_core.trove import Prefix
 from ozi_core.trove import from_prefix
 from ozi_core.ui.defaults import COPYRIGHT_HEAD
+from ozi_core.validate import pypi_package_exists
 from ozi_core.vendor.email_validator import validate_email
 from ozi_core.vendor.email_validator.exceptions_types import EmailNotValidError
 
@@ -70,6 +71,7 @@ validators: dict[str, Callable[[str], bool]] = {
     'License': lambda _: True,
     'License-Expression': lambda _: True,
     'Project-URL': lambda x: True,
+    'Requires-Dist': lambda x: True,
     'readme-type': lambda x: x in ['rst', 'md', 'txt'],
 }
 
@@ -96,6 +98,7 @@ label_translation: dict[str, partial[str]] = {
     'Maintainer-email': partial(TRANSLATION, 'pro-maintainer-email'),
     'Name': partial(TRANSLATION, 'pro-name'),
     'Project-URL': partial(TRANSLATION, 'pro-project-urls-cbl'),
+    'Requires-Dist': partial(TRANSLATION, 'pro-requires-dist'),
     'Status': partial(
         TRANSLATION, 'pro-classifier-cbl', key=TRANSLATION('edit-menu-btn-status')
     ),
@@ -118,6 +121,7 @@ label_translation: dict[str, partial[str]] = {
 }
 text_translation = {
     'AddProjectURL': partial(TRANSLATION, 'btn-add'),
+    'AddRequiresDist': partial(TRANSLATION, 'btn-add'),
     'Disclaimer-title': partial(TRANSLATION, 'adm-disclaimer-title'),
     'Ok': partial(TRANSLATION, 'btn-ok'),
     'Options': partial(TRANSLATION, 'btn-options'),
@@ -127,6 +131,7 @@ text_translation = {
     'Page4': partial(TRANSLATION, 'term-create-project'),
     'RefreshButton': partial(TRANSLATION, 'btn-refresh'),
     'RemoveProjectURL': partial(TRANSLATION, 'btn-remove'),
+    'RemoveRequiresDist': partial(TRANSLATION, 'btn-remove'),
     'Reset': partial(TRANSLATION, 'btn-reset'),
     'SaveOptions': partial(TRANSLATION, 'btn-save'),
     'disclaimer-text': partial(TRANSLATION, 'adm-disclaimer-text'),
@@ -428,6 +433,7 @@ def get_form_data(e: webui.event) -> dict[str, list[str]]:
         f' return document.getElementById("verify-email").checked; '
     )
     project_urls = e.window.script(AS_LIST_JS.format('EditProjectURL'))  # pyright: ignore
+    requires_dist = e.window.script(AS_LIST_JS.format('EditRequiresDist'))  # pyright: ignore
     audience = e.window.script(AS_LIST_JS.format('Audience'))  # pyright: ignore
     environment = e.window.script(AS_LIST_JS.format('Environment'))  # pyright: ignore
     language = e.window.script(AS_LIST_JS.format('Language'))  # pyright: ignore
@@ -464,6 +470,7 @@ def get_form_data(e: webui.event) -> dict[str, list[str]]:
         'copyright_year': str(datetime.now().year),  # type: ignore
         'long_description_content_type': readme_type.data,
         'project_url': [i for i in project_urls.data.split(';') if i],
+        'requires_dist': [i for i in requires_dist.data.split(';') if i],
         'audience': [i for i in audience.data.split(";") if i],
         'environment': [i for i in environment.data.split(";") if i],
         'language': [i for i in language.data.split(";") if i],
@@ -555,6 +562,38 @@ def add_project_url(e: webui.event) -> None:
     )
 
 
+def add_requires_dist(e: webui.event) -> None:
+    requires_dist = e.window.script(  # pyright: ignore
+        ' return document.getElementById(`Requires-Dist`).value; '
+    )
+    if requires_dist.data == '':
+        show_error(
+            e,
+            'requires-dist',
+            requires_dist.data + TRANSLATION('sp') + TRANSLATION('web-err-invalid-input'),
+        )
+        return
+    if pypi_package_exists(requires_dist.data):
+        e.window.run(  # pyright: ignore
+            f"""
+            var edit = document.getElementById(`EditRequiresDist`);
+            var option = document.createElement("option");
+            const optionLabels = Array.from(edit.options).map((opt) => opt.value);
+            const optionText = document.createTextNode("{requires_dist.data}");
+            option.appendChild(optionText);
+            option.setAttribute('value', "{requires_dist.data}");
+            const hasOption = optionLabels.includes("{requires_dist.data}");
+            if (!hasOption) edit.add(option); 
+            """
+        )
+    else:
+        show_error(
+            e,
+            'requires-dist',
+            requires_dist.data + TRANSLATION('sp') + TRANSLATION('err-pkg-not-found'),
+        )
+
+
 def update_ui_language(e: webui.event) -> None:
     locale = e.window.script(  # pyright: ignore
         ' return document.getElementById(`locale`).value; '
@@ -584,6 +623,15 @@ def remove_project_url(e: webui.event) -> None:
     e.window.run(  # pyright: ignore
         f"""
         var edit = document.getElementById(`EditProjectURL`);
+        Array.from(edit.selectedOptions).forEach(opt => edit.remove(opt.index));
+        """
+    )
+
+
+def remove_requires_dist(e: webui.event) -> None:
+    e.window.run(  # pyright: ignore
+        f"""
+        var edit = document.getElementById(`EditRequiresDist`);
         Array.from(edit.selectedOptions).forEach(opt => edit.remove(opt.index));
         """
     )
@@ -726,6 +774,8 @@ def main(mode: str) -> Namespace:
         window.bind('Page3', change_tab)
         window.bind('Page4', show_prompt4)
         window.bind('Options', show_options)
+        window.bind('AddRequiresDist', add_requires_dist)
+        window.bind('RemoveRequiresDist', remove_requires_dist)
         window.bind('License', load_license_expressions)
         window.bind('License-Expression', load_license_exceptions)
         window.bind('RefreshButton', show_license_reader)

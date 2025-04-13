@@ -245,6 +245,24 @@
               <div class="row">
                 <select class="editable" id="EditProjectURL" multiple></select>
               </div>
+              <div class="row">
+                <label for="Requires-Dist" id="label-requires-dist"
+                  >{TRANSLATION('pro-requires-dist')}</label
+                >
+                <h5 id="err-requires-dist" style="color: #dbdd52">&nbsp;</h5>
+              </div>
+              <input
+                type="text"
+                id="Requires-Dist"
+                value="https://"
+                OnKeyUp="document.getElementById('err-requires-dist').innerHTML='&nbsp;';"
+                autocomplete="off"
+              />
+              <button type="button" id="AddRequiresDist">{TRANSLATION('btn-add')}</button>
+              <button type="button" id="RemoveRequiresDist">{TRANSLATION('btn-remove')}</button>
+              <div class="row">
+                <select class="editable" id="EditRequiresDist" multiple></select>
+              </div>
               <label for="readme-type" id="label-readme-type">{TRANSLATION('pro-readme-type')}</label>
               <h5 id="err-readme-type" style="color: #dbdd52">&nbsp;</h5>
               <select id="readme-type" autocomplete="off">
@@ -252,6 +270,7 @@
                 <option id="readme-type-md" value="md">{TRANSLATION('pro-readme-type-radio-md')}</option>
                 <option id="readme-type-txt" value="txt">{TRANSLATION('pro-readme-type-radio-txt')}</option>
               </select>
+            </div>
           </div>
         </div>
       </div>
