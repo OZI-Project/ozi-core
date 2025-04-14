@@ -3,27 +3,14 @@
 from __future__ import annotations
 
 import re
-from functools import lru_cache
 
-import niquests  # pyright: ignore
 from prompt_toolkit.document import Document  # pyright: ignore
 from prompt_toolkit.validation import ThreadedValidator  # pyright: ignore
 from prompt_toolkit.validation import ValidationError  # pyright: ignore
 from prompt_toolkit.validation import Validator
 
 from ozi_core._i18n import TRANSLATION
-
-
-@lru_cache
-def pypi_package_exists(package: str) -> bool:  # pragma: no cover
-    """Check if a package name exists on PyPI."""
-    return (
-        niquests.get(
-            f'https://pypi.org/simple/{package}',
-            timeout=15,
-        ).status_code
-        == 200
-    )
+from ozi_core.validate import pypi_package_exists
 
 
 class ProjectNameValidator(Validator):

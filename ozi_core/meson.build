@@ -18,7 +18,7 @@ source_files = [
   '_i18n.pyi',
   '_locales.pyi',
   '_logging.py',
-'_logging.pyi',
+  '_logging.pyi',
   'actions.py',
   'actions.pyi',
   'comment.py',
@@ -38,6 +38,7 @@ source_files = [
   'spdx.pyi',
   'trove.py',
   'trove.pyi',
+  'validate.py',
   'wrap.py',
 ]
 foreach file : files(source_files)
