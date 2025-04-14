@@ -1,4 +1,32 @@
 # ozi-core CHANGELOG
+## 1.17.6 (2025-04-14)
+
+
+### Bug fixes
+
+
+* fix: blank default text for requires-dist in webui and autocomplete on — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`960d194`](https://github.com/OZI-Project/ozi-core/commit/960d19479ec13a1a06fa75ac483d8bc8c0a4fc91))
+
+
+### Build system
+
+
+* build(deps): bump trove-classifiers from 2025.3.19.19 to 2025.4.11.15
+
+Bumps [trove-classifiers](https://github.com/pypa/trove-classifiers) from 2025.3.19.19 to 2025.4.11.15.
+- [Release notes](https://github.com/pypa/trove-classifiers/releases)
+- [Commits](https://github.com/pypa/trove-classifiers/compare/2025.3.19.19...2025.4.11.15)
+
+
+updated-dependencies:
+- dependency-name: trove-classifiers
+  dependency-version: 2025.4.11.15
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`ece8a58`](https://github.com/OZI-Project/ozi-core/commit/ece8a58009de9592100cc6bcee8c664037856a43))
+
 ## 1.17.5 (2025-04-14)
 
 
