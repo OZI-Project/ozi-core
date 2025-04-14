@@ -1,4 +1,20 @@
 # ozi-core CHANGELOG
+## 1.17.5 (2025-04-14)
+
+
+### Build system
+
+
+* build: force release — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`452ca23`](https://github.com/OZI-Project/ozi-core/commit/452ca2372abdbffa5b0d446cc8593fb9990a01e6))
+
+
+### Unknown
+
+
+* Delete .python-version — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`f6a1d62`](https://github.com/OZI-Project/ozi-core/commit/f6a1d62214b925ce5d4b594ecb5a1cc5dc9ecdc2))
+
 ## 1.17.4 (2025-04-14)
 
 
