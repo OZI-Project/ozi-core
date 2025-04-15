@@ -1,4 +1,13 @@
 # ozi-core CHANGELOG
+## 1.17.7 (2025-04-15)
+
+
+### Bug fixes
+
+
+* fix: correct dist_requires name in jinja2 env — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`cb2380d`](https://github.com/OZI-Project/ozi-core/commit/cb2380df186430597babb0c47d127eb7193f06e8))
+
 ## 1.17.6 (2025-04-14)
 
 
