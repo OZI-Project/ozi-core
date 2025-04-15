@@ -1,5 +1,77 @@
 # ozi-core CHANGELOG
+## 1.17.6 (2025-04-14)
+
+
+### Bug fixes
+
+
+* fix: blank default text for requires-dist in webui and autocomplete on — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`960d194`](https://github.com/OZI-Project/ozi-core/commit/960d19479ec13a1a06fa75ac483d8bc8c0a4fc91))
+
+
+### Build system
+
+
+* build(deps): bump trove-classifiers from 2025.3.19.19 to 2025.4.11.15
+
+Bumps [trove-classifiers](https://github.com/pypa/trove-classifiers) from 2025.3.19.19 to 2025.4.11.15.
+- [Release notes](https://github.com/pypa/trove-classifiers/releases)
+- [Commits](https://github.com/pypa/trove-classifiers/compare/2025.3.19.19...2025.4.11.15)
+
+
+updated-dependencies:
+- dependency-name: trove-classifiers
+  dependency-version: 2025.4.11.15
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`ece8a58`](https://github.com/OZI-Project/ozi-core/commit/ece8a58009de9592100cc6bcee8c664037856a43))
+
+## 1.17.5 (2025-04-14)
+
+
+### Build system
+
+
+* build: force release — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`452ca23`](https://github.com/OZI-Project/ozi-core/commit/452ca2372abdbffa5b0d446cc8593fb9990a01e6))
+
+
+### Unknown
+
+
+* Delete .python-version — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`f6a1d62`](https://github.com/OZI-Project/ozi-core/commit/f6a1d62214b925ce5d4b594ecb5a1cc5dc9ecdc2))
+
+## 1.17.4 (2025-04-14)
+
+
+### Build system
+
+
+* build: add requires-dist to webui — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`16ef4fc`](https://github.com/OZI-Project/ozi-core/commit/16ef4fc32d0c9449a423089f49417201c8084619))
+
+* build: move ``pypi_package_exists`` to new ``ozi_core.validate`` module — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`4fbf942`](https://github.com/OZI-Project/ozi-core/commit/4fbf94257daa0a4884c633662e931496517a0c4e))
+
+
+### Chores
+
+
+* chore: remove unused dotfiles — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`1ef6a20`](https://github.com/OZI-Project/ozi-core/commit/1ef6a2073ddcbca38926f56365c0e2f78fd7354a))
+
+* chore: update OZI wrapfile to 1.38.2 — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`36881a8`](https://github.com/OZI-Project/ozi-core/commit/36881a881ff9311b7e5620ab4ff2d0292cf3fbec))
+
 ## 1.17.3 (2025-04-09)
+
+## 1.17.2 (2025-04-07)
+
+## 1.17.1 (2025-04-04)
+
+## 1.17.0 (2025-04-03)
 
 
 ### Bug fixes
@@ -8,12 +80,6 @@
 * fix: add missing translation — Eden Ross Duff MSc <rjdbcm@outlook.com>
 ([`1fd7cb6`](https://github.com/OZI-Project/ozi-core/commit/1fd7cb6e893c7b509b9fdfb94bafecf15bbe9e7c))
 
-## 1.17.2 (2025-04-07)
-
-
-### Bug fixes
-
-
 * fix: correct translation mimetype for argparse help text — Eden Ross Duff MSc <rjdbcm@outlook.com>
 ([`f9754e2`](https://github.com/OZI-Project/ozi-core/commit/f9754e2c568c71618892766e890a38603c057982))
 
@@ -21,30 +87,24 @@
 ### Build system
 
 
-* build: use hosted fonts for webui
-([`6ccd47e`](https://github.com/OZI-Project/ozi-core/commit/6ccd47e7fef1e4760aea1a761ea7d12b0f99ca63))
+* build(deps): bump ozi-templates from 2.23.0 to 2.23.1
+
+Bumps ozi-templates from 2.23.0 to 2.23.1.
 
 
-### Chores
-
-
-* chore: clean up imports — Eden Ross Duff MSc <rjdbcm@outlook.com>
-([`d1c525e`](https://github.com/OZI-Project/ozi-core/commit/d1c525ebe77cb511815c080832e8be7f37ba408d))
-
-## 1.17.1 (2025-04-04)
-
-
-### Build system
-
+updated-dependencies:
+- dependency-name: ozi-templates
+  dependency-version: 2.23.1
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`bfa8055`](https://github.com/OZI-Project/ozi-core/commit/bfa8055b4509d4ba78bb27b84decab5e53643b37))
 
 * build: remove fonts from web submodule — Eden Ross Duff MSc <rjdbcm@outlook.com>
 ([`bfed2ff`](https://github.com/OZI-Project/ozi-core/commit/bfed2ffcc5631c1b286116fbf019e9ee70ded993))
 
-## 1.17.0 (2025-04-03)
-
-
-### Build system
-
+* build: use hosted fonts for webui
+([`6ccd47e`](https://github.com/OZI-Project/ozi-core/commit/6ccd47e7fef1e4760aea1a761ea7d12b0f99ca63))
 
 * build(deps): bump OZI-Project/checkpoint from 1.6.0 to 1.7.0
 
@@ -177,6 +237,9 @@ updated-dependencies:
 ### Chores
 
 
+* chore: clean up imports — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`d1c525e`](https://github.com/OZI-Project/ozi-core/commit/d1c525ebe77cb511815c080832e8be7f37ba408d))
+
 * chore: run isort — Eden Ross Duff MSc <rjdbcm@outlook.com>
 ([`62757eb`](https://github.com/OZI-Project/ozi-core/commit/62757eb4a24e5514ff18883c28db2636d81d61fb))
 
@@ -189,6 +252,13 @@ updated-dependencies:
 
 * feat: add webui2 as a full dependency — rjdbcm <rjdbcm@outlook.com>
 ([`7a04a6e`](https://github.com/OZI-Project/ozi-core/commit/7a04a6e07d8d2149671d9f0a2e35f9dd9fb217b3))
+
+
+### Unknown
+
+
+* Create .python-version — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`43da7b6`](https://github.com/OZI-Project/ozi-core/commit/43da7b67e1204fc2cc008f6fab6f039060872b07))
 
 ## 1.16.0 (2025-03-21)
 
