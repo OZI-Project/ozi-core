@@ -470,7 +470,7 @@ def get_form_data(e: webui.event) -> dict[str, list[str]]:
         'copyright_year': str(datetime.now().year),  # type: ignore
         'long_description_content_type': readme_type.data,
         'project_url': [i for i in project_urls.data.split(';') if i],
-        'requires_dist': [i for i in requires_dist.data.split(';') if i],
+        'dist_requires': [i for i in requires_dist.data.split(';') if i],
         'audience': [i for i in audience.data.split(";") if i],
         'environment': [i for i in environment.data.split(";") if i],
         'language': [i for i in language.data.split(";") if i],
