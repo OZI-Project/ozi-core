@@ -1,6 +1,34 @@
 # Part of ozi-core.
 # See LICENSE.txt in the project root for details.
+[build-system]
+requires = [
+    'OZI.build[core,uv]~=2.0.6',
+    'PyYAML~=6.0',
+]
+build-backend = "ozi_build.buildapi"
+
 [project]
+name="ozi-core"
+authors=[{name="Eden Ross Duff MSc", email="help@oziproject.dev"}]
+classifiers=[
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Intended Audience :: Other Audience",
+    "Natural Language :: English",
+    "Typing :: Typed",
+    "Environment :: Other Environment",
+]
+readme="README.rst"
+keywords="OZI,mesonbuild"
+requires-python=">=3.9, <3.14"
+license="Apache-2.0 with LLVM-exception"
+description="The OZI Project packaging core library."
 dependencies = [
     'GitPython~=3.1',
     'TAP-Producer~=1.5.9',
@@ -22,37 +50,6 @@ dependencies = [
     'webui2==2.5.5',
 ]
 
-[build-system]
-requires = [
-    'OZI.build[core,uv]~=2.0.6',
-    'PyYAML~=6.0',
-]
-build-backend = "ozi_build.buildapi"
-
-[tool.ozi-build.metadata]
-author-email="help@oziproject.dev"
-author="Eden Ross Duff MSc"
-classifiers=[
-    "License :: OSI Approved :: Apache Software License",
-    "Development Status :: 4 - Beta",
-    "Programming Language :: Python :: 3 :: Only",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
-    "Programming Language :: Python :: 3.12",
-    "Programming Language :: Python :: 3.13",
-    "Programming Language :: Python :: Implementation :: CPython",
-    "Intended Audience :: Other Audience",
-    "Natural Language :: English",
-    "Typing :: Typed",
-    "Environment :: Other Environment",
-]
-description-file="README.rst"
-download-url="https://github.com/OZI-Project/ozi-core/archive/refs/tags/{version}.tar.gz"
-home-page="https://www.oziproject.dev"
-keywords="OZI,mesonbuild"
-meson-python-option-name="python3"
-requires-python=">=3.10, <3.14"
-summary="The OZI Project packaging core library."
 
 [project.optional-dependencies] # also meson test suite names
 # OZI Packaging Dependencies
@@ -106,6 +103,10 @@ test = [
     "pytest-tcpclient",
     "pytest-xdist",
 ]
+
+[project.urls]
+Download="https://github.com/OZI-Project/ozi-core/archive/refs/tags/{version}.tar.gz"
+Homepage="https://www.oziproject.dev"
 
 [tool.setuptools_scm]
 fallback_version = "@VCS_TAG@"
