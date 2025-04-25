@@ -90,14 +90,25 @@ def render_pkg_info(target: Path, name: str, _license: str) -> Message:  # noqa:
         pyproject = toml.load(f)
         project_table = pyproject.get('project', {})
         required = ''
-        for key, header in [('description', 'Summary'), ('readme', 'Description'), ('authors', ['Author', 'Author-email']), ('keywords', 'Keywords')]:
+        for key, header in [
+            ('description', 'Summary'),
+            ('readme', 'Description'),
+            ('authors', ['Author', 'Author-email']),
+            ('keywords', 'Keywords'),
+        ]:
             val = project_table.get(key, None)
             if isinstance(header, str):
                 required += f'{header}: {val}\n'
             elif isinstance(val, list):  # pragma: no cover
                 for subtable in val:
-                    required += f'{header[0]}: {subtable['name']}\n' if subtable.get('name') else ''
-                    required += f'{header[1]}: {subtable['email']}\n' if subtable.get('email') else ''
+                    required += (
+                        f'{header[0]}: {subtable["name"]}\n' if subtable.get('name') else ''
+                    )
+                    required += (
+                        f'{header[1]}: {subtable["email"]}\n'
+                        if subtable.get('email')
+                        else ''
+                    )
         for ext in ('.rst', '.txt', '.md'):
             readme = target.joinpath(f'README{ext}')
             if readme.exists():
