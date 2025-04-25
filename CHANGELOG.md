@@ -1,4 +1,162 @@
 # ozi-core CHANGELOG
+## 1.18.0 (2025-04-25)
+
+
+### Bug fixes
+
+
+* fix: update PKG-INFO rendering for ``ozi-fix missing`` — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`20bf4b4`](https://github.com/OZI-Project/ozi-core/commit/20bf4b4c798d77044418867b45e9783f26560d6d))
+
+
+### Build system
+
+
+* build(deps): bump OZI-Project/checkpoint from 1.7.0 to 1.7.1
+
+Bumps [OZI-Project/checkpoint](https://github.com/ozi-project/checkpoint) from 1.7.0 to 1.7.1.
+- [Release notes](https://github.com/ozi-project/checkpoint/releases)
+- [Commits](https://github.com/ozi-project/checkpoint/compare/1.7.0...1.7.1)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/checkpoint
+  dependency-version: 1.7.1
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`4962662`](https://github.com/OZI-Project/ozi-core/commit/4962662b81e96c26cb318e90224f0500566c30b2))
+
+* build(deps): bump OZI-Project/publish from 1.13.1 to 1.13.3
+
+Bumps [OZI-Project/publish](https://github.com/ozi-project/publish) from 1.13.1 to 1.13.3.
+- [Release notes](https://github.com/ozi-project/publish/releases)
+- [Commits](https://github.com/ozi-project/publish/compare/1.13.1...1.13.3)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/publish
+  dependency-version: 1.13.3
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`b393efe`](https://github.com/OZI-Project/ozi-core/commit/b393efe2b2190f824b55d05c4c5a115b147175d9))
+
+* build(deps): bump OZI-Project/release from 1.5.0 to 1.6.4
+
+Bumps [OZI-Project/release](https://github.com/ozi-project/release) from 1.5.0 to 1.6.4.
+- [Release notes](https://github.com/ozi-project/release/releases)
+- [Commits](https://github.com/ozi-project/release/compare/924761bcd1ad9c77bbc34363118b2cee4334b8a5...0b2ba9981ee9eea47a358c0d70c5b3764a61b88c)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/release
+  dependency-version: 1.6.4
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`3f91d17`](https://github.com/OZI-Project/ozi-core/commit/3f91d1777dddd59dd92e37db52a26b5763c9a5f3))
+
+* build(deps): bump step-security/harden-runner from 2.11.1 to 2.12.0
+
+Bumps [step-security/harden-runner](https://github.com/step-security/harden-runner) from 2.11.1 to 2.12.0.
+- [Release notes](https://github.com/step-security/harden-runner/releases)
+- [Commits](https://github.com/step-security/harden-runner/compare/c6295a65d1254861815972266d5933fd6e532bdf...0634a2670c59f64b4a01f0f96f84700a4088b9f0)
+
+
+updated-dependencies:
+- dependency-name: step-security/harden-runner
+  dependency-version: 2.12.0
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`acf874e`](https://github.com/OZI-Project/ozi-core/commit/acf874e0f1f81403c76422f3fec4afd1e017a544))
+
+* build(deps): update packaging requirement from ~=24.1 to ~=25.0
+
+Updates the requirements on [packaging](https://github.com/pypa/packaging) to permit the latest version.
+- [Release notes](https://github.com/pypa/packaging/releases)
+- [Changelog](https://github.com/pypa/packaging/blob/main/CHANGELOG.rst)
+- [Commits](https://github.com/pypa/packaging/compare/24.1...25.0)
+
+
+updated-dependencies:
+- dependency-name: packaging
+  dependency-version: '25.0'
+  dependency-type: direct:production
+... — dependabot[bot] <support@github.com>
+([`a2b416c`](https://github.com/OZI-Project/ozi-core/commit/a2b416c435dc39ef218c4c8d82f8a5172828484f))
+
+* build(deps): bump ozi-spec from 0.25.0 to 0.27.1
+
+Bumps [ozi-spec](https://www.oziproject.dev) from 0.25.0 to 0.27.1.
+
+
+updated-dependencies:
+- dependency-name: ozi-spec
+  dependency-version: 0.27.1
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`eaa4c2e`](https://github.com/OZI-Project/ozi-core/commit/eaa4c2ea9cdae5fbe6141579a3615c96ad8c6d4a))
+
+* build(deps): bump ozi-templates from 2.23.1 to 2.24.3
+
+Bumps ozi-templates from 2.23.1 to 2.24.3.
+
+
+updated-dependencies:
+- dependency-name: ozi-templates
+  dependency-version: 2.24.3
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`0624879`](https://github.com/OZI-Project/ozi-core/commit/06248797a517c0e641b44a8fd3fa97dd86a16fe0))
+
+* build(deps): update ozi-build[core,uv] requirement
+
+Updates the requirements on [ozi-build[core,uv]](https://github.com/OZI-Project/OZI.build) to permit the latest version.
+- [Release notes](https://github.com/OZI-Project/OZI.build/releases)
+- [Changelog](https://github.com/OZI-Project/OZI.build/blob/master/CHANGELOG.md)
+- [Commits](https://github.com/OZI-Project/OZI.build/compare/1.13.0...2.0.6)
+
+
+updated-dependencies:
+- dependency-name: ozi-build[core,uv]
+  dependency-version: 2.0.6
+  dependency-type: direct:production
+... — dependabot[bot] <support@github.com>
+([`2a01b7b`](https://github.com/OZI-Project/ozi-core/commit/2a01b7b660b89992e64f6428ab06e6f3f1bfc764))
+
+
+### Chores
+
+
+* chore: run black and fix flakes — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`20062cf`](https://github.com/OZI-Project/ozi-core/commit/20062cf3ba18af343477ec77aea6dfc113105a8c))
+
+* chore: add pip extra to OZI.build requirement — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`12b22dc`](https://github.com/OZI-Project/ozi-core/commit/12b22dc32d2c72037cd8ee171aaad4b2b2d47ab1))
+
+* chore: update project metadata for OZI.build 2.0 — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`b1c365e`](https://github.com/OZI-Project/ozi-core/commit/b1c365e88b1039e9635589e1afe6602a9e24b7f0))
+
+
+### Features
+
+
+* feat: OZI.build 2.0
+
+build(deps): bump ozi-spec from 0.25.0 to 0.27.1
+([`6991816`](https://github.com/OZI-Project/ozi-core/commit/69918161539c293cce3f7f94cb809ded4c8e1709))
+
+
+### Performance improvements
+
+
+* perf: move styles and translation data to dist data folder — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`91bd8e5`](https://github.com/OZI-Project/ozi-core/commit/91bd8e5e72535fdbac80a5bf9cc6169dd92350b7))
+
 ## 1.17.7 (2025-04-15)
 
 
