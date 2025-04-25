@@ -37,7 +37,7 @@ dependencies = [
     'meson[ninja]~=1.1',
     'ozi-templates==2.24.3',
     'ozi-spec==0.27.1',
-    'packaging~=24.1',
+    'packaging>=24.1,<26.0',
     'platformdirs~=4.3',
     'prompt-toolkit~=3.0.48',
     'pyparsing~=3.1',
