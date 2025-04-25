@@ -88,46 +88,35 @@ def render_pkg_info(target: Path, name: str, _license: str) -> Message:  # noqa:
     """Render PKG-INFO as it would be produced during packaging."""
     with target.joinpath('pyproject.toml').open('rb') as f:
         pyproject = toml.load(f)
-        setuptools_scm = pyproject.get('tool', {}).get('setuptools_scm', {})
-        ozi_build = pyproject.get('tool', {}).get('ozi-build', {}).get('metadata', {})
-        if setuptools_scm.get('version_file_template'):  # pragma: no cover
-            TAP.ok('setuptools_scm', 'PKG-INFO', 'template')
-            return message_from_string(
-                setuptools_scm.get('version_file_template', '@README_TEXT@')
-                .replace(
-                    '@README_TEXT@',
-                    target.joinpath('README').read_text(),
+        project_table = pyproject.get('project', {})
+        required = ''
+        for key, header in [('description', 'Summary'), ('readme', 'Description'), ('authors', ['Author', 'Author-email']), ('keywords', 'Keywords')]:
+            val = project_table.get(key, None)
+            if isinstance(header, str):
+                required += f'{header}: {val}\n'
+            elif isinstance(val, list):  # pragma: no cover
+                for subtable in val:
+                    required += f'{header[0]}: {subtable['name']}\n' if subtable.get('name') else ''
+                    required += f'{header[1]}: {subtable['email']}\n' if subtable.get('email') else ''
+        for ext in ('.rst', '.txt', '.md'):
+            readme = target.joinpath(f'README{ext}')
+            if readme.exists():
+                required += (
+                    f'Description-Content-Type: {readme_ext_to_content_type.get(ext)}\n'
                 )
-                .replace('@PROJECT_NAME@', name)
-                .replace('@LICENSE@', _license)
-                .replace('@REQUIREMENTS_IN@\n', render_requirements(target))
-                .replace('@SCM_VERSION@', '{version}'),
-            )
-        else:
-            required = ''
-            for key in ('home-page', 'summary', 'author', 'author-email', 'keywords'):
-                val = ozi_build.get(key, None)
-                if val is not None:  # pragma: no cover
-                    required += f'{key.capitalize()}: {val}\n'
-            for ext in ('.rst', '.txt', '.md'):
-                readme = target.joinpath(f'README{ext}')
-                if readme.exists():
-                    required += (
-                        f'Description-Content-Type: {readme_ext_to_content_type.get(ext)}\n'
-                    )
-            required += ''.join(
-                [f'Classifier: {req}\n' for req in ozi_build.get('classifiers', [])],
-            )
-            msg = (
-                PKG_INFO.replace('@LICENSE@', _license)
-                .replace('@REQUIREMENTS_IN@', render_requirements(target).strip())
-                .replace('@SCM_VERSION@', '{version}')
-                .replace('@PROJECT_NAME@', name)
-                .replace('@METADATA_VERSION@', METADATA.spec.python.support.metadata_version)
-                .replace('@REQUIRED@', required.strip('\n'))
-                .replace('@README_TEXT@', target.joinpath('README').read_text())
-            )
-            return message_from_string(msg)
+        required += ''.join(
+            [f'Classifier: {req}\n' for req in project_table.get('classifiers', [])],
+        )
+        msg = (
+            PKG_INFO.replace('@LICENSE@', _license)
+            .replace('@REQUIREMENTS_IN@', render_requirements(target).strip())
+            .replace('@SCM_VERSION@', '{version}')
+            .replace('@PROJECT_NAME@', name)
+            .replace('@METADATA_VERSION@', METADATA.spec.python.support.metadata_version)
+            .replace('@REQUIRED@', required.strip('\n'))
+            .replace('@README_TEXT@', target.joinpath('README').read_text())
+        )
+        return message_from_string(msg)
 
 
 def python_support(pkg_info: Message) -> set[tuple[str, str]]:
