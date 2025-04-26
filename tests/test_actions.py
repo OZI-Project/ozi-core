@@ -14,10 +14,11 @@ from hypothesis import strategies as st
 
 if sys.version_info < (3, 11):
     warnings.filterwarnings('ignore', category=FutureWarning)
+    import ozi_core.actions
 
-import ozi_core.actions
-
-warnings.filterwarnings('default')
+    warnings.filterwarnings('default')
+else:
+    import ozi_core.actions
 
 
 @settings(deadline=timedelta(milliseconds=500))

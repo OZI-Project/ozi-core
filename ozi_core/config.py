@@ -7,12 +7,16 @@ from dataclasses import fields
 from importlib.metadata import PackageNotFoundError
 from importlib.metadata import version
 from pathlib import Path
-from typing import Self
 
 import yaml
 from platformdirs import user_config_dir
 
 from ozi_core import __version__
+
+if sys.version_info > (3, 11):
+    from typing import Self
+else:
+    from typing_extensions import Self
 
 try:
     core_version = version('ozi-core')
