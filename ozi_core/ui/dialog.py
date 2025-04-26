@@ -11,20 +11,16 @@ from prompt_toolkit.filters import Condition  # pyright: ignore
 from prompt_toolkit.filters import FilterOrBool  # pyright: ignore
 from prompt_toolkit.key_binding import KeyBindings  # pyright: ignore
 from prompt_toolkit.key_binding import merge_key_bindings  # pyright: ignore
-from prompt_toolkit.key_binding.bindings.focus import \
-    focus_next  # pyright: ignore
-from prompt_toolkit.key_binding.bindings.focus import \
-    focus_previous  # pyright: ignore
-from prompt_toolkit.key_binding.defaults import \
-    load_key_bindings  # pyright: ignore
+from prompt_toolkit.key_binding.bindings.focus import focus_next  # pyright: ignore
+from prompt_toolkit.key_binding.bindings.focus import focus_previous  # pyright: ignore
+from prompt_toolkit.key_binding.defaults import load_key_bindings  # pyright: ignore
 from prompt_toolkit.layout import ConditionalMargin  # pyright: ignore
 from prompt_toolkit.layout import Dimension as D  # pyright: ignore
 from prompt_toolkit.layout import HSplit  # pyright: ignore
 from prompt_toolkit.layout import Layout  # pyright: ignore
 from prompt_toolkit.layout import ScrollbarMargin  # pyright: ignore
 from prompt_toolkit.layout import Window  # pyright: ignore
-from prompt_toolkit.layout.controls import \
-    FormattedTextControl  # pyright: ignore
+from prompt_toolkit.layout.controls import FormattedTextControl  # pyright: ignore
 from prompt_toolkit.styles import BaseStyle  # pyright: ignore
 from prompt_toolkit.styles import Style  # pyright: ignore
 from prompt_toolkit.widgets import Button  # pyright: ignore
@@ -40,10 +36,8 @@ from ozi_core.ui.menu import MenuButton
 if TYPE_CHECKING:  # pragma: no cover
     from prompt_toolkit.buffer import Buffer  # pyright: ignore
     from prompt_toolkit.completion import Completer  # pyright: ignore
-    from prompt_toolkit.formatted_text import \
-        AnyFormattedText  # pyright: ignore
-    from prompt_toolkit.key_binding.key_processor import \
-        KeyPressEvent  # pyright: ignore
+    from prompt_toolkit.formatted_text import AnyFormattedText  # pyright: ignore
+    from prompt_toolkit.key_binding.key_processor import KeyPressEvent  # pyright: ignore
     from prompt_toolkit.validation import Validator  # pyright: ignore
 
 
