@@ -746,7 +746,7 @@ def close_application(e: webui.event) -> None:
 class WebInterface:
 
     def __init__(self, window: webui.window) -> None:
-        window.set_root_folder(str(Path(__file__).parent.resolve()))
+        window.set_root_folder(str(Path(__file__).parent.parent.resolve() / 'data'))
         self.window = window
 
     def __call__(self, config: dict[str, Any], show: str) -> None:
