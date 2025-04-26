@@ -9,7 +9,6 @@ configure_file(
     install_dir: python.get_install_dir() / 'ozi_core' / 'ui',
     configuration: configuration_data({
         'OZI_NEW_HTML': fs.read(meson.project_source_root() / 'ozi_core' / 'ui' / 'ozi-new.html'),
-        'INSTALL_DATA_DIR': python.get_install_dir() / project_name.underscorify() + '-' + meson.project_version() + '.data',
     }),
 )
 source_ui_files = [

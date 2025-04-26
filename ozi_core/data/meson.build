@@ -10,7 +10,7 @@ source_data_files = [
 foreach file : files(source_data_files)
     fs.copyfile(file)
     if not meson.is_subproject() or get_option('install-subprojects').enabled()
-        python.install_sources(file, pure: true, subdir: project_name.underscorify() + '-' + meson.project_version() + '.data')
+        python.install_sources(file, pure: true, subdir: project_name.underscorify() / 'data')
     endif
 endforeach
 source_data_children = []
