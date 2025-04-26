@@ -1,4 +1,65 @@
 # ozi-core CHANGELOG
+## 1.18.2 (2025-04-26)
+
+
+### Bug fixes
+
+
+* fix: import typing_extensions pre-3.11 — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`06b3ff4`](https://github.com/OZI-Project/ozi-core/commit/06b3ff41df85d6352457f2ad4bfa3b02b472d6c4))
+
+* fix: use version_info correctly — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`cc4ed0d`](https://github.com/OZI-Project/ozi-core/commit/cc4ed0dd1009a77cf12cb9427b70d96873154294))
+
+* fix: compatibility for Python 3.10 and below — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`d233c9f`](https://github.com/OZI-Project/ozi-core/commit/d233c9f5c94c9c2029d756bcb554a2de1d3781d6))
+
+
+### Build system
+
+
+* build(deps): bump ozi-spec from 0.27.1 to 0.27.2
+
+Bumps [ozi-spec](https://www.oziproject.dev) from 0.27.1 to 0.27.2.
+
+
+updated-dependencies:
+- dependency-name: ozi-spec
+  dependency-version: 0.27.2
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`9426eb7`](https://github.com/OZI-Project/ozi-core/commit/9426eb70c5896ad9138a7e6075ff95e89af9dc76))
+
+* build(deps): bump ozi-templates from 2.24.3 to 2.24.4
+
+Bumps ozi-templates from 2.24.3 to 2.24.4.
+
+
+updated-dependencies:
+- dependency-name: ozi-templates
+  dependency-version: 2.24.4
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`7102bfa`](https://github.com/OZI-Project/ozi-core/commit/7102bfa03fe7f3e7866d6ed1e24f6351c3488786))
+
+
+### Chores
+
+
+* chore: move Self import to TYPE_CHECKING block — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`5f450ce`](https://github.com/OZI-Project/ozi-core/commit/5f450ce77af754b5eb1df8a3bcad4683b30146fa))
+
+* chore: run isort — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`797aa53`](https://github.com/OZI-Project/ozi-core/commit/797aa53cc7f8c95f4e539f9c4e57c8dda3a818ad))
+
+* chore: run isort — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`6007222`](https://github.com/OZI-Project/ozi-core/commit/6007222b166e914a6ba54e6f3f461955162a4a7d))
+
+* chore: fix typo in pyproject — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`739a55e`](https://github.com/OZI-Project/ozi-core/commit/739a55e680c46d2725ffd574c3d90bc3e061380d))
+
 ## 1.18.1 (2025-04-26)
 
 
