@@ -2,15 +2,22 @@
 from __future__ import annotations
 
 import argparse
+import sys
 import typing
 from datetime import timedelta
+import warnings
 
 import pytest
 from hypothesis import given
 from hypothesis import settings
 from hypothesis import strategies as st
 
+if sys.version_info() < (3, 11):
+    warnings.filterwarnings('ignore', category=FutureWarning)
+
 import ozi_core.actions
+
+warnings.filterwarnings('default')
 
 
 @settings(deadline=timedelta(milliseconds=500))
