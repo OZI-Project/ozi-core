@@ -4,8 +4,8 @@ from __future__ import annotations
 import argparse
 import sys
 import typing
-from datetime import timedelta
 import warnings
+from datetime import timedelta
 
 import pytest
 from hypothesis import given
