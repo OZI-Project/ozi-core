@@ -45,7 +45,7 @@ dependencies = [
     'niquests~=3.14.0',
     'spdx-license-list==3.26.0',
     'trove-classifiers==2025.4.11.15',
-    'typing-extensions;python_version<="3.11"'
+    'typing-extensions;python_version<="3.11"',
     'types-PyYAML~=6.0',
     'pathvalidate~=3.2.1',
     'webui2==2.5.5',
