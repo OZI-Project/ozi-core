@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import sys
 from dataclasses import asdict
 from dataclasses import dataclass
 from dataclasses import field
@@ -7,12 +8,18 @@ from dataclasses import fields
 from importlib.metadata import PackageNotFoundError
 from importlib.metadata import version
 from pathlib import Path
-from typing import Self
+from typing import TYPE_CHECKING
 
 import yaml
 from platformdirs import user_config_dir
 
 from ozi_core import __version__
+
+if TYPE_CHECKING:
+    if sys.version_info > (3, 11):
+        from typing import Self
+    else:
+        from typing_extensions import Self
 
 try:
     core_version = version('ozi-core')
