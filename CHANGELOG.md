@@ -1,4 +1,23 @@
 # ozi-core CHANGELOG
+## 1.18.1 (2025-04-26)
+
+
+### Bug fixes
+
+
+* fix: Update webui root folder — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`759d200`](https://github.com/OZI-Project/ozi-core/commit/759d2005d6276b9dba92f893f21882ae771287e5))
+
+* fix: misused dist .data folder — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`d8156cb`](https://github.com/OZI-Project/ozi-core/commit/d8156cba1ab327c32594c5f4d2f36724192e0142))
+
+
+### Chores
+
+
+* chore: update ozi/ui/meson.build — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`c28178e`](https://github.com/OZI-Project/ozi-core/commit/c28178ef9fa0dbc7d15dd1c3adf3d1875873252b))
+
 ## 1.18.0 (2025-04-25)
 
 
