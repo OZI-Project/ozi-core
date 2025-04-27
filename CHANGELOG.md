@@ -1,4 +1,30 @@
 # ozi-core CHANGELOG
+## 1.18.3 (2025-04-27)
+
+
+### Bug fixes
+
+
+* fix: use TAP-Producer~=1.5.17 — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+([`4e60bd6`](https://github.com/OZI-Project/ozi-core/commit/4e60bd6f4e51e40ce5906e82b9b785c0ab60786b))
+
+
+### Build system
+
+
+* build(deps): bump ozi-spec from 0.27.2 to 0.27.3
+
+Bumps [ozi-spec](https://www.oziproject.dev) from 0.27.2 to 0.27.3.
+
+
+updated-dependencies:
+- dependency-name: ozi-spec
+  dependency-version: 0.27.3
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`eee875d`](https://github.com/OZI-Project/ozi-core/commit/eee875d90bda89ddc3bbe93cbce89c9293b15173))
+
 ## 1.18.2 (2025-04-26)
 
 
