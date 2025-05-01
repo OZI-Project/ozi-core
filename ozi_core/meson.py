@@ -5,10 +5,15 @@
 """A query tool for meson.build files."""
 from __future__ import annotations
 
+import argparse
+import typing
 from functools import lru_cache
+from typing import TYPE_CHECKING
 from typing import TypeAlias
 
 from mesonbuild.ast.interpreter import AstInterpreter
+from mesonbuild.coredata import version as meson_version
+from mesonbuild.environment import Environment
 from mesonbuild.interpreterbase.exceptions import InvalidArguments
 from mesonbuild.mparser import ArrayNode
 from mesonbuild.mparser import AssignmentNode
@@ -33,6 +38,11 @@ SelectItems: TypeAlias = type[ForeachClauseNode]
 WhereValue: TypeAlias = type[ArrayNode | DictNode | MethodNode | FunctionNode]
 WhereItems: TypeAlias = type[IdNode]
 
+if TYPE_CHECKING:
+    from mesonbuild.coredata import SharedCMDOptions
+
+current_meson_version = tuple(map(int, meson_version.split('.')))
+
 
 @lru_cache
 def load_ast(source_root: str) -> CodeBlockNode | None:
@@ -43,7 +53,18 @@ def load_ast(source_root: str) -> CodeBlockNode | None:
     :return: The AST for a meson build definition if one is available OR None.
     :rtype: CodeBlockNode | None
     """
-    ast = AstInterpreter(source_root, '', '')  # pyright: ignore
+    if current_meson_version >= (1, 8, 0):  # pragma: no cover
+        opts = typing.cast('SharedCMDOptions', argparse.Namespace())
+        opts.native_file = []
+        opts.cross_file = None  # pyright: ignore
+        opts.wrap_mode = None  # pyright: ignore
+        opts.prefix = ''  # pyright: ignore
+        opts.cmd_line_options = {}
+        ast = AstInterpreter(
+            source_root, '', '', '', Environment('', None, opts)  # pyright: ignore
+        )  # pyright: ignore
+    else:  # pragma: no cover
+        ast = AstInterpreter(source_root, '', '')  # pyright: ignore
     try:
         ast.load_root_meson_file()
     except InvalidArguments:  # pragma: no cover
