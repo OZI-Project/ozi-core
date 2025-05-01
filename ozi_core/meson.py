@@ -53,7 +53,7 @@ def load_ast(source_root: str) -> CodeBlockNode | None:
     :return: The AST for a meson build definition if one is available OR None.
     :rtype: CodeBlockNode | None
     """
-    if current_meson_version >= (1, 8, 0):
+    if current_meson_version >= (1, 8, 0):  # pragma: no cover
         opts = typing.cast('SharedCMDOptions', argparse.Namespace())
         opts.native_file = []
         opts.cross_file = None  # pyright: ignore
@@ -63,7 +63,7 @@ def load_ast(source_root: str) -> CodeBlockNode | None:
         ast = AstInterpreter(
             source_root, '', '', '', Environment('', None, opts)  # pyright: ignore
         )  # pyright: ignore
-    else:
+    else:  # pragma: no cover
         ast = AstInterpreter(source_root, '', '')  # pyright: ignore
     try:
         ast.load_root_meson_file()
