@@ -44,7 +44,7 @@ dependencies = [
     'reverse-argparse~=2.0',
     'niquests~=3.14.0',
     'spdx-license-list==3.26.0',
-    'trove-classifiers==2025.4.28.22',
+    'trove-classifiers==2025.5.1.12',
     'typing-extensions;python_version<="3.11"',
     'types-PyYAML~=6.0',
     'pathvalidate~=3.2.1',
