@@ -87,7 +87,7 @@ helpers.add_argument(
 )
 
 
-def main(version) -> None:  # pragma: no cover
+def main(version: str) -> None:  # pragma: no cover
     """``ozi`` script entrypoint."""
     helpers.add_argument(  # pragma: no cover
         '-v',

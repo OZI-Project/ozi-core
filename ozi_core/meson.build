@@ -14,6 +14,8 @@ custom_target(
 source_files = [
   '__init__.py',
   '__init__.pyi',
+  '__main__.py',
+  '__main__.pyi',
   '_i18n.py',
   '_i18n.pyi',
   '_locales.pyi',
