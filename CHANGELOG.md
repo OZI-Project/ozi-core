@@ -1,4 +1,40 @@
 # ozi-core CHANGELOG
+## 1.19.1 (2025-05-02)
+
+
+### Bug fixes
+
+
+* fix: add enable_uv and enable_cython to test namespace — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`dbcd670`](https://github.com/OZI-Project/ozi-core/commit/dbcd670ae9a713aacc2d4e74afd5d240e2bb8080))
+
+
+### Build system
+
+
+* build(deps): bump ozi-templates from 2.24.8 to 2.24.10
+
+Bumps ozi-templates from 2.24.8 to 2.24.10.
+
+
+updated-dependencies:
+- dependency-name: ozi-templates
+  dependency-version: 2.24.10
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`aa98932`](https://github.com/OZI-Project/ozi-core/commit/aa98932e44f76a33fa635b1cc62d42434585b4e9))
+
+
+### Chores
+
+
+* chore: clean up lint — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`987a0a3`](https://github.com/OZI-Project/ozi-core/commit/987a0a3fd2778ddcc43aa6227828e540b01ed8b9))
+
+* chore: move ``ozi`` main script to core — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`245ab8c`](https://github.com/OZI-Project/ozi-core/commit/245ab8c2d6969a7a25f76e38a1101e3f63ff9bca))
+
 ## 1.19.0 (2025-05-02)
 
 ## 1.18.4 (2025-04-27)
