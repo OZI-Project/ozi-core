@@ -78,7 +78,7 @@ helpers.add_argument(  # pragma: no cover
     action='store',
     choices={i.name.replace('_', '-') for i in fields(ExactMatch) if i.repr},
 )
-helpers.add_argument(
+helpers.add_argument(  # pragma: no cover
     '--uninstall-user-files',
     help=TRANSLATION('term-help-uninstall-user-files'),
     action='store_const',
@@ -87,9 +87,9 @@ helpers.add_argument(
 )
 
 
-def main(version) -> None:  # pragma: no cover
+def main(version: str) -> None:  # pragma: no cover
     """``ozi`` script entrypoint."""
-    helpers.add_argument(  # pragma: no cover
+    helpers.add_argument(
         '-v',
         '--version',
         action='store_const',
@@ -97,7 +97,7 @@ def main(version) -> None:  # pragma: no cover
         const=lambda: print(version) or exit(0),
         help=TRANSLATION('term-help-version'),
     )
-    helpers.add_argument(  # pragma: no cover
+    helpers.add_argument(
         '-c',
         '--check-version',
         action='store_const',
@@ -105,7 +105,7 @@ def main(version) -> None:  # pragma: no cover
         const=lambda: check_version(version),
         help=TRANSLATION('term-help-check-version'),
     )
-    helpers.add_argument(  # pragma: no cover
+    helpers.add_argument(
         '-i',
         '--info',
         action='store_const',
