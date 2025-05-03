@@ -1,4 +1,20 @@
 # ozi-core CHANGELOG
+## 1.19.2 (2025-05-03)
+
+
+### Bug fixes
+
+
+* fix: ozi main CLI broken entry_point — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`e94ed97`](https://github.com/OZI-Project/ozi-core/commit/e94ed97147f9eb1aacaa7917359b6842a4cdcb04))
+
+
+### Chores
+
+
+* chore: fix lint — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`cd06a38`](https://github.com/OZI-Project/ozi-core/commit/cd06a38e895e7907fcdc6c2b5eaa102de4d2f3eb))
+
 ## 1.19.1 (2025-05-02)
 
 
