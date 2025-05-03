@@ -45,7 +45,7 @@ LICENSE_EXPR: :term:`SPDX license expression` {TRANSLATION('term-spdx-license-ex
 """  # pragma: no cover
 
 
-def setup_parser(version):
+def setup_parser(version: str) -> None:  # pragma: no cover
     global _ozi_parser
     _ozi_parser = argparse.ArgumentParser(
         prog='ozi',
@@ -56,23 +56,22 @@ def setup_parser(version):
         usage=f"""%(prog)s [{TRANSLATION('term-options')}]
 
     {TRANSLATION('adm-disclaimer-text')}""",
-    )  # pragma: no cover
-    tools = _ozi_parser.add_mutually_exclusive_group()  # pragma: no cover
-    helpers = _ozi_parser.add_mutually_exclusive_group()  # pragma: no cover
+    )
+    helpers = _ozi_parser.add_mutually_exclusive_group()
     helpers.add_argument(
         '-h',
         '--help',
         action='help',
         help=TRANSLATION('term-help-help'),
-    )  # pragma: no cover
-    helpers.add_argument(  # pragma: no cover
+    )
+    helpers.add_argument(
         '-e',
         '--check-license-expr',
         metavar='LICENSE_EXPR',
         action='store',
         help=TRANSLATION('term-help-valid-license-expression'),
     )
-    helpers.add_argument(  # pragma: no cover
+    helpers.add_argument(
         '-l',
         '--list-available',
         help=TRANSLATION('term-help-list-available'),
@@ -81,7 +80,7 @@ def setup_parser(version):
         action='store',
         choices={i.name.replace('_', '-') for i in fields(ExactMatch) if i.repr},
     )
-    helpers.add_argument(  # pragma: no cover
+    helpers.add_argument(
         '--uninstall-user-files',
         help=TRANSLATION('term-help-uninstall-user-files'),
         action='store_const',
