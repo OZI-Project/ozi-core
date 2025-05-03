@@ -1,4 +1,20 @@
 # ozi-core CHANGELOG
+## 1.19.3 (2025-05-03)
+
+
+### Bug fixes
+
+
+* fix: force release
+([`863c7e2`](https://github.com/OZI-Project/ozi-core/commit/863c7e2cb54f96e6922269d81f8701ece221b6db))
+
+
+### Unknown
+
+
+* :bug: fix main CLI types — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`d6a165d`](https://github.com/OZI-Project/ozi-core/commit/d6a165ddca41419445be5109a2d7ea9c27b6788e))
+
 ## 1.19.2 (2025-05-03)
 
 
