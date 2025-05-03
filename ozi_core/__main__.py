@@ -44,51 +44,50 @@ LICENSE_EXPR: :term:`SPDX license expression` {TRANSLATION('term-spdx-license-ex
   | ``tox -e dist``        {TRANSLATION('term-tox-e-dist')}
 """  # pragma: no cover
 
-parser = argparse.ArgumentParser(
-    prog='ozi',
-    description=sys.modules[__name__].__doc__,
-    add_help=False,
-    formatter_class=argparse.RawDescriptionHelpFormatter,
-    epilog=EPILOG,
-    usage=f"""%(prog)s [{TRANSLATION('term-options')}]
 
-{TRANSLATION('adm-disclaimer-text')}""",
-)  # pragma: no cover
-tools = parser.add_mutually_exclusive_group()  # pragma: no cover
-helpers = parser.add_mutually_exclusive_group()  # pragma: no cover
-helpers.add_argument(
-    '-h',
-    '--help',
-    action='help',
-    help=TRANSLATION('term-help-help'),
-)  # pragma: no cover
-helpers.add_argument(  # pragma: no cover
-    '-e',
-    '--check-license-expr',
-    metavar='LICENSE_EXPR',
-    action='store',
-    help=TRANSLATION('term-help-valid-license-expression'),
-)
-helpers.add_argument(  # pragma: no cover
-    '-l',
-    '--list-available',
-    help=TRANSLATION('term-help-list-available'),
-    default=None,
-    metavar='METADATA_FIELD',
-    action='store',
-    choices={i.name.replace('_', '-') for i in fields(ExactMatch) if i.repr},
-)
-helpers.add_argument(  # pragma: no cover
-    '--uninstall-user-files',
-    help=TRANSLATION('term-help-uninstall-user-files'),
-    action='store_const',
-    default=lambda: None,
-    const=lambda: uninstall_user_files(),
-)
+def setup_parser(version):
+    global _ozi_parser
+    _ozi_parser = argparse.ArgumentParser(
+        prog='ozi',
+        description=sys.modules[__name__].__doc__,
+        add_help=False,
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog=EPILOG,
+        usage=f"""%(prog)s [{TRANSLATION('term-options')}]
 
-
-def main(version: str) -> None:  # pragma: no cover
-    """``ozi`` script entrypoint."""
+    {TRANSLATION('adm-disclaimer-text')}""",
+    )  # pragma: no cover
+    tools = _ozi_parser.add_mutually_exclusive_group()  # pragma: no cover
+    helpers = _ozi_parser.add_mutually_exclusive_group()  # pragma: no cover
+    helpers.add_argument(
+        '-h',
+        '--help',
+        action='help',
+        help=TRANSLATION('term-help-help'),
+    )  # pragma: no cover
+    helpers.add_argument(  # pragma: no cover
+        '-e',
+        '--check-license-expr',
+        metavar='LICENSE_EXPR',
+        action='store',
+        help=TRANSLATION('term-help-valid-license-expression'),
+    )
+    helpers.add_argument(  # pragma: no cover
+        '-l',
+        '--list-available',
+        help=TRANSLATION('term-help-list-available'),
+        default=None,
+        metavar='METADATA_FIELD',
+        action='store',
+        choices={i.name.replace('_', '-') for i in fields(ExactMatch) if i.repr},
+    )
+    helpers.add_argument(  # pragma: no cover
+        '--uninstall-user-files',
+        help=TRANSLATION('term-help-uninstall-user-files'),
+        action='store_const',
+        default=lambda: None,
+        const=lambda: uninstall_user_files(),
+    )
     helpers.add_argument(
         '-v',
         '--version',
@@ -113,7 +112,11 @@ def main(version: str) -> None:  # pragma: no cover
         const=lambda: info(version),
         help=TRANSLATION('term-help-info'),
     )
-    ozi, _ = parser.parse_known_args()
+
+
+def main() -> None:  # pragma: no cover
+    """``ozi`` script entrypoint."""
+    ozi, _ = _ozi_parser.parse_known_args()
     ozi.version()
     ozi.check_version()
     ozi.info()
@@ -122,4 +125,4 @@ def main(version: str) -> None:  # pragma: no cover
         list_available(ozi.list_available)
     if ozi.check_license_expr:
         license_expression(ozi.check_license_expr)
-    parser.print_help()
+    _ozi_parser.print_help()
