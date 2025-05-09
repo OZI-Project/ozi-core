@@ -2,7 +2,7 @@
 # See LICENSE.txt in the project root for details.
 [build-system]
 requires = [
-    'OZI.build[core,pip,uv]~=2.0.6',
+    'OZI.build[core,pip,uv]>=2.0.6,<2.3.0',
     'PyYAML~=6.0',
 ]
 build-backend = "ozi_build.buildapi"
@@ -361,7 +361,7 @@ package = wheel
 deps =
      uv
 commands_pre =
-     python -m uv pip install OZI.build[core,pip,uv]~=2.0.6
+     python -m uv pip install OZI.build[core,pip,uv]>=2.0.6,<2.3.0
      pipx install --python=python meson
 commands =
      meson setup {env_tmp_dir} -Dozi:{env_name}=enabled -Dozi:tox-env-dir={env_dir}
