@@ -5,6 +5,9 @@
 ### Build system
 
 
+* build: ozi.wrap updated to 1.41.9 — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`283c171`](https://github.com/OZI-Project/ozi-core/commit/283c17179849537cc9425d0d2c0121a8c7368112))
+
 * build(deps): update ozi-build[core,pip,uv] requirement
 
 Updates the requirements on [ozi-build[core,pip,uv]](https://github.com/OZI-Project/OZI.build) to permit the latest version.
