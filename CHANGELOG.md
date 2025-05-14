@@ -1,4 +1,38 @@
 # ozi-core CHANGELOG
+## 1.19.5 (2025-05-14)
+
+
+### Build system
+
+
+* build(deps): bump OZI-Project/release from 1.7.4 to 1.7.6
+
+Bumps [OZI-Project/release](https://github.com/ozi-project/release) from 1.7.4 to 1.7.6.
+- [Release notes](https://github.com/ozi-project/release/releases)
+- [Commits](https://github.com/ozi-project/release/compare/7b3bc0282c162a771c69e91decca3e3ba792e221...14c90775d0efe9f0f69a914d05cc9319bfc632a0)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/release
+  dependency-version: 1.7.6
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`6b389a9`](https://github.com/OZI-Project/ozi-core/commit/6b389a9c8b3897f67a61b2b52b44538736ac3785))
+
+* build(deps): bump ozi-spec from 0.28.3 to 0.28.4
+
+Bumps [ozi-spec](https://www.oziproject.dev) from 0.28.3 to 0.28.4.
+
+
+updated-dependencies:
+- dependency-name: ozi-spec
+  dependency-version: 0.28.4
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`3d0ad5a`](https://github.com/OZI-Project/ozi-core/commit/3d0ad5a86d1d34d4b9c2773b239ac6117a73c85f))
+
 ## 1.19.4 (2025-05-14)
 
 
