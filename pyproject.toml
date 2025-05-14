@@ -2,7 +2,7 @@
 # See LICENSE.txt in the project root for details.
 [build-system]
 requires = [
-    'OZI.build[core,pip,uv]~=2.0.6',
+    'OZI.build[core,pip,uv]>=2.0.6,<2.3.0',
     'PyYAML~=6.0',
 ]
 build-backend = "ozi_build.buildapi"
@@ -36,7 +36,7 @@ dependencies = [
     'idna~=3.10',
     'meson[ninja]~=1.1,<1.9',
     'ozi-templates==2.24.10',
-    'ozi-spec==0.28.1',
+    'ozi-spec==0.28.3',
     'packaging>=24.1,<26.0',
     'platformdirs~=4.3',
     'prompt-toolkit~=3.0.48',
@@ -44,11 +44,11 @@ dependencies = [
     'reverse-argparse~=2.0',
     'niquests~=3.14.0',
     'spdx-license-list==3.26.0',
-    'trove-classifiers==2025.5.1.12',
+    'trove-classifiers==2025.5.9.12',
     'typing-extensions;python_version<="3.11"',
     'types-PyYAML~=6.0',
     'pathvalidate~=3.2.1',
-    'webui2==2.5.5',
+    'webui2==2.5.6',
 ]
 
 
@@ -361,7 +361,7 @@ package = wheel
 deps =
      uv
 commands_pre =
-     python -m uv pip install OZI.build[core,pip,uv]~=2.0.6
+     python -m uv pip install OZI.build[core,pip,uv]>=2.0.6,<2.3.0
      pipx install --python=python meson
 commands =
      meson setup {env_tmp_dir} -Dozi:{env_name}=enabled -Dozi:tox-env-dir={env_dir}
