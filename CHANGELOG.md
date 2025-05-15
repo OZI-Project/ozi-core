@@ -1,4 +1,23 @@
 # ozi-core CHANGELOG
+## 1.19.7 (2025-05-15)
+
+
+### Build system
+
+
+* build(deps): bump ozi-spec from 0.28.4 to 0.28.5
+
+Bumps [ozi-spec](https://www.oziproject.dev) from 0.28.4 to 0.28.5.
+
+
+updated-dependencies:
+- dependency-name: ozi-spec
+  dependency-version: 0.28.5
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`16014a3`](https://github.com/OZI-Project/ozi-core/commit/16014a3ea158c6b47f4388a95872a747256b7f6b))
+
 ## 1.19.6 (2025-05-15)
 
 
