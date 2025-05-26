@@ -5,6 +5,21 @@
 ### Build system
 
 
+* build(deps): bump OZI-Project/release from 1.8.1 to 1.8.2
+
+Bumps [OZI-Project/release](https://github.com/ozi-project/release) from 1.8.1 to 1.8.2.
+- [Release notes](https://github.com/ozi-project/release/releases)
+- [Commits](https://github.com/ozi-project/release/compare/93e7c20c7de47d53db72b4ac79a4b143f85ee514...e927c08e982be9db612ccd5d1b44a7e33ef3d76c)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/release
+  dependency-version: 1.8.2
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`7f4ce73`](https://github.com/OZI-Project/ozi-core/commit/7f4ce737c2722c7c10321f3b892b60560d517b47))
+
 * build(deps): bump OZI-Project/draft from 1.13.4 to 1.13.5
 
 Bumps [OZI-Project/draft](https://github.com/ozi-project/draft) from 1.13.4 to 1.13.5.
