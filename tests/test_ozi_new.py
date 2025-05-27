@@ -5,6 +5,7 @@
 from __future__ import annotations
 
 import argparse
+import sys
 import typing
 from datetime import timedelta
 
@@ -17,8 +18,17 @@ from ozi_spec import METADATA  # pyright: ignore
 
 import ozi_core.actions  # pyright: ignore
 import ozi_core.new.validate  # pyright: ignore
-import ozi_core.render  # pyright: ignore
 from ozi_core.new import project as new_project  # pyright: ignore
+
+try:
+    import atheris
+except ImportError:
+
+    class Atheris:
+        def instrument_func(self, func):  # noqa: ANN
+            return func
+
+    atheris = Atheris()
 
 
 @settings(
@@ -119,6 +129,7 @@ from ozi_core.new import project as new_project  # pyright: ignore
     license_expression=st.data(),
     license_id=st.data(),
 )
+@atheris.instrument_func
 def test_fuzz_new_project_good_namespace(  # noqa: DC102, RUF100
     tmp_path_factory: pytest.TempPathFactory,
     project: dict[str, typing.Any],
@@ -251,3 +262,13 @@ def test_new_project_bad_target_not_empty(  # noqa: DC102, RUF100
     ozi_core.new.validate.postprocess_arguments(
         ozi_core.new.validate.preprocess_arguments(namespace),
     )
+
+
+if __name__ == '__main__':
+    atheris.Setup(
+        sys.argv,
+        atheris.instrument_func(
+            test_fuzz_new_project_good_namespace.hypothesis.fuzz_one_input
+        ),
+    )
+    atheris.Fuzz()
