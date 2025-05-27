@@ -482,10 +482,4 @@ if __name__ == '__main__':
     atheris.Setup(
         sys.argv, atheris.instrument_func(test_fuzz_pkg_info_extra.hypothesis.fuzz_one_input)
     )
-    atheris.Setup(
-        sys.argv, atheris.instrument_func(test_fuzz_RewriteCommand.hypothesis.fuzz_one_input)
-    )
-    atheris.Setup(
-        sys.argv, atheris.instrument_func(test_fuzz_Rewriter.hypothesis.fuzz_one_input)
-    )
     atheris.Fuzz()
