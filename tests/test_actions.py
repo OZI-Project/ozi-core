@@ -12,6 +12,16 @@ from hypothesis import given
 from hypothesis import settings
 from hypothesis import strategies as st
 
+try:
+    import atheris
+except ImportError:
+
+    class Atheris:
+        def instrument_func(self, func):  # noqa: ANN
+            return func
+
+    atheris = Atheris()
+
 if sys.version_info < (3, 11):
     warnings.filterwarnings('ignore', category=FutureWarning)
     import ozi_core.actions
@@ -38,6 +48,7 @@ else:
     nargs=st.one_of(st.none()),
     data=st.data(),
 )
+@atheris.instrument_func
 def test_fuzz_CloseMatch_nargs_None(  # noqa: N802, DC102, RUF100
     option_strings: str,
     dest: str,
@@ -76,6 +87,7 @@ def test_fuzz_CloseMatch_nargs_None(  # noqa: N802, DC102, RUF100
     nargs=st.one_of(st.just('?')),
     data=st.data(),
 )
+@atheris.instrument_func
 def test_fuzz_CloseMatch_nargs_append(  # noqa: N802, DC102, RUF100
     option_strings: str,
     dest: str,
@@ -113,6 +125,7 @@ def test_fuzz_CloseMatch_nargs_append(  # noqa: N802, DC102, RUF100
     nargs=st.one_of(st.just('?')),
     data=st.none(),
 )
+@atheris.instrument_func
 def test_fuzz_CloseMatch_nargs_append_None_values(  # noqa: N802, DC102, RUF100
     option_strings: str,
     dest: str,
@@ -144,6 +157,7 @@ def test_fuzz_CloseMatch_nargs_append_None_values(  # noqa: N802, DC102, RUF100
     nargs=st.one_of(st.just('*')),
     data=st.text(min_size=10, max_size=80),
 )
+@atheris.instrument_func
 def test_fuzz_CloseMatch_nargs_invalid(  # noqa: N802, DC102, RUF100
     option_strings: str,
     dest: str,
@@ -152,3 +166,27 @@ def test_fuzz_CloseMatch_nargs_invalid(  # noqa: N802, DC102, RUF100
 ) -> None:
     with pytest.raises(ValueError, match='nargs'):
         ozi_core.actions.CloseMatch(option_strings=[option_strings], dest=dest, nargs=nargs)
+
+
+if __name__ == '__main__':
+    atheris.Setup(
+        sys.argv,
+        atheris.instrument_func(test_fuzz_CloseMatch_nargs_append.hypothesis.fuzz_one_input),
+    )
+    atheris.Setup(
+        sys.argv,
+        atheris.instrument_func(
+            test_fuzz_CloseMatch_nargs_append_None_values.hypothesis.fuzz_one_input
+        ),
+    )
+    atheris.Setup(
+        sys.argv,
+        atheris.instrument_func(
+            test_fuzz_CloseMatch_nargs_invalid.hypothesis.fuzz_one_input
+        ),
+    )
+    atheris.Setup(
+        sys.argv,
+        atheris.instrument_func(test_fuzz_CloseMatch_nargs_None.hypothesis.fuzz_one_input),
+    )
+    atheris.Fuzz()

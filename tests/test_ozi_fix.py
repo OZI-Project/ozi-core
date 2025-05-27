@@ -9,6 +9,7 @@ import argparse
 import difflib
 import os
 import pathlib
+import sys
 from copy import deepcopy
 from datetime import timedelta
 
@@ -24,6 +25,16 @@ import ozi_core.fix.rewrite_command  # pyright: ignore
 import ozi_core.pkg_extra  # pyright: ignore
 import ozi_core.render  # pyright: ignore
 from ozi_core.fix.build_definition import unrollable_subdirs  # pyright: ignore
+
+try:
+    import atheris
+except ImportError:
+
+    class Atheris:
+        def instrument_func(self, func):  # noqa: ANN
+            return func
+
+    atheris = Atheris()
 
 required_pkg_info_patterns = (
     'Author',
@@ -200,6 +211,7 @@ def test_report_missing_required_source_file(bad_project: pathlib.Path, key: str
     subdir=st.just(''),
     target_type=st.just('executable'),
 )
+@atheris.instrument_func
 def test_fuzz_RewriteCommand(  # noqa: N802, DC102, RUF100
     type: str,  # noqa: A002
     target: str,
@@ -229,6 +241,7 @@ def test_fuzz_RewriteCommand(  # noqa: N802, DC102, RUF100
         ),
     ),
 )
+@atheris.instrument_func
 def test_fuzz_Rewriter(  # noqa: N802, DC102, RUF100
     target: str,
     name: str,
@@ -439,6 +452,7 @@ header = """.. OZI
 
 @settings(deadline=timedelta(milliseconds=1000))
 @given(payload=st.text(max_size=65535).map(header.__add__), as_message=st.booleans())
+@atheris.instrument_func
 def test_fuzz_pkg_info_extra(payload: str, as_message: bool) -> None:  # noqa: DC102, RUF100
     ozi_core.pkg_extra._pkg_info_extra(
         payload=payload,
@@ -462,3 +476,16 @@ def test_meson_unroll_subdirs() -> None:
     assert ''.join(difflib.context_diff(SAMPLE_MESON_BUILD, y)) == ''.join(
         difflib.context_diff(SAMPLE_MESON_BUILD, z),
     )
+
+
+if __name__ == '__main__':
+    atheris.Setup(
+        sys.argv, atheris.instrument_func(test_fuzz_pkg_info_extra.hypothesis.fuzz_one_input)
+    )
+    atheris.Setup(
+        sys.argv, atheris.instrument_func(test_fuzz_RewriteCommand.hypothesis.fuzz_one_input)
+    )
+    atheris.Setup(
+        sys.argv, atheris.instrument_func(test_fuzz_Rewriter.hypothesis.fuzz_one_input)
+    )
+    atheris.Fuzz()
