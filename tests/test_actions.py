@@ -173,20 +173,4 @@ if __name__ == '__main__':
         sys.argv,
         atheris.instrument_func(test_fuzz_CloseMatch_nargs_append.hypothesis.fuzz_one_input),
     )
-    atheris.Setup(
-        sys.argv,
-        atheris.instrument_func(
-            test_fuzz_CloseMatch_nargs_append_None_values.hypothesis.fuzz_one_input
-        ),
-    )
-    atheris.Setup(
-        sys.argv,
-        atheris.instrument_func(
-            test_fuzz_CloseMatch_nargs_invalid.hypothesis.fuzz_one_input
-        ),
-    )
-    atheris.Setup(
-        sys.argv,
-        atheris.instrument_func(test_fuzz_CloseMatch_nargs_None.hypothesis.fuzz_one_input),
-    )
     atheris.Fuzz()
