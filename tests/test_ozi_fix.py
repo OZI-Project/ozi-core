@@ -9,32 +9,16 @@ import argparse
 import difflib
 import os
 import pathlib
-import sys
 from copy import deepcopy
-from datetime import timedelta
 
 import pytest
-from hypothesis import given
-from hypothesis import settings
-from hypothesis import strategies as st
 from ozi_spec import METADATA  # pyright: ignore
 from ozi_templates import load_environment  # pyright: ignore
 
 import ozi_core.fix.missing  # pyright: ignore
 import ozi_core.fix.rewrite_command  # pyright: ignore
-import ozi_core.pkg_extra  # pyright: ignore
 import ozi_core.render  # pyright: ignore
 from ozi_core.fix.build_definition import unrollable_subdirs  # pyright: ignore
-
-try:
-    import atheris
-except ImportError:
-
-    class Atheris:
-        def instrument_func(self, func):  # noqa: ANN
-            return func
-
-    atheris = Atheris()
 
 required_pkg_info_patterns = (
     'Author',
@@ -201,60 +185,6 @@ def test_report_missing_required_source_file(bad_project: pathlib.Path, key: str
     os.remove(bad_project.joinpath('ozi_phony') / key)
     with pytest.raises(RuntimeWarning):
         ozi_core.fix.missing.report(bad_project)
-
-
-@given(
-    type=st.just('target'),
-    target=st.text(min_size=1, max_size=20),
-    operation=st.text(min_size=1, max_size=20),
-    sources=st.lists(st.text(min_size=1, max_size=20)),
-    subdir=st.just(''),
-    target_type=st.just('executable'),
-)
-@atheris.instrument_func
-def test_fuzz_RewriteCommand(  # noqa: N802, DC102, RUF100
-    type: str,  # noqa: A002
-    target: str,
-    operation: str,
-    sources: list[str],
-    subdir: str,
-    target_type: str,
-) -> None:
-    ozi_core.fix.rewrite_command.RewriteCommand(
-        type=type,
-        target=target,
-        operation=operation,
-        sources=sources,
-        subdir=subdir,
-        target_type=target_type,
-    )
-
-
-@given(
-    target=st.just('.'),
-    name=st.text(min_size=1, max_size=20),
-    fix=st.sampled_from(('test', 'source', 'root')),
-    commands=st.lists(
-        st.dictionaries(
-            keys=st.text(min_size=1, max_size=20),
-            values=st.text(min_size=1, max_size=20),
-        ),
-    ),
-)
-@atheris.instrument_func
-def test_fuzz_Rewriter(  # noqa: N802, DC102, RUF100
-    target: str,
-    name: str,
-    fix: str,
-    commands: list[dict[str, str]],
-) -> None:
-    ozi_core.fix.rewrite_command.Rewriter(
-        target=target,
-        name=name,
-        fix=fix,
-        commands=commands,
-        env=env,
-    )
 
 
 @pytest.mark.parametrize('fix', ['test', 'root', 'source'])
@@ -444,22 +374,6 @@ def test_Rewriter_bad_project__iadd__non_python_file(  # noqa: N802, DC102, RUF1
     assert len(rewriter.commands) == 1
 
 
-header = """.. OZI
-  Classifier: License-Expression :: Apache-2.0 WITH LLVM-exception
-  Classifier: License-File :: LICENSE.txt
-"""
-
-
-@settings(deadline=timedelta(milliseconds=1000))
-@given(payload=st.text(max_size=65535).map(header.__add__), as_message=st.booleans())
-@atheris.instrument_func
-def test_fuzz_pkg_info_extra(payload: str, as_message: bool) -> None:  # noqa: DC102, RUF100
-    ozi_core.pkg_extra._pkg_info_extra(
-        payload=payload,
-        as_message=as_message,
-    )
-
-
 def test_meson_unroll_subdirs() -> None:
     x = unrollable_subdirs.parse_string(SAMPLE_MESON_BUILD)
     y = '\n'.join([i.rstrip('\n') for i in x])
@@ -476,10 +390,3 @@ def test_meson_unroll_subdirs() -> None:
     assert ''.join(difflib.context_diff(SAMPLE_MESON_BUILD, y)) == ''.join(
         difflib.context_diff(SAMPLE_MESON_BUILD, z),
     )
-
-
-if __name__ == '__main__':
-    atheris.Setup(
-        sys.argv, atheris.instrument_func(test_fuzz_pkg_info_extra.hypothesis.fuzz_one_input)
-    )
-    atheris.Fuzz()

@@ -3,7 +3,15 @@
 # See LICENSE.txt in the project root for details.
 # DO NOT EDIT BY HAND - This file was generated for use with OZI tools.
 # ozi-fix -> meson rewrite is the standard editing pipeline.
-test_files = ['test_actions.py', 'test_ozi_fix.py', 'test_ozi_new.py']
+test_files = [
+    'test_actions.py',
+    'test_ozi_fix.py',
+    'test_ozi_new.py',
+    'test_CloseMatch_append_fuzzer.py',
+    'test_pkg_info_extra_fuzzer.py',
+    'test_RewriteCommand_fuzzer.py',
+    'test_Rewriter_fuzzer.py',
+    ]
 foreach file: test_files
     fs.copyfile(file)
     if not meson.is_subproject() or get_option('install-subprojects').enabled()
