@@ -1,9 +1,69 @@
 # ozi-core CHANGELOG
+## 1.20.0 (2025-05-29)
+
 ## 1.19.9 (2025-05-26)
+
+## 1.19.8 (2025-05-15)
+
+
+### Bug fixes
+
+
+* fix: correct pkg_extra module import in fuzzer — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`b8f3a92`](https://github.com/OZI-Project/ozi-core/commit/b8f3a924cd1b10fa91bc632d841022fb3165987f))
+
+* fix: move fuzzer tests to their own files — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`5a26179`](https://github.com/OZI-Project/ozi-core/commit/5a26179cd7c8bc43b83817698e2b39593043ff3b))
+
+* fix: one fuzzer per file — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`c2c6c47`](https://github.com/OZI-Project/ozi-core/commit/c2c6c471b0aab0a46ec326a879879c34f53cc7be))
 
 
 ### Build system
 
+
+* build(deps): bump OZI-Project/draft from 1.13.5 to 1.14.0
+
+Bumps [OZI-Project/draft](https://github.com/ozi-project/draft) from 1.13.5 to 1.14.0.
+- [Release notes](https://github.com/ozi-project/draft/releases)
+- [Commits](https://github.com/ozi-project/draft/compare/1.13.5...1.14.0)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/draft
+  dependency-version: 1.14.0
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`c37010d`](https://github.com/OZI-Project/ozi-core/commit/c37010d920dff1a9ee81761dad98d6413722f8f6))
+
+* build(deps): bump OZI-Project/publish from 1.13.8 to 1.14.0
+
+Bumps [OZI-Project/publish](https://github.com/ozi-project/publish) from 1.13.8 to 1.14.0.
+- [Release notes](https://github.com/ozi-project/publish/releases)
+- [Commits](https://github.com/ozi-project/publish/compare/1.13.8...1.14.0)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/publish
+  dependency-version: 1.14.0
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`380940f`](https://github.com/OZI-Project/ozi-core/commit/380940f6a872d1ba34a3849b865366eb629d0bb7))
+
+* build(deps): bump ozi-spec from 0.28.6 to 1.0.1
+
+Bumps [ozi-spec](https://www.oziproject.dev) from 0.28.6 to 1.0.1.
+
+
+updated-dependencies:
+- dependency-name: ozi-spec
+  dependency-version: 1.0.1
+  dependency-type: direct:production
+  update-type: version-update:semver-major
+... — dependabot[bot] <support@github.com>
+([`41a6ccd`](https://github.com/OZI-Project/ozi-core/commit/41a6ccd486d4b37d12442184000cd70abb2c425c))
 
 * build(deps): bump OZI-Project/release from 1.8.2 to 1.8.3
 
@@ -108,12 +168,6 @@ updated-dependencies:
 ... — dependabot[bot] <support@github.com>
 ([`c27a98d`](https://github.com/OZI-Project/ozi-core/commit/c27a98d58981f2a2603bb34681eda9f6133f9c01))
 
-## 1.19.8 (2025-05-15)
-
-
-### Build system
-
-
 * build(deps): bump OZI-Project/release from 1.7.7 to 1.7.8
 
 Bumps [OZI-Project/release](https://github.com/ozi-project/release) from 1.7.7 to 1.7.8.
@@ -141,6 +195,20 @@ updated-dependencies:
   update-type: version-update:semver-patch
 ... — dependabot[bot] <support@github.com>
 ([`2e6abb6`](https://github.com/OZI-Project/ozi-core/commit/2e6abb6a2c54622421c3728b3dfccf2a15cd0998))
+
+
+### Chores
+
+
+* chore: add clusterfuzzlite atheris boilerplate — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`6118992`](https://github.com/OZI-Project/ozi-core/commit/6118992f9ef15eb92dfefe7bf52b16f3a17fee93))
+
+
+### Features
+
+
+* feat: updates for spec 1.0, semantic release 10 — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`a0fc21a`](https://github.com/OZI-Project/ozi-core/commit/a0fc21a74b2dbc0bdbabc8a1c4301d81a38e4e92))
 
 ## 1.19.7 (2025-05-15)
 
@@ -344,13 +412,6 @@ updated-dependencies:
 ([`7d4ca11`](https://github.com/OZI-Project/ozi-core/commit/7d4ca110af786ca99a76ad89628f82122b96983c))
 
 ## 1.19.3 (2025-05-03)
-
-
-### Bug fixes
-
-
-* fix: force release
-([`863c7e2`](https://github.com/OZI-Project/ozi-core/commit/863c7e2cb54f96e6922269d81f8701ece221b6db))
 
 
 ### Unknown
@@ -567,15 +628,6 @@ updated-dependencies:
   update-type: version-update:semver-patch
 ... — dependabot[bot] <support@github.com>
 ([`c97db7e`](https://github.com/OZI-Project/ozi-core/commit/c97db7eb825edd4138bcd0f9f4f37a490d80da8f))
-
-
-### Features
-
-
-* feat: spec 0.28
-
-build(deps): bump OZI-Project/release from 1.6.4 to 1.6.5
-([`ee3cebc`](https://github.com/OZI-Project/ozi-core/commit/ee3cebce600cdcb19dd217e5ca5a37cc3fb02d0b))
 
 
 ### Performance improvements
@@ -844,15 +896,6 @@ updated-dependencies:
 
 * chore: update project metadata for OZI.build 2.0 — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
 ([`b1c365e`](https://github.com/OZI-Project/ozi-core/commit/b1c365e88b1039e9635589e1afe6602a9e24b7f0))
-
-
-### Features
-
-
-* feat: OZI.build 2.0
-
-build(deps): bump ozi-spec from 0.25.0 to 0.27.1
-([`6991816`](https://github.com/OZI-Project/ozi-core/commit/69918161539c293cce3f7f94cb809ded4c8e1709))
 
 
 ### Performance improvements
@@ -1792,15 +1835,6 @@ updated-dependencies:
 ... — dependabot[bot] <support@github.com>
 ([`51f637d`](https://github.com/OZI-Project/ozi-core/commit/51f637d4e384340a10fc89b2d5196332b5a45b8e))
 
-
-### Features
-
-
-* feat: semantic-release~=9.19.0
-
-build(deps): bump ozi-spec from 0.21.1 to 0.22.0
-([`5b42f9f`](https://github.com/OZI-Project/ozi-core/commit/5b42f9f79dc35c34797ca10caf4d47aa16576de1))
-
 ## 1.13.0 (2025-01-28)
 
 ## 1.12.4 (2025-01-27)
@@ -1915,15 +1949,6 @@ updated-dependencies:
 * build: hard pin ozi-templates and ozi-spec for reproducible build support — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
 ([`66dfe7d`](https://github.com/OZI-Project/ozi-core/commit/66dfe7d7b4db0365e6925bf3bd1acb707bb1c679))
 
-
-### Features
-
-
-* feat: spec v0.21
-
-build(deps): bump OZI-Project/draft from 1.9.0 to 1.10.0
-([`67a7aa8`](https://github.com/OZI-Project/ozi-core/commit/67a7aa89764def53984f09b0609d6efdd8c733d9))
-
 ## 1.12.2 (2025-01-18)
 
 
@@ -2029,15 +2054,6 @@ updated-dependencies:
   dependency-type: direct:production
 ... — dependabot[bot] <support@github.com>
 ([`bd6daa7`](https://github.com/OZI-Project/ozi-core/commit/bd6daa790ecd4c8e89af3407d3e634c66d44f9a8))
-
-
-### Features
-
-
-* feat: semantic-release~=9.16
-
-build(deps): bump OZI-Project/publish from 1.7.3 to 1.8.0
-([`ec22d8e`](https://github.com/OZI-Project/ozi-core/commit/ec22d8ecc29f528cd5e9c7513e375df3d94f9f96))
 
 ## 1.11.1 (2025-01-13)
 
@@ -2307,11 +2323,6 @@ updated-dependencies:
 ### Features
 
 
-* feat: OZI.build 1.10
-
-build(deps): update ozi-spec requirement from ~=0.17.1 to ~=0.18.0
-([`4615f53`](https://github.com/OZI-Project/ozi-core/commit/4615f530a0250d22de3549d6568668c12968dad6))
-
 * feat: switch to niquests over requests
 
 requests is no longer actively updated. — rjdbcm <rjdbcm@outlook.com>
@@ -2400,25 +2411,7 @@ updated-dependencies:
 ... — dependabot[bot] <support@github.com>
 ([`31cbcd2`](https://github.com/OZI-Project/ozi-core/commit/31cbcd26f8168d6029e2d08c20c4b068223978c5))
 
-
-### Features
-
-
-* feat: spec v0.16
-
-build(deps): update ozi-spec requirement from ~=0.15.3 to ~=0.16.0
-([`60b9967`](https://github.com/OZI-Project/ozi-core/commit/60b99679dad7aa7db4060cf7f50aa02e855ab71c))
-
 ## 1.7.0 (2024-12-17)
-
-
-### Features
-
-
-* feat: spec v0.15 pypa/gh-action-pypi-publish 1.12 support
-
-1.6.0
-([`e53c742`](https://github.com/OZI-Project/ozi-core/commit/e53c7425f34ea3b93cc19c732afbfefacb41e40d))
 
 
 ### Unknown
@@ -2539,15 +2532,6 @@ updated-dependencies:
   dependency-type: direct:production
 ... — dependabot[bot] <support@github.com>
 ([`855a5d1`](https://github.com/OZI-Project/ozi-core/commit/855a5d136d91772de9b96cdc79fc4ef014d77590))
-
-
-### Features
-
-
-* feat: semantic-release~=9.15
-
-build(deps): update ozi-spec requirement from ~=0.13.1 to ~=0.14.0
-([`e2c3a80`](https://github.com/OZI-Project/ozi-core/commit/e2c3a80a91c22d5a31bf88f05ca052901592f875))
 
 
 ### Unknown
@@ -3063,7 +3047,7 @@ updated-dependencies:
 ... — dependabot[bot] <support@github.com>
 ([`74a7c20`](https://github.com/OZI-Project/ozi-core/commit/74a7c207c31541ab5cc24117b710c9ebd0422240))
 
-* build:  create dev.yml checkpoints for CI — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
+* build: create dev.yml checkpoints for CI — Eden Ross Duff, MSc, DDiv <rjdbcm@outlook.com>
 ([`8c3b9a5`](https://github.com/OZI-Project/ozi-core/commit/8c3b9a546b222806b5862653487dd68603b80edc))
 
 ## 1.4.15 (2024-11-11)
@@ -3986,15 +3970,6 @@ updated-dependencies:
 ([`04c7765`](https://github.com/OZI-Project/ozi-core/commit/04c776564057f68b81a0fbf0aec642f4cfa366af))
 
 
-### Features
-
-
-* feat: Merge pull request #162 from OZI-Project/dependabot/pip/ozi-templates-approx-eq-2.12.0
-
-build(deps): update ozi-templates requirement from ~=2.11.1 to ~=2.12.0
-([`efc5cb6`](https://github.com/OZI-Project/ozi-core/commit/efc5cb656ea0de930ebd2671fb493b8adab8156b))
-
-
 ### Performance improvements
 
 
@@ -4283,15 +4258,6 @@ updated-dependencies:
 ([`be545e5`](https://github.com/OZI-Project/ozi-core/commit/be545e5fd09b7855e5d711696470552413abc7aa))
 
 ## 1.0.0 (2024-08-29)
-
-
-### Bug fixes
-
-
-* fix: correct release
-
-BREAKING CHANGE: 1.0
-([`eb199c1`](https://github.com/OZI-Project/ozi-core/commit/eb199c1e98e6d38363b51e4b8a86b866eb6e2a42))
 
 ## 0.4.0 (2024-08-29)
 
@@ -4849,15 +4815,6 @@ updated-dependencies:
 ... — dependabot[bot] <support@github.com>
 ([`87a9703`](https://github.com/OZI-Project/ozi-core/commit/87a970368906f23468e0dce658f3b95d9fe4856d))
 
-
-### Performance improvements
-
-
-* perf: Merge pull request #50 from OZI-Project/main
-
-Release
-([`7286ba3`](https://github.com/OZI-Project/ozi-core/commit/7286ba3a407aee2821624f78a8e45793c7147f58))
-
 ## 0.1.14 (2024-07-29)
 
 
@@ -5082,15 +5039,6 @@ updated-dependencies:
 
 * build(deps): ozi-templates~=2.5.5 — Eden Ross Duff, MSc <rjdbcm@outlook.com>
 ([`d867913`](https://github.com/OZI-Project/ozi-core/commit/d8679132219753a12f47e57411a221d4a95d310b))
-
-
-### Performance improvements
-
-
-* perf: Merge pull request #23 from OZI-Project/patch/sigstore-v3
-
-Patch/sigstore v3
-([`b63fd5b`](https://github.com/OZI-Project/ozi-core/commit/b63fd5b6de42e0f17b163f1fd9f1d3f74d20d7be))
 
 
 ### Unknown
