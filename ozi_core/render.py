@@ -94,7 +94,7 @@ def map_to_template(  # noqa: C901
             x = f'project.name/{f}.j2'
         case ['test', f]:
             x = f'tests/{f}.j2'
-        case ['templates', f]:
+        case ['templates', f]:  # pragma: no cover
             x = f'templates/{f}'
         case ['subprojects', f]:
             x = f'subprojects/{f}.j2'
