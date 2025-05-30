@@ -1,4 +1,45 @@
 # ozi-core CHANGELOG
+## 1.20.1 (2025-05-30)
+
+
+### Bug fixes
+
+
+* fix: ozi-new interactive prompt mimetype — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`6e079ea`](https://github.com/OZI-Project/ozi-core/commit/6e079eaafa635a7a09ed43965d85ca5fb6bd0051))
+
+
+### Build system
+
+
+* build(deps): bump OZI-Project/checkpoint from 1.7.4 to 1.7.5
+
+Bumps [OZI-Project/checkpoint](https://github.com/ozi-project/checkpoint) from 1.7.4 to 1.7.5.
+- [Release notes](https://github.com/ozi-project/checkpoint/releases)
+- [Commits](https://github.com/ozi-project/checkpoint/compare/1.7.4...1.7.5)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/checkpoint
+  dependency-version: 1.7.5
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`1151e5f`](https://github.com/OZI-Project/ozi-core/commit/1151e5f60ac6cfb183062d02804211892ce4a383))
+
+* build(deps): bump ozi-spec from 1.0.1 to 1.0.2
+
+Bumps [ozi-spec](https://www.oziproject.dev) from 1.0.1 to 1.0.2.
+
+
+updated-dependencies:
+- dependency-name: ozi-spec
+  dependency-version: 1.0.2
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`1d74270`](https://github.com/OZI-Project/ozi-core/commit/1d74270a6ad96cce784cee93a9871ba4ac224df5))
+
 ## 1.20.0 (2025-05-29)
 
 ## 1.19.9 (2025-05-26)
