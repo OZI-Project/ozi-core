@@ -60,6 +60,7 @@ class Project:  # pragma: no cover
         )
         self.update_wrapfile = update_wrapfile if update_wrapfile is not None else False
         TRANSLATION.locale = asdict(read_user_config())['interactive']['language']
+        TRANSLATION.mime_type = 'text/plain;charset=UTF-8'
 
     def __call__(self: Project) -> list[str]:  # noqa: C901  # pragma: no cover
         """Start the interactive prompt."""
