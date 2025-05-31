@@ -35,7 +35,7 @@ dependencies = [
     'dnspython~=2.7.0',
     'idna~=3.10',
     'meson[ninja]~=1.1,<1.9',
-    'ozi-templates==2.25.1',
+    'ozi-templates==2.26.0',
     'ozi-spec==1.0.2',
     'packaging>=24.1,<26.0',
     'platformdirs~=4.3',
