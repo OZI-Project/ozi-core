@@ -9,6 +9,7 @@ build-backend = "ozi_build.buildapi"
 
 [project]
 name="ozi-core"
+version="1.20"
 authors=[{name="Eden Ross Duff MSc", email="help@oziproject.dev"}]
 classifiers=[
     "Development Status :: 4 - Beta",
