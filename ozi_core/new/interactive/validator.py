@@ -9,7 +9,7 @@ from prompt_toolkit.validation import ThreadedValidator  # pyright: ignore
 from prompt_toolkit.validation import ValidationError  # pyright: ignore
 from prompt_toolkit.validation import Validator
 
-from ozi_core._i18n import TRANSLATION
+from ozi_core._i18n import TRANSLATION as _
 from ozi_core.validate import pypi_package_exists
 
 
@@ -21,13 +21,13 @@ class ProjectNameValidator(Validator):
         document: Document,
     ) -> None:  # pragma: no cover
         if len(document.text) == 0:
-            raise ValidationError(0, TRANSLATION('err-no-empty'))
+            raise ValidationError(0, _('err-no-empty'))
         if not re.match(
             '^([A-Z0-9]|[A-Z0-9][A-Z0-9._-]*[A-Z0-9])$',
             document.text,
             flags=re.IGNORECASE,
         ):
-            raise ValidationError(len(document.text), TRANSLATION('err-name-invalid'))
+            raise ValidationError(len(document.text), _('err-name-invalid'))
 
 
 class NotReservedValidator(ThreadedValidator):
@@ -39,7 +39,7 @@ class NotReservedValidator(ThreadedValidator):
     ) -> None:  # pragma: no cover
         self.validator.validate(document)
         if pypi_package_exists(document.text):
-            raise ValidationError(len(document.text), TRANSLATION('err-name-exists'))
+            raise ValidationError(len(document.text), _('err-name-exists'))
 
 
 class LengthValidator(Validator):
@@ -50,9 +50,9 @@ class LengthValidator(Validator):
         document: Document,
     ) -> None:  # pragma: no cover
         if len(document.text) == 0:
-            raise ValidationError(0, TRANSLATION('err-no-empty'))
+            raise ValidationError(0, _('err-no-empty'))
         if len(document.text) > 512:
-            raise ValidationError(512, TRANSLATION('err-too-long'))
+            raise ValidationError(512, _('err-too-long'))
 
 
 class PackageValidator(Validator):
@@ -63,11 +63,11 @@ class PackageValidator(Validator):
         document: Document,
     ) -> None:  # pragma: no cover
         if len(document.text) == 0:
-            raise ValidationError(0, TRANSLATION('err-no-empty'))
+            raise ValidationError(0, _('err-no-empty'))
         if pypi_package_exists(document.text):
             pass
         else:
-            raise ValidationError(len(document.text), TRANSLATION('err-pkg-not-found'))
+            raise ValidationError(len(document.text), _('err-pkg-not-found'))
 
 
 def validate_message(

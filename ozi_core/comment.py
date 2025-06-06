@@ -18,7 +18,7 @@ from typing import Sequence
 from ozi_spec import METADATA
 from tap_producer import TAP
 
-from ozi_core._i18n import TRANSLATION
+from ozi_core._i18n import TRANSLATION as _
 
 if TYPE_CHECKING:  # pragma: no cover
     from pathlib import Path
@@ -193,11 +193,11 @@ def comment_diagnostic(target: Path, rel_path: Path, file: str) -> None:  # prag
             count, diag = diagnostic(g.readlines(), rel_path / file)
             if count.total() > 0:
                 TAP.ok(
-                    TRANSLATION('term-comment-diagnostic'),
+                    _('term-comment-diagnostic'),
                     skip=False,
                     **{k: str(v) for k, v in count.items()}
                     | diag
-                    | {TRANSLATION('term-score'): f'{score(count)}/5.0'},
+                    | {_('term-score'): f'{score(count)}/5.0'},
                 )
             else:  # pragma: no cover
                 pass

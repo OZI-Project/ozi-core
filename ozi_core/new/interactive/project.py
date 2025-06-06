@@ -12,7 +12,7 @@ from prompt_toolkit.shortcuts.dialogs import yes_no_dialog  # pyright: ignore
 from prompt_toolkit.validation import DynamicValidator  # pyright: ignore
 from prompt_toolkit.validation import Validator  # pyright: ignore
 
-from ozi_core._i18n import TRANSLATION
+from ozi_core._i18n import TRANSLATION as _
 from ozi_core.config import read_user_config
 from ozi_core.new.interactive.menu import main_menu
 from ozi_core.new.interactive.validator import LengthValidator
@@ -59,16 +59,16 @@ class Project:  # pragma: no cover
             check_package_exists if check_package_exists is not None else True
         )
         self.update_wrapfile = update_wrapfile if update_wrapfile is not None else False
-        TRANSLATION.locale = asdict(read_user_config())['interactive']['language']
-        TRANSLATION.mime_type = 'text/plain;charset=UTF-8'
+        _.locale = asdict(read_user_config())['interactive']['language']
+        _.mime_type = 'text/plain;charset=UTF-8'
 
     def __call__(self: Project) -> list[str]:  # noqa: C901  # pragma: no cover
         """Start the interactive prompt."""
         if (
             admonition_dialog(
-                title=TRANSLATION('new-dlg-title'),
-                heading_label=TRANSLATION('adm-disclaimer-title'),
-                text=TRANSLATION('adm-disclaimer-text'),
+                title=_('new-dlg-title'),
+                heading_label=_('adm-disclaimer-title'),
+                text=_('adm-disclaimer-text'),
             ).run()
             is None
         ):
@@ -104,11 +104,11 @@ class Project:  # pragma: no cover
             return result
 
         if yes_no_dialog(
-            title=TRANSLATION('new-dlg-title'),
-            text=TRANSLATION('adm-maintainers', project_name=project_name),
+            title=_('new-dlg-title'),
+            text=_('adm-maintainers', project_name=project_name),
             style=_style,
-            yes_text=MenuButton.YES._str,
-            no_text=MenuButton.NO._str,
+            yes_text=_('btn-yes'),
+            no_text=_('btn-no'),
         ).run():
             result, output, prefix = self.maintainer(project_name, output, prefix)
             if isinstance(result, list):
@@ -123,11 +123,11 @@ class Project:  # pragma: no cover
             return result
 
         while not admonition_dialog(
-            title=TRANSLATION('new-dlg-title'),
-            heading_label=TRANSLATION('adm-confirm'),
+            title=_('new-dlg-title'),
+            heading_label=_('adm-confirm'),
             text='\n'.join(prefix.values()),
-            ok_text=MenuButton.OK._str,
-            cancel_text=MenuButton.MENU._str,
+            ok_text=_('btn-ok'),
+            cancel_text=_('btn-menu'),
         ).run():
             result, output, prefix = main_menu(self, output, prefix)
             if isinstance(result, list):
@@ -157,7 +157,7 @@ class Project:  # pragma: no cover
                 'Name',
                 output,
                 prefix,
-                TRANSLATION('pro-name'),
+                _('pro-name'),
                 validator=DynamicValidator(self._check_package_exists),
             )
             if result is True:
@@ -176,7 +176,7 @@ class Project:  # pragma: no cover
                 'Summary',
                 output,
                 prefix,
-                TRANSLATION('pro-summary', projectname=project_name),
+                _('pro-summary', projectname=project_name),
                 validator=LengthValidator(),
             )
             if result is True:
@@ -195,7 +195,7 @@ class Project:  # pragma: no cover
                 'Keywords',
                 output,
                 prefix,
-                TRANSLATION('pro-keywords', projectname=project_name),
+                _('pro-keywords', projectname=project_name),
                 validator=LengthValidator(),
             )
             if result is True:
@@ -212,12 +212,12 @@ class Project:  # pragma: no cover
         while True:
             result = radiolist_dialog(
                 values=(('LICENSE.txt', 'LICENSE.txt'),),
-                title=TRANSLATION('new-dlg-title'),
-                text=TRANSLATION('pro-license-file', projectname=project_name),
+                title=_('new-dlg-title'),
+                text=_('pro-license-file', projectname=project_name),
                 style=_style,
                 default='LICENSE.txt',
-                ok_text=MenuButton.OK._str,
-                cancel_text=MenuButton.BACK._str,
+                ok_text=_('btn-ok'),
+                cancel_text=_('btn-back'),
             ).run()
             if result is not None:
                 output.update(
@@ -247,7 +247,7 @@ class Project:  # pragma: no cover
                 'Author',
                 output,
                 prefix,
-                TRANSLATION('pro-author', projectname=project_name),
+                _('pro-author', projectname=project_name),
                 validator=LengthValidator(),
                 split_on=',',
             )
@@ -270,7 +270,7 @@ class Project:  # pragma: no cover
                 'Author-email',
                 output,
                 prefix,
-                TRANSLATION('pro-author-email', projectname=project_name),
+                _('pro-author-email', projectname=project_name),
                 validator=LengthValidator(),
                 split_on=',',
             )
@@ -291,12 +291,12 @@ class Project:  # pragma: no cover
                 values=sorted(
                     (zip(from_prefix(Prefix().license), from_prefix(Prefix().license))),
                 ),
-                title=TRANSLATION('new-dlg-title'),
-                text=TRANSLATION('pro-license', projectname=project_name),
+                title=_('new-dlg-title'),
+                text=_('pro-license', projectname=project_name),
                 style=_style,
                 default=_default,
-                cancel_text=MenuButton.MENU._str,
-                ok_text=MenuButton.OK._str,
+                cancel_text=_('btn-menu'),
+                ok_text=_('btn-ok'),
             ).run()
             if license_ is None:
                 result, output, prefix = main_menu(self, output, prefix)
@@ -311,13 +311,13 @@ class Project:  # pragma: no cover
                     break
                 message_dialog(
                     style=_style,
-                    title=TRANSLATION('new-dlg-title'),
-                    text=TRANSLATION(
+                    title=_('new-dlg-title'),
+                    text=_(
                         'msg-invalid-input',
                         value=license_ if license_ and isinstance(license_, str) else '',
                         errmsg='',
                     ),
-                    ok_text=MenuButton.OK._str,
+                    ok_text=_('btn-ok'),
                 ).run()
         prefix.update(
             {f'{Prefix().license}': f'{Prefix().license}{license_ if license_ else ""}'},
@@ -348,41 +348,41 @@ class Project:  # pragma: no cover
 
             if len(possible_spdx) < 1:
                 _license_expression = input_dialog(
-                    title=TRANSLATION('new-dlg-title'),
-                    text=TRANSLATION(
+                    title=_('new-dlg-title'),
+                    text=_(
                         'pro-license-expression-input',
                         license=_license,
                         projectname=project_name,
                     ),
                     default=_default[0],
                     style=_style,
-                    cancel_text=MenuButton.SKIP._str,
+                    cancel_text=_('btn-skip'),
                 ).run()
             elif len(possible_spdx) == 1:
                 _license_expression = input_dialog(
-                    title=TRANSLATION('new-dlg-title'),
-                    text=TRANSLATION(
+                    title=_('new-dlg-title'),
+                    text=_(
                         'pro-license-expression-input',
                         license=_license,
                         projectname=project_name,
                     ),
                     default=_default[0],
                     style=_style,
-                    cancel_text=MenuButton.SKIP._str,
-                    ok_text=MenuButton.OK._str,
+                    cancel_text=_('btn-skip'),
+                    ok_text=_('btn-ok'),
                 ).run()
             else:
                 license_id = radiolist_dialog(
                     values=sorted(zip(possible_spdx, possible_spdx)),
-                    title=TRANSLATION('new-dlg-title'),
-                    text=TRANSLATION(
+                    title=_('new-dlg-title'),
+                    text=_(
                         'pro-license-expression-radio',
                         license=_license,
                         projectname=project_name,
                     ),
                     style=_style,
-                    cancel_text=MenuButton.MENU._str,
-                    ok_text=MenuButton.OK._str,
+                    cancel_text=_('btn-menu'),
+                    ok_text=_('btn-ok'),
                 ).run()
                 if license_id is None:
                     output.update({'--license-expression': _default})
@@ -391,16 +391,16 @@ class Project:  # pragma: no cover
                         return result, output, prefix
                 else:
                     _license_expression = input_dialog(
-                        title=TRANSLATION('new-dlg-title'),
-                        text=TRANSLATION(
+                        title=_('new-dlg-title'),
+                        text=_(
                             'pro-license-expression-input',
                             license=_license,
                             projectname=project_name,
                         ),
                         default=license_id,
                         style=_style,
-                        cancel_text=MenuButton.SKIP._str,
-                        ok_text=MenuButton.OK._str,
+                        cancel_text=_('btn-skip'),
+                        ok_text=_('btn-ok'),
                     ).run()
                     if validate_message(license_id if license_id else '', LengthValidator())[
                         0
@@ -409,13 +409,13 @@ class Project:  # pragma: no cover
                     else:
                         message_dialog(
                             style=_style,
-                            title=TRANSLATION('new-dlg-title'),
-                            text=TRANSLATION(
+                            title=_('new-dlg-title'),
+                            text=_(
                                 'msg-invalid-input',
                                 value=license_id,
                                 errmsg='',
                             ),
-                            ok_text=MenuButton.OK._str,
+                            ok_text=_('btn-ok'),
                         ).run()
             break
         if _license_expression:
@@ -443,7 +443,7 @@ class Project:  # pragma: no cover
                 'Maintainer',
                 output,
                 prefix,
-                TRANSLATION('pro-maintainer', projectname=project_name),
+                _('pro-maintainer', projectname=project_name),
                 validator=LengthValidator(),
                 split_on=',',
             )
@@ -466,7 +466,7 @@ class Project:  # pragma: no cover
                 'Maintainer-email',
                 output,
                 prefix,
-                TRANSLATION('pro-maintainer-email', projectname=project_name),
+                _('pro-maintainer-email', projectname=project_name),
                 validator=LengthValidator(),
                 split_on=',',
             )
@@ -485,30 +485,30 @@ class Project:  # pragma: no cover
         output.setdefault('--requires-dist', [])
         while True:
             match button_dialog(
-                title=TRANSLATION('new-dlg-title'),
+                title=_('new-dlg-title'),
                 text='\n'.join(
                     (
                         'Requires-Dist:',
                         '\n'.join(_requires_dist),
                         '\n',
-                        TRANSLATION('pro-requires-dist', projectname=project_name),
+                        _('pro-requires-dist', projectname=project_name),
                     ),
                 ),
                 buttons=[
-                    MenuButton.ADD._tuple,
-                    MenuButton.REMOVE._tuple,
-                    MenuButton.OK._tuple,
-                    MenuButton.MENU._tuple,
+                    ('btn-add', _('btn-add')),
+                    ('btn-remove', _('btn-remove')),
+                    ('btn-ok', _('btn-ok')),
+                    ('btn-menu', _('btn-menu')),
                 ],
                 style=_style,
             ).run():
                 case MenuButton.ADD.value:
                     requirement = input_dialog(
-                        title=TRANSLATION('new-dlg-title'),
-                        text=TRANSLATION('pro-requires-dist-search'),
+                        title=_('new-dlg-title'),
+                        text=_('pro-requires-dist-search'),
                         validator=PackageValidator(),
                         style=_style,
-                        cancel_text=MenuButton.BACK._str,
+                        cancel_text=_('btn-back'),
                     ).run()
                     if requirement:
                         _requires_dist += [requirement]
@@ -523,11 +523,11 @@ class Project:  # pragma: no cover
                 case MenuButton.REMOVE.value:
                     if len(_requires_dist) != 0:
                         del_requirement = checkboxlist_dialog(
-                            title=TRANSLATION('new-dlg-title'),
-                            text=TRANSLATION('pro-requires-dist-cbl-remove'),
+                            title=_('new-dlg-title'),
+                            text=_('pro-requires-dist-cbl-remove'),
                             values=list(zip(_requires_dist, _requires_dist)),
                             style=_style,
-                            cancel_text=MenuButton.BACK._str,
+                            cancel_text=_('btn-back'),
                         ).run()
                         if del_requirement:
                             _requires_dist = list(
@@ -540,10 +540,10 @@ class Project:  # pragma: no cover
                                 prefix.pop(f'Requires-Dist: {req}')
                     else:
                         message_dialog(
-                            title=TRANSLATION('new-dlg-title'),
-                            text=TRANSLATION('pro-requires-dist-msg-remove-no-requirements'),
+                            title=_('new-dlg-title'),
+                            text=_('pro-requires-dist-msg-remove-no-requirements'),
                             style=_style,
-                            ok_text=MenuButton.OK._str,
+                            ok_text=_('btn-ok'),
                         ).run()
                 case MenuButton.OK.value:
                     break
@@ -568,12 +568,12 @@ class Project:  # pragma: no cover
                 ('md', 'Markdown'),
                 ('txt', 'Plaintext'),
             ),
-            title=TRANSLATION('new-dlg-title'),
-            text=TRANSLATION('pro-readme-type', projectname=project_name),
+            title=_('new-dlg-title'),
+            text=_('pro-readme-type', projectname=project_name),
             style=_style,
             default=_default,
-            ok_text=MenuButton.OK._str,
-            cancel_text=MenuButton.BACK._str,
+            ok_text=_('btn-ok'),
+            cancel_text=_('btn-back'),
         ).run()
         if readme_type is not None:
             output.update(
@@ -601,15 +601,15 @@ class Project:  # pragma: no cover
         _default = output.setdefault('--typing', [])
         result = radiolist_dialog(
             values=(
-                ('Typed', TRANSLATION('pro-typing-radio-typed')),
-                ('Stubs Only', TRANSLATION('pro-typing-radio-stubs-only')),
+                ('Typed', _('pro-typing-radio-typed')),
+                ('Stubs Only', _('pro-typing-radio-stubs-only')),
             ),
-            title=TRANSLATION('new-dlg-title'),
-            text=TRANSLATION('pro-typing', projectname=project_name),
+            title=_('new-dlg-title'),
+            text=_('pro-typing', projectname=project_name),
             style=_style,
-            ok_text=MenuButton.OK._str,
+            ok_text=_('btn-ok'),
             default=_default,
-            cancel_text=MenuButton.BACK._str,
+            cancel_text=_('btn-back'),
         ).run()
         if result is not None:
             output.update({'--typing': [result] if isinstance(result, str) else []})
@@ -639,43 +639,43 @@ class Project:  # pragma: no cover
                 values=(
                     (
                         'Changelog',
-                        TRANSLATION('pro-project-urls-cbl-changelog'),
+                        _('pro-project-urls-cbl-changelog'),
                     ),
                     (
                         'Documentation',
-                        TRANSLATION('pro-project-urls-cbl-documentation'),
+                        _('pro-project-urls-cbl-documentation'),
                     ),
                     (
                         'Bug Report',
-                        TRANSLATION('pro-project-urls-cbl-bug-report'),
+                        _('pro-project-urls-cbl-bug-report'),
                     ),
                     (
                         'Funding',
-                        TRANSLATION('pro-project-urls-cbl-funding'),
+                        _('pro-project-urls-cbl-funding'),
                     ),
                     (
                         'Source',
-                        TRANSLATION('pro-project-urls-cbl-source'),
+                        _('pro-project-urls-cbl-source'),
                     ),
                 ),
-                title=TRANSLATION('new-dlg-title'),
-                text=TRANSLATION('pro-project-urls-cbl', projectname=project_name),
+                title=_('new-dlg-title'),
+                text=_('pro-project-urls-cbl', projectname=project_name),
                 style=_style,
-                ok_text=MenuButton.OK._str,
-                cancel_text=MenuButton.BACK._str,
+                ok_text=_('btn-ok'),
+                cancel_text=_('btn-back'),
             ).run()
             if result is not None:
                 for i in result:
                     urltype = f'pro-project-urls-cbl-{"-".join(map(str.lower, i.split()))}'
                     url = input_dialog(
-                        title=TRANSLATION('new-dlg-title'),
-                        text=TRANSLATION(
+                        title=_('new-dlg-title'),
+                        text=_(
                             'pro-project-urls-input',
-                            urltype=TRANSLATION(urltype),
+                            urltype=_(urltype),
                             projectname=project_name,
                         ),
-                        ok_text=MenuButton.OK._str,
-                        cancel_text=MenuButton.BACK._str,
+                        ok_text=_('btn-ok'),
+                        cancel_text=_('btn-back'),
                         default='https://',
                         style=_style,
                     ).run()
@@ -713,13 +713,13 @@ class Project:  # pragma: no cover
     ]:  # pragma: no cover
         _default = output.setdefault(f'--{label.lower()}', [])
         header = input_dialog(
-            title=TRANSLATION('new-dlg-title'),
+            title=_('new-dlg-title'),
             text='\n'.join(args),
             validator=validator,
             default=_default[0] if len(_default) > 0 else '',
             style=_style,
-            cancel_text=MenuButton.MENU._str,
-            ok_text=MenuButton.OK._str,
+            cancel_text=_('btn-menu'),
+            ok_text=_('btn-ok'),
         ).run()
         if header is None:
             output.update(
@@ -742,10 +742,10 @@ class Project:  # pragma: no cover
                         output.update({f'--{label.lower()}': [header]})
                     return True, output, prefix
                 message_dialog(
-                    title=TRANSLATION('new-dlg-title'),
-                    text=TRANSLATION('msg-input-invalid', value=header, errmsg=errmsg),
+                    title=_('new-dlg-title'),
+                    text=_('msg-input-invalid', value=header, errmsg=errmsg),
                     style=_style,
-                    ok_text=MenuButton.OK._str,
+                    ok_text=_('btn-ok'),
                 ).run()
             output.update(
                 {f'--{label.lower()}': _default if len(_default) > 0 else []},

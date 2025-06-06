@@ -21,6 +21,9 @@ from ozi_core.ui.dialog import input_dialog
 from ozi_core.ui.menu import MenuButton
 from ozi_core.ui.menu import checkbox
 
+global _
+_ = TRANSLATION
+
 
 def main_menu(  # pragma: no cover
     project: Any,
@@ -29,15 +32,15 @@ def main_menu(  # pragma: no cover
 ) -> tuple[None | list[str] | bool, dict[str, list[str]], dict[str, str]]:
     while True:
         match button_dialog(
-            title=TRANSLATION('new-dlg-title'),
-            text=TRANSLATION('main-menu-text'),
+            title=_('new-dlg-title'),
+            text=_('main-menu-text'),
             buttons=[
-                MenuButton.METADATA._tuple,
-                MenuButton.OPTIONS._tuple,
-                MenuButton.RESET._tuple,
-                MenuButton.EXIT._tuple,
-                MenuButton.EDIT._tuple,
-                MenuButton.BACK._tuple,
+                (_('btn-metadata'), MenuButton.METADATA.value),
+                (_('btn-options'), MenuButton.OPTIONS.value),
+                (_('btn-reset'), MenuButton.RESET.value),
+                (_('btn-exit'), MenuButton.EXIT.value),
+                (_('btn-edit'), MenuButton.EDIT.value),
+                (_('btn-back'), MenuButton.BACK.value),
             ],
             style=_style,
         ).run():
@@ -45,20 +48,20 @@ def main_menu(  # pragma: no cover
                 break
             case MenuButton.RESET.value:
                 if yes_no_dialog(
-                    title=TRANSLATION('new-dlg-title'),
-                    text=TRANSLATION('main-menu-yn-reset'),
+                    title=_('new-dlg-title'),
+                    text=_('main-menu-yn-reset'),
                     style=_style,
-                    yes_text=MenuButton.YES._str,
-                    no_text=MenuButton.NO._str,
+                    yes_text=_('btn-yes'),
+                    no_text=_('btn-no'),
                 ).run():
                     return ['interactive', '.'], output, prefix
             case MenuButton.EXIT.value:
                 if yes_no_dialog(
-                    title=TRANSLATION('new-dlg-title'),
-                    text=TRANSLATION('main-menu-yn-exit'),
+                    title=_('new-dlg-title'),
+                    text=_('main-menu-yn-exit'),
                     style=_style,
-                    yes_text=MenuButton.YES._str,
-                    no_text=MenuButton.NO._str,
+                    yes_text=_('btn-yes'),
+                    no_text=_('btn-no'),
                 ).run():
                     return [], output, prefix
             case MenuButton.EDIT.value:
@@ -71,13 +74,13 @@ def main_menu(  # pragma: no cover
                     return result, output, prefix
             case MenuButton.METADATA.value:
                 if admonition_dialog(
-                    title=TRANSLATION('new-dlg-title'),
-                    heading_label=TRANSLATION('adm-metadata'),
+                    title=_('new-dlg-title'),
+                    heading_label=_('adm-metadata'),
                     text='\n'.join(
                         prefix.values() if len(prefix) > 0 else {'Name:': 'Name:'},
                     ),
-                    ok_text=MenuButton.PROMPT._str,
-                    cancel_text=MenuButton.BACK._str,
+                    ok_text=_('btn-prompt'),
+                    cancel_text=_('btn-back'),
                 ).run():
                     break
     return None, output, prefix
@@ -89,63 +92,62 @@ def options_menu(  # pragma: no cover
     prefix: dict[str, str],
 ) -> tuple[None | list[str] | bool, dict[str, list[str]], dict[str, str]]:
     _default: str | list[str] | None = None
+    _ = TRANSLATION
     while True:
         match radiolist_dialog(
-            title=TRANSLATION('new-dlg-title'),
-            text=TRANSLATION('opt-menu-title'),
+            title=_('new-dlg-title'),
+            text=_('opt-menu-title'),
             values=[
                 (
                     'enable_cython',
-                    TRANSLATION(
+                    _(
                         'opt-menu-enable-cython',
                         value=checkbox(project.enable_cython),
                     ),
                 ),
                 (
                     'enable_uv',
-                    TRANSLATION(
+                    _(
                         'opt-menu-enable-uv',
                         value=checkbox(project.enable_uv),
                     ),
                 ),
                 (
                     'github_harden_runner',
-                    TRANSLATION(
+                    _(
                         'opt-menu-github-harden-runner',
                         value=checkbox(project.github_harden_runner),
                     ),
                 ),
                 (
                     'strict',
-                    TRANSLATION('opt-menu-strict', value=checkbox(project.strict)),
+                    _('opt-menu-strict', value=checkbox(project.strict)),
                 ),
                 (
                     'update_wrapfile',
-                    TRANSLATION(
-                        'opt-menu-update-wrapfile', value=checkbox(project.update_wrapfile)
-                    ),
+                    _('opt-menu-update-wrapfile', value=checkbox(project.update_wrapfile)),
                 ),
                 (
                     'verify_email',
-                    TRANSLATION(
+                    _(
                         'opt-menu-verify-email',
                         value=checkbox(project.verify_email),
                     ),
                 ),
-                ('allow_file', TRANSLATION('opt-menu-allow-file')),
-                ('ci_provider', TRANSLATION('opt-menu-ci-provider')),
-                ('copyright_head', TRANSLATION('opt-menu-copyright-head')),
+                ('allow_file', _('opt-menu-allow-file')),
+                ('ci_provider', _('opt-menu-ci-provider')),
+                ('copyright_head', _('opt-menu-copyright-head')),
                 (
                     'language',
-                    TRANSLATION(
+                    _(
                         'opt-menu-language',
-                        value=TRANSLATION(f'lang-{TRANSLATION.locale}'),
+                        value=_(f'lang-{TRANSLATION.locale}'),
                     ),
                 ),
             ],
             style=_style,
-            cancel_text=MenuButton.BACK._str,
-            ok_text=MenuButton.OK._str,
+            cancel_text=_('btn-back'),
+            ok_text=_('btn-ok'),
         ).run():
             case x if x and x in (
                 'enable_cython',
@@ -198,11 +200,11 @@ def options_menu(  # pragma: no cover
                     ],
                 )
                 result = input_dialog(
-                    title=TRANSLATION('new-dlg-title'),
-                    text=TRANSLATION('opt-menu-copyright-head-input'),
+                    title=_('new-dlg-title'),
+                    text=_('opt-menu-copyright-head-input'),
                     style=_style,
-                    cancel_text=MenuButton.BACK._str,
-                    ok_text=MenuButton.OK._str,
+                    cancel_text=_('btn-back'),
+                    ok_text=_('btn-ok'),
                     default=_default[0],
                     multiline=True,
                 ).run()
@@ -215,11 +217,11 @@ def options_menu(  # pragma: no cover
                     list(METADATA.spec.python.src.allow_files),
                 )
                 result = input_dialog(
-                    title=TRANSLATION('new-dlg-title'),
-                    text=TRANSLATION('opt-menu-allow-file-input'),
+                    title=_('new-dlg-title'),
+                    text=_('opt-menu-allow-file-input'),
                     style=_style,
-                    cancel_text=MenuButton.BACK._str,
-                    ok_text=MenuButton.OK._str,
+                    cancel_text=_('btn-back'),
+                    ok_text=_('btn-ok'),
                     default=','.join(_default),
                 ).run()
                 if result != ','.join(_default) and result is not None:
@@ -228,11 +230,11 @@ def options_menu(  # pragma: no cover
             case x if x and x == 'ci_provider':
                 _default = output.setdefault('--ci-provider', ['github'])
                 result = radiolist_dialog(
-                    title=TRANSLATION('new-dlg-title'),
-                    text=TRANSLATION('opt-menu-ci-provider-input'),
+                    title=_('new-dlg-title'),
+                    text=_('opt-menu-ci-provider-input'),
                     values=[('github', 'GitHub')],
-                    cancel_text=MenuButton.BACK._str,
-                    ok_text=MenuButton.OK._str,
+                    cancel_text=_('btn-back'),
+                    ok_text=_('btn-ok'),
                     default=_default[0],
                     style=_style,
                 ).run()
@@ -241,27 +243,28 @@ def options_menu(  # pragma: no cover
                     output.update({'--ci-provider': [project.ci_provider]})
             case x if x == 'language':
                 result = radiolist_dialog(
-                    title=TRANSLATION('new-dlg-title'),
-                    text=TRANSLATION('opt-menu-language-text'),
+                    title=_('new-dlg-title'),
+                    text=_('opt-menu-language-text'),
                     values=list(
                         zip(
                             TRANSLATION.data.keys(),
-                            [TRANSLATION(f'lang-{i}') for i in TRANSLATION.data.keys()],
+                            [_(f'lang-{i[:2]}') for i in {'en', 'zh'}],
                         ),
                     ),
-                    cancel_text=MenuButton.BACK._str,
-                    ok_text=MenuButton.OK._str,
+                    cancel_text=_('btn-back'),
+                    ok_text=_('btn-ok'),
                     default=TRANSLATION.locale,
                     style=_style,
                 ).run()
                 if result is not None:
                     TRANSLATION.locale = result
+                    _ = TRANSLATION
             case _:
                 if yes_no_dialog(
-                    title=TRANSLATION('new-dlg-title'),
-                    text=TRANSLATION('opt-menu-save-config'),
-                    yes_text=MenuButton.YES._str,
-                    no_text=MenuButton.NO._str,
+                    title=_('new-dlg-title'),
+                    text=_('opt-menu-save-config'),
+                    yes_text=_('btn-yes'),
+                    no_text=_('btn-no'),
                     style=_style,
                 ).run():
                     config = asdict(read_user_config())
@@ -279,41 +282,41 @@ def edit_menu(  # pragma: no cover
 ) -> tuple[None | list[str] | bool, dict[str, list[str]], dict[str, str]]:
     while True:
         match radiolist_dialog(
-            title=TRANSLATION('new-dlg-title'),
-            text=TRANSLATION('edit-menu-text'),
+            title=_('new-dlg-title'),
+            text=_('edit-menu-text'),
             values=[
-                ('name', TRANSLATION('edit-menu-btn-name')),
-                ('summary', TRANSLATION('edit-menu-btn-summary')),
-                ('keywords', TRANSLATION('edit-menu-btn-keywords')),
-                ('author', TRANSLATION('edit-menu-btn-author')),
-                ('author_email', TRANSLATION('edit-menu-btn-email')),
-                ('license_', TRANSLATION('edit-menu-btn-license')),
+                ('name', _('edit-menu-btn-name')),
+                ('summary', _('edit-menu-btn-summary')),
+                ('keywords', _('edit-menu-btn-keywords')),
+                ('author', _('edit-menu-btn-author')),
+                ('author_email', _('edit-menu-btn-email')),
+                ('license_', _('edit-menu-btn-license')),
                 (
                     'license_expression',
-                    TRANSLATION('edit-menu-btn-license-expression'),
+                    _('edit-menu-btn-license-expression'),
                 ),
-                ('license_file', TRANSLATION('edit-menu-btn-license-file')),
-                ('maintainer', TRANSLATION('edit-menu-btn-maintainer')),
+                ('license_file', _('edit-menu-btn-license-file')),
+                ('maintainer', _('edit-menu-btn-maintainer')),
                 (
                     'maintainer_email',
-                    TRANSLATION('edit-menu-btn-maintainer-email'),
+                    _('edit-menu-btn-maintainer-email'),
                 ),
-                ('project_urls', TRANSLATION('edit-menu-btn-project-url')),
+                ('project_urls', _('edit-menu-btn-project-url')),
                 (
                     'requires_dist',
-                    TRANSLATION('edit-menu-btn-requires-dist'),
+                    _('edit-menu-btn-requires-dist'),
                 ),
-                ('audience', TRANSLATION('edit-menu-btn-audience')),
-                ('environment', TRANSLATION('edit-menu-btn-environment')),
-                ('framework', TRANSLATION('edit-menu-btn-framework')),
-                ('language', TRANSLATION('edit-menu-btn-language')),
-                ('status', TRANSLATION('edit-menu-btn-status')),
-                ('topic', TRANSLATION('edit-menu-btn-topic')),
-                ('typing', TRANSLATION('edit-menu-btn-typing')),
-                ('readme_type', TRANSLATION('edit-menu-btn-readme-type')),
+                ('audience', _('edit-menu-btn-audience')),
+                ('environment', _('edit-menu-btn-environment')),
+                ('framework', _('edit-menu-btn-framework')),
+                ('language', _('edit-menu-btn-language')),
+                ('status', _('edit-menu-btn-status')),
+                ('topic', _('edit-menu-btn-topic')),
+                ('typing', _('edit-menu-btn-typing')),
+                ('readme_type', _('edit-menu-btn-readme-type')),
             ],
-            cancel_text=MenuButton.BACK._str,
-            ok_text=MenuButton.OK._str,
+            cancel_text=_('btn-back'),
+            ok_text=_('btn-ok'),
             style=_style,
         ).run():
             case None:
@@ -377,17 +380,14 @@ def edit_menu(  # pragma: no cover
                                     )
                                 ),
                             ),
-                            title=TRANSLATION('new-dlg-title'),
-                            text=TRANSLATION(
-                                'pro-classifier-cbl',
-                                key=TRANSLATION(f'edit-menu-btn-{x}'),
-                            ),
+                            title=_('new-dlg-title'),
+                            text=_('pro-classifier-cbl', key=_(f'edit-menu-btn-{x}')),
                             default_values=(
                                 config['new']['language'] if x == 'language' else None
                             ),
                             style=_style,
-                            ok_text=MenuButton.OK._str,
-                            cancel_text=MenuButton.BACK._str,
+                            ok_text=_('btn-ok'),
+                            cancel_text=_('btn-back'),
                         ).run()
                         if classifier is not None:
                             for i in classifier:
@@ -421,10 +421,10 @@ def edit_menu(  # pragma: no cover
                         if isinstance(result, list):
                             return result, output, prefix
                         if yes_no_dialog(
-                            title=TRANSLATION('new-dlg-title'),
-                            text=TRANSLATION('opt-menu-save-config'),
-                            yes_text=MenuButton.YES._str,
-                            no_text=MenuButton.NO._str,
+                            title=_('new-dlg-title'),
+                            text=_('opt-menu-save-config'),
+                            yes_text=_('btn-yes'),
+                            no_text=_('btn-no'),
                             style=_style,
                         ).run():
                             config = asdict(read_user_config())

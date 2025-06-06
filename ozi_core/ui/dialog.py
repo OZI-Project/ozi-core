@@ -30,8 +30,8 @@ from prompt_toolkit.widgets import RadioList
 from prompt_toolkit.widgets import TextArea
 from prompt_toolkit.widgets.toolbars import ValidationToolbar
 
+from ozi_core._i18n import TRANSLATION as _
 from ozi_core.ui._style import _style_dict
-from ozi_core.ui.menu import MenuButton
 
 if TYPE_CHECKING:  # pragma: no cover
     from prompt_toolkit.buffer import Buffer  # pyright: ignore
@@ -135,9 +135,9 @@ def admonition_dialog(
     The focus can be moved between the list and the Ok/Cancel button with tab.
     """
     if ok_text is None:
-        ok_text = MenuButton.OK._str
+        ok_text = _('btn-ok')
     if cancel_text is None:
-        cancel_text = MenuButton.EXIT._str
+        cancel_text = _('btn-exit')
 
     if style is None:
         style_dict = _style_dict
@@ -201,9 +201,9 @@ def input_dialog(  # pragma: no cover
     Return the given text, or None when cancelled.
     """
     if ok_text is None:
-        ok_text = MenuButton.OK._str
+        ok_text = _('btn-ok')
     if cancel_text is None:
-        cancel_text = MenuButton.BACK._str
+        cancel_text = _('btn-back')
 
     def accept(buf: Buffer) -> bool:
         get_app().layout.focus(ok_button)
