@@ -28,7 +28,7 @@ from pyparsing import ParseException
 from spdx_license_list import LICENSES
 from tap_producer import TAP
 
-from ozi_core._i18n import TRANSLATION
+from ozi_core._i18n import TRANSLATION as _
 from ozi_core._logging import LOG_PATH
 from ozi_core.config import CONF_PATH
 from ozi_core.spdx import spdx_license_expression
@@ -111,8 +111,7 @@ class CloseMatch(Action):
             no_match = True
         if no_match:  # pragma: no cover
             warn(
-                TRANSLATION('err-no-close-match', key=key, value=value)
-                + f'$ ozi-new -l {key}',
+                _('err-no-close-match', key=key, value=value) + f'$ ozi-new -l {key}',
                 RuntimeWarning,
                 stacklevel=0,
             )
@@ -163,7 +162,7 @@ def check_for_update(
     match max(releases):
         case latest if latest > current_version:
             TAP.not_ok(
-                TRANSLATION(
+                _(
                     'err-new-version',
                     latest=str(latest),
                     currentversion=str(current_version),
@@ -171,9 +170,9 @@ def check_for_update(
                 'https://pypi.org/project/OZI/',
             )
         case latest if latest < current_version:
-            TAP.ok(TRANSLATION('term-tap-dev-version'), str(current_version))
+            TAP.ok(_('term-tap-dev-version'), str(current_version))
         case latest if latest == current_version:
-            TAP.ok(TRANSLATION('term-tap-up-to-date'), str(current_version))
+            TAP.ok(_('term-tap-up-to-date'), str(current_version))
 
 
 def check_version(version: str) -> NoReturn:  # pragma: defer to PyPI
@@ -188,7 +187,7 @@ def check_version(version: str) -> NoReturn:  # pragma: defer to PyPI
             TAP.end()
         case _:
             TAP.end(
-                skip_reason=TRANSLATION(
+                skip_reason=_(
                     'version-check-failed',
                     status=str(response.status_code),
                 ),
@@ -210,7 +209,7 @@ def license_expression(expr: str) -> NoReturn:  # pragma: no cover
     """Validate a SPDX license expression."""
     try:
         spdx_license_expression.parse_string(expr, parse_all=True)
-        TAP.ok(expr, TRANSLATION('term-parsing-success'))
+        TAP.ok(expr, _('term-parsing-success'))
     except ParseException as e:
         TAP.not_ok(expr, str(e))
     TAP.end()

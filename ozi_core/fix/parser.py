@@ -10,20 +10,25 @@ from argparse import BooleanOptionalAction
 
 from pathvalidate.argparse import validate_filepath_arg
 
-from ozi_core._i18n import TRANSLATION
+from ozi_core._i18n import TRANSLATION as _
 from ozi_core.fix.validate import AppendRewriteCommandTarget
 from ozi_core.ui.defaults import COPYRIGHT_HEAD
 from ozi_core.ui.defaults import FIX_PRETTY
 from ozi_core.ui.defaults import FIX_STRICT
 
-TRANSLATION.mime_type = 'text/plain;charset=UTF-8'
+_.mime_type = 'text/plain;charset=UTF-8'
+_OPTIONS = _('term-options')
+_OUTPUT = _('term-output')
+_DISCLAIMER_TEXT = _('adm-disclaimer-text')
+_POSITIONAL_ARGS = _('term-positional-args')
+
 parser = ArgumentParser(
     prog='ozi-fix',
     description=sys.modules[__name__].__doc__,
     add_help=False,
-    usage=f"""%(prog)s [{TRANSLATION('term-options')}] | [{TRANSLATION('term-positional-args')}]
+    usage=f"""%(prog)s [{_OPTIONS}] | [{_POSITIONAL_ARGS}]
 
-{TRANSLATION('adm-disclaimer-text')}
+{_DISCLAIMER_TEXT}
 """,
 )
 parser.add_argument(
@@ -62,14 +67,14 @@ parser.add_argument(
 )
 subparser = parser.add_subparsers(help='', metavar='', dest='fix')
 helpers = parser.add_mutually_exclusive_group()
-helpers.add_argument('-h', '--help', action='help', help=TRANSLATION('term-help-help'))
+helpers.add_argument('-h', '--help', action='help', help=_('term-help-help'))
 missing_parser = subparser.add_parser(
     'missing',
     prog='ozi-fix missing',
     aliases=['m', 'mis'],
-    usage=f'%(prog)s [{TRANSLATION("term-options")}] [{TRANSLATION("term-output")}] target',
+    usage=f'%(prog)s [{_OPTIONS}] [{_OUTPUT}] target',
     allow_abbrev=True,
-    help=TRANSLATION('term-help-fix-missing'),
+    help=_('term-help-fix-missing'),
 )
 missing_parser.add_argument(
     '--add',
@@ -91,43 +96,43 @@ missing_parser.add_argument(
     '--update-wrapfile',
     action=BooleanOptionalAction,
     default=False,
-    help=TRANSLATION('term-help-update-wrapfile'),
+    help=_('term-help-update-wrapfile'),
 )
-missing_output = missing_parser.add_argument_group(TRANSLATION('term-output'))
+missing_output = missing_parser.add_argument_group(_('term-output'))
 missing_output.add_argument(
     '--strict',
     default=FIX_STRICT,
     action=BooleanOptionalAction,
-    help=TRANSLATION('term-help-strict'),
+    help=_('term-help-strict'),
 )
 missing_output.add_argument(
     '--pretty',
     default=FIX_PRETTY,
     action=BooleanOptionalAction,
-    help=TRANSLATION('term-help-pretty'),
+    help=_('term-help-pretty'),
 )
 missing_parser.add_argument(
     'target',
     type=validate_filepath_arg,
     nargs='?',
     default='.',
-    help=TRANSLATION('term-help-fix-target'),
+    help=_('term-help-fix-target'),
 )
 source_parser = subparser.add_parser(
     'source',
     aliases=['s', 'src'],
     prog='ozi-fix source',
-    usage=f'%(prog)s [{TRANSLATION("term-options")}] [{TRANSLATION("term-output")}] target',
+    usage=f'%(prog)s [{_OPTIONS}] [{_OUTPUT}] target',
     allow_abbrev=True,
-    help=TRANSLATION('term-help-fix-source'),
+    help=_('term-help-fix-source'),
 )
 test_parser = subparser.add_parser(
     'test',
     prog='ozi-fix test',
-    usage=f'%(prog)s [{TRANSLATION("term-options")}] [{TRANSLATION("term-output")}] target',
+    usage=f'%(prog)s [{_OPTIONS}] [{_OUTPUT}] target',
     aliases=['t', 'tests'],
     allow_abbrev=True,
-    help=TRANSLATION('term-help-fix-test'),
+    help=_('term-help-fix-test'),
 )
 source_parser.add_argument(
     '-a',
@@ -136,7 +141,7 @@ source_parser.add_argument(
     nargs='?',
     action=AppendRewriteCommandTarget,
     default=[],
-    help=TRANSLATION('term-help-fix-add'),
+    help=_('term-help-fix-add'),
 )
 source_parser.add_argument(
     '-r',
@@ -145,7 +150,7 @@ source_parser.add_argument(
     nargs='?',
     action=AppendRewriteCommandTarget,
     default=[],
-    help=TRANSLATION('term-help-fix-remove'),
+    help=_('term-help-fix-remove'),
 )
 source_parser.add_argument(
     '-c',
@@ -153,26 +158,26 @@ source_parser.add_argument(
     metavar='HEADER',
     type=str,
     default=COPYRIGHT_HEAD,
-    help=TRANSLATION('term-copyright-head'),
+    help=_('term-copyright-head'),
 )
 source_parser.add_argument(
     '--update-wrapfile',
     action=BooleanOptionalAction,
     default=False,
-    help=TRANSLATION('term-help-update-wrapfile'),
+    help=_('term-help-update-wrapfile'),
 )
-source_output = source_parser.add_argument_group(TRANSLATION('term-output'))
+source_output = source_parser.add_argument_group(_('term-output'))
 source_output.add_argument(
     '--strict',
     default=FIX_STRICT,
     action=BooleanOptionalAction,
-    help=TRANSLATION('term-help-strict'),
+    help=_('term-help-strict'),
 )
 source_output.add_argument(
     '--pretty',
     default=FIX_PRETTY,
     action=BooleanOptionalAction,
-    help=TRANSLATION('term-help-pretty'),
+    help=_('term-help-pretty'),
 )
 source_output.add_argument(
     '--interactive-io',
@@ -185,7 +190,7 @@ source_parser.add_argument(
     type=validate_filepath_arg,
     nargs='?',
     default='.',
-    help=TRANSLATION('term-help-fix-target'),
+    help=_('term-help-fix-target'),
 )
 test_parser.add_argument(
     '-a',
@@ -194,7 +199,7 @@ test_parser.add_argument(
     nargs='?',
     action=AppendRewriteCommandTarget,
     default=[],
-    help=TRANSLATION('term-help-fix-add'),
+    help=_('term-help-fix-add'),
 )
 test_parser.add_argument(
     '-r',
@@ -203,7 +208,7 @@ test_parser.add_argument(
     nargs='?',
     action=AppendRewriteCommandTarget,
     default=[],
-    help=TRANSLATION('term-help-fix-remove'),
+    help=_('term-help-fix-remove'),
 )
 test_parser.add_argument(
     '-c',
@@ -211,26 +216,26 @@ test_parser.add_argument(
     metavar='HEADER',
     type=str,
     default=COPYRIGHT_HEAD,
-    help=TRANSLATION('term-copyright-head'),
+    help=_('term-copyright-head'),
 )
 test_parser.add_argument(
     '--update-wrapfile',
     action=BooleanOptionalAction,
     default=False,
-    help=TRANSLATION('term-help-update-wrapfile'),
+    help=_('term-help-update-wrapfile'),
 )
-test_output = test_parser.add_argument_group(TRANSLATION('term-output'))
+test_output = test_parser.add_argument_group(_('term-output'))
 test_output.add_argument(
     '--strict',
     default=FIX_STRICT,
     action=BooleanOptionalAction,
-    help=TRANSLATION('term-help-strict'),
+    help=_('term-help-strict'),
 )
 test_output.add_argument(
     '--pretty',
     default=FIX_PRETTY,
     action=BooleanOptionalAction,
-    help=TRANSLATION('term-help-pretty'),
+    help=_('term-help-pretty'),
 )
 test_output.add_argument(
     '--interactive-io',
@@ -243,7 +248,7 @@ test_parser.add_argument(
     type=validate_filepath_arg,
     nargs='?',
     default='.',
-    help=TRANSLATION('term-help-fix-target'),
+    help=_('term-help-fix-target'),
 )
 interactive_parser = subparser.add_parser(
     'interactive',
@@ -251,12 +256,12 @@ interactive_parser = subparser.add_parser(
     aliases=['i'],
     usage='%(prog)s target',
     allow_abbrev=True,
-    help=TRANSLATION('term-help-fix-interactive'),
+    help=_('term-help-fix-interactive'),
 )
 interactive_parser.add_argument(
     'target',
     type=validate_filepath_arg,
     nargs='?',
     default='.',
-    help=TRANSLATION('term-help-fix-target'),
+    help=_('term-help-fix-target'),
 )

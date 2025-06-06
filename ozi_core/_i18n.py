@@ -5,52 +5,65 @@
 """Internationalization utilities."""
 from __future__ import annotations
 
+import gettext
 import html
 import locale
+import os
+import site
+import sys
 from logging import getLogger
+from pathlib import Path
 from string import Template
 from typing import Any
+from typing import Callable
 
-from ozi_core._locales import data
 from ozi_core._logging import PytestFilter
 from ozi_core._logging import config_logger
 
 config_logger()
 _LOCALE = locale.getlocale()[0]
+mo_path = Path(site.getuserbase()) / 'share' / 'locale'
+if 'PYTEST_VERSION' in os.environ or 'pytest' in sys.modules:  # pragma: no cover
+    mo_path = Path(__file__).parent.parent / 'po'
+gettext.bindtextdomain('ozi-core', mo_path)  # pragma: no cover
 
 
 class Translation:
     """Translation API for use inside OZI tools.
 
-    Try to get the system locale and load translations.
+    Wraps gettext.gettext with mimetype-specific postprocessing.
     """
 
     __slots__ = ('__logger', '_locale', '_mime_type', 'data')
 
     def __init__(self: Translation) -> None:
-        self.data = data
+        self.data = {
+            'en_US': gettext.translation('ozi-core', localedir=mo_path, languages=['en_US']),
+            'en': gettext.translation('ozi-core', localedir=mo_path, languages=['en']),
+            'zh_CN': gettext.translation('ozi-core', localedir=mo_path, languages=['zh_CN']),
+            'zh': gettext.translation('ozi-core', localedir=mo_path, languages=['zh']),
+        }
         self._mime_type = 'text/plain;charset=UTF-8'
-        self._locale = (
-            _LOCALE[:2] if _LOCALE is not None and _LOCALE[:2] in self.data else 'en'
-        )
+        self._locale = _LOCALE if _LOCALE is not None and _LOCALE in self.data else 'en_US'
         self.__logger = getLogger(f'ozi_core.{__name__}.{self.__class__.__name__}')
         self.__logger.addFilter(PytestFilter())
+        gettext.textdomain('ozi-core')
 
     @property
-    def mime_type(self: Translation) -> str | Any:  # pragma: no cover
+    def mime_type(self: Translation) -> str | Any:
         """Get the current MIME type setting."""
         return self._mime_type
 
     @mime_type.setter
-    def mime_type(self: Translation, mime: str) -> None:  # pragma: no cover
+    def mime_type(self: Translation, mime: str) -> None:
         """Set the MIME type for string translation."""
         if mime in {'text/plain;charset=UTF-8', 'text/html;charset=UTF-8'}:
             self._mime_type = mime
         else:
-            self.__logger.debug(f'Invalid MIME type: {mime}')
+            self.__logger.debug(f'Invalid MIME type: {mime}')  # pragma: no cover
 
     @property
-    def locale(self: Translation) -> str | Any:  # pragma: no cover
+    def locale(self: Translation) -> str | Any:
         """Get the current locale setting."""
         return self._locale
 
@@ -74,13 +87,17 @@ class Translation:
                 text = text.replace(i, f'{i}<wbr>')
         return text
 
-    def __call__(self: Translation, _key: str, **kwargs: str) -> str:  # pragma: no cover
-        """Get translation text by key and pass optional substitions as keyword arguments."""
-        if self.locale not in self.data:
-            return _key
-        text = self.data[self.locale].get(_key, _key)
+    @property
+    def gettext(self: Translation) -> Callable[[str], str]:
+        t = TRANSLATION.data[TRANSLATION.locale]
+        t.install()
+        return t.gettext
+
+    def __call__(self: Translation, _key: str, **kwargs: str) -> str:
+        """Get translation text by key and pass optional substitutions as keyword arguments."""
+        text = self.gettext(_key)
         if text is None:
-            return ''
+            return ''  # pragma: no cover
         elif text is _key:
             self.__logger.debug(f'no translation for "{_key}" in locale "{self.locale}"')
             return Template(text).safe_substitute(**kwargs)

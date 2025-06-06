@@ -31,7 +31,7 @@ from mesonbuild.mparser import StringNode
 from mesonbuild.mparser import UMinusNode
 from tap_producer import TAP
 
-from ozi_core._i18n import TRANSLATION
+from ozi_core._i18n import TRANSLATION as _
 
 SelectValue: TypeAlias = type[AssignmentNode | PlusAssignmentNode | NotNode | UMinusNode]
 SelectItems: TypeAlias = type[ForeachClauseNode]
@@ -91,13 +91,13 @@ def project_metadata(ast: CodeBlockNode) -> tuple[str, str]:
     if isinstance(license_, ArrayNode):  # pragma: no cover
         license_ = license_.args.arguments[0]
         TAP.comment(
-            TRANSLATION('term-tap-meson-build-license-array'),
+            _('term-tap-meson-build-license-array'),
             license_.value,  # pyright: ignore
         )
 
     license_ = license_.value  # pyright: ignore
 
-    project_name, *_ = (i.value for i in project_args if isinstance(i, StringNode))
+    project_name, *__ = (i.value for i in project_args if isinstance(i, StringNode))
 
     return project_name, license_
 
