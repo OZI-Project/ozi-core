@@ -25,7 +25,10 @@ _LOCALE = locale.getlocale()[0]
 mo_path = Path(site.getuserbase()) / 'share' / 'locale'
 if 'PYTEST_VERSION' in os.environ or 'pytest' in sys.modules:
     mo_path = Path(__file__).parent.parent / 'po'
-T = gettext.translation('ozi-core', localedir=mo_path)  # pragma: no cover
+try:
+    T = gettext.translation('ozi-core', localedir=mo_path)  # pragma: no cover
+except FileNotFoundError as e:
+    raise RuntimeError(mo_path) from e
 gettext.bindtextdomain('ozi-core', mo_path)
 
 
