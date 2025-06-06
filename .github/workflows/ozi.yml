@@ -37,7 +37,7 @@ jobs:
             rekor.sigstore.dev:443
             tuf-repo-cdn.sigstore.dev:443
 
-      - uses: OZI-Project/checkpoint@1.8.1
+      - uses: OZI-Project/checkpoint@1.8.2
         with:
           python-version: "3.11"
           submodules: true
@@ -68,7 +68,7 @@ jobs:
             rekor.sigstore.dev:443
             tuf-repo-cdn.sigstore.dev:443
 
-      - uses: OZI-Project/checkpoint@1.8.1
+      - uses: OZI-Project/checkpoint@1.8.2
         with:
           python-version: "3.12"
           submodules: true
@@ -100,7 +100,7 @@ jobs:
             rekor.sigstore.dev:443
             tuf-repo-cdn.sigstore.dev:443
 
-      - uses: OZI-Project/checkpoint@1.8.1
+      - uses: OZI-Project/checkpoint@1.8.2
         with:
           python-version: "3.13"
           submodules: true
