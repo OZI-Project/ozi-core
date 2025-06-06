@@ -1,4 +1,152 @@
 # ozi-core CHANGELOG
+## 1.20.5 (2025-06-06)
+
+
+### Bug fixes
+
+
+* fix: add check for missing mo_path — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`14cb96f`](https://github.com/OZI-Project/ozi-core/commit/14cb96fe7faa97aab5bf650e86fc0753d20b1aaf))
+
+* fix: add check for missing mo_path — Eden Ross Duff MSc <rjdbcm@outlook.com>
+
+* Revert "fix: add check for missing mo_path"
+
+This reverts commit 53980c5c10cfdcfc239a50e6eca987d5dfc8a236.
+
+* Revert "fix: add check for missing mo_path"
+
+This reverts commit 8fe0d89e72c53f0ca1f18084055578cf8e5819f6.
+([`14cb96f`](https://github.com/OZI-Project/ozi-core/commit/14cb96fe7faa97aab5bf650e86fc0753d20b1aaf))
+
+* fix: remove gettext.translation call on import of _i18n — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`14cb96f`](https://github.com/OZI-Project/ozi-core/commit/14cb96fe7faa97aab5bf650e86fc0753d20b1aaf))
+
+* fix(i18n): no cover pytest only mo_path — Eden Ross Duff MSc <rjdbcm@outlook.com>
+
+ — Eden Ross Duff MSc <rjdbcm@outlook.com>
+Signed-off-by: Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`14cb96f`](https://github.com/OZI-Project/ozi-core/commit/14cb96fe7faa97aab5bf650e86fc0753d20b1aaf))
+
+* fix: add version to pyproject.toml for installer compatibility — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`9d521fe`](https://github.com/OZI-Project/ozi-core/commit/9d521feb915bb1fe6f56253561f6c62197cb8deb))
+
+
+### Build system
+
+
+* build: add ``apt install gettext`` to checkpoint runners (#782) — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`f5bda17`](https://github.com/OZI-Project/ozi-core/commit/f5bda17809a000f5050baf2bc1dcdc0d1ef0b49f))
+
+* build(deps): bump OZI-Project/checkpoint from 1.8.1 to 1.8.2
+
+Bumps [OZI-Project/checkpoint](https://github.com/ozi-project/checkpoint) from 1.8.1 to 1.8.2.
+- [Release notes](https://github.com/ozi-project/checkpoint/releases)
+- [Commits](https://github.com/ozi-project/checkpoint/compare/1.8.1...1.8.2)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/checkpoint
+  dependency-version: 1.8.2
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`4a40ccf`](https://github.com/OZI-Project/ozi-core/commit/4a40ccfdf479e23cd40ab60f41930406b830a72a))
+
+* build(deps): bump OZI-Project/checkpoint from 1.8.0 to 1.8.1
+
+Bumps [OZI-Project/checkpoint](https://github.com/ozi-project/checkpoint) from 1.8.0 to 1.8.1.
+- [Release notes](https://github.com/ozi-project/checkpoint/releases)
+- [Commits](https://github.com/ozi-project/checkpoint/compare/1.8.0...1.8.1)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/checkpoint
+  dependency-version: 1.8.1
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`2a250bf`](https://github.com/OZI-Project/ozi-core/commit/2a250bfddd79c59ea26be5d515ed576f3019e83a))
+
+* build(deps): bump OZI-Project/checkpoint from 1.7.6 to 1.8.0
+
+Bumps [OZI-Project/checkpoint](https://github.com/ozi-project/checkpoint) from 1.7.6 to 1.8.0.
+- [Release notes](https://github.com/ozi-project/checkpoint/releases)
+- [Commits](https://github.com/ozi-project/checkpoint/compare/1.7.6...1.8.0)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/checkpoint
+  dependency-version: 1.8.0
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`6ff27e1`](https://github.com/OZI-Project/ozi-core/commit/6ff27e1faeb1f7d4980e58d8bdfec54d9800fcef))
+
+* build(deps): bump OZI-Project/checkpoint from 1.7.5 to 1.7.6
+
+Bumps [OZI-Project/checkpoint](https://github.com/ozi-project/checkpoint) from 1.7.5 to 1.7.6.
+- [Release notes](https://github.com/ozi-project/checkpoint/releases)
+- [Commits](https://github.com/ozi-project/checkpoint/compare/1.7.5...1.7.6)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/checkpoint
+  dependency-version: 1.7.6
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`7d8259d`](https://github.com/OZI-Project/ozi-core/commit/7d8259dd127af19e3e00c3e05e5c60b740fc1eab))
+
+* build(deps): bump ozi-spec from 1.0.3 to 1.0.4
+
+Bumps [ozi-spec](https://www.oziproject.dev) from 1.0.3 to 1.0.4.
+
+
+updated-dependencies:
+- dependency-name: ozi-spec
+  dependency-version: 1.0.4
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`b577f1d`](https://github.com/OZI-Project/ozi-core/commit/b577f1d43813700fc14d1ec9c673788b3eacb077))
+
+* build(deps): bump ozi-templates from 2.26.1 to 2.28.0
+
+Bumps ozi-templates from 2.26.1 to 2.28.0.
+
+
+updated-dependencies:
+- dependency-name: ozi-templates
+  dependency-version: 2.28.0
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`c922471`](https://github.com/OZI-Project/ozi-core/commit/c922471a25665d150076a9ebc5830726c93c640c))
+
+
+### Chores
+
+
+* chore(i18n): refactor translated strings for gettext
+([`14cb96f`](https://github.com/OZI-Project/ozi-core/commit/14cb96fe7faa97aab5bf650e86fc0753d20b1aaf))
+
+* chore(i18n): add gettext .po files — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`14cb96f`](https://github.com/OZI-Project/ozi-core/commit/14cb96fe7faa97aab5bf650e86fc0753d20b1aaf))
+
+* chore(i18n): refactor translated strings for gettext — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`14cb96f`](https://github.com/OZI-Project/ozi-core/commit/14cb96fe7faa97aab5bf650e86fc0753d20b1aaf))
+
+* chore: remove old locale generation scripts — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`14cb96f`](https://github.com/OZI-Project/ozi-core/commit/14cb96fe7faa97aab5bf650e86fc0753d20b1aaf))
+
+* chore: add gettext to checkpoint runners — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+
+* Update dev.yml — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+
+* Update dev.yml — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`14cb96f`](https://github.com/OZI-Project/ozi-core/commit/14cb96fe7faa97aab5bf650e86fc0753d20b1aaf))
+
 ## 1.20.4 (2025-06-03)
 
 
