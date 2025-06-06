@@ -197,7 +197,7 @@ jobs:
             cdn03.quay.io:443
             downloads.python.org:443
 
-      - uses: OZI-Project/release@84d51474b41de0c8c98d34431f9c0e282fd72c19
+      - uses: OZI-Project/release@067a3867b9df3c1c2b86db5e062ca83c48dbc0bc
         id: release
         with:
           python-dist: ${{ matrix.py }}
