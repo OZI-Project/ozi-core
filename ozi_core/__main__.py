@@ -9,7 +9,7 @@ import argparse  # pragma: no cover
 import sys  # pragma: no cover
 from dataclasses import fields  # pragma: no cover
 
-from ozi_core._i18n import TRANSLATION  # pragma: no cover  # pyright: ignore
+from ozi_core._i18n import TRANSLATION as _  # pragma: no cover  # pyright: ignore
 from ozi_core.actions import ExactMatch  # pragma: no cover  # pyright: ignore
 from ozi_core.actions import check_version  # pragma: no cover  # pyright: ignore
 from ozi_core.actions import info  # pragma: no cover  # pyright: ignore
@@ -17,8 +17,26 @@ from ozi_core.actions import license_expression  # pragma: no cover  # pyright: 
 from ozi_core.actions import list_available  # pragma: no cover  # pyright: ignore
 from ozi_core.actions import uninstall_user_files  # pragma: no cover  # pyright: ignore
 
+_CHOICES = _('term-choices')  # pragma: no cover
+_SPDX_LICENSE_EXPRESSION = _('term-spdx-license-expression')  # pragma: no cover
+_SEE_REF = _('term-see-ref')  # pragma: no cover
+_PROJECT_AUTHORING_CONSOLE_APP = _('project-authoring-console-app')  # pragma: no cover
+_PROJECT_MAINTENANCE_CONSOLE_APP = _(
+    'term-project-maintenance-console-app'
+)  # pragma: no cover
+_HELP_NEW = _('term-help-new')  # pragma: no cover
+_HELP_FIX = _('term-help-fix')  # pragma: no cover
+_TOX_LINT = _('term-tox-e-lint')  # pragma: no cover
+_TOX_TEST = _('term-tox-e-test')  # pragma: no cover
+_TOX_DIST = _('term-tox-e-dist')  # pragma: no cover
+_OPTIONS = _('term-options')  # pragma: no cover
+_DISCLAIMER_TEXT = _('adm-disclaimer-text')  # pragma: no cover
+_CONTINUOUS_INTEGRATION_CHECKPOINTS = _(
+    'term-continuous-integration-checkpoints'
+)  # pragma: no cover
+
 EPILOG = f"""
-METADATA_FIELD {TRANSLATION('term-choices')}:
+METADATA_FIELD {_CHOICES}:
   | audience
   | environment
   | framework
@@ -29,19 +47,19 @@ METADATA_FIELD {TRANSLATION('term-choices')}:
   | status
   | topic
 
-LICENSE_EXPR: :term:`SPDX license expression` {TRANSLATION('term-spdx-license-expression')}
-  | {TRANSLATION('term-see-ref')} https://spdx.github.io/spdx-spec/v2-draft/SPDX-license-expressions/
+LICENSE_EXPR: :term:`SPDX license expression` {_SPDX_LICENSE_EXPRESSION}
+  | {_SEE_REF} https://spdx.github.io/spdx-spec/v2-draft/SPDX-license-expressions/
 
-{TRANSLATION('term-project-authoring-console-app')}:
-  | ``ozi-new -h``         {TRANSLATION('term-help-new')}
+{_PROJECT_AUTHORING_CONSOLE_APP}:
+  | ``ozi-new -h``         {_HELP_NEW}
 
-{TRANSLATION('term-project-maintenance-console-app')}:
-  | ``ozi-fix -h``         {TRANSLATION('term-help-fix')}
+{_PROJECT_MAINTENANCE_CONSOLE_APP}:
+  | ``ozi-fix -h``         {_HELP_FIX}
 
-{TRANSLATION('term-continuous-integration-checkpoints')}:
-  | ``tox -e lint``        {TRANSLATION('term-tox-e-lint')}
-  | ``tox -e test``        {TRANSLATION('term-tox-e-test')}
-  | ``tox -e dist``        {TRANSLATION('term-tox-e-dist')}
+{_CONTINUOUS_INTEGRATION_CHECKPOINTS}:
+  | ``tox -e lint``        {_TOX_LINT}
+  | ``tox -e test``        {_TOX_TEST}
+  | ``tox -e dist``        {_TOX_DIST}
 """  # pragma: no cover
 
 
@@ -53,28 +71,28 @@ def setup_parser(version: str) -> None:  # pragma: no cover
         add_help=False,
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog=EPILOG,
-        usage=f"""%(prog)s [{TRANSLATION('term-options')}]
+        usage=f"""%(prog)s [{_OPTIONS}]
 
-    {TRANSLATION('adm-disclaimer-text')}""",
+    {_DISCLAIMER_TEXT}""",
     )
     helpers = _ozi_parser.add_mutually_exclusive_group()
     helpers.add_argument(
         '-h',
         '--help',
         action='help',
-        help=TRANSLATION('term-help-help'),
+        help=_('term-help-help'),
     )
     helpers.add_argument(
         '-e',
         '--check-license-expr',
         metavar='LICENSE_EXPR',
         action='store',
-        help=TRANSLATION('term-help-valid-license-expression'),
+        help=_('term-help-valid-license-expression'),
     )
     helpers.add_argument(
         '-l',
         '--list-available',
-        help=TRANSLATION('term-help-list-available'),
+        help=_('term-help-list-available'),
         default=None,
         metavar='METADATA_FIELD',
         action='store',
@@ -82,7 +100,7 @@ def setup_parser(version: str) -> None:  # pragma: no cover
     )
     helpers.add_argument(
         '--uninstall-user-files',
-        help=TRANSLATION('term-help-uninstall-user-files'),
+        help=_('term-help-uninstall-user-files'),
         action='store_const',
         default=lambda: None,
         const=lambda: uninstall_user_files(),
@@ -93,7 +111,7 @@ def setup_parser(version: str) -> None:  # pragma: no cover
         action='store_const',
         default=lambda: None,
         const=lambda: print(version) or exit(0),
-        help=TRANSLATION('term-help-version'),
+        help=_('term-help-version'),
     )
     helpers.add_argument(
         '-c',
@@ -101,7 +119,7 @@ def setup_parser(version: str) -> None:  # pragma: no cover
         action='store_const',
         default=lambda: None,
         const=lambda: check_version(version),
-        help=TRANSLATION('term-help-check-version'),
+        help=_('term-help-check-version'),
     )
     helpers.add_argument(
         '-i',
@@ -109,7 +127,7 @@ def setup_parser(version: str) -> None:  # pragma: no cover
         action='store_const',
         default=lambda: None,
         const=lambda: info(version),
-        help=TRANSLATION('term-help-info'),
+        help=_('term-help-info'),
     )
 
 

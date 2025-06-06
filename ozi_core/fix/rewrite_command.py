@@ -17,7 +17,7 @@ from warnings import warn
 
 from ozi_spec import METADATA
 
-from ozi_core._i18n import TRANSLATION
+from ozi_core._i18n import TRANSLATION as _
 from ozi_core.render import build_child
 from ozi_core.render import build_file
 from ozi_core.render import find_user_template
@@ -221,6 +221,6 @@ class Rewriter:
                 child.rmdir()
             except OSError:
                 warn(
-                    TRANSLATION('term-warn-remove-dir'),
+                    _('term-warn-remove-dir'),
                     RuntimeWarning,
                 )

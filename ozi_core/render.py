@@ -20,7 +20,7 @@ from ozi_templates.filter import underscorify  # pyright: ignore
 from tap_producer import TAP
 
 from ozi_core import __version__
-from ozi_core._i18n import TRANSLATION
+from ozi_core._i18n import TRANSLATION as _
 from ozi_core._logging import PytestFilter
 from ozi_core._logging import config_logger
 from ozi_core.wrap import update_wrapfile
@@ -50,7 +50,7 @@ def find_user_template(target: str, file: str, fix: str) -> str | None:
         with open(fp, encoding='UTF-8') as template:
             user_template = template.read()
     else:
-        TAP.ok(TRANSLATION('term-tap-user-template-not-found'), skip=True, template=str(fp))
+        TAP.ok(_('term-tap-user-template-not-found'), skip=True, template=str(fp))
         user_template = None
     return user_template
 

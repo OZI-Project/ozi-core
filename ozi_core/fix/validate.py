@@ -10,7 +10,7 @@ from typing import Sequence
 from prompt_toolkit.validation import ValidationError  # pyright: ignore
 from prompt_toolkit.validation import Validator
 
-from ozi_core._i18n import TRANSLATION
+from ozi_core._i18n import TRANSLATION as _
 
 if TYPE_CHECKING:
     from prompt_toolkit.document import Document  # pyright: ignore
@@ -58,9 +58,9 @@ class RewriteCommandTargetValidator(Validator):
         document: Document,
     ) -> None:  # pragma: no cover
         if len(document.text) == 0:
-            raise ValidationError(0, TRANSLATION('err-no-empty'))
+            raise ValidationError(0, _('err-no-empty'))
         if not valid_rewrite_command_target(document.text):
             raise ValidationError(
                 len(document.text),
-                TRANSLATION('err-no-nested-fix-support'),
+                _('err-no-nested-fix-support'),
             )

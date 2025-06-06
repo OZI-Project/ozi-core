@@ -36,6 +36,8 @@ except SystemExit:
 config_logger()
 __logger = getLogger(f'ozi_core.{__name__}')
 _data: dict[str, str | list[str] | bool] = {}
+global _
+_ = TRANSLATION
 
 OPTION_EMPTY = '<option value="" aria-hidden="true" selected disabled hidden></option>'
 OPTION_SELECTED = '<option value="{0}" selected>{0}</option>'
@@ -73,76 +75,6 @@ validators: dict[str, Callable[[str], bool]] = {
     'Project-URL': lambda x: True,
     'Requires-Dist': lambda x: True,
     'readme-type': lambda x: x in ['rst', 'md', 'txt'],
-}
-
-label_translation: dict[str, partial[str]] = {
-    'Audience': partial(
-        TRANSLATION, 'pro-classifier-cbl', key=TRANSLATION('edit-menu-btn-audience')
-    ),
-    'Author': partial(TRANSLATION, 'pro-author'),
-    'Author-email': partial(TRANSLATION, 'pro-author-email'),
-    'Environment': partial(
-        TRANSLATION, 'pro-classifier-cbl', key=TRANSLATION('edit-menu-btn-environment')
-    ),
-    'Framework': partial(
-        TRANSLATION, 'pro-classifier-cbl', key=TRANSLATION('edit-menu-btn-framework')
-    ),
-    'Keywords': partial(TRANSLATION, 'pro-keywords'),
-    'Language': partial(
-        TRANSLATION, 'pro-classifier-cbl', key=TRANSLATION('edit-menu-btn-language')
-    ),
-    'License': partial(TRANSLATION, 'pro-license'),
-    'License-Exception': partial(TRANSLATION, 'edit-menu-btn-license-exception'),
-    'License-Expression': partial(TRANSLATION, 'pro-license-expression'),
-    'Maintainer': partial(TRANSLATION, 'pro-maintainer'),
-    'Maintainer-email': partial(TRANSLATION, 'pro-maintainer-email'),
-    'Name': partial(TRANSLATION, 'pro-name'),
-    'Project-URL': partial(TRANSLATION, 'pro-project-urls-cbl'),
-    'Requires-Dist': partial(TRANSLATION, 'pro-requires-dist'),
-    'Status': partial(
-        TRANSLATION, 'pro-classifier-cbl', key=TRANSLATION('edit-menu-btn-status')
-    ),
-    'Summary': partial(TRANSLATION, 'pro-summary'),
-    'Topic': partial(
-        TRANSLATION, 'pro-classifier-cbl', key=TRANSLATION('edit-menu-btn-topic')
-    ),
-    'copyright-head': partial(TRANSLATION, 'opt-menu-copyright-head-input'),
-    'allow-file': partial(TRANSLATION, 'opt-menu-allow-file-input'),
-    'enable-cython': partial(TRANSLATION, 'opt-menu-enable-cython', value=''),
-    'enable-uv': partial(TRANSLATION, 'opt-menu-enable-uv', value=''),
-    'github-harden-runner': partial(TRANSLATION, 'opt-menu-github-harden-runner', value=''),
-    'locale': partial(TRANSLATION, 'opt-menu-language-text'),
-    'readme-type': partial(TRANSLATION, 'pro-readme-type'),
-    'update-wrapfile': partial(TRANSLATION, 'opt-menu-update-wrapfile', value=''),
-    'strict': partial(TRANSLATION, 'opt-menu-strict', value=''),
-    'verify-email': partial(TRANSLATION, 'opt-menu-verify-email', value=''),
-    'PKG-INFO': partial(TRANSLATION, 'adm-confirm'),
-    'LicenseReader': partial(TRANSLATION, 'edit-menu-btn-license-file')
-}
-text_translation = {
-    'AddProjectURL': partial(TRANSLATION, 'btn-add'),
-    'AddRequiresDist': partial(TRANSLATION, 'btn-add'),
-    'Disclaimer-title': partial(TRANSLATION, 'adm-disclaimer-title'),
-    'Ok': partial(TRANSLATION, 'btn-ok'),
-    'Options': partial(TRANSLATION, 'btn-options'),
-    'Options-title': partial(TRANSLATION, 'btn-options'),
-    'Page1': partial(TRANSLATION, 'web-core-metadata'),
-    'Page2': partial(TRANSLATION, 'edit-menu-btn-license'),
-    'Page4': partial(TRANSLATION, 'term-create-project'),
-    'RefreshButton': partial(TRANSLATION, 'btn-refresh'),
-    'RemoveProjectURL': partial(TRANSLATION, 'btn-remove'),
-    'RemoveRequiresDist': partial(TRANSLATION, 'btn-remove'),
-    'Reset': partial(TRANSLATION, 'btn-reset'),
-    'SaveOptions': partial(TRANSLATION, 'btn-save'),
-    'disclaimer-text': partial(TRANSLATION, 'adm-disclaimer-text'),
-    'input-options': partial(TRANSLATION, 'term-input'),
-    'locale-en': partial(TRANSLATION, 'lang-en'),
-    'locale-zh': partial(TRANSLATION, 'lang-zh'),
-    'output-options': partial(TRANSLATION, 'term-output'),
-    'readme-type-md': partial(TRANSLATION, 'pro-readme-type-radio-md'),
-    'readme-type-rst': partial(TRANSLATION, 'pro-readme-type-radio-rst'),
-    'readme-type-txt': partial(TRANSLATION, 'pro-readme-type-radio-txt'),
-    'user-interface-options': partial(TRANSLATION, 'term-user-interface'),
 }
 
 licenses = ''.join(
@@ -202,14 +134,14 @@ status_choices = ''.join(
 topic_choices = ''.join(
     [OPTION.format(i) for i in sorted(from_prefix(Prefix().topic))]
 )
-locales = [(i, TRANSLATION(f'lang-{i}')) for i in TRANSLATION.data.keys()]
+locales = [('en', _('lang-en')), ('zh', _('lang-zh'))]
 locale_choices = ''.join(
     [f'<option id="locale-{k}" value="{k}">{v}</option>' for k, v in sorted(locales)]
 )
  # translations meant for <textarea>
 # should be text/plain;charset=UTF-8
 TRANSLATION.mime_type = 'text/plain;charset=UTF-8'
-disclaimer_text = TRANSLATION('adm-disclaimer-text')
+disclaimer_text = _('adm-disclaimer-text')
 # everything else should be text/html;charset=UTF-8
 TRANSLATION.mime_type = 'text/html;charset=UTF-8'
 
@@ -222,26 +154,66 @@ def validate_name(e: webui.event) -> None:
     res = e.window.script(  # pyright: ignore
         f' return document.getElementById("Name").value; '
     )
+    _ = TRANSLATION.gettext
     if name_valid(res.data):
         projectname = res.data
     else:
-        show_error(e, 'name', TRANSLATION('web-err-invalid-input'))
+        show_error(e, 'name', _('web-err-invalid-input'))
+    TRANSLATION.mime_type = 'text/plain;charset=UTF-8'
+    label_translation: dict[str, partial[str]] = {
+        'Audience': _('pro-classifier-cbl', key=_('edit-menu-btn-audience')),
+        'Author': _('pro-author', projectname=projectname),
+        'Author-email': _('pro-author-email', projectname=projectname),
+        'Environment': _('pro-classifier-cbl', key=_('edit-menu-btn-environment')
+        ),
+        'Framework': _('pro-classifier-cbl', key=_('edit-menu-btn-framework')
+        ),
+        'Keywords': _('pro-keywords', projectname=projectname),
+        'Language': _('pro-classifier-cbl', key=_('edit-menu-btn-language')
+        ),
+        'License': _('pro-license'),
+        'License-Exception': _('edit-menu-btn-license-exception'),
+        'License-Expression': _('pro-license-expression'),
+        'Maintainer': _('pro-maintainer', projectname=projectname),
+        'Maintainer-email': _('pro-maintainer-email', projectname=projectname),
+        'Name': _('pro-name'),
+        'Project-URL': _('pro-project-urls-cbl', projectname=projectname),
+        'Requires-Dist': _('pro-requires-dist', projectname=projectname),
+        'Status': _('pro-classifier-cbl', key=_('edit-menu-btn-status')
+        ),
+        'Summary': _('pro-summary', projectname=projectname),
+        'Topic': _('pro-classifier-cbl', key=_('edit-menu-btn-topic')
+        ),
+        'copyright-head': _('opt-menu-copyright-head-input'),
+        'allow-file': _('opt-menu-allow-file-input'),
+        'enable-cython': _('opt-menu-enable-cython', value=''),
+        'enable-uv': _('opt-menu-enable-uv', value=''),
+        'github-harden-runner': _('opt-menu-github-harden-runner', value=''),
+        'locale': _('opt-menu-language-text'),
+        'readme-type': _('pro-readme-type', projectname=projectname),
+        'update-wrapfile': _('opt-menu-update-wrapfile', value=''),
+        'strict': _('opt-menu-strict', value=''),
+        'verify-email': _('opt-menu-verify-email', value=''),
+        'PKG-INFO': _('adm-confirm'),
+        'LicenseReader': _('edit-menu-btn-license-file')
+    }
     for k in validators:
         res = e.window.script(  # pyright: ignore
             f" return document.getElementById(`label-{k.lower()}`).innerHTML; "
         )
-        t = label_translation[k](projectname=projectname)
+        t = label_translation[k]
         if res.data == t:
             continue
         update_label(e, k, t)
 
 
 def validate_input(e: webui.event, k: str) -> None:
+    _ = TRANSLATION.gettext
     res = e.window.script(  # pyright: ignore
         f' return document.getElementById("{k}").value; '
     )
     if not validators[k](res.data):
-        show_error(e, k.lower(), TRANSLATION('web-err-invalid-input'))
+        show_error(e, k.lower(), _('web-err-invalid-input'))
     if res.error is True:
         __logger.debug("JavaScript Error: " + res.data)
 
@@ -523,6 +495,7 @@ def show_pkg_info(e: webui.event) -> None:
 
 
 def add_project_url(e: webui.event) -> None:
+    _ = TRANSLATION.gettext
     url = e.window.script(  # pyright: ignore
         ' return document.getElementById(`Project-URL`).value; '
     )
@@ -536,7 +509,7 @@ def add_project_url(e: webui.event) -> None:
         show_error(
             e,
             'project-url',
-            label.data + TRANSLATION('sp') + TRANSLATION('web-err-invalid-input'),
+            label.data + _('sp') + _('web-err-invalid-input'),
         )
         return
     parsed_url = urlparse(url.data)
@@ -545,7 +518,7 @@ def add_project_url(e: webui.event) -> None:
             show_error(
                 e,
                 'project-url',
-                label.data + TRANSLATION('sp') + TRANSLATION('term-tap-empty-netloc'),
+                label.data + _('sp') + _('term-tap-empty-netloc'),
             )
             return
     e.window.run(  # pyright: ignore
@@ -563,6 +536,7 @@ def add_project_url(e: webui.event) -> None:
 
 
 def add_requires_dist(e: webui.event) -> None:
+    _ = TRANSLATION.gettext
     requires_dist = e.window.script(  # pyright: ignore
         ' return document.getElementById(`Requires-Dist`).value; '
     )
@@ -570,7 +544,7 @@ def add_requires_dist(e: webui.event) -> None:
         show_error(
             e,
             'requires-dist',
-            requires_dist.data + TRANSLATION('sp') + TRANSLATION('web-err-invalid-input'),
+            requires_dist.data + _('sp') + _('web-err-invalid-input'),
         )
         return
     if pypi_package_exists(requires_dist.data):
@@ -590,7 +564,7 @@ def add_requires_dist(e: webui.event) -> None:
         show_error(
             e,
             'requires-dist',
-            requires_dist.data + TRANSLATION('sp') + TRANSLATION('err-pkg-not-found'),
+            requires_dist.data + _('sp') + _('err-pkg-not-found'),
         )
 
 
@@ -599,21 +573,83 @@ def update_ui_language(e: webui.event) -> None:
         ' return document.getElementById(`locale`).value; '
     )  # pyright: ignore
     TRANSLATION.locale = locale.data
+    _ = TRANSLATION.gettext
+    label_translation: dict[str, partial[str]] = {
+        'Audience': _('pro-classifier-cbl', key=_('edit-menu-btn-audience')),
+        'Author': _('pro-author'),
+        'Author-email': _('pro-author-email'),
+        'Environment': _('pro-classifier-cbl', key=_('edit-menu-btn-environment')
+        ),
+        'Framework': _('pro-classifier-cbl', key=_('edit-menu-btn-framework')
+        ),
+        'Keywords': _('pro-keywords'),
+        'Language': _('pro-classifier-cbl', key=_('edit-menu-btn-language')
+        ),
+        'License': _('pro-license'),
+        'License-Exception': _('edit-menu-btn-license-exception'),
+        'License-Expression': _('pro-license-expression'),
+        'Maintainer': _('pro-maintainer'),
+        'Maintainer-email': _('pro-maintainer-email'),
+        'Name': _('pro-name'),
+        'Project-URL': _('pro-project-urls-cbl'),
+        'Requires-Dist': _('pro-requires-dist'),
+        'Status': _('pro-classifier-cbl', key=_('edit-menu-btn-status')
+        ),
+        'Summary': _('pro-summary'),
+        'Topic': _('pro-classifier-cbl', key=_('edit-menu-btn-topic')
+        ),
+        'copyright-head': _('opt-menu-copyright-head-input'),
+        'allow-file': _('opt-menu-allow-file-input'),
+        'enable-cython': _('opt-menu-enable-cython', value=''),
+        'enable-uv': _('opt-menu-enable-uv', value=''),
+        'github-harden-runner': _('opt-menu-github-harden-runner', value=''),
+        'locale': _('opt-menu-language-text'),
+        'readme-type': _('pro-readme-type'),
+        'update-wrapfile': _('opt-menu-update-wrapfile', value=''),
+        'strict': _('opt-menu-strict', value=''),
+        'verify-email': _('opt-menu-verify-email', value=''),
+        'PKG-INFO': _('adm-confirm'),
+        'LicenseReader': _('edit-menu-btn-license-file')
+    }
     for k, v in label_translation.items():
         if k in validators:
             continue
-        update_label(e, k, v())
+        update_label(e, k, v)
+    text_translation = {
+        'AddProjectURL': _('btn-add'),
+        'AddRequiresDist': _('btn-add'),
+        'Disclaimer-title': _('adm-disclaimer-title'),
+        'Ok': _('btn-ok'),
+        'Options': _('btn-options'),
+        'Options-title': _('btn-options'),
+        'Page1': _('web-core-metadata'),
+        'Page2': _('edit-menu-btn-license'),
+        'Page4': _('term-create-project'),
+        'RefreshButton': _('btn-refresh'),
+        'RemoveProjectURL': _('btn-remove'),
+        'RemoveRequiresDist': _('btn-remove'),
+        'Reset': _('btn-reset'),
+        'SaveOptions': _('btn-save'),
+        'disclaimer-text': _('adm-disclaimer-text'),
+        'input-options': _('term-input'),
+        'locale-en': _('lang-en'),
+        'locale-zh': _('lang-zh'),
+        'output-options': _('term-output'),
+        'readme-type-md': _('pro-readme-type-radio-md'),
+        'readme-type-rst': _('pro-readme-type-radio-rst'),
+        'readme-type-txt': _('pro-readme-type-radio-txt'),
+        'user-interface-options': _('term-user-interface'),
+        'output-options': _('term-output'),
+        'label-locale': _('opt-menu-language-text'),
+    }
     TRANSLATION.mime_type = 'text/plain;charset=UTF-8'
     _text_translation = text_translation.copy()
     _text_translation |= {
-        'Page3': partial(
-            TRANSLATION,
-            f'{TRANSLATION("term-classifier")}{TRANSLATION("sp")}{TRANSLATION("term-metadata")}',
-        ),
+        'Page3': _("term-classifier")+_("sp")+_("term-metadata"),
     }
     for k, v in _text_translation.items():
         e.window.run(  # pyright: ignore
-            f" document.getElementById(`{k}`).innerHTML = `{v()}`; "
+            f" document.getElementById(`{k}`).innerHTML = `{v}`; "
         )
     show_modal(e, _id='Disclaimer')
     TRANSLATION.mime_type = 'text/html;charset=UTF-8'
@@ -638,6 +674,7 @@ def remove_requires_dist(e: webui.event) -> None:
 
 
 def change_tab(e: webui.event) -> None:
+    _ = TRANSLATION.gettext
     TRANSLATION.mime_type = 'text/plain;charset=UTF-8'
     e.window.run(  # pyright: ignore
         f"""
@@ -652,11 +689,11 @@ def change_tab(e: webui.event) -> None:
         const title3 = document.getElementById("Page3");
         const title4 = document.getElementById("Page4");
         const titleOptions = document.getElementById("Options");
-        title1.innerHTML = "{text_translation['Page1']()}";
-        title2.innerHTML = "{text_translation['Page2']()}";
-        title3.innerHTML = "{TRANSLATION("term-classifier")}{TRANSLATION("sp")}{TRANSLATION("term-metadata")}";
-        title4.innerHTML = "{text_translation['Page4']()}";
-        titleOptions.innerHTML = "{text_translation['Options']()}";
+        title1.innerHTML = "{_('web-core-metadata')}";
+        title2.innerHTML = "{_('edit-menu-btn-license')}";
+        title3.innerHTML = "{_("term-classifier")}{_("sp")}{_("term-metadata")}";
+        title4.innerHTML = "{_('term-create-project')}";
+        titleOptions.innerHTML = "{_('btn-options')}";
         titleSpan.innerHTML = tabTitle;
         tabHeading.innerHTML = tabTitle;
         targetTab.replaceChild(titleSpan, targetTab.childNodes[0]);

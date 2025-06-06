@@ -43,6 +43,9 @@ if TYPE_CHECKING:  # pragma: no cover
     from argparse import Namespace
     from pathlib import Path
 
+global _
+_ = TRANSLATION
+
 
 def options_menu(  # pragma: no cover
     prompt: Any,
@@ -52,35 +55,33 @@ def options_menu(  # pragma: no cover
     _default: str | list[str] | None = None
     while True:
         match radiolist_dialog(
-            title=TRANSLATION('fix-dlg-title'),
-            text=TRANSLATION('opt-menu-title'),
+            title=_('fix-dlg-title'),
+            text=_('opt-menu-title'),
             values=[
                 (
                     'strict',
-                    TRANSLATION('opt-menu-strict', value=checkbox(prompt.strict)),
+                    _('opt-menu-strict', value=checkbox(prompt.strict)),
                 ),
                 (
                     'pretty',
-                    TRANSLATION('opt-menu-pretty', value=checkbox(prompt.pretty)),
+                    _('opt-menu-pretty', value=checkbox(prompt.pretty)),
                 ),
                 (
                     'update_wrapfile',
-                    TRANSLATION(
-                        'opt-menu-update-wrapfile', value=checkbox(prompt.update_wrapfile)
-                    ),
+                    _('opt-menu-update-wrapfile', value=checkbox(prompt.update_wrapfile)),
                 ),
-                ('copyright_head', TRANSLATION('opt-menu-copyright-head')),
+                ('copyright_head', _('opt-menu-copyright-head')),
                 (
                     'language',
-                    TRANSLATION(
+                    _(
                         'opt-menu-language',
-                        value=TRANSLATION(f'lang-{TRANSLATION.locale}'),
+                        value=_(f'lang-{TRANSLATION.locale}'),
                     ),
                 ),
             ],
             style=_style,
-            cancel_text=MenuButton.BACK._str,
-            ok_text=MenuButton.OK._str,
+            cancel_text=_('btn-back'),
+            ok_text=_('btn-ok'),
         ).run():
             case x if x and x in ('strict', 'pretty', 'update_wrapfile'):
                 for i in (f'--{x.replace("_", "-")}', f'--no-{x.replace("_", "-")}'):
@@ -102,11 +103,11 @@ def options_menu(  # pragma: no cover
             case x if x and x == 'copyright_head':
                 _default = output.setdefault('--copyright-head', [COPYRIGHT_HEAD])
                 result = input_dialog(
-                    title=TRANSLATION('fix-dlg-title'),
-                    text=TRANSLATION('opt-menu-copyright-head-input'),
+                    title=_('fix-dlg-title'),
+                    text=_('opt-menu-copyright-head-input'),
                     style=_style,
-                    cancel_text=MenuButton.BACK._str,
-                    ok_text=MenuButton.OK._str,
+                    cancel_text=_('btn-back'),
+                    ok_text=_('btn-ok'),
                     default=_default[0],
                     multiline=True,
                 ).run()
@@ -115,16 +116,16 @@ def options_menu(  # pragma: no cover
                     output.update({'--copyright-head': [prompt.copyright_head]})
             case x if x == 'language':
                 result = radiolist_dialog(
-                    title=TRANSLATION('fix-dlg-title'),
-                    text=TRANSLATION('opt-menu-language-text'),
+                    title=_('fix-dlg-title'),
+                    text=_('opt-menu-language-text'),
                     values=list(
                         zip(
                             TRANSLATION.data.keys(),
-                            [TRANSLATION(f'lang-{i}') for i in TRANSLATION.data.keys()],
+                            [_(f'lang-{i}') for i in {'en', 'zh'}],
                         ),
                     ),
-                    cancel_text=MenuButton.BACK._str,
-                    ok_text=MenuButton.OK._str,
+                    cancel_text=_('btn-back'),
+                    ok_text=_('btn-ok'),
                     default=TRANSLATION.locale,
                     style=_style,
                 ).run()
@@ -132,10 +133,10 @@ def options_menu(  # pragma: no cover
                     TRANSLATION.locale = result
             case _:
                 if yes_no_dialog(
-                    title=TRANSLATION('fix-dlg-title'),
-                    text=TRANSLATION('opt-menu-save-config'),
-                    yes_text=MenuButton.YES._str,
-                    no_text=MenuButton.NO._str,
+                    title=_('fix-dlg-title'),
+                    text=_('opt-menu-save-config'),
+                    yes_text=_('btn-yes'),
+                    no_text=_('btn-no'),
                     style=_style,
                 ).run():
                     config = asdict(read_user_config())
@@ -159,13 +160,13 @@ def main_menu(  # pragma: no cover
 ) -> tuple[None | list[str] | bool, dict[str, list[str]], dict[str, str]]:
     while True:
         match button_dialog(
-            title=TRANSLATION('new-dlg-title'),
-            text=TRANSLATION('main-menu-text'),
+            title=_('new-dlg-title'),
+            text=_('main-menu-text'),
             buttons=[
-                MenuButton.OPTIONS._tuple,
-                MenuButton.RESET._tuple,
-                MenuButton.EXIT._tuple,
-                MenuButton.BACK._tuple,
+                (_('btn-options'), MenuButton.OPTIONS.value),
+                (_('btn-reset'), MenuButton.RESET.value),
+                (_('btn-exit'), MenuButton.EXIT.value),
+                (_('btn-back'), MenuButton.BACK.value),
             ],
             style=_style,
         ).run():
@@ -177,20 +178,20 @@ def main_menu(  # pragma: no cover
                 break
             case MenuButton.RESET.value:
                 if yes_no_dialog(
-                    title=TRANSLATION('new-dlg-title'),
-                    text=TRANSLATION('main-menu-yn-reset'),
+                    title=_('new-dlg-title'),
+                    text=_('main-menu-yn-reset'),
                     style=_style,
-                    yes_text=MenuButton.YES._str,
-                    no_text=MenuButton.NO._str,
+                    yes_text=_('btn-yes'),
+                    no_text=_('btn-no'),
                 ).run():
                     return ['interactive', '.'], output, prefix
             case MenuButton.EXIT.value:
                 if yes_no_dialog(
-                    title=TRANSLATION('new-dlg-title'),
-                    text=TRANSLATION('main-menu-yn-exit'),
+                    title=_('new-dlg-title'),
+                    text=_('main-menu-yn-exit'),
                     style=_style,
-                    yes_text=MenuButton.YES._str,
-                    no_text=MenuButton.NO._str,
+                    yes_text=_('btn-yes'),
+                    no_text=_('btn-no'),
                 ).run():
                     return ['-h'], output, prefix
     return None, output, prefix
@@ -223,11 +224,11 @@ class Prompt:
     ) -> tuple[list[str] | str | bool | None, dict[str, list[str]], dict[str, str]]:
         while True:
             self.fix = radiolist_dialog(
-                title=TRANSLATION('fix-dlg-title'),
-                text=TRANSLATION('fix-add'),
+                title=_('fix-dlg-title'),
+                text=_('fix-add'),
                 style=_style,
-                cancel_text=MenuButton.MENU._str,
-                ok_text=MenuButton.OK._str,
+                cancel_text=_('btn-menu'),
+                ok_text=_('btn-ok'),
                 values=[('source', 'source'), ('test', 'test'), ('root', 'root')],
             ).run()
             if self.fix is not None:
@@ -250,31 +251,31 @@ class Prompt:
         output.setdefault('--remove', [])
         while True:
             match button_dialog(
-                title=TRANSLATION('fix-dlg-title'),
+                title=_('fix-dlg-title'),
                 text='\n'.join(
                     (
                         '\n'.join(iter(prefix)),
                         '\n',
-                        TRANSLATION('fix-add-or-remove', projectname=project_name),
+                        _('fix-add-or-remove', projectname=project_name),
                     ),
                 ),
                 buttons=[
-                    MenuButton.ADD._tuple,
-                    MenuButton.REMOVE._tuple,
-                    MenuButton.MENU._tuple,
-                    MenuButton.OK._tuple,
+                    (_('btn-add'), MenuButton.ADD.value),
+                    (_('btn-remove'), MenuButton.REMOVE.value),
+                    (_('btn-menu'), MenuButton.MENU.value),
+                    (_('btn-ok'), MenuButton.OK.value),
                 ],
                 style=_style,
             ).run():
                 case MenuButton.ADD.value:
-                    rel_path, _ = get_relpath_expected_files(self.fix, project_name)
+                    rel_path, __ = get_relpath_expected_files(self.fix, project_name)
                     files = []
                     with TAP.suppress():
                         for d in walk(self.target, rel_path, []):
                             for v in d.values():
                                 files += [str(i) for i in v['missing']]
-                    result = checkboxlist_dialog(
-                        title=TRANSLATION('fix-dlg-title'),
+                    result: Any = checkboxlist_dialog(
+                        title=_('fix-dlg-title'),
                         text='',
                         values=[('input', '<input>')] + [(i, i) for i in sorted(files)],
                         style=_style,
@@ -293,8 +294,8 @@ class Prompt:
                                 output['--add'].append(f)
                         if 'input' in set(result):
                             result = input_dialog(
-                                title=TRANSLATION('fix-dlg-title'),
-                                cancel_text=MenuButton.MENU._str,
+                                title=_('fix-dlg-title'),
+                                cancel_text=_('btn-menu'),
                                 style=_style,
                                 validator=RewriteCommandTargetValidator(),
                             ).run()
@@ -315,24 +316,24 @@ class Prompt:
                                     output['--add'].append(str(result))
                                 else:
                                     message_dialog(
-                                        title=TRANSLATION('fix-dlg-title'),
-                                        text=TRANSLATION(
+                                        title=_('fix-dlg-title'),
+                                        text=_(
                                             'msg-input-invalid',
                                             value=result,
                                             errmsg=errmsg,
                                         ),
                                         style=_style,
-                                        ok_text=MenuButton.OK._str,
+                                        ok_text=_('btn-ok'),
                                     ).run()
                 case MenuButton.REMOVE.value:
-                    rel_path, _ = get_relpath_expected_files(self.fix, project_name)
+                    rel_path, __ = get_relpath_expected_files(self.fix, project_name)
                     files = []
                     with TAP.suppress():
                         for d in walk(self.target, rel_path, []):
                             for v in d.values():
                                 files += [str(i) for i in v['found']]
                     result = checkboxlist_dialog(
-                        title=TRANSLATION('fix-dlg-title'),
+                        title=_('fix-dlg-title'),
                         text='',
                         values=[('input', '<input>')] + [(i, i) for i in sorted(files)],
                         style=_style,
@@ -351,8 +352,8 @@ class Prompt:
                                 output['--remove'].append(f)
                         if 'input' in set(result):
                             result = input_dialog(
-                                title=TRANSLATION('fix-dlg-title'),
-                                cancel_text=MenuButton.MENU._str,
+                                title=_('fix-dlg-title'),
+                                cancel_text=_('btn-menu'),
                                 style=_style,
                                 validator=RewriteCommandTargetValidator(),
                             ).run()
@@ -373,14 +374,14 @@ class Prompt:
                                     output['--remove'].append(str(result))
                                 else:
                                     message_dialog(
-                                        title=TRANSLATION('fix-dlg-title'),
-                                        text=TRANSLATION(
+                                        title=_('fix-dlg-title'),
+                                        text=_(
                                             'msg-input-invalid',
                                             value=result,
                                             errmsg=errmsg,
                                         ),
                                         style=_style,
-                                        ok_text=MenuButton.OK._str,
+                                        ok_text=_('btn-ok'),
                                     ).run()
                 case MenuButton.OK.value:
                     break

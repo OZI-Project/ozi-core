@@ -589,3 +589,9 @@ data: dict[str, dict[str, str | None] | dict[str, str]] = {
         'term-warn-remove-dir': '无法删除非空或不存在的$key：『$child』',
         'web-core-metadata': '核心元数据',
         'web-err-invalid-input': '输入无效'}}
+
+if __name__ == '__main__':
+    res = ''
+    for k, v in data['en'].items():
+       res += f'msgid "{k}"\nmsgstr "{v.replace('\n', r'\n').replace('"',r'\"') if v is not None else ''}"\n\n'
+    print(res)

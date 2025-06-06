@@ -9,7 +9,7 @@
   <body>
     <div id="Disclaimer" class="modal" aria-modal="true">
       <div class="modal-content">
-        <h3 id="Disclaimer-title">{TRANSLATION('adm-disclaimer-title')}</h3>
+        <h3 id="Disclaimer-title">{_('adm-disclaimer-title')}</h3>
         <span class="close" id="CloseDisclaimer">&times;</span>
         <hr>
         <span class="textarea" id="disclaimer-text" role="textbox" readonly>{disclaimer_text}</span>
@@ -17,19 +17,19 @@
     </div>
     <div id="OptionsContents" class="" aria-modal="true" hidden>
       <div class="modal-content">
-        <h3 id="Options-title">{TRANSLATION('btn-options')}</h3>
+        <h3 id="Options-title">{_('btn-options')}</h3>
         <span class="close" id="CloseOptions">&times;</span>
         <hr>
         <fieldset>
-          <legend id="user-interface-options">{TRANSLATION('term-user-interface')}</legend>
-          <label for="locale" id="label-locale">{TRANSLATION('opt-menu-language-text')}</label>
+          <legend id="user-interface-options">{_('term-user-interface')}</legend>
+          <label for="locale" id="label-locale">{_('opt-menu-language-text')}</label>
           <select id="locale">
             {locale_choices}
           </select>
         </fieldset>
         <fieldset>
-          <legend id="output-options">{TRANSLATION('term-output')}</legend>
-          <label for="copyright-head" id="label-copyright-head">{TRANSLATION('opt-menu-copyright-head-input')}</label>
+          <legend id="output-options">{_('term-output')}</legend>
+          <label for="copyright-head" id="label-copyright-head">{_('opt-menu-copyright-head-input')}</label>
           <h5 id="err-copyright-head" style="color: #dbdd52">&nbsp;</h5>
           <div class="row">
             <span
@@ -42,32 +42,32 @@
           </div>
           <div class="row justify-end">
             <label for="enable-cython" id="label-enable-cython"
-              >{TRANSLATION('opt-menu-enable-cython').replace('$value', '')}</label
+              >{_('opt-menu-enable-cython').replace('$value', '')}</label
             >
             <input type="checkbox" id="enable-cython" {'checked' if config['new']['enable_cython'] else ''}/>
           </div>
           <div class="row justify-end">
             <label for="enable-uv" id="label-enable-uv"
-              >{TRANSLATION('opt-menu-enable-uv').replace('$value', '')}</label
+              >{_('opt-menu-enable-uv').replace('$value', '')}</label
             >
             <input type="checkbox" id="enable-uv"  {'checked' if config['new']['enable_uv'] else ''}/>
           </div>
           <div class="row justify-end">
             <label for="github-harden-runner" id="label-github-harden-runner"
-              >{TRANSLATION('opt-menu-github-harden-runner').replace('$value', '')}</label
+              >{_('opt-menu-github-harden-runner').replace('$value', '')}</label
             >
             <input type="checkbox" id="github-harden-runner" {'checked' if config['new']['github_harden_runner'] else ''}/>
           </div>
           <div class="row justify-end">
             <label for="update-wrapfile" id="label-update-wrapfile"
-              >{TRANSLATION('opt-menu-update-wrapfile').replace('$value', '')}</label
+              >{_('opt-menu-update-wrapfile').replace('$value', '')}</label
             >
             <input type="checkbox" id="update-wrapfile" {'checked' if config['new']['update_wrapfile'] else ''}/>
           </div>
         </fieldset>
         <fieldset>
-          <legend id="input-options">{TRANSLATION('term-input')}</legend>
-          <label for="allow-file" id="label-allow-file">{TRANSLATION('opt-menu-allow-file-input')}</label>
+          <legend id="input-options">{_('term-input')}</legend>
+          <label for="allow-file" id="label-allow-file">{_('opt-menu-allow-file-input')}</label>
           <h5 id="err-allow-file" style="color: #dbdd52">&nbsp;</h5>
           <div class="row">
             <span
@@ -81,31 +81,31 @@
           </div>
           <div class="row justify-end">
             <label for="strict" id="label-strict"
-              >{TRANSLATION('opt-menu-strict').replace('$value', '')}</label
+              >{_('opt-menu-strict').replace('$value', '')}</label
             >
             <input type="checkbox" id="strict" />
           </div>
           <div class="row justify-end">
             <label for="verify-email" id="label-verify-email"
-              >{TRANSLATION('opt-menu-verify-email').replace('$value', '')}</label
+              >{_('opt-menu-verify-email').replace('$value', '')}</label
             >
             <input type="checkbox" id="verify-email" />
           </div>
         </fieldset>
-        <button id="SaveOptions">{TRANSLATION('btn-save')}</button>
+        <button id="SaveOptions">{_('btn-save')}</button>
       </div>
     </div>
     <form id="ozi-new" method="post">
-      <h1 id="PageHeading">{TRANSLATION('web-core-metadata')}</h1>
+      <h1 id="PageHeading">{_('web-core-metadata')}</h1>
       <nav aria-label="Breadcrumb" role="tablist" class="breadcrumb">
         <menu>
-          <li id="Page1" role="tab" aria-controls="Page1Contents" aria-disabled="true" tabindex="-1" aria-current="page"><span>{TRANSLATION('web-core-metadata')}</span></li>
-          <li id="Page2" role="tab" tabindex="0" aria-controls="Page2Contents">{TRANSLATION('edit-menu-btn-license')}</li>
-          <li id="Page3" role="tab" tabindex="0" aria-controls="Page3Contents">{TRANSLATION('term-classifier')}{TRANSLATION('sp')}{TRANSLATION('term-metadata')}</li>
-          <li id="Page4" role="tab" tabindex="0" aria-controls="Page4Contents">{TRANSLATION('term-create-project')}</li>
+          <li id="Page1" role="tab" aria-controls="Page1Contents" aria-disabled="true" tabindex="-1" aria-current="page"><span>{_('web-core-metadata')}</span></li>
+          <li id="Page2" role="tab" tabindex="0" aria-controls="Page2Contents">{_('edit-menu-btn-license')}</li>
+          <li id="Page3" role="tab" tabindex="0" aria-controls="Page3Contents">{_('term-classifier')}{_('sp')}{_('term-metadata')}</li>
+          <li id="Page4" role="tab" tabindex="0" aria-controls="Page4Contents">{_('term-create-project')}</li>
         </menu>
         <menu>
-          <li id="Options" role="tab" tabindex="0" aria-controls="OptionsContents">{TRANSLATION('btn-options')}</li>
+          <li id="Options" role="tab" tabindex="0" aria-controls="OptionsContents">{_('btn-options')}</li>
         </menu>
       </nav>
       <div id="Page1Contents" class="page" role="tabpanel">
@@ -113,7 +113,7 @@
         <div class="container">
           <div class="row">
             <div class="column">
-              <label for="Name" id="label-name">{TRANSLATION('pro-name')}</label>
+              <label for="Name" id="label-name">{_('pro-name')}</label>
               <h5 id="err-name" style="color: #dbdd52">&nbsp;</h5>
               <div class="row">
                 <input
@@ -126,7 +126,7 @@
               </div>
 
               <label for="Summary" id="label-summary"
-                >{TRANSLATION('pro-summary')}</label
+                >{_('pro-summary')}</label
               >
               <h5 id="err-summary" style="color: #dbdd52">&nbsp;</h5>
               <div class="row">
@@ -140,7 +140,7 @@
               </div>
 
               <label for="Keywords" id="label-keywords"
-                >{TRANSLATION('pro-keywords')}</label
+                >{_('pro-keywords')}</label
               >
               <h5 id="err-keywords" style="color: #dbdd52">&nbsp;</h5>
               <div class="row">
@@ -153,7 +153,7 @@
               </div>
 
               <label for="Author" id="label-author"
-                >{TRANSLATION('pro-author')}</label
+                >{_('pro-author')}</label
               >
               <h5 id="err-author" style="color: #dbdd52">&nbsp;</h5>
               <div class="row">
@@ -167,7 +167,7 @@
               </div>
 
               <label for="Author-email" id="label-author-email"
-                >{TRANSLATION('pro-author-email')}</label
+                >{_('pro-author-email')}</label
               >
               <h5 id="err-author-email" style="color: #dbdd52">&nbsp;</h5>
               <div class="row">
@@ -181,7 +181,7 @@
               </div>
 
               <label for="Maintainer" id="label-maintainer"
-                >{TRANSLATION('pro-maintainer')}</label
+                >{_('pro-maintainer')}</label
               >
               <h5 id="err-maintainer" style="color: #dbdd52">&nbsp;</h5>
               <div class="row">
@@ -194,7 +194,7 @@
               </div>
 
               <label for="Maintainer-email" id="label-maintainer-email"
-                >{TRANSLATION('pro-maintainer-email')}</label
+                >{_('pro-maintainer-email')}</label
               >
               <h5 id="err-maintainer-email" style="color: #dbdd52">&nbsp;</h5>
               <div class="row">
@@ -209,7 +209,7 @@
             <div class="column">
               <div class="column">
                 <label for="Project-URL" id="label-project-url"
-                  >{TRANSLATION('pro-project-urls-cbl')}</label
+                  >{_('pro-project-urls-cbl')}</label
                 >
                 <h5 id="err-project-url" style="color: #dbdd52">&nbsp;</h5>
               </div>
@@ -217,19 +217,19 @@
                 <select id="ProjectUrlType">
                   <option value="" selected disabled hidden></option>
                   <option value="Bug Report">
-                    {TRANSLATION('pro-project-urls-cbl-bug-report')}
+                    {_('pro-project-urls-cbl-bug-report')}
                   </option>
                   <option value="Changelog">
-                    {TRANSLATION('pro-project-urls-cbl-changelog')}
+                    {_('pro-project-urls-cbl-changelog')}
                   </option>
                   <option value="Documentation">
-                    {TRANSLATION('pro-project-urls-cbl-documentation')}
+                    {_('pro-project-urls-cbl-documentation')}
                   </option>
                   <option value="Funding">
-                    {TRANSLATION('pro-project-urls-cbl-funding')}
+                    {_('pro-project-urls-cbl-funding')}
                   </option>
                   <option value="Source">
-                    {TRANSLATION('pro-project-urls-cbl-source')}
+                    {_('pro-project-urls-cbl-source')}
                   </option>
                 </select>
                 <input
@@ -239,15 +239,15 @@
                   OnKeyUp="document.getElementById('err-project-url').innerHTML='&nbsp;';"
                   autocomplete="off"
                 />
-                <button type="button" id="AddProjectURL">{TRANSLATION('btn-add')}</button>
-                <button type="button" id="RemoveProjectURL">{TRANSLATION('btn-remove')}</button>
+                <button type="button" id="AddProjectURL">{_('btn-add')}</button>
+                <button type="button" id="RemoveProjectURL">{_('btn-remove')}</button>
               </div>
               <div class="row">
                 <select class="editable" id="EditProjectURL" multiple></select>
               </div>
               <div class="row">
                 <label for="Requires-Dist" id="label-requires-dist"
-                  >{TRANSLATION('pro-requires-dist')}</label
+                  >{_('pro-requires-dist')}</label
                 >
                 <h5 id="err-requires-dist" style="color: #dbdd52">&nbsp;</h5>
               </div>
@@ -258,17 +258,17 @@
                 OnKeyUp="document.getElementById('err-requires-dist').innerHTML='&nbsp;';"
                 autocomplete="on"
               />
-              <button type="button" id="AddRequiresDist">{TRANSLATION('btn-add')}</button>
-              <button type="button" id="RemoveRequiresDist">{TRANSLATION('btn-remove')}</button>
+              <button type="button" id="AddRequiresDist">{_('btn-add')}</button>
+              <button type="button" id="RemoveRequiresDist">{_('btn-remove')}</button>
               <div class="row">
                 <select class="editable" id="EditRequiresDist" multiple></select>
               </div>
-              <label for="readme-type" id="label-readme-type">{TRANSLATION('pro-readme-type')}</label>
+              <label for="readme-type" id="label-readme-type">{_('pro-readme-type')}</label>
               <h5 id="err-readme-type" style="color: #dbdd52">&nbsp;</h5>
               <select id="readme-type" autocomplete="off">
-                <option id="readme-type-rst" value="rst" selected="selected">{TRANSLATION('pro-readme-type-radio-rst')}</option>
-                <option id="readme-type-md" value="md">{TRANSLATION('pro-readme-type-radio-md')}</option>
-                <option id="readme-type-txt" value="txt">{TRANSLATION('pro-readme-type-radio-txt')}</option>
+                <option id="readme-type-rst" value="rst" selected="selected">{_('pro-readme-type-radio-rst')}</option>
+                <option id="readme-type-md" value="md">{_('pro-readme-type-radio-md')}</option>
+                <option id="readme-type-txt" value="txt">{_('pro-readme-type-radio-txt')}</option>
               </select>
             </div>
           </div>
@@ -281,13 +281,13 @@
           <div class="row">
             <div class="column">
               <label for="License-Expression" id="label-license-expression"
-                >{TRANSLATION('pro-license-expression')}</label
+                >{_('pro-license-expression')}</label
               >
               <div class="row">
                 <select id="License-Expression" autocomplete="off"></select>
               </div>
               <label for="License-Exception" id="label-license-exception"
-                >{TRANSLATION('edit-menu-btn-license-exception')}</label
+                >{_('edit-menu-btn-license-exception')}</label
               >
               <div class="row">
                 <select id="License-Exception" autocomplete="off"></select>
@@ -295,7 +295,7 @@
             </div>
             <div class="column">
               <label for="License" id="label-license"
-                >{TRANSLATION('pro-license')}</label
+                >{_('pro-license')}</label
               >
               <div class="row">
                 <select id="License" autocomplete="off" required>
@@ -303,9 +303,9 @@
                 </select>
               </div>
               <label for="LicenseReader" id="label-licensereader"
-                >{TRANSLATION('edit-menu-btn-license-file')}</label
+                >{_('edit-menu-btn-license-file')}</label
               >
-              <button id="RefreshButton">{TRANSLATION('btn-refresh')}</button>
+              <button id="RefreshButton">{_('btn-refresh')}</button>
               <progress
                 id="LicenseReaderProgress"
                 aria-label="Content loading…"
@@ -332,8 +332,8 @@
             <div class="column">
               <div class="row">
                 <label for="Status" id="label-status"
-                  >{TRANSLATION('pro-classifier-cbl',
-                  key=TRANSLATION('edit-menu-btn-status'))}</label
+                  >{_('pro-classifier-cbl',
+                  key=_('edit-menu-btn-status'))}</label
                 >
               </div>
               <select class="classifiers" id="Status">
@@ -342,8 +342,8 @@
 
               <div class="row">
                 <label for="Language" id="label-language"
-                  >{TRANSLATION('pro-classifier-cbl',
-                  key=TRANSLATION('edit-menu-btn-language'))}</label
+                  >{_('pro-classifier-cbl',
+                  key=_('edit-menu-btn-language'))}</label
                 >
               </div>
               <select
@@ -359,8 +359,8 @@
             <div class="column">
               <div class="row">
                 <label for="Audience" id="label-audience"
-                  >{TRANSLATION('pro-classifier-cbl',
-                  key=TRANSLATION('edit-menu-btn-audience'))}</label
+                  >{_('pro-classifier-cbl',
+                  key=_('edit-menu-btn-audience'))}</label
                 >
               </div>
               <select
@@ -374,8 +374,8 @@
               </select>
               <div class="row">
                 <label for="Environment" id="label-environment"
-                  >{TRANSLATION('pro-classifier-cbl',
-                  key=TRANSLATION('edit-menu-btn-environment'))}</label
+                  >{_('pro-classifier-cbl',
+                  key=_('edit-menu-btn-environment'))}</label
                 >
               </div>
               <select
@@ -391,8 +391,8 @@
             <div class="column">
               <div class="row">
                 <label for="Framework" id="label-framework"
-                  >{TRANSLATION('pro-classifier-cbl',
-                  key=TRANSLATION('edit-menu-btn-framework'))}</label
+                  >{_('pro-classifier-cbl',
+                  key=_('edit-menu-btn-framework'))}</label
                 >
               </div>
               <select
@@ -406,8 +406,8 @@
               </select>
               <div class="row">
                 <label for="Topic" id="label-topic"
-                  >{TRANSLATION('pro-classifier-cbl',
-                  key=TRANSLATION('edit-menu-btn-topic'))}</label
+                  >{_('pro-classifier-cbl',
+                  key=_('edit-menu-btn-topic'))}</label
                 >
               </div>
               <select
@@ -426,12 +426,12 @@
       <div id="Page4Contents" role="tabpanel" class="page" hidden>
         <br />
         <div class="container">
-          <label for="PKG-INFO" id="label-pkg-info">{TRANSLATION('adm-confirm')}</label>
+          <label for="PKG-INFO" id="label-pkg-info">{_('adm-confirm')}</label>
           <label id="PKG-INFO-meson-build">&nbsp;</label>
           <span class="textarea nowrap" id="PKG-INFO" aria-readonly="true" readonly>&nbsp;</span>
           <div class="buttons">
-            <button type="submit" id="Ok">{TRANSLATION('btn-ok')}</button>
-            <button type="reset" id="Reset">{TRANSLATION('btn-reset')}</button>
+            <button type="submit" id="Ok">{_('btn-ok')}</button>
+            <button type="reset" id="Reset">{_('btn-reset')}</button>
           </div>
         </div>
       </div>
