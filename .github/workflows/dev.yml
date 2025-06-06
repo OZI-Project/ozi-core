@@ -38,6 +38,9 @@ jobs:
             rekor.sigstore.dev:443
             tuf-repo-cdn.sigstore.dev:443
             oauth2.sigstore.dev:443
+            azure.archive.ubuntu.com:80
+            security.ubuntu.com:443
+            archive.ubuntu.com:443
 
       - run: sudo apt-get install -y gettext
 
@@ -72,6 +75,9 @@ jobs:
             rekor.sigstore.dev:443
             tuf-repo-cdn.sigstore.dev:443
             oauth2.sigstore.dev:443
+            azure.archive.ubuntu.com:80
+            security.ubuntu.com:443
+            archive.ubuntu.com:443
 
       - uses: OZI-Project/checkpoint@e60a6b3b5a423885e6c3feab1dfc35ed9472b737 # 1.8.2
         with:
@@ -105,6 +111,9 @@ jobs:
             rekor.sigstore.dev:443
             tuf-repo-cdn.sigstore.dev:443
             oauth2.sigstore.dev:443
+            azure.archive.ubuntu.com:80
+            security.ubuntu.com:443
+            archive.ubuntu.com:443
 
       - run: sudo apt-get install -y gettext
 
@@ -139,6 +148,9 @@ jobs:
             rekor.sigstore.dev:443
             tuf-repo-cdn.sigstore.dev:443
             oauth2.sigstore.dev:443
+            azure.archive.ubuntu.com:80
+            security.ubuntu.com:443
+            archive.ubuntu.com:443
 
       - run: sudo apt-get install -y gettext
 
@@ -174,6 +186,9 @@ jobs:
             tuf-repo-cdn.sigstore.dev:443
             index.crates.io:443
             static.crates.io:443
+            azure.archive.ubuntu.com:80
+            security.ubuntu.com:443
+            archive.ubuntu.com:443
 
       - run: sudo apt-get install -y gettext
 
