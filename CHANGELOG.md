@@ -1,4 +1,130 @@
 # ozi-core CHANGELOG
+## 1.20.4 (2025-06-03)
+
+
+### Build system
+
+
+* build(deps): bump OZI-Project/release from 1.8.3 to 1.8.5
+
+Bumps [OZI-Project/release](https://github.com/ozi-project/release) from 1.8.3 to 1.8.5.
+- [Release notes](https://github.com/ozi-project/release/releases)
+- [Commits](https://github.com/ozi-project/release/compare/0a9f46ecacc5bb6a926467a601c8b75bb2deb4ac...84d51474b41de0c8c98d34431f9c0e282fd72c19)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/release
+  dependency-version: 1.8.5
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`00d36b8`](https://github.com/OZI-Project/ozi-core/commit/00d36b87e67e3535a6b8f7ba213e071bfff9991e))
+
+* build(deps): bump ozi-spec from 1.0.2 to 1.0.3
+
+Bumps [ozi-spec](https://www.oziproject.dev) from 1.0.2 to 1.0.3.
+
+
+updated-dependencies:
+- dependency-name: ozi-spec
+  dependency-version: 1.0.3
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`475bb99`](https://github.com/OZI-Project/ozi-core/commit/475bb99df326d67799e2edb42755a770104d1b45))
+
+## 1.20.3 (2025-06-01)
+
+
+### Build system
+
+
+* build(deps): bump ozi-templates from 2.26.0 to 2.26.1
+
+Bumps ozi-templates from 2.26.0 to 2.26.1.
+
+
+updated-dependencies:
+- dependency-name: ozi-templates
+  dependency-version: 2.26.1
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`01780e4`](https://github.com/OZI-Project/ozi-core/commit/01780e44b6ed44b95c582ff673669afccbda6d00))
+
+## 1.20.2 (2025-05-31)
+
+
+### Build system
+
+
+* build(deps): bump ozi-templates from 2.25.1 to 2.26.0
+
+Bumps ozi-templates from 2.25.1 to 2.26.0.
+
+
+updated-dependencies:
+- dependency-name: ozi-templates
+  dependency-version: 2.26.0
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`2d0139d`](https://github.com/OZI-Project/ozi-core/commit/2d0139dc549bf8551283c769a401665d2c3ff555))
+
+* build(deps): bump ozi-templates from 2.25.0 to 2.25.1
+
+Bumps ozi-templates from 2.25.0 to 2.25.1.
+
+
+updated-dependencies:
+- dependency-name: ozi-templates
+  dependency-version: 2.25.1
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`7631dd7`](https://github.com/OZI-Project/ozi-core/commit/7631dd714365607a48b70ca3814221b71245fd76))
+
+## 1.20.1 (2025-05-30)
+
+
+### Bug fixes
+
+
+* fix: ozi-new interactive prompt mimetype — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`6e079ea`](https://github.com/OZI-Project/ozi-core/commit/6e079eaafa635a7a09ed43965d85ca5fb6bd0051))
+
+
+### Build system
+
+
+* build(deps): bump OZI-Project/checkpoint from 1.7.4 to 1.7.5
+
+Bumps [OZI-Project/checkpoint](https://github.com/ozi-project/checkpoint) from 1.7.4 to 1.7.5.
+- [Release notes](https://github.com/ozi-project/checkpoint/releases)
+- [Commits](https://github.com/ozi-project/checkpoint/compare/1.7.4...1.7.5)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/checkpoint
+  dependency-version: 1.7.5
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`1151e5f`](https://github.com/OZI-Project/ozi-core/commit/1151e5f60ac6cfb183062d02804211892ce4a383))
+
+* build(deps): bump ozi-spec from 1.0.1 to 1.0.2
+
+Bumps [ozi-spec](https://www.oziproject.dev) from 1.0.1 to 1.0.2.
+
+
+updated-dependencies:
+- dependency-name: ozi-spec
+  dependency-version: 1.0.2
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`1d74270`](https://github.com/OZI-Project/ozi-core/commit/1d74270a6ad96cce784cee93a9871ba4ac224df5))
+
 ## 1.20.0 (2025-05-29)
 
 ## 1.19.9 (2025-05-26)
