@@ -28,7 +28,7 @@ if 'PYTEST_VERSION' in os.environ or 'pytest' in sys.modules:
 try:
     T = gettext.translation('ozi-core', localedir=mo_path)  # pragma: no cover
 except FileNotFoundError as e:
-    raise RuntimeError(os.listdir(mo_path)) from e
+    raise RuntimeError(mo_path) from e
 gettext.bindtextdomain('ozi-core', mo_path)
 
 
