@@ -23,9 +23,9 @@ from ozi_core._logging import config_logger
 config_logger()
 _LOCALE = locale.getlocale()[0]
 mo_path = Path(site.getuserbase()) / 'share' / 'locale'
-if 'PYTEST_VERSION' in os.environ or 'pytest' in sys.modules:
+if 'PYTEST_VERSION' in os.environ or 'pytest' in sys.modules:  # pragma: no cover
     mo_path = Path(__file__).parent.parent / 'po'
-gettext.bindtextdomain('ozi-core', mo_path)
+gettext.bindtextdomain('ozi-core', mo_path)  # pragma: no cover
 
 
 class Translation:
