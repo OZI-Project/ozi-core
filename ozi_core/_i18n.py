@@ -98,7 +98,7 @@ class Translation:
         text = self.gettext(_key)
         if text is None:
             return ''  # pragma: no cover
-        elif text is _key:
+        elif text is _key:  # pragma: no cover
             self.__logger.debug(f'no translation for "{_key}" in locale "{self.locale}"')
             return Template(text).safe_substitute(**kwargs)
         return self.postprocess(Template(text).safe_substitute(**kwargs))
