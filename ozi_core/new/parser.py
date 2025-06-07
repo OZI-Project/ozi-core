@@ -393,6 +393,12 @@ ozi_defaults.add_argument(
     help=_('term-help-github-harden-runner'),
 )
 ozi_defaults.add_argument(
+    '--signed-wheel',
+    default=False,
+    action=argparse.BooleanOptionalAction,
+    help=_('term-help-signed-wheel'),
+)
+ozi_defaults.add_argument(
     '--strict',
     default=False,
     action=argparse.BooleanOptionalAction,
