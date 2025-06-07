@@ -5,6 +5,9 @@
 ### Bug fixes
 
 
+* fix: go back to using env_python for invoke — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`8ee3f07`](https://github.com/OZI-Project/ozi-core/commit/8ee3f07cd7dd66ba308ca3f218037ff15a8e1040))
+
 * fix: revert to using pip  — Eden Ross Duff, MSc <rjdbcm@outlook.com>
 ([`ef5f744`](https://github.com/OZI-Project/ozi-core/commit/ef5f744e06eacc6f23208871fd013ef3051db631))
 
@@ -52,6 +55,21 @@ Signed-off-by: Eden Ross Duff, MSc <rjdbcm@outlook.com>
 
 ### Build system
 
+
+* build(deps): bump OZI-Project/release from 1.8.5 to 1.8.7
+
+Bumps [OZI-Project/release](https://github.com/ozi-project/release) from 1.8.5 to 1.8.7.
+- [Release notes](https://github.com/ozi-project/release/releases)
+- [Commits](https://github.com/ozi-project/release/compare/84d51474b41de0c8c98d34431f9c0e282fd72c19...067a3867b9df3c1c2b86db5e062ca83c48dbc0bc)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/release
+  dependency-version: 1.8.7
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`20e86ee`](https://github.com/OZI-Project/ozi-core/commit/20e86ee071c19acf230174c209a137e9e47fd444))
 
 * build: install gettext to release workflow — Eden Ross Duff, MSc <rjdbcm@outlook.com>
 ([`245a90a`](https://github.com/OZI-Project/ozi-core/commit/245a90a3608cd45847a223687cfd024cfb59bdfc))
