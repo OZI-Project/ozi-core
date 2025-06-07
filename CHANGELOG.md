@@ -5,6 +5,9 @@
 ### Bug fixes
 
 
+* fix: add pip to external allowlist in tox — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`4068a6e`](https://github.com/OZI-Project/ozi-core/commit/4068a6ee62fda76d1c0a53b25e035760a031758c))
+
 * fix: go back to using env_python for invoke — Eden Ross Duff, MSc <rjdbcm@outlook.com>
 ([`8ee3f07`](https://github.com/OZI-Project/ozi-core/commit/8ee3f07cd7dd66ba308ca3f218037ff15a8e1040))
 
