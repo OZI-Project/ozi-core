@@ -10,9 +10,8 @@ temp/
 
 # Utility environments
 .hypothesis/
-.pytest_cache/
 .tox/
-.ruff_cache/
+.*_cache/
 
 # coverage files
 .coverage
