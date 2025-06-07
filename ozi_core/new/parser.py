@@ -369,6 +369,12 @@ ozi_defaults.add_argument(
     help=_('term-help-update-wrapfile'),
 )
 ozi_defaults.add_argument(
+    '--enable-create-pull-request',
+    default=True,
+    action=argparse.BooleanOptionalAction,
+    help=_('term-help-enable-create-pull-request'),
+)
+ozi_defaults.add_argument(
     '--enable-cython',
     default=False,
     action=argparse.BooleanOptionalAction,
