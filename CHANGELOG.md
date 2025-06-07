@@ -5,6 +5,9 @@
 ### Bug fixes
 
 
+* fix: workaround uv issue — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`89bf36f`](https://github.com/OZI-Project/ozi-core/commit/89bf36fef4bab792962caaeab076265b209f524f))
+
 * fix: workaround for uv permissions failure  — Eden Ross Duff, MSc <rjdbcm@outlook.com>
 ([`a6eecdb`](https://github.com/OZI-Project/ozi-core/commit/a6eecdb2a7f6076bb9e2fab6ffac973f506f97ff))
 
