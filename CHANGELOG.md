@@ -5,6 +5,9 @@
 ### Bug fixes
 
 
+* fix(tox): add uv to allowlist_externals — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`ae93cab`](https://github.com/OZI-Project/ozi-core/commit/ae93cab93630989d9440de9f464aac1e2298074b))
+
 * fix: calling python modules in tox no longer works — Eden Ross Duff, MSc <rjdbcm@outlook.com>
 ([`6deb79c`](https://github.com/OZI-Project/ozi-core/commit/6deb79c6d40c863aa6031629979afa4470f39b16))
 
