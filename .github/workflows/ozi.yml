@@ -196,6 +196,9 @@ jobs:
             quay.io:443
             cdn03.quay.io:443
             downloads.python.org:443
+            azure.archive.ubuntu.com:80
+            security.ubuntu.com:443
+            archive.ubuntu.com:443
 
       - run: sudo apt-get install -y gettext
 
