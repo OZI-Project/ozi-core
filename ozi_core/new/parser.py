@@ -405,6 +405,12 @@ ozi_defaults.add_argument(
     help=_('term-help-strict'),
 )
 ozi_defaults.add_argument(
+    '--testpypi',
+    default=False,
+    action=argparse.BooleanOptionalAction,
+    help=_('term-help-testpypi'),
+)
+ozi_defaults.add_argument(
     '--allow-file',
     help=_(
         'term-help-default',
