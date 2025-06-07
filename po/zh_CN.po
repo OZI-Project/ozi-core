@@ -1,10 +1,16 @@
 msgid ""
 msgstr ""
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-02 02:29-0500\n"
+"POT-Creation-Date: 2025-06-06 21:50-0500\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.6\n"
 
 #: ozi_core/__main__.py:20
 msgid "term-choices"
@@ -23,35 +29,35 @@ msgstr "参见参考："
 msgid "project-authoring-console-app"
 msgstr "项目创作控制台应用程序"
 
-#: ozi_core/__main__.py:24
+#: ozi_core/__main__.py:25
 msgid "term-project-maintenance-console-app"
 msgstr "项目维护控制台应用程序"
 
-#: ozi_core/__main__.py:25
+#: ozi_core/__main__.py:27
 msgid "term-help-new"
 msgstr "显示ozi-new命令的帮助"
 
-#: ozi_core/__main__.py:26
+#: ozi_core/__main__.py:28
 msgid "term-help-fix"
 msgstr "显示ozi-fix命令的帮助"
 
-#: ozi_core/__main__.py:27
+#: ozi_core/__main__.py:29
 msgid "term-tox-e-lint"
 msgstr "运行格式化、静态分析和类型检查"
 
-#: ozi_core/__main__.py:28
+#: ozi_core/__main__.py:30
 msgid "term-tox-e-test"
 msgstr "运行测试和覆盖率"
 
-#: ozi_core/__main__.py:29
+#: ozi_core/__main__.py:31
 msgid "term-tox-e-dist"
 msgstr "运行分发和打包"
 
-#: ozi_core/__main__.py:30 ozi_core/new/parser.py:18 ozi_core/fix/parser.py:20
+#: ozi_core/__main__.py:32 ozi_core/new/parser.py:18 ozi_core/fix/parser.py:20
 msgid "term-options"
 msgstr "选项"
 
-#: ozi_core/__main__.py:31 ozi_core/ui/web.py:131 ozi_core/ui/web.py:208
+#: ozi_core/__main__.py:33 ozi_core/ui/web.py:144 ozi_core/ui/web.py:633
 #: ozi_core/new/interactive/project.py:71 ozi_core/new/parser.py:20
 #: ozi_core/fix/parser.py:22
 msgid "adm-disclaimer-text"
@@ -68,35 +74,35 @@ msgstr ""
 "顾问可以确保本警报中提供的信息适合您的特定情况。 使用或阅读本警报或其中包含的"
 "任何资源不会建立律师-客户关系。"
 
-#: ozi_core/__main__.py:32
+#: ozi_core/__main__.py:35
 msgid "term-continuous-integration-checkpoints"
 msgstr "持续集成检查点"
 
-#: ozi_core/__main__.py:79 ozi_core/new/parser.py:358 ozi_core/fix/parser.py:70
+#: ozi_core/__main__.py:83 ozi_core/new/parser.py:358 ozi_core/fix/parser.py:70
 msgid "term-help-help"
 msgstr "显示此帮助消息并退出"
 
-#: ozi_core/__main__.py:86
+#: ozi_core/__main__.py:90
 msgid "term-help-valid-license-expression"
 msgstr "验证ＳＰＤＸ许可证表达式。"
 
-#: ozi_core/__main__.py:91
+#: ozi_core/__main__.py:95
 msgid "term-help-list-available"
 msgstr "打印某个键的有效值列表并退出。"
 
-#: ozi_core/__main__.py:99
+#: ozi_core/__main__.py:103
 msgid "term-help-uninstall-user-files"
 msgstr "删除由ＯＺＩ创建的配置和日志文件。"
 
-#: ozi_core/__main__.py:110
+#: ozi_core/__main__.py:114
 msgid "term-help-version"
 msgstr "打印当前版本并退出。"
 
-#: ozi_core/__main__.py:118
+#: ozi_core/__main__.py:122
 msgid "term-help-check-version"
 msgstr "检查ＯＺＩ的较新版本并退出。"
 
-#: ozi_core/__main__.py:126
+#: ozi_core/__main__.py:130
 msgid "term-help-info"
 msgstr "将所有元数据打印为ＪＳＯＮ并退出。"
 
@@ -110,20 +116,20 @@ msgstr ""
 msgid "err-new-version"
 msgstr "较新版本的ＯＺＩ（$latest＞$currentversion），可在ＰｙＰＩ上下载"
 
-#: ozi_core/actions.py:170
+#: ozi_core/actions.py:173
 msgid "term-tap-dev-version"
 msgstr "ＯＺＩ软件包是开发版本"
 
-#: ozi_core/actions.py:172
+#: ozi_core/actions.py:175
 msgid "term-tap-up-to-date"
 msgstr "ＯＺＩ软件包已更新"
 
-#: ozi_core/actions.py:188
+#: ozi_core/actions.py:191
 #, fuzzy
 msgid "version-check-failed"
 msgstr "ＯＺＩ软件包版本检查失败，状态代码为：$status"
 
-#: ozi_core/actions.py:209
+#: ozi_core/actions.py:212
 msgid "term-parsing-success"
 msgstr "解析成功"
 
@@ -143,11 +149,11 @@ msgstr "在『meson.build』中发现了一个许可证数组，ＯＺＩ只会�
 msgid "term-tap-user-template-not-found"
 msgstr "未找到用户模板"
 
-#: ozi_core/ui/dialog.py:138 ozi_core/ui/dialog.py:204 ozi_core/ui/web.py:120
-#: ozi_core/new/interactive/menu.py:148 ozi_core/new/interactive/menu.py:205
-#: ozi_core/new/interactive/menu.py:222 ozi_core/new/interactive/menu.py:235
-#: ozi_core/new/interactive/menu.py:253 ozi_core/new/interactive/menu.py:316
-#: ozi_core/new/interactive/menu.py:386 ozi_core/new/interactive/project.py:129
+#: ozi_core/ui/dialog.py:138 ozi_core/ui/dialog.py:204 ozi_core/ui/web.py:622
+#: ozi_core/new/interactive/menu.py:150 ozi_core/new/interactive/menu.py:207
+#: ozi_core/new/interactive/menu.py:224 ozi_core/new/interactive/menu.py:237
+#: ozi_core/new/interactive/menu.py:255 ozi_core/new/interactive/menu.py:319
+#: ozi_core/new/interactive/menu.py:389 ozi_core/new/interactive/project.py:129
 #: ozi_core/new/interactive/project.py:219
 #: ozi_core/new/interactive/project.py:299
 #: ozi_core/new/interactive/project.py:320
@@ -162,304 +168,319 @@ msgstr "未找到用户模板"
 #: ozi_core/new/interactive/project.py:664
 #: ozi_core/new/interactive/project.py:677
 #: ozi_core/new/interactive/project.py:722
-#: ozi_core/new/interactive/project.py:748 ozi_core/fix/interactive.py:83
-#: ozi_core/fix/interactive.py:109 ozi_core/fix/interactive.py:127
-#: ozi_core/fix/interactive.py:230 ozi_core/fix/interactive.py:265
-#: ozi_core/fix/interactive.py:325 ozi_core/fix/interactive.py:383
+#: ozi_core/new/interactive/project.py:748 ozi_core/fix/interactive.py:84
+#: ozi_core/fix/interactive.py:110 ozi_core/fix/interactive.py:128
+#: ozi_core/fix/interactive.py:231 ozi_core/fix/interactive.py:266
+#: ozi_core/fix/interactive.py:326 ozi_core/fix/interactive.py:384
 msgid "btn-ok"
 msgstr "确定"
 
-#: ozi_core/ui/dialog.py:140 ozi_core/new/interactive/menu.py:38
-#: ozi_core/fix/interactive.py:167
+#: ozi_core/ui/dialog.py:140 ozi_core/new/interactive/menu.py:41
+#: ozi_core/fix/interactive.py:168
 msgid "btn-exit"
 msgstr "退出"
 
-#: ozi_core/ui/dialog.py:206 ozi_core/new/interactive/menu.py:40
-#: ozi_core/new/interactive/menu.py:80 ozi_core/new/interactive/menu.py:147
-#: ozi_core/new/interactive/menu.py:204 ozi_core/new/interactive/menu.py:221
-#: ozi_core/new/interactive/menu.py:234 ozi_core/new/interactive/menu.py:252
-#: ozi_core/new/interactive/menu.py:315 ozi_core/new/interactive/menu.py:387
+#: ozi_core/ui/dialog.py:206 ozi_core/new/interactive/menu.py:43
+#: ozi_core/new/interactive/menu.py:83 ozi_core/new/interactive/menu.py:149
+#: ozi_core/new/interactive/menu.py:206 ozi_core/new/interactive/menu.py:223
+#: ozi_core/new/interactive/menu.py:236 ozi_core/new/interactive/menu.py:254
+#: ozi_core/new/interactive/menu.py:318 ozi_core/new/interactive/menu.py:390
 #: ozi_core/new/interactive/project.py:220
 #: ozi_core/new/interactive/project.py:511
 #: ozi_core/new/interactive/project.py:530
 #: ozi_core/new/interactive/project.py:576
 #: ozi_core/new/interactive/project.py:612
 #: ozi_core/new/interactive/project.py:665
-#: ozi_core/new/interactive/project.py:678 ozi_core/fix/interactive.py:82
-#: ozi_core/fix/interactive.py:108 ozi_core/fix/interactive.py:126
-#: ozi_core/fix/interactive.py:168
+#: ozi_core/new/interactive/project.py:678 ozi_core/fix/interactive.py:83
+#: ozi_core/fix/interactive.py:109 ozi_core/fix/interactive.py:127
+#: ozi_core/fix/interactive.py:169
 msgid "btn-back"
 msgstr "返回"
 
-#: ozi_core/ui/menu.py:39 ozi_core/ui/menu.py:44
-msgid "btn-{self.name.lower()}"
-msgstr ""
+#: ozi_core/ui/web.py:137 ozi_core/ui/web.py:635
+msgid "lang-en"
+msgstr "英语（Ｅｎｇｌｉｓｈ）"
 
-#: ozi_core/ui/web.py:79 ozi_core/new/interactive/menu.py:306
-#: ozi_core/new/parser.py:180
+#: ozi_core/ui/web.py:137 ozi_core/ui/web.py:636
+msgid "lang-zh"
+msgstr "简体中文"
+
+#: ozi_core/ui/web.py:161 ozi_core/ui/web.py:216 ozi_core/ui/web.py:512
+#: ozi_core/ui/web.py:547
+msgid "web-err-invalid-input"
+msgstr "输入无效"
+
+#: ozi_core/ui/web.py:164 ozi_core/ui/web.py:578
+#: ozi_core/new/interactive/menu.py:309 ozi_core/new/parser.py:180
 msgid "edit-menu-btn-audience"
 msgstr "目标受众（Ｉｎｔｅｎｄｅｄ　Ａｕｄｉｅｎｃｅ）"
 
-#: ozi_core/ui/web.py:79 ozi_core/ui/web.py:82 ozi_core/ui/web.py:84
-#: ozi_core/ui/web.py:87 ozi_core/ui/web.py:97 ozi_core/ui/web.py:100
-#: ozi_core/new/interactive/menu.py:381
+#: ozi_core/ui/web.py:164 ozi_core/ui/web.py:167 ozi_core/ui/web.py:169
+#: ozi_core/ui/web.py:172 ozi_core/ui/web.py:182 ozi_core/ui/web.py:185
+#: ozi_core/ui/web.py:578 ozi_core/ui/web.py:581 ozi_core/ui/web.py:583
+#: ozi_core/ui/web.py:586 ozi_core/ui/web.py:596 ozi_core/ui/web.py:599
+#: ozi_core/new/interactive/menu.py:384
 msgid "pro-classifier-cbl"
 msgstr "请选择『$key』分类器："
 
-#: ozi_core/ui/web.py:80 ozi_core/new/interactive/project.py:250
+#: ozi_core/ui/web.py:165 ozi_core/ui/web.py:579
+#: ozi_core/new/interactive/project.py:250
 msgid "pro-author"
 msgstr ""
 "『$projectname』的作者是谁？\n"
 "（分隔列表）"
 
-#: ozi_core/ui/web.py:81 ozi_core/new/interactive/project.py:273
+#: ozi_core/ui/web.py:166 ozi_core/ui/web.py:580
+#: ozi_core/new/interactive/project.py:273
 msgid "pro-author-email"
 msgstr ""
 "作者的电子邮件地址是『$projectname』？\n"
 "（分隔列表）"
 
-#: ozi_core/ui/web.py:82 ozi_core/new/interactive/menu.py:307
-#: ozi_core/new/parser.py:208
+#: ozi_core/ui/web.py:167 ozi_core/ui/web.py:581
+#: ozi_core/new/interactive/menu.py:310 ozi_core/new/parser.py:208
 msgid "edit-menu-btn-environment"
 msgstr "环境（Ｅｎｖｉｒｏｎｍｅｎｔ）"
 
-#: ozi_core/ui/web.py:84 ozi_core/new/interactive/menu.py:308
-#: ozi_core/new/parser.py:267
+#: ozi_core/ui/web.py:169 ozi_core/ui/web.py:583
+#: ozi_core/new/interactive/menu.py:311 ozi_core/new/parser.py:267
 msgid "edit-menu-btn-framework"
 msgstr "框架（Ｆｒａｍｅｗｏｒｋ）"
 
-#: ozi_core/ui/web.py:86 ozi_core/new/interactive/project.py:198
+#: ozi_core/ui/web.py:171 ozi_core/ui/web.py:585
+#: ozi_core/new/interactive/project.py:198
 msgid "pro-keywords"
 msgstr ""
 "用来描述『$projectname』的关键字是什么？\n"
 "（分隔列表）"
 
-#: ozi_core/ui/web.py:87 ozi_core/new/interactive/menu.py:309
-#: ozi_core/new/parser.py:295
+#: ozi_core/ui/web.py:172 ozi_core/ui/web.py:586
+#: ozi_core/new/interactive/menu.py:312 ozi_core/new/parser.py:295
 msgid "edit-menu-btn-language"
 msgstr "自然语言（Ｎａｔｕｒａｌ　Ｌａｎｇｕａｇｅ）"
 
-#: ozi_core/ui/web.py:89 ozi_core/new/interactive/project.py:295
+#: ozi_core/ui/web.py:174 ozi_core/ui/web.py:588
+#: ozi_core/new/interactive/project.py:295
 msgid "pro-license"
 msgstr "请为『$projectname』选择许可证分类器。"
 
-#: ozi_core/ui/web.py:90
+#: ozi_core/ui/web.py:175 ozi_core/ui/web.py:589
 msgid "edit-menu-btn-license-exception"
 msgstr "ｗｉｔｈ（可选例外）"
 
-#: ozi_core/ui/web.py:91
+#: ozi_core/ui/web.py:176 ozi_core/ui/web.py:590
 msgid "pro-license-expression"
 msgstr "选择特定的ＳＰＤＸ许可证表达式："
 
-#: ozi_core/ui/web.py:92 ozi_core/new/interactive/project.py:446
+#: ozi_core/ui/web.py:177 ozi_core/ui/web.py:591
+#: ozi_core/new/interactive/project.py:446
 msgid "pro-maintainer"
 msgstr ""
 "谁是『$projectname』的维护者？\n"
 "（分隔列表）"
 
-#: ozi_core/ui/web.py:93 ozi_core/new/interactive/project.py:469
+#: ozi_core/ui/web.py:178 ozi_core/ui/web.py:592
+#: ozi_core/new/interactive/project.py:469
 msgid "pro-maintainer-email"
 msgstr ""
 "『$projectname』维护者的电子邮件地址是什么\n"
 "（分隔列表）"
 
-#: ozi_core/ui/web.py:94 ozi_core/new/interactive/project.py:160
+#: ozi_core/ui/web.py:179 ozi_core/ui/web.py:593
+#: ozi_core/new/interactive/project.py:160
 msgid "pro-name"
 msgstr ""
 "项目名称是什么？\n"
 "（ＰｙＰＩ套件名称：无空格、字母数字字元、『._-』作为分隔符）"
 
-#: ozi_core/ui/web.py:95 ozi_core/new/interactive/project.py:662
+#: ozi_core/ui/web.py:180 ozi_core/ui/web.py:594
+#: ozi_core/new/interactive/project.py:662
 msgid "pro-project-urls-cbl"
 msgstr "请选择您要新增至『$projectname』的专案ＵＲＬ："
 
-#: ozi_core/ui/web.py:96 ozi_core/new/interactive/project.py:494
+#: ozi_core/ui/web.py:181 ozi_core/ui/web.py:595
+#: ozi_core/new/interactive/project.py:494
 msgid "pro-requires-dist"
 msgstr "新增或删除对『$projectname』的依赖关系要求。"
 
-#: ozi_core/ui/web.py:97 ozi_core/new/interactive/menu.py:310
-#: ozi_core/new/parser.py:322
+#: ozi_core/ui/web.py:182 ozi_core/ui/web.py:596
+#: ozi_core/new/interactive/menu.py:313 ozi_core/new/parser.py:322
 msgid "edit-menu-btn-status"
 msgstr "地位（Ｓｔａｔｕｓ）"
 
-#: ozi_core/ui/web.py:99 ozi_core/new/interactive/project.py:179
+#: ozi_core/ui/web.py:184 ozi_core/ui/web.py:598
+#: ozi_core/new/interactive/project.py:179
 msgid "pro-summary"
 msgstr ""
 "项目『$projectname』是做什么的？\n"
 "（简短摘要 1〜2 句话）"
 
-#: ozi_core/ui/web.py:100 ozi_core/new/interactive/menu.py:311
-#: ozi_core/new/parser.py:307
+#: ozi_core/ui/web.py:185 ozi_core/ui/web.py:599
+#: ozi_core/new/interactive/menu.py:314 ozi_core/new/parser.py:307
 msgid "edit-menu-btn-topic"
 msgstr "话题（Ｔｏｐｉｃ）"
 
-#: ozi_core/ui/web.py:102 ozi_core/new/interactive/menu.py:202
-#: ozi_core/fix/interactive.py:106
+#: ozi_core/ui/web.py:187 ozi_core/ui/web.py:601
+#: ozi_core/new/interactive/menu.py:204 ozi_core/fix/interactive.py:107
 msgid "opt-menu-copyright-head-input"
 msgstr "编辑版权文件头："
 
-#: ozi_core/ui/web.py:103 ozi_core/new/interactive/menu.py:219
+#: ozi_core/ui/web.py:188 ozi_core/ui/web.py:602
+#: ozi_core/new/interactive/menu.py:221
 msgid "opt-menu-allow-file-input"
 msgstr "编辑允许的存档正规表示式："
 
-#: ozi_core/ui/web.py:104 ozi_core/new/interactive/menu.py:100
+#: ozi_core/ui/web.py:189 ozi_core/ui/web.py:603
+#: ozi_core/new/interactive/menu.py:104
 msgid "opt-menu-enable-cython"
 msgstr "允许Ｃｙｔｈｏｎ：$value"
 
-#: ozi_core/ui/web.py:105 ozi_core/new/interactive/menu.py:107
+#: ozi_core/ui/web.py:190 ozi_core/ui/web.py:604
+#: ozi_core/new/interactive/menu.py:111
 msgid "opt-menu-enable-uv"
 msgstr "允许ｕｖ：$value"
 
-#: ozi_core/ui/web.py:106 ozi_core/new/interactive/menu.py:114
+#: ozi_core/ui/web.py:191 ozi_core/ui/web.py:605
+#: ozi_core/new/interactive/menu.py:118
 msgid "opt-menu-github-harden-runner"
 msgstr "安全的ＧｉｔＨｕｂ持续整合和分发：$value"
 
-#: ozi_core/ui/web.py:107 ozi_core/ui/web.py:141
-#: ozi_core/new/interactive/menu.py:245 ozi_core/fix/interactive.py:119
+#: ozi_core/ui/web.py:192 ozi_core/ui/web.py:606 ozi_core/ui/web.py:643
+#: ozi_core/new/interactive/menu.py:247 ozi_core/fix/interactive.py:120
 msgid "opt-menu-language-text"
 msgstr "选择用户界面语言"
 
-#: ozi_core/ui/web.py:108 ozi_core/new/interactive/project.py:572
+#: ozi_core/ui/web.py:193 ozi_core/ui/web.py:607
+#: ozi_core/new/interactive/project.py:572
 msgid "pro-readme-type"
 msgstr "请为『$projectname』选择自述文件类型："
 
-#: ozi_core/ui/web.py:109 ozi_core/new/interactive/menu.py:125
-#: ozi_core/fix/interactive.py:69
+#: ozi_core/ui/web.py:194 ozi_core/ui/web.py:608
+#: ozi_core/new/interactive/menu.py:128 ozi_core/fix/interactive.py:71
 msgid "opt-menu-update-wrapfile"
 msgstr "更新『subprojects/ozi.wrap』：$value"
 
-#: ozi_core/ui/web.py:110 ozi_core/new/interactive/menu.py:120
-#: ozi_core/fix/interactive.py:60
+#: ozi_core/ui/web.py:195 ozi_core/ui/web.py:609
+#: ozi_core/new/interactive/menu.py:124 ozi_core/fix/interactive.py:63
 msgid "opt-menu-strict"
 msgstr "严格模式：$value"
 
-#: ozi_core/ui/web.py:111 ozi_core/new/interactive/menu.py:131
+#: ozi_core/ui/web.py:196 ozi_core/ui/web.py:610
+#: ozi_core/new/interactive/menu.py:133
 msgid "opt-menu-verify-email"
 msgstr "验证电子邮件：$value"
 
-#: ozi_core/ui/web.py:112 ozi_core/new/interactive/project.py:127
+#: ozi_core/ui/web.py:197 ozi_core/ui/web.py:611
+#: ozi_core/new/interactive/project.py:127
 msgid "adm-confirm"
 msgstr "确认创建项目？元数据："
 
-#: ozi_core/ui/web.py:113 ozi_core/new/interactive/menu.py:295
-#: ozi_core/new/parser.py:223
+#: ozi_core/ui/web.py:198 ozi_core/ui/web.py:612
+#: ozi_core/new/interactive/menu.py:298 ozi_core/new/parser.py:223
 msgid "edit-menu-btn-license-file"
 msgstr "许可证文件（Ｌｉｃｅｎｓｅ－Ｆｉｌｅ）"
 
-#: ozi_core/ui/web.py:117 ozi_core/ui/web.py:118
-#: ozi_core/new/interactive/project.py:498 ozi_core/fix/interactive.py:262
+#: ozi_core/ui/web.py:512 ozi_core/ui/web.py:521 ozi_core/ui/web.py:547
+#: ozi_core/ui/web.py:567 ozi_core/ui/web.py:648
+msgid "sp"
+msgstr "​​"
+
+#: ozi_core/ui/web.py:521 ozi_core/new/validate.py:64
+msgid "term-tap-empty-netloc"
+msgstr "ＵＲＬ网络位置为空"
+
+#: ozi_core/ui/web.py:567 ozi_core/new/interactive/validator.py:70
+msgid "err-pkg-not-found"
+msgstr "找不到包包。"
+
+#: ozi_core/ui/web.py:619 ozi_core/ui/web.py:620
+#: ozi_core/new/interactive/project.py:498 ozi_core/fix/interactive.py:263
 msgid "btn-add"
 msgstr "新增"
 
-#: ozi_core/ui/web.py:119 ozi_core/new/interactive/project.py:70
+#: ozi_core/ui/web.py:621 ozi_core/new/interactive/project.py:70
 msgid "adm-disclaimer-title"
 msgstr "免責聲明"
 
-#: ozi_core/ui/web.py:121 ozi_core/ui/web.py:122
-#: ozi_core/new/interactive/menu.py:36 ozi_core/fix/interactive.py:165
+#: ozi_core/ui/web.py:623 ozi_core/ui/web.py:624
+#: ozi_core/new/interactive/menu.py:39 ozi_core/fix/interactive.py:166
 msgid "btn-options"
 msgstr "更改选项"
 
-#: ozi_core/ui/web.py:123
+#: ozi_core/ui/web.py:625
 msgid "web-core-metadata"
 msgstr "核心元数据"
 
-#: ozi_core/ui/web.py:124 ozi_core/new/interactive/menu.py:290
+#: ozi_core/ui/web.py:626 ozi_core/new/interactive/menu.py:293
 #: ozi_core/new/parser.py:169 ozi_core/new/validate.py:161
 #: ozi_core/new/validate.py:170
 msgid "edit-menu-btn-license"
 msgstr "软体许可（Ｌｉｃｅｎｓｅ）"
 
-#: ozi_core/ui/web.py:125
+#: ozi_core/ui/web.py:627
 msgid "term-create-project"
 msgstr "创建项目"
 
-#: ozi_core/ui/web.py:126
+#: ozi_core/ui/web.py:628
 msgid "btn-refresh"
 msgstr "更新"
 
-#: ozi_core/ui/web.py:127 ozi_core/ui/web.py:128
-#: ozi_core/new/interactive/project.py:499 ozi_core/fix/interactive.py:263
+#: ozi_core/ui/web.py:629 ozi_core/ui/web.py:630
+#: ozi_core/new/interactive/project.py:499 ozi_core/fix/interactive.py:264
 msgid "btn-remove"
 msgstr "删除"
 
-#: ozi_core/ui/web.py:129 ozi_core/new/interactive/menu.py:37
-#: ozi_core/fix/interactive.py:166
+#: ozi_core/ui/web.py:631 ozi_core/new/interactive/menu.py:40
+#: ozi_core/fix/interactive.py:167
 msgid "btn-reset"
 msgstr "重置"
 
-#: ozi_core/ui/web.py:130
+#: ozi_core/ui/web.py:632
 msgid "btn-save"
 msgstr "保存"
 
-#: ozi_core/ui/web.py:132
+#: ozi_core/ui/web.py:634
 msgid "term-input"
 msgstr "输入"
 
-#: ozi_core/ui/web.py:133 ozi_core/ui/web.py:201
-msgid "lang-en"
-msgstr "英语（Ｅｎｇｌｉｓｈ）"
-
-#: ozi_core/ui/web.py:134 ozi_core/ui/web.py:201
-msgid "lang-zh"
-msgstr "简体中文"
-
-#: ozi_core/ui/web.py:135 ozi_core/ui/web.py:140 ozi_core/fix/parser.py:21
+#: ozi_core/ui/web.py:637 ozi_core/ui/web.py:642 ozi_core/fix/parser.py:21
 #: ozi_core/fix/parser.py:101 ozi_core/fix/parser.py:169
 #: ozi_core/fix/parser.py:227
 msgid "term-output"
 msgstr "输出"
 
-#: ozi_core/ui/web.py:136
+#: ozi_core/ui/web.py:638
 msgid "pro-readme-type-radio-md"
 msgstr "轻量级标记语言Ｍａｒｋｄｏｗｎ"
 
-#: ozi_core/ui/web.py:137
+#: ozi_core/ui/web.py:639
 msgid "pro-readme-type-radio-rst"
 msgstr "轻量级标记语言ｒｅＳｔｒｕｃｔｕｒｅｄＴｅｘｔ"
 
-#: ozi_core/ui/web.py:138
+#: ozi_core/ui/web.py:640
 msgid "pro-readme-type-radio-txt"
 msgstr "纯文本"
 
-#: ozi_core/ui/web.py:139
+#: ozi_core/ui/web.py:641
 msgid "term-user-interface"
 msgstr "用户界面"
 
-#: ozi_core/ui/web.py:224 ozi_core/ui/web.py:240 ozi_core/ui/web.py:535
-#: ozi_core/ui/web.py:569
-msgid "web-err-invalid-input"
-msgstr "输入无效"
-
-#: ozi_core/ui/web.py:535 ozi_core/ui/web.py:544 ozi_core/ui/web.py:569
-#: ozi_core/ui/web.py:589 ozi_core/ui/web.py:605
-msgid "sp"
-msgstr "​​"
-
-#: ozi_core/ui/web.py:544 ozi_core/new/validate.py:64
-msgid "term-tap-empty-netloc"
-msgstr "ＵＲＬ网络位置为空"
-
-#: ozi_core/ui/web.py:589 ozi_core/new/interactive/validator.py:70
-msgid "err-pkg-not-found"
-msgstr "找不到包包。"
-
-#: ozi_core/ui/web.py:605 ozi_core/new/validate.py:40
+#: ozi_core/ui/web.py:648 ozi_core/new/validate.py:40
 #: ozi_core/new/validate.py:42
 msgid "term-classifier"
 msgstr "分类器"
 
-#: ozi_core/ui/web.py:605
+#: ozi_core/ui/web.py:648
 msgid "term-metadata"
 msgstr "元数据"
 
-#: ozi_core/new/interactive/menu.py:32 ozi_core/new/interactive/menu.py:48
-#: ozi_core/new/interactive/menu.py:57 ozi_core/new/interactive/menu.py:74
-#: ozi_core/new/interactive/menu.py:94 ozi_core/new/interactive/menu.py:201
-#: ozi_core/new/interactive/menu.py:218 ozi_core/new/interactive/menu.py:231
-#: ozi_core/new/interactive/menu.py:244 ozi_core/new/interactive/menu.py:261
-#: ozi_core/new/interactive/menu.py:282 ozi_core/new/interactive/menu.py:380
-#: ozi_core/new/interactive/menu.py:421 ozi_core/new/interactive/project.py:69
+#: ozi_core/new/interactive/menu.py:35 ozi_core/new/interactive/menu.py:51
+#: ozi_core/new/interactive/menu.py:60 ozi_core/new/interactive/menu.py:77
+#: ozi_core/new/interactive/menu.py:98 ozi_core/new/interactive/menu.py:203
+#: ozi_core/new/interactive/menu.py:220 ozi_core/new/interactive/menu.py:233
+#: ozi_core/new/interactive/menu.py:246 ozi_core/new/interactive/menu.py:264
+#: ozi_core/new/interactive/menu.py:285 ozi_core/new/interactive/menu.py:383
+#: ozi_core/new/interactive/menu.py:424 ozi_core/new/interactive/project.py:69
 #: ozi_core/new/interactive/project.py:107
 #: ozi_core/new/interactive/project.py:126
 #: ozi_core/new/interactive/project.py:215
@@ -479,160 +500,160 @@ msgstr "元数据"
 #: ozi_core/new/interactive/project.py:661
 #: ozi_core/new/interactive/project.py:671
 #: ozi_core/new/interactive/project.py:716
-#: ozi_core/new/interactive/project.py:745 ozi_core/fix/interactive.py:162
-#: ozi_core/fix/interactive.py:180 ozi_core/fix/interactive.py:189
+#: ozi_core/new/interactive/project.py:745 ozi_core/fix/interactive.py:163
+#: ozi_core/fix/interactive.py:181 ozi_core/fix/interactive.py:190
 msgid "new-dlg-title"
 msgstr "ｏｚｉ－ｎｅｗ 互 動 提 示 符"
 
-#: ozi_core/new/interactive/menu.py:33 ozi_core/fix/interactive.py:163
+#: ozi_core/new/interactive/menu.py:36 ozi_core/fix/interactive.py:164
 msgid "main-menu-text"
 msgstr "選單，选择动作："
 
-#: ozi_core/new/interactive/menu.py:35
+#: ozi_core/new/interactive/menu.py:38
 msgid "btn-metadata"
 msgstr "查看元数据"
 
-#: ozi_core/new/interactive/menu.py:39
+#: ozi_core/new/interactive/menu.py:42
 msgid "btn-edit"
 msgstr "编辑"
 
-#: ozi_core/new/interactive/menu.py:49 ozi_core/fix/interactive.py:181
+#: ozi_core/new/interactive/menu.py:52 ozi_core/fix/interactive.py:182
 msgid "main-menu-yn-reset"
 msgstr "重置提示并重新开始？"
 
-#: ozi_core/new/interactive/menu.py:51 ozi_core/new/interactive/menu.py:60
-#: ozi_core/new/interactive/menu.py:263 ozi_core/new/interactive/menu.py:423
-#: ozi_core/new/interactive/project.py:110 ozi_core/fix/interactive.py:137
-#: ozi_core/fix/interactive.py:183 ozi_core/fix/interactive.py:192
+#: ozi_core/new/interactive/menu.py:54 ozi_core/new/interactive/menu.py:63
+#: ozi_core/new/interactive/menu.py:266 ozi_core/new/interactive/menu.py:426
+#: ozi_core/new/interactive/project.py:110 ozi_core/fix/interactive.py:138
+#: ozi_core/fix/interactive.py:184 ozi_core/fix/interactive.py:193
 msgid "btn-yes"
 msgstr "是的"
 
-#: ozi_core/new/interactive/menu.py:52 ozi_core/new/interactive/menu.py:61
-#: ozi_core/new/interactive/menu.py:264 ozi_core/new/interactive/menu.py:424
-#: ozi_core/new/interactive/project.py:111 ozi_core/fix/interactive.py:138
-#: ozi_core/fix/interactive.py:184 ozi_core/fix/interactive.py:193
+#: ozi_core/new/interactive/menu.py:55 ozi_core/new/interactive/menu.py:64
+#: ozi_core/new/interactive/menu.py:267 ozi_core/new/interactive/menu.py:427
+#: ozi_core/new/interactive/project.py:111 ozi_core/fix/interactive.py:139
+#: ozi_core/fix/interactive.py:185 ozi_core/fix/interactive.py:194
 msgid "btn-no"
 msgstr "不"
 
-#: ozi_core/new/interactive/menu.py:58 ozi_core/fix/interactive.py:190
+#: ozi_core/new/interactive/menu.py:61 ozi_core/fix/interactive.py:191
 msgid "main-menu-yn-exit"
 msgstr "退出提示符？"
 
-#: ozi_core/new/interactive/menu.py:75
+#: ozi_core/new/interactive/menu.py:78
 msgid "adm-metadata"
 msgstr "元数据："
 
-#: ozi_core/new/interactive/menu.py:79
+#: ozi_core/new/interactive/menu.py:82
 msgid "btn-prompt"
 msgstr "提示符"
 
-#: ozi_core/new/interactive/menu.py:95 ozi_core/fix/interactive.py:56
+#: ozi_core/new/interactive/menu.py:99 ozi_core/fix/interactive.py:59
 msgid "opt-menu-title"
 msgstr "选项选单，选择一个选项："
 
-#: ozi_core/new/interactive/menu.py:135
+#: ozi_core/new/interactive/menu.py:137
 msgid "opt-menu-allow-file"
 msgstr "允许的归档正规表示式⋯⋯"
 
-#: ozi_core/new/interactive/menu.py:136
+#: ozi_core/new/interactive/menu.py:138
 msgid "opt-menu-ci-provider"
 msgstr "持续整合提供者⋯⋯"
 
-#: ozi_core/new/interactive/menu.py:137 ozi_core/fix/interactive.py:72
+#: ozi_core/new/interactive/menu.py:139 ozi_core/fix/interactive.py:73
 msgid "opt-menu-copyright-head"
 msgstr "版权文件头⋯⋯"
 
-#: ozi_core/new/interactive/menu.py:142 ozi_core/fix/interactive.py:77
+#: ozi_core/new/interactive/menu.py:144 ozi_core/fix/interactive.py:78
 #, fuzzy, python-brace-format
-msgid "lang-{_.locale}"
+msgid "lang-{TRANSLATION.locale}"
 msgstr "英语（Ｅｎｇｌｉｓｈ）"
 
-#: ozi_core/new/interactive/menu.py:141 ozi_core/fix/interactive.py:76
+#: ozi_core/new/interactive/menu.py:143 ozi_core/fix/interactive.py:77
 msgid "opt-menu-language"
 msgstr "界面语言：$value"
 
-#: ozi_core/new/interactive/menu.py:232
+#: ozi_core/new/interactive/menu.py:234
 msgid "opt-menu-ci-provider-input"
 msgstr "更换持续整合提供者："
 
-#: ozi_core/new/interactive/menu.py:249
+#: ozi_core/new/interactive/menu.py:251
 #, fuzzy
 msgid "lang-{i[:2]}"
 msgstr "英语（Ｅｎｇｌｉｓｈ）"
 
-#: ozi_core/new/interactive/menu.py:262 ozi_core/new/interactive/menu.py:422
-#: ozi_core/fix/interactive.py:136
+#: ozi_core/new/interactive/menu.py:265 ozi_core/new/interactive/menu.py:425
+#: ozi_core/fix/interactive.py:137
 msgid "opt-menu-save-config"
 msgstr "保存选项配置吗？"
 
-#: ozi_core/new/interactive/menu.py:283
+#: ozi_core/new/interactive/menu.py:286
 msgid "edit-menu-text"
 msgstr "编辑选单，选择要编辑的内容："
 
-#: ozi_core/new/interactive/menu.py:285 ozi_core/new/parser.py:112
+#: ozi_core/new/interactive/menu.py:288 ozi_core/new/parser.py:112
 #: ozi_core/new/validate.py:209 ozi_core/new/validate.py:211
 msgid "edit-menu-btn-name"
 msgstr "姓名（Ｎａｍｅ）"
 
-#: ozi_core/new/interactive/menu.py:286 ozi_core/new/parser.py:150
+#: ozi_core/new/interactive/menu.py:289 ozi_core/new/parser.py:150
 #: ozi_core/new/validate.py:77 ozi_core/new/validate.py:81
 msgid "edit-menu-btn-summary"
 msgstr "概括（Ｓｕｍｍａｒｙ）"
 
-#: ozi_core/new/interactive/menu.py:287 ozi_core/new/parser.py:234
+#: ozi_core/new/interactive/menu.py:290 ozi_core/new/parser.py:234
 msgid "edit-menu-btn-keywords"
 msgstr "关键字（Ｋｅｙｗｏｒｄｓ）"
 
-#: ozi_core/new/interactive/menu.py:288 ozi_core/new/parser.py:122
+#: ozi_core/new/interactive/menu.py:291 ozi_core/new/parser.py:122
 #: ozi_core/new/validate.py:132 ozi_core/new/validate.py:135
 #: ozi_core/new/validate.py:143
 msgid "edit-menu-btn-author"
 msgstr "作者（Ａｕｔｈｏｒ）"
 
-#: ozi_core/new/interactive/menu.py:289 ozi_core/new/parser.py:136
+#: ozi_core/new/interactive/menu.py:292 ozi_core/new/parser.py:136
 #: ozi_core/new/validate.py:114 ozi_core/new/validate.py:118
 #: ozi_core/new/validate.py:121 ozi_core/new/validate.py:252
 msgid "edit-menu-btn-email"
 msgstr "电子邮件（Ａｕｔｈｏｒ－ｅｍａｉｌ）"
 
-#: ozi_core/new/interactive/menu.py:293 ozi_core/new/parser.py:159
+#: ozi_core/new/interactive/menu.py:296 ozi_core/new/parser.py:159
 #: ozi_core/new/validate.py:225 ozi_core/new/validate.py:227
 msgid "edit-menu-btn-license-expression"
 msgstr "软体许可表达式（Ｌｉｃｅｎｓｅ－Ｅｘｐｒｅｓｓｉｏｎ）"
 
-#: ozi_core/new/interactive/menu.py:296 ozi_core/new/parser.py:247
+#: ozi_core/new/interactive/menu.py:299 ozi_core/new/parser.py:247
 #: ozi_core/new/validate.py:125 ozi_core/new/validate.py:127
 #: ozi_core/new/validate.py:131 ozi_core/new/validate.py:136
 #: ozi_core/new/validate.py:140
 msgid "edit-menu-btn-maintainer"
 msgstr "维护者（Ｍａｉｎｔａｉｎｅｒ）"
 
-#: ozi_core/new/interactive/menu.py:299 ozi_core/new/parser.py:255
+#: ozi_core/new/interactive/menu.py:302 ozi_core/new/parser.py:255
 #: ozi_core/new/validate.py:104 ozi_core/new/validate.py:108
 #: ozi_core/new/validate.py:113 ozi_core/new/validate.py:119
 #: ozi_core/new/validate.py:139 ozi_core/new/validate.py:255
 msgid "edit-menu-btn-maintainer-email"
 msgstr "维护者电子邮件（Ｍａｉｎｔａｉｎｅｒ－ｅｍａｉｌ）"
 
-#: ozi_core/new/interactive/menu.py:301 ozi_core/new/parser.py:280
+#: ozi_core/new/interactive/menu.py:304 ozi_core/new/parser.py:280
 #: ozi_core/new/validate.py:50 ozi_core/new/validate.py:58
 #: ozi_core/new/validate.py:63 ozi_core/new/validate.py:68
 msgid "edit-menu-btn-project-url"
 msgstr "专案网址（Ｐｒｏｊｅｃｔ－ＵＲＬ）"
 
-#: ozi_core/new/interactive/menu.py:304 ozi_core/new/parser.py:347
+#: ozi_core/new/interactive/menu.py:307 ozi_core/new/parser.py:347
 msgid "edit-menu-btn-requires-dist"
 msgstr "要求（Ｒｅｑｕｉｒｅｓ－Ｄｉｓｔ）"
 
-#: ozi_core/new/interactive/menu.py:312 ozi_core/new/parser.py:196
+#: ozi_core/new/interactive/menu.py:315 ozi_core/new/parser.py:196
 msgid "edit-menu-btn-typing"
 msgstr "类型（Ｔｙｐｉｎｇ）"
 
-#: ozi_core/new/interactive/menu.py:313 ozi_core/new/parser.py:336
+#: ozi_core/new/interactive/menu.py:316 ozi_core/new/parser.py:336
 msgid "edit-menu-btn-readme-type"
 msgstr "自述文件内容类型（Ｄｅｓｃｒｉｐｔｉｏｎ－Ｃｏｎｔｅｎｔ－Ｔｙｐｅ）"
 
-#: ozi_core/new/interactive/menu.py:381
+#: ozi_core/new/interactive/menu.py:384
 #, fuzzy, python-brace-format
 msgid "edit-menu-btn-{x}"
 msgstr "姓名（Ｎａｍｅ）"
@@ -645,9 +666,9 @@ msgstr "除了作者之外，『$project_name』还有其他维护者吗？"
 #: ozi_core/new/interactive/project.py:298
 #: ozi_core/new/interactive/project.py:384
 #: ozi_core/new/interactive/project.py:501
-#: ozi_core/new/interactive/project.py:721 ozi_core/fix/interactive.py:229
-#: ozi_core/fix/interactive.py:264 ozi_core/fix/interactive.py:297
-#: ozi_core/fix/interactive.py:355
+#: ozi_core/new/interactive/project.py:721 ozi_core/fix/interactive.py:230
+#: ozi_core/fix/interactive.py:265 ozi_core/fix/interactive.py:298
+#: ozi_core/fix/interactive.py:356
 msgid "btn-menu"
 msgstr "選單"
 
@@ -729,8 +750,8 @@ msgstr "原始码（Ｓｏｕｒｃｅ）"
 msgid "pro-project-urls-input"
 msgstr "请输入『$projectname』的$urltypeＵＲＬ："
 
-#: ozi_core/new/interactive/project.py:746 ozi_core/fix/interactive.py:320
-#: ozi_core/fix/interactive.py:378
+#: ozi_core/new/interactive/project.py:746 ozi_core/fix/interactive.py:321
+#: ozi_core/fix/interactive.py:379
 msgid "msg-input-invalid"
 msgstr ""
 "输入无效：$value\n"
@@ -803,7 +824,7 @@ msgid "term-help-new-project"
 msgstr "使用ＯＺＩ创建一个新的Ｐｙｔｈｏｎ项目"
 
 #: ozi_core/new/parser.py:68 ozi_core/new/parser.py:75
-#: ozi_core/new/parser.py:414
+#: ozi_core/new/parser.py:432
 msgid "term-help-new-target"
 msgstr "新项目的目录路径（默认：当前工作目录）"
 
@@ -872,7 +893,7 @@ msgstr "使用零次或多次"
 #: ozi_core/new/parser.py:179 ozi_core/new/parser.py:195
 #: ozi_core/new/parser.py:207 ozi_core/new/parser.py:222
 #: ozi_core/new/parser.py:294 ozi_core/new/parser.py:321
-#: ozi_core/new/parser.py:335 ozi_core/new/parser.py:398
+#: ozi_core/new/parser.py:335 ozi_core/new/parser.py:416
 msgid "term-help-default"
 msgstr "$name（$text）默认设置：$default"
 
@@ -934,27 +955,41 @@ msgid "term-help-update-wrapfile"
 msgstr "将『subprojects/ozi.wrap』更新至ＯＺＩ的最新版本。"
 
 #: ozi_core/new/parser.py:375
+msgid "term-help-enable-create-pull-request"
+msgstr "从ＯＺＩ『publish』步骤中创建的分支在默认分支中创建拉取请求"
+
+#: ozi_core/new/parser.py:381
 msgid "term-help-enable-cython"
 msgstr "使用Ｃｙｔｈｏｎ构建Ｐｙｔｈｏｎ扩展模块。默认值：否"
 
-#: ozi_core/new/parser.py:381
+#: ozi_core/new/parser.py:387
 msgid "term-help-enable-uv"
 msgstr "使用ｕｖ编译并安装Ｐｙｔｈｏｎ要求，默认：否"
 
-#: ozi_core/new/parser.py:387
+#: ozi_core/new/parser.py:393
 msgid "term-help-github-harden-runner"
 msgstr "保护所有不可重复使用的工作流作业，默认值：否"
 
-#: ozi_core/new/parser.py:393 ozi_core/fix/parser.py:106
+#: ozi_core/new/parser.py:399
+msgid "term-help-signed-wheel"
+msgstr ""
+"由ＯＺＩ『release』创建的签名轮子（需要来自ＣＩ提供商的名为"
+"『WHEEL_SIGN_TOKEN』的密钥）的密钥）"
+
+#: ozi_core/new/parser.py:405 ozi_core/fix/parser.py:106
 #: ozi_core/fix/parser.py:174 ozi_core/fix/parser.py:232
 msgid "term-help-strict"
 msgstr "严格模式会对错误发出警告，默认值：否"
 
-#: ozi_core/new/parser.py:399
+#: ozi_core/new/parser.py:411
+msgid "term-help-testpypi"
+msgstr "在ＯＺＩ『publish』期间将分发文件上传到ＴｅｓｔＰｙＰＩ而不是ＰｙＰＩ"
+
+#: ozi_core/new/parser.py:417
 msgid "term-help-name-allow-file"
 msgstr "添加要忽略的文件模式"
 
-#: ozi_core/new/parser.py:400
+#: ozi_core/new/parser.py:418
 msgid "term-help-allow-file"
 msgstr "在新项目目标文件夹中"
 
@@ -1039,29 +1074,29 @@ msgstr "丢失的"
 msgid "term-subdir"
 msgstr "子目錄"
 
-#: ozi_core/fix/interactive.py:55 ozi_core/fix/interactive.py:105
-#: ozi_core/fix/interactive.py:118 ozi_core/fix/interactive.py:135
-#: ozi_core/fix/interactive.py:226 ozi_core/fix/interactive.py:253
-#: ozi_core/fix/interactive.py:277 ozi_core/fix/interactive.py:296
-#: ozi_core/fix/interactive.py:318 ozi_core/fix/interactive.py:335
-#: ozi_core/fix/interactive.py:354 ozi_core/fix/interactive.py:376
+#: ozi_core/fix/interactive.py:58 ozi_core/fix/interactive.py:106
+#: ozi_core/fix/interactive.py:119 ozi_core/fix/interactive.py:136
+#: ozi_core/fix/interactive.py:227 ozi_core/fix/interactive.py:254
+#: ozi_core/fix/interactive.py:278 ozi_core/fix/interactive.py:297
+#: ozi_core/fix/interactive.py:319 ozi_core/fix/interactive.py:336
+#: ozi_core/fix/interactive.py:355 ozi_core/fix/interactive.py:377
 msgid "fix-dlg-title"
 msgstr "ｏｚｉ－ｆｉｘ 互 動 提 示 符"
 
-#: ozi_core/fix/interactive.py:64
+#: ozi_core/fix/interactive.py:67
 msgid "opt-menu-pretty"
 msgstr "漂亮模式（缩进的ＪＳＯＮ）：$value"
 
-#: ozi_core/fix/interactive.py:123
+#: ozi_core/fix/interactive.py:124
 #, fuzzy, python-brace-format
 msgid "lang-{i}"
 msgstr "英语（Ｅｎｇｌｉｓｈ）"
 
-#: ozi_core/fix/interactive.py:227
+#: ozi_core/fix/interactive.py:228
 msgid "fix-add"
 msgstr "选择要添加或删除的文件类型："
 
-#: ozi_core/fix/interactive.py:258
+#: ozi_core/fix/interactive.py:259
 msgid "fix-add-or-remove"
 msgstr "使用添加或删除按钮查找要添加或删除的文件："
 

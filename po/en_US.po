@@ -1,17 +1,22 @@
 msgid ""
 msgstr ""
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-02 02:29-0500\n"
+"POT-Creation-Date: 2025-06-06 21:50-0500\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.6\n"
 
 #: ozi_core/__main__.py:20
 msgid "term-choices"
 msgstr "choices"
 
 #: ozi_core/__main__.py:21
-#, fuzzy
 msgid "term-spdx-license-expression"
 msgstr "use once, SPDX license expression"
 
@@ -20,39 +25,38 @@ msgid "term-see-ref"
 msgstr "See"
 
 #: ozi_core/__main__.py:23
-#, fuzzy
 msgid "project-authoring-console-app"
 msgstr "project authoring console app"
 
-#: ozi_core/__main__.py:24
+#: ozi_core/__main__.py:25
 msgid "term-project-maintenance-console-app"
 msgstr "project maintenance console app"
 
-#: ozi_core/__main__.py:25
+#: ozi_core/__main__.py:27
 msgid "term-help-new"
 msgstr "show help for the ozi-new command"
 
-#: ozi_core/__main__.py:26
+#: ozi_core/__main__.py:28
 msgid "term-help-fix"
 msgstr "show help for the ozi-fix command"
 
-#: ozi_core/__main__.py:27
+#: ozi_core/__main__.py:29
 msgid "term-tox-e-lint"
 msgstr "run formatting, static analysis, and type checking"
 
-#: ozi_core/__main__.py:28
+#: ozi_core/__main__.py:30
 msgid "term-tox-e-test"
 msgstr "run tests and coverage"
 
-#: ozi_core/__main__.py:29
+#: ozi_core/__main__.py:31
 msgid "term-tox-e-dist"
 msgstr "run distribution and packaging"
 
-#: ozi_core/__main__.py:30 ozi_core/new/parser.py:18 ozi_core/fix/parser.py:20
+#: ozi_core/__main__.py:32 ozi_core/new/parser.py:18 ozi_core/fix/parser.py:20
 msgid "term-options"
 msgstr "options"
 
-#: ozi_core/__main__.py:31 ozi_core/ui/web.py:131 ozi_core/ui/web.py:208
+#: ozi_core/__main__.py:33 ozi_core/ui/web.py:144 ozi_core/ui/web.py:633
 #: ozi_core/new/interactive/project.py:71 ozi_core/new/parser.py:20
 #: ozi_core/fix/parser.py:22
 msgid "adm-disclaimer-text"
@@ -78,35 +82,35 @@ msgstr ""
 "prompt or any of the resources contained within does not create an attorney-"
 "client relationship."
 
-#: ozi_core/__main__.py:32
+#: ozi_core/__main__.py:35
 msgid "term-continuous-integration-checkpoints"
 msgstr "continuous integration checkpoints"
 
-#: ozi_core/__main__.py:79 ozi_core/new/parser.py:358 ozi_core/fix/parser.py:70
+#: ozi_core/__main__.py:83 ozi_core/new/parser.py:358 ozi_core/fix/parser.py:70
 msgid "term-help-help"
 msgstr "show this help message and exit"
 
-#: ozi_core/__main__.py:86
+#: ozi_core/__main__.py:90
 msgid "term-help-valid-license-expression"
 msgstr "Validate a SPDX license expression."
 
-#: ozi_core/__main__.py:91
+#: ozi_core/__main__.py:95
 msgid "term-help-list-available"
 msgstr "Print a list of valid values for a key and exit."
 
-#: ozi_core/__main__.py:99
+#: ozi_core/__main__.py:103
 msgid "term-help-uninstall-user-files"
 msgstr "Remove configuration and log files created by OZI."
 
-#: ozi_core/__main__.py:110
+#: ozi_core/__main__.py:114
 msgid "term-help-version"
 msgstr "Print the current version and exit."
 
-#: ozi_core/__main__.py:118
+#: ozi_core/__main__.py:122
 msgid "term-help-check-version"
 msgstr "Check for a newer version of OZI and exit."
 
-#: ozi_core/__main__.py:126
+#: ozi_core/__main__.py:130
 msgid "term-help-info"
 msgstr "Print all metadata as JSON and exit."
 
@@ -122,20 +126,19 @@ msgstr ""
 "A newer version of OZI ($latest > $currentversion), available for download "
 "on PyPI"
 
-#: ozi_core/actions.py:170
+#: ozi_core/actions.py:173
 msgid "term-tap-dev-version"
 msgstr "The OZI package is a development version"
 
-#: ozi_core/actions.py:172
+#: ozi_core/actions.py:175
 msgid "term-tap-up-to-date"
 msgstr "The OZI package has been updated"
 
-#: ozi_core/actions.py:188
-#, fuzzy
+#: ozi_core/actions.py:191
 msgid "version-check-failed"
 msgstr "OZI package version check failed with status code $status"
 
-#: ozi_core/actions.py:209
+#: ozi_core/actions.py:212
 msgid "term-parsing-success"
 msgstr "parsed successfully"
 
@@ -157,11 +160,11 @@ msgstr ""
 msgid "term-tap-user-template-not-found"
 msgstr "User template not found"
 
-#: ozi_core/ui/dialog.py:138 ozi_core/ui/dialog.py:204 ozi_core/ui/web.py:120
-#: ozi_core/new/interactive/menu.py:148 ozi_core/new/interactive/menu.py:205
-#: ozi_core/new/interactive/menu.py:222 ozi_core/new/interactive/menu.py:235
-#: ozi_core/new/interactive/menu.py:253 ozi_core/new/interactive/menu.py:316
-#: ozi_core/new/interactive/menu.py:386 ozi_core/new/interactive/project.py:129
+#: ozi_core/ui/dialog.py:138 ozi_core/ui/dialog.py:204 ozi_core/ui/web.py:622
+#: ozi_core/new/interactive/menu.py:150 ozi_core/new/interactive/menu.py:207
+#: ozi_core/new/interactive/menu.py:224 ozi_core/new/interactive/menu.py:237
+#: ozi_core/new/interactive/menu.py:255 ozi_core/new/interactive/menu.py:319
+#: ozi_core/new/interactive/menu.py:389 ozi_core/new/interactive/project.py:129
 #: ozi_core/new/interactive/project.py:219
 #: ozi_core/new/interactive/project.py:299
 #: ozi_core/new/interactive/project.py:320
@@ -176,307 +179,322 @@ msgstr "User template not found"
 #: ozi_core/new/interactive/project.py:664
 #: ozi_core/new/interactive/project.py:677
 #: ozi_core/new/interactive/project.py:722
-#: ozi_core/new/interactive/project.py:748 ozi_core/fix/interactive.py:83
-#: ozi_core/fix/interactive.py:109 ozi_core/fix/interactive.py:127
-#: ozi_core/fix/interactive.py:230 ozi_core/fix/interactive.py:265
-#: ozi_core/fix/interactive.py:325 ozi_core/fix/interactive.py:383
+#: ozi_core/new/interactive/project.py:748 ozi_core/fix/interactive.py:84
+#: ozi_core/fix/interactive.py:110 ozi_core/fix/interactive.py:128
+#: ozi_core/fix/interactive.py:231 ozi_core/fix/interactive.py:266
+#: ozi_core/fix/interactive.py:326 ozi_core/fix/interactive.py:384
 msgid "btn-ok"
 msgstr "✔ Ok"
 
-#: ozi_core/ui/dialog.py:140 ozi_core/new/interactive/menu.py:38
-#: ozi_core/fix/interactive.py:167
+#: ozi_core/ui/dialog.py:140 ozi_core/new/interactive/menu.py:41
+#: ozi_core/fix/interactive.py:168
 msgid "btn-exit"
 msgstr "✘ Exit"
 
-#: ozi_core/ui/dialog.py:206 ozi_core/new/interactive/menu.py:40
-#: ozi_core/new/interactive/menu.py:80 ozi_core/new/interactive/menu.py:147
-#: ozi_core/new/interactive/menu.py:204 ozi_core/new/interactive/menu.py:221
-#: ozi_core/new/interactive/menu.py:234 ozi_core/new/interactive/menu.py:252
-#: ozi_core/new/interactive/menu.py:315 ozi_core/new/interactive/menu.py:387
+#: ozi_core/ui/dialog.py:206 ozi_core/new/interactive/menu.py:43
+#: ozi_core/new/interactive/menu.py:83 ozi_core/new/interactive/menu.py:149
+#: ozi_core/new/interactive/menu.py:206 ozi_core/new/interactive/menu.py:223
+#: ozi_core/new/interactive/menu.py:236 ozi_core/new/interactive/menu.py:254
+#: ozi_core/new/interactive/menu.py:318 ozi_core/new/interactive/menu.py:390
 #: ozi_core/new/interactive/project.py:220
 #: ozi_core/new/interactive/project.py:511
 #: ozi_core/new/interactive/project.py:530
 #: ozi_core/new/interactive/project.py:576
 #: ozi_core/new/interactive/project.py:612
 #: ozi_core/new/interactive/project.py:665
-#: ozi_core/new/interactive/project.py:678 ozi_core/fix/interactive.py:82
-#: ozi_core/fix/interactive.py:108 ozi_core/fix/interactive.py:126
-#: ozi_core/fix/interactive.py:168
+#: ozi_core/new/interactive/project.py:678 ozi_core/fix/interactive.py:83
+#: ozi_core/fix/interactive.py:109 ozi_core/fix/interactive.py:127
+#: ozi_core/fix/interactive.py:169
 msgid "btn-back"
 msgstr "← Back"
 
-#: ozi_core/ui/menu.py:39 ozi_core/ui/menu.py:44
-msgid "btn-{self.name.lower()}"
-msgstr ""
+#: ozi_core/ui/web.py:137 ozi_core/ui/web.py:635
+msgid "lang-en"
+msgstr "English"
 
-#: ozi_core/ui/web.py:79 ozi_core/new/interactive/menu.py:306
-#: ozi_core/new/parser.py:180
+#: ozi_core/ui/web.py:137 ozi_core/ui/web.py:636
+msgid "lang-zh"
+msgstr "简体中文 Chinese (Simplified)"
+
+#: ozi_core/ui/web.py:161 ozi_core/ui/web.py:216 ozi_core/ui/web.py:512
+#: ozi_core/ui/web.py:547
+msgid "web-err-invalid-input"
+msgstr "Invalid Entry"
+
+#: ozi_core/ui/web.py:164 ozi_core/ui/web.py:578
+#: ozi_core/new/interactive/menu.py:309 ozi_core/new/parser.py:180
 msgid "edit-menu-btn-audience"
 msgstr "Intended Audience"
 
-#: ozi_core/ui/web.py:79 ozi_core/ui/web.py:82 ozi_core/ui/web.py:84
-#: ozi_core/ui/web.py:87 ozi_core/ui/web.py:97 ozi_core/ui/web.py:100
-#: ozi_core/new/interactive/menu.py:381
+#: ozi_core/ui/web.py:164 ozi_core/ui/web.py:167 ozi_core/ui/web.py:169
+#: ozi_core/ui/web.py:172 ozi_core/ui/web.py:182 ozi_core/ui/web.py:185
+#: ozi_core/ui/web.py:578 ozi_core/ui/web.py:581 ozi_core/ui/web.py:583
+#: ozi_core/ui/web.py:586 ozi_core/ui/web.py:596 ozi_core/ui/web.py:599
+#: ozi_core/new/interactive/menu.py:384
 msgid "pro-classifier-cbl"
 msgstr "Please select $key classifier or classifiers:"
 
-#: ozi_core/ui/web.py:80 ozi_core/new/interactive/project.py:250
+#: ozi_core/ui/web.py:165 ozi_core/ui/web.py:579
+#: ozi_core/new/interactive/project.py:250
 msgid "pro-author"
 msgstr ""
 "Who is the author or authors of $projectname?\n"
 "(comma-separated list)"
 
-#: ozi_core/ui/web.py:81 ozi_core/new/interactive/project.py:273
+#: ozi_core/ui/web.py:166 ozi_core/ui/web.py:580
+#: ozi_core/new/interactive/project.py:273
 msgid "pro-author-email"
 msgstr ""
 "What are the email addresses of the author or authors of $projectname?\n"
 "(comma-separated list)"
 
-#: ozi_core/ui/web.py:82 ozi_core/new/interactive/menu.py:307
-#: ozi_core/new/parser.py:208
+#: ozi_core/ui/web.py:167 ozi_core/ui/web.py:581
+#: ozi_core/new/interactive/menu.py:310 ozi_core/new/parser.py:208
 msgid "edit-menu-btn-environment"
 msgstr "Environment"
 
-#: ozi_core/ui/web.py:84 ozi_core/new/interactive/menu.py:308
-#: ozi_core/new/parser.py:267
+#: ozi_core/ui/web.py:169 ozi_core/ui/web.py:583
+#: ozi_core/new/interactive/menu.py:311 ozi_core/new/parser.py:267
 msgid "edit-menu-btn-framework"
 msgstr "Framework"
 
-#: ozi_core/ui/web.py:86 ozi_core/new/interactive/project.py:198
+#: ozi_core/ui/web.py:171 ozi_core/ui/web.py:585
+#: ozi_core/new/interactive/project.py:198
 msgid "pro-keywords"
 msgstr ""
 "What are some keywords used to describe $projectname?\n"
 "(comma-separated list)"
 
-#: ozi_core/ui/web.py:87 ozi_core/new/interactive/menu.py:309
-#: ozi_core/new/parser.py:295
+#: ozi_core/ui/web.py:172 ozi_core/ui/web.py:586
+#: ozi_core/new/interactive/menu.py:312 ozi_core/new/parser.py:295
 msgid "edit-menu-btn-language"
 msgstr "Natural Language"
 
-#: ozi_core/ui/web.py:89 ozi_core/new/interactive/project.py:295
+#: ozi_core/ui/web.py:174 ozi_core/ui/web.py:588
+#: ozi_core/new/interactive/project.py:295
 msgid "pro-license"
 msgstr "Please select a license classifier for $projectname"
 
-#: ozi_core/ui/web.py:90
+#: ozi_core/ui/web.py:175 ozi_core/ui/web.py:589
 msgid "edit-menu-btn-license-exception"
 msgstr "with (optional exception)"
 
-#: ozi_core/ui/web.py:91
+#: ozi_core/ui/web.py:176 ozi_core/ui/web.py:590
 msgid "pro-license-expression"
 msgstr "Select a specific license expression:"
 
-#: ozi_core/ui/web.py:92 ozi_core/new/interactive/project.py:446
+#: ozi_core/ui/web.py:177 ozi_core/ui/web.py:591
+#: ozi_core/new/interactive/project.py:446
 msgid "pro-maintainer"
 msgstr ""
 "What is the maintainer or maintainers name of $projectname?\n"
 "(comma-separated list)"
 
-#: ozi_core/ui/web.py:93 ozi_core/new/interactive/project.py:469
+#: ozi_core/ui/web.py:178 ozi_core/ui/web.py:592
+#: ozi_core/new/interactive/project.py:469
 msgid "pro-maintainer-email"
 msgstr ""
 "What are the email addresses of the maintainer or maintainers of "
 "$projectname?\n"
 "(comma-separated list)"
 
-#: ozi_core/ui/web.py:94 ozi_core/new/interactive/project.py:160
+#: ozi_core/ui/web.py:179 ozi_core/ui/web.py:593
+#: ozi_core/new/interactive/project.py:160
 msgid "pro-name"
 msgstr ""
 "What is the name of the project?\n"
 "(PyPI package name: no spaces, alphanumeric words, \".-_\" as delimiters)"
 
-#: ozi_core/ui/web.py:95 ozi_core/new/interactive/project.py:662
+#: ozi_core/ui/web.py:180 ozi_core/ui/web.py:594
+#: ozi_core/new/interactive/project.py:662
 msgid "pro-project-urls-cbl"
 msgstr "Please select project URLs you want to add to $projectname:"
 
-#: ozi_core/ui/web.py:96 ozi_core/new/interactive/project.py:494
+#: ozi_core/ui/web.py:181 ozi_core/ui/web.py:595
+#: ozi_core/new/interactive/project.py:494
 msgid "pro-requires-dist"
 msgstr "Add or remove dependency requirements to $projectname"
 
-#: ozi_core/ui/web.py:97 ozi_core/new/interactive/menu.py:310
-#: ozi_core/new/parser.py:322
+#: ozi_core/ui/web.py:182 ozi_core/ui/web.py:596
+#: ozi_core/new/interactive/menu.py:313 ozi_core/new/parser.py:322
 msgid "edit-menu-btn-status"
 msgstr "Status"
 
-#: ozi_core/ui/web.py:99 ozi_core/new/interactive/project.py:179
+#: ozi_core/ui/web.py:184 ozi_core/ui/web.py:598
+#: ozi_core/new/interactive/project.py:179
 msgid "pro-summary"
 msgstr ""
 "What does the project, $projectname, do?\n"
 "(a short summary 1-2 sentences)"
 
-#: ozi_core/ui/web.py:100 ozi_core/new/interactive/menu.py:311
-#: ozi_core/new/parser.py:307
+#: ozi_core/ui/web.py:185 ozi_core/ui/web.py:599
+#: ozi_core/new/interactive/menu.py:314 ozi_core/new/parser.py:307
 msgid "edit-menu-btn-topic"
 msgstr "Topic"
 
-#: ozi_core/ui/web.py:102 ozi_core/new/interactive/menu.py:202
-#: ozi_core/fix/interactive.py:106
+#: ozi_core/ui/web.py:187 ozi_core/ui/web.py:601
+#: ozi_core/new/interactive/menu.py:204 ozi_core/fix/interactive.py:107
 msgid "opt-menu-copyright-head-input"
 msgstr "Edit copyright header:"
 
-#: ozi_core/ui/web.py:103 ozi_core/new/interactive/menu.py:219
+#: ozi_core/ui/web.py:188 ozi_core/ui/web.py:602
+#: ozi_core/new/interactive/menu.py:221
 msgid "opt-menu-allow-file-input"
 msgstr "Edit allowed existing files:"
 
-#: ozi_core/ui/web.py:104 ozi_core/new/interactive/menu.py:100
+#: ozi_core/ui/web.py:189 ozi_core/ui/web.py:603
+#: ozi_core/new/interactive/menu.py:104
 msgid "opt-menu-enable-cython"
 msgstr "Enable Cython: $value"
 
-#: ozi_core/ui/web.py:105 ozi_core/new/interactive/menu.py:107
+#: ozi_core/ui/web.py:190 ozi_core/ui/web.py:604
+#: ozi_core/new/interactive/menu.py:111
 msgid "opt-menu-enable-uv"
 msgstr "Enable uv: $value"
 
-#: ozi_core/ui/web.py:106 ozi_core/new/interactive/menu.py:114
+#: ozi_core/ui/web.py:191 ozi_core/ui/web.py:605
+#: ozi_core/new/interactive/menu.py:118
 msgid "opt-menu-github-harden-runner"
 msgstr "Hardened GitHub CI/CD: $value"
 
-#: ozi_core/ui/web.py:107 ozi_core/ui/web.py:141
-#: ozi_core/new/interactive/menu.py:245 ozi_core/fix/interactive.py:119
+#: ozi_core/ui/web.py:192 ozi_core/ui/web.py:606 ozi_core/ui/web.py:643
+#: ozi_core/new/interactive/menu.py:247 ozi_core/fix/interactive.py:120
 msgid "opt-menu-language-text"
 msgstr "Select the user interface language:"
 
-#: ozi_core/ui/web.py:108 ozi_core/new/interactive/project.py:572
+#: ozi_core/ui/web.py:193 ozi_core/ui/web.py:607
+#: ozi_core/new/interactive/project.py:572
 msgid "pro-readme-type"
 msgstr "Please select README type for $projectname:"
 
-#: ozi_core/ui/web.py:109 ozi_core/new/interactive/menu.py:125
-#: ozi_core/fix/interactive.py:69
+#: ozi_core/ui/web.py:194 ozi_core/ui/web.py:608
+#: ozi_core/new/interactive/menu.py:128 ozi_core/fix/interactive.py:71
 msgid "opt-menu-update-wrapfile"
 msgstr "Update \"subprojects/ozi.wrap\": $value"
 
-#: ozi_core/ui/web.py:110 ozi_core/new/interactive/menu.py:120
-#: ozi_core/fix/interactive.py:60
+#: ozi_core/ui/web.py:195 ozi_core/ui/web.py:609
+#: ozi_core/new/interactive/menu.py:124 ozi_core/fix/interactive.py:63
 msgid "opt-menu-strict"
 msgstr "Strict Mode: $value"
 
-#: ozi_core/ui/web.py:111 ozi_core/new/interactive/menu.py:131
+#: ozi_core/ui/web.py:196 ozi_core/ui/web.py:610
+#: ozi_core/new/interactive/menu.py:133
 msgid "opt-menu-verify-email"
 msgstr "Verify Email: $value"
 
-#: ozi_core/ui/web.py:112 ozi_core/new/interactive/project.py:127
+#: ozi_core/ui/web.py:197 ozi_core/ui/web.py:611
+#: ozi_core/new/interactive/project.py:127
 msgid "adm-confirm"
 msgstr ""
 "Confirm project creation?\n"
 "PKG-INFO Metadata:"
 
-#: ozi_core/ui/web.py:113 ozi_core/new/interactive/menu.py:295
-#: ozi_core/new/parser.py:223
+#: ozi_core/ui/web.py:198 ozi_core/ui/web.py:612
+#: ozi_core/new/interactive/menu.py:298 ozi_core/new/parser.py:223
 msgid "edit-menu-btn-license-file"
 msgstr "License-File"
 
-#: ozi_core/ui/web.py:117 ozi_core/ui/web.py:118
-#: ozi_core/new/interactive/project.py:498 ozi_core/fix/interactive.py:262
+#: ozi_core/ui/web.py:512 ozi_core/ui/web.py:521 ozi_core/ui/web.py:547
+#: ozi_core/ui/web.py:567 ozi_core/ui/web.py:648
+msgid "sp"
+msgstr " "
+
+#: ozi_core/ui/web.py:521 ozi_core/new/validate.py:64
+msgid "term-tap-empty-netloc"
+msgstr "URL netloc blank"
+
+#: ozi_core/ui/web.py:567 ozi_core/new/interactive/validator.py:70
+msgid "err-pkg-not-found"
+msgstr "package not found."
+
+#: ozi_core/ui/web.py:619 ozi_core/ui/web.py:620
+#: ozi_core/new/interactive/project.py:498 ozi_core/fix/interactive.py:263
 msgid "btn-add"
 msgstr "Add"
 
-#: ozi_core/ui/web.py:119 ozi_core/new/interactive/project.py:70
+#: ozi_core/ui/web.py:621 ozi_core/new/interactive/project.py:70
 msgid "adm-disclaimer-title"
 msgstr "Disclaimer"
 
-#: ozi_core/ui/web.py:121 ozi_core/ui/web.py:122
-#: ozi_core/new/interactive/menu.py:36 ozi_core/fix/interactive.py:165
+#: ozi_core/ui/web.py:623 ozi_core/ui/web.py:624
+#: ozi_core/new/interactive/menu.py:39 ozi_core/fix/interactive.py:166
 msgid "btn-options"
 msgstr "⚙ Options"
 
-#: ozi_core/ui/web.py:123
+#: ozi_core/ui/web.py:625
 msgid "web-core-metadata"
 msgstr "Core Metadata"
 
-#: ozi_core/ui/web.py:124 ozi_core/new/interactive/menu.py:290
+#: ozi_core/ui/web.py:626 ozi_core/new/interactive/menu.py:293
 #: ozi_core/new/parser.py:169 ozi_core/new/validate.py:161
 #: ozi_core/new/validate.py:170
 msgid "edit-menu-btn-license"
 msgstr "License"
 
-#: ozi_core/ui/web.py:125
+#: ozi_core/ui/web.py:627
 msgid "term-create-project"
 msgstr "Create Project"
 
-#: ozi_core/ui/web.py:126
+#: ozi_core/ui/web.py:628
 msgid "btn-refresh"
 msgstr "⟳ Refresh"
 
-#: ozi_core/ui/web.py:127 ozi_core/ui/web.py:128
-#: ozi_core/new/interactive/project.py:499 ozi_core/fix/interactive.py:263
+#: ozi_core/ui/web.py:629 ozi_core/ui/web.py:630
+#: ozi_core/new/interactive/project.py:499 ozi_core/fix/interactive.py:264
 msgid "btn-remove"
 msgstr "Remove"
 
-#: ozi_core/ui/web.py:129 ozi_core/new/interactive/menu.py:37
-#: ozi_core/fix/interactive.py:166
+#: ozi_core/ui/web.py:631 ozi_core/new/interactive/menu.py:40
+#: ozi_core/fix/interactive.py:167
 msgid "btn-reset"
 msgstr "↺ Reset"
 
-#: ozi_core/ui/web.py:130
+#: ozi_core/ui/web.py:632
 msgid "btn-save"
 msgstr "Save"
 
-#: ozi_core/ui/web.py:132
+#: ozi_core/ui/web.py:634
 msgid "term-input"
 msgstr "input"
 
-#: ozi_core/ui/web.py:133 ozi_core/ui/web.py:201
-msgid "lang-en"
-msgstr "English"
-
-#: ozi_core/ui/web.py:134 ozi_core/ui/web.py:201
-msgid "lang-zh"
-msgstr "简体中文 Chinese (Simplified)"
-
-#: ozi_core/ui/web.py:135 ozi_core/ui/web.py:140 ozi_core/fix/parser.py:21
+#: ozi_core/ui/web.py:637 ozi_core/ui/web.py:642 ozi_core/fix/parser.py:21
 #: ozi_core/fix/parser.py:101 ozi_core/fix/parser.py:169
 #: ozi_core/fix/parser.py:227
 msgid "term-output"
 msgstr "output"
 
-#: ozi_core/ui/web.py:136
+#: ozi_core/ui/web.py:638
 msgid "pro-readme-type-radio-md"
 msgstr "Markdown"
 
-#: ozi_core/ui/web.py:137
+#: ozi_core/ui/web.py:639
 msgid "pro-readme-type-radio-rst"
 msgstr "reStructuredText"
 
-#: ozi_core/ui/web.py:138
+#: ozi_core/ui/web.py:640
 msgid "pro-readme-type-radio-txt"
 msgstr "Plaintext"
 
-#: ozi_core/ui/web.py:139
+#: ozi_core/ui/web.py:641
 msgid "term-user-interface"
 msgstr "user interface"
 
-#: ozi_core/ui/web.py:224 ozi_core/ui/web.py:240 ozi_core/ui/web.py:535
-#: ozi_core/ui/web.py:569
-msgid "web-err-invalid-input"
-msgstr "Invalid Entry"
-
-#: ozi_core/ui/web.py:535 ozi_core/ui/web.py:544 ozi_core/ui/web.py:569
-#: ozi_core/ui/web.py:589 ozi_core/ui/web.py:605
-msgid "sp"
-msgstr " "
-
-#: ozi_core/ui/web.py:544 ozi_core/new/validate.py:64
-msgid "term-tap-empty-netloc"
-msgstr "URL netloc blank"
-
-#: ozi_core/ui/web.py:589 ozi_core/new/interactive/validator.py:70
-msgid "err-pkg-not-found"
-msgstr "package not found."
-
-#: ozi_core/ui/web.py:605 ozi_core/new/validate.py:40
+#: ozi_core/ui/web.py:648 ozi_core/new/validate.py:40
 #: ozi_core/new/validate.py:42
 msgid "term-classifier"
 msgstr "Classifier"
 
-#: ozi_core/ui/web.py:605
+#: ozi_core/ui/web.py:648
 msgid "term-metadata"
 msgstr "Metadata"
 
-#: ozi_core/new/interactive/menu.py:32 ozi_core/new/interactive/menu.py:48
-#: ozi_core/new/interactive/menu.py:57 ozi_core/new/interactive/menu.py:74
-#: ozi_core/new/interactive/menu.py:94 ozi_core/new/interactive/menu.py:201
-#: ozi_core/new/interactive/menu.py:218 ozi_core/new/interactive/menu.py:231
-#: ozi_core/new/interactive/menu.py:244 ozi_core/new/interactive/menu.py:261
-#: ozi_core/new/interactive/menu.py:282 ozi_core/new/interactive/menu.py:380
-#: ozi_core/new/interactive/menu.py:421 ozi_core/new/interactive/project.py:69
+#: ozi_core/new/interactive/menu.py:35 ozi_core/new/interactive/menu.py:51
+#: ozi_core/new/interactive/menu.py:60 ozi_core/new/interactive/menu.py:77
+#: ozi_core/new/interactive/menu.py:98 ozi_core/new/interactive/menu.py:203
+#: ozi_core/new/interactive/menu.py:220 ozi_core/new/interactive/menu.py:233
+#: ozi_core/new/interactive/menu.py:246 ozi_core/new/interactive/menu.py:264
+#: ozi_core/new/interactive/menu.py:285 ozi_core/new/interactive/menu.py:383
+#: ozi_core/new/interactive/menu.py:424 ozi_core/new/interactive/project.py:69
 #: ozi_core/new/interactive/project.py:107
 #: ozi_core/new/interactive/project.py:126
 #: ozi_core/new/interactive/project.py:215
@@ -496,160 +514,160 @@ msgstr "Metadata"
 #: ozi_core/new/interactive/project.py:661
 #: ozi_core/new/interactive/project.py:671
 #: ozi_core/new/interactive/project.py:716
-#: ozi_core/new/interactive/project.py:745 ozi_core/fix/interactive.py:162
-#: ozi_core/fix/interactive.py:180 ozi_core/fix/interactive.py:189
+#: ozi_core/new/interactive/project.py:745 ozi_core/fix/interactive.py:163
+#: ozi_core/fix/interactive.py:181 ozi_core/fix/interactive.py:190
 msgid "new-dlg-title"
 msgstr "ozi-new interactive prompt"
 
-#: ozi_core/new/interactive/menu.py:33 ozi_core/fix/interactive.py:163
+#: ozi_core/new/interactive/menu.py:36 ozi_core/fix/interactive.py:164
 msgid "main-menu-text"
 msgstr "Main menu, select an action:"
 
-#: ozi_core/new/interactive/menu.py:35
+#: ozi_core/new/interactive/menu.py:38
 msgid "btn-metadata"
 msgstr "∋ Metadata"
 
-#: ozi_core/new/interactive/menu.py:39
+#: ozi_core/new/interactive/menu.py:42
 msgid "btn-edit"
 msgstr "✎ Edit"
 
-#: ozi_core/new/interactive/menu.py:49 ozi_core/fix/interactive.py:181
+#: ozi_core/new/interactive/menu.py:52 ozi_core/fix/interactive.py:182
 msgid "main-menu-yn-reset"
 msgstr "Reset prompt and start over?"
 
-#: ozi_core/new/interactive/menu.py:51 ozi_core/new/interactive/menu.py:60
-#: ozi_core/new/interactive/menu.py:263 ozi_core/new/interactive/menu.py:423
-#: ozi_core/new/interactive/project.py:110 ozi_core/fix/interactive.py:137
-#: ozi_core/fix/interactive.py:183 ozi_core/fix/interactive.py:192
+#: ozi_core/new/interactive/menu.py:54 ozi_core/new/interactive/menu.py:63
+#: ozi_core/new/interactive/menu.py:266 ozi_core/new/interactive/menu.py:426
+#: ozi_core/new/interactive/project.py:110 ozi_core/fix/interactive.py:138
+#: ozi_core/fix/interactive.py:184 ozi_core/fix/interactive.py:193
 msgid "btn-yes"
 msgstr "Yes"
 
-#: ozi_core/new/interactive/menu.py:52 ozi_core/new/interactive/menu.py:61
-#: ozi_core/new/interactive/menu.py:264 ozi_core/new/interactive/menu.py:424
-#: ozi_core/new/interactive/project.py:111 ozi_core/fix/interactive.py:138
-#: ozi_core/fix/interactive.py:184 ozi_core/fix/interactive.py:193
+#: ozi_core/new/interactive/menu.py:55 ozi_core/new/interactive/menu.py:64
+#: ozi_core/new/interactive/menu.py:267 ozi_core/new/interactive/menu.py:427
+#: ozi_core/new/interactive/project.py:111 ozi_core/fix/interactive.py:139
+#: ozi_core/fix/interactive.py:185 ozi_core/fix/interactive.py:194
 msgid "btn-no"
 msgstr "No"
 
-#: ozi_core/new/interactive/menu.py:58 ozi_core/fix/interactive.py:190
+#: ozi_core/new/interactive/menu.py:61 ozi_core/fix/interactive.py:191
 msgid "main-menu-yn-exit"
 msgstr "Exit the prompt?"
 
-#: ozi_core/new/interactive/menu.py:75
+#: ozi_core/new/interactive/menu.py:78
 msgid "adm-metadata"
 msgstr "PKG-INFO Metadata:"
 
-#: ozi_core/new/interactive/menu.py:79
+#: ozi_core/new/interactive/menu.py:82
 msgid "btn-prompt"
 msgstr "⌂ Prompt"
 
-#: ozi_core/new/interactive/menu.py:95 ozi_core/fix/interactive.py:56
+#: ozi_core/new/interactive/menu.py:99 ozi_core/fix/interactive.py:59
 msgid "opt-menu-title"
 msgstr "Options menu, select an option:"
 
-#: ozi_core/new/interactive/menu.py:135
+#: ozi_core/new/interactive/menu.py:137
 msgid "opt-menu-allow-file"
 msgstr "Allow File Patterns ..."
 
-#: ozi_core/new/interactive/menu.py:136
+#: ozi_core/new/interactive/menu.py:138
 msgid "opt-menu-ci-provider"
 msgstr "CI Provider ..."
 
-#: ozi_core/new/interactive/menu.py:137 ozi_core/fix/interactive.py:72
+#: ozi_core/new/interactive/menu.py:139 ozi_core/fix/interactive.py:73
 msgid "opt-menu-copyright-head"
 msgstr "Copyright Header ..."
 
-#: ozi_core/new/interactive/menu.py:142 ozi_core/fix/interactive.py:77
+#: ozi_core/new/interactive/menu.py:144 ozi_core/fix/interactive.py:78
 #, fuzzy, python-brace-format
-msgid "lang-{_.locale}"
+msgid "lang-{TRANSLATION.locale}"
 msgstr "English"
 
-#: ozi_core/new/interactive/menu.py:141 ozi_core/fix/interactive.py:76
+#: ozi_core/new/interactive/menu.py:143 ozi_core/fix/interactive.py:77
 msgid "opt-menu-language"
 msgstr "Interface Language: $value"
 
-#: ozi_core/new/interactive/menu.py:232
+#: ozi_core/new/interactive/menu.py:234
 msgid "opt-menu-ci-provider-input"
 msgstr "Change continuous integration providers:"
 
-#: ozi_core/new/interactive/menu.py:249
+#: ozi_core/new/interactive/menu.py:251
 #, fuzzy
 msgid "lang-{i[:2]}"
 msgstr "English"
 
-#: ozi_core/new/interactive/menu.py:262 ozi_core/new/interactive/menu.py:422
-#: ozi_core/fix/interactive.py:136
+#: ozi_core/new/interactive/menu.py:265 ozi_core/new/interactive/menu.py:425
+#: ozi_core/fix/interactive.py:137
 msgid "opt-menu-save-config"
 msgstr "Save options configuration?"
 
-#: ozi_core/new/interactive/menu.py:283
+#: ozi_core/new/interactive/menu.py:286
 msgid "edit-menu-text"
 msgstr "Edit menu, select content to edit:"
 
-#: ozi_core/new/interactive/menu.py:285 ozi_core/new/parser.py:112
+#: ozi_core/new/interactive/menu.py:288 ozi_core/new/parser.py:112
 #: ozi_core/new/validate.py:209 ozi_core/new/validate.py:211
 msgid "edit-menu-btn-name"
 msgstr "Name"
 
-#: ozi_core/new/interactive/menu.py:286 ozi_core/new/parser.py:150
+#: ozi_core/new/interactive/menu.py:289 ozi_core/new/parser.py:150
 #: ozi_core/new/validate.py:77 ozi_core/new/validate.py:81
 msgid "edit-menu-btn-summary"
 msgstr "Summary"
 
-#: ozi_core/new/interactive/menu.py:287 ozi_core/new/parser.py:234
+#: ozi_core/new/interactive/menu.py:290 ozi_core/new/parser.py:234
 msgid "edit-menu-btn-keywords"
 msgstr "Keywords"
 
-#: ozi_core/new/interactive/menu.py:288 ozi_core/new/parser.py:122
+#: ozi_core/new/interactive/menu.py:291 ozi_core/new/parser.py:122
 #: ozi_core/new/validate.py:132 ozi_core/new/validate.py:135
 #: ozi_core/new/validate.py:143
 msgid "edit-menu-btn-author"
 msgstr "Author"
 
-#: ozi_core/new/interactive/menu.py:289 ozi_core/new/parser.py:136
+#: ozi_core/new/interactive/menu.py:292 ozi_core/new/parser.py:136
 #: ozi_core/new/validate.py:114 ozi_core/new/validate.py:118
 #: ozi_core/new/validate.py:121 ozi_core/new/validate.py:252
 msgid "edit-menu-btn-email"
 msgstr "Author-email"
 
-#: ozi_core/new/interactive/menu.py:293 ozi_core/new/parser.py:159
+#: ozi_core/new/interactive/menu.py:296 ozi_core/new/parser.py:159
 #: ozi_core/new/validate.py:225 ozi_core/new/validate.py:227
 msgid "edit-menu-btn-license-expression"
 msgstr "License-Expression"
 
-#: ozi_core/new/interactive/menu.py:296 ozi_core/new/parser.py:247
+#: ozi_core/new/interactive/menu.py:299 ozi_core/new/parser.py:247
 #: ozi_core/new/validate.py:125 ozi_core/new/validate.py:127
 #: ozi_core/new/validate.py:131 ozi_core/new/validate.py:136
 #: ozi_core/new/validate.py:140
 msgid "edit-menu-btn-maintainer"
 msgstr "Maintainer"
 
-#: ozi_core/new/interactive/menu.py:299 ozi_core/new/parser.py:255
+#: ozi_core/new/interactive/menu.py:302 ozi_core/new/parser.py:255
 #: ozi_core/new/validate.py:104 ozi_core/new/validate.py:108
 #: ozi_core/new/validate.py:113 ozi_core/new/validate.py:119
 #: ozi_core/new/validate.py:139 ozi_core/new/validate.py:255
 msgid "edit-menu-btn-maintainer-email"
 msgstr "Maintainer-email"
 
-#: ozi_core/new/interactive/menu.py:301 ozi_core/new/parser.py:280
+#: ozi_core/new/interactive/menu.py:304 ozi_core/new/parser.py:280
 #: ozi_core/new/validate.py:50 ozi_core/new/validate.py:58
 #: ozi_core/new/validate.py:63 ozi_core/new/validate.py:68
 msgid "edit-menu-btn-project-url"
 msgstr "Project-URL"
 
-#: ozi_core/new/interactive/menu.py:304 ozi_core/new/parser.py:347
+#: ozi_core/new/interactive/menu.py:307 ozi_core/new/parser.py:347
 msgid "edit-menu-btn-requires-dist"
 msgstr "Requires-Dist (requirements)"
 
-#: ozi_core/new/interactive/menu.py:312 ozi_core/new/parser.py:196
+#: ozi_core/new/interactive/menu.py:315 ozi_core/new/parser.py:196
 msgid "edit-menu-btn-typing"
 msgstr "Typing"
 
-#: ozi_core/new/interactive/menu.py:313 ozi_core/new/parser.py:336
+#: ozi_core/new/interactive/menu.py:316 ozi_core/new/parser.py:336
 msgid "edit-menu-btn-readme-type"
 msgstr "Description-Content-Type"
 
-#: ozi_core/new/interactive/menu.py:381
+#: ozi_core/new/interactive/menu.py:384
 #, fuzzy, python-brace-format
 msgid "edit-menu-btn-{x}"
 msgstr "Name"
@@ -664,9 +682,9 @@ msgstr ""
 #: ozi_core/new/interactive/project.py:298
 #: ozi_core/new/interactive/project.py:384
 #: ozi_core/new/interactive/project.py:501
-#: ozi_core/new/interactive/project.py:721 ozi_core/fix/interactive.py:229
-#: ozi_core/fix/interactive.py:264 ozi_core/fix/interactive.py:297
-#: ozi_core/fix/interactive.py:355
+#: ozi_core/new/interactive/project.py:721 ozi_core/fix/interactive.py:230
+#: ozi_core/fix/interactive.py:265 ozi_core/fix/interactive.py:298
+#: ozi_core/fix/interactive.py:356
 msgid "btn-menu"
 msgstr "☰  Menu"
 
@@ -676,7 +694,6 @@ msgstr "Select a license file name for $projectname"
 
 #: ozi_core/new/interactive/project.py:316
 #: ozi_core/new/interactive/project.py:414
-#, fuzzy
 msgid "msg-invalid-input"
 msgstr "Invalid Entry"
 
@@ -748,8 +765,8 @@ msgstr "Source"
 msgid "pro-project-urls-input"
 msgstr "Please enter the $urltype URL for $projectname:"
 
-#: ozi_core/new/interactive/project.py:746 ozi_core/fix/interactive.py:320
-#: ozi_core/fix/interactive.py:378
+#: ozi_core/new/interactive/project.py:746 ozi_core/fix/interactive.py:321
+#: ozi_core/fix/interactive.py:379
 msgid "msg-input-invalid"
 msgstr ""
 "Invalid input \"$value\"\n"
@@ -792,7 +809,6 @@ msgid "term-default-metadata"
 msgstr "default metadata"
 
 #: ozi_core/new/parser.py:24
-#, fuzzy
 msgid "terms-defaults"
 msgstr "defaults"
 
@@ -809,9 +825,8 @@ msgid "term-desc-new-webui"
 msgstr "Create a new python project with OZI using a graphical interface."
 
 #: ozi_core/new/parser.py:50
-#, fuzzy
 msgid "term-help-new-webui"
-msgstr "Create a new python project with OZI using a graphical interface."
+msgstr "create a new python project with OZI using a graphical interface"
 
 #: ozi_core/new/parser.py:58
 msgid "term-desc-new-project"
@@ -822,7 +837,7 @@ msgid "term-help-new-project"
 msgstr "create a new Python project with OZI"
 
 #: ozi_core/new/parser.py:68 ozi_core/new/parser.py:75
-#: ozi_core/new/parser.py:414
+#: ozi_core/new/parser.py:432
 msgid "term-help-new-target"
 msgstr "directory path for new project (default: current working directory)"
 
@@ -891,7 +906,7 @@ msgstr "use zero or more times"
 #: ozi_core/new/parser.py:179 ozi_core/new/parser.py:195
 #: ozi_core/new/parser.py:207 ozi_core/new/parser.py:222
 #: ozi_core/new/parser.py:294 ozi_core/new/parser.py:321
-#: ozi_core/new/parser.py:335 ozi_core/new/parser.py:398
+#: ozi_core/new/parser.py:335 ozi_core/new/parser.py:416
 msgid "term-help-default"
 msgstr "$name ($text) defaults to: $default"
 
@@ -953,27 +968,44 @@ msgid "term-help-update-wrapfile"
 msgstr "Update \"subprojects/ozi.wrap\" to the latest version of OZI."
 
 #: ozi_core/new/parser.py:375
+msgid "term-help-enable-create-pull-request"
+msgstr ""
+"create a pull request in the default branch from branches created by the OZI "
+"publish step"
+
+#: ozi_core/new/parser.py:381
 msgid "term-help-enable-cython"
 msgstr "use Cython to build Python extension modules. default: no"
 
-#: ozi_core/new/parser.py:381
+#: ozi_core/new/parser.py:387
 msgid "term-help-enable-uv"
 msgstr "Use uv to compile and install Python requirements, default: no"
 
-#: ozi_core/new/parser.py:387
+#: ozi_core/new/parser.py:393
 msgid "term-help-github-harden-runner"
 msgstr "add a harden runner to all non-reusable workflow jobs, default: no"
 
-#: ozi_core/new/parser.py:393 ozi_core/fix/parser.py:106
+#: ozi_core/new/parser.py:399
+msgid "term-help-signed-wheel"
+msgstr ""
+"sign wheel created by OZI release (requires a secret named WHEEL_SIGN_TOKEN "
+"in your CI provider)"
+
+#: ozi_core/new/parser.py:405 ozi_core/fix/parser.py:106
 #: ozi_core/fix/parser.py:174 ozi_core/fix/parser.py:232
 msgid "term-help-strict"
 msgstr "strict mode raises warnings to errors, default: no"
 
-#: ozi_core/new/parser.py:399
+#: ozi_core/new/parser.py:411
+msgid "term-help-testpypi"
+msgstr ""
+"upload distribution files to TestPyPI instead of PyPI during OZI publish"
+
+#: ozi_core/new/parser.py:417
 msgid "term-help-name-allow-file"
 msgstr "Add file patterns to be ignored"
 
-#: ozi_core/new/parser.py:400
+#: ozi_core/new/parser.py:418
 msgid "term-help-allow-file"
 msgstr "In the new project target folder"
 
@@ -1007,7 +1039,6 @@ msgid "term-tap-leave-blank"
 msgstr "$key should be left blank"
 
 #: ozi_core/new/validate.py:126
-#, fuzzy
 msgid "term-tap-identical-author"
 msgstr "one or more Author-email and Maintainer-email are the same"
 
@@ -1059,29 +1090,29 @@ msgstr "missing"
 msgid "term-subdir"
 msgstr "subdir"
 
-#: ozi_core/fix/interactive.py:55 ozi_core/fix/interactive.py:105
-#: ozi_core/fix/interactive.py:118 ozi_core/fix/interactive.py:135
-#: ozi_core/fix/interactive.py:226 ozi_core/fix/interactive.py:253
-#: ozi_core/fix/interactive.py:277 ozi_core/fix/interactive.py:296
-#: ozi_core/fix/interactive.py:318 ozi_core/fix/interactive.py:335
-#: ozi_core/fix/interactive.py:354 ozi_core/fix/interactive.py:376
+#: ozi_core/fix/interactive.py:58 ozi_core/fix/interactive.py:106
+#: ozi_core/fix/interactive.py:119 ozi_core/fix/interactive.py:136
+#: ozi_core/fix/interactive.py:227 ozi_core/fix/interactive.py:254
+#: ozi_core/fix/interactive.py:278 ozi_core/fix/interactive.py:297
+#: ozi_core/fix/interactive.py:319 ozi_core/fix/interactive.py:336
+#: ozi_core/fix/interactive.py:355 ozi_core/fix/interactive.py:377
 msgid "fix-dlg-title"
 msgstr "ozi-fix interactive prompt"
 
-#: ozi_core/fix/interactive.py:64
+#: ozi_core/fix/interactive.py:67
 msgid "opt-menu-pretty"
 msgstr "Pretty Mode(indented JSON): $value"
 
-#: ozi_core/fix/interactive.py:123
+#: ozi_core/fix/interactive.py:124
 #, fuzzy, python-brace-format
 msgid "lang-{i}"
 msgstr "English"
 
-#: ozi_core/fix/interactive.py:227
+#: ozi_core/fix/interactive.py:228
 msgid "fix-add"
 msgstr "Select the kind of files to add:"
 
-#: ozi_core/fix/interactive.py:258
+#: ozi_core/fix/interactive.py:259
 msgid "fix-add-or-remove"
 msgstr "Use add or remove button to find files to add or remove:"
 
