@@ -5,6 +5,9 @@
 ### Bug fixes
 
 
+* fix: calling python modules in tox no longer works — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`6deb79c`](https://github.com/OZI-Project/ozi-core/commit/6deb79c6d40c863aa6031629979afa4470f39b16))
+
 * fix: add pragma no cover to translation fallback — Eden Ross Duff MSc <rjdbcm@outlook.com>
 ([`761f29c`](https://github.com/OZI-Project/ozi-core/commit/761f29c4d2b6888e5e23d90550744f6bb0371b7c))
 
