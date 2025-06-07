@@ -173,6 +173,24 @@ updated-dependencies:
 ### Chores
 
 
+* chore: update ozi.wrap to 2.0.11 — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`e660f79`](https://github.com/OZI-Project/ozi-core/commit/e660f794500e856fac36a2b2bc21cb874c66924d))
+
+* chore: update ozi.wrap to 2.0.10 — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`4797ad7`](https://github.com/OZI-Project/ozi-core/commit/4797ad7a7bb32b88998858ec40ecaa1ee5b2a68c))
+
+* chore: update ozi.wrap to 2.0.9 — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`f76e0f8`](https://github.com/OZI-Project/ozi-core/commit/f76e0f8b67d806924bd77f9aadb4653af3ac01fd))
+
+* chore: update ozi.wrap to 2.0.8 — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`28e65e0`](https://github.com/OZI-Project/ozi-core/commit/28e65e02cdbf85e4e2ebfbcc8ed2918464786cbc))
+
+* chore: update ozi.wrap to 2.0.7 — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`9c17ac9`](https://github.com/OZI-Project/ozi-core/commit/9c17ac9b6481e3c14641389d203fcd1534a81e52))
+
+* chore: remove uv config — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`4a0882e`](https://github.com/OZI-Project/ozi-core/commit/4a0882edd9e1f2726321d5bff152c56f3cf783a5))
+
 * chore: add endpoints for ubuntu apt — Eden Ross Duff, MSc <rjdbcm@outlook.com>
 ([`42fc6b0`](https://github.com/OZI-Project/ozi-core/commit/42fc6b074394c7e4f58a8cd944a1e2a4626ea6bc))
 
