@@ -369,6 +369,12 @@ ozi_defaults.add_argument(
     help=_('term-help-update-wrapfile'),
 )
 ozi_defaults.add_argument(
+    '--enable-create-pull-request',
+    default=True,
+    action=argparse.BooleanOptionalAction,
+    help=_('term-help-enable-create-pull-request'),
+)
+ozi_defaults.add_argument(
     '--enable-cython',
     default=False,
     action=argparse.BooleanOptionalAction,
@@ -387,10 +393,22 @@ ozi_defaults.add_argument(
     help=_('term-help-github-harden-runner'),
 )
 ozi_defaults.add_argument(
+    '--signed-wheel',
+    default=False,
+    action=argparse.BooleanOptionalAction,
+    help=_('term-help-signed-wheel'),
+)
+ozi_defaults.add_argument(
     '--strict',
     default=False,
     action=argparse.BooleanOptionalAction,
     help=_('term-help-strict'),
+)
+ozi_defaults.add_argument(
+    '--testpypi',
+    default=False,
+    action=argparse.BooleanOptionalAction,
+    help=_('term-help-testpypi'),
 )
 ozi_defaults.add_argument(
     '--allow-file',
