@@ -152,6 +152,9 @@ updated-dependencies:
 ### Chores
 
 
+* chore: add endpoints for ubuntu apt — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`42fc6b0`](https://github.com/OZI-Project/ozi-core/commit/42fc6b074394c7e4f58a8cd944a1e2a4626ea6bc))
+
 * chore: add translations for help text of new feature flags — Eden Ross Duff MSc <rjdbcm@outlook.com>
 ([`50898c2`](https://github.com/OZI-Project/ozi-core/commit/50898c22c52c12d392569a01ea935d5b6536f80b))
 
