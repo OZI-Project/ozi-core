@@ -5,6 +5,9 @@
 ### Bug fixes
 
 
+* fix: revert to using pip  — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`ef5f744`](https://github.com/OZI-Project/ozi-core/commit/ef5f744e06eacc6f23208871fd013ef3051db631))
+
 * fix: workaround uv issue — Eden Ross Duff, MSc <rjdbcm@outlook.com>
 ([`89bf36f`](https://github.com/OZI-Project/ozi-core/commit/89bf36fef4bab792962caaeab076265b209f524f))
 
@@ -49,6 +52,9 @@ Signed-off-by: Eden Ross Duff, MSc <rjdbcm@outlook.com>
 
 ### Build system
 
+
+* build: install gettext to release workflow — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`245a90a`](https://github.com/OZI-Project/ozi-core/commit/245a90a3608cd45847a223687cfd024cfb59bdfc))
 
 * build: correct uv call to use uv binary — Eden Ross Duff, MSc <rjdbcm@outlook.com>
 ([`0f3fccc`](https://github.com/OZI-Project/ozi-core/commit/0f3fccc7e0c413af43f45026c75d83a8d88228a4))
