@@ -180,7 +180,7 @@ jobs:
       - name: Harden Runner
         uses: step-security/harden-runner@0634a2670c59f64b4a01f0f96f84700a4088b9f0 # v2.12.0
         with:
-          disable-sudo: true
+          disable-sudo: false
           egress-policy: block
           allowed-endpoints: >
             api.github.com:443
@@ -196,6 +196,11 @@ jobs:
             quay.io:443
             cdn03.quay.io:443
             downloads.python.org:443
+            azure.archive.ubuntu.com:80
+            security.ubuntu.com:443
+            archive.ubuntu.com:443
+
+      - run: sudo apt-get install -y gettext
 
       - uses: OZI-Project/release@067a3867b9df3c1c2b86db5e062ca83c48dbc0bc
         id: release
