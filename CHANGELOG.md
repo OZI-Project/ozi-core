@@ -5,6 +5,9 @@
 ### Bug fixes
 
 
+* fix: add uv back to OZI.build install — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`c27644d`](https://github.com/OZI-Project/ozi-core/commit/c27644d99ff54cb23e6820967a460e9f80d3ca43))
+
 * fix: add pip to external allowlist in tox — Eden Ross Duff, MSc <rjdbcm@outlook.com>
 ([`4068a6e`](https://github.com/OZI-Project/ozi-core/commit/4068a6ee62fda76d1c0a53b25e035760a031758c))
 
