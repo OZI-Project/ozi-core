@@ -357,6 +357,7 @@ allowlist_externals =
    rm
    uv
    pipx
+   pip
    python
    meson
    invoke
