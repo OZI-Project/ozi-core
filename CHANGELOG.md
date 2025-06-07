@@ -5,6 +5,9 @@
 ### Bug fixes
 
 
+* fix: workaround for uv permissions failure  — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`a6eecdb`](https://github.com/OZI-Project/ozi-core/commit/a6eecdb2a7f6076bb9e2fab6ffac973f506f97ff))
+
 * fix(tox): add uv to allowlist_externals — Eden Ross Duff, MSc <rjdbcm@outlook.com>
 ([`ae93cab`](https://github.com/OZI-Project/ozi-core/commit/ae93cab93630989d9440de9f464aac1e2298074b))
 
