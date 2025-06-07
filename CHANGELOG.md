@@ -38,6 +38,9 @@ Signed-off-by: Eden Ross Duff, MSc <rjdbcm@outlook.com>
 ### Build system
 
 
+* build: correct uv call to use uv binary — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`0f3fccc`](https://github.com/OZI-Project/ozi-core/commit/0f3fccc7e0c413af43f45026c75d83a8d88228a4))
+
 * build: add ``apt install gettext`` to checkpoint runners (#782) — Eden Ross Duff, MSc <rjdbcm@outlook.com>
 ([`f5bda17`](https://github.com/OZI-Project/ozi-core/commit/f5bda17809a000f5050baf2bc1dcdc0d1ef0b49f))
 
