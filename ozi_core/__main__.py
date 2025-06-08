@@ -63,7 +63,7 @@ LICENSE_EXPR: :term:`SPDX license expression` {_SPDX_LICENSE_EXPRESSION}
 """  # pragma: no cover
 
 
-def setup_parser(version: str) -> None:  # pragma: no cover
+def setup_parser(version: str) -> argparse.ArgumentParser:  # pragma: no cover
     global _ozi_parser
     _ozi_parser = argparse.ArgumentParser(
         prog='ozi',
@@ -129,6 +129,7 @@ def setup_parser(version: str) -> None:  # pragma: no cover
         const=lambda: info(version),
         help=_('term-help-info'),
     )
+    return _ozi_parser
 
 
 def main() -> None:  # pragma: no cover
