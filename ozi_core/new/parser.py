@@ -422,7 +422,7 @@ ozi_defaults.add_argument(
     type=str,
     nargs='?',
     metavar='ALLOW_FILE_PATTERNS',
-    default=METADATA.spec.python.src.allow_files,
+    default=list(METADATA.spec.python.src.allow_files),
 )
 ozi_required.add_argument(
     'target',
