@@ -11,6 +11,7 @@ import locale
 import os
 import site
 import sys
+import sysconfig
 from logging import getLogger
 from pathlib import Path
 from string import Template
@@ -22,11 +23,32 @@ from ozi_core._logging import config_logger
 
 config_logger()
 _LOCALE = locale.getlocale()[0]
-mo_path = Path(site.getuserbase()) / 'share' / 'locale'
+LOCALES_PATH = Path('share', 'locale')
+USER_DATA_PATH = Path(
+    sysconfig.get_path('data', scheme=sysconfig.get_preferred_scheme('user'))
+)
+PREFIX_DATA_PATH = Path(
+    sysconfig.get_path('data', scheme=sysconfig.get_preferred_scheme('prefix'))
+)
+HOME_DATA_PATH = Path(
+    sysconfig.get_path('data', scheme=sysconfig.get_preferred_scheme('home'))
+)
+if USER_DATA_PATH in Path(__file__).parents:  # pragma: no cover
+    mo_path = USER_DATA_PATH / LOCALES_PATH
+elif PREFIX_DATA_PATH in Path(__file__).parents:  # pragma: no cover
+    mo_path = PREFIX_DATA_PATH / LOCALES_PATH
+else:  # pragma: no cover
+    mo_path = HOME_DATA_PATH / LOCALES_PATH
+
+try:
+    gettext.translation('ozi-core', mo_path)
+except FileNotFoundError:
+    mo_path = '.tox/invoke/tmp/po'
+
 if 'PYTEST_VERSION' in os.environ or 'pytest' in sys.modules:  # pragma: no cover
     mo_path = Path(__file__).parent.parent / 'po'
 if 'READTHEDOCS' in os.environ:  # pragma: no cover
-    mo_path = Path(os.environ['READTHEDOCS_VIRTUALENV_PATH']) / 'share' / 'locale'
+    mo_path = Path(os.environ['READTHEDOCS_VIRTUALENV_PATH']) / LOCALES_PATH
 gettext.bindtextdomain('ozi-core', mo_path)  # pragma: no cover
 
 
