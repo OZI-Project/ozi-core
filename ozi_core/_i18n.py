@@ -25,6 +25,8 @@ _LOCALE = locale.getlocale()[0]
 mo_path = Path(site.getuserbase()) / 'share' / 'locale'
 if 'PYTEST_VERSION' in os.environ or 'pytest' in sys.modules:  # pragma: no cover
     mo_path = Path(__file__).parent.parent / 'po'
+if 'READTHEDOCS' in os.environ:  # pragma: no cover
+    mo_path = Path(os.environ['READTHEDOCS_VIRTUALENV_PATH']) / 'share' / 'locale'
 gettext.bindtextdomain('ozi-core', mo_path)  # pragma: no cover
 
 
