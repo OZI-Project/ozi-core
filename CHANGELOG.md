@@ -1,4 +1,16 @@
 # ozi-core CHANGELOG
+## 1.21.4 (2025-06-08)
+
+
+### Bug fixes
+
+
+* fix(ozi-new): --allow-file applied properly to target dir — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`328cd98`](https://github.com/OZI-Project/ozi-core/commit/328cd98c4798d9e94536a37c9979a5412a782cc0))
+
+* fix(i18n): correct mimetype for ozi-new cli — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`4aad85a`](https://github.com/OZI-Project/ozi-core/commit/4aad85aa8201317ee6ef7a608c5cb4cf6552b5db))
+
 ## 1.21.3 (2025-06-08)
 
 ## 1.21.2 (2025-06-08)
