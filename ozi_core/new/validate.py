@@ -311,6 +311,7 @@ def postprocess_arguments(project: Namespace) -> Namespace:
     project.target = Path(project.target)
     project.topic = list(set(project.topic))
     project.dist_requires = list(set(project.dist_requires))
+    project.allow_file = set(map(Path, project.allow_file))
     if any(
         i for i in project.target.iterdir() if i not in project.allow_file
     ):  # defer to good-issue
@@ -322,5 +323,4 @@ def postprocess_arguments(project: Namespace) -> Namespace:
             TAP.not_ok(
                 _('term-tap-invalid-ci-provider', ciprovider=project.ci_provider),
             )
-    project.allow_file = set(map(Path, project.allow_file))
     return project
