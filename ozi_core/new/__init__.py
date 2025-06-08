@@ -25,6 +25,7 @@ from ozi_templates import load_environment
 from reverse_argparse import ReverseArgumentParser
 from tap_producer import TAP
 
+from ozi_core._i18n import TRANSLATION
 from ozi_core.new.interactive import interactive_prompt
 from ozi_core.new.parser import parser
 from ozi_core.new.parser import project_parser
@@ -60,6 +61,7 @@ def wrap(project: Namespace) -> None:  # pragma: no cover
 
 def main(args: list[str] | None = None) -> None:  # pragma: no cover
     """Main ozi.new entrypoint."""
+    TRANSLATION.mime_type = 'text/plain;charset=UTF-8'
     ozi_new = parser.parse_args(args=args)
     ozi_new.argv = shlex.join(args) if args else shlex.join(sys.argv[1:])
     match ozi_new:
