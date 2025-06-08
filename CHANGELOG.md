@@ -1,4 +1,16 @@
 # ozi-core CHANGELOG
+## 1.21.2 (2025-06-08)
+
+
+### Bug fixes
+
+
+* fix: .mo files are found based on the install location of _i18n — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`80fe8ae`](https://github.com/OZI-Project/ozi-core/commit/80fe8ae395aad0b3dcdf03ba9784563a472724bf))
+
+* fix: setup_parser for ozi CLI now returns the parser — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`2ce902c`](https://github.com/OZI-Project/ozi-core/commit/2ce902c71affcc1e56d5dc42942937682bf8613d))
+
 ## 1.21.1 (2025-06-08)
 
 
