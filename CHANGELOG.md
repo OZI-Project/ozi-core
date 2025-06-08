@@ -1,4 +1,16 @@
 # ozi-core CHANGELOG
+## 1.21.1 (2025-06-08)
+
+
+### Bug fixes
+
+
+* fix: verbose error if locales directory not found — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`6e3721b`](https://github.com/OZI-Project/ozi-core/commit/6e3721ba172f48c06ceae5bf0d6f3a793074a580))
+
+* fix: patch mo_path if readthedocs is detected — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`cca097f`](https://github.com/OZI-Project/ozi-core/commit/cca097f91724a48088f4148b4dca298b15a46980))
+
 ## 1.21.0 (2025-06-07)
 
 
