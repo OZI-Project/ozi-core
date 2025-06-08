@@ -1,4 +1,270 @@
 # ozi-core CHANGELOG
+## 1.21.2 (2025-06-08)
+
+
+### Bug fixes
+
+
+* fix: .mo files are found based on the install location of _i18n — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`80fe8ae`](https://github.com/OZI-Project/ozi-core/commit/80fe8ae395aad0b3dcdf03ba9784563a472724bf))
+
+* fix: setup_parser for ozi CLI now returns the parser — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`2ce902c`](https://github.com/OZI-Project/ozi-core/commit/2ce902c71affcc1e56d5dc42942937682bf8613d))
+
+## 1.21.1 (2025-06-08)
+
+
+### Bug fixes
+
+
+* fix: verbose error if locales directory not found — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`6e3721b`](https://github.com/OZI-Project/ozi-core/commit/6e3721ba172f48c06ceae5bf0d6f3a793074a580))
+
+* fix: patch mo_path if readthedocs is detected — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`cca097f`](https://github.com/OZI-Project/ozi-core/commit/cca097f91724a48088f4148b4dca298b15a46980))
+
+## 1.21.0 (2025-06-07)
+
+
+### Bug fixes
+
+
+* fix: add uv back to OZI.build install — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`c27644d`](https://github.com/OZI-Project/ozi-core/commit/c27644d99ff54cb23e6820967a460e9f80d3ca43))
+
+* fix: add pip to external allowlist in tox — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`4068a6e`](https://github.com/OZI-Project/ozi-core/commit/4068a6ee62fda76d1c0a53b25e035760a031758c))
+
+* fix: go back to using env_python for invoke — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`8ee3f07`](https://github.com/OZI-Project/ozi-core/commit/8ee3f07cd7dd66ba308ca3f218037ff15a8e1040))
+
+* fix: revert to using pip  — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`ef5f744`](https://github.com/OZI-Project/ozi-core/commit/ef5f744e06eacc6f23208871fd013ef3051db631))
+
+* fix: workaround uv issue — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`89bf36f`](https://github.com/OZI-Project/ozi-core/commit/89bf36fef4bab792962caaeab076265b209f524f))
+
+* fix: workaround for uv permissions failure  — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`a6eecdb`](https://github.com/OZI-Project/ozi-core/commit/a6eecdb2a7f6076bb9e2fab6ffac973f506f97ff))
+
+* fix(tox): add uv to allowlist_externals — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`ae93cab`](https://github.com/OZI-Project/ozi-core/commit/ae93cab93630989d9440de9f464aac1e2298074b))
+
+* fix: calling python modules in tox no longer works — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`6deb79c`](https://github.com/OZI-Project/ozi-core/commit/6deb79c6d40c863aa6031629979afa4470f39b16))
+
+* fix: add pragma no cover to translation fallback — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`761f29c`](https://github.com/OZI-Project/ozi-core/commit/761f29c4d2b6888e5e23d90550744f6bb0371b7c))
+
+* fix: add check for missing mo_path — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`14cb96f`](https://github.com/OZI-Project/ozi-core/commit/14cb96fe7faa97aab5bf650e86fc0753d20b1aaf))
+
+* fix: add check for missing mo_path — Eden Ross Duff MSc <rjdbcm@outlook.com>
+
+* Revert "fix: add check for missing mo_path"
+
+This reverts commit 53980c5c10cfdcfc239a50e6eca987d5dfc8a236.
+
+* Revert "fix: add check for missing mo_path"
+
+This reverts commit 8fe0d89e72c53f0ca1f18084055578cf8e5819f6.
+([`14cb96f`](https://github.com/OZI-Project/ozi-core/commit/14cb96fe7faa97aab5bf650e86fc0753d20b1aaf))
+
+* fix: remove gettext.translation call on import of _i18n — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`14cb96f`](https://github.com/OZI-Project/ozi-core/commit/14cb96fe7faa97aab5bf650e86fc0753d20b1aaf))
+
+* fix(i18n): no cover pytest only mo_path — Eden Ross Duff MSc <rjdbcm@outlook.com>
+
+ — Eden Ross Duff MSc <rjdbcm@outlook.com>
+Signed-off-by: Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`14cb96f`](https://github.com/OZI-Project/ozi-core/commit/14cb96fe7faa97aab5bf650e86fc0753d20b1aaf))
+
+* fix: add version to pyproject.toml for installer compatibility — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`9d521fe`](https://github.com/OZI-Project/ozi-core/commit/9d521feb915bb1fe6f56253561f6c62197cb8deb))
+
+
+### Build system
+
+
+* build(deps): bump OZI-Project/release from 1.8.5 to 1.8.7
+
+Bumps [OZI-Project/release](https://github.com/ozi-project/release) from 1.8.5 to 1.8.7.
+- [Release notes](https://github.com/ozi-project/release/releases)
+- [Commits](https://github.com/ozi-project/release/compare/84d51474b41de0c8c98d34431f9c0e282fd72c19...067a3867b9df3c1c2b86db5e062ca83c48dbc0bc)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/release
+  dependency-version: 1.8.7
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`20e86ee`](https://github.com/OZI-Project/ozi-core/commit/20e86ee071c19acf230174c209a137e9e47fd444))
+
+* build: install gettext to release workflow — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`245a90a`](https://github.com/OZI-Project/ozi-core/commit/245a90a3608cd45847a223687cfd024cfb59bdfc))
+
+* build: correct uv call to use uv binary — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`0f3fccc`](https://github.com/OZI-Project/ozi-core/commit/0f3fccc7e0c413af43f45026c75d83a8d88228a4))
+
+* build: add ``apt install gettext`` to checkpoint runners (#782) — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`f5bda17`](https://github.com/OZI-Project/ozi-core/commit/f5bda17809a000f5050baf2bc1dcdc0d1ef0b49f))
+
+* build(deps): bump OZI-Project/checkpoint from 1.8.1 to 1.8.2
+
+Bumps [OZI-Project/checkpoint](https://github.com/ozi-project/checkpoint) from 1.8.1 to 1.8.2.
+- [Release notes](https://github.com/ozi-project/checkpoint/releases)
+- [Commits](https://github.com/ozi-project/checkpoint/compare/1.8.1...1.8.2)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/checkpoint
+  dependency-version: 1.8.2
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`4a40ccf`](https://github.com/OZI-Project/ozi-core/commit/4a40ccfdf479e23cd40ab60f41930406b830a72a))
+
+* build(deps): bump OZI-Project/checkpoint from 1.8.0 to 1.8.1
+
+Bumps [OZI-Project/checkpoint](https://github.com/ozi-project/checkpoint) from 1.8.0 to 1.8.1.
+- [Release notes](https://github.com/ozi-project/checkpoint/releases)
+- [Commits](https://github.com/ozi-project/checkpoint/compare/1.8.0...1.8.1)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/checkpoint
+  dependency-version: 1.8.1
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`2a250bf`](https://github.com/OZI-Project/ozi-core/commit/2a250bfddd79c59ea26be5d515ed576f3019e83a))
+
+* build(deps): bump OZI-Project/checkpoint from 1.7.6 to 1.8.0
+
+Bumps [OZI-Project/checkpoint](https://github.com/ozi-project/checkpoint) from 1.7.6 to 1.8.0.
+- [Release notes](https://github.com/ozi-project/checkpoint/releases)
+- [Commits](https://github.com/ozi-project/checkpoint/compare/1.7.6...1.8.0)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/checkpoint
+  dependency-version: 1.8.0
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`6ff27e1`](https://github.com/OZI-Project/ozi-core/commit/6ff27e1faeb1f7d4980e58d8bdfec54d9800fcef))
+
+* build(deps): bump OZI-Project/checkpoint from 1.7.5 to 1.7.6
+
+Bumps [OZI-Project/checkpoint](https://github.com/ozi-project/checkpoint) from 1.7.5 to 1.7.6.
+- [Release notes](https://github.com/ozi-project/checkpoint/releases)
+- [Commits](https://github.com/ozi-project/checkpoint/compare/1.7.5...1.7.6)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/checkpoint
+  dependency-version: 1.7.6
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`7d8259d`](https://github.com/OZI-Project/ozi-core/commit/7d8259dd127af19e3e00c3e05e5c60b740fc1eab))
+
+* build(deps): bump ozi-spec from 1.0.3 to 1.0.4
+
+Bumps [ozi-spec](https://www.oziproject.dev) from 1.0.3 to 1.0.4.
+
+
+updated-dependencies:
+- dependency-name: ozi-spec
+  dependency-version: 1.0.4
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`b577f1d`](https://github.com/OZI-Project/ozi-core/commit/b577f1d43813700fc14d1ec9c673788b3eacb077))
+
+* build(deps): bump ozi-templates from 2.26.1 to 2.28.0
+
+Bumps ozi-templates from 2.26.1 to 2.28.0.
+
+
+updated-dependencies:
+- dependency-name: ozi-templates
+  dependency-version: 2.28.0
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`c922471`](https://github.com/OZI-Project/ozi-core/commit/c922471a25665d150076a9ebc5830726c93c640c))
+
+
+### Chores
+
+
+* chore: update ozi.wrap to 2.0.11 — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`e660f79`](https://github.com/OZI-Project/ozi-core/commit/e660f794500e856fac36a2b2bc21cb874c66924d))
+
+* chore: update ozi.wrap to 2.0.10 — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`4797ad7`](https://github.com/OZI-Project/ozi-core/commit/4797ad7a7bb32b88998858ec40ecaa1ee5b2a68c))
+
+* chore: update ozi.wrap to 2.0.9 — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`f76e0f8`](https://github.com/OZI-Project/ozi-core/commit/f76e0f8b67d806924bd77f9aadb4653af3ac01fd))
+
+* chore: update ozi.wrap to 2.0.8 — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`28e65e0`](https://github.com/OZI-Project/ozi-core/commit/28e65e02cdbf85e4e2ebfbcc8ed2918464786cbc))
+
+* chore: update ozi.wrap to 2.0.7 — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`9c17ac9`](https://github.com/OZI-Project/ozi-core/commit/9c17ac9b6481e3c14641389d203fcd1534a81e52))
+
+* chore: remove uv config — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`4a0882e`](https://github.com/OZI-Project/ozi-core/commit/4a0882edd9e1f2726321d5bff152c56f3cf783a5))
+
+* chore: add endpoints for ubuntu apt — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`42fc6b0`](https://github.com/OZI-Project/ozi-core/commit/42fc6b074394c7e4f58a8cd944a1e2a4626ea6bc))
+
+* chore: add translations for help text of new feature flags — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`50898c2`](https://github.com/OZI-Project/ozi-core/commit/50898c22c52c12d392569a01ea935d5b6536f80b))
+
+* chore: clean up .gitignore — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`c8645eb`](https://github.com/OZI-Project/ozi-core/commit/c8645ebf2f61e6160d397296c1a003a28f701caa))
+
+* chore(i18n): refactor translated strings for gettext
+([`14cb96f`](https://github.com/OZI-Project/ozi-core/commit/14cb96fe7faa97aab5bf650e86fc0753d20b1aaf))
+
+* chore(i18n): add gettext .po files — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`14cb96f`](https://github.com/OZI-Project/ozi-core/commit/14cb96fe7faa97aab5bf650e86fc0753d20b1aaf))
+
+* chore(i18n): refactor translated strings for gettext — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`14cb96f`](https://github.com/OZI-Project/ozi-core/commit/14cb96fe7faa97aab5bf650e86fc0753d20b1aaf))
+
+* chore: remove old locale generation scripts — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`14cb96f`](https://github.com/OZI-Project/ozi-core/commit/14cb96fe7faa97aab5bf650e86fc0753d20b1aaf))
+
+* chore: add gettext to checkpoint runners — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+
+* Update dev.yml — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+
+* Update dev.yml — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`14cb96f`](https://github.com/OZI-Project/ozi-core/commit/14cb96fe7faa97aab5bf650e86fc0753d20b1aaf))
+
+
+### Features
+
+
+* feat(ozi-new): add --testpypi
+
+defaults to False — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`0c172bf`](https://github.com/OZI-Project/ozi-core/commit/0c172bfb327212505430318701ee95ac795376f9))
+
+* feat(ozi-new): add --signed-wheel
+
+defaults to False — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`3ac4244`](https://github.com/OZI-Project/ozi-core/commit/3ac42447f92173e288e3620bde262cfdc8ba30f8))
+
+* feat(ozi-new): added --enable-create-pull-request
+
+defaults to True — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`35d2aaa`](https://github.com/OZI-Project/ozi-core/commit/35d2aaa9c50a122a73196a47e77f009f3888f79a))
+
 ## 1.20.4 (2025-06-03)
 
 
