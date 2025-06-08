@@ -39,12 +39,21 @@ class Translation:
     __slots__ = ('__logger', '_locale', '_mime_type', 'data')
 
     def __init__(self: Translation) -> None:
-        self.data = {
-            'en_US': gettext.translation('ozi-core', localedir=mo_path, languages=['en_US']),
-            'en': gettext.translation('ozi-core', localedir=mo_path, languages=['en']),
-            'zh_CN': gettext.translation('ozi-core', localedir=mo_path, languages=['zh_CN']),
-            'zh': gettext.translation('ozi-core', localedir=mo_path, languages=['zh']),
-        }
+        try:
+            self.data = {
+                'en_US': gettext.translation(
+                    'ozi-core', localedir=mo_path, languages=['en_US']
+                ),
+                'en': gettext.translation('ozi-core', localedir=mo_path, languages=['en']),
+                'zh_CN': gettext.translation(
+                    'ozi-core', localedir=mo_path, languages=['zh_CN']
+                ),
+                'zh': gettext.translation('ozi-core', localedir=mo_path, languages=['zh']),
+            }
+        except FileNotFoundError as e:  # pragma: no cover
+            raise FileNotFoundError(
+                f'{mo_path} contains no translation files.\nUSERBASE: {site.getuserbase()}'
+            ) from e
         self._mime_type = 'text/plain;charset=UTF-8'
         self._locale = _LOCALE if _LOCALE is not None and _LOCALE in self.data else 'en_US'
         self.__logger = getLogger(f'ozi_core.{__name__}.{self.__class__.__name__}')
