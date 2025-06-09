@@ -42,7 +42,7 @@ def project(project: Namespace) -> None:
     """Create a new project in a target directory."""
     project = postprocess_arguments(preprocess_arguments(project))
     RenderedContent(
-        load_environment(vars(project), METADATA.asdict()),  # pyright: ignore
+        load_environment(vars(project), METADATA.asdict(), target=project.target),  # pyright: ignore
         project.target,
         project.name,
         project.ci_provider,
@@ -53,7 +53,7 @@ def project(project: Namespace) -> None:
 
 def wrap(project: Namespace) -> None:  # pragma: no cover
     """Create a new wrap file for publishing. Not a public function."""
-    env = load_environment(vars(project), METADATA.asdict())  # pyright: ignore
+    env = load_environment(vars(project), METADATA.asdict(), target=project.target)  # pyright: ignore
     template = env.get_template('ozi.wrap.j2')
     with open('ozi.wrap', 'w', encoding='UTF-8') as f:
         f.write(template.render())

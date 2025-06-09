@@ -60,7 +60,7 @@ def _setup(project: Namespace) -> tuple[Namespace, Environment]:  # pragma: no c
         project.remove.remove('ozi.phony')
     project.add = list(set(project.add))
     project.remove = list(set(project.remove))
-    env = load_environment(vars(project), METADATA.asdict())  # pyright: ignore
+    env = load_environment(vars(project), METADATA.asdict(), target=project.target)  # pyright: ignore
     return project, env
 
 
