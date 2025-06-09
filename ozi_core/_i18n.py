@@ -47,8 +47,13 @@ except FileNotFoundError:
 
 if 'PYTEST_VERSION' in os.environ or 'pytest' in sys.modules:  # pragma: no cover
     mo_path = Path(__file__).parent.parent / 'po'
-if 'READTHEDOCS' in os.environ:  # pragma: no cover
+elif 'GITHUB_ACTIONS' in os.environ:  # pragma: no cover
+    mo_path = Path(os.environ['Python_ROOT_DIR']) / LOCALES_PATH
+elif 'READTHEDOCS' in os.environ:  # pragma: no cover
     mo_path = Path(os.environ['READTHEDOCS_VIRTUALENV_PATH']) / LOCALES_PATH
+else:  # pragma: no cover
+    pass
+
 gettext.bindtextdomain('ozi-core', mo_path)  # pragma: no cover
 
 
@@ -74,7 +79,7 @@ class Translation:
             }
         except FileNotFoundError as e:  # pragma: no cover
             raise FileNotFoundError(
-                f'{mo_path} contains no translation files.\nUSERBASE: {site.getuserbase()}'
+                f'{mo_path} contains no translation files.'
             ) from e
         self._mime_type = 'text/plain;charset=UTF-8'
         self._locale = _LOCALE if _LOCALE is not None and _LOCALE in self.data else 'en_US'
