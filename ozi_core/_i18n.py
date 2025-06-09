@@ -9,7 +9,6 @@ import gettext
 import html
 import locale
 import os
-import site
 import sys
 import sysconfig
 from logging import getLogger
@@ -78,9 +77,7 @@ class Translation:
                 'zh': gettext.translation('ozi-core', localedir=mo_path, languages=['zh']),
             }
         except FileNotFoundError as e:  # pragma: no cover
-            raise FileNotFoundError(
-                f'{mo_path} contains no translation files.'
-            ) from e
+            raise FileNotFoundError(f'{mo_path} contains no translation files.') from e
         self._mime_type = 'text/plain;charset=UTF-8'
         self._locale = _LOCALE if _LOCALE is not None and _LOCALE in self.data else 'en_US'
         self.__logger = getLogger(f'ozi_core.{__name__}.{self.__class__.__name__}')
