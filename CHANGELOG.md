@@ -1,4 +1,43 @@
 # ozi-core CHANGELOG
+## 1.21.5 (2025-06-09)
+
+
+### Bug fixes
+
+
+* fix: return user template relative path not actual file — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`24faf95`](https://github.com/OZI-Project/ozi-core/commit/24faf95cc8d6938224607db1f6e76f7cb733224f))
+
+* fix: get correct project templates path — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`4200320`](https://github.com/OZI-Project/ozi-core/commit/4200320e06753fbc6bdf19673f7d599b85620214))
+
+* fix(i18n): set mo_path correctly in github actions — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`ead6891`](https://github.com/OZI-Project/ozi-core/commit/ead6891f4e041b23df1382e02422836bbb876741))
+
+
+### Build system
+
+
+* build(deps): bump ozi-templates from 2.28.0 to 2.28.2
+
+Bumps ozi-templates from 2.28.0 to 2.28.2.
+
+
+updated-dependencies:
+- dependency-name: ozi-templates
+  dependency-version: 2.28.2
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`f4a274a`](https://github.com/OZI-Project/ozi-core/commit/f4a274a313c155462ecd6bc345aa178c51584ced))
+
+
+### Chores
+
+
+* chore: clean up lint — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`4f76170`](https://github.com/OZI-Project/ozi-core/commit/4f76170260436dcd22b5e1a55732516f677d001c))
+
 ## 1.21.4 (2025-06-08)
 
 
