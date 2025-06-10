@@ -1,27 +1,60 @@
 # ozi-core CHANGELOG
+## 1.21.5 (2025-06-09)
+
+
+### Bug fixes
+
+
+* fix: return user template relative path not actual file — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`24faf95`](https://github.com/OZI-Project/ozi-core/commit/24faf95cc8d6938224607db1f6e76f7cb733224f))
+
+* fix: get correct project templates path — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`4200320`](https://github.com/OZI-Project/ozi-core/commit/4200320e06753fbc6bdf19673f7d599b85620214))
+
+* fix(i18n): set mo_path correctly in github actions — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`ead6891`](https://github.com/OZI-Project/ozi-core/commit/ead6891f4e041b23df1382e02422836bbb876741))
+
+
+### Build system
+
+
+* build(deps): bump ozi-templates from 2.28.0 to 2.28.2
+
+Bumps ozi-templates from 2.28.0 to 2.28.2.
+
+
+updated-dependencies:
+- dependency-name: ozi-templates
+  dependency-version: 2.28.2
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`f4a274a`](https://github.com/OZI-Project/ozi-core/commit/f4a274a313c155462ecd6bc345aa178c51584ced))
+
+
+### Chores
+
+
+* chore: clean up lint — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`4f76170`](https://github.com/OZI-Project/ozi-core/commit/4f76170260436dcd22b5e1a55732516f677d001c))
+
+## 1.21.4 (2025-06-08)
+
+
+### Bug fixes
+
+
+* fix(ozi-new): --allow-file applied properly to target dir — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`328cd98`](https://github.com/OZI-Project/ozi-core/commit/328cd98c4798d9e94536a37c9979a5412a782cc0))
+
+* fix(i18n): correct mimetype for ozi-new cli — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`4aad85a`](https://github.com/OZI-Project/ozi-core/commit/4aad85aa8201317ee6ef7a608c5cb4cf6552b5db))
+
+## 1.21.3 (2025-06-08)
+
 ## 1.21.2 (2025-06-08)
 
-
-### Bug fixes
-
-
-* fix: .mo files are found based on the install location of _i18n — Eden Ross Duff MSc <rjdbcm@outlook.com>
-([`80fe8ae`](https://github.com/OZI-Project/ozi-core/commit/80fe8ae395aad0b3dcdf03ba9784563a472724bf))
-
-* fix: setup_parser for ozi CLI now returns the parser — Eden Ross Duff MSc <rjdbcm@outlook.com>
-([`2ce902c`](https://github.com/OZI-Project/ozi-core/commit/2ce902c71affcc1e56d5dc42942937682bf8613d))
-
 ## 1.21.1 (2025-06-08)
-
-
-### Bug fixes
-
-
-* fix: verbose error if locales directory not found — Eden Ross Duff MSc <rjdbcm@outlook.com>
-([`6e3721b`](https://github.com/OZI-Project/ozi-core/commit/6e3721ba172f48c06ceae5bf0d6f3a793074a580))
-
-* fix: patch mo_path if readthedocs is detected — Eden Ross Duff MSc <rjdbcm@outlook.com>
-([`cca097f`](https://github.com/OZI-Project/ozi-core/commit/cca097f91724a48088f4148b4dca298b15a46980))
 
 ## 1.21.0 (2025-06-07)
 
@@ -31,6 +64,21 @@
 
 * fix: add uv back to OZI.build install — Eden Ross Duff, MSc <rjdbcm@outlook.com>
 ([`c27644d`](https://github.com/OZI-Project/ozi-core/commit/c27644d99ff54cb23e6820967a460e9f80d3ca43))
+
+* fix(ozi-new): --allow-file default is now a list — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`1ee7135`](https://github.com/OZI-Project/ozi-core/commit/1ee71356c3feb2182f4b5d59ece2f24566790627))
+
+* fix: .mo files are found based on the install location of _i18n — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`80fe8ae`](https://github.com/OZI-Project/ozi-core/commit/80fe8ae395aad0b3dcdf03ba9784563a472724bf))
+
+* fix: setup_parser for ozi CLI now returns the parser — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`2ce902c`](https://github.com/OZI-Project/ozi-core/commit/2ce902c71affcc1e56d5dc42942937682bf8613d))
+
+* fix: verbose error if locales directory not found — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`6e3721b`](https://github.com/OZI-Project/ozi-core/commit/6e3721ba172f48c06ceae5bf0d6f3a793074a580))
+
+* fix: patch mo_path if readthedocs is detected — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`cca097f`](https://github.com/OZI-Project/ozi-core/commit/cca097f91724a48088f4148b4dca298b15a46980))
 
 * fix: add pip to external allowlist in tox — Eden Ross Duff, MSc <rjdbcm@outlook.com>
 ([`4068a6e`](https://github.com/OZI-Project/ozi-core/commit/4068a6ee62fda76d1c0a53b25e035760a031758c))
@@ -86,6 +134,12 @@ Signed-off-by: Eden Ross Duff, MSc <rjdbcm@outlook.com>
 ### Build system
 
 
+* build: install gettext to release workflow — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`245a90a`](https://github.com/OZI-Project/ozi-core/commit/245a90a3608cd45847a223687cfd024cfb59bdfc))
+
+* build: correct uv call to use uv binary — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`0f3fccc`](https://github.com/OZI-Project/ozi-core/commit/0f3fccc7e0c413af43f45026c75d83a8d88228a4))
+
 * build(deps): bump OZI-Project/release from 1.8.5 to 1.8.7
 
 Bumps [OZI-Project/release](https://github.com/ozi-project/release) from 1.8.5 to 1.8.7.
@@ -100,12 +154,6 @@ updated-dependencies:
   update-type: version-update:semver-patch
 ... — dependabot[bot] <support@github.com>
 ([`20e86ee`](https://github.com/OZI-Project/ozi-core/commit/20e86ee071c19acf230174c209a137e9e47fd444))
-
-* build: install gettext to release workflow — Eden Ross Duff, MSc <rjdbcm@outlook.com>
-([`245a90a`](https://github.com/OZI-Project/ozi-core/commit/245a90a3608cd45847a223687cfd024cfb59bdfc))
-
-* build: correct uv call to use uv binary — Eden Ross Duff, MSc <rjdbcm@outlook.com>
-([`0f3fccc`](https://github.com/OZI-Project/ozi-core/commit/0f3fccc7e0c413af43f45026c75d83a8d88228a4))
 
 * build: add ``apt install gettext`` to checkpoint runners (#782) — Eden Ross Duff, MSc <rjdbcm@outlook.com>
 ([`f5bda17`](https://github.com/OZI-Project/ozi-core/commit/f5bda17809a000f5050baf2bc1dcdc0d1ef0b49f))
@@ -199,6 +247,9 @@ updated-dependencies:
 
 ### Chores
 
+
+* chore: update ozi.wrap to 2.0.14 — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`7e0c080`](https://github.com/OZI-Project/ozi-core/commit/7e0c080ff4399e50ac6ea6ec21abe95e823917eb))
 
 * chore: update ozi.wrap to 2.0.11 — Eden Ross Duff MSc <rjdbcm@outlook.com>
 ([`e660f79`](https://github.com/OZI-Project/ozi-core/commit/e660f794500e856fac36a2b2bc21cb874c66924d))
