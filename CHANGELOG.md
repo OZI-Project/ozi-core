@@ -1,9 +1,25 @@
 # ozi-core CHANGELOG
+## 1.21.6 (2025-06-10)
+
+
+### Chores
+
+
+* chore: run black — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`42ad29d`](https://github.com/OZI-Project/ozi-core/commit/42ad29de5624b808eeb91a8e574488e633bb364c))
+
 ## 1.21.5 (2025-06-09)
+
+## 1.21.4 (2025-06-08)
+
+## 1.21.3 (2025-06-08)
 
 
 ### Bug fixes
 
+
+* fix: get correct locale path in PyInstaller bundles — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`8343f50`](https://github.com/OZI-Project/ozi-core/commit/8343f5025162059c12117232668908fded7aeeab))
 
 * fix: return user template relative path not actual file — Eden Ross Duff MSc <rjdbcm@outlook.com>
 ([`24faf95`](https://github.com/OZI-Project/ozi-core/commit/24faf95cc8d6938224607db1f6e76f7cb733224f))
@@ -13,6 +29,12 @@
 
 * fix(i18n): set mo_path correctly in github actions — Eden Ross Duff MSc <rjdbcm@outlook.com>
 ([`ead6891`](https://github.com/OZI-Project/ozi-core/commit/ead6891f4e041b23df1382e02422836bbb876741))
+
+* fix(ozi-new): --allow-file applied properly to target dir — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`328cd98`](https://github.com/OZI-Project/ozi-core/commit/328cd98c4798d9e94536a37c9979a5412a782cc0))
+
+* fix(i18n): correct mimetype for ozi-new cli — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`4aad85a`](https://github.com/OZI-Project/ozi-core/commit/4aad85aa8201317ee6ef7a608c5cb4cf6552b5db))
 
 
 ### Build system
@@ -37,20 +59,6 @@ updated-dependencies:
 
 * chore: clean up lint — Eden Ross Duff MSc <rjdbcm@outlook.com>
 ([`4f76170`](https://github.com/OZI-Project/ozi-core/commit/4f76170260436dcd22b5e1a55732516f677d001c))
-
-## 1.21.4 (2025-06-08)
-
-
-### Bug fixes
-
-
-* fix(ozi-new): --allow-file applied properly to target dir — Eden Ross Duff MSc <rjdbcm@outlook.com>
-([`328cd98`](https://github.com/OZI-Project/ozi-core/commit/328cd98c4798d9e94536a37c9979a5412a782cc0))
-
-* fix(i18n): correct mimetype for ozi-new cli — Eden Ross Duff MSc <rjdbcm@outlook.com>
-([`4aad85a`](https://github.com/OZI-Project/ozi-core/commit/4aad85aa8201317ee6ef7a608c5cb4cf6552b5db))
-
-## 1.21.3 (2025-06-08)
 
 ## 1.21.2 (2025-06-08)
 
