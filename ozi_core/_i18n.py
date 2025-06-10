@@ -45,7 +45,7 @@ except FileNotFoundError:
     mo_path = '.tox/invoke/tmp/po'
 
 if getattr(sys, 'frozen', False):  # pragma: defer to PyInstaller
-    mo_path = sys._MEIPASS / LOCALES_PATH # type: ignore
+    mo_path = sys._MEIPASS / LOCALES_PATH  # type: ignore
 elif 'PYTEST_VERSION' in os.environ or 'pytest' in sys.modules:  # pragma: defer to pytest
     mo_path = Path(__file__).parent.parent / 'po'
 elif 'GITHUB_ACTIONS' in os.environ:  # pragma: defer to github-actions
