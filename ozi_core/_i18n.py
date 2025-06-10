@@ -44,11 +44,13 @@ try:
 except FileNotFoundError:
     mo_path = '.tox/invoke/tmp/po'
 
-if 'PYTEST_VERSION' in os.environ or 'pytest' in sys.modules:  # pragma: no cover
+if getattr(sys, 'frozen', False):  # pragma: defer to PyInstaller
+    mo_path = sys._MEIPASS / LOCALES_PATH # type: ignore
+elif 'PYTEST_VERSION' in os.environ or 'pytest' in sys.modules:  # pragma: defer to pytest
     mo_path = Path(__file__).parent.parent / 'po'
-elif 'GITHUB_ACTIONS' in os.environ:  # pragma: no cover
+elif 'GITHUB_ACTIONS' in os.environ:  # pragma: defer to github-actions
     mo_path = Path(os.environ['Python_ROOT_DIR']) / LOCALES_PATH
-elif 'READTHEDOCS' in os.environ:  # pragma: no cover
+elif 'READTHEDOCS' in os.environ:  # pragma: defer to ReadTheDocs
     mo_path = Path(os.environ['READTHEDOCS_VIRTUALENV_PATH']) / LOCALES_PATH
 else:  # pragma: no cover
     pass
