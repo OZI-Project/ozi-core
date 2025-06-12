@@ -299,8 +299,9 @@ def preprocess_arguments(project: Namespace) -> Namespace:
         return _valid_project(project)
 
 
-def postprocess_arguments(project: Namespace) -> Namespace:
+def postprocess_arguments(project: Namespace) -> tuple[Namespace, bool]:
     """Postprocess (normalize) arguments for project namespace."""
+    success = False
     project.author_email, project.maintainer_email = valid_emails(
         author_email=project.author_email,
         maintainer_email=project.maintainer_email,
@@ -316,6 +317,8 @@ def postprocess_arguments(project: Namespace) -> Namespace:
         i for i in project.target.iterdir() if i not in project.allow_file
     ):  # defer to good-issue
         TAP.not_ok('target', _('term-tap-target-not-empty'), skip=True)
+    else:
+        success = True
     match project.ci_provider:
         case 'github':
             pass
@@ -323,4 +326,4 @@ def postprocess_arguments(project: Namespace) -> Namespace:
             TAP.not_ok(
                 _('term-tap-invalid-ci-provider', ciprovider=project.ci_provider),
             )
-    return project
+    return project, success

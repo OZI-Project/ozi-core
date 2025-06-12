@@ -63,6 +63,6 @@ def valid_emails(author_email: list[str], maintainer_email: list[str], verify: b
 def preprocess_arguments(project: Namespace) -> Namespace:
     """Preprocess (validate) arguments for project namespace."""
 
-def postprocess_arguments(project: Namespace) -> Namespace:
+def postprocess_arguments(project: Namespace) -> tuple[Namespace, bool]:
     """Postprocess (normalize) arguments for project namespace."""
 

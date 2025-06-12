@@ -145,7 +145,7 @@ def bad_project(tmp_path_factory: pytest.TempPathFactory) -> pathlib.Path:
     namespace = deepcopy(bad_namespace)
     namespace.target = fn
     preprocessed = ozi_core.new.validate.preprocess_arguments(namespace)
-    postprocessed = ozi_core.new.validate.postprocess_arguments(preprocessed)
+    postprocessed, _ = ozi_core.new.validate.postprocess_arguments(preprocessed)
     ozi_core.render.RenderedContent(
         load_environment(vars(postprocessed), METADATA.asdict()),
         postprocessed.target,

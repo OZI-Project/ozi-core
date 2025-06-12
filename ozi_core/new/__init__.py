@@ -40,18 +40,19 @@ if TYPE_CHECKING:  # pragma: no cover
 
 def project(project: Namespace) -> None:
     """Create a new project in a target directory."""
-    project = postprocess_arguments(preprocess_arguments(project))
-    RenderedContent(
-        load_environment(
-            vars(project), METADATA.asdict(), target=project.target  # pyright: ignore
-        ),
-        project.target,
-        project.name,
-        project.ci_provider,
-        project.long_description_content_type,
-        project.update_wrapfile,
-    ).render()
-
+    project, success = postprocess_arguments(preprocess_arguments(project))
+    if success:
+        RenderedContent(
+            load_environment(
+                vars(project), METADATA.asdict(), target=project.target  # pyright: ignore
+            ),
+            project.target,
+            project.name,
+            project.ci_provider,
+            project.long_description_content_type,
+            project.update_wrapfile,
+        ).render()
+        
 
 def wrap(project: Namespace) -> None:  # pragma: no cover
     """Create a new wrap file for publishing. Not a public function."""
