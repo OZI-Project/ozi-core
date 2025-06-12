@@ -45,7 +45,11 @@ def find_user_template(target: str, file: str, fix: str) -> str | None:
     :return: a user-defined template as a string
     :rtype: str | None
     """
-    fp = Path(target, 'templates', fix, file)
+    fp = (
+        Path(target, 'templates', fix, file)
+        if fix != 'root'
+        else Path(target, 'templates', file)
+    )
     if fp.exists():
         user_template = str(fp.relative_to(Path(target)))
     else:
@@ -248,7 +252,9 @@ def render_ci_files_set_user(env: Environment, target: Path, ci_provider: str) -
                     env,
                     'github_workflows',
                     target / filename.replace('github_workflows', '.github/workflows'),
-                    find_user_template(str(target), str(filename), 'github_workflows'),
+                    find_user_template(
+                        str(target), Path(filename).name, '.github/workflows'
+                    ),
                 )
         case _:  # pragma: no cover
             ci_user = ''
@@ -281,5 +287,5 @@ def render_project_files(env: Environment, target: Path, name: str) -> None:
                 env,
                 fix,
                 target / filename,
-                find_user_template(str(target), filename, fix),
+                find_user_template(str(target), Path(filename).name, fix),
             )

@@ -52,7 +52,9 @@ def project(project: Namespace) -> None:
             project.long_description_content_type,
             project.update_wrapfile,
         ).render()
-        
+    else:  # pragma: no cover
+        pass
+
 
 def wrap(project: Namespace) -> None:  # pragma: no cover
     """Create a new wrap file for publishing. Not a public function."""
