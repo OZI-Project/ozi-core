@@ -1,9 +1,134 @@
 # ozi-core CHANGELOG
+## 1.21.7 (2025-06-13)
+
+
+### Build system
+
+
+* build(deps): bump OZI-Project/release from 1.8.7 to 1.8.10
+
+Bumps [OZI-Project/release](https://github.com/ozi-project/release) from 1.8.7 to 1.8.10.
+- [Release notes](https://github.com/ozi-project/release/releases)
+- [Commits](https://github.com/ozi-project/release/compare/067a3867b9df3c1c2b86db5e062ca83c48dbc0bc...fd220285eff3de13b0eeab9f0882f245fa55b2e6)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/release
+  dependency-version: 1.8.10
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`9613a31`](https://github.com/OZI-Project/ozi-core/commit/9613a319f37747bb4b964e0a2c9a80898b1db5b7))
+
+* build(deps): bump ozi-spec from 1.0.4 to 1.0.6
+
+Bumps [ozi-spec](https://www.oziproject.dev) from 1.0.4 to 1.0.6.
+
+
+updated-dependencies:
+- dependency-name: ozi-spec
+  dependency-version: 1.0.6
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`f0542eb`](https://github.com/OZI-Project/ozi-core/commit/f0542eb64e0e20bb5e24afecc9927fa80bf0d8d8))
+
+* build(deps): bump OZI-Project/checkpoint from 1.8.2 to 1.9.1
+
+Bumps [OZI-Project/checkpoint](https://github.com/ozi-project/checkpoint) from 1.8.2 to 1.9.1.
+- [Release notes](https://github.com/ozi-project/checkpoint/releases)
+- [Commits](https://github.com/ozi-project/checkpoint/compare/1.8.2...1.9.1)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/checkpoint
+  dependency-version: 1.9.1
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`a910d65`](https://github.com/OZI-Project/ozi-core/commit/a910d65ee8af2a46b5a229bd1100d86cd2a19a58))
+
+* build(deps): bump OZI-Project/draft from 1.14.0 to 1.15.0
+
+Bumps [OZI-Project/draft](https://github.com/ozi-project/draft) from 1.14.0 to 1.15.0.
+- [Release notes](https://github.com/ozi-project/draft/releases)
+- [Commits](https://github.com/ozi-project/draft/compare/1.14.0...1.15.0)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/draft
+  dependency-version: 1.15.0
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`86bdbf8`](https://github.com/OZI-Project/ozi-core/commit/86bdbf8b38f551c896dcae9f328907fd024ce23e))
+
+* build(deps): bump step-security/harden-runner from 2.12.0 to 2.12.1
+
+Bumps [step-security/harden-runner](https://github.com/step-security/harden-runner) from 2.12.0 to 2.12.1.
+- [Release notes](https://github.com/step-security/harden-runner/releases)
+- [Commits](https://github.com/step-security/harden-runner/compare/0634a2670c59f64b4a01f0f96f84700a4088b9f0...002fdce3c6a235733a90a27c80493a3241e56863)
+
+
+updated-dependencies:
+- dependency-name: step-security/harden-runner
+  dependency-version: 2.12.1
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`4a726e6`](https://github.com/OZI-Project/ozi-core/commit/4a726e6e2a7495f93d9fa839e631905cd089e62b))
+
+* build(deps): bump OZI-Project/publish from 1.14.0 to 1.15.0
+
+Bumps [OZI-Project/publish](https://github.com/ozi-project/publish) from 1.14.0 to 1.15.0.
+- [Release notes](https://github.com/ozi-project/publish/releases)
+- [Commits](https://github.com/ozi-project/publish/compare/1.14.0...1.15.0)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/publish
+  dependency-version: 1.15.0
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`e730169`](https://github.com/OZI-Project/ozi-core/commit/e7301690b70df80bc90565ab13a4a4ba6dbde85f))
+
+* build(deps): update ozi-build[core,pip,uv] requirement
+
+Updates the requirements on [ozi-build[core,pip,uv]](https://github.com/OZI-Project/OZI.build) to permit the latest version.
+- [Release notes](https://github.com/OZI-Project/OZI.build/releases)
+- [Changelog](https://github.com/OZI-Project/OZI.build/blob/master/CHANGELOG.md)
+- [Commits](https://github.com/OZI-Project/OZI.build/compare/2.0.6...2.3.1)
+
+
+updated-dependencies:
+- dependency-name: ozi-build[core,pip,uv]
+  dependency-version: 2.3.1
+  dependency-type: direct:production
+... — dependabot[bot] <support@github.com>
+([`2722aed`](https://github.com/OZI-Project/ozi-core/commit/2722aed75d753b4d1f19bc3af507e44d4b57a318))
+
+## 1.21.6 (2025-06-10)
+
+
+### Chores
+
+
+* chore: run black — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`42ad29d`](https://github.com/OZI-Project/ozi-core/commit/42ad29de5624b808eeb91a8e574488e633bb364c))
+
 ## 1.21.5 (2025-06-09)
+
+## 1.21.4 (2025-06-08)
+
+## 1.21.3 (2025-06-08)
 
 
 ### Bug fixes
 
+
+* fix: get correct locale path in PyInstaller bundles — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`8343f50`](https://github.com/OZI-Project/ozi-core/commit/8343f5025162059c12117232668908fded7aeeab))
 
 * fix: return user template relative path not actual file — Eden Ross Duff MSc <rjdbcm@outlook.com>
 ([`24faf95`](https://github.com/OZI-Project/ozi-core/commit/24faf95cc8d6938224607db1f6e76f7cb733224f))
@@ -13,6 +138,12 @@
 
 * fix(i18n): set mo_path correctly in github actions — Eden Ross Duff MSc <rjdbcm@outlook.com>
 ([`ead6891`](https://github.com/OZI-Project/ozi-core/commit/ead6891f4e041b23df1382e02422836bbb876741))
+
+* fix(ozi-new): --allow-file applied properly to target dir — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`328cd98`](https://github.com/OZI-Project/ozi-core/commit/328cd98c4798d9e94536a37c9979a5412a782cc0))
+
+* fix(i18n): correct mimetype for ozi-new cli — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`4aad85a`](https://github.com/OZI-Project/ozi-core/commit/4aad85aa8201317ee6ef7a608c5cb4cf6552b5db))
 
 
 ### Build system
@@ -37,20 +168,6 @@ updated-dependencies:
 
 * chore: clean up lint — Eden Ross Duff MSc <rjdbcm@outlook.com>
 ([`4f76170`](https://github.com/OZI-Project/ozi-core/commit/4f76170260436dcd22b5e1a55732516f677d001c))
-
-## 1.21.4 (2025-06-08)
-
-
-### Bug fixes
-
-
-* fix(ozi-new): --allow-file applied properly to target dir — Eden Ross Duff MSc <rjdbcm@outlook.com>
-([`328cd98`](https://github.com/OZI-Project/ozi-core/commit/328cd98c4798d9e94536a37c9979a5412a782cc0))
-
-* fix(i18n): correct mimetype for ozi-new cli — Eden Ross Duff MSc <rjdbcm@outlook.com>
-([`4aad85a`](https://github.com/OZI-Project/ozi-core/commit/4aad85aa8201317ee6ef7a608c5cb4cf6552b5db))
-
-## 1.21.3 (2025-06-08)
 
 ## 1.21.2 (2025-06-08)
 
