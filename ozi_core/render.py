@@ -47,8 +47,7 @@ def find_user_template(target: str, file: str, fix: str) -> str | None:
     """
     fp = Path(target, 'templates', fix, file)
     if fp.exists():
-        with open(fp, encoding='UTF-8') as template:
-            user_template = template.read()
+        user_template = str(fp.relative_to(Path(target)))
     else:
         TAP.ok(_('term-tap-user-template-not-found'), skip=True, template=str(fp))
         user_template = None
