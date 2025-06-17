@@ -1,4 +1,25 @@
 # ozi-core CHANGELOG
+## 1.21.8 (2025-06-17)
+
+
+### Build system
+
+
+* build(deps): update pathvalidate requirement
+
+Updates the requirements on [pathvalidate](https://github.com/thombashi/pathvalidate) to permit the latest version.
+- [Release notes](https://github.com/thombashi/pathvalidate/releases)
+- [Changelog](https://github.com/thombashi/pathvalidate/blob/master/CHANGELOG.md)
+- [Commits](https://github.com/thombashi/pathvalidate/compare/v3.2.1...v3.3.1)
+
+
+updated-dependencies:
+- dependency-name: pathvalidate
+  dependency-version: 3.3.1
+  dependency-type: direct:production
+... — dependabot[bot] <support@github.com>
+([`590c88a`](https://github.com/OZI-Project/ozi-core/commit/590c88aae90c6510a8d2abe826a900d5e9242138))
+
 ## 1.21.7 (2025-06-13)
 
 
