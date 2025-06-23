@@ -138,7 +138,9 @@ class Rewriter:
                 self.env,
                 self.fix,
                 child,
-                user_template=find_user_template(self.target, filename, self.path_map[self.fix]().name),
+                user_template=find_user_template(
+                    self.target, filename, self.path_map[self.fix]('.').name
+                ),
             )
         if filename.endswith('.pyx'):  # pragma: no cover
             cmd_files.add('ext', 'files', str(Path(filename)))
