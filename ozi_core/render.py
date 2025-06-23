@@ -248,7 +248,11 @@ def render_ci_files_set_user(env: Environment, target: Path, ci_provider: str) -
                     env,
                     'github_workflows',
                     target / filename.replace('github_workflows', '.github/workflows'),
-                    find_user_template(str(target), str(filename).replace('github_workflows', '.github/workflows'), '.'),
+                    find_user_template(
+                        str(target),
+                        str(filename).replace('github_workflows', '.github/workflows'),
+                        '.',
+                    ),
                 )
         case _:  # pragma: no cover
             ci_user = ''
