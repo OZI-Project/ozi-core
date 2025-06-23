@@ -1,4 +1,44 @@
 # ozi-core CHANGELOG
+## 1.21.9 (2025-06-23)
+
+
+### Bug fixes
+
+
+* fix: correct user template paths to mirror the project directory — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`c906b4e`](https://github.com/OZI-Project/ozi-core/commit/c906b4eab8993ce6a7581771bf4eba5d5ed53d73))
+
+
+### Chores
+
+
+* chore: clean up coverage — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`50742d5`](https://github.com/OZI-Project/ozi-core/commit/50742d51f843f136f0c6b9e4ff270de9d2bf8ae6))
+
+* chore: clean up lint — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`b362a4d`](https://github.com/OZI-Project/ozi-core/commit/b362a4d25975ee6f521a90313d4d3d285c8cedb7))
+
+## 1.21.8 (2025-06-17)
+
+
+### Build system
+
+
+* build(deps): update pathvalidate requirement
+
+Updates the requirements on [pathvalidate](https://github.com/thombashi/pathvalidate) to permit the latest version.
+- [Release notes](https://github.com/thombashi/pathvalidate/releases)
+- [Changelog](https://github.com/thombashi/pathvalidate/blob/master/CHANGELOG.md)
+- [Commits](https://github.com/thombashi/pathvalidate/compare/v3.2.1...v3.3.1)
+
+
+updated-dependencies:
+- dependency-name: pathvalidate
+  dependency-version: 3.3.1
+  dependency-type: direct:production
+... — dependabot[bot] <support@github.com>
+([`590c88a`](https://github.com/OZI-Project/ozi-core/commit/590c88aae90c6510a8d2abe826a900d5e9242138))
+
 ## 1.21.7 (2025-06-13)
 
 
