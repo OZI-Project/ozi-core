@@ -47,7 +47,7 @@ def find_user_template(target: str, file: str, fix: str) -> str | None:
     """
     fp = Path(target, 'templates', fix, file)
     if fp.exists():
-        user_template = str(fp.relative_to(Path(target)))
+        user_template = str(fp.relative_to(Path(target)))  # pragma: defer to E2E
     else:
         TAP.ok(_('term-tap-user-template-not-found'), skip=True, template=str(fp))
         user_template = None
@@ -172,7 +172,7 @@ def build_child(env: Environment, parent: str, child: Path) -> None:
             env,
             'child',
             (child / 'meson.build'),
-            find_user_template(str(parent / child), 'meson.build.j2', 'child'),
+            find_user_template(str(parent / child), 'meson.build.j2', '.'),
             parent=parent,
         )
 
@@ -239,7 +239,7 @@ def render_ci_files_set_user(env: Environment, target: Path, ci_provider: str) -
     except (InvalidGitRepositoryError, configparser.NoSectionError) as e:  # pragma: no cover
         ci_user = ''
         logger.debug(str(e))
-        TAP.not_ok('ci_user was not set', skip=True)
+        TAP.ok('ci_user was not set', skip=True)
 
     match ci_provider:
         case 'github':
@@ -248,7 +248,11 @@ def render_ci_files_set_user(env: Environment, target: Path, ci_provider: str) -
                     env,
                     'github_workflows',
                     target / filename.replace('github_workflows', '.github/workflows'),
-                    find_user_template(str(target), str(filename), 'github_workflows'),
+                    find_user_template(
+                        str(target),
+                        str(filename).replace('github_workflows', '.github/workflows'),
+                        '.',
+                    ),
                 )
         case _:  # pragma: no cover
             ci_user = ''
@@ -281,5 +285,5 @@ def render_project_files(env: Environment, target: Path, name: str) -> None:
                 env,
                 fix,
                 target / filename,
-                find_user_template(str(target), filename, fix),
+                find_user_template(str(target), filename, '.'),
             )
