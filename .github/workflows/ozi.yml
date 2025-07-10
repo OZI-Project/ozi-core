@@ -20,7 +20,7 @@ jobs:
         id-token: write
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@002fdce3c6a235733a90a27c80493a3241e56863 # v2.12.1
+        uses: step-security/harden-runner@6c439dc8bdf85cadbbce9ed30d1c7b959517bc49 # v2.12.2
         with:
           disable-sudo: false
           egress-policy: block
@@ -42,7 +42,7 @@ jobs:
 
       - run: sudo apt-get install -y gettext
 
-      - uses: OZI-Project/checkpoint@1.9.1
+      - uses: OZI-Project/checkpoint@1.9.3
         with:
           python-version: "3.11"
           submodules: true
@@ -56,7 +56,7 @@ jobs:
         id-token: write
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@002fdce3c6a235733a90a27c80493a3241e56863 # v2.12.1
+        uses: step-security/harden-runner@6c439dc8bdf85cadbbce9ed30d1c7b959517bc49 # v2.12.2
         with:
           disable-sudo: false
           egress-policy: block
@@ -78,7 +78,7 @@ jobs:
 
       - run: sudo apt-get install -y gettext
 
-      - uses: OZI-Project/checkpoint@1.9.1
+      - uses: OZI-Project/checkpoint@1.9.3
         with:
           python-version: "3.12"
           submodules: true
@@ -93,7 +93,7 @@ jobs:
         id-token: write
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@002fdce3c6a235733a90a27c80493a3241e56863 # v2.12.1
+        uses: step-security/harden-runner@6c439dc8bdf85cadbbce9ed30d1c7b959517bc49 # v2.12.2
         with:
           disable-sudo: false
           egress-policy: block
@@ -115,7 +115,7 @@ jobs:
 
       - run: sudo apt-get install -y gettext
 
-      - uses: OZI-Project/checkpoint@1.9.1
+      - uses: OZI-Project/checkpoint@1.9.3
         with:
           python-version: "3.13"
           submodules: true
@@ -125,7 +125,7 @@ jobs:
     needs: [checkpoint-cp311-ubuntu-latest,checkpoint-cp312-ubuntu-latest, checkpoint-cp313-ubuntu-latest]
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@002fdce3c6a235733a90a27c80493a3241e56863 # v2.12.1
+        uses: step-security/harden-runner@6c439dc8bdf85cadbbce9ed30d1c7b959517bc49 # v2.12.2
         with:
           disable-sudo: true
           egress-policy: block
@@ -144,7 +144,7 @@ jobs:
       tag: ${{ steps.draft.outputs.tag }}
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@002fdce3c6a235733a90a27c80493a3241e56863 # v2.12.1
+        uses: step-security/harden-runner@6c439dc8bdf85cadbbce9ed30d1c7b959517bc49 # v2.12.2
         with:
           disable-sudo: true
           egress-policy: block
@@ -152,7 +152,7 @@ jobs:
             api.github.com:443
             github.com:443
 
-      - uses: OZI-Project/draft@1.15.0
+      - uses: OZI-Project/draft@1.16.0
         id: draft
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -178,7 +178,7 @@ jobs:
       id-token: write
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@002fdce3c6a235733a90a27c80493a3241e56863 # v2.12.1
+        uses: step-security/harden-runner@6c439dc8bdf85cadbbce9ed30d1c7b959517bc49 # v2.12.2
         with:
           disable-sudo: false
           egress-policy: block
@@ -202,7 +202,7 @@ jobs:
 
       - run: sudo apt-get install -y gettext
 
-      - uses: OZI-Project/release@fd220285eff3de13b0eeab9f0882f245fa55b2e6
+      - uses: OZI-Project/release@3b2d9beadc38335e9fdace1dc21d7d5807d7be76
         id: release
         with:
           python-dist: ${{ matrix.py }}
@@ -235,7 +235,7 @@ jobs:
       id-token: write
     steps:
     - name: Harden Runner
-      uses: step-security/harden-runner@002fdce3c6a235733a90a27c80493a3241e56863 # v2.12.1
+      uses: step-security/harden-runner@6c439dc8bdf85cadbbce9ed30d1c7b959517bc49 # v2.12.2
       with:
         disable-sudo: true
         egress-policy: block
@@ -250,7 +250,7 @@ jobs:
           ghcr.io:443
           pkg-containers.githubusercontent.com:443
 
-    - uses: OZI-Project/publish@1.15.0
+    - uses: OZI-Project/publish@1.16.0
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
 

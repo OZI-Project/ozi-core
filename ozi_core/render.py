@@ -100,7 +100,7 @@ def map_to_template(  # noqa: C901
         case ['child', f]:
             x = 'new_child.j2'
         case ['github_workflows', f]:
-            x = f'github_workflows/{f}.j2'
+            x = f'.github/workflows/{f}.j2'
         case [_, _]:  # pragma: no cover
             x = ''
     return x

@@ -21,7 +21,7 @@ jobs:
         id-token: write
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@002fdce3c6a235733a90a27c80493a3241e56863 # v2.12.1
+        uses: step-security/harden-runner@6c439dc8bdf85cadbbce9ed30d1c7b959517bc49 # v2.12.2
         with:
           disable-sudo: false
           egress-policy: block
@@ -44,7 +44,7 @@ jobs:
 
       - run: sudo apt-get install -y gettext
 
-      - uses: OZI-Project/checkpoint@b7afe55ac890df008deb75191e53f83823117f92 # 1.9.1
+      - uses: OZI-Project/checkpoint@4c60c58ba33a128bbde246fbee9e16569062f7cf # 1.9.3
         with:
           python-version: "3.10"
           submodules: true
@@ -58,7 +58,7 @@ jobs:
         id-token: write
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@002fdce3c6a235733a90a27c80493a3241e56863 # v2.12.1
+        uses: step-security/harden-runner@6c439dc8bdf85cadbbce9ed30d1c7b959517bc49 # v2.12.2
         with:
           disable-sudo: true
           egress-policy: block
@@ -79,7 +79,7 @@ jobs:
             security.ubuntu.com:443
             archive.ubuntu.com:443
 
-      - uses: OZI-Project/checkpoint@b7afe55ac890df008deb75191e53f83823117f92 # 1.9.1
+      - uses: OZI-Project/checkpoint@4c60c58ba33a128bbde246fbee9e16569062f7cf # 1.9.3
         with:
           python-version: "3.10"
           os: "windows-latest"
@@ -94,7 +94,7 @@ jobs:
         id-token: write
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@002fdce3c6a235733a90a27c80493a3241e56863 # v2.12.1
+        uses: step-security/harden-runner@6c439dc8bdf85cadbbce9ed30d1c7b959517bc49 # v2.12.2
         with:
           disable-sudo: false
           egress-policy: block
@@ -117,7 +117,7 @@ jobs:
 
       - run: sudo apt-get install -y gettext
 
-      - uses: OZI-Project/checkpoint@b7afe55ac890df008deb75191e53f83823117f92 # 1.9.1
+      - uses: OZI-Project/checkpoint@4c60c58ba33a128bbde246fbee9e16569062f7cf # 1.9.3
         with:
           python-version: "3.11"
           submodules: true
@@ -131,7 +131,7 @@ jobs:
         id-token: write
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@002fdce3c6a235733a90a27c80493a3241e56863 # v2.12.1
+        uses: step-security/harden-runner@6c439dc8bdf85cadbbce9ed30d1c7b959517bc49 # v2.12.2
         with:
           disable-sudo: false
           egress-policy: block
@@ -154,7 +154,7 @@ jobs:
 
       - run: sudo apt-get install -y gettext
 
-      - uses: OZI-Project/checkpoint@b7afe55ac890df008deb75191e53f83823117f92 # 1.9.1
+      - uses: OZI-Project/checkpoint@4c60c58ba33a128bbde246fbee9e16569062f7cf # 1.9.3
         with:
           python-version: "3.12"
           submodules: true
@@ -169,7 +169,7 @@ jobs:
         id-token: write
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@002fdce3c6a235733a90a27c80493a3241e56863 # v2.12.1
+        uses: step-security/harden-runner@6c439dc8bdf85cadbbce9ed30d1c7b959517bc49 # v2.12.2
         with:
           disable-sudo: false
           egress-policy: block
@@ -193,7 +193,7 @@ jobs:
 
       - run: sudo apt-get install -y gettext
 
-      - uses: OZI-Project/checkpoint@b7afe55ac890df008deb75191e53f83823117f92
+      - uses: OZI-Project/checkpoint@4c60c58ba33a128bbde246fbee9e16569062f7cf
         with:
           python-version: "3.13"
           submodules: true
