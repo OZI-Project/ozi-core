@@ -202,7 +202,7 @@ jobs:
 
       - run: sudo apt-get install -y gettext
 
-      - uses: OZI-Project/release@fd220285eff3de13b0eeab9f0882f245fa55b2e6
+      - uses: OZI-Project/release@3b2d9beadc38335e9fdace1dc21d7d5807d7be76
         id: release
         with:
           python-dist: ${{ matrix.py }}
