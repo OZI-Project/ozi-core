@@ -1,4 +1,23 @@
 # ozi-core CHANGELOG
+## 1.21.13 (2025-07-14)
+
+
+### Build system
+
+
+* build(deps): bump ozi-templates from 2.29.4 to 2.29.5
+
+Bumps ozi-templates from 2.29.4 to 2.29.5.
+
+
+updated-dependencies:
+- dependency-name: ozi-templates
+  dependency-version: 2.29.5
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`d6170e7`](https://github.com/OZI-Project/ozi-core/commit/d6170e7348ca609cd83e41d3d7acc9fe1dafe3fd))
+
 ## 1.21.12 (2025-07-13)
 
 
