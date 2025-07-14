@@ -1,4 +1,209 @@
 # ozi-core CHANGELOG
+## 1.21.14 (2025-07-14)
+
+
+### Build system
+
+
+* build(deps): bump ozi-templates from 2.29.5 to 2.29.6
+
+Bumps ozi-templates from 2.29.5 to 2.29.6.
+
+
+updated-dependencies:
+- dependency-name: ozi-templates
+  dependency-version: 2.29.6
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`75fbe9e`](https://github.com/OZI-Project/ozi-core/commit/75fbe9e4bde975dd176a861fc41d33b60548a3e3))
+
+## 1.21.13 (2025-07-14)
+
+
+### Build system
+
+
+* build(deps): bump ozi-templates from 2.29.4 to 2.29.5
+
+Bumps ozi-templates from 2.29.4 to 2.29.5.
+
+
+updated-dependencies:
+- dependency-name: ozi-templates
+  dependency-version: 2.29.5
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`d6170e7`](https://github.com/OZI-Project/ozi-core/commit/d6170e7348ca609cd83e41d3d7acc9fe1dafe3fd))
+
+## 1.21.12 (2025-07-13)
+
+
+### Build system
+
+
+* build(deps): bump ozi-templates from 2.29.3 to 2.29.4
+
+Bumps ozi-templates from 2.29.3 to 2.29.4.
+
+
+updated-dependencies:
+- dependency-name: ozi-templates
+  dependency-version: 2.29.4
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`053011c`](https://github.com/OZI-Project/ozi-core/commit/053011c700b4e0cbd84e9200b5bcf233127430c5))
+
+## 1.21.11 (2025-07-12)
+
+
+### Build system
+
+
+* build(deps): bump ozi-templates from 2.29.2 to 2.29.3
+
+Bumps ozi-templates from 2.29.2 to 2.29.3.
+
+
+updated-dependencies:
+- dependency-name: ozi-templates
+  dependency-version: 2.29.3
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`e567a11`](https://github.com/OZI-Project/ozi-core/commit/e567a1192dd01694f030a5848045b72520e57e83))
+
+## 1.21.10 (2025-07-10)
+
+
+### Bug fixes
+
+
+* fix: update paths — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`521970c`](https://github.com/OZI-Project/ozi-core/commit/521970c2da2273e49a5365711006cf6711875ca8))
+
+
+### Build system
+
+
+* build(deps): bump OZI-Project/publish from 1.15.0 to 1.16.0
+
+Bumps [OZI-Project/publish](https://github.com/ozi-project/publish) from 1.15.0 to 1.16.0.
+- [Release notes](https://github.com/ozi-project/publish/releases)
+- [Commits](https://github.com/ozi-project/publish/compare/1.15.0...1.16.0)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/publish
+  dependency-version: 1.16.0
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`c549f62`](https://github.com/OZI-Project/ozi-core/commit/c549f626420a6b83ce7b1a896a4ee3bd0bc5eb4d))
+
+* build(deps): bump OZI-Project/draft from 1.15.0 to 1.16.0
+
+Bumps [OZI-Project/draft](https://github.com/ozi-project/draft) from 1.15.0 to 1.16.0.
+- [Release notes](https://github.com/ozi-project/draft/releases)
+- [Commits](https://github.com/ozi-project/draft/compare/1.15.0...1.16.0)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/draft
+  dependency-version: 1.16.0
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`ca7cbae`](https://github.com/OZI-Project/ozi-core/commit/ca7cbae386ef292d25408a9bdcc30a086270642b))
+
+* build(deps): bump OZI-Project/release from 1.8.10 to 1.8.11
+
+Bumps [OZI-Project/release](https://github.com/ozi-project/release) from 1.8.10 to 1.8.11.
+- [Release notes](https://github.com/ozi-project/release/releases)
+- [Commits](https://github.com/ozi-project/release/compare/fd220285eff3de13b0eeab9f0882f245fa55b2e6...3b2d9beadc38335e9fdace1dc21d7d5807d7be76)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/release
+  dependency-version: 1.8.11
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`95e6afd`](https://github.com/OZI-Project/ozi-core/commit/95e6afd2438d1676f70e34f83e6a9c2cdfa4fb7e))
+
+* build(deps): bump OZI-Project/checkpoint from 1.9.1 to 1.9.3
+
+Bumps [OZI-Project/checkpoint](https://github.com/ozi-project/checkpoint) from 1.9.1 to 1.9.3.
+- [Release notes](https://github.com/ozi-project/checkpoint/releases)
+- [Commits](https://github.com/ozi-project/checkpoint/compare/1.9.1...1.9.3)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/checkpoint
+  dependency-version: 1.9.3
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`2c9c6bc`](https://github.com/OZI-Project/ozi-core/commit/2c9c6bc87968e72d039ca83c5c4283ba794bf420))
+
+* build(deps): bump ozi-templates from 2.28.2 to 2.29.1
+
+Bumps ozi-templates from 2.28.2 to 2.29.1.
+
+
+updated-dependencies:
+- dependency-name: ozi-templates
+  dependency-version: 2.29.1
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`0b3d5f6`](https://github.com/OZI-Project/ozi-core/commit/0b3d5f6a2c70d0ab029b4c106522a98e5885c9f0))
+
+* build(deps): bump spdx-license-list from 3.26.0 to 3.27.0
+
+Bumps [spdx-license-list](https://github.com/JJMC89/spdx-license-list) from 3.26.0 to 3.27.0.
+- [Release notes](https://github.com/JJMC89/spdx-license-list/releases)
+- [Commits](https://github.com/JJMC89/spdx-license-list/compare/v3.26.0...v3.27.0)
+
+
+updated-dependencies:
+- dependency-name: spdx-license-list
+  dependency-version: 3.27.0
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`cca26f4`](https://github.com/OZI-Project/ozi-core/commit/cca26f4f6c81d98650c99d2f0c080c9b227e8ef2))
+
+* build(deps): bump ozi-spec from 1.0.6 to 1.1.0
+
+Bumps [ozi-spec](https://www.oziproject.dev) from 1.0.6 to 1.1.0.
+
+
+updated-dependencies:
+- dependency-name: ozi-spec
+  dependency-version: 1.1.0
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`3b9d871`](https://github.com/OZI-Project/ozi-core/commit/3b9d871e30c7ea779b2702584988056a31665b9b))
+
+* build(deps): bump step-security/harden-runner from 2.12.1 to 2.12.2
+
+Bumps [step-security/harden-runner](https://github.com/step-security/harden-runner) from 2.12.1 to 2.12.2.
+- [Release notes](https://github.com/step-security/harden-runner/releases)
+- [Commits](https://github.com/step-security/harden-runner/compare/002fdce3c6a235733a90a27c80493a3241e56863...6c439dc8bdf85cadbbce9ed30d1c7b959517bc49)
+
+
+updated-dependencies:
+- dependency-name: step-security/harden-runner
+  dependency-version: 2.12.2
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`90639a6`](https://github.com/OZI-Project/ozi-core/commit/90639a626f4f68a8bcb9d4a10e603d18ddf73c1f))
+
 ## 1.21.9 (2025-06-23)
 
 
