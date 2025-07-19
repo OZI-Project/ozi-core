@@ -1,4 +1,23 @@
 # ozi-core CHANGELOG
+## 1.21.16 (2025-07-19)
+
+
+### Bug fixes
+
+
+* fix: get user template path relative to templates folder — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`16f7a29`](https://github.com/OZI-Project/ozi-core/commit/16f7a29f5330fe3df8a3edd923b8215ee13cb5d8))
+
+
+### Chores
+
+
+* chore: fix lint — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`cef21ef`](https://github.com/OZI-Project/ozi-core/commit/cef21ef774067260740328707a339e08e49e07b9))
+
+* chore: run black — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`77e34ca`](https://github.com/OZI-Project/ozi-core/commit/77e34cac57b7d462866b1f1e5518d30287fea613))
+
 ## 1.21.15 (2025-07-17)
 
 
