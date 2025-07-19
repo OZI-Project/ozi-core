@@ -47,7 +47,7 @@ def find_user_template(target: str, file: str, fix: str) -> str | None:
     """
     fp = Path(target, 'templates', fix, file)
     if fp.exists():
-        user_template = str(fp.relative_to(Path(target)))  # pragma: defer to E2E
+        user_template = str(fp.relative_to(Path(target, 'templates')))  # pragma: defer to E2E
     else:
         TAP.ok(_('term-tap-user-template-not-found'), skip=True, template=str(fp))
         user_template = None
