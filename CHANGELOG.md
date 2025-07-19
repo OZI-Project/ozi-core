@@ -5,6 +5,9 @@
 ### Bug fixes
 
 
+* fix: add release-assets.githubusercontent.com:443 endpoint — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`68a44fb`](https://github.com/OZI-Project/ozi-core/commit/68a44fb1a278b6cf85a74a8ec5609cbbfd10c783))
+
 * fix: get user template path relative to templates folder — Eden Ross Duff MSc <rjdbcm@outlook.com>
 ([`16f7a29`](https://github.com/OZI-Project/ozi-core/commit/16f7a29f5330fe3df8a3edd923b8215ee13cb5d8))
 
