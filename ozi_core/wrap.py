@@ -5,6 +5,7 @@ from shutil import rmtree
 
 from ozi_templates.filter import get_ozi_tarball_sha256  # pyright: ignore
 
+
 def create_subproject_symlink(target: Path | str, version: str):
     wrapfile = Path(target, 'subprojects', 'ozi.wrap')
     subproject = '..' / wrapfile.parent / f'OZI-{version}'
