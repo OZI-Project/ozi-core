@@ -5,8 +5,17 @@ from shutil import rmtree
 
 from ozi_templates.filter import get_ozi_tarball_sha256  # pyright: ignore
 
+def create_subproject_symlink(target: Path | str, version: str):
+    wrapfile = Path(target, 'subprojects', 'ozi.wrap')
+    subproject = '..' / wrapfile.parent / f'OZI-{version}'
+    if (wrapfile.parent / 'ozi').is_symlink():
+        (wrapfile.parent / 'ozi').unlink()  # pragma: defer to E2E
+    elif (wrapfile.parent / 'ozi').exists():
+        rmtree(wrapfile.parent / 'ozi', ignore_errors=True)  # pragma: defer to E2E
+    (wrapfile.parent / 'ozi').symlink_to(subproject, target_is_directory=True)
 
-def update_wrapfile(target: Path | str, version: str) -> None:  # noqa: C901
+
+def update_wrapfile(target: Path | str, version: str) -> None:
     """Update a project :file:`subprojects/ozi.wrap` and symlink to the latest OZI version.
 
     :param version: release to search for
@@ -32,10 +41,4 @@ def update_wrapfile(target: Path | str, version: str) -> None:  # noqa: C901
     provide['dependency_names'] = f'ozi, ozi-{version}'
     with ozi_wrap.open('w', encoding='utf-8') as f:
         config.write(f)
-    if (ozi_wrap.parent / 'ozi').is_symlink():
-        (ozi_wrap.parent / 'ozi').unlink()  # pragma: defer to E2E
-    elif (ozi_wrap.parent / 'ozi').exists():
-        rmtree(ozi_wrap.parent / 'ozi', ignore_errors=True)  # pragma: defer to E2E
-    (ozi_wrap.parent / 'ozi').symlink_to(
-        '..' / ozi_wrap.parent / f'OZI-{version}', target_is_directory=True
-    )
+    create_subproject_symlink(target, version)
