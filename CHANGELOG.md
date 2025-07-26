@@ -1,4 +1,141 @@
 # ozi-core CHANGELOG
+## 1.21.18 (2025-07-26)
+
+
+### Build system
+
+
+* build(deps): bump OZI-Project/checkpoint from 1.9.3 to 1.9.4
+
+Bumps [OZI-Project/checkpoint](https://github.com/ozi-project/checkpoint) from 1.9.3 to 1.9.4.
+- [Release notes](https://github.com/ozi-project/checkpoint/releases)
+- [Commits](https://github.com/ozi-project/checkpoint/compare/1.9.3...1.9.4)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/checkpoint
+  dependency-version: 1.9.4
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`f92a14a`](https://github.com/OZI-Project/ozi-core/commit/f92a14adfba03078787f08b9be303ac5d6a038d4))
+
+* build(deps): bump OZI-Project/release from 1.8.11 to 1.9.0
+
+Bumps [OZI-Project/release](https://github.com/ozi-project/release) from 1.8.11 to 1.9.0.
+- [Release notes](https://github.com/ozi-project/release/releases)
+- [Commits](https://github.com/ozi-project/release/compare/3b2d9beadc38335e9fdace1dc21d7d5807d7be76...d3920f3f0471dec9369a2245cc6e6b42756d27f8)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/release
+  dependency-version: 1.9.0
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`32a4cc8`](https://github.com/OZI-Project/ozi-core/commit/32a4cc8ad81bbfc3846de38e4e6febfffa08ba43))
+
+* build(deps): bump ozi-spec from 1.1.1 to 1.1.2
+
+Bumps [ozi-spec](https://www.oziproject.dev) from 1.1.1 to 1.1.2.
+
+
+updated-dependencies:
+- dependency-name: ozi-spec
+  dependency-version: 1.1.2
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`c03435c`](https://github.com/OZI-Project/ozi-core/commit/c03435ce5b5c9dba56b9572a9a80d6a0126dd4c2))
+
+## 1.21.17 (2025-07-23)
+
+
+### Build system
+
+
+* build(deps): bump ozi-templates from 2.29.7 to 2.29.8
+
+Bumps ozi-templates from 2.29.7 to 2.29.8.
+
+
+updated-dependencies:
+- dependency-name: ozi-templates
+  dependency-version: 2.29.8
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`329e459`](https://github.com/OZI-Project/ozi-core/commit/329e459612628d029d576aab1982424e42522956))
+
+## 1.21.16 (2025-07-19)
+
+
+### Bug fixes
+
+
+* fix: add release-assets.githubusercontent.com:443 endpoint — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`68a44fb`](https://github.com/OZI-Project/ozi-core/commit/68a44fb1a278b6cf85a74a8ec5609cbbfd10c783))
+
+* fix: get user template path relative to templates folder — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`16f7a29`](https://github.com/OZI-Project/ozi-core/commit/16f7a29f5330fe3df8a3edd923b8215ee13cb5d8))
+
+
+### Chores
+
+
+* chore: fix lint — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`cef21ef`](https://github.com/OZI-Project/ozi-core/commit/cef21ef774067260740328707a339e08e49e07b9))
+
+* chore: run black — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`77e34ca`](https://github.com/OZI-Project/ozi-core/commit/77e34cac57b7d462866b1f1e5518d30287fea613))
+
+## 1.21.15 (2025-07-17)
+
+
+### Build system
+
+
+* build(deps): bump ozi-templates from 2.29.6 to 2.29.7
+
+Bumps ozi-templates from 2.29.6 to 2.29.7.
+
+
+updated-dependencies:
+- dependency-name: ozi-templates
+  dependency-version: 2.29.7
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`db6151a`](https://github.com/OZI-Project/ozi-core/commit/db6151aee74709a6c85aec7d1fabc3a1476d943d))
+
+* build(deps): bump ozi-spec from 1.1.0 to 1.1.1
+
+Bumps [ozi-spec](https://www.oziproject.dev) from 1.1.0 to 1.1.1.
+
+
+updated-dependencies:
+- dependency-name: ozi-spec
+  dependency-version: 1.1.1
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`dd7671f`](https://github.com/OZI-Project/ozi-core/commit/dd7671f331cf5eeaa673057f87e4d5aced257ff5))
+
+* build(deps): bump step-security/harden-runner from 2.12.2 to 2.13.0
+
+Bumps [step-security/harden-runner](https://github.com/step-security/harden-runner) from 2.12.2 to 2.13.0.
+- [Release notes](https://github.com/step-security/harden-runner/releases)
+- [Commits](https://github.com/step-security/harden-runner/compare/6c439dc8bdf85cadbbce9ed30d1c7b959517bc49...ec9f2d5744a09debf3a187a3f4f675c53b671911)
+
+
+updated-dependencies:
+- dependency-name: step-security/harden-runner
+  dependency-version: 2.13.0
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`6ad7700`](https://github.com/OZI-Project/ozi-core/commit/6ad770024708092e2d1fab8e06310a78714bb7d2))
+
 ## 1.21.14 (2025-07-14)
 
 
