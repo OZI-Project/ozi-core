@@ -1,4 +1,53 @@
 # ozi-core CHANGELOG
+## 1.21.18 (2025-07-26)
+
+
+### Build system
+
+
+* build(deps): bump OZI-Project/checkpoint from 1.9.3 to 1.9.4
+
+Bumps [OZI-Project/checkpoint](https://github.com/ozi-project/checkpoint) from 1.9.3 to 1.9.4.
+- [Release notes](https://github.com/ozi-project/checkpoint/releases)
+- [Commits](https://github.com/ozi-project/checkpoint/compare/1.9.3...1.9.4)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/checkpoint
+  dependency-version: 1.9.4
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`f92a14a`](https://github.com/OZI-Project/ozi-core/commit/f92a14adfba03078787f08b9be303ac5d6a038d4))
+
+* build(deps): bump OZI-Project/release from 1.8.11 to 1.9.0
+
+Bumps [OZI-Project/release](https://github.com/ozi-project/release) from 1.8.11 to 1.9.0.
+- [Release notes](https://github.com/ozi-project/release/releases)
+- [Commits](https://github.com/ozi-project/release/compare/3b2d9beadc38335e9fdace1dc21d7d5807d7be76...d3920f3f0471dec9369a2245cc6e6b42756d27f8)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/release
+  dependency-version: 1.9.0
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`32a4cc8`](https://github.com/OZI-Project/ozi-core/commit/32a4cc8ad81bbfc3846de38e4e6febfffa08ba43))
+
+* build(deps): bump ozi-spec from 1.1.1 to 1.1.2
+
+Bumps [ozi-spec](https://www.oziproject.dev) from 1.1.1 to 1.1.2.
+
+
+updated-dependencies:
+- dependency-name: ozi-spec
+  dependency-version: 1.1.2
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`c03435c`](https://github.com/OZI-Project/ozi-core/commit/c03435ce5b5c9dba56b9572a9a80d6a0126dd4c2))
+
 ## 1.21.17 (2025-07-23)
 
 
