@@ -190,6 +190,7 @@ jobs:
             azure.archive.ubuntu.com:80
             security.ubuntu.com:443
             archive.ubuntu.com:443
+            release-assets.githubusercontent.com:443
 
       - run: sudo apt-get install -y gettext
 
