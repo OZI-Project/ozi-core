@@ -43,7 +43,7 @@ dependencies = [
     'prompt-toolkit~=3.0.48',
     'pyparsing~=3.1',
     'reverse-argparse~=2.0',
-    'niquests~=3.14.0',
+    'niquests>=3.14,<3.16',
     'spdx-license-list==3.27.0',
     'trove-classifiers==2025.8.6.13',
     'typing-extensions;python_version<="3.11"',
