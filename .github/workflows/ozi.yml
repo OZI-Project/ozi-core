@@ -204,7 +204,7 @@ jobs:
 
       - run: sudo apt-get install -y gettext
 
-      - uses: OZI-Project/release@d3920f3f0471dec9369a2245cc6e6b42756d27f8
+      - uses: OZI-Project/release@eb10d9730ae9ad7c7c63e016d714013b4e017d5d
         id: release
         with:
           python-dist: ${{ matrix.py }}
@@ -252,7 +252,7 @@ jobs:
           ghcr.io:443
           pkg-containers.githubusercontent.com:443
 
-    - uses: OZI-Project/publish@1.17.0
+    - uses: OZI-Project/publish@1.17.2
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
 
