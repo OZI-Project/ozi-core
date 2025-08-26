@@ -1,4 +1,121 @@
 # ozi-core CHANGELOG
+## 1.21.20 (2025-08-26)
+
+
+### Bug fixes
+
+
+* fix: use correct meson version in tox — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`bc49e7a`](https://github.com/OZI-Project/ozi-core/commit/bc49e7a7771f9f31a3fc09e05b2c775ddcb05c22))
+
+
+### Build system
+
+
+* build(deps): bump OZI-Project/checkpoint from 1.9.5 to 1.9.6
+
+Bumps [OZI-Project/checkpoint](https://github.com/ozi-project/checkpoint) from 1.9.5 to 1.9.6.
+- [Release notes](https://github.com/ozi-project/checkpoint/releases)
+- [Commits](https://github.com/ozi-project/checkpoint/compare/1.9.5...1.9.6)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/checkpoint
+  dependency-version: 1.9.6
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`454cbc2`](https://github.com/OZI-Project/ozi-core/commit/454cbc2ced8b0c27c8ddc4a25f99353d87a32c6c))
+
+* build(deps): bump OZI-Project/draft from 1.17.0 to 1.17.2
+
+Bumps [OZI-Project/draft](https://github.com/ozi-project/draft) from 1.17.0 to 1.17.2.
+- [Release notes](https://github.com/ozi-project/draft/releases)
+- [Commits](https://github.com/ozi-project/draft/compare/1.17.0...1.17.2)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/draft
+  dependency-version: 1.17.2
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`a0b781d`](https://github.com/OZI-Project/ozi-core/commit/a0b781d6bb04b2abcd2726f75d6da494039e0d3f))
+
+* build(deps): bump OZI-Project/publish from 1.17.0 to 1.17.2
+
+Bumps [OZI-Project/publish](https://github.com/ozi-project/publish) from 1.17.0 to 1.17.2.
+- [Release notes](https://github.com/ozi-project/publish/releases)
+- [Commits](https://github.com/ozi-project/publish/compare/1.17.0...1.17.2)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/publish
+  dependency-version: 1.17.2
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`a3fe2a5`](https://github.com/OZI-Project/ozi-core/commit/a3fe2a57dcc6b7251a491c8e8a4409552c65e4c0))
+
+* build(deps): bump OZI-Project/release from 1.9.0 to 1.9.1
+
+Bumps [OZI-Project/release](https://github.com/ozi-project/release) from 1.9.0 to 1.9.1.
+- [Release notes](https://github.com/ozi-project/release/releases)
+- [Commits](https://github.com/ozi-project/release/compare/d3920f3f0471dec9369a2245cc6e6b42756d27f8...eb10d9730ae9ad7c7c63e016d714013b4e017d5d)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/release
+  dependency-version: 1.9.1
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`4eef907`](https://github.com/OZI-Project/ozi-core/commit/4eef907e2353c59d8f6a7def9ee10bdcd356cab0))
+
+* build(deps): bump ozi-spec from 1.1.4 to 1.1.5
+
+Bumps [ozi-spec](https://www.oziproject.dev) from 1.1.4 to 1.1.5.
+
+
+updated-dependencies:
+- dependency-name: ozi-spec
+  dependency-version: 1.1.5
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`5001d94`](https://github.com/OZI-Project/ozi-core/commit/5001d948d49054082ccaa2d3d1285cfbc4d3e8f4))
+
+* build(deps): update niquests requirement from ~=3.14.0 to >=3.14,<3.16
+
+Updates the requirements on [niquests](https://github.com/jawah/niquests) to permit the latest version.
+- [Release notes](https://github.com/jawah/niquests/releases)
+- [Changelog](https://github.com/jawah/niquests/blob/main/HISTORY.md)
+- [Commits](https://github.com/jawah/niquests/compare/v3.14.0...v3.15.0)
+
+
+updated-dependencies:
+- dependency-name: niquests
+  dependency-version: 3.15.0
+  dependency-type: direct:production
+... — dependabot[bot] <support@github.com>
+([`b2fd7c2`](https://github.com/OZI-Project/ozi-core/commit/b2fd7c2db5ecca963691cfbcb8d82941fbc7f832))
+
+* build(deps): bump actions/checkout from 4 to 5
+
+Bumps [actions/checkout](https://github.com/actions/checkout) from 4 to 5.
+- [Release notes](https://github.com/actions/checkout/releases)
+- [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/actions/checkout/compare/v4...v5)
+
+
+updated-dependencies:
+- dependency-name: actions/checkout
+  dependency-version: '5'
+  dependency-type: direct:production
+  update-type: version-update:semver-major
+... — dependabot[bot] <support@github.com>
+([`bcff0e6`](https://github.com/OZI-Project/ozi-core/commit/bcff0e6a7a101102a69ef51cffe6580dd28cd0d2))
+
 ## 1.21.19 (2025-08-08)
 
 
