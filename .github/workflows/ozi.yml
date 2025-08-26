@@ -42,7 +42,7 @@ jobs:
 
       - run: sudo apt-get install -y gettext
 
-      - uses: OZI-Project/checkpoint@1.9.5
+      - uses: OZI-Project/checkpoint@1.9.6
         with:
           python-version: "3.11"
           submodules: true
@@ -78,7 +78,7 @@ jobs:
 
       - run: sudo apt-get install -y gettext
 
-      - uses: OZI-Project/checkpoint@1.9.5
+      - uses: OZI-Project/checkpoint@1.9.6
         with:
           python-version: "3.12"
           submodules: true
@@ -116,7 +116,7 @@ jobs:
 
       - run: sudo apt-get install -y gettext
 
-      - uses: OZI-Project/checkpoint@1.9.5
+      - uses: OZI-Project/checkpoint@1.9.6
         with:
           python-version: "3.13"
           submodules: true
@@ -153,7 +153,7 @@ jobs:
             api.github.com:443
             github.com:443
 
-      - uses: OZI-Project/draft@1.17.0
+      - uses: OZI-Project/draft@1.17.2
         id: draft
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -204,7 +204,7 @@ jobs:
 
       - run: sudo apt-get install -y gettext
 
-      - uses: OZI-Project/release@d3920f3f0471dec9369a2245cc6e6b42756d27f8
+      - uses: OZI-Project/release@eb10d9730ae9ad7c7c63e016d714013b4e017d5d
         id: release
         with:
           python-dist: ${{ matrix.py }}
@@ -252,7 +252,7 @@ jobs:
           ghcr.io:443
           pkg-containers.githubusercontent.com:443
 
-    - uses: OZI-Project/publish@1.17.0
+    - uses: OZI-Project/publish@1.17.2
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
 

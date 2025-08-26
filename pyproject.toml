@@ -37,13 +37,13 @@ dependencies = [
     'idna~=3.10',
     'meson[ninja]~=1.1,<1.9',
     'ozi-templates==2.29.8',
-    'ozi-spec==1.1.4',
+    'ozi-spec==1.1.5',
     'packaging>=24.1,<26.0',
     'platformdirs~=4.3',
     'prompt-toolkit~=3.0.48',
     'pyparsing~=3.1',
     'reverse-argparse~=2.0',
-    'niquests~=3.14.0',
+    'niquests>=3.14,<3.16',
     'spdx-license-list==3.27.0',
     'trove-classifiers==2025.8.6.13',
     'typing-extensions;python_version<="3.11"',
@@ -363,7 +363,7 @@ allowlist_externals =
 package = wheel
 commands_pre =
      pip install OZI.build[core,uv,pip]>=2.0.6,<2.4.0
-     pipx install --python=python meson
+     pipx install --python=python "meson~=1.2,<1.9"
 commands =
      meson setup {env_tmp_dir} -Dozi:{env_name}=enabled -Dozi:tox-env-dir={env_dir}
      meson compile -C {env_tmp_dir}
