@@ -1,4 +1,53 @@
 # ozi-core CHANGELOG
+## 1.21.21 (2025-08-30)
+
+
+### Build system
+
+
+* build(deps): bump ozi-spec from 1.1.5 to 1.1.6
+
+Bumps [ozi-spec](https://www.oziproject.dev) from 1.1.5 to 1.1.6.
+
+
+updated-dependencies:
+- dependency-name: ozi-spec
+  dependency-version: 1.1.6
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`22b4b35`](https://github.com/OZI-Project/ozi-core/commit/22b4b357d83dac1c69372a3dfcb4b2c238e73fda))
+
+* build(deps): bump OZI-Project/checkpoint from 1.9.6 to 1.9.9
+
+Bumps [OZI-Project/checkpoint](https://github.com/ozi-project/checkpoint) from 1.9.6 to 1.9.9.
+- [Release notes](https://github.com/ozi-project/checkpoint/releases)
+- [Commits](https://github.com/ozi-project/checkpoint/compare/1.9.6...1.9.9)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/checkpoint
+  dependency-version: 1.9.9
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`58f6693`](https://github.com/OZI-Project/ozi-core/commit/58f66939b211040dbc8190b596d7a13278d0fbf3))
+
+* build(deps): bump trove-classifiers from 2025.8.6.13 to 2025.8.26.11
+
+Bumps [trove-classifiers](https://github.com/pypa/trove-classifiers) from 2025.8.6.13 to 2025.8.26.11.
+- [Release notes](https://github.com/pypa/trove-classifiers/releases)
+- [Commits](https://github.com/pypa/trove-classifiers/compare/2025.8.6.13...2025.8.26.11)
+
+
+updated-dependencies:
+- dependency-name: trove-classifiers
+  dependency-version: 2025.8.26.11
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`ce5c57e`](https://github.com/OZI-Project/ozi-core/commit/ce5c57e4f76e415ad6c244b8783195d147eebbe7))
+
 ## 1.21.20 (2025-08-26)
 
 
