@@ -2,7 +2,10 @@
 # Part of the OZI Project, under the Apache License v2.0 with LLVM Exceptions.
 # See LICENSE.txt for license information.
 # SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
-"""Rendering utilities for the OZI project templates."""
+"""Rendering utilities for the OZI project templates.
+.. versionchanged:: 2.1.17
+   Removed find_user_template
+"""
 from __future__ import annotations
 
 import configparser
@@ -31,29 +34,6 @@ if TYPE_CHECKING:  # pragma: no cover
 config_logger()
 logger = getLogger('ozi_core.render')
 logger.addFilter(PytestFilter())
-
-
-def find_user_template(target: str, file: str, fix: str) -> str | None:
-    """Find a user-defined project template file e.g. :file:`{target}/templates/{fix}/{file}`.
-
-    :param target: path to an OZI project directory
-    :type target: Path
-    :param file: filename
-    :type file: str
-    :param fix: template directory fix path
-    :type fix: str
-    :return: a user-defined template as a string
-    :rtype: str | None
-    """
-    fp = Path(target, 'templates', fix, file)
-    if fp.exists():
-        user_template = str(
-            fp.relative_to(Path(target, 'templates'))
-        )  # pragma: defer to E2E
-    else:
-        TAP.ok(_('term-tap-user-template-not-found'), skip=True, template=str(fp))
-        user_template = None
-    return user_template
 
 
 def map_to_template(  # noqa: C901
@@ -123,7 +103,6 @@ def build_file(
         | AnyStr
     ),
     path: Path,
-    user_template: str | None,
     **kwargs: str,
 ) -> None:
     """Render project file based on OZI templates.
@@ -140,10 +119,7 @@ def build_file(
     :type user_template: str | None
     """
     try:
-        template = env.get_template(map_to_template(fix, path.name)).render(
-            user_template=user_template,
-            **kwargs,
-        )
+        template = env.get_template(map_to_template(fix, path.name)).render(**kwargs)
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(template)
     except LookupError as e:
@@ -174,7 +150,6 @@ def build_child(env: Environment, parent: str, child: Path) -> None:
             env,
             'child',
             (child / 'meson.build'),
-            find_user_template(str(parent / child), 'meson.build.j2', '.'),
             parent=parent,
         )
 
@@ -250,11 +225,6 @@ def render_ci_files_set_user(env: Environment, target: Path, ci_provider: str) -
                     env,
                     'github_workflows',
                     target / filename.replace('github_workflows', '.github/workflows'),
-                    find_user_template(
-                        str(target),
-                        str(filename).replace('github_workflows', '.github/workflows'),
-                        '.',
-                    ),
                 )
         case _:  # pragma: no cover
             ci_user = ''
@@ -287,5 +257,4 @@ def render_project_files(env: Environment, target: Path, name: str) -> None:
                 env,
                 fix,
                 target / filename,
-                find_user_template(str(target), filename, '.'),
             )
