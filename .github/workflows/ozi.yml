@@ -42,7 +42,7 @@ jobs:
 
       - run: sudo apt-get install -y gettext
 
-      - uses: OZI-Project/checkpoint@1.9.9
+      - uses: OZI-Project/checkpoint@1.10.0
         with:
           python-version: "3.11"
           submodules: true
@@ -78,7 +78,7 @@ jobs:
 
       - run: sudo apt-get install -y gettext
 
-      - uses: OZI-Project/checkpoint@1.9.9
+      - uses: OZI-Project/checkpoint@1.10.0
         with:
           python-version: "3.12"
           submodules: true
@@ -116,7 +116,7 @@ jobs:
 
       - run: sudo apt-get install -y gettext
 
-      - uses: OZI-Project/checkpoint@1.9.9
+      - uses: OZI-Project/checkpoint@1.10.0
         with:
           python-version: "3.13"
           submodules: true
@@ -153,7 +153,7 @@ jobs:
             api.github.com:443
             github.com:443
 
-      - uses: OZI-Project/draft@1.17.2
+      - uses: OZI-Project/draft@1.17.3
         id: draft
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
