@@ -35,7 +35,7 @@ dependencies = [
     'TAP-Producer~=1.5.17',
     'dnspython~=2.7.0',
     'idna~=3.10',
-    'meson[ninja]~=1.1,<1.9',
+    'meson[ninja]>=1.1,<2.0',
     'ozi-templates==2.29.9',
     'ozi-spec==1.1.8',
     'packaging>=24.1,<26.0',
