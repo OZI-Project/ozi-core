@@ -20,7 +20,6 @@ from ozi_spec import METADATA
 from ozi_core._i18n import TRANSLATION as _
 from ozi_core.render import build_child
 from ozi_core.render import build_file
-from ozi_core.render import find_user_template
 
 if TYPE_CHECKING:  # pragma: no cover
     from collections.abc import Callable
@@ -117,11 +116,6 @@ class Rewriter:
                 *filename.rstrip('/').split('/'),
             )
             / '__init__.py',
-            find_user_template(
-                self.target,
-                f'{filename}/__init__.py.j2',
-                '.',
-            ),
         )
 
     def _add_files(
@@ -134,14 +128,7 @@ class Rewriter:
         if child.exists():  # pragma: no cover
             pass
         else:
-            build_file(
-                self.env,
-                self.fix,
-                child,
-                user_template=find_user_template(
-                    self.target, filename, self.path_map[self.fix]('.').name
-                ),
-            )
+            build_file(self.env, self.fix, child)
         if filename.endswith('.pyx'):  # pragma: no cover
             cmd_files.add('ext', 'files', str(Path(filename)))
         else:
@@ -222,7 +209,4 @@ class Rewriter:
             try:
                 child.rmdir()
             except OSError:
-                warn(
-                    _('term-warn-remove-dir'),
-                    RuntimeWarning,
-                )
+                warn(_('term-warn-remove-dir'), RuntimeWarning)

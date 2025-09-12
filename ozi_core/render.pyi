@@ -14,19 +14,6 @@ from jinja2 import Environment
 if TYPE_CHECKING:
     ...
 
-def find_user_template(target: str, file: str, fix: str) -> str | None:
-    """Find a user-defined project template file e.g. :file:`{target}/templates/{fix}/{file}`.
-
-    :param target: path to an OZI project directory
-    :type target: Path
-    :param file: filename
-    :type file: str
-    :param fix: template directory fix path
-    :type fix: str
-    :return: a user-defined template as a string
-    :rtype: str | None
-    """
-
 def map_to_template(
     fix: (
         Literal[
@@ -57,7 +44,6 @@ def build_file(
         | AnyStr
     ),
     path: Path,
-    user_template: str | None,
     **kwargs: str
 ) -> None:
     """Render project file based on OZI templates.
