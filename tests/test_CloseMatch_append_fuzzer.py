@@ -21,7 +21,7 @@ except ImportError:
 
     atheris = Atheris()
 
-if sys.version_info < (3, 11):
+if sys.version_info < (3, 12):
     warnings.filterwarnings('ignore', category=FutureWarning)
     import ozi_core.actions
 
