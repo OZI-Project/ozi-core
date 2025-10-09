@@ -44,7 +44,7 @@ jobs:
 
       - run: sudo apt-get install -y gettext
 
-      - uses: OZI-Project/checkpoint@1faf4433bbcc31ed6a0104896a92564d94182b20 # 1.10.0
+      - uses: OZI-Project/checkpoint@b8935c41223bccd7886bd6a2f668b12a23859ed7 # 1.10.1
         with:
           python-version: "3.10"
           submodules: true
@@ -79,7 +79,7 @@ jobs:
             security.ubuntu.com:443
             archive.ubuntu.com:443
 
-      - uses: OZI-Project/checkpoint@1faf4433bbcc31ed6a0104896a92564d94182b20 # 1.10.0
+      - uses: OZI-Project/checkpoint@b8935c41223bccd7886bd6a2f668b12a23859ed7 # 1.10.1
         with:
           python-version: "3.10"
           os: "windows-latest"
@@ -117,7 +117,7 @@ jobs:
 
       - run: sudo apt-get install -y gettext
 
-      - uses: OZI-Project/checkpoint@1faf4433bbcc31ed6a0104896a92564d94182b20 # 1.10.0
+      - uses: OZI-Project/checkpoint@b8935c41223bccd7886bd6a2f668b12a23859ed7 # 1.10.1
         with:
           python-version: "3.11"
           submodules: true
@@ -154,7 +154,7 @@ jobs:
 
       - run: sudo apt-get install -y gettext
 
-      - uses: OZI-Project/checkpoint@1faf4433bbcc31ed6a0104896a92564d94182b20 # 1.10.0
+      - uses: OZI-Project/checkpoint@b8935c41223bccd7886bd6a2f668b12a23859ed7 # 1.10.1
         with:
           python-version: "3.12"
           submodules: true
@@ -194,7 +194,7 @@ jobs:
 
       - run: sudo apt-get install -y gettext
 
-      - uses: OZI-Project/checkpoint@1faf4433bbcc31ed6a0104896a92564d94182b20
+      - uses: OZI-Project/checkpoint@b8935c41223bccd7886bd6a2f668b12a23859ed7
         with:
           python-version: "3.13"
           submodules: true
