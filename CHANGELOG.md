@@ -1,4 +1,106 @@
 # ozi-core CHANGELOG
+## 1.21.23 (2025-10-09)
+
+
+### Bug fixes
+
+
+* fix: update FutureWarning ignores to python lt 3.12 — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`e57e75e`](https://github.com/OZI-Project/ozi-core/commit/e57e75e8bb751820b5eda402a52b15a887b05ff9))
+
+
+### Build system
+
+
+* build(deps): bump OZI-Project/checkpoint from 1.10.0 to 1.10.1
+
+Bumps [OZI-Project/checkpoint](https://github.com/ozi-project/checkpoint) from 1.10.0 to 1.10.1.
+- [Release notes](https://github.com/ozi-project/checkpoint/releases)
+- [Commits](https://github.com/ozi-project/checkpoint/compare/1.10.0...1.10.1)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/checkpoint
+  dependency-version: 1.10.1
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`ca38452`](https://github.com/OZI-Project/ozi-core/commit/ca3845286fc570cf5f5b384b797dd4eb1db20029))
+
+* build(deps): bump OZI-Project/draft from 1.17.3 to 1.17.4
+
+Bumps [OZI-Project/draft](https://github.com/ozi-project/draft) from 1.17.3 to 1.17.4.
+- [Release notes](https://github.com/ozi-project/draft/releases)
+- [Commits](https://github.com/ozi-project/draft/compare/1.17.3...1.17.4)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/draft
+  dependency-version: 1.17.4
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`166e8b8`](https://github.com/OZI-Project/ozi-core/commit/166e8b874b50e9e8a4b2f286bf17b3e2fa7159eb))
+
+* build(deps): bump OZI-Project/publish from 1.17.3 to 1.17.4
+
+Bumps [OZI-Project/publish](https://github.com/ozi-project/publish) from 1.17.3 to 1.17.4.
+- [Release notes](https://github.com/ozi-project/publish/releases)
+- [Commits](https://github.com/ozi-project/publish/compare/1.17.3...1.17.4)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/publish
+  dependency-version: 1.17.4
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`17cd5a7`](https://github.com/OZI-Project/ozi-core/commit/17cd5a74f96f60d4b1761d17bf025a76d827a788))
+
+* build(deps): bump github/codeql-action from 3 to 4
+
+Bumps [github/codeql-action](https://github.com/github/codeql-action) from 3 to 4.
+- [Release notes](https://github.com/github/codeql-action/releases)
+- [Changelog](https://github.com/github/codeql-action/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/github/codeql-action/compare/v3...v4)
+
+
+updated-dependencies:
+- dependency-name: github/codeql-action
+  dependency-version: '4'
+  dependency-type: direct:production
+  update-type: version-update:semver-major
+... — dependabot[bot] <support@github.com>
+([`b9f3a2f`](https://github.com/OZI-Project/ozi-core/commit/b9f3a2f0bcd7c76a7ad27cdf0ec44026f11b10bb))
+
+* build(deps): bump ozi-spec from 1.1.8 to 1.1.9
+
+Bumps [ozi-spec](https://www.oziproject.dev) from 1.1.8 to 1.1.9.
+
+
+updated-dependencies:
+- dependency-name: ozi-spec
+  dependency-version: 1.1.9
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`2fd5819`](https://github.com/OZI-Project/ozi-core/commit/2fd5819019d9704c50801c39d09483a19e5a1421))
+
+* build(deps): bump trove-classifiers from 2025.9.9.12 to 2025.9.11.17
+
+Bumps [trove-classifiers](https://github.com/pypa/trove-classifiers) from 2025.9.9.12 to 2025.9.11.17.
+- [Release notes](https://github.com/pypa/trove-classifiers/releases)
+- [Commits](https://github.com/pypa/trove-classifiers/compare/2025.9.9.12...2025.9.11.17)
+
+
+updated-dependencies:
+- dependency-name: trove-classifiers
+  dependency-version: 2025.9.11.17
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`53495a5`](https://github.com/OZI-Project/ozi-core/commit/53495a59b8ae05a8ed5e428470dd3eb6062a7f68))
+
 ## 1.21.22 (2025-09-12)
 
 
