@@ -154,7 +154,6 @@ def validate_name(e: webui.event) -> None:
     res = e.window.script(  # pyright: ignore
         f' return document.getElementById("Name").value; '
     )
-    _ = TRANSLATION.gettext
     if name_valid(res.data):
         projectname = res.data
     else:

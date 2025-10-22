@@ -41,10 +41,11 @@ jobs:
             azure.archive.ubuntu.com:80
             security.ubuntu.com:443
             archive.ubuntu.com:443
+            release-assets.githubusercontent.com:443
 
       - run: sudo apt-get install -y gettext
 
-      - uses: OZI-Project/checkpoint@b8935c41223bccd7886bd6a2f668b12a23859ed7 # 1.10.1
+      - uses: OZI-Project/checkpoint@5c04e23edea0edcd1eb731ad465d3fb7fe5ad0d7 # 1.11.0
         with:
           python-version: "3.10"
           submodules: true
@@ -78,8 +79,9 @@ jobs:
             azure.archive.ubuntu.com:80
             security.ubuntu.com:443
             archive.ubuntu.com:443
+            release-assets.githubusercontent.com:443
 
-      - uses: OZI-Project/checkpoint@b8935c41223bccd7886bd6a2f668b12a23859ed7 # 1.10.1
+      - uses: OZI-Project/checkpoint@5c04e23edea0edcd1eb731ad465d3fb7fe5ad0d7 # 1.11.0
         with:
           python-version: "3.10"
           os: "windows-latest"
@@ -114,10 +116,11 @@ jobs:
             azure.archive.ubuntu.com:80
             security.ubuntu.com:443
             archive.ubuntu.com:443
+            release-assets.githubusercontent.com:443
 
       - run: sudo apt-get install -y gettext
 
-      - uses: OZI-Project/checkpoint@b8935c41223bccd7886bd6a2f668b12a23859ed7 # 1.10.1
+      - uses: OZI-Project/checkpoint@5c04e23edea0edcd1eb731ad465d3fb7fe5ad0d7 # 1.11.0
         with:
           python-version: "3.11"
           submodules: true
@@ -151,10 +154,11 @@ jobs:
             azure.archive.ubuntu.com:80
             security.ubuntu.com:443
             archive.ubuntu.com:443
+            release-assets.githubusercontent.com:443
 
       - run: sudo apt-get install -y gettext
 
-      - uses: OZI-Project/checkpoint@b8935c41223bccd7886bd6a2f668b12a23859ed7 # 1.10.1
+      - uses: OZI-Project/checkpoint@5c04e23edea0edcd1eb731ad465d3fb7fe5ad0d7 # 1.11.0
         with:
           python-version: "3.12"
           submodules: true
@@ -194,7 +198,7 @@ jobs:
 
       - run: sudo apt-get install -y gettext
 
-      - uses: OZI-Project/checkpoint@b8935c41223bccd7886bd6a2f668b12a23859ed7
+      - uses: OZI-Project/checkpoint@5c04e23edea0edcd1eb731ad465d3fb7fe5ad0d7
         with:
           python-version: "3.13"
           submodules: true
