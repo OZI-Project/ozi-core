@@ -41,6 +41,7 @@ jobs:
             azure.archive.ubuntu.com:80
             security.ubuntu.com:443
             archive.ubuntu.com:443
+            release-assets.githubusercontent.com:443
 
       - run: sudo apt-get install -y gettext
 
@@ -78,6 +79,7 @@ jobs:
             azure.archive.ubuntu.com:80
             security.ubuntu.com:443
             archive.ubuntu.com:443
+            release-assets.githubusercontent.com:443
 
       - uses: OZI-Project/checkpoint@b8935c41223bccd7886bd6a2f668b12a23859ed7 # 1.10.1
         with:
@@ -114,6 +116,7 @@ jobs:
             azure.archive.ubuntu.com:80
             security.ubuntu.com:443
             archive.ubuntu.com:443
+            release-assets.githubusercontent.com:443
 
       - run: sudo apt-get install -y gettext
 
@@ -151,6 +154,7 @@ jobs:
             azure.archive.ubuntu.com:80
             security.ubuntu.com:443
             archive.ubuntu.com:443
+            release-assets.githubusercontent.com:443
 
       - run: sudo apt-get install -y gettext
 
