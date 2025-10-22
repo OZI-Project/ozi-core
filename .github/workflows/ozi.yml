@@ -43,7 +43,7 @@ jobs:
 
       - run: sudo apt-get install -y gettext
 
-      - uses: OZI-Project/checkpoint@1.10.1
+      - uses: OZI-Project/checkpoint@1.11.0
         with:
           python-version: "3.11"
           submodules: true
@@ -80,7 +80,7 @@ jobs:
 
       - run: sudo apt-get install -y gettext
 
-      - uses: OZI-Project/checkpoint@1.10.1
+      - uses: OZI-Project/checkpoint@1.11.0
         with:
           python-version: "3.12"
           submodules: true
@@ -118,7 +118,7 @@ jobs:
 
       - run: sudo apt-get install -y gettext
 
-      - uses: OZI-Project/checkpoint@1.10.1
+      - uses: OZI-Project/checkpoint@1.11.0
         with:
           python-version: "3.13"
           submodules: true
