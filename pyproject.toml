@@ -363,7 +363,7 @@ allowlist_externals =
 package = wheel
 commands_pre =
      pip install OZI.build[core,uv,pip]>=2.0.6,<2.4.0
-     pipx install --python=python "meson~=1.1,<2.0"
+     pipx install --python=python "meson>=1.1,<2.0"
 commands =
      meson setup {env_tmp_dir} -Dozi:{env_name}=enabled -Dozi:tox-env-dir={env_dir}
      meson compile -C {env_tmp_dir}
