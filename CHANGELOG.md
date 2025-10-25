@@ -1,4 +1,47 @@
 # ozi-core CHANGELOG
+## 1.21.25 (2025-10-25)
+
+
+### Build system
+
+
+* build(deps): bump ozi-spec from 1.1.10 to 1.1.11
+
+Bumps [ozi-spec](https://www.oziproject.dev) from 1.1.10 to 1.1.11.
+
+
+updated-dependencies:
+- dependency-name: ozi-spec
+  dependency-version: 1.1.11
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`8cca6a6`](https://github.com/OZI-Project/ozi-core/commit/8cca6a69b9227a4c987394c704879daf33e27532))
+
+* build: Update meson version constraint in pyproject.toml — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`ac97ee7`](https://github.com/OZI-Project/ozi-core/commit/ac97ee71f88226497dbeecc509bedcf07f92ba66))
+
+* build(deps): update meson[ninja] requirement
+
+Updates the requirements on [meson[ninja]](https://github.com/mesonbuild/meson) to permit the latest version.
+- [Release notes](https://github.com/mesonbuild/meson/releases)
+- [Commits](https://github.com/mesonbuild/meson/compare/1.1.0...1.9.0)
+
+
+updated-dependencies:
+- dependency-name: meson[ninja]
+  dependency-version: 1.9.0
+  dependency-type: direct:production
+... — dependabot[bot] <support@github.com>
+([`4adf464`](https://github.com/OZI-Project/ozi-core/commit/4adf46464661aeef6bbe367f71d5ee02f9d87d08))
+
+
+### Unknown
+
+
+* Update meson version constraint in pyproject.toml — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`0fcba80`](https://github.com/OZI-Project/ozi-core/commit/0fcba806bcf3a2bb1282982c72cf6be2980ea42c))
+
 ## 1.21.24 (2025-10-22)
 
 
