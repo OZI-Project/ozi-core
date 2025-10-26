@@ -1,12 +1,109 @@
 # ozi-core CHANGELOG
+## 1.21.25 (2025-10-25)
+
+
+### Build system
+
+
+* build(deps): bump ozi-spec from 1.1.10 to 1.1.11
+
+Bumps [ozi-spec](https://www.oziproject.dev) from 1.1.10 to 1.1.11.
+
+
+updated-dependencies:
+- dependency-name: ozi-spec
+  dependency-version: 1.1.11
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`8cca6a6`](https://github.com/OZI-Project/ozi-core/commit/8cca6a69b9227a4c987394c704879daf33e27532))
+
+* build: Update meson version constraint in pyproject.toml — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`ac97ee7`](https://github.com/OZI-Project/ozi-core/commit/ac97ee71f88226497dbeecc509bedcf07f92ba66))
+
+* build(deps): update meson[ninja] requirement
+
+Updates the requirements on [meson[ninja]](https://github.com/mesonbuild/meson) to permit the latest version.
+- [Release notes](https://github.com/mesonbuild/meson/releases)
+- [Commits](https://github.com/mesonbuild/meson/compare/1.1.0...1.9.0)
+
+
+updated-dependencies:
+- dependency-name: meson[ninja]
+  dependency-version: 1.9.0
+  dependency-type: direct:production
+... — dependabot[bot] <support@github.com>
+([`4adf464`](https://github.com/OZI-Project/ozi-core/commit/4adf46464661aeef6bbe367f71d5ee02f9d87d08))
+
+
+### Unknown
+
+
+* Update meson version constraint in pyproject.toml — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`0fcba80`](https://github.com/OZI-Project/ozi-core/commit/0fcba806bcf3a2bb1282982c72cf6be2980ea42c))
+
+## 1.21.24 (2025-10-22)
+
+
+### Build system
+
+
+* build(deps): bump ozi-spec from 1.1.9 to 1.1.10
+
+Bumps [ozi-spec](https://www.oziproject.dev) from 1.1.9 to 1.1.10.
+
+
+updated-dependencies:
+- dependency-name: ozi-spec
+  dependency-version: 1.1.10
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`f1fb3b7`](https://github.com/OZI-Project/ozi-core/commit/f1fb3b7c039367b3ba1ec28f5cb50b08540eebf3))
+
+* build(deps): bump OZI-Project/checkpoint from 1.10.1 to 1.11.0
+
+Bumps [OZI-Project/checkpoint](https://github.com/ozi-project/checkpoint) from 1.10.1 to 1.11.0.
+- [Release notes](https://github.com/ozi-project/checkpoint/releases)
+- [Commits](https://github.com/ozi-project/checkpoint/compare/1.10.1...1.11.0)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/checkpoint
+  dependency-version: 1.11.0
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`2c9c1c7`](https://github.com/OZI-Project/ozi-core/commit/2c9c1c7d01e8c6713fc1272350fe3fe87ea9d38a))
+
+* build(deps): bump OZI-Project/release from 1.10.0 to 1.11.0
+
+Bumps [OZI-Project/release](https://github.com/ozi-project/release) from 1.10.0 to 1.11.0.
+- [Release notes](https://github.com/ozi-project/release/releases)
+- [Commits](https://github.com/ozi-project/release/compare/60a6112177f9e232a55f0d2dfe3aa0d2da322cf1...14ba53970650ad2d5c8ac8c335074155c78cccec)
+
+
+updated-dependencies:
+- dependency-name: OZI-Project/release
+  dependency-version: 1.11.0
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+... — dependabot[bot] <support@github.com>
+([`a1dd9c1`](https://github.com/OZI-Project/ozi-core/commit/a1dd9c175fa0cfad2a32289cad63d4e55e6fcd8f))
+
+
+### Unknown
+
+
+* :bug: Add release-assets.githubusercontent.com to allowed hosts — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`df7d91d`](https://github.com/OZI-Project/ozi-core/commit/df7d91dbf63dd81e9b8a1ad7cc215c707902ddb1))
+
+* :bug: Update allowed hosts in dev.yml
+
+Added release-assets.githubusercontent.com to allowed hosts. — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`77f149c`](https://github.com/OZI-Project/ozi-core/commit/77f149c84f4ef6dfe0809923e4cf06b70eb05e44))
+
 ## 1.21.23 (2025-10-09)
-
-
-### Bug fixes
-
-
-* fix: update FutureWarning ignores to python lt 3.12 — Eden Ross Duff MSc <rjdbcm@outlook.com>
-([`e57e75e`](https://github.com/OZI-Project/ozi-core/commit/e57e75e8bb751820b5eda402a52b15a887b05ff9))
 
 
 ### Build system
@@ -106,6 +203,9 @@ updated-dependencies:
 
 ### Bug fixes
 
+
+* fix: update FutureWarning ignores to python lt 3.12 — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`e57e75e`](https://github.com/OZI-Project/ozi-core/commit/e57e75e8bb751820b5eda402a52b15a887b05ff9))
 
 * fix: remove unused TRANSLATION import — Eden Ross Duff MSc <rjdbcm@outlook.com>
 ([`08d1aa7`](https://github.com/OZI-Project/ozi-core/commit/08d1aa78953a12cb15d06ae63933f9b756532c28))
@@ -262,6 +362,13 @@ updated-dependencies:
   update-type: version-update:semver-minor
 ... — dependabot[bot] <support@github.com>
 ([`b6f63d2`](https://github.com/OZI-Project/ozi-core/commit/b6f63d2d5b13b8c94e7784295e6272edc38a2765))
+
+
+### Unknown
+
+
+* :bug: fix unexpected keyword argument 'key' in webui gettext translations — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`a67427f`](https://github.com/OZI-Project/ozi-core/commit/a67427f773e21ed718643c73214dd888d8a4149f))
 
 ## 1.21.21 (2025-08-30)
 
