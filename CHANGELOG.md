@@ -1,4 +1,15 @@
 # ozi-core CHANGELOG
+## 1.21.26 (2025-11-09)
+
+
+### Bug fixes
+
+
+* fix(ci): Update python version matrix configuration in ozi.yml
+
+Removed 'bugfix' and 'prerelease' from the matrix configuration. — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`072b4cf`](https://github.com/OZI-Project/ozi-core/commit/072b4cf8cc50afc432fee0df1b010a34bb2b1c8c))
+
 ## 1.21.25 (2025-10-25)
 
 
@@ -203,6 +214,9 @@ updated-dependencies:
 
 ### Bug fixes
 
+
+* fix: broken button in requires_dist interactive dialog — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`e3a62ec`](https://github.com/OZI-Project/ozi-core/commit/e3a62ecb473f8c5b616bb747c04217616484bb27))
 
 * fix: update FutureWarning ignores to python lt 3.12 — Eden Ross Duff MSc <rjdbcm@outlook.com>
 ([`e57e75e`](https://github.com/OZI-Project/ozi-core/commit/e57e75e8bb751820b5eda402a52b15a887b05ff9))

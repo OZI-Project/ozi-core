@@ -170,8 +170,6 @@ jobs:
         py:
           - security2
           - security1
-          - bugfix
-          - prerelease
       fail-fast: true
       max-parallel: 1
     outputs:
