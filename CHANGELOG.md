@@ -1,6 +1,15 @@
 # ozi-core CHANGELOG
 ## 1.21.26 (2025-11-09)
 
+
+### Bug fixes
+
+
+* fix(ci): Update python version matrix configuration in ozi.yml
+
+Removed 'bugfix' and 'prerelease' from the matrix configuration. — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`072b4cf`](https://github.com/OZI-Project/ozi-core/commit/072b4cf8cc50afc432fee0df1b010a34bb2b1c8c))
+
 ## 1.21.25 (2025-10-25)
 
 
