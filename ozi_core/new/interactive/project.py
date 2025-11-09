@@ -495,10 +495,10 @@ class Project:  # pragma: no cover
                     ),
                 ),
                 buttons=[
-                    ('btn-add', _('btn-add')),
-                    ('btn-remove', _('btn-remove')),
-                    ('btn-ok', _('btn-ok')),
-                    ('btn-menu', _('btn-menu')),
+                    (_('btn-add'), 'btn-add'),
+                    (_('btn-remove'), 'btn-remove'),
+                    (_('btn-ok'), 'btn-ok'),
+                    (_('btn-menu'), 'btn-menu'),
                 ],
                 style=_style,
             ).run():
