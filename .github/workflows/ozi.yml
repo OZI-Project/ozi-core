@@ -20,80 +20,7 @@ jobs:
         id-token: write
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@ec9f2d5744a09debf3a187a3f4f675c53b671911 # v2.13.0
-        with:
-          disable-sudo: false
-          egress-policy: block
-          allowed-endpoints: >
-            files.pythonhosted.org:443
-            github.com:443
-            api.github.com:443
-            oziproject.dev:443
-            www.oziproject.dev:443
-            pypi.org:443
-            registry.npmjs.org:443
-            objects.githubusercontent.com:443
-            fulcio.sigstore.dev:443
-            rekor.sigstore.dev:443
-            tuf-repo-cdn.sigstore.dev:443
-            azure.archive.ubuntu.com:80
-            security.ubuntu.com:443
-            archive.ubuntu.com:443
-
-      - run: sudo apt-get install -y gettext
-
-      - uses: OZI-Project/checkpoint@1.9.9
-        with:
-          python-version: "3.11"
-          submodules: true
-
-  checkpoint-cp312-ubuntu-latest:
-    name: checkpoint (Python 3.12 on ubuntu-latest)
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-    permissions:
-        id-token: write
-    steps:
-      - name: Harden Runner
-        uses: step-security/harden-runner@ec9f2d5744a09debf3a187a3f4f675c53b671911 # v2.13.0
-        with:
-          disable-sudo: false
-          egress-policy: block
-          allowed-endpoints: >
-            files.pythonhosted.org:443
-            github.com:443
-            api.github.com:443
-            oziproject.dev:443
-            www.oziproject.dev:443
-            pypi.org:443
-            registry.npmjs.org:443
-            objects.githubusercontent.com:443
-            fulcio.sigstore.dev:443
-            rekor.sigstore.dev:443
-            tuf-repo-cdn.sigstore.dev:443
-            azure.archive.ubuntu.com:80
-            security.ubuntu.com:443
-            archive.ubuntu.com:443
-
-      - run: sudo apt-get install -y gettext
-
-      - uses: OZI-Project/checkpoint@1.9.9
-        with:
-          python-version: "3.12"
-          submodules: true
-
-
-  checkpoint-cp313-ubuntu-latest:
-    name: checkpoint (Python 3.13 on ubuntu-latest)
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-    permissions:
-        id-token: write
-    steps:
-      - name: Harden Runner
-        uses: step-security/harden-runner@ec9f2d5744a09debf3a187a3f4f675c53b671911 # v2.13.0
+        uses: step-security/harden-runner@f4a75cfd619ee5ce8d5b864b0d183aff3c69b55a # v2.13.1
         with:
           disable-sudo: false
           egress-policy: block
@@ -116,7 +43,82 @@ jobs:
 
       - run: sudo apt-get install -y gettext
 
-      - uses: OZI-Project/checkpoint@1.9.9
+      - uses: OZI-Project/checkpoint@1.11.0
+        with:
+          python-version: "3.11"
+          submodules: true
+
+  checkpoint-cp312-ubuntu-latest:
+    name: checkpoint (Python 3.12 on ubuntu-latest)
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+    permissions:
+        id-token: write
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@f4a75cfd619ee5ce8d5b864b0d183aff3c69b55a # v2.13.1
+        with:
+          disable-sudo: false
+          egress-policy: block
+          allowed-endpoints: >
+            files.pythonhosted.org:443
+            github.com:443
+            api.github.com:443
+            oziproject.dev:443
+            www.oziproject.dev:443
+            pypi.org:443
+            registry.npmjs.org:443
+            objects.githubusercontent.com:443
+            fulcio.sigstore.dev:443
+            rekor.sigstore.dev:443
+            tuf-repo-cdn.sigstore.dev:443
+            azure.archive.ubuntu.com:80
+            security.ubuntu.com:443
+            archive.ubuntu.com:443
+            release-assets.githubusercontent.com:443
+
+      - run: sudo apt-get install -y gettext
+
+      - uses: OZI-Project/checkpoint@1.11.0
+        with:
+          python-version: "3.12"
+          submodules: true
+
+
+  checkpoint-cp313-ubuntu-latest:
+    name: checkpoint (Python 3.13 on ubuntu-latest)
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+    permissions:
+        id-token: write
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@f4a75cfd619ee5ce8d5b864b0d183aff3c69b55a # v2.13.1
+        with:
+          disable-sudo: false
+          egress-policy: block
+          allowed-endpoints: >
+            files.pythonhosted.org:443
+            github.com:443
+            api.github.com:443
+            oziproject.dev:443
+            www.oziproject.dev:443
+            pypi.org:443
+            registry.npmjs.org:443
+            objects.githubusercontent.com:443
+            fulcio.sigstore.dev:443
+            rekor.sigstore.dev:443
+            tuf-repo-cdn.sigstore.dev:443
+            azure.archive.ubuntu.com:80
+            security.ubuntu.com:443
+            archive.ubuntu.com:443
+            release-assets.githubusercontent.com:443
+
+      - run: sudo apt-get install -y gettext
+
+      - uses: OZI-Project/checkpoint@1.11.0
         with:
           python-version: "3.13"
           submodules: true
@@ -126,7 +128,7 @@ jobs:
     needs: [checkpoint-cp311-ubuntu-latest,checkpoint-cp312-ubuntu-latest, checkpoint-cp313-ubuntu-latest]
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@ec9f2d5744a09debf3a187a3f4f675c53b671911 # v2.13.0
+        uses: step-security/harden-runner@f4a75cfd619ee5ce8d5b864b0d183aff3c69b55a # v2.13.1
         with:
           disable-sudo: true
           egress-policy: block
@@ -145,7 +147,7 @@ jobs:
       tag: ${{ steps.draft.outputs.tag }}
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@ec9f2d5744a09debf3a187a3f4f675c53b671911 # v2.13.0
+        uses: step-security/harden-runner@f4a75cfd619ee5ce8d5b864b0d183aff3c69b55a # v2.13.1
         with:
           disable-sudo: true
           egress-policy: block
@@ -153,7 +155,7 @@ jobs:
             api.github.com:443
             github.com:443
 
-      - uses: OZI-Project/draft@1.17.2
+      - uses: OZI-Project/draft@1.17.4
         id: draft
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -179,7 +181,7 @@ jobs:
       id-token: write
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@ec9f2d5744a09debf3a187a3f4f675c53b671911 # v2.13.0
+        uses: step-security/harden-runner@f4a75cfd619ee5ce8d5b864b0d183aff3c69b55a # v2.13.1
         with:
           disable-sudo: false
           egress-policy: block
@@ -204,7 +206,7 @@ jobs:
 
       - run: sudo apt-get install -y gettext
 
-      - uses: OZI-Project/release@eb10d9730ae9ad7c7c63e016d714013b4e017d5d
+      - uses: OZI-Project/release@14ba53970650ad2d5c8ac8c335074155c78cccec
         id: release
         with:
           python-dist: ${{ matrix.py }}
@@ -237,7 +239,7 @@ jobs:
       id-token: write
     steps:
     - name: Harden Runner
-      uses: step-security/harden-runner@ec9f2d5744a09debf3a187a3f4f675c53b671911 # v2.13.0
+      uses: step-security/harden-runner@f4a75cfd619ee5ce8d5b864b0d183aff3c69b55a # v2.13.1
       with:
         disable-sudo: true
         egress-policy: block
@@ -252,7 +254,7 @@ jobs:
           ghcr.io:443
           pkg-containers.githubusercontent.com:443
 
-    - uses: OZI-Project/publish@1.17.2
+    - uses: OZI-Project/publish@1.17.4
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
 
