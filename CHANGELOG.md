@@ -1,4 +1,30 @@
 # ozi-core CHANGELOG
+## 1.21.27 (2025-11-13)
+
+
+### Bug fixes
+
+
+* fix: Update Python versions in GitHub Actions workflow — Eden Ross Duff, MSc <rjdbcm@outlook.com>
+([`39c367e`](https://github.com/OZI-Project/ozi-core/commit/39c367e4ec946c2f40e237d548e9f5f7c6d3bee0))
+
+
+### Build system
+
+
+* build(deps): bump ozi-spec from 1.1.11 to 1.1.12
+
+Bumps [ozi-spec](https://www.oziproject.dev) from 1.1.11 to 1.1.12.
+
+
+updated-dependencies:
+- dependency-name: ozi-spec
+  dependency-version: 1.1.12
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+... — dependabot[bot] <support@github.com>
+([`03ee054`](https://github.com/OZI-Project/ozi-core/commit/03ee054453a6d2c65f760486f020bf3bf66e86e9))
+
 ## 1.21.26 (2025-11-09)
 
 
