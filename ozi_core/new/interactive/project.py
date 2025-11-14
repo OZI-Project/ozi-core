@@ -502,7 +502,7 @@ class Project:  # pragma: no cover
                 ],
                 style=_style,
             ).run():
-                case MenuButton.ADD.value:
+                case MenuButton.ADD._str:
                     requirement = input_dialog(
                         title=_('new-dlg-title'),
                         text=_('pro-requires-dist-search'),
@@ -520,7 +520,7 @@ class Project:  # pragma: no cover
                             },
                         )
                         output['--requires-dist'].append(requirement)
-                case MenuButton.REMOVE.value:
+                case MenuButton.REMOVE._str:
                     if len(_requires_dist) != 0:
                         del_requirement = checkboxlist_dialog(
                             title=_('new-dlg-title'),
@@ -545,9 +545,9 @@ class Project:  # pragma: no cover
                             style=_style,
                             ok_text=_('btn-ok'),
                         ).run()
-                case MenuButton.OK.value:
+                case MenuButton.OK._str:
                     break
-                case MenuButton.MENU.value:
+                case MenuButton.MENU._str:
                     result, output, prefix = main_menu(self, output, prefix)
                     if result is not None:
                         return result, output, prefix
