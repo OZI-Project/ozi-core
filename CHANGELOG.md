@@ -1,4 +1,6 @@
 # ozi-core CHANGELOG
+## 1.21.28 (2025-11-14)
+
 ## 1.21.27 (2025-11-13)
 
 
@@ -35,6 +37,9 @@ updated-dependencies:
 
 Removed 'bugfix' and 'prerelease' from the matrix configuration. — Eden Ross Duff, MSc <rjdbcm@outlook.com>
 ([`072b4cf`](https://github.com/OZI-Project/ozi-core/commit/072b4cf8cc50afc432fee0df1b010a34bb2b1c8c))
+
+* fix: broken requires-dist menu — Eden Ross Duff MSc <rjdbcm@outlook.com>
+([`38c783a`](https://github.com/OZI-Project/ozi-core/commit/38c783a9237a9e5ee8aaf64181164e2bdddc808f))
 
 ## 1.21.25 (2025-10-25)
 
