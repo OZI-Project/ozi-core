@@ -13,7 +13,7 @@ from pyparsing import Optional
 from pyparsing import Word
 from pyparsing import ZeroOrMore
 from pyparsing import alphanums
-from pyparsing import oneOf
+from pyparsing import one_of
 from spdx_license_list import LICENSES
 
 user_defined_license = Combine(
@@ -29,7 +29,7 @@ spdx_license_expression <<= MatchFirst(
     + [Literal(lic.id) for lic in LICENSES.values() if not lic.deprecated_id],
 ).set_name('License-ID') + ZeroOrMore(
     Keyword('WITH')
-    + oneOf(METADATA.spec.python.pkg.license.exceptions).set_name('License-Exception-ID')
+    + one_of(METADATA.spec.python.pkg.license.exceptions).set_name('License-Exception-ID')
     | Keyword('AND') + spdx_license_expression
     | Keyword('OR') + spdx_license_expression,
 ) | Literal(
