@@ -17,7 +17,7 @@ from pyparsing import ParseException
 from pyparsing import ParseResults
 from pyparsing import Suppress
 from pyparsing import White
-from pyparsing import oneOf
+from pyparsing import one_of
 
 from ozi_core.spdx import spdx_license_expression
 
@@ -32,7 +32,7 @@ license_expression = classifier + (
     + Combine(spdx_license_expression, join_string=' ')
 ).set_parse_action(lambda t: {str(t[0]): str(t[1])})
 license_file = classifier + (
-    Keyword('License-File') + dcolon + oneOf(['LICENSE', 'LICENSE.txt'])
+    Keyword('License-File') + dcolon + one_of(['LICENSE', 'LICENSE.txt'])
 ).set_parse_action(lambda t: {str(t[0]): str(t[1])})
 pep639_headers <<= license_expression + license_file
 pep639_headers_md <<= (
